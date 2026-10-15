@@ -45,17 +45,12 @@ function createEaglercraftModules() {
     sprint.onTick = function () {
       const onlyForward = this.settings.get('only-forward')?.value !== false;
       const held = this.manager.client?.keybinds?.heldKeys;
-      const shouldSprint = !onlyForward || !!held?.has('KeyW');
-      this.game.setSprinting?.(shouldSprint);
+      this.game.setSprinting?.(!onlyForward || !!held?.has('KeyW'));
     };
-    sprint.onDisable = function () {
-      this.game.setSprinting?.(false);
-    };
+    sprint.onDisable = function () { this.game.setSprinting?.(false); };
   }
 
-  // Reading a real world snapshot is not the same thing as controlling every
-  // renderer/camera setting. Keep action modules behind granular capabilities
-  // until the native bridge implements those specific controls.
+  // Real world reads do not imply every renderer/camera action is writable.
   for (const [id, capability] of [
     ['fullbright', 'brightness-control'],
     ['zoom', 'fov-control'],
@@ -65,9 +60,16 @@ function createEaglercraftModules() {
     if (module) module.requiredCapabilities = ['world', capability];
   }
 
-  // Source-built 26.2 clients can expose real entity state and direct actions
-  // through the native bridge. Keep this separate from the broad legacy
-  // `movement` contract so incomplete hooks such as Step/NoFall are not armed.
+  // Read-only item metadata + verified selected-slot/use-item actions satisfy
+  // these modules without enabling the broad inventory mutation contract.
+  for (const id of ['armor-hud', 'durability-warnings']) {
+    const module = modules.find((m) => m.id === id);
+    if (module) module.requiredCapabilities = ['native-inventory-read'];
+  }
+  const autoEat = modules.find((m) => m.id === 'auto-eat');
+  if (autoEat) autoEat.requiredCapabilities = ['world', 'native-inventory-read', 'native-direct'];
+
+  // Source-built 26.2 clients expose real entity state and direct actions.
   for (const id of ['kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit']) {
     const module = modules.find((m) => m.id === id);
     if (module) module.requiredCapabilities = ['world', 'entities', 'native-direct'];
@@ -83,16 +85,10 @@ function createEaglercraftModules() {
 
 export function startEaglerHacks({ window: win = globalThis.window, document: doc = globalThis.document } = {}) {
   if (runtime) return runtime;
-  if (!doc?.body || !doc.getElementById?.('game_frame')) {
-    throw new Error('Eaglercraft 26.2-u1 #game_frame is missing');
-  }
+  if (!doc?.body || !doc.getElementById?.('game_frame')) throw new Error('Eaglercraft 26.2-u1 #game_frame is missing');
   const adapter = new EaglercraftBrowserAdapter({ window: win, document: doc });
   adapter.mount();
-  const client = bootMeteor({
-    adapter,
-    modules: createEaglercraftModules(),
-    storage: resolveEaglerStorage(win),
-  });
+  const client = bootMeteor({ adapter, modules: createEaglercraftModules(), storage: resolveEaglerStorage(win) });
 
   let running = true;
   let raf = null;
@@ -148,11 +144,7 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
     adapter,
     shutdown,
     allowMultiplayerCombat: setMultiplayerAutomation,
-    diagnostics: () => ({
-      ...client.diagnostics(),
-      multiplayerAutomationAllowed: client.allowMultiplayerCombat,
-      eaglercraft: adapter.diagnostics(),
-    }),
+    diagnostics: () => ({ ...client.diagnostics(), multiplayerAutomationAllowed: client.allowMultiplayerCombat, eaglercraft: adapter.diagnostics() }),
   };
   win.EaglerHacks = runtime;
   win.addEventListener?.('pagehide', shutdown);
