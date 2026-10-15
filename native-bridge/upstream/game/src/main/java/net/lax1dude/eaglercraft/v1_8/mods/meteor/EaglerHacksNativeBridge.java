@@ -60,7 +60,7 @@ public final class EaglerHacksNativeBridge {
                     entity.getX(), entity.getY(), entity.getZ(),
                     entity.getBbWidth(), entity.getBbHeight(), health, maxHealth,
                     isPlayer, hostile, entity instanceof LivingEntity && !isPlayer && !hostile,
-                    entity.isInvisible());
+                    entity.isInvisible(), entity == player || player.hasLineOfSight(entity));
         }
         PlatformMeteorBridge.endFrame();
         applyCommands(minecraft, player);
@@ -68,7 +68,9 @@ public final class EaglerHacksNativeBridge {
 
     private static void applyCommands(Minecraft minecraft, LocalPlayer player) {
         int slot = PlatformMeteorBridge.takeSelectSlot();
-        if (slot >= 0 && slot <= 8) player.getInventory().setSelectedSlot(slot);
+        if (slot >= 0 && slot <= 8) {
+            player.getInventory().setSelectedSlot(slot);
+        }
 
         int sprinting = PlatformMeteorBridge.takeSprinting();
         if (sprinting >= 0) player.setSprinting(sprinting != 0);
@@ -90,7 +92,9 @@ public final class EaglerHacksNativeBridge {
             player.setDeltaMovement(x, y, z);
         }
 
-        if (PlatformMeteorBridge.takeJump() && player.onGround()) player.jumpFromGround();
+        if (PlatformMeteorBridge.takeJump() && player.onGround()) {
+            player.jumpFromGround();
+        }
 
         int attackId = PlatformMeteorBridge.takeAttackEntityId();
         if (attackId >= 0 && minecraft.gameMode != null && minecraft.level != null) {
