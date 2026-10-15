@@ -13,6 +13,10 @@ function createEaglercraftModules() {
     const module = modules.find((m) => m.id === id);
     if (module) module.requiredCapabilities = ['input'];
   }
+  // AutoClicker already inherits localTestOnly from CombatModule. AutoWalk is
+  // also automated gameplay input, so apply the same remote-session safeguard.
+  const autoWalk = modules.find((m) => m.id === 'auto-walk');
+  if (autoWalk) autoWalk.localTestOnly = true;
   return modules;
 }
 
@@ -44,6 +48,13 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   };
   win.addEventListener?.('eaghacks:screenChanged', onScreenChanged);
 
+  const setMultiplayerAutomation = (enabled) => {
+    client.allowMultiplayerCombat = !!enabled;
+    if (!client.allowMultiplayerCombat) client.modules.revalidateAll({ silent: true });
+    if (client.clickgui?.open) client.clickgui.refreshAll?.();
+    return client.allowMultiplayerCombat;
+  };
+
   const shutdown = () => {
     if (!running) return;
     running = false;
@@ -60,7 +71,12 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
     client,
     adapter,
     shutdown,
-    diagnostics: () => ({ ...client.diagnostics(), eaglercraft: adapter.diagnostics() }),
+    allowMultiplayerCombat: setMultiplayerAutomation,
+    diagnostics: () => ({
+      ...client.diagnostics(),
+      multiplayerAutomationAllowed: client.allowMultiplayerCombat,
+      eaglercraft: adapter.diagnostics(),
+    }),
   };
   win.EaglerHacks = runtime;
   win.addEventListener?.('pagehide', shutdown);
