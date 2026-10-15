@@ -13,7 +13,20 @@ function setup() {
   Object.defineProperty(dom.window, 'innerHeight', { configurable: true, value: 600 });
   Object.defineProperty(dom.window, 'devicePixelRatio', { configurable: true, value: 2 });
   const adapter = new EaglercraftBrowserAdapter({ window: dom.window, document: dom.window.document });
-  return { dom, adapter, calls };
+  return { dom, adapter, calls, game: dom.window.document.querySelector('#game') };
+}
+
+function setScreen(dom, screenName) {
+  dom.window.__eaglerGameReady = true;
+  dom.window.__eaghacksScreenHookSeen = true;
+  dom.window.__eaghacksScreenState = {
+    screenName,
+    scaledWidth: 800,
+    scaledHeight: 600,
+    realWidth: 800,
+    realHeight: 600,
+    scaleFactor: 1,
+  };
 }
 
 test('adapter never fabricates player/world access from shell readiness', () => {
@@ -23,14 +36,63 @@ test('adapter never fabricates player/world access from shell readiness', () => 
   dom.window.__tv = { instance: { exports: { main() {}, 'teavm.memory': {} } } };
   adapter.update();
   assert.equal(adapter.ready, true);
-  assert.equal(adapter.inWorld(), false);
+  assert.equal(adapter.inWorld(), false, 'game-ready alone is not enough; screen hook must be observed');
   assert.equal(adapter.getPlayer(), null);
   assert.equal(adapter.getWorld(), null);
   assert.equal(adapter.hasCapability('world'), false);
   assert.equal(adapter.hasCapability('entities'), false);
   assert.equal(adapter.hasCapability('movement'), false);
+  assert.equal(adapter.hasCapability('input'), true);
   assert.equal(adapter.isRemote(), true);
   assert.deepEqual(adapter.diagnostics().wasmExports, ['main', 'teavm.memory']);
+  dom.window.close();
+});
+
+test('official screenChanged state distinguishes menu from active gameplay', () => {
+  const { dom, adapter } = setup();
+  adapter.mount();
+  setScreen(dom, 'net.minecraft.client.gui.screens.TitleScreen');
+  assert.equal(adapter.inWorld(), false);
+  setScreen(dom, null);
+  assert.equal(adapter.inWorld(), true);
+  setScreen(dom, 'net.minecraft.client.gui.screens.PauseScreen');
+  assert.equal(adapter.inWorld(), false);
+  adapter.dispose();
+  dom.window.close();
+});
+
+test('browser input adapter injects the same KeyboardEvent/MouseEvent shape used by Eaglercraft self-test', () => {
+  const { dom, adapter, game } = setup();
+  adapter.mount();
+  setScreen(dom, null);
+  const events = [];
+  for (const type of ['keydown', 'keyup', 'mousedown', 'mouseup']) {
+    game.addEventListener(type, (event) => events.push({ type, code: event.code, key: event.key, button: event.button }));
+  }
+
+  assert.equal(adapter.setForward(true), true);
+  assert.equal(adapter.setForward(true), true, 'duplicate held state must not send another keydown');
+  assert.equal(adapter.setForward(false), true);
+  assert.equal(adapter.jump(), true);
+  assert.equal(adapter.attack(null), true);
+  assert.equal(adapter.useItem(), true);
+
+  assert.deepEqual(events.slice(0, 4), [
+    { type: 'keydown', code: 'KeyW', key: 'w', button: undefined },
+    { type: 'keyup', code: 'KeyW', key: 'w', button: undefined },
+    { type: 'keydown', code: 'Space', key: ' ', button: undefined },
+    { type: 'keyup', code: 'Space', key: ' ', button: undefined },
+  ]);
+  assert.deepEqual(events.filter((e) => e.type.startsWith('mouse')).map((e) => [e.type, e.button]), [
+    ['mousedown', 0], ['mouseup', 0], ['mousedown', 2], ['mouseup', 2],
+  ]);
+
+  setScreen(dom, 'net.minecraft.client.gui.screens.PauseScreen');
+  const before = events.length;
+  assert.equal(adapter.setForward(true), false);
+  assert.equal(adapter.attack(null), false);
+  assert.equal(events.length, before, 'menu state must suppress new gameplay input');
+  adapter.dispose();
   dom.window.close();
 });
 
