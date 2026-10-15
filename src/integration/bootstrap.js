@@ -53,6 +53,18 @@ function createEaglercraftModules() {
     };
   }
 
+  // Reading a real world snapshot is not the same thing as controlling every
+  // renderer/camera setting. Keep action modules behind granular capabilities
+  // until the native bridge implements those specific controls.
+  for (const [id, capability] of [
+    ['fullbright', 'brightness-control'],
+    ['zoom', 'fov-control'],
+    ['no-hurt-cam', 'hurt-camera-control'],
+  ]) {
+    const module = modules.find((m) => m.id === id);
+    if (module) module.requiredCapabilities = ['world', capability];
+  }
+
   // Source-built 26.2 clients can expose real entity state and direct actions
   // through the native bridge. Keep this separate from the broad legacy
   // `movement` contract so incomplete hooks such as Step/NoFall are not armed.
