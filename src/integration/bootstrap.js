@@ -4,6 +4,39 @@ import { EaglercraftBrowserAdapter } from './eaglercraft-adapter.js';
 
 let runtime = null;
 
+function createMemoryStorage() {
+  const map = new Map();
+  return {
+    get length() { return map.size; },
+    key(i) { return [...map.keys()][i] ?? null; },
+    getItem(key) { return map.has(String(key)) ? map.get(String(key)) : null; },
+    setItem(key, value) { map.set(String(key), String(value)); },
+    removeItem(key) { map.delete(String(key)); },
+    clear() { map.clear(); },
+  };
+}
+
+/**
+ * Accessing window.localStorage can itself throw a SecurityError on opaque or
+ * sandboxed origins, before ConfigManager gets a chance to probe the Storage
+ * object. Resolve and probe it here, then pass an explicit Storage-like object
+ * to bootMeteor so those environments degrade to in-memory config instead of
+ * aborting the whole client bootstrap.
+ */
+export function resolveEaglerStorage(win = globalThis.window) {
+  try {
+    const storage = win?.localStorage;
+    if (!storage) return createMemoryStorage();
+    const probe = '__eaghacks_storage_probe__';
+    storage.setItem(probe, '1');
+    storage.removeItem(probe);
+    return storage;
+  } catch (error) {
+    console.warn('[eaghacks] persistent storage unavailable; using in-memory configuration', error);
+    return createMemoryStorage();
+  }
+}
+
 function createEaglercraftModules() {
   const modules = createAllModules();
   // These two modules operate purely through browser input injection on the
@@ -27,7 +60,11 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   }
   const adapter = new EaglercraftBrowserAdapter({ window: win, document: doc });
   adapter.mount();
-  const client = bootMeteor({ adapter, modules: createEaglercraftModules() });
+  const client = bootMeteor({
+    adapter,
+    modules: createEaglercraftModules(),
+    storage: resolveEaglerStorage(win),
+  });
 
   let running = true;
   let raf = null;
