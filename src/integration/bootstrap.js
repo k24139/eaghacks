@@ -39,12 +39,36 @@ export function resolveEaglerStorage(win = globalThis.window) {
 
 function createEaglercraftModules() {
   const modules = createAllModules();
-  // These two modules operate purely through browser input injection on the
-  // standalone build. Do not advertise `movement`: direct player physics are
-  // still unavailable, and doing so would incorrectly arm Flight/Speed/etc.
-  for (const id of ['auto-clicker', 'auto-walk']) {
+
+  // These modules can be driven through the browser input bridge. Do not
+  // advertise `movement`: direct player physics/state still are not exported by
+  // the TeaVM build, and doing so would incorrectly arm Flight/Speed/etc.
+  for (const id of ['auto-clicker', 'auto-walk', 'sprint']) {
     const module = modules.find((m) => m.id === id);
-    if (module) module.requiredCapabilities = ['input'];
+    if (module) {
+      module.requiredCapabilities = ['input'];
+      // ClickGUI intentionally releases pointer lock. Keep these modules
+      // configurable while the GUI is open; adapter actions themselves still
+      // refuse to inject input until gameplay owns the real game canvas again.
+      module.runsInMenus = true;
+    }
+  }
+
+  // Browser-backed Sprint cannot inspect hunger/moveForward because player
+  // state is not exported by this TeaVM build. Preserve the visible settings,
+  // but hold the default sprint key only while W is physically held, or
+  // continuously when "only-forward" is disabled.
+  const sprint = modules.find((m) => m.id === 'sprint');
+  if (sprint) {
+    sprint.onTick = function () {
+      const onlyForward = this.settings.get('only-forward')?.value !== false;
+      const held = this.manager.client?.keybinds?.heldKeys;
+      const shouldSprint = !onlyForward || !!held?.has('KeyW');
+      this.game.setSprinting?.(shouldSprint);
+    };
+    sprint.onDisable = function () {
+      this.game.setSprinting?.(false);
+    };
   }
 
   // AutoClicker already inherits localTestOnly from CombatModule. AutoWalk is
@@ -94,8 +118,6 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   };
   raf = win.requestAnimationFrame(frame);
 
-  // Some Eaglercraft builds invoke screenChanged; 26.2-u1 currently does not,
-  // but preserve the fast path for compatible builds and future variants.
   const onScreenChanged = () => {
     client.modules.revalidateAll({ silent: true });
     if (client.clickgui?.open) client.clickgui.refreshAll?.();
