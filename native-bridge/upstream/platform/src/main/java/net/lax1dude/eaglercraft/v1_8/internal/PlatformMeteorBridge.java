@@ -26,6 +26,10 @@ public final class PlatformMeteorBridge {
             double vx, double vy, double vz, int selectedSlot, String name) {
     }
 
+    public static void publishInventoryItem(boolean armor, int slot, String id, String name, int count,
+            int durability, int maxDurability, boolean food, int nutrition, float saturation) {
+    }
+
     public static void publishEntity(int id, String name, double x, double y, double z,
             float width, float height, float health, float maxHealth,
             boolean player, boolean hostile, boolean passive, boolean invisible, boolean visible) {
