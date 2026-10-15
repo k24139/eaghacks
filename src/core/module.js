@@ -30,6 +30,7 @@ export class Module {
    * @param {string} def.category
    * @param {string[]} [def.requiredCapabilities] GameAdapter capability keys
    * @param {boolean} [def.runsInMenus] whether the module may run outside a world
+   * @param {boolean} [def.localTestOnly] block on remote sessions unless the client explicitly opts in
    * @param {boolean} [def.unsupported] explicit "cannot work on this runtime"
    * @param {string} [def.unsupportedReason]
    */
@@ -41,6 +42,7 @@ export class Module {
     this.category = def.category ?? "Misc";
     this.requiredCapabilities = def.requiredCapabilities ?? [];
     this.runsInMenus = !!def.runsInMenus;
+    this.localTestOnly = !!def.localTestOnly;
     this.unsupported = !!def.unsupported;
     this.unsupportedReason = def.unsupportedReason ?? "";
 
@@ -117,6 +119,9 @@ export class Module {
     const missing = this.requiredCapabilities.filter((c) => !game.hasCapability(c));
     if (missing.length) return `runtime is missing: ${missing.join(", ")}`;
     if (!this.runsInMenus && !game.inWorld()) return "requires a loaded world";
+    if (this.localTestOnly && game.isRemote?.() && !this._manager?.client?.allowMultiplayerCombat) {
+      return "blocked on remote sessions; explicitly enable multiplayer combat to override";
+    }
     return null;
   }
 
