@@ -1,0 +1,53 @@
+name: Eaglercraft integration CI
+
+on:
+  push:
+    branches: [meteor-client-integration]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-build-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Node tests
+        run: npm test
+
+      - name: Build browser bundles
+        run: npm run build
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser harness
+        run: npm run test:browser
+
+      - name: Package source snapshot
+        run: |
+          zip -qr Eaglercraft-26.2-u1-Meteor-Source-CI.zip \
+            src tests tools dist harness package.json package-lock.json build.mjs \
+            README.md MODULES.md TEST_RESULTS.md INTEGRATION.md .gitignore
+
+      - name: Upload integration artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: eaghacks-integration-build
+          path: |
+            dist/meteor.bundle.js
+            dist/eaghacks-integration.js
+            Eaglercraft-26.2-u1-Meteor-Source-CI.zip
+          if-no-files-found: error
+          retention-days: 14
