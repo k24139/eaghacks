@@ -46,10 +46,17 @@ function createEaglercraftModules() {
     const module = modules.find((m) => m.id === id);
     if (module) module.requiredCapabilities = ['input'];
   }
+
   // AutoClicker already inherits localTestOnly from CombatModule. AutoWalk is
   // also automated gameplay input, so apply the same remote-session safeguard.
+  // Its stock onEnable immediately presses W; that cannot succeed while the
+  // ClickGUI still owns input. Defer the first keydown to onTick, after the GUI
+  // closes and the game has reacquired pointer lock.
   const autoWalk = modules.find((m) => m.id === 'auto-walk');
-  if (autoWalk) autoWalk.localTestOnly = true;
+  if (autoWalk) {
+    autoWalk.localTestOnly = true;
+    autoWalk.onEnable = () => {};
+  }
   return modules;
 }
 
@@ -68,17 +75,27 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
 
   let running = true;
   let raf = null;
+  let lastInWorld = adapter.inWorld();
   const frame = (now) => {
     if (!running) return;
-    try { adapter.renderHud(client.bus, Events, now); }
-    catch (error) { console.error('[eaghacks] HUD render failed', error); }
+    try {
+      adapter.renderHud(client.bus, Events, now);
+      const nowInWorld = adapter.inWorld();
+      if (nowInWorld !== lastInWorld) {
+        lastInWorld = nowInWorld;
+        client.modules.revalidateAll({ silent: true });
+        client.hud.sync();
+        if (client.clickgui?.open) client.clickgui.refreshAll?.();
+      }
+    } catch (error) {
+      console.error('[eaghacks] frame integration failed', error);
+    }
     raf = win.requestAnimationFrame(frame);
   };
   raf = win.requestAnimationFrame(frame);
 
-  // screenChanged is an official Eaglercraft launch hook installed preboot by
-  // the injector. Revalidate immediately when moving between menus/gameplay so
-  // a module cannot keep injecting input after a GUI opens.
+  // Some Eaglercraft builds invoke screenChanged; 26.2-u1 currently does not,
+  // but preserve the fast path for compatible builds and future variants.
   const onScreenChanged = () => {
     client.modules.revalidateAll({ silent: true });
     if (client.clickgui?.open) client.clickgui.refreshAll?.();
@@ -117,7 +134,7 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   };
   win.EaglerHacks = runtime;
   win.addEventListener?.('pagehide', shutdown);
-  console.info('[eaghacks] Meteor framework loaded; screen hook + browser input integration active');
+  console.info('[eaghacks] Meteor framework loaded; browser integration active');
   return runtime;
 }
 
