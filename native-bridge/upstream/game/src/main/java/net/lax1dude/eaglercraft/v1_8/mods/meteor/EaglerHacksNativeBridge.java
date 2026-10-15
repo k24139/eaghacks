@@ -3,12 +3,14 @@ package net.lax1dude.eaglercraft.v1_8.mods.meteor;
 import net.lax1dude.eaglercraft.v1_8.internal.PlatformMeteorBridge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Matrix4f;
 
 /**
  * Narrow, explicit bridge from real 26.2 client state into the browser-side
@@ -37,6 +39,18 @@ public final class EaglerHacksNativeBridge {
                 minecraft.level.getGameTime(),
                 minecraft.level.dimension().identifier().toString(),
                 player.getId(), targetId);
+
+        CameraRenderState cameraState = minecraft.gameRenderer.gameRenderState().levelRenderState.cameraRenderState;
+        if (cameraState.initialized) {
+            Matrix4f viewProjection = new Matrix4f(cameraState.projectionMatrix).mul(cameraState.viewRotationMatrix);
+            PlatformMeteorBridge.publishCamera(
+                    cameraState.pos.x, cameraState.pos.y, cameraState.pos.z,
+                    viewProjection.m00(), viewProjection.m10(), viewProjection.m20(), viewProjection.m30(),
+                    viewProjection.m01(), viewProjection.m11(), viewProjection.m21(), viewProjection.m31(),
+                    viewProjection.m02(), viewProjection.m12(), viewProjection.m22(), viewProjection.m32(),
+                    viewProjection.m03(), viewProjection.m13(), viewProjection.m23(), viewProjection.m33());
+        }
+
         PlatformMeteorBridge.publishPlayer(
                 player.getX(), player.getY(), player.getZ(),
                 player.getYRot(), player.getXRot(),
@@ -68,9 +82,7 @@ public final class EaglerHacksNativeBridge {
 
     private static void applyCommands(Minecraft minecraft, LocalPlayer player) {
         int slot = PlatformMeteorBridge.takeSelectSlot();
-        if (slot >= 0 && slot <= 8) {
-            player.getInventory().setSelectedSlot(slot);
-        }
+        if (slot >= 0 && slot <= 8) player.getInventory().setSelectedSlot(slot);
 
         int sprinting = PlatformMeteorBridge.takeSprinting();
         if (sprinting >= 0) player.setSprinting(sprinting != 0);
@@ -92,9 +104,7 @@ public final class EaglerHacksNativeBridge {
             player.setDeltaMovement(x, y, z);
         }
 
-        if (PlatformMeteorBridge.takeJump() && player.onGround()) {
-            player.jumpFromGround();
-        }
+        if (PlatformMeteorBridge.takeJump() && player.onGround()) player.jumpFromGround();
 
         int attackId = PlatformMeteorBridge.takeAttackEntityId();
         if (attackId >= 0 && minecraft.gameMode != null && minecraft.level != null) {
