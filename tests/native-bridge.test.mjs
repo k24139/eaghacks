@@ -28,8 +28,8 @@ function installState(win) {
       name: 'Player', velocity: { x: 0.1, y: 0, z: -0.2 },
     },
     entities: [
-      { id: 7, name: 'Player', x: 1, y: 64, z: 2, isSelf: true, isPlayer: true },
-      { id: 9, name: 'Zombie', x: 3, y: 64, z: 2, isSelf: false, hostile: true },
+      { id: 7, name: 'Player', x: 1, y: 64, z: 2, isSelf: true, isPlayer: true, visible: true },
+      { id: 9, name: 'Zombie', x: 3, y: 64, z: 2, isSelf: false, hostile: true, visible: true },
     ],
     inventory: { selectedSlot: 4, hotbar: [], armor: [] },
     crosshairEntityId: 9,
@@ -53,11 +53,11 @@ test('native snapshot adds only verified capabilities and exposes real state', (
   assert.deepEqual(adapter.getPlayerVelocity(), { x: 0.1, y: 0, z: -0.2 });
 });
 
-test('native actions are queued for the Java tick bridge', () => {
+test('native actions are queued atomically for the Java tick bridge', () => {
   const { win, adapter } = setup();
   installState(win);
   adapter.update();
-  assert.equal(adapter.setRotation(12.5, -7), true);
+  assert.equal(adapter.setRotation(12.5, -7, 0.5), true);
   assert.equal(adapter.setPlayerVelocity(1, 2, 3), true);
   assert.equal(adapter.setSprinting(true), true);
   assert.equal(adapter.setSneaking(false), true);
@@ -65,7 +65,7 @@ test('native actions are queued for the Java tick bridge', () => {
   assert.equal(adapter.attack({ id: 9 }), true);
   assert.equal(adapter.useItem('offhand'), true);
   assert.deepEqual(win.__eaghacksNativeCommands, {
-    rotation: { yaw: 12.5, pitch: -7 },
+    rotation: { yaw: 51.25, pitch: -6 },
     velocity: { x: 1, y: 2, z: 3 },
     sprinting: true,
     sneaking: false,
@@ -75,14 +75,15 @@ test('native actions are queued for the Java tick bridge', () => {
   });
 });
 
-test('native capabilities disappear when the snapshot disappears', () => {
+test('native capabilities disappear cleanly when the bridge snapshot disappears', () => {
   const { win, adapter } = setup();
   installState(win);
   adapter.update();
+  assert.equal(adapter.hasCapability('world'), true);
   delete win.__eaghacksNativeState;
   adapter.update();
   assert.equal(adapter.hasCapability('world'), false);
   assert.equal(adapter.hasCapability('entities'), false);
   assert.equal(adapter.hasCapability('native-direct'), false);
-  assert.equal(adapter.hasCapability('input'), true);
+  assert.equal(adapter.hasCapability('input'), true, 'browser fallback remains available');
 });
