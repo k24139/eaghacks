@@ -33,7 +33,25 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run browser harness
-        run: npm run test:browser
+        run: |
+          node tools/serve.mjs 3000 . > /tmp/eaghacks-harness-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3000/ >/dev/null; then
+              break
+            fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              cat /tmp/eaghacks-harness-server.log
+              exit 1
+            fi
+            sleep 0.25
+          done
+          curl --fail --silent http://127.0.0.1:3000/ >/dev/null || {
+            cat /tmp/eaghacks-harness-server.log
+            exit 1
+          }
+          npm run test:browser
 
       - name: Package source snapshot
         run: |
