@@ -1,8 +1,20 @@
 /** Eaglercraft-specific entry point for the real standalone HTML. */
-import { bootMeteor, shutdownMeteor, Events } from '../index.js';
+import { bootMeteor, shutdownMeteor, Events, createAllModules } from '../index.js';
 import { EaglercraftBrowserAdapter } from './eaglercraft-adapter.js';
 
 let runtime = null;
+
+function createEaglercraftModules() {
+  const modules = createAllModules();
+  // These two modules operate purely through browser input injection on the
+  // standalone build. Do not advertise `movement`: direct player physics are
+  // still unavailable, and doing so would incorrectly arm Flight/Speed/etc.
+  for (const id of ['auto-clicker', 'auto-walk']) {
+    const module = modules.find((m) => m.id === id);
+    if (module) module.requiredCapabilities = ['input'];
+  }
+  return modules;
+}
 
 export function startEaglerHacks({ window: win = globalThis.window, document: doc = globalThis.document } = {}) {
   if (runtime) return runtime;
@@ -11,7 +23,8 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   }
   const adapter = new EaglercraftBrowserAdapter({ window: win, document: doc });
   adapter.mount();
-  const client = bootMeteor({ adapter });
+  const client = bootMeteor({ adapter, modules: createEaglercraftModules() });
+
   let running = true;
   let raf = null;
   const frame = (now) => {
@@ -21,20 +34,37 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
     raf = win.requestAnimationFrame(frame);
   };
   raf = win.requestAnimationFrame(frame);
+
+  // screenChanged is an official Eaglercraft launch hook installed preboot by
+  // the injector. Revalidate immediately when moving between menus/gameplay so
+  // a module cannot keep injecting input after a GUI opens.
+  const onScreenChanged = () => {
+    client.modules.revalidateAll({ silent: true });
+    if (client.clickgui?.open) client.clickgui.refreshAll?.();
+  };
+  win.addEventListener?.('eaghacks:screenChanged', onScreenChanged);
+
   const shutdown = () => {
     if (!running) return;
     running = false;
     if (raf !== null) win.cancelAnimationFrame?.(raf);
     win.removeEventListener?.('pagehide', shutdown);
+    win.removeEventListener?.('eaghacks:screenChanged', onScreenChanged);
     shutdownMeteor();
     adapter.dispose();
     runtime = null;
     if (win.EaglerHacks?.shutdown === shutdown) delete win.EaglerHacks;
   };
-  runtime = { client, adapter, shutdown, diagnostics: () => ({ ...client.diagnostics(), eaglercraft: adapter.diagnostics() }) };
+
+  runtime = {
+    client,
+    adapter,
+    shutdown,
+    diagnostics: () => ({ ...client.diagnostics(), eaglercraft: adapter.diagnostics() }),
+  };
   win.EaglerHacks = runtime;
   win.addEventListener?.('pagehide', shutdown);
-  console.info('[eaghacks] Meteor framework loaded; world/gameplay modules remain gated until native hooks are available');
+  console.info('[eaghacks] Meteor framework loaded; screen hook + browser input integration active');
   return runtime;
 }
 
