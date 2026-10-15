@@ -4,11 +4,16 @@ import net.lax1dude.eaglercraft.v1_8.internal.PlatformMeteorBridge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
 
@@ -35,10 +40,8 @@ public final class EaglerHacksNativeBridge {
         Vec3 velocity = player.getDeltaMovement();
         int targetId = minecraft.crosshairPickEntity != null ? minecraft.crosshairPickEntity.getId() : -1;
         PlatformMeteorBridge.beginFrame(
-                minecraft.level.getGameTime(),
-                minecraft.level.getGameTime(),
-                minecraft.level.dimension().identifier().toString(),
-                player.getId(), targetId);
+                minecraft.level.getGameTime(), minecraft.level.getGameTime(),
+                minecraft.level.dimension().identifier().toString(), player.getId(), targetId);
 
         CameraRenderState cameraState = minecraft.gameRenderer.gameRenderState().levelRenderState.cameraRenderState;
         if (cameraState.initialized) {
@@ -52,11 +55,12 @@ public final class EaglerHacksNativeBridge {
         }
 
         PlatformMeteorBridge.publishPlayer(
-                player.getX(), player.getY(), player.getZ(),
-                player.getYRot(), player.getXRot(),
+                player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot(),
                 player.getHealth(), player.getMaxHealth(), player.getFoodData().getFoodLevel(),
                 player.onGround(), velocity.x, velocity.y, velocity.z,
                 player.getInventory().getSelectedSlot(), player.getName().getString());
+
+        publishInventory(player);
 
         int count = 0;
         for (Entity entity : minecraft.level.entitiesForRendering()) {
@@ -70,8 +74,7 @@ public final class EaglerHacksNativeBridge {
             boolean isPlayer = entity instanceof Player;
             boolean hostile = entity instanceof Enemy;
             PlatformMeteorBridge.publishEntity(
-                    entity.getId(), entity.getName().getString(),
-                    entity.getX(), entity.getY(), entity.getZ(),
+                    entity.getId(), entity.getName().getString(), entity.getX(), entity.getY(), entity.getZ(),
                     entity.getBbWidth(), entity.getBbHeight(), health, maxHealth,
                     isPlayer, hostile, entity instanceof LivingEntity && !isPlayer && !hostile,
                     entity.isInvisible(), entity == player || player.hasLineOfSight(entity));
@@ -80,13 +83,34 @@ public final class EaglerHacksNativeBridge {
         applyCommands(minecraft, player);
     }
 
+    private static void publishInventory(LocalPlayer player) {
+        for (int slot = 0; slot < 9; ++slot) publishItem(false, slot, player.getInventory().getItem(slot));
+        publishItem(true, 0, player.getInventory().getItem(EquipmentSlot.FEET.getIndex(36)));
+        publishItem(true, 1, player.getInventory().getItem(EquipmentSlot.LEGS.getIndex(36)));
+        publishItem(true, 2, player.getInventory().getItem(EquipmentSlot.CHEST.getIndex(36)));
+        publishItem(true, 3, player.getInventory().getItem(EquipmentSlot.HEAD.getIndex(36)));
+    }
+
+    private static void publishItem(boolean armor, int slot, ItemStack stack) {
+        if (stack == null || stack.isEmpty()) {
+            PlatformMeteorBridge.publishInventoryItem(armor, slot, "", "", 0, -1, 0, false, 0, 0.0F);
+            return;
+        }
+        int maxDamage = stack.isDamageableItem() ? stack.getMaxDamage() : 0;
+        int durability = maxDamage > 0 ? maxDamage - stack.getDamageValue() : -1;
+        FoodProperties food = stack.get(DataComponents.FOOD);
+        PlatformMeteorBridge.publishInventoryItem(
+                armor, slot, BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(), stack.getHoverName().getString(),
+                stack.getCount(), durability, maxDamage, food != null, food != null ? food.nutrition() : 0,
+                food != null ? food.saturation() : 0.0F);
+    }
+
     private static void applyCommands(Minecraft minecraft, LocalPlayer player) {
         int slot = PlatformMeteorBridge.takeSelectSlot();
         if (slot >= 0 && slot <= 8) player.getInventory().setSelectedSlot(slot);
 
         int sprinting = PlatformMeteorBridge.takeSprinting();
         if (sprinting >= 0) player.setSprinting(sprinting != 0);
-
         int sneaking = PlatformMeteorBridge.takeSneaking();
         if (sneaking >= 0) player.setShiftKeyDown(sneaking != 0);
 
@@ -96,14 +120,12 @@ public final class EaglerHacksNativeBridge {
             player.setYRot(yaw);
             player.setXRot(Math.max(-90.0F, Math.min(90.0F, pitch)));
         }
-
         if (PlatformMeteorBridge.hasVelocity()) {
             double x = PlatformMeteorBridge.takeVelocityX();
             double y = PlatformMeteorBridge.takeVelocityY();
             double z = PlatformMeteorBridge.takeVelocityZ();
             player.setDeltaMovement(x, y, z);
         }
-
         if (PlatformMeteorBridge.takeJump() && player.onGround()) player.jumpFromGround();
 
         int attackId = PlatformMeteorBridge.takeAttackEntityId();
@@ -111,7 +133,6 @@ public final class EaglerHacksNativeBridge {
             Entity target = minecraft.level.getEntity(attackId);
             if (target != null && target != player) minecraft.gameMode.attack(player, target);
         }
-
         int useItem = PlatformMeteorBridge.takeUseItem();
         if (useItem != 0 && minecraft.gameMode != null) {
             InteractionHand hand = useItem == 2 ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
