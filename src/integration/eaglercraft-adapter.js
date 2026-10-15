@@ -26,8 +26,6 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this.doc = doc;
     this.runtimeName = 'eaglercraft-26.2-u1-browser';
     this.startedAt = Date.now();
-    // `input` means browser input can be observed/injected. It is intentionally
-    // separate from `movement`, which implies direct player physics access.
     this.capabilities = new Set(win?.addEventListener ? ['input'] : []);
     this.overlay = null;
     this.ctx = null;
@@ -37,6 +35,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this._mounted = false;
     this._syntheticHeld = new Set();
     this.ready = false;
+    this._nativeActive = false;
+    this._nativeCapabilities = new Set();
   }
 
   mount() {
@@ -78,11 +78,56 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
 
   update() {
     this.ready = this.win?.__eaglerGameReady === true;
+    this._syncNativeBridge();
     if (!this._gameplayInputAllowed() && this._syntheticHeld.size) {
-      // Key-up is deliberately allowed even while a GUI/pointer-lock transition
-      // is in progress so automated movement can never become stuck.
       for (const code of [...this._syntheticHeld]) this._setSyntheticKey(code, false);
     }
+  }
+
+  _nativeState() {
+    const state = this.win?.__eaghacksNativeState;
+    return state && state.version === 1 ? state : null;
+  }
+
+  _syncNativeBridge() {
+    const state = this._nativeState();
+    const wanted = new Set();
+    if (state?.player && state?.world) wanted.add('world');
+    if (Array.isArray(state?.entities)) wanted.add('entities');
+    if (state?.features?.inventory === true && state?.inventory && Array.isArray(state.inventory.hotbar)) wanted.add('inventory');
+    // The first native bridge publishes direct velocity/rotation/jump actions,
+    // but does not yet implement every legacy movement method (step height,
+    // safe-walk, no-fall, etc.). Do not advertise the broad movement capability
+    // until that contract is complete.
+    if (state?.features?.directMovement === true || state?.features?.combat === true) wanted.add('native-direct');
+    if (state?.features?.flight === true) wanted.add('flight');
+    if (state?.features?.chat === true) wanted.add('chat');
+    if (state?.features?.network === true) wanted.add('network');
+
+    for (const cap of this._nativeCapabilities) {
+      if (!wanted.has(cap)) this.capabilities.delete(cap);
+    }
+    for (const cap of wanted) this.capabilities.add(cap);
+    this._nativeCapabilities = wanted;
+    this._nativeActive = !!state;
+  }
+
+  _nativeCommands() {
+    if (!this.win) return null;
+    let commands = this.win.__eaghacksNativeCommands;
+    if (!commands || typeof commands !== 'object') {
+      commands = {};
+      this.win.__eaghacksNativeCommands = commands;
+    }
+    return commands;
+  }
+
+  _queueNative(name, value) {
+    if (!this._nativeState()) return false;
+    const commands = this._nativeCommands();
+    if (!commands) return false;
+    commands[name] = value;
+    return true;
   }
 
   renderHud(bus, Events, now = performance.now()) {
@@ -112,53 +157,67 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   getFrameTimeMs() { return this._lastFrameMs; }
   getSessionSeconds() { return (Date.now() - this.startedAt) / 1000; }
 
-  /**
-   * `minecraftServer` is null in menus/disconnected state, "singleplayer" for
-   * the integrated server, and the selected server address for multiplayer.
-   * The optional screen hook refines this further when a build actually invokes
-   * it, but 26.2-u1 is known to expose the hook object without firing it.
-   */
+  getPlayer() { return this._nativeState()?.player ?? null; }
+  getWorld() { return this._nativeState()?.world ?? null; }
+  getEntities() {
+    const entities = this._nativeState()?.entities;
+    return Array.isArray(entities) ? entities : [];
+  }
+  getCrosshairTargetEntity() {
+    const id = this._nativeState()?.crosshairEntityId;
+    if (!Number.isInteger(id) || id < 0) return null;
+    return this.getEntities().find((entity) => entity?.id === id) ?? null;
+  }
+  getInventory() { return this._nativeState()?.inventory ?? null; }
+  getSelectedSlot() {
+    const slot = this._nativeState()?.inventory?.selectedSlot;
+    return Number.isInteger(slot) ? slot : -1;
+  }
+  selectSlot(index) {
+    if (!Number.isInteger(index) || index < 0 || index > 8) return false;
+    if (this._nativeState()?.inventory) return this._queueNative('selectSlot', index);
+    return false;
+  }
+  isOnGround() { return this._nativeState()?.player?.onGround === true; }
+  getPlayerVelocity() {
+    const velocity = this._nativeState()?.player?.velocity;
+    if (!velocity) return null;
+    const { x, y, z } = velocity;
+    return [x, y, z].every(Number.isFinite) ? { x, y, z } : null;
+  }
+  setPlayerVelocity(x, y, z) {
+    if (![x, y, z].every(Number.isFinite)) return false;
+    return this._queueNative('velocity', { x, y, z });
+  }
+  setRotation(yaw, pitch) {
+    if (![yaw, pitch].every(Number.isFinite)) return false;
+    return this._queueNative('rotation', { yaw, pitch });
+  }
+
   inWorld() {
     if (this.win?.__eaglerGameReady !== true) return false;
-    // 26.2-u1 sets this native global only after a world has actually reached
-    // its ready state. It is a stronger signal than the server address alone,
-    // which may be assigned while a connection/loading screen is still active.
     if (this.win?.__eaglerWorldReady !== true) return false;
     if (this.win?.minecraftServer == null) return false;
     const state = this.win?.__eaghacksScreenState;
-    if (this.win?.__eaghacksScreenHookSeen === true && state) {
-      return state.screenName === null;
-    }
+    if (this.win?.__eaghacksScreenHookSeen === true && state) return state.screenName === null;
     return true;
   }
 
-  /**
-   * Eaglercraft sets window.minecraftServer to "singleplayer" for the
-   * integrated server. Null/unknown and any other server value stay
-   * conservative and are treated as remote for local-test-only modules.
-   */
-  isRemote() {
-    return this.win?.minecraftServer !== 'singleplayer';
-  }
+  isRemote() { return this.win?.minecraftServer !== 'singleplayer'; }
 
   _clientGuiOpen() {
     return !!this.doc?.getElementById?.('meteor-clickgui')?.classList?.contains?.('mt-open');
   }
 
-  /** Safe moment to inject held/click gameplay input. */
   _gameplayInputAllowed() {
     if (!this.inWorld() || this._clientGuiOpen()) return false;
     const state = this.win?.__eaghacksScreenState;
     if (this.win?.__eaghacksScreenHookSeen === true && state) return state.screenName === null;
-    // 26.2-u1 does not fire screenChanged. Pointer lock is the browser-level
-    // signal that the game, rather than a menu, currently owns mouse/keyboard.
     const canvas = this.getGameCanvas();
     return !!canvas && this.doc?.pointerLockElement === canvas;
   }
 
-  _inputTarget() {
-    return this.getGameCanvas() ?? this.doc?.getElementById?.('game_frame') ?? null;
-  }
+  _inputTarget() { return this.getGameCanvas() ?? this.doc?.getElementById?.('game_frame') ?? null; }
 
   _dispatchKey(code, down) {
     const target = this._inputTarget();
@@ -173,9 +232,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
         cancelable: true,
         repeat: false,
       }));
-    } catch {
-      return false;
-    }
+    } catch { return false; }
   }
 
   _setSyntheticKey(code, on) {
@@ -188,9 +245,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     return true;
   }
 
-  _tapKey(code) {
-    return this._dispatchKey(code, true) && this._dispatchKey(code, false);
-  }
+  _tapKey(code) { return this._dispatchKey(code, true) && this._dispatchKey(code, false); }
 
   _dispatchMouse(button, type) {
     const target = this._inputTarget();
@@ -208,17 +263,21 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
         bubbles: true,
         cancelable: true,
       }));
-    } catch {
-      return false;
-    }
+    } catch { return false; }
   }
 
-  attack(_entity) {
+  attack(entity) {
+    if (Number.isInteger(entity?.id) && this._nativeState()?.features?.combat === true) {
+      return this._queueNative('attackEntityId', entity.id);
+    }
     if (!this._gameplayInputAllowed()) return false;
     return this._dispatchMouse(0, 'mousedown') && this._dispatchMouse(0, 'mouseup');
   }
 
-  useItem(_hand) {
+  useItem(hand) {
+    if (this._nativeState()?.features?.combat === true) {
+      return this._queueNative('useItem', hand === 'offhand' ? 'offhand' : 'mainhand');
+    }
     if (!this._gameplayInputAllowed()) return false;
     return this._dispatchMouse(2, 'mousedown') && this._dispatchMouse(2, 'mouseup');
   }
@@ -229,21 +288,19 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   setSneaking(on) {
+    if (this._nativeState()?.features?.directMovement === true) return this._queueNative('sneaking', !!on);
     if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('ShiftLeft', !!on);
   }
 
-  /**
-   * Eaglercraft's default sprint key is left control. Browser injection cannot
-   * read Minecraft's internal sprint state, but it can faithfully hold/release
-   * the configured default key through the same DOM input path as the player.
-   */
   setSprinting(on) {
+    if (this._nativeState()?.features?.directMovement === true) return this._queueNative('sprinting', !!on);
     if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('ControlLeft', !!on);
   }
 
   jump() {
+    if (this._nativeState()?.features?.directMovement === true) return this._queueNative('jump', true);
     if (!this._gameplayInputAllowed()) return false;
     return this._tapKey('Space');
   }
@@ -283,7 +340,12 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       wasmExports: tv?.instance?.exports ? Object.keys(tv.instance.exports) : [],
       gameCanvasPresent: !!this.getGameCanvas(),
       capabilities: [...this.capabilities],
-      worldAccess: 'unavailable: TeaVM exports do not expose player/world state',
+      nativeBridge: this._nativeActive,
+      nativeBridgeVersion: this._nativeState()?.version ?? null,
+      nativeTick: this._nativeState()?.tick ?? null,
+      worldAccess: this._nativeActive
+        ? 'native bridge active'
+        : 'unavailable in stock binary: TeaVM exports do not expose player/world state',
       syntheticHeldKeys: [...this._syntheticHeld],
     };
   }
@@ -296,5 +358,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this.ctx = null;
     this._mounted = false;
     this.capabilities.delete('hud');
+    for (const cap of this._nativeCapabilities) this.capabilities.delete(cap);
+    this._nativeCapabilities.clear();
+    this._nativeActive = false;
   }
 }
