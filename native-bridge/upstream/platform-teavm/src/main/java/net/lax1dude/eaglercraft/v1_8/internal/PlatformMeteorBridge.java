@@ -35,6 +35,15 @@ public final class PlatformMeteorBridge {
             float health, float maxHealth, int hunger, boolean onGround,
             double vx, double vy, double vz, int selectedSlot, String name);
 
+    @JSBody(params = { "armor", "slot", "id", "name", "count", "durability", "maxDurability", "food", "nutrition", "saturation" }, script =
+            "var s=globalThis.__eaghacksNativeNextState;if(!s||!s.inventory)return;"
+          + "var a=armor?s.inventory.armor:s.inventory.hotbar;var i=slot|0;"
+          + "if(!id){a[i]=null;return;}"
+          + "a[i]={slot:i,id:String(id),name:String(name),count:count|0,durability:durability|0,maxDurability:maxDurability|0,food:!!food,nutrition:nutrition|0,saturation:+saturation};"
+          + "s.features.inventoryRead=true;")
+    public static native void publishInventoryItem(boolean armor, int slot, String id, String name, int count,
+            int durability, int maxDurability, boolean food, int nutrition, float saturation);
+
     @JSBody(params = { "id", "name", "x", "y", "z", "width", "height", "health", "maxHealth", "player", "hostile", "passive", "invisible", "visible" }, script =
             "var s=globalThis.__eaghacksNativeNextState;if(!s)return;"
           + "s.entities.push({id:id|0,name:String(name),x:+x,y:+y,z:+z,width:+width,height:+height,health:+health,maxHealth:+maxHealth,isPlayer:!!player,hostile:!!hostile,passive:!!passive,invisible:!!invisible,visible:!!visible,isSelf:(id|0)===(s.selfEntityId|0)});")
