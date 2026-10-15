@@ -16,13 +16,6 @@ function createMemoryStorage() {
   };
 }
 
-/**
- * Accessing window.localStorage can itself throw a SecurityError on opaque or
- * sandboxed origins, before ConfigManager gets a chance to probe the Storage
- * object. Resolve and probe it here, then pass an explicit Storage-like object
- * to bootMeteor so those environments degrade to in-memory config instead of
- * aborting the whole client bootstrap.
- */
 export function resolveEaglerStorage(win = globalThis.window) {
   try {
     const storage = win?.localStorage;
@@ -39,25 +32,14 @@ export function resolveEaglerStorage(win = globalThis.window) {
 
 function createEaglercraftModules() {
   const modules = createAllModules();
-
-  // These modules can be driven through the browser input bridge. Do not
-  // advertise `movement`: direct player physics/state still are not exported by
-  // the TeaVM build, and doing so would incorrectly arm Flight/Speed/etc.
   for (const id of ['auto-clicker', 'auto-walk', 'sprint']) {
     const module = modules.find((m) => m.id === id);
     if (module) {
       module.requiredCapabilities = ['input'];
-      // ClickGUI intentionally releases pointer lock. Keep these modules
-      // configurable while the GUI is open; adapter actions themselves still
-      // refuse to inject input until gameplay owns the real game canvas again.
       module.runsInMenus = true;
     }
   }
 
-  // Browser-backed Sprint cannot inspect hunger/moveForward because player
-  // state is not exported by this TeaVM build. Preserve the visible settings,
-  // but hold the default sprint key only while W is physically held, or
-  // continuously when "only-forward" is disabled.
   const sprint = modules.find((m) => m.id === 'sprint');
   if (sprint) {
     sprint.onTick = function () {
@@ -71,11 +53,14 @@ function createEaglercraftModules() {
     };
   }
 
-  // AutoClicker already inherits localTestOnly from CombatModule. AutoWalk is
-  // also automated gameplay input, so apply the same remote-session safeguard.
-  // Its stock onEnable immediately presses W; that cannot succeed while the
-  // ClickGUI still owns input. Defer the first keydown to onTick, after the GUI
-  // closes and the game has reacquired pointer lock.
+  // Source-built 26.2 clients can expose real entity state and direct actions
+  // through the native bridge. Keep this separate from the broad legacy
+  // `movement` contract so incomplete hooks such as Step/NoFall are not armed.
+  for (const id of ['kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit']) {
+    const module = modules.find((m) => m.id === id);
+    if (module) module.requiredCapabilities = ['world', 'entities', 'native-direct'];
+  }
+
   const autoWalk = modules.find((m) => m.id === 'auto-walk');
   if (autoWalk) {
     autoWalk.localTestOnly = true;
@@ -100,13 +85,16 @@ export function startEaglerHacks({ window: win = globalThis.window, document: do
   let running = true;
   let raf = null;
   let lastInWorld = adapter.inWorld();
+  let lastCapabilities = [...adapter.capabilities].sort().join('|');
   const frame = (now) => {
     if (!running) return;
     try {
       adapter.renderHud(client.bus, Events, now);
       const nowInWorld = adapter.inWorld();
-      if (nowInWorld !== lastInWorld) {
+      const capabilitySignature = [...adapter.capabilities].sort().join('|');
+      if (nowInWorld !== lastInWorld || capabilitySignature !== lastCapabilities) {
         lastInWorld = nowInWorld;
+        lastCapabilities = capabilitySignature;
         client.modules.revalidateAll({ silent: true });
         client.hud.sync();
         if (client.clickgui?.open) client.clickgui.refreshAll?.();
