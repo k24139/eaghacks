@@ -16,8 +16,13 @@ function setup() {
   return { dom, adapter, calls, game: dom.window.document.querySelector('#game') };
 }
 
+function setPointerLock(dom, target) {
+  Object.defineProperty(dom.window.document, 'pointerLockElement', { configurable: true, value: target });
+}
+
 function setScreen(dom, screenName) {
   dom.window.__eaglerGameReady = true;
+  dom.window.minecraftServer = 'singleplayer';
   dom.window.__eaghacksScreenHookSeen = true;
   dom.window.__eaghacksScreenState = {
     screenName,
@@ -36,7 +41,7 @@ test('adapter never fabricates player/world access from shell readiness', () => 
   dom.window.__tv = { instance: { exports: { main() {}, 'teavm.memory': {} } } };
   adapter.update();
   assert.equal(adapter.ready, true);
-  assert.equal(adapter.inWorld(), false, 'game-ready alone is not enough; screen hook must be observed');
+  assert.equal(adapter.inWorld(), false, 'game-ready alone is not enough; minecraftServer is still null');
   assert.equal(adapter.getPlayer(), null);
   assert.equal(adapter.getWorld(), null);
   assert.equal(adapter.hasCapability('world'), false);
@@ -48,7 +53,7 @@ test('adapter never fabricates player/world access from shell readiness', () => 
   dom.window.close();
 });
 
-test('official screenChanged state distinguishes menu from active gameplay', () => {
+test('official screenChanged state refines menu vs active gameplay when the hook fires', () => {
   const { dom, adapter } = setup();
   adapter.mount();
   setScreen(dom, 'net.minecraft.client.gui.screens.TitleScreen');
@@ -61,10 +66,26 @@ test('official screenChanged state distinguishes menu from active gameplay', () 
   dom.window.close();
 });
 
+test('26.2 minecraftServer fallback detects a loaded session without screenChanged', () => {
+  const { dom, adapter, game } = setup();
+  adapter.mount();
+  dom.window.__eaglerGameReady = true;
+  dom.window.minecraftServer = 'singleplayer';
+  assert.equal(adapter.inWorld(), true);
+  assert.equal(adapter.diagnostics().gameplayInputAllowed, false, 'no pointer lock means a menu may own controls');
+  setPointerLock(dom, game);
+  assert.equal(adapter.diagnostics().gameplayInputAllowed, true);
+  dom.window.minecraftServer = null;
+  assert.equal(adapter.inWorld(), false);
+  adapter.dispose();
+  dom.window.close();
+});
+
 test('browser input adapter injects the same KeyboardEvent/MouseEvent shape used by Eaglercraft self-test', () => {
   const { dom, adapter, game } = setup();
   adapter.mount();
   setScreen(dom, null);
+  setPointerLock(dom, game);
   const events = [];
   for (const type of ['keydown', 'keyup', 'mousedown', 'mouseup']) {
     game.addEventListener(type, (event) => events.push({ type, code: event.code, key: event.key, button: event.button }));
@@ -92,6 +113,24 @@ test('browser input adapter injects the same KeyboardEvent/MouseEvent shape used
   assert.equal(adapter.setForward(true), false);
   assert.equal(adapter.attack(null), false);
   assert.equal(events.length, before, 'menu state must suppress new gameplay input');
+  adapter.dispose();
+  dom.window.close();
+});
+
+test('adapter releases held synthetic movement when gameplay loses control', () => {
+  const { dom, adapter, game } = setup();
+  adapter.mount();
+  dom.window.__eaglerGameReady = true;
+  dom.window.minecraftServer = 'singleplayer';
+  setPointerLock(dom, game);
+  const ups = [];
+  game.addEventListener('keyup', (event) => ups.push(event.code));
+  assert.equal(adapter.setForward(true), true);
+  assert.deepEqual(adapter.diagnostics().syntheticHeldKeys, ['KeyW']);
+  setPointerLock(dom, null);
+  adapter.update();
+  assert.deepEqual(adapter.diagnostics().syntheticHeldKeys, []);
+  assert.deepEqual(ups, ['KeyW']);
   adapter.dispose();
   dom.window.close();
 });
