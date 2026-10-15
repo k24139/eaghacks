@@ -120,6 +120,10 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
    */
   inWorld() {
     if (this.win?.__eaglerGameReady !== true) return false;
+    // 26.2-u1 sets this native global only after a world has actually reached
+    // its ready state. It is a stronger signal than the server address alone,
+    // which may be assigned while a connection/loading screen is still active.
+    if (this.win?.__eaglerWorldReady !== true) return false;
     if (this.win?.minecraftServer == null) return false;
     const state = this.win?.__eaghacksScreenState;
     if (this.win?.__eaghacksScreenHookSeen === true && state) {
@@ -266,6 +270,9 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       runtime: this.runtimeName,
       shellLoaded: this.win?.__loaded === true,
       gameReady: this.win?.__eaglerGameReady === true,
+      menuReady: this.win?.__eaglerMenuReady === true,
+      terrainReady: this.win?.__eaglerTerrainReady === true,
+      worldReady: this.win?.__eaglerWorldReady === true,
       screenHookSeen: this.win?.__eaghacksScreenHookSeen === true,
       screenName: screen ? screen.screenName : undefined,
       inWorld: this.inWorld(),
