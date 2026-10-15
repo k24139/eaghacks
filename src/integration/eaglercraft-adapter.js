@@ -3,8 +3,9 @@
  *
  * The standalone TeaVM/WASM build does not export player/world/entity objects,
  * so this adapter deliberately exposes only capabilities that can be verified
- * at the browser boundary. The official eaglercraftXOpts screenChanged hook is
- * installed by tools/inject-eaglercraft.mjs before the game boots.
+ * at the browser boundary. The injector attempts to wrap the optional
+ * eaglercraftXOpts screenChanged hook; 26.2-u1 also exposes minecraftServer,
+ * which is used as the verified fallback for loaded-session detection.
  */
 import { GameAdapter } from '../core/adapter.js';
 
@@ -77,6 +78,11 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
 
   update() {
     this.ready = this.win?.__eaglerGameReady === true;
+    if (!this._gameplayInputAllowed() && this._syntheticHeld.size) {
+      // Key-up is deliberately allowed even while a GUI/pointer-lock transition
+      // is in progress so automated movement can never become stuck.
+      for (const code of [...this._syntheticHeld]) this._setSyntheticKey(code, false);
+    }
   }
 
   renderHud(bus, Events, now = performance.now()) {
@@ -107,25 +113,43 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   getSessionSeconds() { return (Date.now() - this.startedAt) / 1000; }
 
   /**
-   * Eaglercraft's supported screenChanged hook receives null when Minecraft's
-   * currentScreen is null. Require game readiness + a hook observation so a
-   * transient null during page startup can never be mistaken for gameplay.
+   * `minecraftServer` is null in menus/disconnected state, "singleplayer" for
+   * the integrated server, and the selected server address for multiplayer.
+   * The optional screen hook refines this further when a build actually invokes
+   * it, but 26.2-u1 is known to expose the hook object without firing it.
    */
   inWorld() {
+    if (this.win?.__eaglerGameReady !== true) return false;
+    if (this.win?.minecraftServer == null) return false;
     const state = this.win?.__eaghacksScreenState;
-    return this.win?.__eaglerGameReady === true
-      && this.win?.__eaghacksScreenHookSeen === true
-      && !!state
-      && state.screenName === null;
+    if (this.win?.__eaghacksScreenHookSeen === true && state) {
+      return state.screenName === null;
+    }
+    return true;
   }
 
   /**
-   * Eaglercraft itself sets window.minecraftServer to "singleplayer" when the
-   * integrated server is launched. Null/unknown and any other server value stay
+   * Eaglercraft sets window.minecraftServer to "singleplayer" for the
+   * integrated server. Null/unknown and any other server value stay
    * conservative and are treated as remote for local-test-only modules.
    */
   isRemote() {
     return this.win?.minecraftServer !== 'singleplayer';
+  }
+
+  _clientGuiOpen() {
+    return !!this.doc?.getElementById?.('meteor-clickgui')?.classList?.contains?.('mt-open');
+  }
+
+  /** Safe moment to inject held/click gameplay input. */
+  _gameplayInputAllowed() {
+    if (!this.inWorld() || this._clientGuiOpen()) return false;
+    const state = this.win?.__eaghacksScreenState;
+    if (this.win?.__eaghacksScreenHookSeen === true && state) return state.screenName === null;
+    // 26.2-u1 does not fire screenChanged. Pointer lock is the browser-level
+    // signal that the game, rather than a menu, currently owns mouse/keyboard.
+    const canvas = this.getGameCanvas();
+    return !!canvas && this.doc?.pointerLockElement === canvas;
   }
 
   _inputTarget() {
@@ -186,27 +210,27 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   attack(_entity) {
-    if (!this.inWorld()) return false;
+    if (!this._gameplayInputAllowed()) return false;
     return this._dispatchMouse(0, 'mousedown') && this._dispatchMouse(0, 'mouseup');
   }
 
   useItem(_hand) {
-    if (!this.inWorld()) return false;
+    if (!this._gameplayInputAllowed()) return false;
     return this._dispatchMouse(2, 'mousedown') && this._dispatchMouse(2, 'mouseup');
   }
 
   setForward(on) {
-    if (!this.inWorld() && on) return false;
+    if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('KeyW', !!on);
   }
 
   setSneaking(on) {
-    if (!this.inWorld() && on) return false;
+    if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('ShiftLeft', !!on);
   }
 
   jump() {
-    if (!this.inWorld()) return false;
+    if (!this._gameplayInputAllowed()) return false;
     return this._tapKey('Space');
   }
 
@@ -235,6 +259,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       screenHookSeen: this.win?.__eaghacksScreenHookSeen === true,
       screenName: screen ? screen.screenName : undefined,
       inWorld: this.inWorld(),
+      gameplayInputAllowed: this._gameplayInputAllowed(),
       server: this.win?.minecraftServer ?? null,
       remote: this.isRemote(),
       wasmInstantiated: !!tv,
