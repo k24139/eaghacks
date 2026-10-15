@@ -1,215 +1,227 @@
-# Eaglercraft 26.2-u1 — Meteor-style client framework
+# Eaglercraft 26.2-u1 — Meteor-style browser client
 
-A modular, Meteor Client-inspired framework (module registry, event bus, settings,
-ClickGUI, HUD, persistent profiles) built to be injected into the **Eaglercraft
-26.2-u1** client HTML.
+A Meteor Client-inspired module framework and browser integration for the **authoritative Eaglercraft 26.2-u1 standalone HTML**.
 
----
+The project now includes the module registry, settings system, ClickGUI, HUD, profiles/configuration, Eaglercraft-specific browser adapter, standalone HTML injector, automated tests, and CI build pipeline.
 
-## ⚠️ Read this first: the game files were not delivered
+## Current status
 
-The task supplies two input files:
+The original `eaglercraft-26.2-u1.html` was supplied and inspected directly during integration work. A standalone integrated file has been produced outside the repository:
 
-- `eaglercraft-26.2-u1.html` — the authoritative game base
-- `eaglercraft-26.2-u1-meteor-bridge.html` — the previous interface attempt
+`Eaglercraft-26.2-u1-Meteor.html`
 
-**Neither file is present in this environment.** Verified by searching the entire
-filesystem and the repository:
+Latest verified standalone build:
 
-```
-$ find / -iname "*eaglercraft*"   -> (no results)
-$ find / -iname "*meteor*"        -> (only unrelated python packages)
-$ git log --oneline               -> 1ccda03 Create README.md
-$ git ls-tree -r freebuff-base    -> (empty)
-$ git cat-file --batch-all-objects --batch-check | awk '$3>100000'  -> (no large blobs)
-```
+- Original HTML: **75,560,623 bytes**
+- Original SHA-256: `cd1caacf8440c0cbac94e35bd4686ed5397076522007330aa873eca23c134114`
+- Integrated HTML: **75,793,980 bytes**
+- Integrated SHA-256: `05b07f5b2449aa2676081dc1ee72e20019cda44dfe81f41e71ccc383aceb4eb6`
+- The injector adds exactly two integration regions. Removing those regions reproduces the supplied original HTML exactly, so the embedded Eaglercraft WASM/EPK payload is not rewritten.
 
-The repository contained only an empty `README.md`. The two HTML files were never
-uploaded to this workspace, and there are no attachments in the conversation.
+The large game HTML is deliberately not committed to Git history. `tools/inject-eaglercraft.mjs` reproduces it from the authoritative base.
 
-Because of that, one part of the brief cannot be completed honestly:
+### Real-client validation
 
-| Deliverable | Status | Why |
-| --- | --- | --- |
-| `Eaglercraft-26.2-u1-Meteor.html` (playable client) | **Not produced** | Requires the supplied game HTML. Fabricating an "Eaglercraft" would violate rule 2 (do not create a fake client). |
-| `Eaglercraft-26.2-u1-Meteor-Source.zip` | **Produced** (framework only) | Contains everything that does not depend on the game file. |
-| Framework + ClickGUI + HUD + config + tests | **Produced and verified** | Built and tested here. |
-| Game-integrated modules (ESP, KillAura, Flight, …) | **Implemented against a documented adapter contract, not verified in-game** | The adapter needs the real client's objects to bind to. |
+The integrated 75 MB file was booted in a fresh Chromium session using a DevTools `Page.setDocumentContent` path to work around this environment's policy blocking local URLs.
 
-**To finish the job, re-attach `eaglercraft-26.2-u1.html` (and the bridge file).
-Everything below then plugs in through a single file: `src/core/adapter.js`.**
+Verified against the **actual Eaglercraft page**, not the synthetic harness:
 
-Nothing in this repository pretends the game works. No module claims to be
-verified in-game; see [`MODULES.md`](./MODULES.md) and
-[`TEST_RESULTS.md`](./TEST_RESULTS.md).
+- TeaVM/WASM instantiated.
+- `window.__eaglerGameReady === true`.
+- Actual WebGL2 game canvas created.
+- Eaglercraft loaded all embedded resources and handed off to Minecraft.
+- `window.EaglerHacks` loaded alongside the game.
+- 77 modules registered.
+- Right Shift opened the Meteor-style ClickGUI over the real Eaglercraft page.
+- Nine ClickGUI windows rendered.
+- No uncaught top-level runtime exception occurred during the validated boot.
+
+The environment still could not complete a persistent single-player world startup because the DevTools-loaded page has an opaque origin and Eaglercraft's IndexedDB-backed filesystem falls back to RAM storage. Therefore AutoWalk/AutoClicker are covered by adapter/integration tests but have **not** yet been end-to-end exercised inside a completed real world in this environment.
+
+See [`TEST_RESULTS.md`](./TEST_RESULTS.md) and [`INTEGRATION.md`](./INTEGRATION.md).
 
 ---
 
-## What was built, and what was actually verified
+## What works on the standalone 26.2-u1 build
 
-The framework is complete, and it is verified in **two** ways:
+Browser-bound functionality that does not require direct Minecraft object access is integrated:
 
-- **82 automated tests** (`node --test`, jsdom) — all passing.
-- **18 headless-Chromium checks** against the live harness — all passing,
-  including 60.2 fps with nine modules enabled.
+- Meteor-style ClickGUI.
+- Right Shift open/close handling.
+- Module search, settings widgets, keybinds and favourites.
+- Persistent profiles when browser storage is available.
+- In-memory configuration fallback when storage access is denied.
+- DOM HUD framework and transparent Canvas2D overlay.
+- FPS, CPS, keystrokes, session timer, active-module list, custom text and performance HUD elements.
+- Custom Crosshair.
+- Pointer-lock integration.
+- Eaglercraft session detection through `window.minecraftServer`.
+- Browser keyboard/mouse input injection using the same event mechanism retained in the 26.2-u1 client.
+- AutoWalk through held `KeyW` injection.
+- AutoClicker through mouse input injection.
+- Automatic held-key release when gameplay loses browser input control.
+- Local/remote guard for automated gameplay modules.
 
+`AutoWalk` and `AutoClicker` are local-test-only by default. Eaglercraft's integrated single-player server identifies itself with `window.minecraftServer === "singleplayer"`. Unknown/remote sessions are blocked unless explicitly opted in through:
+
+```js
+EaglerHacks.allowMultiplayerCombat(true)
 ```
-$ npm test
-ℹ tests 82
-ℹ pass 82
-ℹ fail 0
 
-$ node tools/browser-check.mjs
-18/18 browser checks passed.   (60.2 fps with 9 modules enabled)
-```
+Disable the override with `false`.
 
-Verified in a real browser: the game loop boots, `Right Shift` opens the ClickGUI,
-left-click toggles a module, right-click expands its settings, search filters the
-catalogue, HUD elements render live text, `Tracers` really changes rendered
-pixels, and module state survives a page reload.
+### Capability-gated native-state features
+
+The supplied Wasm-GC module expands to **102,444,741 bytes** and exports only 12 symbols: TeaVM glue/tags, `main`, and `teavm.memory`. It does not export browser-callable player, world, entity, inventory, camera, block-query or movement-physics accessors.
+
+Because of that, the project intentionally refuses to pretend that native-state features work. These remain unavailable until a stable game/source-level hook is found:
+
+- real Entity ESP / Tracers / Nametags;
+- KillAura targeting / Aim Assist / TriggerBot targeting;
+- Flight / Speed / Step / NoFall / direct physics changes;
+- real coordinates, player health, velocity and effects;
+- inventory/armor automation;
+- block scanning, Storage ESP and X-Ray;
+- direct FOV/gamma/tick-rate manipulation;
+- packet/network internals.
+
+Those modules remain in the catalogue but capability checks refuse activation when the runtime cannot support them.
 
 ---
 
-## Quick start
+## CI status
+
+Latest integration CI run used the `meteor-client-integration` branch and passed:
+
+```text
+Node tests:        92 / 92
+Chromium harness:  18 / 18
+Modules:           77
+Harness FPS:       ~60 fps with 9 modules enabled
+```
+
+The Chromium harness verifies ClickGUI interaction, settings, search, HUD rendering, module persistence, input routing and render-module behavior against the synthetic test world. It is separate from the real-game boot described above.
+
+---
+
+## Build the standalone client
+
+Prerequisites: Node.js and the authoritative `eaglercraft-26.2-u1.html`.
 
 ```bash
-npm install                  # installs esbuild + jsdom + playwright (dev only)
-npm run build                # -> dist/meteor.bundle.js (single injectable IIFE)
-npm test                     # 82 unit/integration tests
-npm run serve                # http://localhost:3000/  -> the integration harness
+npm ci
+npm test
+npm run build
+npm run build:eagler -- /path/to/eaglercraft-26.2-u1.html
 ```
 
-The harness at `/` runs the framework against a **synthetic top-down world**
-(`harness/index.html`) so the GUI, HUD and render modules can be exercised without
-the game. It is clearly labelled as a harness, not the game.
+The final command produces:
 
-Headless browser checks:
+```text
+Eaglercraft-26.2-u1-Meteor.html
+```
+
+`tools/inject-eaglercraft.mjs`:
+
+1. validates markers unique to the expected 26.2-u1 standalone HTML;
+2. installs the Eaglercraft preboot/browser bridge;
+3. bundles `src/integration/bootstrap.js` and the existing framework;
+4. injects the dependency-free integration before `</body>`;
+5. leaves the embedded game payload intact.
+
+To test the framework harness separately:
 
 ```bash
-node tools/serve.mjs 3000 &
-node tools/browser-check.mjs          # writes artifacts/*.png
+node tools/serve.mjs 3000 .
+npm run test:browser
 ```
-
-`tools/browser-check.mjs` needs a Chromium that can start. On a bare container you
-may need to supply `libnspr4`, `libnss3`, X11 libs and a font (see
-"Browser notes" in [`TEST_RESULTS.md`](./TEST_RESULTS.md)).
 
 ---
 
 ## Architecture
 
-```
+```text
 src/
   core/
-    event-bus.js        typed bus, priorities, cancellation, subscription bags
-    settings.js         Bool/Int/Double/String/Enum/Color/Keybind + groups
-    module.js           Module base class + lifecycle + guarded subscriptions
-    module-manager.js   registry, categories, search, favourites, error isolation
-    keybind-manager.js  the single owner of DOM input listeners
-    config-manager.js   profiles, debounced autosave, import/export, corruption recovery
-    adapter.js          ★ the only file that touches the game
-    stats.js            FPS / frame time / module update cost / memory
-    meteor.js           bootstrap: owns the tick, wires every subsystem
-  gui/
-    theme.js            dark theme, CSS custom properties, persistence
-    widgets.js          setting-type -> DOM widget factory
-    clickgui.js         draggable category windows, search, config window
-    hud.js              HUD elements, drag, edge snap, layout persistence
-  modules/              the module catalogue (77 modules)
-  index.js              public API + window.Meteor global
+    adapter.js               runtime-neutral GameAdapter contract
+    event-bus.js             priorities, cancellation, subscription bags
+    settings.js              typed settings + groups
+    module.js                lifecycle, capability + remote-session guards
+    module-manager.js        registry, categories, search, favourites, isolation
+    keybind-manager.js       DOM input ownership
+    config-manager.js        profiles, autosave, import/export, recovery
+    stats.js                 FPS/frame/module timing
+    meteor.js                framework bootstrap and tick ownership
 
-tests/                  node:test + jsdom  (82 tests)
-tools/                  smoke, docs generator, static server, browser checks
-harness/index.html      synthetic-world harness
-dist/meteor.bundle.js   generated IIFE build
+  integration/
+    eaglercraft-adapter.js   verified 26.2-u1 browser boundary
+    bootstrap.js             real Eaglercraft integration entry point
+
+  gui/
+    theme.js
+    widgets.js
+    clickgui.js
+    hud.js
+
+  modules/                   77-module catalogue
+  index.js                   public framework API
+
+tests/                       Node/jsdom tests
+tools/
+  inject-eaglercraft.mjs      standalone HTML builder
+  browser-check.mjs           Chromium harness QA
+  serve.mjs                   harness server
+  gen-docs.mjs                module catalogue generator
+harness/index.html            synthetic test world
+.github/workflows/
+  integration-ci.yml          Node + build + Chromium + artifact pipeline
 ```
 
-### The integration seam (`src/core/adapter.js`)
+### Integration boundary
 
-Every game touch goes through one object instead of scatted lookups into the
-compiled runtime. An adapter advertises **capabilities** (`world`, `entities`,
-`blocks`, `inventory`, `movement`, `flight`, `render`, `hud`, `input`, `network`,
-`chat`, `timing`), and a module declares `requiredCapabilities`. The manager
-refuses to enable a module whose capabilities are missing, so "unsupported on this
-runtime" is a first-class, honest state instead of a toggle that silently does
-nothing.
+Every game touch goes through a `GameAdapter`. Capabilities include `world`, `entities`, `blocks`, `inventory`, `movement`, `flight`, `render`, `hud`, `input`, `network`, `chat`, and `timing`.
 
-To bind the real game you implement the same methods the harness does:
-`getPlayer`, `getEntities`, `getWorld`, `worldToScreen`, `attack`, `setFlying`,
-`setStepHeight`, `findBlocks`, … and a small glue layer that emits
-`Events.RenderWorld` / `Events.RenderHud` / `Events.ClientTick` from the game's
-own loop.
+The real Eaglercraft adapter currently advertises only capabilities verified at the browser boundary (`input` and `hud`). This is deliberate: advertising `world` merely because the game is running would incorrectly make ESP/movement modules look functional without actual player/entity access.
+
+`window.EaglerHacks.diagnostics()` exposes the current adapter, capabilities, game-ready state, session/server state, input availability and framework diagnostics.
 
 ---
 
-## ClickGUI
+## ClickGUI controls
 
 | Action | Control |
 | --- | --- |
-| Open / close | `Right Shift` (middle mouse also opens) |
+| Open / close | `Right Shift` |
 | Toggle a module | left-click its row |
-| Expand settings inline | right-click its row |
-| Favourite a module | middle-click its row |
-| Move a window | drag its header |
-| Collapse a window | click the ▾ / ▸ |
-| Search | type in the Search window |
-| Assign a keybind | open settings → click the bind button → press a key |
-| Reset a module | open settings → "Reset settings" |
+| Expand settings | right-click its row |
+| Favourite | middle-click its row |
+| Move window | drag its header |
+| Search | Search window |
+| Assign bind | expand module → bind control → press key |
+| Edit HUD | Config → Edit HUD layout |
 
-Settings widgets: boolean checkbox, number slider + readout, dropdown, colour
-picker (RGBA sliders + hex, with rainbow), keybind capture, text input, expandable
-groups.
-
-Categories: Combat, Movement, Render, Player, World, Misc, HUD, Config.
-
-## HUD
-
-HUD elements are ordinary modules in the `HUD` category. Enable them from the
-ClickGUI, then use **Config → Edit HUD layout** to drag them; they snap to screen
-edges and their position/scale/opacity/colour persist.
-
-## Configuration
-
-- Automatic debounced save to `localStorage`; also saved on `beforeunload`.
-- Named profiles (create / switch / delete) in the Config window.
-- Export/import as Base64 through the Config window.
-- Corrupt data is **quarantined**, never fatal: unreadable JSON is copied to
-  `<key>.corrupt`, per-field failures fall back to defaults, and startup continues.
+The GUI releases pointer lock when it opens so it can receive mouse input. Automated held gameplay input is also released when the game loses pointer-lock ownership.
 
 ---
 
-## Browser support
+## Configuration
 
-Tested automation target: Chromium 156 (headless shell) via Playwright.
-The framework deliberately avoids anything exotic: `localStorage`, Canvas2D,
-CSS custom properties, `requestAnimationFrame`, ES2020. It should run in any
-current Chrome/Edge/Firefox/Safari. `performance.memory` is Chromium-only and the
-Performance Monitor degrades to "memory: unavailable in this browser" elsewhere.
+- Debounced `localStorage` persistence.
+- Save on navigation/visibility changes.
+- Named profiles.
+- Base64 import/export.
+- Corrupt-data quarantine/recovery.
+- If access to `window.localStorage` itself throws (opaque/sandboxed origins), the Eaglercraft bootstrap falls back to an in-memory Storage-like backend rather than failing startup.
+
+---
 
 ## Known limitations
 
-1. **No in-game verification.** Every module that needs the game is implemented
-   against the adapter contract but has never run inside Eaglercraft, because the
-   client HTML was not supplied. Statuses in `MODULES.md` reflect this.
-2. **Eight modules are explicitly unsupported**, each with a stated reason
-   (X-Ray, NoSlow, Jesus, Spider, AutoTotem, Chest Organizer, Chat Timestamps,
-   Light Level Overlay). They appear in the GUI, greyed out, and refuse to
-   enable — they are not fake toggles.
-3. **Deriving the exact Eaglercraft internals is not possible from here.** Public
-   information indicates the official build is *Eaglercraft 26.2 (zeus)*, that
-   "26.2-u1" is a community distribution label, and that no public source for the
-   26.2 client was found. The version was **not** changed or substituted, and no
-   other build was downloaded to stand in for the supplied file.
-4. **Module coverage is intentionally conservative.** Ten thoroughly working
-   modules beat a hundred broken ones; the catalogue is complete, but only the
-   framework-level and HUD modules carry a "tested" status.
+1. The exact real standalone client has been booted and its ClickGUI verified, but a complete persistent single-player world could not be reached in this execution environment because its DevTools-loaded opaque origin denies the IndexedDB storage Eaglercraft expects.
+2. Direct Minecraft state is compiled behind TeaVM/Wasm-GC and not exported to JavaScript. Native-state modules remain capability-gated.
+3. The 77-module catalogue describes implemented framework code, not 77 features proven against the real game. `MODULES.md` and `TEST_RESULTS.md` distinguish browser/harness coverage from unavailable game hooks.
+4. Eight modules are explicitly marked unsupported where there is no known compatible hook rather than shipping nonfunctional toggles.
 
 ## Attribution / licences
 
-- Architecture and interface patterns are modelled on
-  [Meteor Client](https://github.com/MeteorDevelopment/meteor-client)
-  (GPL-3.0). This project is an independent JavaScript reimplementation for the
-  browser runtime — it contains **no Meteor code**. If it is ever distributed
-  alongside Meteor-derived work, GPL-3.0 obligations apply.
-- No third-party runtime dependencies are bundled; `esbuild`, `jsdom` and
-  `playwright` are build/test tools only.
+The architecture and interface are inspired by [Meteor Client](https://github.com/MeteorDevelopment/meteor-client). This project is an independent browser-side implementation and does not directly run Meteor's Fabric JAR inside Eaglercraft.
