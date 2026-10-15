@@ -17,9 +17,11 @@ Each real Minecraft client tick atomically publishes `globalThis.__eaghacksNativ
 
 - world time and dimension
 - player position, yaw/pitch, health, hunger, on-ground state and velocity
-- a bounded entity snapshot (max 512), including IDs, positions, dimensions, health and player/hostile/passive flags
+- a bounded entity snapshot (max 512), including IDs, positions, dimensions, health, player/hostile/passive flags and real line-of-sight
 - selected hotbar slot metadata
 - current crosshair entity ID
+- camera position plus the live projection × view-rotation matrix for world-to-screen overlays
+- hotbar and armor metadata including registry ID, name, count, durability and food nutrition/saturation
 
 Commands are written by the browser adapter to `globalThis.__eaghacksNativeCommands` and consumed on the next client tick. The first bridge supports rotation, velocity, jump, sprint, sneak, selected-slot changes, direct entity attacks and item use.
 
@@ -37,6 +39,8 @@ Rebuild the TeaVM client using the matching source project's documented Java 25 
 
 The bridge intentionally does not advertise the broad `movement` capability yet. That contract also promises Step, NoFall, SafeWalk and other hooks this first bridge does not implement. Instead the adapter advertises `native-direct`; the Eaglercraft bootstrap maps only modules whose concrete method needs are currently satisfied.
 
-Likewise, selected-slot metadata is published, but the adapter does not advertise full `inventory` support until real hotbar and armor contents are added.
+Hotbar and armor metadata are published under `native-inventory-read`; the adapter still does not advertise broad `inventory` mutation support, so Inventory Manager/AutoArmor remain gated.
+
+Camera state advertises `render`, enabling world-to-screen consumers such as Entity ESP, Tracers and Nametags. Fullbright, Zoom and NoHurtCam remain behind separate granular write capabilities because camera projection access does not imply gamma/FOV/hurt-camera control.
 
 The original browser-only integration remains the fallback when the native bridge is absent.
