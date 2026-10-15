@@ -229,6 +229,16 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     return this._setSyntheticKey('ShiftLeft', !!on);
   }
 
+  /**
+   * Eaglercraft's default sprint key is left control. Browser injection cannot
+   * read Minecraft's internal sprint state, but it can faithfully hold/release
+   * the configured default key through the same DOM input path as the player.
+   */
+  setSprinting(on) {
+    if (on && !this._gameplayInputAllowed()) return false;
+    return this._setSyntheticKey('ControlLeft', !!on);
+  }
+
   jump() {
     if (!this._gameplayInputAllowed()) return false;
     return this._tapKey('Space');
