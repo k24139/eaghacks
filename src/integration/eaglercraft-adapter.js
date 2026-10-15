@@ -1,11 +1,7 @@
 /**
  * Browser-facing Eaglercraft 26.2-u1 adapter.
- *
- * The standalone TeaVM/WASM build does not export player/world/entity objects,
- * so this adapter deliberately exposes only capabilities that can be verified
- * at the browser boundary. The injector attempts to wrap the optional
- * eaglercraftXOpts screenChanged hook; 26.2-u1 also exposes minecraftServer,
- * which is used as the verified fallback for loaded-session detection.
+ * The stock binary exposes browser-boundary hooks; a source-built client can
+ * additionally publish the explicit __eaghacksNativeState bridge.
  */
 import { GameAdapter } from '../core/adapter.js';
 
@@ -95,18 +91,11 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     if (state?.player && state?.world) wanted.add('world');
     if (Array.isArray(state?.entities)) wanted.add('entities');
     if (state?.features?.inventory === true && state?.inventory && Array.isArray(state.inventory.hotbar)) wanted.add('inventory');
-    // The first native bridge publishes direct velocity/rotation/jump actions,
-    // but does not yet implement every legacy movement method (step height,
-    // safe-walk, no-fall, etc.). Do not advertise the broad movement capability
-    // until that contract is complete.
     if (state?.features?.directMovement === true || state?.features?.combat === true) wanted.add('native-direct');
     if (state?.features?.flight === true) wanted.add('flight');
     if (state?.features?.chat === true) wanted.add('chat');
     if (state?.features?.network === true) wanted.add('network');
-
-    for (const cap of this._nativeCapabilities) {
-      if (!wanted.has(cap)) this.capabilities.delete(cap);
-    }
+    for (const cap of this._nativeCapabilities) if (!wanted.has(cap)) this.capabilities.delete(cap);
     for (const cap of wanted) this.capabilities.add(cap);
     this._nativeCapabilities = wanted;
     this._nativeActive = !!state;
@@ -145,28 +134,19 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   getViewport() {
-    return {
-      width: Math.max(1, this.win?.innerWidth || 1),
-      height: Math.max(1, this.win?.innerHeight || 1),
-    };
+    return { width: Math.max(1, this.win?.innerWidth || 1), height: Math.max(1, this.win?.innerHeight || 1) };
   }
-
   getCanvas() { return this.overlay; }
   getGameCanvas() { return this.doc?.querySelector?.('#game_frame canvas') ?? null; }
   getFps() { return this._fps; }
   getFrameTimeMs() { return this._lastFrameMs; }
   getSessionSeconds() { return (Date.now() - this.startedAt) / 1000; }
-
   getPlayer() { return this._nativeState()?.player ?? null; }
   getWorld() { return this._nativeState()?.world ?? null; }
-  getEntities() {
-    const entities = this._nativeState()?.entities;
-    return Array.isArray(entities) ? entities : [];
-  }
+  getEntities() { const v = this._nativeState()?.entities; return Array.isArray(v) ? v : []; }
   getCrosshairTargetEntity() {
     const id = this._nativeState()?.crosshairEntityId;
-    if (!Number.isInteger(id) || id < 0) return null;
-    return this.getEntities().find((entity) => entity?.id === id) ?? null;
+    return Number.isInteger(id) && id >= 0 ? this.getEntities().find((e) => e?.id === id) ?? null : null;
   }
   getInventory() { return this._nativeState()?.inventory ?? null; }
   getSelectedSlot() {
@@ -174,41 +154,36 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     return Number.isInteger(slot) ? slot : -1;
   }
   selectSlot(index) {
-    if (!Number.isInteger(index) || index < 0 || index > 8) return false;
-    if (this._nativeState()?.inventory) return this._queueNative('selectSlot', index);
-    return false;
+    return Number.isInteger(index) && index >= 0 && index <= 8 && !!this._nativeState()?.inventory
+      ? this._queueNative('selectSlot', index) : false;
   }
   isOnGround() { return this._nativeState()?.player?.onGround === true; }
   getPlayerVelocity() {
-    const velocity = this._nativeState()?.player?.velocity;
-    if (!velocity) return null;
-    const { x, y, z } = velocity;
-    return [x, y, z].every(Number.isFinite) ? { x, y, z } : null;
+    const v = this._nativeState()?.player?.velocity;
+    return v && [v.x, v.y, v.z].every(Number.isFinite) ? { x: v.x, y: v.y, z: v.z } : null;
   }
   setPlayerVelocity(x, y, z) {
-    if (![x, y, z].every(Number.isFinite)) return false;
-    return this._queueNative('velocity', { x, y, z });
+    return [x, y, z].every(Number.isFinite) ? this._queueNative('velocity', { x, y, z }) : false;
   }
-  setRotation(yaw, pitch) {
+  setRotation(yaw, pitch, speed = 1) {
     if (![yaw, pitch].every(Number.isFinite)) return false;
-    return this._queueNative('rotation', { yaw, pitch });
+    const current = this._nativeState()?.player;
+    const strength = Number.isFinite(speed) ? Math.max(0, Math.min(1, speed)) : 1;
+    if (current && strength < 1) {
+      const wrap = (angle) => ((angle + 540) % 360) - 180;
+      yaw = (current.yaw ?? 0) + wrap(yaw - (current.yaw ?? 0)) * strength;
+      pitch = (current.pitch ?? 0) + (pitch - (current.pitch ?? 0)) * strength;
+    }
+    return this._queueNative('rotation', { yaw, pitch: Math.max(-90, Math.min(90, pitch)) });
   }
 
   inWorld() {
-    if (this.win?.__eaglerGameReady !== true) return false;
-    if (this.win?.__eaglerWorldReady !== true) return false;
-    if (this.win?.minecraftServer == null) return false;
+    if (this.win?.__eaglerGameReady !== true || this.win?.__eaglerWorldReady !== true || this.win?.minecraftServer == null) return false;
     const state = this.win?.__eaghacksScreenState;
-    if (this.win?.__eaghacksScreenHookSeen === true && state) return state.screenName === null;
-    return true;
+    return this.win?.__eaghacksScreenHookSeen === true && state ? state.screenName === null : true;
   }
-
   isRemote() { return this.win?.minecraftServer !== 'singleplayer'; }
-
-  _clientGuiOpen() {
-    return !!this.doc?.getElementById?.('meteor-clickgui')?.classList?.contains?.('mt-open');
-  }
-
+  _clientGuiOpen() { return !!this.doc?.getElementById?.('meteor-clickgui')?.classList?.contains?.('mt-open'); }
   _gameplayInputAllowed() {
     if (!this.inWorld() || this._clientGuiOpen()) return false;
     const state = this.win?.__eaghacksScreenState;
@@ -216,95 +191,67 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     const canvas = this.getGameCanvas();
     return !!canvas && this.doc?.pointerLockElement === canvas;
   }
-
   _inputTarget() { return this.getGameCanvas() ?? this.doc?.getElementById?.('game_frame') ?? null; }
 
   _dispatchKey(code, down) {
     const target = this._inputTarget();
     const info = KEY_INFO[code];
-    const KeyboardEventCtor = this.win?.KeyboardEvent;
-    if (!target?.dispatchEvent || !info || typeof KeyboardEventCtor !== 'function') return false;
+    const Ctor = this.win?.KeyboardEvent;
+    if (!target?.dispatchEvent || !info || typeof Ctor !== 'function') return false;
     try {
-      return target.dispatchEvent(new KeyboardEventCtor(down ? 'keydown' : 'keyup', {
-        key: info.key,
-        code: info.code,
-        bubbles: true,
-        cancelable: true,
-        repeat: false,
-      }));
+      return target.dispatchEvent(new Ctor(down ? 'keydown' : 'keyup', { key: info.key, code: info.code, bubbles: true, cancelable: true, repeat: false }));
     } catch { return false; }
   }
-
   _setSyntheticKey(code, on) {
     const held = this._syntheticHeld.has(code);
     if (!!on === held) return true;
     const ok = this._dispatchKey(code, !!on);
     if (!ok) return false;
-    if (on) this._syntheticHeld.add(code);
-    else this._syntheticHeld.delete(code);
+    if (on) this._syntheticHeld.add(code); else this._syntheticHeld.delete(code);
     return true;
   }
-
   _tapKey(code) { return this._dispatchKey(code, true) && this._dispatchKey(code, false); }
-
   _dispatchMouse(button, type) {
     const target = this._inputTarget();
-    const MouseEventCtor = this.win?.MouseEvent;
-    if (!target?.dispatchEvent || typeof MouseEventCtor !== 'function') return false;
+    const Ctor = this.win?.MouseEvent;
+    if (!target?.dispatchEvent || typeof Ctor !== 'function') return false;
     const rect = target.getBoundingClientRect?.() ?? { left: 0, top: 0, width: 1, height: 1 };
-    const clientX = rect.left + Math.max(1, rect.width || 1) / 2;
-    const clientY = rect.top + Math.max(1, rect.height || 1) / 2;
     try {
-      return target.dispatchEvent(new MouseEventCtor(type, {
-        button,
-        buttons: type === 'mousedown' ? (button === 0 ? 1 : button === 2 ? 2 : 4) : 0,
-        clientX,
-        clientY,
-        bubbles: true,
-        cancelable: true,
+      return target.dispatchEvent(new Ctor(type, {
+        button, buttons: type === 'mousedown' ? (button === 0 ? 1 : button === 2 ? 2 : 4) : 0,
+        clientX: rect.left + Math.max(1, rect.width || 1) / 2,
+        clientY: rect.top + Math.max(1, rect.height || 1) / 2,
+        bubbles: true, cancelable: true,
       }));
     } catch { return false; }
   }
 
   attack(entity) {
-    if (Number.isInteger(entity?.id) && this._nativeState()?.features?.combat === true) {
-      return this._queueNative('attackEntityId', entity.id);
-    }
-    if (!this._gameplayInputAllowed()) return false;
-    return this._dispatchMouse(0, 'mousedown') && this._dispatchMouse(0, 'mouseup');
+    if (Number.isInteger(entity?.id) && this._nativeState()?.features?.combat === true) return this._queueNative('attackEntityId', entity.id);
+    return this._gameplayInputAllowed() && this._dispatchMouse(0, 'mousedown') && this._dispatchMouse(0, 'mouseup');
   }
-
   useItem(hand) {
-    if (this._nativeState()?.features?.combat === true) {
-      return this._queueNative('useItem', hand === 'offhand' ? 'offhand' : 'mainhand');
-    }
-    if (!this._gameplayInputAllowed()) return false;
-    return this._dispatchMouse(2, 'mousedown') && this._dispatchMouse(2, 'mouseup');
+    if (this._nativeState()?.features?.combat === true) return this._queueNative('useItem', hand === 'offhand' ? 'offhand' : 'mainhand');
+    return this._gameplayInputAllowed() && this._dispatchMouse(2, 'mousedown') && this._dispatchMouse(2, 'mouseup');
   }
-
   setForward(on) {
     if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('KeyW', !!on);
   }
-
   setSneaking(on) {
     if (this._nativeState()?.features?.directMovement === true) return this._queueNative('sneaking', !!on);
     if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('ShiftLeft', !!on);
   }
-
   setSprinting(on) {
     if (this._nativeState()?.features?.directMovement === true) return this._queueNative('sprinting', !!on);
     if (on && !this._gameplayInputAllowed()) return false;
     return this._setSyntheticKey('ControlLeft', !!on);
   }
-
   jump() {
     if (this._nativeState()?.features?.directMovement === true) return this._queueNative('jump', true);
-    if (!this._gameplayInputAllowed()) return false;
-    return this._tapKey('Space');
+    return this._gameplayInputAllowed() ? this._tapKey('Space') : false;
   }
-
   setPointerLock(locked) {
     if (!locked) {
       if (!this.doc?.pointerLockElement) return true;
@@ -313,11 +260,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     }
     const target = this.getGameCanvas();
     if (!target?.requestPointerLock) return false;
-    try {
-      const result = target.requestPointerLock();
-      result?.catch?.(() => {});
-      return true;
-    } catch { return false; }
+    try { const result = target.requestPointerLock(); result?.catch?.(() => {}); return true; } catch { return false; }
   }
 
   diagnostics() {
@@ -332,20 +275,14 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       worldReady: this.win?.__eaglerWorldReady === true,
       screenHookSeen: this.win?.__eaghacksScreenHookSeen === true,
       screenName: screen ? screen.screenName : undefined,
-      inWorld: this.inWorld(),
-      gameplayInputAllowed: this._gameplayInputAllowed(),
-      server: this.win?.minecraftServer ?? null,
-      remote: this.isRemote(),
+      inWorld: this.inWorld(), gameplayInputAllowed: this._gameplayInputAllowed(),
+      server: this.win?.minecraftServer ?? null, remote: this.isRemote(),
       wasmInstantiated: !!tv,
       wasmExports: tv?.instance?.exports ? Object.keys(tv.instance.exports) : [],
-      gameCanvasPresent: !!this.getGameCanvas(),
-      capabilities: [...this.capabilities],
-      nativeBridge: this._nativeActive,
-      nativeBridgeVersion: this._nativeState()?.version ?? null,
+      gameCanvasPresent: !!this.getGameCanvas(), capabilities: [...this.capabilities],
+      nativeBridge: this._nativeActive, nativeBridgeVersion: this._nativeState()?.version ?? null,
       nativeTick: this._nativeState()?.tick ?? null,
-      worldAccess: this._nativeActive
-        ? 'native bridge active'
-        : 'unavailable in stock binary: TeaVM exports do not expose player/world state',
+      worldAccess: this._nativeActive ? 'native bridge active' : 'unavailable in stock binary: TeaVM exports do not expose player/world state',
       syntheticHeldKeys: [...this._syntheticHeld],
     };
   }
