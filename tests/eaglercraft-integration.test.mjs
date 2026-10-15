@@ -22,6 +22,7 @@ function setPointerLock(dom, target) {
 
 function setScreen(dom, screenName) {
   dom.window.__eaglerGameReady = true;
+  dom.window.__eaglerWorldReady = true;
   dom.window.minecraftServer = 'singleplayer';
   dom.window.__eaghacksScreenHookSeen = true;
   dom.window.__eaghacksScreenState = {
@@ -71,6 +72,8 @@ test('26.2 minecraftServer fallback detects a loaded session without screenChang
   adapter.mount();
   dom.window.__eaglerGameReady = true;
   dom.window.minecraftServer = 'singleplayer';
+  assert.equal(adapter.inWorld(), false, 'server assignment alone is not a ready world');
+  dom.window.__eaglerWorldReady = true;
   assert.equal(adapter.inWorld(), true);
   assert.equal(adapter.diagnostics().gameplayInputAllowed, false, 'no pointer lock means a menu may own controls');
   setPointerLock(dom, game);
@@ -125,6 +128,7 @@ test('adapter releases held synthetic movement when gameplay loses control', () 
   const { dom, adapter, game } = setup();
   adapter.mount();
   dom.window.__eaglerGameReady = true;
+  dom.window.__eaglerWorldReady = true;
   dom.window.minecraftServer = 'singleplayer';
   setPointerLock(dom, game);
   const ups = [];
