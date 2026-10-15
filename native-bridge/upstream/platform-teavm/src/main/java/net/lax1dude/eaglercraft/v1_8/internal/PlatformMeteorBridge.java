@@ -23,15 +23,16 @@ public final class PlatformMeteorBridge {
             float health, float maxHealth, int hunger, boolean onGround,
             double vx, double vy, double vz, int selectedSlot, String name);
 
-    @JSBody(params = { "id", "name", "x", "y", "z", "width", "height", "health", "maxHealth", "player", "hostile", "passive", "invisible" }, script =
+    @JSBody(params = { "id", "name", "x", "y", "z", "width", "height", "health", "maxHealth", "player", "hostile", "passive", "invisible", "visible" }, script =
             "var s=globalThis.__eaghacksNativeNextState;if(!s)return;"
-          + "s.entities.push({id:id|0,name:String(name),x:+x,y:+y,z:+z,width:+width,height:+height,health:+health,maxHealth:+maxHealth,isPlayer:!!player,hostile:!!hostile,passive:!!passive,invisible:!!invisible,isSelf:(id|0)===(s.selfEntityId|0)});")
+          + "s.entities.push({id:id|0,name:String(name),x:+x,y:+y,z:+z,width:+width,height:+height,health:+health,maxHealth:+maxHealth,isPlayer:!!player,hostile:!!hostile,passive:!!passive,invisible:!!invisible,visible:!!visible,isSelf:(id|0)===(s.selfEntityId|0)});")
     public static native void publishEntity(int id, String name, double x, double y, double z,
             float width, float height, float health, float maxHealth,
-            boolean player, boolean hostile, boolean passive, boolean invisible);
+            boolean player, boolean hostile, boolean passive, boolean invisible, boolean visible);
 
     @JSBody(params = {}, script =
-            "var s=globalThis.__eaghacksNativeNextState;if(!s)return;globalThis.__eaghacksNativeState=s;delete globalThis.__eaghacksNativeNextState;")
+            "var s=globalThis.__eaghacksNativeNextState;if(!s)return;"
+          + "globalThis.__eaghacksNativeState=s;delete globalThis.__eaghacksNativeNextState;")
     public static native void endFrame();
 
     @JSBody(params = {}, script = "var c=globalThis.__eaghacksNativeCommands;if(!c||typeof c.attackEntityId!=='number')return -1;var v=c.attackEntityId|0;delete c.attackEntityId;return v;")
