@@ -60,10 +60,12 @@ test("a remote session blocks intrusive combat modules until opted in", async ()
   const { client, adapter } = await bootTestClient({ inWorld: true });
   adapter.isRemote = () => true;
   const killaura = client.modules.get("kill-aura");
+
+  // localTestOnly is now enforced centrally before onEnable(), so a remote
+  // session must refuse activation immediately instead of enabling for one tick.
   killaura.enable();
-  assert.equal(killaura.active, true, "module can be toggled on");
-  killaura.onTick(1);
-  assert.equal(killaura.active, false, "tick disarms it on a remote session");
+  assert.equal(killaura.active, false, "remote session blocks activation at the module boundary");
+  assert.match(killaura.ineligibilityReason(), /remote sessions/);
 
   client.allowMultiplayerCombat = true;
   killaura.enable();
