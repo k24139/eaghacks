@@ -15,6 +15,18 @@ public final class PlatformMeteorBridge {
             "globalThis.__eaghacksNativeNextState={version:1,tick:Number(tick),world:{time:Number(gameTime),dimension:String(dimension),biome:null},player:null,entities:[],inventory:null,selfEntityId:selfEntityId|0,crosshairEntityId:crosshairEntityId|0,features:{directMovement:true,combat:true}};")
     public static native void beginFrame(long tick, long gameTime, String dimension, int selfEntityId, int crosshairEntityId);
 
+    @JSBody(params = { "x", "y", "z",
+            "m00", "m01", "m02", "m03", "m10", "m11", "m12", "m13",
+            "m20", "m21", "m22", "m23", "m30", "m31", "m32", "m33" }, script =
+            "var s=globalThis.__eaghacksNativeNextState;if(!s)return;"
+          + "s.camera={x:+x,y:+y,z:+z,m:[+m00,+m01,+m02,+m03,+m10,+m11,+m12,+m13,+m20,+m21,+m22,+m23,+m30,+m31,+m32,+m33]};"
+          + "s.features.render=true;")
+    public static native void publishCamera(double x, double y, double z,
+            float m00, float m01, float m02, float m03,
+            float m10, float m11, float m12, float m13,
+            float m20, float m21, float m22, float m23,
+            float m30, float m31, float m32, float m33);
+
     @JSBody(params = { "x", "y", "z", "yaw", "pitch", "health", "maxHealth", "hunger", "onGround", "vx", "vy", "vz", "selectedSlot", "name" }, script =
             "var s=globalThis.__eaghacksNativeNextState;if(!s)return;"
           + "s.player={x:+x,y:+y,z:+z,yaw:+yaw,pitch:+pitch,health:+health,maxHealth:+maxHealth,hunger:hunger|0,onGround:!!onGround,name:String(name),velocity:{x:+vx,y:+vy,z:+vz}};"
