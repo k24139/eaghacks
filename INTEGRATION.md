@@ -1,72 +1,182 @@
 # Eaglercraft 26.2-u1 integration
 
-The supplied 26.2-u1 HTML was inspected directly. Its `eag-inline-wasm-br` asset expands to a 102,444,741-byte WebAssembly module with **12 exports**: TeaVM glue functions/tags, `main`, and `teavm.memory`. There are no exported player, entity, world, inventory, movement, camera, or renderer accessors. Shell globals include `window.__tv`, `window.__eaglerWasmModule`, and `window.__eaglerGameReady`.
+The authoritative 26.2-u1 standalone HTML was inspected and exercised directly.
 
-The compiled client also retains Eaglercraft's supported `eaglercraftXOpts.hooks.screenChanged` launch hook and its own browser input self-test. The upstream Eaglercraft implementation calls `screenChanged(currentScreen != null ? currentScreen.getClass().getName() : null, ...)`, so `null` is a supported signal for normal gameplay with no GUI screen open. Eaglercraft also sets `window.minecraftServer = "singleplayer"` when launching the integrated single-player server.
+Its `eag-inline-wasm-br` asset expands to a **102,444,741-byte WebAssembly module** with only 12 exports: TeaVM glue/tags, `main`, and `teavm.memory`. It does **not** export browser-callable player, world, entity, inventory, movement, camera, renderer or packet objects.
+
+The browser shell does expose useful lifecycle/session state, including `window.__tv`, `window.__eaglerWasmModule`, `window.__eaglerGameReady`, `window.minecraftServer`, the real game canvas and normal DOM input events.
 
 ## Build
 
-1. Obtain the authoritative `eaglercraft-26.2-u1.html` (about 75 MB).
-2. Run `npm ci`.
-3. Run `npm test`.
-4. Run `npm run build`.
-5. Run `npm run build:eagler -- /path/to/eaglercraft-26.2-u1.html`.
-6. Open `Eaglercraft-26.2-u1-Meteor.html` in a compatible browser.
+```bash
+npm ci
+npm test
+npm run build
+npm run build:eagler -- /path/to/eaglercraft-26.2-u1.html
+```
 
-The injector first installs a small preboot wrapper around `window.eaglercraftXOpts`. That wrapper preserves any existing `screenChanged` callback and mirrors screen changes to `window.__eaghacksScreenState` plus the `eaghacks:screenChanged` DOM event. The injector then bundles `src/integration/bootstrap.js` and inserts the dependency-free integration before `</body>`.
+This creates:
 
-The original WASM and EPK payloads are left unchanged.
+```text
+Eaglercraft-26.2-u1-Meteor.html
+```
 
-## Verified browser-bound capabilities
+Latest verified build:
 
-The integration does **not** claim direct Minecraft object access. It currently exposes only capabilities that can be implemented through supported browser/Eaglercraft boundaries:
+- original size: **75,560,623 bytes**
+- original SHA-256: `cd1caacf8440c0cbac94e35bd4686ed5397076522007330aa873eca23c134114`
+- integrated size: **75,793,980 bytes**
+- integrated SHA-256: `05b07f5b2449aa2676081dc1ee72e20019cda44dfe81f41e71ccc383aceb4eb6`
 
-- ClickGUI and DOM HUD framework.
-- Separate transparent 2D HUD canvas above the game canvas.
-- FPS/frame-time/session timing from the browser frame loop.
-- Right Shift GUI handling and existing keybind manager.
-- Pointer-lock release/reacquire support.
-- Menu vs gameplay detection using the official `screenChanged` hook.
-- Single-player vs unknown/remote classification using `window.minecraftServer` (`"singleplayer"` is local).
-- Synthetic keyboard and mouse input using the same `KeyboardEvent`/`MouseEvent` dispatch pattern present in Eaglercraft 26.2-u1's compiled input self-test.
-- `AutoWalk` through held `KeyW` injection.
-- `AutoClicker` through left/right mouse event injection.
-- Custom Crosshair and browser/HUD-only modules when gameplay is active.
-- Automatic disabling/revalidation of gameplay-only modules when a GUI screen opens.
-- Cleanup of synthetically held keys on disable/shutdown.
+Removing the two injected EaglerHacks regions from the generated file reproduces the supplied original HTML exactly. The embedded game WASM/EPK payload is not rewritten.
 
-`AutoClicker` and `AutoWalk` are treated as local-test-only automation. On integrated single-player they may enable normally. Unknown/remote sessions are blocked by default. An explicit runtime override exists:
+## Runtime integration
+
+### Eaglercraft adapter
+
+`src/integration/eaglercraft-adapter.js` intentionally advertises only capabilities verified at the browser boundary:
+
+```text
+input
+hud
+```
+
+It does **not** advertise `world`, `entities`, `movement`, `inventory`, `blocks`, `render`, `network` or similar native capabilities merely because Minecraft is running.
+
+That prevents modules such as ESP, Flight or KillAura from turning into misleading GUI toggles when no real player/entity state is available.
+
+### Loaded-session detection
+
+The injector still wraps `eaglercraftXOpts.hooks.screenChanged` when present and preserves any previous callback. During direct execution of the supplied **26.2-u1** build, however, the game exposed the hook but did **not** invoke it during the verified menu/profile boot.
+
+Therefore the actual 26.2-u1 path uses `window.minecraftServer` as its loaded-session fallback:
+
+- `null`: menu/disconnected/no active server session
+- `"singleplayer"`: integrated local server
+- another non-null value: multiplayer/remote server identifier
+
+If a compatible build does invoke `screenChanged`, its screen state refines the fallback.
+
+### Safe gameplay-input ownership
+
+When the screen hook is unavailable, a non-null `minecraftServer` alone is not enough to decide that automated input is safe: a pause/inventory/menu screen can still be open inside a loaded world.
+
+The adapter therefore requires the **real game canvas to own `document.pointerLockElement`** before it injects gameplay presses/clicks. The Meteor ClickGUI must also be closed.
+
+If gameplay loses input ownership while an automated key is held, `adapter.update()` releases it immediately so movement cannot remain stuck.
+
+### Browser input
+
+The exact compiled 26.2-u1 client contains its own synthetic DOM-input self-test using `KeyboardEvent`/`MouseEvent` dispatch. The adapter uses the same browser event mechanism for currently supported automated input.
+
+Implemented browser-bound actions include:
+
+- held `KeyW` for AutoWalk;
+- `Space` tap;
+- left mouse down/up;
+- right mouse down/up;
+- held Shift path;
+- pointer-lock release/reacquire support.
+
+AutoWalk's first `W` press is deliberately deferred until after the ClickGUI closes and the game reacquires control, rather than pressing W during module activation while the GUI owns input.
+
+### Multiplayer/local safeguard
+
+Eaglercraft sets `window.minecraftServer = "singleplayer"` for its integrated local server. All unknown/non-singleplayer sessions are treated conservatively as remote.
+
+`localTestOnly` is enforced centrally by the base `Module` class. AutoClicker and AutoWalk are local-test-only in the Eaglercraft integration. Remote automation is rejected unless explicitly opted in:
 
 ```js
 EaglerHacks.allowMultiplayerCombat(true)
 ```
 
-Disable the override again with `false`. `EaglerHacks.diagnostics()` reports the current state.
+Disable again with:
 
-## Still unavailable without deeper native/source hooks
+```js
+EaglerHacks.allowMultiplayerCombat(false)
+```
 
-The standalone WASM does not currently provide stable browser-callable access to:
+## Configuration storage
 
-- player position, rotation, health, velocity, hunger, or effects;
+Normal origins use `localStorage`.
+
+During real-client testing, Chrome DevTools loaded the self-contained game through an opaque `about:blank` origin because local navigation is blocked by environment policy. On such origins, **accessing `window.localStorage` itself can throw a `SecurityError`** before a normal storage probe runs.
+
+`resolveEaglerStorage()` now handles that case and falls back to a small in-memory Storage-compatible backend instead of aborting the integration.
+
+## Real-client validation
+
+The exact final standalone HTML was loaded into a fresh non-headless Chromium session under Xvfb using DevTools `Page.setDocumentContent`. WebGL was provided through ANGLE/SwiftShader because local URL navigation is blocked in this environment.
+
+The final integrated build reached:
+
+- TeaVM/WASM instantiation;
+- embedded resource loading;
+- Minecraft main startup;
+- `window.__eaglerGameReady === true`;
+- an actual WebGL2 game canvas;
+- `window.EaglerHacks` running at the same time;
+- 77 registered modules;
+- zero uncaught top-level runtime exceptions during the validated boot.
+
+A real DOM Right-Shift event then opened the Meteor-style ClickGUI **over the actual Eaglercraft page**:
+
+- ClickGUI open state: true;
+- CSS display: `block`;
+- nine windows rendered;
+- module catalogue: 77.
+
+This is separate from the synthetic harness and demonstrates that the integration coexists with the actual game shell.
+
+## Single-player autotest attempt
+
+The exact 26.2-u1 WASM contains the internal check:
+
+```js
+globalThis.__eaglerAutoTest === 'sp'
+```
+
+An otherwise-unmodified copy of the original client was booted with that flag to exercise its own single-player automation path. The game reached the integrated-server worker boot and deferred creation of `New World` until worker readiness, but the DevTools-loaded opaque origin prevented the IndexedDB-backed filesystem from behaving like a normal browser origin. The client fell back to RAM storage and the automated world startup did not progress far enough to verify `minecraftServer === "singleplayer"` or real in-world movement.
+
+So the present validation boundary is:
+
+- **real game/menu/profile boot:** verified;
+- **real ClickGUI overlay:** verified;
+- **framework/browser input mechanics:** tested;
+- **completed real single-player world + AutoWalk/AutoClicker:** not yet end-to-end verified in this environment.
+
+## Automated validation
+
+Latest green CI for the integration code reports:
+
+```text
+Node tests:       92 / 92 pass
+Browser harness:  18 / 18 pass
+```
+
+The browser harness checks the framework against the synthetic world and includes GUI interaction, settings, HUD, persistence, input routing, pixel-render changes and performance. It must not be confused with the real-client boot above.
+
+## Still unavailable without native/source hooks
+
+The standalone Wasm-GC ABI does not currently expose stable access to:
+
+- player position/rotation/health/velocity/hunger/effects;
 - world/block queries;
-- entity lists and entity metadata;
-- inventory/hotbar/armor data;
-- camera matrices or world-to-screen projection;
-- direct FOV/brightness/gamma controls;
+- real entity lists/metadata;
+- inventory/hotbar/armor;
+- camera matrices/world-to-screen projection;
+- direct FOV/gamma/brightness internals;
 - packet/network internals;
-- direct movement physics, collision, flight, step height, knockback, or tick rate.
+- direct physics/collision/flight/step/knockback/tick-rate state.
 
-Therefore ESP, Tracers, Nametags, KillAura targeting, Aim Assist, Flight, Speed, Step, NoFall, inventory automation, X-Ray, and similar native-state modules remain capability-gated rather than pretending to work.
+Accordingly, real Entity ESP, Tracers, Nametags, KillAura targeting, Aim Assist, Flight, Speed, Step, NoFall, inventory automation, X-Ray and similar native-state modules remain capability-gated rather than falsely marked functional.
 
-## Validation performed
+## Diagnostics
 
-- The original 26.2-u1 HTML was inspected and its WASM decompressed/parsed.
-- The original HTML contains exactly one `window.eaglercraftXOpts = {` assignment marker used by the injector.
-- The preboot screen hook was exercised independently: it preserves a pre-existing hook and records both GUI class names and `null` gameplay state.
-- The Eaglercraft browser adapter was exercised locally with a fake DOM/event target. It emitted `KeyW`, `Space`, left-click, and right-click events and suppressed new gameplay input when a pause screen was reported.
-- The repository contains dedicated `eaglercraft-integration.test.mjs` and `safety.test.mjs` coverage.
-- The preserved Freebuff baseline previously passed 82 Node tests and 18 Chromium harness checks before these integration changes.
+At runtime:
 
-### Remaining validation blocker
+```js
+EaglerHacks.diagnostics()
+```
 
-The current execution environment enforces a managed Chromium policy that blocks `localhost`, custom loopback hostnames, and `file://` URLs with `ERR_BLOCKED_BY_ADMINISTRATOR`. Because of that policy, a complete in-world run of the 75 MB standalone HTML could not be executed here. This is an environment limitation, not a passing gameplay test. Do not report the final integrated client as end-to-end tested until it is launched in an unrestricted browser and the full suite is rerun after `npm ci`.
+reports framework state plus the Eaglercraft adapter's game-ready state, server identifier, local/remote classification, input ownership, capabilities, WASM exports and synthetically held keys.
