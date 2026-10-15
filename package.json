@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
+    "build:eagler": "node tools/inject-eaglercraft.mjs",
     "test": "node --test --test-force-exit tests/*.test.mjs",
+    "test:integration": "node --test --test-force-exit tests/eaglercraft-integration.test.mjs",
     "test:browser": "node tools/browser-check.mjs",
     "smoke": "node tools/smoke.mjs",
     "docs:modules": "node tools/gen-docs.mjs",
