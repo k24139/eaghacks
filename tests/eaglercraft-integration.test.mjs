@@ -94,13 +94,17 @@ test('browser input adapter injects the same KeyboardEvent/MouseEvent shape used
   assert.equal(adapter.setForward(true), true);
   assert.equal(adapter.setForward(true), true, 'duplicate held state must not send another keydown');
   assert.equal(adapter.setForward(false), true);
+  assert.equal(adapter.setSprinting(true), true);
+  assert.equal(adapter.setSprinting(false), true);
   assert.equal(adapter.jump(), true);
   assert.equal(adapter.attack(null), true);
   assert.equal(adapter.useItem(), true);
 
-  assert.deepEqual(events.slice(0, 4), [
+  assert.deepEqual(events.slice(0, 6), [
     { type: 'keydown', code: 'KeyW', key: 'w', button: undefined },
     { type: 'keyup', code: 'KeyW', key: 'w', button: undefined },
+    { type: 'keydown', code: 'ControlLeft', key: 'Control', button: undefined },
+    { type: 'keyup', code: 'ControlLeft', key: 'Control', button: undefined },
     { type: 'keydown', code: 'Space', key: ' ', button: undefined },
     { type: 'keyup', code: 'Space', key: ' ', button: undefined },
   ]);
