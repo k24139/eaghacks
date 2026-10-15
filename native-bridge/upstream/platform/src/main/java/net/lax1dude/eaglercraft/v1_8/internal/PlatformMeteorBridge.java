@@ -1,33 +1,17 @@
 package net.lax1dude.eaglercraft.v1_8.internal;
 
-/**
- * Desktop/common no-op side of the EaglerHacks bridge. The TeaVM target shadows
- * this class by FQN and publishes the same data to JavaScript.
- */
+/** Desktop/common no-op side of the EaglerHacks bridge. */
 public final class PlatformMeteorBridge {
-
-    private PlatformMeteorBridge() {
-    }
-
-    public static void clear() {
-    }
-
-    public static void beginFrame(long tick, long gameTime, String dimension, int selfEntityId, int crosshairEntityId) {
-    }
-
+    private PlatformMeteorBridge() {}
+    public static void clear() {}
+    public static void beginFrame(long tick, long gameTime, String dimension, int selfEntityId, int crosshairEntityId) {}
     public static void publishPlayer(double x, double y, double z, float yaw, float pitch,
             float health, float maxHealth, int hunger, boolean onGround,
-            double vx, double vy, double vz, int selectedSlot, String name) {
-    }
-
+            double vx, double vy, double vz, int selectedSlot, String name) {}
     public static void publishEntity(int id, String name, double x, double y, double z,
             float width, float height, float health, float maxHealth,
-            boolean player, boolean hostile, boolean passive, boolean invisible) {
-    }
-
-    public static void endFrame() {
-    }
-
+            boolean player, boolean hostile, boolean passive, boolean invisible, boolean visible) {}
+    public static void endFrame() {}
     public static int takeAttackEntityId() { return -1; }
     public static int takeUseItem() { return 0; }
     public static int takeSelectSlot() { return -1; }
