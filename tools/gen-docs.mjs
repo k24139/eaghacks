@@ -5,11 +5,11 @@
  *
  * Status rules (deliberately conservative):
  *   Unsupported                  module.unsupported === true
- *   Implemented and tested       covered by the automated suite in tests/
- *   Implemented but untested     implemented against the adapter contract, but
- *                                cannot be executed without the real game
- *   Partially implemented        works only when the runtime exposes an
- *                                optional hook (see the note column)
+ *   Implemented and tested       covered by the automated suite/harness
+ *   Implemented but untested     implementation exists but has no direct test
+ *   Partially implemented        path exists, but final real-game behaviour
+ *                                still depends on a runtime boundary not fully
+ *                                end-to-end verified
  */
 import { installDom } from "./dom-env.mjs";
 
@@ -27,7 +27,7 @@ const TESTED = new Set([
   "kill-aura", "sprint", "zoom", "entity-esp", "trigger-bot",
 ]);
 
-/** Modules that depend on hooks the runtime may not expose. */
+/** Modules that depend on hooks/boundaries not fully verified in a real world. */
 const PARTIAL = new Set([
   "fullbright", "step", "high-jump", "safe-walk", "no-fall", "flight",
   "speed", "timer", "auto-walk", "reach-display", "no-hurt-cam",
@@ -40,6 +40,27 @@ const PARTIAL = new Set([
   "ping-display", "server-info", "macros", "friend-manager", "notifications",
   "module-search", "keybind-manager", "session-stats", "debug-console",
   "armor-hud", "potion-hud", "freecam", "parkour", "bunny-hop",
+]);
+
+/**
+ * The standalone Eaglercraft bootstrap intentionally adapts a small number of
+ * generic modules to browser-bound capabilities. Keep those overrides in the
+ * generated catalogue so it describes the actual 26.2-u1 integration rather
+ * than only the runtime-neutral constructor defaults.
+ */
+const EAGLER_OVERRIDES = new Map([
+  ["auto-clicker", {
+    capabilities: ["input"],
+    note: "Eaglercraft integration: browser mouse input; local-test-only; completed-world end-to-end test pending",
+  }],
+  ["auto-walk", {
+    capabilities: ["input"],
+    note: "Eaglercraft integration: held KeyW browser input; local-test-only; completed-world end-to-end test pending",
+  }],
+  ["custom-crosshair", {
+    capabilities: ["hud"],
+    note: "Eaglercraft integration: browser HUD canvas path available",
+  }],
 ]);
 
 function statusOf(m) {
@@ -55,8 +76,12 @@ const modules = client.catalogue().sort((a, b) => a.category.localeCompare(b.cat
 const rows = modules.map((m) => {
   const settings = m.settings.filter((s) => s.name !== "bind");
   const settingsText = settings.length ? settings.map((s) => `\`${s.name}\``).join(", ") : "—";
-  const caps = m.requiredCapabilities.length ? m.requiredCapabilities.join(", ") : "—";
-  const note = m.unsupported ? m.unsupportedReason : caps !== "—" ? `needs ${caps}` : "client-side";
+  const override = EAGLER_OVERRIDES.get(m.id);
+  const effectiveCaps = override?.capabilities ?? m.requiredCapabilities;
+  const caps = effectiveCaps.length ? effectiveCaps.join(", ") : "—";
+  const note = m.unsupported
+    ? m.unsupportedReason
+    : override?.note ?? (caps !== "—" ? `needs ${caps}` : "client-side");
   return `| ${m.name} | ${m.category} | ${statusOf(m)} | ${settingsText} | ${note} |`;
 });
 
