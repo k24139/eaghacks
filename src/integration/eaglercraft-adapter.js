@@ -1,9 +1,22 @@
 /**
  * Browser-facing Eaglercraft 26.2-u1 adapter.
- * The standalone TeaVM build exposes shell diagnostics, not game state.
- * Advertise only verified browser capabilities; never fabricate a loaded world.
+ *
+ * The standalone TeaVM/WASM build does not export player/world/entity objects,
+ * so this adapter deliberately exposes only capabilities that can be verified
+ * at the browser boundary. The official eaglercraftXOpts screenChanged hook is
+ * installed by tools/inject-eaglercraft.mjs before the game boots.
  */
 import { GameAdapter } from '../core/adapter.js';
+
+const KEY_INFO = Object.freeze({
+  KeyW: { key: 'w', code: 'KeyW' },
+  KeyA: { key: 'a', code: 'KeyA' },
+  KeyS: { key: 's', code: 'KeyS' },
+  KeyD: { key: 'd', code: 'KeyD' },
+  Space: { key: ' ', code: 'Space' },
+  ShiftLeft: { key: 'Shift', code: 'ShiftLeft' },
+  ControlLeft: { key: 'Control', code: 'ControlLeft' },
+});
 
 export class EaglercraftBrowserAdapter extends GameAdapter {
   constructor({ window: win = globalThis.window, document: doc = globalThis.document } = {}) {
@@ -12,6 +25,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this.doc = doc;
     this.runtimeName = 'eaglercraft-26.2-u1-browser';
     this.startedAt = Date.now();
+    // `input` means browser input can be observed/injected. It is intentionally
+    // separate from `movement`, which implies direct player physics access.
     this.capabilities = new Set(win?.addEventListener ? ['input'] : []);
     this.overlay = null;
     this.ctx = null;
@@ -19,6 +34,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this._fps = 0;
     this._lastFrameMs = 0;
     this._mounted = false;
+    this._syntheticHeld = new Set();
+    this.ready = false;
   }
 
   mount() {
@@ -59,7 +76,6 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   update() {
-    // Shell ready != world loaded. The WASM has no exported world accessor.
     this.ready = this.win?.__eaglerGameReady === true;
   }
 
@@ -89,8 +105,104 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   getFps() { return this._fps; }
   getFrameTimeMs() { return this._lastFrameMs; }
   getSessionSeconds() { return (Date.now() - this.startedAt) / 1000; }
-  inWorld() { return false; }
-  isRemote() { return true; } // Unknown session: conservatively enforce remote safeguards.
+
+  /**
+   * Eaglercraft's supported screenChanged hook receives null when Minecraft's
+   * currentScreen is null. Require game readiness + a hook observation so a
+   * transient null during page startup can never be mistaken for gameplay.
+   */
+  inWorld() {
+    const state = this.win?.__eaghacksScreenState;
+    return this.win?.__eaglerGameReady === true
+      && this.win?.__eaghacksScreenHookSeen === true
+      && !!state
+      && state.screenName === null;
+  }
+
+  /** Unknown sessions stay conservative for combat safeguards. */
+  isRemote() { return true; }
+
+  _inputTarget() {
+    return this.getGameCanvas() ?? this.doc?.getElementById?.('game_frame') ?? null;
+  }
+
+  _dispatchKey(code, down) {
+    const target = this._inputTarget();
+    const info = KEY_INFO[code];
+    const KeyboardEventCtor = this.win?.KeyboardEvent;
+    if (!target?.dispatchEvent || !info || typeof KeyboardEventCtor !== 'function') return false;
+    try {
+      return target.dispatchEvent(new KeyboardEventCtor(down ? 'keydown' : 'keyup', {
+        key: info.key,
+        code: info.code,
+        bubbles: true,
+        cancelable: true,
+        repeat: false,
+      }));
+    } catch {
+      return false;
+    }
+  }
+
+  _setSyntheticKey(code, on) {
+    const held = this._syntheticHeld.has(code);
+    if (!!on === held) return true;
+    const ok = this._dispatchKey(code, !!on);
+    if (!ok) return false;
+    if (on) this._syntheticHeld.add(code);
+    else this._syntheticHeld.delete(code);
+    return true;
+  }
+
+  _tapKey(code) {
+    return this._dispatchKey(code, true) && this._dispatchKey(code, false);
+  }
+
+  _dispatchMouse(button, type) {
+    const target = this._inputTarget();
+    const MouseEventCtor = this.win?.MouseEvent;
+    if (!target?.dispatchEvent || typeof MouseEventCtor !== 'function') return false;
+    const rect = target.getBoundingClientRect?.() ?? { left: 0, top: 0, width: 1, height: 1 };
+    const clientX = rect.left + Math.max(1, rect.width || 1) / 2;
+    const clientY = rect.top + Math.max(1, rect.height || 1) / 2;
+    try {
+      return target.dispatchEvent(new MouseEventCtor(type, {
+        button,
+        buttons: type === 'mousedown' ? (button === 0 ? 1 : button === 2 ? 2 : 4) : 0,
+        clientX,
+        clientY,
+        bubbles: true,
+        cancelable: true,
+      }));
+    } catch {
+      return false;
+    }
+  }
+
+  attack(_entity) {
+    if (!this.inWorld()) return false;
+    return this._dispatchMouse(0, 'mousedown') && this._dispatchMouse(0, 'mouseup');
+  }
+
+  useItem(_hand) {
+    if (!this.inWorld()) return false;
+    return this._dispatchMouse(2, 'mousedown') && this._dispatchMouse(2, 'mouseup');
+  }
+
+  setForward(on) {
+    if (!this.inWorld() && on) return false;
+    return this._setSyntheticKey('KeyW', !!on);
+  }
+
+  setSneaking(on) {
+    if (!this.inWorld() && on) return false;
+    return this._setSyntheticKey('ShiftLeft', !!on);
+  }
+
+  jump() {
+    if (!this.inWorld()) return false;
+    return this._tapKey('Space');
+  }
 
   setPointerLock(locked) {
     if (!locked) {
@@ -109,19 +221,26 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
 
   diagnostics() {
     const tv = this.win?.__tv;
+    const screen = this.win?.__eaghacksScreenState;
     return {
       runtime: this.runtimeName,
       shellLoaded: this.win?.__loaded === true,
       gameReady: this.win?.__eaglerGameReady === true,
+      screenHookSeen: this.win?.__eaghacksScreenHookSeen === true,
+      screenName: screen ? screen.screenName : undefined,
+      inWorld: this.inWorld(),
       wasmInstantiated: !!tv,
       wasmExports: tv?.instance?.exports ? Object.keys(tv.instance.exports) : [],
       gameCanvasPresent: !!this.getGameCanvas(),
       capabilities: [...this.capabilities],
       worldAccess: 'unavailable: TeaVM exports do not expose player/world state',
+      syntheticHeldKeys: [...this._syntheticHeld],
     };
   }
 
   dispose() {
+    for (const code of [...this._syntheticHeld]) this._setSyntheticKey(code, false);
+    this._syntheticHeld.clear();
     this.overlay?.remove?.();
     this.overlay = null;
     this.ctx = null;
