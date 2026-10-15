@@ -119,8 +119,14 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       && state.screenName === null;
   }
 
-  /** Unknown sessions stay conservative for combat safeguards. */
-  isRemote() { return true; }
+  /**
+   * Eaglercraft itself sets window.minecraftServer to "singleplayer" when the
+   * integrated server is launched. Null/unknown and any other server value stay
+   * conservative and are treated as remote for local-test-only modules.
+   */
+  isRemote() {
+    return this.win?.minecraftServer !== 'singleplayer';
+  }
 
   _inputTarget() {
     return this.getGameCanvas() ?? this.doc?.getElementById?.('game_frame') ?? null;
@@ -229,6 +235,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
       screenHookSeen: this.win?.__eaghacksScreenHookSeen === true,
       screenName: screen ? screen.screenName : undefined,
       inWorld: this.inWorld(),
+      server: this.win?.minecraftServer ?? null,
+      remote: this.isRemote(),
       wasmInstantiated: !!tv,
       wasmExports: tv?.instance?.exports ? Object.keys(tv.instance.exports) : [],
       gameCanvasPresent: !!this.getGameCanvas(),
