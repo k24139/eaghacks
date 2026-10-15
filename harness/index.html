@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meteor Framework — integration harness</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body { margin: 0; height: 100%; background: #0d0e11; color: #e6e7ea;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      #stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+      canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; }
+      #hint {
+        position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%);
+        background: rgba(10,11,13,.9); border: 1px solid #33373f; border-radius: 6px;
+        padding: 8px 14px; font-size: 12px; line-height: 1.6; text-align: center; z-index: 5;
+      }
+      #hint kbd { background: #23262d; border: 1px solid #3a3d45; border-radius: 3px; padding: 0 4px; }
+      #banner {
+        position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+        background: rgba(20,16,8,.92); border: 1px solid #6b5a20; color: #e0c458;
+        border-radius: 6px; padding: 6px 12px; font-size: 11px; max-width: 760px; text-align: center; z-index: 6;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage"><canvas id="game"></canvas></div>
+    <div id="banner">
+      Integration harness only — this is a synthetic top-down world used to exercise the
+      framework's GUI, HUD and render modules. It is <strong>not</strong> the Eaglercraft game.
+    </div>
+    <div id="hint">
+      <kbd>Right Shift</kbd> opens the ClickGUI · left-click a module toggles it ·
+      right-click expands its settings · drag window headers · middle-click favourites<br />
+      Try <em>Fullbright, Entity ESP, Tracers, Nametags, Radar, Custom Crosshair, Block Search</em>,
+      then open the HUD elements (FPS, Coordinates, Keystrokes…).
+    </div>
+
+    <script src="../dist/meteor.bundle.js"></script>
+    <script>
+      // ---------------------------------------------------------------------
+      // Synthetic world + adapter. A real integration replaces this adapter
+      // with one that reads the Eaglercraft game objects; the framework is
+      // identical either way.
+      // ---------------------------------------------------------------------
+      const canvas = document.getElementById("game");
+      const ctx = canvas.getContext("2d");
+      const viewport = { width: 0, height: 0 };
+      let scale = 12;
+
+      const player = { x: 0, y: 64, z: 0, yaw: 0, pitch: 0, health: 20, maxHealth: 20, hunger: 18, name: "You", sprinting: false, moveForward: 0 };
+
+      const entities = [];
+      const KINDS = [
+        { name: "Zombie", kind: "hostile", hostile: true, color: "#6b8f4e" },
+        { name: "Skeleton", kind: "hostile", hostile: true, color: "#c9c9c9" },
+        { name: "Cow", kind: "passive", hostile: false, color: "#8b6b4a" },
+        { name: "Steve", kind: "player", hostile: false, isPlayer: true, color: "#4f8ef7" },
+        { name: "Alex", kind: "player", hostile: false, isPlayer: true, color: "#d67ab1" },
+      ];
+      for (let i = 0; i < 14; i++) {
+        const k = KINDS[i % KINDS.length];
+        const angle = (i / 14) * Math.PI * 2;
+        const radius = 6 + (i % 5) * 7;
+        entities.push({
+          ...k,
+          x: Math.cos(angle) * radius,
+          y: 64,
+          z: Math.sin(angle) * radius,
+          health: 20,
+          maxHealth: 20,
+          width: 0.6,
+          height: k.kind === "passive" ? 1.3 : 1.8,
+          visible: true,
+          vx: Math.cos(angle) * 0.02,
+          vz: Math.sin(angle) * 0.02,
+        });
+      }
+
+      // Blocks for Block Search / Storage ESP.
+      const blocks = [];
+      for (let x = -20; x <= 20; x += 1) {
+        for (let z = -20; z <= 20; z += 1) {
+          if ((x * 7 + z * 13) % 29 === 0) blocks.push({ name: "diamond_ore", x: (x % 20) + 0.5, y: 64, z: (z % 20) + 0.5 });
+        }
+      }
+
+      const keys = new Set();
+      window.addEventListener("keydown", (e) => keys.add(e.code));
+      window.addEventListener("keyup", (e) => keys.delete(e.code));
+
+      const { GameAdapter, CAPABILITIES } = window.MeteorFramework;
+
+      class HarnessAdapter extends GameAdapter {
+        constructor() {
+          super();
+          this.runtimeName = "harness";
+          this.capabilities = new Set(CAPABILITIES); // the harness supports everything on purpose
+          this.flying = false;
+          this.fov = 70;
+        }
+        inWorld() { return true; }
+        getCanvas() { return canvas; }
+        getPlayer() { return player; }
+        getWorld() { return { time: 6000 + (performance.now() / 50) % 24000, day: 12, dimension: "overworld", biome: "plains" }; }
+        getEntities() { return entities; }
+        getWorldKey() { return "harness-world"; }
+        getSelectedSlot() { return 0; }
+        getInventory() { return { hotbar: [], armor: [] }; }
+        getHeldItem() { return null; }
+        getFps() { return 0; }
+        isOnGround() { return true; }
+        isMining() { return false; }
+        isAttacking() { return false; }
+        getPlayerVelocity() { return { x: 0, y: 0, z: 0 }; }
+        setSprinting(on) { player.sprinting = on; return true; }
+        setFlying(on) { this.flying = on; return true; }
+        setStepHeight() { return true; }
+        setJumpHeight() { return true; }
+        setSafeWalk() { return true; }
+        setNoFall() { return true; }
+        setForward(on) { this._forward = on; return true; }
+        jump() { return true; }
+        setFov(v) { this.fov = v; return true; }
+        getFov() { return this.fov; }
+        setBrightness() { return true; }
+        getBrightness() { return 0; }
+        setHurtCam() { return true; }
+        setTickRate() { return true; }
+        setPlayerVelocity() { return true; }
+        selectSlot() { return true; }
+        useItem() { return true; }
+        sendChat(msg) { console.log("[harness chat]", msg); return true; }
+        setPointerLock() { return true; }
+        setRotation(yaw) { player.yaw = yaw; return true; }
+        findBlocks(names) { return blocks.filter((b) => names.includes(b.name.replace(/\s+/g, "_"))); }
+        getPing() { return 24; }
+        getCrosshairTargetEntity() {
+          let best = null;
+          for (const e of entities) {
+            const d = Math.hypot(e.x - player.x, e.z - player.z);
+            if (d < 4 && (!best || d < best.d)) best = { e, d };
+          }
+          return best?.e ?? null;
+        }
+        getCrosshairTargetBlock() { return null; }
+        attack(e) { this._lastAttack = e?.name ?? null; return true; }
+        worldToScreen(x, y, z) {
+          // Top-down orthographic projection centred on the player.
+          const dx = (x - player.x) * scale;
+          const dz = (z - player.z) * scale;
+          const sx = viewport.width / 2 + dx;
+          const sy = viewport.height / 2 + dz;
+          return { x: sx, y: sy, visible: true, behind: false };
+        }
+        getViewport() { return viewport; }
+        getServerInfo() { return { address: "harness.local", players: entities.length + 1 }; }
+        getSessionSeconds() { return performance.now() / 1000; }
+        isRemote() { return false; }
+      }
+
+      const adapter = new HarnessAdapter();
+      const client = window.MeteorFramework.bootMeteor({ adapter, storage: window.localStorage, fresh: true });
+
+      // ---------------------------------------------------------------------
+      // Frame loop: advance the fake world, then dispatch the same events a
+      // real integration would fire.
+      // ---------------------------------------------------------------------
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        viewport.width = window.innerWidth;
+        viewport.height = window.innerHeight;
+        canvas.width = viewport.width * dpr;
+        canvas.height = viewport.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      let last = performance.now();
+      function frame(now) {
+        const dt = Math.min(0.1, (now - last) / 1000);
+        last = now;
+
+        // Player movement (WASD).
+        let mf = 0;
+        let ms = 0;
+        if (keys.has("KeyW")) mf += 1;
+        if (keys.has("KeyS")) mf -= 1;
+        if (keys.has("KeyA")) ms -= 1;
+        if (keys.has("KeyD")) ms += 1;
+        player.moveForward = mf;
+        const speed = (client.modules.get("sprint")?.active ? 7 : 4) * (client.modules.get("speed")?.active ? 1.5 : 1);
+        player.x += ms * speed * dt;
+        player.z += mf * speed * dt;
+        client.bus.emit(window.MeteorFramework.Events.PlayerMove, { distance: Math.hypot(ms, mf) * speed * dt });
+
+        for (const e of entities) {
+          e.x += e.vx;
+          e.z += e.vz;
+          if (Math.abs(e.x) > 22 || Math.abs(e.z) > 22) { e.vx *= -1; e.vz *= -1; }
+        }
+
+        // Draw the world, then let the modules draw over it.
+        ctx.fillStyle = "#1b2430";
+        ctx.fillRect(0, 0, viewport.width, viewport.height);
+        const grid = 5 * scale;
+        ctx.strokeStyle = "rgba(255,255,255,0.06)";
+        for (let gx = -(player.x * scale) % grid; gx < viewport.width; gx += grid) {
+          ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, viewport.height); ctx.stroke();
+        }
+        for (let gz = -(player.z * scale) % grid; gz < viewport.height; gz += grid) {
+          ctx.beginPath(); ctx.moveTo(0, gz); ctx.lineTo(viewport.width, gz); ctx.stroke();
+        }
+        for (const b of blocks) {
+          const p = adapter.worldToScreen(b.x, b.y, b.z);
+          ctx.fillStyle = "#3b4a5a";
+          ctx.fillRect(p.x - 3, p.y - 3, 6, 6);
+        }
+        for (const e of entities) {
+          const p = adapter.worldToScreen(e.x, e.y, e.z);
+          ctx.fillStyle = e.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 7, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        const gp = adapter.worldToScreen(player.x, player.y, player.z);
+        ctx.fillStyle = "#ffd166";
+        ctx.beginPath();
+        ctx.arc(gp.x, gp.y, 8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Module hooks.
+        client.bus.emit(window.MeteorFramework.Events.RenderWorld, { ctx, projection: adapter, viewport, frame: { now } });
+        client.bus.emit(window.MeteorFramework.Events.RenderHud, { ctx, viewport, frame: { now } });
+
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      window.harness = { client, adapter, entities, player };
+      console.log("Meteor framework harness ready:", client.diagnostics());
+    </script>
+  </body>
+</html>
