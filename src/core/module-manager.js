@@ -233,6 +233,7 @@ export class ModuleManager {
         } catch {
           /* already reporting one error */
         }
+        module._subs.dispose();
         this.bus.emit(Events.ModuleToggled, { module, active: false });
       }
       this.notify(`${module.name} crashed in ${label}(); disabled`, "error");

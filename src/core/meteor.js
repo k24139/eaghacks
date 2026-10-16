@@ -149,6 +149,7 @@ export class MeteorClient {
     this._subs.push(
       this.bus.on(Events.ModuleToggled, (ev) => {
         if (ev.module?.category === "HUD") this.hud.sync();
+        if (!this.modules._suspendCallbacks) this.config.save(false);
       }),
     );
 
@@ -181,6 +182,7 @@ export class MeteorClient {
   }
 
   stop() {
+    if (!this._started) return this;
     this._started = false;
     this.ticker.stop();
     this.keybinds.dispose();

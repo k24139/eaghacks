@@ -8,9 +8,13 @@
 import { build } from 'esbuild';
 import { readFile, writeFile, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { repairInlineAssetTransport, removeExistingIntegration } from './standalone-html.mjs';
 
-const input = process.argv[2];
-const output = process.argv[3] || 'Eaglercraft-26.2-u1-Meteor.html';
+const args = process.argv.slice(2);
+const refresh = args.includes('--refresh');
+const paths = args.filter(arg => arg !== '--refresh');
+const input = paths[0];
+const output = paths[1] || 'Eaglercraft-26.2-u1-Meteor.html';
 if (!input) {
   console.error('Usage: node tools/inject-eaglercraft.mjs <original.html> [output.html]');
   process.exit(2);
@@ -22,8 +26,10 @@ for (const marker of required) {
   if (!source.includes(marker)) throw new Error(`Input is not the expected Eaglercraft 26.2-u1 HTML (missing ${marker})`);
 }
 if (source.includes('id="eaghacks-integration"') || source.includes('__eaghacksInstallOptsHook')) {
-  throw new Error('Refusing to inject twice');
+  if (!refresh) throw new Error('Refusing to inject twice. Use --refresh to replace a known integration.');
+  source = removeExistingIntegration(source);
 }
+source = repairInlineAssetTransport(source);
 
 // This code executes immediately before the original client assigns
 // window.eaglercraftXOpts. A temporary setter lets us wrap the official

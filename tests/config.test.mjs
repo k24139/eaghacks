@@ -146,3 +146,13 @@ test("debounced save coalesces writes", async () => {
   await sleep(60);
   assert.equal(writes, 1, "three scheduled saves collapse into one write");
 });
+
+test('module keybind/API toggles schedule configuration autosave', async () => {
+  const { bootTestClient } = await import('./helpers.mjs');
+  const { client } = await bootTestClient({ inWorld: true });
+  client.modules.get('sprint').enable();
+  assert.equal(client.config._dirty, true);
+  assert.notEqual(client.config._timer, null);
+  client.stop();
+  assert.equal(client.config._timer, null);
+});

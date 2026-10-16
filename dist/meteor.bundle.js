@@ -882,6 +882,7 @@ var MeteorFramework = (() => {
             module.onDisable();
           } catch {
           }
+          module._subs.dispose();
           this.bus.emit(Events.ModuleToggled, { module, active: false });
         }
         this.notify(`${module.name} crashed in ${label}(); disabled`, "error");
@@ -1041,6 +1042,10 @@ var MeteorFramework = (() => {
         return;
       }
       if (this.guiOpen) {
+        if (e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) {
+          e.stopPropagation();
+          return;
+        }
         if (this._isGameplayKey(e)) {
           e.preventDefault();
           e.stopPropagation();
@@ -1048,7 +1053,7 @@ var MeteorFramework = (() => {
         }
         return;
       }
-      if (this.typing) return;
+      if (this.typing || e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) return;
       const kb = keybindFromKeyboardEvent(e);
       if (!kb) return;
       if (e.repeat) return;
@@ -1085,10 +1090,11 @@ var MeteorFramework = (() => {
       this.bus?.emit("mouse-input", { event: e, button: e.button, down: false });
     }
     _handleWheel(e) {
-      this.bus?.emit("mouse-scroll", { event: e, deltaY: e.deltaY, deltaX: e.deltaX });
       if (this.guiOpen) {
-        e.preventDefault();
+        e.stopPropagation();
+        return;
       }
+      this.bus?.emit("mouse-scroll", { event: e, deltaY: e.deltaY, deltaX: e.deltaX });
     }
     _handleBlur() {
       this.heldKeys.clear();
@@ -3235,6 +3241,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
      * @param {string} def.category
      * @param {string[]} [def.requiredCapabilities] GameAdapter capability keys
      * @param {boolean} [def.runsInMenus] whether the module may run outside a world
+     * @param {boolean} [def.localTestOnly] block on remote sessions unless the client explicitly opts in
      * @param {boolean} [def.unsupported] explicit "cannot work on this runtime"
      * @param {string} [def.unsupportedReason]
      */
@@ -3246,6 +3253,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this.category = def.category ?? "Misc";
       this.requiredCapabilities = def.requiredCapabilities ?? [];
       this.runsInMenus = !!def.runsInMenus;
+      this.localTestOnly = !!def.localTestOnly;
       this.unsupported = !!def.unsupported;
       this.unsupportedReason = def.unsupportedReason ?? "";
       this.settings = new Settings();
@@ -3308,6 +3316,9 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       const missing = this.requiredCapabilities.filter((c) => !game.hasCapability(c));
       if (missing.length) return `runtime is missing: ${missing.join(", ")}`;
       if (!this.runsInMenus && !game.inWorld()) return "requires a loaded world";
+      if (this.localTestOnly && game.isRemote?.() && !this._manager?.client?.allowMultiplayerCombat) {
+        return "blocked on remote sessions; explicitly enable multiplayer combat to override";
+      }
       return null;
     }
     canEnable() {
@@ -5993,6 +6004,7 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
       this._subs.push(
         this.bus.on(Events.ModuleToggled, (ev) => {
           if (ev.module?.category === "HUD") this.hud.sync();
+          if (!this.modules._suspendCallbacks) this.config.save(false);
         })
       );
       this._onBeforeUnload = () => this.config.save(true);
@@ -6019,6 +6031,7 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
       return this;
     }
     stop() {
+      if (!this._started) return this;
       this._started = false;
       this.ticker.stop();
       this.keybinds.dispose();
@@ -6123,6 +6136,7 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
   var instance = null;
   function bootMeteor(options = {}) {
     if (instance && !options.fresh) return instance;
+    if (instance) shutdownMeteor();
     const client = new MeteorClient(options);
     client.init();
     client.start();

@@ -19,7 +19,7 @@ function check(name, ok, detail = "") {
 
 mkdirSync("artifacts", { recursive: true });
 
-const browser = await chromium.launch({ args: ["--no-sandbox", "--disable-dev-shm-usage"] });
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_EXECUTABLE_PATH || undefined, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
 const consoleErrors = [];
@@ -90,6 +90,25 @@ const search = await page.evaluate(() => {
   return [...document.querySelectorAll(".mt-search-win .mt-row .mt-name")].map((n) => n.textContent);
 });
 check("search filters modules", search.includes("Tracers"), search.join(", "));
+
+// Use browser keyboard input: assigning input.value misses capture-phase bugs.
+const searchInput = page.getByRole('textbox', { name: 'Search modules', exact: true });
+await searchInput.fill('');
+await searchInput.pressSequentially('wasd test');
+check('GUI accepts movement letters and spaces in search', await searchInput.inputValue() === 'wasd test');
+await searchInput.fill('');
+const scroll = await page.evaluate(() => {
+  const body = [...document.querySelectorAll('.mt-window')].map(w => w.lastElementChild).find(e => e.scrollHeight > e.clientHeight);
+  if (!body) return null;
+  body.scrollTop = 0;
+  return { x: body.getBoundingClientRect().x + 20, y: body.getBoundingClientRect().y + 20 };
+});
+if (scroll) {
+  await page.mouse.move(scroll.x, scroll.y);
+  await page.mouse.wheel(0, 300);
+  await page.waitForTimeout(100);
+  check('GUI panels scroll with the mouse wheel', await page.evaluate(() => [...document.querySelectorAll('.mt-window')].some(w => w.lastElementChild.scrollTop > 0)));
+}
 
 await page.screenshot({ path: "artifacts/clickgui-open.png" });
 

@@ -162,3 +162,21 @@ test("a module throwing in onInit is registered but marked unsupported", () => {
   assert.equal(m.unsupported, true);
   assert.match(m.unsupportedReason, /init failed/);
 });
+
+test('crashed modules release subscriptions before re-enable', () => {
+  const { mm, bus } = makeManager();
+  let calls = 0;
+  class Listening extends Module {
+    onEnable() { this.subscribe('probe', () => calls++); }
+    onTick() { throw new Error('expected regression test crash'); }
+  }
+  const module = mm.register(new Listening({ id: 'listening' }));
+  module.enable();
+  assert.equal(bus.listenerCount('probe'), 1);
+  mm.tick();
+  assert.equal(bus.listenerCount('probe'), 0);
+  module.enable();
+  assert.equal(bus.listenerCount('probe'), 1);
+  bus.emit('probe');
+  assert.equal(calls, 1);
+});

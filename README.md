@@ -225,3 +225,24 @@ The GUI releases pointer lock when it opens so it can receive mouse input. Autom
 ## Attribution / licences
 
 The architecture and interface are inspired by [Meteor Client](https://github.com/MeteorDevelopment/meteor-client). This project is an independent browser-side implementation and does not directly run Meteor's Fabric JAR inside Eaglercraft.
+
+### Standalone refresh and real-client checks
+
+To replace this project's known older injection in an existing standalone HTML:
+
+```sh
+node tools/inject-eaglercraft.mjs current-client.html updated-client.html --refresh
+```
+
+The default still rejects duplicate injection. Refresh requires exactly one known preboot hook and integration script. The packager repairs the known fetch/XHR asset transport mismatch without changing the six embedded game payloads. Tagged Blob URLs serve the main client, and the embedded server worker recognizes the assets tag and uses its own decoder.
+
+Run the real standalone separately from the synthetic harness:
+
+```sh
+node tools/serve.mjs
+node tools/real-client-check.mjs http://127.0.0.1:3000/updated-client.html
+```
+
+Both browser tools accept `CHROMIUM_EXECUTABLE_PATH` for an installed Chromium binary. Preview binds to `127.0.0.1` by default. Set `HOST` explicitly for remote preview. The server rejects hidden paths and symlink escapes.
+
+The real-client check covers startup and UI. It does not certify world loading, multiplayer or Java bridge behavior. A matching prepared upstream project remains required for `npm run build:native`.

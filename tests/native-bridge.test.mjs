@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { EaglercraftBrowserAdapter } from '../src/integration/eaglercraft-adapter.js';
 
 function setup() {
-  const win = { addEventListener() {}, __eaglerGameReady: true, __eaglerWorldReady: true, minecraftServer: 'singleplayer' };
+  const win = { addEventListener() {}, __eaglerGameReady: true, __eaglerWorldReady: true, minecraftServer: 'singleplayer', __eaghacksScreenHookSeen: true, __eaghacksScreenState: { screenName: null } };
   const doc = { pointerLockElement: null, getElementById() { return null; }, querySelector() { return null; } };
   return { win, adapter: new EaglercraftBrowserAdapter({ window: win, document: doc }) };
 }
@@ -91,4 +91,21 @@ test('native inventory helpers expose held durability and food selection without
   assert.equal(adapter.findFoodInHotbar('auto'), 0);
   assert.equal(adapter.findFoodInHotbar('cooked_beef'), -1);
   assert.equal(adapter.hasCapability('inventory'), false);
+});
+
+test('native commands stop in menus and pending commands do not cross sessions', () => {
+  const { win, adapter } = setup(); installState(win); adapter.update();
+  assert.equal(adapter.attack({ id: 9 }), true);
+  win.__eaghacksScreenState.screenName = 'PauseScreen';
+  assert.equal(adapter.jump(), false);
+  assert.equal(adapter.selectSlot(2), false);
+  assert.equal(adapter.setRotation(5, 10), false);
+  assert.equal(adapter.setPlayerVelocity(1, 2, 3), false);
+  assert.equal(adapter.useItem(), false);
+  assert.equal(adapter.setSprinting(false), true, 'cleanup remains possible');
+  adapter.update();
+  assert.equal(win.__eaghacksNativeCommands, undefined);
+  win.__eaghacksScreenState.screenName = null;
+  win.__eaglerWorldReady = false;
+  assert.equal(adapter.attack({ id: 9 }), false);
 });

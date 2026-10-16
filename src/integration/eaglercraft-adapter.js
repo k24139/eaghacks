@@ -44,6 +44,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   update() {
     this.ready = this.win?.__eaglerGameReady === true;
     this._syncNativeBridge();
+    if (!this._gameplayInputAllowed() && this.win) delete this.win.__eaghacksNativeCommands;
     if (!this._gameplayInputAllowed() && this._syntheticHeld.size) for (const code of [...this._syntheticHeld]) this._setSyntheticKey(code, false);
   }
 
@@ -76,6 +77,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
   _queueNative(name, value) {
     if (!this._nativeState()) return false;
+    const release = (name === 'sprinting' || name === 'sneaking') && value === false;
+    if (!release && !this._gameplayInputAllowed()) return false;
     const commands = this._nativeCommands(); if (!commands) return false;
     commands[name] = value; return true;
   }
@@ -155,7 +158,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   inWorld() {
-    if (this.win?.__eaglerGameReady!==true||this.win?.__eaglerWorldReady!==true||this.win?.minecraftServer==null) return false;
+    if (this.win?.__eaglerGameReady!==true||this.win?.__eaglerWorldReady!==true) return false;
     const state=this.win?.__eaghacksScreenState;
     return this.win?.__eaghacksScreenHookSeen===true&&state ? state.screenName===null : true;
   }

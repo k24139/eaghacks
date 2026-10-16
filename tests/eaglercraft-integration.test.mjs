@@ -42,7 +42,7 @@ test('adapter never fabricates player/world access from shell readiness', () => 
   dom.window.__tv = { instance: { exports: { main() {}, 'teavm.memory': {} } } };
   adapter.update();
   assert.equal(adapter.ready, true);
-  assert.equal(adapter.inWorld(), false, 'game-ready alone is not enough; minecraftServer is still null');
+  assert.equal(adapter.inWorld(), false, 'game-ready alone does not establish a loaded world');
   assert.equal(adapter.getPlayer(), null);
   assert.equal(adapter.getWorld(), null);
   assert.equal(adapter.hasCapability('world'), false);
@@ -79,6 +79,9 @@ test('26.2 minecraftServer fallback detects a loaded session without screenChang
   setPointerLock(dom, game);
   assert.equal(adapter.diagnostics().gameplayInputAllowed, true);
   dom.window.minecraftServer = null;
+  assert.equal(adapter.inWorld(), true, 'real single-player worlds can leave minecraftServer null');
+  assert.equal(adapter.isRemote(), true, 'unknown session identity remains conservative for automation');
+  dom.window.__eaglerWorldReady = false;
   assert.equal(adapter.inWorld(), false);
   adapter.dispose();
   dom.window.close();

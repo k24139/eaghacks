@@ -57,4 +57,5 @@ const bad = client.config.deserialiseAll({ modules: "not-an-array" });
 console.log("corrupt recovery:", bad.recovered, bad.errors[0]);
 
 client.stop();
+dom.window.close();
 console.log("SMOKE OK");

@@ -32,6 +32,7 @@ let instance = null;
  */
 export function bootMeteor(options = {}) {
   if (instance && !options.fresh) return instance;
+  if (instance) shutdownMeteor();
   const client = new MeteorClient(options);
   client.init();
   client.start();

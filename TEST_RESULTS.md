@@ -1,3 +1,27 @@
+# Current audit: October 15, 2026
+
+Starting branch: `meteor-client-integration`, commit `8b47d7af5100ba83b18e357db1b1a7de01fde8a8`. Main remained at `1ccda035bc03a3fac460fc3fe484c383a65a2d59`.
+
+- Baseline Node suite: 97 passed, 0 failed.
+- Final Node suite: 106 passed, 0 failed, 0 skipped.
+- Build: both browser bundles compiled successfully.
+- Chromium harness: 20/20 checks passed, including typed movement letters and native wheel scrolling. This uses synthetic world data.
+- Real standalone: 11/11 startup/UI checks passed in headless Chromium 153.0.8010.0 (workspace-local @sparticuz/chromium), software WebGL. The original six embedded payloads were preserved.
+- Real checks: menu-ready and game-ready signals, actual game canvas, one HUD overlay, Right Shift, nine GUI windows, typed search, FPS toggle, Escape, resize, no failed required requests, no uncaught/error-level startup failures.
+- Manual real-world QA: created a single-player survival world, reached rendered terrain/entities with world-ready and terrain-ready signals, opened/closed ClickGUI, and opened the actual inventory. Found and fixed the adapter incorrectly requiring a non-null minecraftServer for single-player world readiness. The browser-only build still lacks native state access.
+- Dependency audit: 0 vulnerabilities reported.
+- Preview HTTP checks: root serves, `.git/config` and `.env` return 403.
+- Known warning: supplied game reports an empty `minecraft:music.menu` sound event. It is recorded as a warning, not suppressed as a successful audio test.
+- Browser installation initially failed: standard Playwright CDN downloads returned invalid archives. A separate workspace-local Chromium package supplied the binary. No global machine configuration changed.
+
+Fixes: fetch/XHR embedded asset transport, embedded server asset routing, GUI text editing and scrolling, crash subscription cleanup, repeated-shutdown persistence, singleton replacement cleanup, toggle autosave, native menu command suppression, stale command cleanup, and preview path protection.
+
+The public upstream source was inspected. Its README confirms omitted source inputs and Mojang asset/data resources, and its GUIDE requires Java 25. Only Java 17 is installed here. The matching prepared upstream build and required resource inputs are absent. `build:native` fails its prepared-project check at Minecraft.java, so the Java overlay has not been compiled or exercised in the game. Multiplayer and loaded-world native-module behavior are not certified. Real-game frame-rate parity was not established on this software-rendered browser. The project is not declared complete.
+
+Earlier results below are historical. Their framework/harness module labels do not establish gameplay verification. MODULES.md uses conservative current statuses.
+
+---
+
 # Test results
 
 This document records checks that were actually executed and keeps the synthetic framework harness separate from validation of the real Eaglercraft 26.2-u1 standalone client.

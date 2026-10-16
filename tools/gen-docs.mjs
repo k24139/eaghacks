@@ -49,6 +49,7 @@ const PARTIAL = new Set([
  * than only the runtime-neutral constructor defaults.
  */
 const EAGLER_OVERRIDES = new Map([
+  ['sprint', { capabilities: ['input'], note: 'Browser Ctrl input; completed-world sprint test pending' }],
   ["auto-clicker", {
     capabilities: ["input"],
     note: "Eaglercraft integration: browser mouse input; local-test-only; completed-world end-to-end test pending",
@@ -62,10 +63,20 @@ const EAGLER_OVERRIDES = new Map([
     note: "Eaglercraft integration: browser HUD canvas path available",
   }],
 ]);
+for (const [id, caps] of [
+  ['fullbright', ['world', 'brightness-control']],
+  ['zoom', ['world', 'fov-control']],
+  ['no-hurt-cam', ['world', 'hurt-camera-control']],
+  ['armor-hud', ['native-inventory-read']],
+  ['durability-warnings', ['native-inventory-read']],
+  ['auto-eat', ['world', 'native-inventory-read', 'native-direct']],
+  ...['kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit'].map(id => [id, ['world', 'entities', 'native-direct']]),
+]) EAGLER_OVERRIDES.set(id, { capabilities: caps, note: `needs ${caps.join(', ')}; native rebuild/gameplay validation pending` });
 
 function statusOf(m) {
   if (m.unsupported) return "Unsupported";
-  if (TESTED.has(m.id)) return "Implemented and tested";
+  // Framework fixtures do not prove module behavior inside a real world.
+  if (TESTED.has(m.id)) return m.requiredCapabilities.some(c => ['world', 'movement', 'entities', 'inventory'].includes(c)) ? "Partially implemented" : "Implemented but untested";
   if (PARTIAL.has(m.id)) return "Partially implemented";
   return "Implemented but untested";
 }

@@ -180,3 +180,13 @@ EaglerHacks.diagnostics()
 ```
 
 reports framework state plus the Eaglercraft adapter's game-ready state, server identifier, local/remote classification, input ownership, capabilities, WASM exports and synthetically held keys.
+
+## October 15 audit: asset transport and input reliability
+
+The supplied standalone failed its first real-browser boot at `eagler-inline-payload://assets.epk`: the main runtime uses XMLHttpRequest, but the standalone only intercepted fetch. The injector now awaits embedded asset decoding and assigns Blob URLs. Each URL carries an asset-name fragment so the server worker routes its own EPK read through its embedded decoder instead of its incomplete delegated XHR path. Embedded payload text remains unchanged.
+
+Native commands now refuse new actions from menus/ClickGUI, and pending commands are cleared as gameplay control disappears. The Java bridge clears pending commands on world loss. Boolean release commands remain allowed for cleanup. This Java source change still requires a native rebuild before it affects any game binary.
+
+The source-only bridge is not present in the supplied compiled client. Native player, entity, inventory and physics modules remain unverified in real gameplay. The browser and standalone tests must not be reported as proof of their behavior.
+
+Real-world QA also confirmed that `minecraftServer` remains null in a loaded single-player world. World readiness now uses the native game-ready/world-ready flags and no longer rejects that session. Unknown local/remote identity remains remote for automation policy. The current upstream source only initializes the server-name global to null, so it cannot establish single-player identity.

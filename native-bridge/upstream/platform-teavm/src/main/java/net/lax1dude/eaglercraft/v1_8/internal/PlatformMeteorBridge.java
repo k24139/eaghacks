@@ -8,7 +8,7 @@ public final class PlatformMeteorBridge {
     private PlatformMeteorBridge() {
     }
 
-    @JSBody(params = {}, script = "delete globalThis.__eaghacksNativeNextState;delete globalThis.__eaghacksNativeState;")
+    @JSBody(params = {}, script = "delete globalThis.__eaghacksNativeNextState;delete globalThis.__eaghacksNativeState;delete globalThis.__eaghacksNativeCommands;")
     public static native void clear();
 
     @JSBody(params = { "tick", "gameTime", "dimension", "selfEntityId", "crosshairEntityId" }, script =

@@ -159,3 +159,29 @@ test("HUD editor can be toggled from the config window", async () => {
   assert.equal(client.hud.editing, true);
   assert.ok(client.hud.root.classList.contains("mt-hud-editor"));
 });
+
+test('GUI text editing preserves movement letters and native scrolling', async () => {
+  const { client, win, doc } = await bootTestClient();
+  client.clickgui.show();
+  const input = doc.querySelector('.mt-search');
+  for (const code of ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'Space', 'KeyE', 'KeyT']) {
+    const event = new win.KeyboardEvent('keydown', { code, bubbles: true, cancelable: true });
+    input.dispatchEvent(event);
+    assert.equal(event.defaultPrevented, false, `${code} must remain editable`);
+  }
+  let scrolled = 0;
+  client.bus.on('mouse-scroll', () => scrolled++);
+  const wheel = new win.WheelEvent('wheel', { deltaY: 100, bubbles: true, cancelable: true });
+  doc.querySelector('.mt-window').dispatchEvent(wheel);
+  assert.equal(wheel.defaultPrevented, false);
+  assert.equal(scrolled, 0, 'GUI scroll must not trigger module/game wheel actions');
+});
+
+test('repeated shutdown preserves enabled module state', async () => {
+  const { client, storage } = await bootTestClient({ inWorld: true });
+  client.modules.get('sprint').enable();
+  client.stop();
+  const saved = [...storage.map.entries()];
+  client.stop();
+  assert.deepEqual([...storage.map.entries()], saved);
+});

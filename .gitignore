@@ -4,3 +4,5 @@ node_modules/
 .env
 .env.*
 !/env.example
+input/
+dist/eaghacks-integration.js

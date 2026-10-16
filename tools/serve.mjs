@@ -5,12 +5,13 @@
  * Usage: node tools/serve.mjs [port] [root]
  */
 import { createServer } from "node:http";
-import { readFile, stat } from "node:fs/promises";
-import { extname, join, normalize, resolve } from "node:path";
+import { readFile, stat, realpath } from "node:fs/promises";
+import { extname, join, relative, resolve, isAbsolute } from "node:path";
 
 const port = Number(process.argv[2] ?? process.env.PORT ?? 3000);
 const root = resolve(process.argv[3] ?? ".");
-const host = "0.0.0.0";
+const host = process.env.HOST ?? "127.0.0.1";
+const rootReal = await realpath(root);
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -30,14 +31,21 @@ const server = createServer(async (req, res) => {
     let path = decodeURIComponent(url.pathname);
     if (path === "/") path = "/harness/index.html";
     // Prevent path traversal outside the served root.
-    const target = join(root, normalize(path).replace(/^(\.\.[/\\])+/, ""));
-    if (!target.startsWith(root)) {
+    const target = resolve(root, `.${path}`);
+    const rel = relative(root, target);
+    if (rel.startsWith('..') || isAbsolute(rel) || path.split(/[/\\]/).some(part => part.startsWith('.'))) {
       res.writeHead(403).end("forbidden");
       return;
     }
     let finalPath = target;
     const info = await stat(finalPath).catch(() => null);
     if (info?.isDirectory()) finalPath = join(finalPath, "index.html");
+    const actual = await realpath(finalPath);
+    const actualRel = relative(rootReal, actual);
+    if (actualRel.startsWith('..') || isAbsolute(actualRel)) {
+      res.writeHead(403).end("forbidden");
+      return;
+    }
     const body = await readFile(finalPath);
     res.writeHead(200, {
       "content-type": MIME[extname(finalPath)] ?? "application/octet-stream",

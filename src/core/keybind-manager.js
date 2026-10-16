@@ -133,6 +133,12 @@ export class KeybindManager {
     }
 
     if (this.guiOpen) {
+      // Let text fields and native controls receive their editing keys.
+      // Stop propagation so those keys cannot reach the game listeners.
+      if (e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) {
+        e.stopPropagation();
+        return;
+      }
       // GUI is modal: swallow gameplay keys so the player does not move while
       // interacting with windows. Escape handled above.
       if (this._isGameplayKey(e)) {
@@ -143,7 +149,7 @@ export class KeybindManager {
       return;
     }
 
-    if (this.typing) return;
+    if (this.typing || e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) return;
 
     const kb = keybindFromKeyboardEvent(e);
     if (!kb) return;
@@ -187,11 +193,12 @@ export class KeybindManager {
   }
 
   _handleWheel(e) {
-    this.bus?.emit("mouse-scroll", { event: e, deltaY: e.deltaY, deltaX: e.deltaX });
     if (this.guiOpen) {
-      // The GUI scrolls its own lists; block zoom/scroll reaching the game.
-      e.preventDefault();
+      // Preserve native scrolling inside the GUI without forwarding hotbar input.
+      e.stopPropagation();
+      return;
     }
+    this.bus?.emit("mouse-scroll", { event: e, deltaY: e.deltaY, deltaX: e.deltaX });
   }
 
   _handleBlur() {
