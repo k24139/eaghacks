@@ -1,0 +1,843 @@
+{
+  "results": [
+    {
+      "name": "compiled Java bridge announces itself"
+    },
+    {
+      "name": "actual single-player world publishes native state"
+    },
+    {
+      "name": "compiled production bridge exposes snapshot diagnostics and bounded multi-attack"
+    },
+    {
+      "name": "native session identifies single-player"
+    },
+    {
+      "name": "actual survival inventory opens"
+    },
+    {
+      "name": "actual game canvas captures the mouse"
+    },
+    {
+      "name": "trusted mouse movement reaches the actual captured game canvas",
+      "detail": {
+        "yaw": -48.00000762939453,
+        "events": [
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 330,
+            "dy": 201
+          },
+          {
+            "dx": -330,
+            "dy": -201
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 340,
+            "dy": 202
+          },
+          {
+            "dx": -340,
+            "dy": -202
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 350,
+            "dy": 203
+          },
+          {
+            "dx": -350,
+            "dy": -203
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 360,
+            "dy": 205
+          },
+          {
+            "dx": -360,
+            "dy": -205
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "real movement changes native coordinates",
+      "detail": {
+        "before": [
+          0.5,
+          0.5
+        ],
+        "after": [
+          0.6854184596211745,
+          0.6669380462416435
+        ]
+      }
+    },
+    {
+      "name": "real entities expose type, velocity and health"
+    },
+    {
+      "name": "native inventory contains the actual bread"
+    },
+    {
+      "name": "native main inventory has 36 slots"
+    },
+    {
+      "name": "native camera contains a finite projection"
+    },
+    {
+      "name": "native biome identifies the actual loaded region"
+    },
+    {
+      "name": "native effects are an actual typed collection"
+    },
+    {
+      "name": "real damage updates native health and hurt state"
+    },
+    {
+      "name": "native slot command changes actual selection"
+    },
+    {
+      "name": "native rotation changes real yaw and pitch"
+    },
+    {
+      "name": "native jump changes real height"
+    },
+    {
+      "name": "KillAura damages a real private-world mob"
+    },
+    {
+      "name": "two actual healthy private-world mobs prepare batch test",
+      "detail": [
+        {
+          "id": 31,
+          "health": 10
+        },
+        {
+          "id": 32,
+          "health": 10
+        }
+      ]
+    },
+    {
+      "name": "compiled bounded batch damages two actual mobs"
+    },
+    {
+      "name": "Aim Assist rotates toward an actual mob"
+    },
+    {
+      "name": "KillAura owns actual rotation when Aim Assist is also enabled"
+    },
+    {
+      "name": "Sprint changes actual sprint state while moving"
+    },
+    {
+      "name": "Sprint releases state when disabled"
+    },
+    {
+      "name": "Speed and Sprint combine in actual movement"
+    },
+    {
+      "name": "combined movement disables without sustained velocity or sprint"
+    },
+    {
+      "name": "programmatic blur releases keys in the actual native world"
+    },
+    {
+      "name": "focus regain and module disable leave no sustained movement"
+    },
+    {
+      "name": "Zoom changes actual FOV and camera projection"
+    },
+    {
+      "name": "Zoom restores native FOV"
+    },
+    {
+      "name": "Fullbright changes real gamma option"
+    },
+    {
+      "name": "Fullbright restores real gamma option"
+    },
+    {
+      "name": "NoHurtCam enables compiled camera hook"
+    },
+    {
+      "name": "NoHurtCam restores the compiled hook"
+    },
+    {
+      "name": "real hunger effect prepares food test",
+      "detail": 3
+    },
+    {
+      "name": "AutoEat starts real food use"
+    },
+    {
+      "name": "AutoEat increases actual hunger"
+    },
+    {
+      "name": "AutoEat releases use and restores actual slot"
+    },
+    {
+      "name": "entity-esp draws actual entity overlay pixels"
+    },
+    {
+      "name": "tracers draws actual entity overlay pixels"
+    },
+    {
+      "name": "nametags draws actual entity overlay pixels"
+    },
+    {
+      "name": "Coordinates HUD displays actual player position",
+      "detail": {
+        "text": "XYZ: 0.5, 150.0, 0.5",
+        "width": 157
+      }
+    },
+    {
+      "name": "World Time HUD reads actual native clock"
+    },
+    {
+      "name": "Armor HUD displays actual equipped armor metadata"
+    },
+    {
+      "name": "Biome Info displays the real native biome"
+    },
+    {
+      "name": "Potion HUD displays an actual active effect"
+    },
+    {
+      "name": "Custom Crosshair suppresses the real vanilla crosshair through its compiled hook"
+    },
+    {
+      "name": "Custom Crosshair restores the real vanilla crosshair"
+    },
+    {
+      "name": "ClickGUI opens inside actual native world"
+    },
+    {
+      "name": "ClickGUI close restores actual game control without an extra pause menu"
+    },
+    {
+      "name": "real death emits native lifecycle event"
+    },
+    {
+      "name": "AutoRespawn returns actual player to world"
+    },
+    {
+      "name": "Session Statistics records real movement and death"
+    },
+    {
+      "name": "camera modules restore actual options in game menus"
+    },
+    {
+      "name": "compiled Java menu gate blocks stale actions while framework ticker is stopped"
+    },
+    {
+      "name": "world exit clears real native snapshot and stale commands"
+    },
+    {
+      "name": "world exit retains pending user module intent"
+    },
+    {
+      "name": "saved world reopens and eligible modules resume from real data"
+    },
+    {
+      "name": "camera state restores after leaving and rejoining a world"
+    },
+    {
+      "name": "configuration survives a real native-client page reload"
+    },
+    {
+      "name": "saved native HUD waits for a real world after reload"
+    },
+    {
+      "name": "no uncaught page errors",
+      "detail": []
+    },
+    {
+      "name": "no module crashes"
+    }
+  ],
+  "inputLimitations": [
+    {
+      "test": "physical pointer-lock camera motion",
+      "reason": "Headless Chromium generated cancelling trusted recenter deltas; native yaw did not change. Pointer capture and native rotation commands are checked separately.",
+      "events": [
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 330,
+          "dy": 201
+        },
+        {
+          "dx": -330,
+          "dy": -201
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 340,
+          "dy": 202
+        },
+        {
+          "dx": -340,
+          "dy": -202
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 350,
+          "dy": 203
+        },
+        {
+          "dx": -350,
+          "dy": -203
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 360,
+          "dy": 205
+        },
+        {
+          "dx": -360,
+          "dy": -205
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "test": "physical browser focus transition",
+      "reason": "Headless Chromium keeps both tabs focused. The blur listener is exercised with a programmatic FocusEvent, and actual native movement release is checked. Desktop focus switching remains manual QA."
+    }
+  ],
+  "elapsedMs": 238215,
+  "sample": {
+    "version": 1,
+    "tick": 675,
+    "bridge": {
+      "sequence": 1067,
+      "snapshotMs": 0.29999999998835847
+    },
+    "world": {
+      "time": 675,
+      "dimension": "minecraft:overworld",
+      "biome": "minecraft:plains"
+    },
+    "player": {
+      "x": 0.6854184596211745,
+      "y": 150,
+      "z": 0.6669380462416435,
+      "yaw": -48.00000762939453,
+      "pitch": -30.000003814697266,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeeVigg4489",
+      "velocity": {
+        "x": 0.06147474829653264,
+        "y": -0.0784000015258789,
+        "z": 0.05534764119380056
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 1,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "entities": [
+      {
+        "id": 1,
+        "name": "YeeVigg4489",
+        "x": 0.6854184596211745,
+        "y": 150,
+        "z": 0.6669380462416435,
+        "width": 0.6000000238418579,
+        "height": 1.7999999523162842,
+        "health": 20,
+        "maxHealth": 20,
+        "isPlayer": true,
+        "hostile": false,
+        "passive": false,
+        "invisible": false,
+        "visible": true,
+        "isSelf": true,
+        "type": "minecraft:player",
+        "velocity": {
+          "x": 0.06147474829653264,
+          "y": -0.0784000015258789,
+          "z": 0.05534764119380056
+        },
+        "dead": false
+      },
+      {
+        "id": 30,
+        "name": "Pig",
+        "x": 0.5,
+        "y": 150,
+        "z": 2.5,
+        "width": 0.8999999761581421,
+        "height": 0.8999999761581421,
+        "health": 10,
+        "maxHealth": 10,
+        "isPlayer": false,
+        "hostile": false,
+        "passive": true,
+        "invisible": false,
+        "visible": true,
+        "isSelf": false,
+        "type": "minecraft:pig",
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "dead": false
+      }
+    ],
+    "inventory": {
+      "selectedSlot": 0,
+      "hotbar": [
+        {
+          "slot": 0,
+          "id": "minecraft:bread",
+          "name": "Bread",
+          "count": 4,
+          "durability": -1,
+          "maxDurability": 0,
+          "food": true,
+          "nutrition": 5,
+          "saturation": 6
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "main": [
+        {
+          "slot": 0,
+          "id": "minecraft:bread",
+          "name": "Bread",
+          "count": 4,
+          "durability": -1,
+          "maxDurability": 0,
+          "food": true,
+          "nutrition": 5,
+          "saturation": 6
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "armor": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "selfEntityId": 1,
+    "crosshairEntityId": -1,
+    "features": {
+      "directMovement": true,
+      "combat": true,
+      "multiAttack": true,
+      "brightnessControl": true,
+      "fovControl": true,
+      "hurtCameraControl": true,
+      "respawn": true,
+      "crosshairControl": true,
+      "biome": true,
+      "effects": true,
+      "render": true,
+      "inventoryRead": true
+    },
+    "session": {
+      "kind": "local",
+      "paused": false
+    },
+    "options": {
+      "brightness": 0.5,
+      "fov": 70,
+      "noHurtCamera": false,
+      "hideCrosshair": false
+    },
+    "camera": {
+      "x": 0.6606488302549162,
+      "y": 151.61999988555908,
+      "z": 0.6446371731733366,
+      "m": [
+        -0.5972606539726257,
+        0,
+        0.6633257269859314,
+        0,
+        -0.5306606292724609,
+        1.2368123531341553,
+        -0.4778086543083191,
+        0,
+        -0.6437082290649414,
+        -0.5000976920127869,
+        -0.579596996307373,
+        0.10000976920127869,
+        0.6435825824737549,
+        0.5000000596046448,
+        0.5794838666915894,
+        0
+      ]
+    }
+  },
+  "menuFrameworkStats": {
+    "fps": 5.942001175118116,
+    "frameTimeMs": 16.69999999999709,
+    "worstFrameMs": 5649.800000000001,
+    "moduleTickMs": 0.09062499999163265,
+    "moduleRenderMs": 0,
+    "memoryUsedMB": 11.348724365234375,
+    "memoryLimitMB": 3585.8154296875,
+    "upSeconds": 17.184
+  },
+  "performanceContext": "Post-reload menu statistics; real gameplay performance is sampled separately",
+  "verifiedModules": [
+    "kill-aura",
+    "aim-assist",
+    "sprint",
+    "speed",
+    "auto-walk",
+    "zoom",
+    "fullbright",
+    "no-hurt-cam",
+    "auto-eat",
+    "entity-esp",
+    "tracers",
+    "nametags",
+    "coordinates",
+    "world-time",
+    "armor-hud",
+    "session-stats",
+    "auto-respawn",
+    "biome-info",
+    "potion-hud",
+    "custom-crosshair"
+  ],
+  "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+  "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f"
+}

@@ -42,6 +42,8 @@ export class KillAura extends CombatModule {
     r.bool("rotate", "Face the target before attacking", true);
     r.double("rotate-speed", "Rotation speed", 0.6, { min: 0.05, max: 1 });
   }
+  onEnable() { this._cooldownTicks=0; }
+  onDisable() { this._cooldownTicks=0;this.game.cancelAttacks?.(); }
   onTick() {
     if (!this._allowedHere()) return;
     if (this._cooldownTicks > 0) {
@@ -76,7 +78,7 @@ export class KillAura extends CombatModule {
     const range = this.settings.get("range").value;
     const out = [];
     for (const e of this.game.getEntities?.() ?? []) {
-      if (!e || e.isSelf || e.dead) continue;
+      if (!e || e.isSelf || e.dead || (typeof e.health === "number" && e.health <= 0)) continue;
       if (e.isPlayer && !this.settings.get("players").value) continue;
       if (!e.isPlayer && e.hostile && !this.settings.get("hostile").value) continue;
       if (!e.isPlayer && !e.hostile && !this.settings.get("passive").value) continue;
@@ -84,10 +86,11 @@ export class KillAura extends CombatModule {
       if (this.manager.client?.isFriend?.(e.name)) continue;
       const dist = Math.hypot(e.x - p.x, e.y - p.y, e.z - p.z);
       if (dist > range) continue;
-      out.push({ entity: e, dist, health: e.health ?? 20 });
+      out.push({ entity: e, dist, health: e.health ?? 20, angle: Math.abs(angleDelta((Math.atan2(p.x-e.x,e.z-p.z)*180)/Math.PI,p.yaw??0)) });
     }
     const priority = this.settings.get("priority").value;
     out.sort((a, b) => {
+      if (priority === "angle") return a.angle-b.angle;
       if (priority === "lowest-health") return a.health - b.health;
       if (priority === "highest-health") return b.health - a.health;
       return a.dist - b.dist;
@@ -125,6 +128,8 @@ export class AimAssist extends CombatModule {
     g.bool("mobs", "Aim at mobs", true);
   }
   onTick() {
+    const aura = this.manager.get("kill-aura");
+    if (aura?.active && aura.settings.get("rotate").value && aura._targets().length) return;
     if (this.settings.get("only-attacking").value && !this.game.isAttacking?.()) return;
     const p = this.game.getPlayer?.();
     if (!p) return;
@@ -132,7 +137,8 @@ export class AimAssist extends CombatModule {
     const fov = this.settings.get("fov").value;
     let best = null;
     for (const e of this.game.getEntities?.() ?? []) {
-      if (!e || e.isSelf) continue;
+      if (!e || e.isSelf || e.dead || (typeof e.health === "number" && e.health <= 0) || e.visible === false) continue;
+      if (this.manager.client?.isFriend?.(e.name)) continue;
       if (e.isPlayer && !this.settings.get("players").value) continue;
       if (!e.isPlayer && !this.settings.get("mobs").value) continue;
       const dist = Math.hypot(e.x - p.x, e.y - p.y, e.z - p.z);
@@ -174,7 +180,8 @@ export class TriggerBot extends CombatModule {
   }
   onTick() {
     const target = this.game.getCrosshairTargetEntity?.();
-    if (!target) return;
+    if (!target || target.isSelf || target.dead || (typeof target.health === "number" && target.health <= 0) || target.visible === false) return;
+    if (this.manager.client?.isFriend?.(target.name)) return;
     if (target.isPlayer && !this.settings.get("players").value) return;
     if (!target.isPlayer && !this.settings.get("mobs").value) return;
     if (this.settings.get("weapon-only").value && !this.game.heldItemIsWeapon?.()) return;
@@ -238,7 +245,10 @@ export class AutoCrit extends CombatModule {
   }
   onInit() {
     const g = this.settings.addGroup("Criticals");
-    g.enum("mode", "Mode", "packet", ["packet", "jump"]);
+    g.enum("mode", "Mode", "jump", ["packet", "jump"]);
+  }
+  ineligibilityReason() {
+    return super.ineligibilityReason() || (this.settings.get("mode")?.value === "packet" ? "packet criticals require a packet hook; select jump mode" : null);
   }
   onTick() {
     const p = this.game.getPlayer?.();
@@ -311,7 +321,7 @@ export class AutoWeapon extends CombatModule {
     const target = this.game.getCrosshairTargetEntity?.();
     if (this.settings.get("only-when-attacking").value && !target) return;
     const best = this.game.findBestWeapon?.(target);
-    if (best && best !== this.game.getSelectedSlot?.()) this.game.selectSlot?.(best);
+    if (Number.isInteger(best) && best >= 0 && best !== this.game.getSelectedSlot?.()) this.game.selectSlot?.(best);
   }
 }
 

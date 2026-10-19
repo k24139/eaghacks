@@ -1,0 +1,16 @@
+{
+ "upstream":"1be2375ad67cb42a52d5f586a2422e54b57be625",
+ "gameVersion":"26.2","toolVersion":"0.1.0-u1",
+ "officialClientJarSHA256":"40896ee9f1e2bec3c934daac7e93d41e9e3d9c2f8ae0ca366d52ffbfd1afa290",
+ "resourceFiles":19509,"resourceBytes":17579680,
+ "resourceTree":"f2afee52c90429514280032eb8b3316f9310b164e96aa17a908a9204d84ac18b",
+ "rebuiltClients":[{"bytes":17763621,"sha256":"817d8dc367ee32beb863b23c4716fdc9b4acdfc7547594735fadfbcbf9874176","upstream":"1be2375ad67cb42a52d5f586a2422e54b57be625","mode":"fast-analysis/SIMPLE; current native bridge"}],
+ "payloads":{
+  "eag-inline-decoder":{"bytes":208439,"sha256":"79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f"},
+  "eag-inline-wasm-br":{"bytes":13895847,"sha256":"c783f63ac18c0a185fbf6fa633372a6f1d3cfa014a4285fb2fb4bd924a638c08"},
+  "eag-inline-mesh-wasm-br":{"bytes":2245115,"sha256":"ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3"},
+  "eag-inline-server-wasm-br":{"bytes":7652747,"sha256":"34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105"},
+  "eag-inline-assets":{"bytes":6616184,"sha256":"a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db"},
+  "eag-inline-sounds":{"bytes":25921893,"sha256":"94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6"}
+ }
+}

@@ -95,6 +95,7 @@ export class ClickGUI {
     this.keybinds.guiOpen = false;
     this.keybinds.cancelCapture();
     this._persistLayout();
+    this.modules.game?.onGuiClosed?.();
     return false;
   }
 

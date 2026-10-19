@@ -1,111 +1,33 @@
-/**
- * Docs generator. Boots the client headlessly and prints the module table used
- * by MODULES.md. Generating it from the live registry means the documentation
- * cannot drift from the code.
- *
- * Status rules (deliberately conservative):
- *   Unsupported                  module.unsupported === true
- *   Implemented and tested       covered by the automated suite/harness
- *   Implemented but untested     implementation exists but has no direct test
- *   Partially implemented        path exists, but final real-game behaviour
- *                                still depends on a runtime boundary not fully
- *                                end-to-end verified
- */
-import { installDom } from "./dom-env.mjs";
-
+/** The actual Eaglercraft module factory supplies the catalogue and capability requirements. */
+import {installDom} from './dom-env.mjs';
+import {readFile} from 'node:fs/promises';
+import {gameplaySourceDigest} from '../native-bridge/source-digest.mjs';
 installDom();
-const { bootMeteor, shutdownMeteor } = await import("../src/index.js");
-const { MockAdapter } = await import("../src/core/adapter.js");
-
-/** Modules with direct automated coverage. */
-const TESTED = new Set([
-  // framework behaviour verified through the GUI/HUD tests
-  "fps-display", "cps-counter", "coordinates", "direction", "keystrokes",
-  "active-modules-hud", "session-timer", "speed-hud", "custom-text",
-  "performance-monitor",
-  // verified by lifecycle/capability tests
-  "kill-aura", "sprint", "zoom", "entity-esp", "trigger-bot",
+const{bootMeteor,shutdownMeteor}=await import('../src/index.js');
+const{MockAdapter}=await import('../src/core/adapter.js');
+const{createEaglercraftModules}=await import('../src/integration/eaglercraft-modules.js');
+const available=new Set(['input','hud','world','entities','render','native-direct','native-inventory-read','brightness-control','fov-control','hurt-camera-control','native-respawn','effects','biome','crosshair-control','native-multi-attack']);
+const partial=new Map([
+ ['fullbright','Brightness control is implemented; optional night-vision effect is not exposed'],
+ ['auto-crit','Jump mode only; packet mode is not supplied'],
+ ['no-hurt-cam','Damage/death camera suppression exists; directional tilt is not an independent control'],
+ ['auto-gg','Chat/network hook unavailable'],
+ ['macros','Module and wait steps work; chat and arbitrary bind steps need additional hooks'],
+ ['target-hud','Health/distance rendering exists; target armor metadata is absent'],
+ ['screenshot-util','Uses the actual game canvas; WebGL screenshot timing still requires gameplay validation'],
 ]);
-
-/** Modules that depend on hooks/boundaries not fully verified in a real world. */
-const PARTIAL = new Set([
-  "fullbright", "step", "high-jump", "safe-walk", "no-fall", "flight",
-  "speed", "timer", "auto-walk", "reach-display", "no-hurt-cam",
-  "custom-crosshair", "tracers", "nametags", "storage-esp", "radar",
-  "auto-tool", "auto-eat", "fast-place", "auto-respawn", "anti-afk",
-  "durability-warnings", "inventory-manager", "auto-reconnect",
-  "block-search", "waypoints", "chunk-borders", "biome-info", "world-time",
-  "aim-assist", "auto-clicker", "auto-crit", "velocity", "auto-weapon",
-  "auto-armor", "target-hud", "hitboxes", "auto-gg", "screenshot-util",
-  "ping-display", "server-info", "macros", "friend-manager", "notifications",
-  "module-search", "keybind-manager", "session-stats", "debug-console",
-  "armor-hud", "potion-hud", "freecam", "parkour", "bunny-hop",
-]);
-
-/**
- * The standalone Eaglercraft bootstrap intentionally adapts a small number of
- * generic modules to browser-bound capabilities. Keep those overrides in the
- * generated catalogue so it describes the actual 26.2-u1 integration rather
- * than only the runtime-neutral constructor defaults.
- */
-const EAGLER_OVERRIDES = new Map([
-  ['sprint', { capabilities: ['input'], note: 'Browser Ctrl input; completed-world sprint test pending' }],
-  ["auto-clicker", {
-    capabilities: ["input"],
-    note: "Eaglercraft integration: browser mouse input; local-test-only; completed-world end-to-end test pending",
-  }],
-  ["auto-walk", {
-    capabilities: ["input"],
-    note: "Eaglercraft integration: held KeyW browser input; local-test-only; completed-world end-to-end test pending",
-  }],
-  ["custom-crosshair", {
-    capabilities: ["hud"],
-    note: "Eaglercraft integration: browser HUD canvas path available",
-  }],
-]);
-for (const [id, caps] of [
-  ['fullbright', ['world', 'brightness-control']],
-  ['zoom', ['world', 'fov-control']],
-  ['no-hurt-cam', ['world', 'hurt-camera-control']],
-  ['armor-hud', ['native-inventory-read']],
-  ['durability-warnings', ['native-inventory-read']],
-  ['auto-eat', ['world', 'native-inventory-read', 'native-direct']],
-  ...['kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit'].map(id => [id, ['world', 'entities', 'native-direct']]),
-]) EAGLER_OVERRIDES.set(id, { capabilities: caps, note: `needs ${caps.join(', ')}; native rebuild/gameplay validation pending` });
-
-function statusOf(m) {
-  if (m.unsupported) return "Unsupported";
-  // Framework fixtures do not prove module behavior inside a real world.
-  if (TESTED.has(m.id)) return m.requiredCapabilities.some(c => ['world', 'movement', 'entities', 'inventory'].includes(c)) ? "Partially implemented" : "Implemented but untested";
-  if (PARTIAL.has(m.id)) return "Partially implemented";
-  return "Implemented but untested";
+let evidence={verifiedModules:[]};try{evidence=JSON.parse(await readFile(new URL('../native-bridge/gameplay-verification.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+const verified=new Set(evidence.sourceDigest===await gameplaySourceDigest() && /^[0-9a-f]{64}$/.test(evidence.artifactSHA256??'') ? evidence.verifiedModules : []);
+const client=bootMeteor({adapter:new MockAdapter(),modules:createEaglercraftModules(),storage:null,fresh:true});
+const modules=client.catalogue().sort((a,b)=>a.category.localeCompare(b.category)||a.name.localeCompare(b.name));
+console.log('<!-- GENERATED by tools/gen-docs.mjs -->');console.log(`<!-- ${modules.length} modules -->`);
+console.log('\nStatuses refer to the native overlay contract. Framework fixtures do not establish gameplay verification.\n');
+console.log('| Module | Category | Status | Settings | Notes |\n| --- | --- | --- | --- | --- |');
+for(const m of modules){
+ const missing=m.requiredCapabilities.filter(c=>!available.has(c));
+ const status=m.unsupported||missing.length?'Unsupported':partial.has(m.id)?'Partially implemented':verified.has(m.id)?'Verified in real gameplay':'Implemented but not gameplay-tested';
+ const settings=m.settings.filter(s=>s.name!=='bind').map(s=>'`'+s.name+'`').join(', ')||'—';
+ const note=m.unsupported?m.unsupportedReason:missing.length?'Current bridge lacks '+missing.join(', '):partial.get(m.id)||'Requires '+(m.requiredCapabilities.join(', ')||'client UI');
+ console.log(`| ${m.name} | ${m.category} | ${status} | ${settings} | ${note} |`);
 }
-
-const client = bootMeteor({ adapter: new MockAdapter(), storage: null, fresh: true });
-const modules = client.catalogue().sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
-
-const rows = modules.map((m) => {
-  const settings = m.settings.filter((s) => s.name !== "bind");
-  const settingsText = settings.length ? settings.map((s) => `\`${s.name}\``).join(", ") : "—";
-  const override = EAGLER_OVERRIDES.get(m.id);
-  const effectiveCaps = override?.capabilities ?? m.requiredCapabilities;
-  const caps = effectiveCaps.length ? effectiveCaps.join(", ") : "—";
-  const note = m.unsupported
-    ? m.unsupportedReason
-    : override?.note ?? (caps !== "—" ? `needs ${caps}` : "client-side");
-  return `| ${m.name} | ${m.category} | ${statusOf(m)} | ${settingsText} | ${note} |`;
-});
-
-const byCategory = {};
-for (const m of modules) byCategory[m.category] = (byCategory[m.category] ?? 0) + 1;
-
-console.log("<!-- GENERATED by tools/gen-docs.mjs — do not edit by hand -->");
-console.log(`<!-- ${modules.length} modules -->`);
-console.log("");
-console.log("| Module | Category | Status | Settings | Notes |");
-console.log("| --- | --- | --- | --- | --- |");
-console.log(rows.join("\n"));
-console.log("");
-console.log("Counts by category: " + Object.entries(byCategory).map(([k, v]) => `${k} ${v}`).join(", "));
-
 shutdownMeteor();

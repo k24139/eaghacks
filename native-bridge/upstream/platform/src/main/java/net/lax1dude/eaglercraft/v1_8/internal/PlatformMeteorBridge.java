@@ -6,6 +6,23 @@ package net.lax1dude.eaglercraft.v1_8.internal;
  */
 public final class PlatformMeteorBridge {
 
+
+    public static void announce() {}
+    public static void publishScreen(String name, boolean overlay) {}
+    public static void restrictCommandsToCleanup() {}
+    public static void publishBiome(String biome) {}
+    public static void publishEffect(String name, int amplifier, int duration) {}
+    public static void publishCrosshair(boolean hidden) {}
+    public static int takeHideCrosshair() { return -1; }
+    public static void publishContext(boolean local, boolean paused, double brightness, double fov, boolean noHurtCamera) {}
+    public static void publishPlayerExtra(boolean sprinting, boolean sneaking, int hurtTime, double fallDistance, float forward, float strafe, boolean dead, boolean usingItem) {}
+    public static void publishEntityExtra(String type, double vx, double vy, double vz, boolean dead) {}
+    public static boolean takeSwing() { return false; }
+    public static boolean takeRespawn() { return false; }
+    public static double takeBrightness() { return Double.NaN; }
+    public static double takeFov() { return Double.NaN; }
+    public static int takeNoHurtCamera() { return -1; }
+
     private PlatformMeteorBridge() {
     }
 

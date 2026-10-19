@@ -242,6 +242,9 @@ export class MeteorClient {
     try {
       this.bus.emit(Events.ClientTick, { ticks });
       this.adapter?.update?.(ticks);
+      this.modules.revalidateAll({silent:true});
+      for(const event of this.adapter?.drainEvents?.() ?? [])this.bus.emit(event.type,event);
+      if(this.adapter?.isTyping)this.keybinds.typing=this.adapter.isTyping();
       this.modules.tick(ticks);
     } catch (err) {
       this.notify(`client tick error: ${err.message}`, "error");

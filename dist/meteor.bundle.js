@@ -822,11 +822,18 @@ var MeteorFramework = (() => {
     /** Force-disable everything whose capability requirements vanished. */
     revalidateAll({ silent = true } = {}) {
       const changed = [];
-      for (const m of [...this._active]) {
-        if (!m.canEnable()) {
+      for (const m of this._byId.values()) {
+        if (m.active && !m.canEnable()) {
           const was = this._suspendCallbacks;
           this._suspendCallbacks = silent;
           m.disable();
+          m._restoreOnWorld = !m.unsupported;
+          this._suspendCallbacks = was;
+          changed.push(m);
+        } else if (!m.active && m._restoreOnWorld && m.canEnable()) {
+          const was = this._suspendCallbacks;
+          this._suspendCallbacks = silent;
+          m.enable();
           this._suspendCallbacks = was;
           changed.push(m);
         }
@@ -842,7 +849,7 @@ var MeteorFramework = (() => {
       const was = this._suspendCallbacks;
       this._suspendCallbacks = silent;
       try {
-        for (const m of [...this._active]) m.disable();
+        for (const m of this._byId.values()) if (m.active || m._restoreOnWorld) m.disable();
       } finally {
         this._suspendCallbacks = was;
       }
@@ -877,6 +884,7 @@ var MeteorFramework = (() => {
         module._recordError(err);
         if (module.active) {
           module._active = false;
+          module._restoreOnWorld = false;
           this._active.delete(module);
           try {
             module.onDisable();
@@ -1224,7 +1232,7 @@ var MeteorFramework = (() => {
         }
         const entry = { id: m.id };
         if (any) entry.settings = settings;
-        if (m.active) entry.active = true;
+        if (m.active || m._restoreOnWorld) entry.active = true;
         if (this.modules.isFavourite(m)) entry.favourite = true;
         if (any || entry.active || entry.favourite) out.push(entry);
       }
@@ -1272,6 +1280,7 @@ var MeteorFramework = (() => {
               this.modules._active.add(m);
               this.modules.runGuarded(m, "onEnable", () => m.onEnable());
             } else {
+              if (!m.unsupported) m._restoreOnWorld = true;
               diag.errors.push(`could not enable '${m.id}': ${m.ineligibilityReason()}`);
             }
           }
@@ -2520,6 +2529,7 @@ var MeteorFramework = (() => {
       this.keybinds.guiOpen = false;
       this.keybinds.cancelCapture();
       this._persistLayout();
+      this.modules.game?.onGuiClosed?.();
       return false;
     }
     // -- construction ---------------------------------------------------------
@@ -3061,7 +3071,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     /** Rebuild nodes for all active HUD modules. Cheap; called on toggle. */
     sync() {
       if (!this.root) return;
-      const activeHud = this.modules.active().filter((m) => m.category === "HUD" && typeof m.hudRender === "function");
+      const activeHud = this.modules.active().filter((m) => typeof m.hudRender === "function");
       const wanted = new Set(activeHud.map((m) => m.id));
       for (const [id, node] of this.nodes) {
         if (node && !wanted.has(id)) {
@@ -3157,7 +3167,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this._lastRefresh = now;
       if (!this.root) return;
       for (const m of this.modules.active()) {
-        if (m.category !== "HUD" || typeof m.hudRender !== "function") continue;
+        if (typeof m.hudRender !== "function") continue;
         const node = this.nodes.get(m.id);
         if (!node) continue;
         try {
@@ -3261,6 +3271,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this.bind.runsInMenus = true;
       this._manager = null;
       this._active = false;
+      this._restoreOnWorld = false;
       this._initialised = false;
       this._subs = new SubscriptionBag();
       this._errorCount = 0;
@@ -3329,7 +3340,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     }
     /** @returns {boolean} new active state */
     toggle() {
-      return this.setActive(!this._active);
+      return this.setActive(this._restoreOnWorld ? false : !this._active);
     }
     enable() {
       return this.setActive(true);
@@ -3343,6 +3354,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
      */
     setActive(want) {
       want = !!want;
+      this._restoreOnWorld = false;
       if (want === this._active) return this._active;
       if (want) {
         const reason = this.ineligibilityReason();
@@ -3427,6 +3439,13 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       r.bool("rotate", "Face the target before attacking", true);
       r.double("rotate-speed", "Rotation speed", 0.6, { min: 0.05, max: 1 });
     }
+    onEnable() {
+      this._cooldownTicks = 0;
+    }
+    onDisable() {
+      this._cooldownTicks = 0;
+      this.game.cancelAttacks?.();
+    }
     onTick() {
       if (!this._allowedHere()) return;
       if (this._cooldownTicks > 0) {
@@ -3460,7 +3479,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       const range = this.settings.get("range").value;
       const out = [];
       for (const e of this.game.getEntities?.() ?? []) {
-        if (!e || e.isSelf || e.dead) continue;
+        if (!e || e.isSelf || e.dead || typeof e.health === "number" && e.health <= 0) continue;
         if (e.isPlayer && !this.settings.get("players").value) continue;
         if (!e.isPlayer && e.hostile && !this.settings.get("hostile").value) continue;
         if (!e.isPlayer && !e.hostile && !this.settings.get("passive").value) continue;
@@ -3468,10 +3487,11 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
         if (this.manager.client?.isFriend?.(e.name)) continue;
         const dist = Math.hypot(e.x - p.x, e.y - p.y, e.z - p.z);
         if (dist > range) continue;
-        out.push({ entity: e, dist, health: e.health ?? 20 });
+        out.push({ entity: e, dist, health: e.health ?? 20, angle: Math.abs(angleDelta(Math.atan2(p.x - e.x, e.z - p.z) * 180 / Math.PI, p.yaw ?? 0)) });
       }
       const priority = this.settings.get("priority").value;
       out.sort((a, b) => {
+        if (priority === "angle") return a.angle - b.angle;
         if (priority === "lowest-health") return a.health - b.health;
         if (priority === "highest-health") return b.health - a.health;
         return a.dist - b.dist;
@@ -3508,6 +3528,8 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.bool("mobs", "Aim at mobs", true);
     }
     onTick() {
+      const aura = this.manager.get("kill-aura");
+      if (aura?.active && aura.settings.get("rotate").value && aura._targets().length) return;
       if (this.settings.get("only-attacking").value && !this.game.isAttacking?.()) return;
       const p = this.game.getPlayer?.();
       if (!p) return;
@@ -3515,7 +3537,8 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       const fov = this.settings.get("fov").value;
       let best = null;
       for (const e of this.game.getEntities?.() ?? []) {
-        if (!e || e.isSelf) continue;
+        if (!e || e.isSelf || e.dead || typeof e.health === "number" && e.health <= 0 || e.visible === false) continue;
+        if (this.manager.client?.isFriend?.(e.name)) continue;
         if (e.isPlayer && !this.settings.get("players").value) continue;
         if (!e.isPlayer && !this.settings.get("mobs").value) continue;
         const dist = Math.hypot(e.x - p.x, e.y - p.y, e.z - p.z);
@@ -3555,7 +3578,8 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     }
     onTick() {
       const target = this.game.getCrosshairTargetEntity?.();
-      if (!target) return;
+      if (!target || target.isSelf || target.dead || typeof target.health === "number" && target.health <= 0 || target.visible === false) return;
+      if (this.manager.client?.isFriend?.(target.name)) return;
       if (target.isPlayer && !this.settings.get("players").value) return;
       if (!target.isPlayer && !this.settings.get("mobs").value) return;
       if (this.settings.get("weapon-only").value && !this.game.heldItemIsWeapon?.()) return;
@@ -3616,7 +3640,10 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     }
     onInit() {
       const g = this.settings.addGroup("Criticals");
-      g.enum("mode", "Mode", "packet", ["packet", "jump"]);
+      g.enum("mode", "Mode", "jump", ["packet", "jump"]);
+    }
+    ineligibilityReason() {
+      return super.ineligibilityReason() || (this.settings.get("mode")?.value === "packet" ? "packet criticals require a packet hook; select jump mode" : null);
     }
     onTick() {
       const p = this.game.getPlayer?.();
@@ -3686,7 +3713,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       const target = this.game.getCrosshairTargetEntity?.();
       if (this.settings.get("only-when-attacking").value && !target) return;
       const best = this.game.findBestWeapon?.(target);
-      if (best && best !== this.game.getSelectedSlot?.()) this.game.selectSlot?.(best);
+      if (Number.isInteger(best) && best >= 0 && best !== this.game.getSelectedSlot?.()) this.game.selectSlot?.(best);
     }
   };
   var AutoArmor = class extends Module {
@@ -3919,6 +3946,12 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
         const len = Math.hypot(vx, vz) || 1;
         vx += vx / len * (mult - 1) * 0.1;
         vz += vz / len * (mult - 1) * 0.1;
+      } else if (mode === "strafe") {
+        const forward = p.moveForward ?? 0, strafe = p.moveStrafe ?? 0, length = Math.hypot(forward, strafe);
+        if (!length) return;
+        const yaw = (p.yaw ?? 0) * Math.PI / 180, speed = Math.hypot(vx, vz) * mult;
+        vx = (-Math.sin(yaw) * forward + Math.cos(yaw) * strafe) / length * speed;
+        vz = (Math.cos(yaw) * forward + Math.sin(yaw) * strafe) / length * speed;
       }
       this.game.setPlayerVelocity?.(vx, v.y, vz);
     }
@@ -4116,11 +4149,24 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.int("delay", "Jump delay (ticks)", 1, { min: 1, max: 10 });
       g.bool("only-sprinting", "Only while sprinting", true);
     }
+    onEnable() {
+      this._jumpCooldown = 0;
+    }
+    onDisable() {
+      this._jumpCooldown = 0;
+    }
     onTick() {
+      if (this._jumpCooldown > 0) {
+        this._jumpCooldown--;
+        return;
+      }
       const p = this.game.getPlayer?.();
       if (!p) return;
       if (this.settings.get("only-sprinting").value && !p.sprinting) return;
-      if (this.game.isOnGround?.()) this.game.jump?.();
+      if (this.game.isOnGround?.()) {
+        this.game.jump?.();
+        this._jumpCooldown = this.settings.get("delay").value;
+      }
     }
   };
   var Jesus = class extends Module {
@@ -4272,9 +4318,15 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.double("gap", "Centre gap (cross/t-shape)", 2, { min: 0, max: 20 });
     }
     onEnable() {
+      this._originalCrosshairVisible = this.game.getVanillaCrosshairVisible?.() ?? true;
+      this.onTick();
       this._sub = this.subscribe(Events.RenderHud, (ev) => this.draw(ev));
     }
+    onTick() {
+      this.game.setVanillaCrosshairVisible?.(this.settings.get("hide-vanilla").value ? false : this._originalCrosshairVisible);
+    }
     onDisable() {
+      this.game.setVanillaCrosshairVisible?.(this._originalCrosshairVisible);
       this._sub?.dispose();
       this._sub = null;
     }
@@ -4756,21 +4808,32 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.enum("food", "Preferred food", "auto", ["auto", "golden_apple", "bread", "cooked_beef", "any"]);
       g.bool("restore-slot", "Restore the previous hotbar slot", true);
     }
+    _finish() {
+      this.game.stopUsingItem?.();
+      if (this.settings.get("restore-slot").value && this._eatenSlot !== null) (this.game.restoreSelectedSlot ?? this.game.selectSlot)?.call(this.game, this._eatenSlot);
+      this._eatenSlot = null;
+    }
     onTick() {
       const p = this.game.getPlayer?.();
       if (!p || typeof p.hunger !== "number") return;
-      if (p.hunger >= this.settings.get("threshold").value) return;
-      if (this._eatenSlot === null) {
-        const found = this.game.findFoodInHotbar?.(this.settings.get("food").value);
-        if (found === void 0 || found === null || found < 0) return;
-        this._eatenSlot = this.game.getSelectedSlot?.() ?? 0;
-        this.game.selectSlot?.(found);
+      if (p.hunger >= this.settings.get("threshold").value) {
+        this._finish();
+        return;
       }
-      this.game.useItem?.();
+      if (p.usingItem) return;
+      const food = this.game.findFoodInHotbar?.(this.settings.get("food").value);
+      if (!Number.isInteger(food) || food < 0) {
+        this._finish();
+        return;
+      }
+      if (this._eatenSlot === null) this._eatenSlot = this.game.getSelectedSlot?.() ?? 0;
+      this.game.selectSlot?.(food);
+      if (this.game.getSelectedSlot?.() !== food) return;
+      if (this.game.startUsingItem) this.game.startUsingItem();
+      else this.game.useItem?.();
     }
     onDisable() {
-      if (this.settings.get("restore-slot").value && this._eatenSlot !== null) this.game.selectSlot?.(this._eatenSlot);
-      this._eatenSlot = null;
+      this._finish();
     }
   };
   var FastPlace = class extends Module {
@@ -4808,9 +4871,10 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this._sub = null;
       this._pending = null;
     }
-    onTick() {
+    onTick(ticks = 1) {
       if (!this._pending) return;
-      if (this._pending.duration-- > 0) return;
+      this._pending.duration -= ticks;
+      if (this._pending.duration > 0) return;
       this.game.respawn?.();
       this._pending = null;
     }
@@ -4848,6 +4912,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     onTick() {
       const held = this.game.getHeldItem?.();
       if (!held || typeof held.durability !== "number" || typeof held.maxDurability !== "number") return;
+      if (held.maxDurability <= 0 || held.durability < 0) return;
       if (held.durability > this.settings.get("threshold").value) return;
       const now = Date.now();
       if (this._lastWarn && now - this._lastWarn < 5e3) return;
@@ -5252,6 +5317,11 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this._stepIndex = 0;
       this._waitUntil = 0;
     }
+    onDisable() {
+      this._running = null;
+      this._stepIndex = 0;
+      this._waitUntil = 0;
+    }
     runByName(name) {
       const macro = this.macros.find((m) => m.name === name);
       if (!macro) return false;
@@ -5308,7 +5378,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
           break;
         }
         case "chat":
-          this.game.sendChat?.(String(step.message ?? ""));
+          if (this.game.sendChat?.(String(step.message ?? "")) !== true) throw new Error("runtime chat sending is unavailable");
           break;
         case "wait":
           this._waitUntil = performance.now() + (step.delay ?? 250);
@@ -5369,7 +5439,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     constructor() {
       super({ id: "session-stats", name: "Session Statistics", description: "Tracks session time, distance travelled and deaths.", category: "Misc", runsInMenus: true });
       this.stats = { deaths: 0, distance: 0, startedAt: Date.now(), _last: null, kills: 0 };
-      this._subs = [];
+      this._eventSubs = [];
     }
     onInit() {
       const l = this.settings.addGroup("Layout");
@@ -5382,21 +5452,21 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       d.bool("time", "Show session time", true);
     }
     onEnable() {
-      this._subs.push(
-        this.manager.bus.on(Events.PlayerDeath, () => {
+      this._eventSubs.push(
+        this.subscribe(Events.PlayerDeath, () => {
           this.stats.deaths++;
         }),
-        this.manager.bus.on(Events.PlayerMove, (ev) => {
+        this.subscribe(Events.PlayerMove, (ev) => {
           if (typeof ev.distance === "number") this.stats.distance += ev.distance;
         }),
-        this.manager.bus.on(Events.EntityDamage, (ev) => {
+        this.subscribe(Events.EntityDamage, (ev) => {
           if (ev?.killed && ev.attackerIsSelf) this.stats.kills++;
         })
       );
     }
     onDisable() {
-      for (const s of this._subs) s.dispose();
-      this._subs = [];
+      for (const s of this._eventSubs) s.dispose();
+      this._eventSubs = [];
     }
     hudRender() {
       const parts = [];
@@ -5442,7 +5512,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       this.bind.set({ key: "F2", mouse: null, modifiers: {} });
     }
     onEnable() {
-      const canvas = this.game.getCanvas?.();
+      const canvas = this.game.getGameCanvas?.() ?? this.game.getCanvas?.();
       if (!canvas) {
         this.manager.notify("no canvas available for screenshots", "warn");
         this.disable();
@@ -5465,6 +5535,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     constructor() {
       super({ id: "auto-gg", name: "AutoGG", description: "Sends a configurable message when a game ends.", category: "Misc", requiredCapabilities: ["chat"], runsInMenus: true });
       this._sub = null;
+      this._timers = /* @__PURE__ */ new Set();
     }
     onInit() {
       const g = this.settings.addGroup("AutoGG");
@@ -5472,11 +5543,21 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.int("delay", "Delay (ticks)", 20, { min: 0, max: 200 });
     }
     onEnable() {
-      this._sub = this.manager.bus.on(Events.PlayerDeath, () => {
-        setTimeout(() => this.game.sendChat?.(this.settings.get("message").value), this.settings.get("delay").value * 50);
+      this._sub = this.subscribe(Events.PlayerDeath, () => {
+        const timer = setTimeout(() => {
+          this._timers.delete(timer);
+          if (this.active) this.game.sendChat?.(this.settings.get("message").value);
+        }, this.settings.get("delay").value * 50);
+        this._timers.add(timer);
       });
+      this.subscribe(Events.WorldUnload, () => this._cancelPending());
+    }
+    _cancelPending() {
+      for (const timer of this._timers) clearTimeout(timer);
+      this._timers.clear();
     }
     onDisable() {
+      this._cancelPending();
       this._sub?.dispose();
       this._sub = null;
     }
@@ -5497,7 +5578,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
     constructor() {
       super({ id: "debug-console", name: "Debug Console", description: "Logs client events to the browser console.", category: "Misc", runsInMenus: true });
       this.lines = [];
-      this._subs = [];
+      this._eventSubs = [];
     }
     onInit() {
       const g = this.settings.addGroup("Debug");
@@ -5507,18 +5588,21 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       g.int("max-lines", "Keep this many lines", 200, { min: 20, max: 1e3 });
     }
     onEnable() {
-      if (this.settings.get("modules").value) {
-        this._subs.push(this.manager.bus.on(Events.ModuleToggled, (ev) => this.log(`module ${ev.module.id} -> ${ev.active}`)));
-      }
-      if (this.settings.get("events").value) {
-        for (const type of Object.values(Events)) {
-          this._subs.push(this.manager.bus.on(type, (ev) => this.log(`event ${ev?.type ?? type}`)));
-        }
+      this._eventSubs.push(this.subscribe(Events.ModuleToggled, (ev) => {
+        if (this.settings.get("modules").value) this.log(`module ${ev.module.id} -> ${ev.active}`);
+      }));
+      this._eventSubs.push(this.subscribe(Events.Notification, (ev) => {
+        if (ev.level === "error" && this.settings.get("errors").value) this.log(`error ${ev.text}`);
+      }));
+      for (const type of Object.values(Events)) {
+        this._eventSubs.push(this.subscribe(type, (ev) => {
+          if (this.settings.get("events").value) this.log(`event ${ev?.type ?? type}`);
+        }));
       }
     }
     onDisable() {
-      for (const s of this._subs) s.dispose();
-      this._subs = [];
+      for (const s of this._eventSubs) s.dispose();
+      this._eventSubs = [];
     }
     log(line) {
       const entry = `${(/* @__PURE__ */ new Date()).toLocaleTimeString()}  ${line}`;
@@ -5807,7 +5891,7 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
     }
     hudRender(game) {
       const inv = game?.getInventory?.();
-      const armor = inv?.armor ?? [];
+      const armor = (inv?.armor ?? []).filter(Boolean);
       if (!armor.length) return "Armor: none";
       return armor.filter(Boolean).map((a) => `${a.name} ${a.durability ?? "?"}/${a.maxDurability ?? "?"}`).join("\n");
     }
@@ -6080,6 +6164,9 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
       try {
         this.bus.emit(Events.ClientTick, { ticks });
         this.adapter?.update?.(ticks);
+        this.modules.revalidateAll({ silent: true });
+        for (const event of this.adapter?.drainEvents?.() ?? []) this.bus.emit(event.type, event);
+        if (this.adapter?.isTyping) this.keybinds.typing = this.adapter.isTyping();
         this.modules.tick(ticks);
       } catch (err) {
         this.notify(`client tick error: ${err.message}`, "error");

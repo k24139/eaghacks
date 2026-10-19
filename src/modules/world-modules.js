@@ -47,22 +47,23 @@ export class AutoEat extends Module {
     g.enum("food", "Preferred food", "auto", ["auto", "golden_apple", "bread", "cooked_beef", "any"]);
     g.bool("restore-slot", "Restore the previous hotbar slot", true);
   }
-  onTick() {
-    const p = this.game.getPlayer?.();
-    if (!p || typeof p.hunger !== "number") return;
-    if (p.hunger >= this.settings.get("threshold").value) return;
-    if (this._eatenSlot === null) {
-      const found = this.game.findFoodInHotbar?.(this.settings.get("food").value);
-      if (found === undefined || found === null || found < 0) return;
-      this._eatenSlot = this.game.getSelectedSlot?.() ?? 0;
-      this.game.selectSlot?.(found);
-    }
-    this.game.useItem?.();
-  }
-  onDisable() {
-    if (this.settings.get("restore-slot").value && this._eatenSlot !== null) this.game.selectSlot?.(this._eatenSlot);
+  _finish() {
+    this.game.stopUsingItem?.();
+    if (this.settings.get("restore-slot").value && this._eatenSlot !== null) (this.game.restoreSelectedSlot ?? this.game.selectSlot)?.call(this.game,this._eatenSlot);
     this._eatenSlot = null;
   }
+  onTick() {
+    const p=this.game.getPlayer?.(); if(!p || typeof p.hunger!=="number")return;
+    if(p.hunger>=this.settings.get("threshold").value){this._finish();return;}
+    if(p.usingItem)return;
+    const food=this.game.findFoodInHotbar?.(this.settings.get("food").value);
+    if(!Number.isInteger(food)||food<0){this._finish();return;}
+    if(this._eatenSlot===null)this._eatenSlot=this.game.getSelectedSlot?.()??0;
+    this.game.selectSlot?.(food);
+    if(this.game.getSelectedSlot?.()!==food)return;
+    if(this.game.startUsingItem)this.game.startUsingItem();else this.game.useItem?.();
+  }
+  onDisable() { this._finish(); }
 }
 
 export class FastPlace extends Module {
@@ -101,9 +102,10 @@ export class AutoRespawn extends Module {
     this._sub = null;
     this._pending = null;
   }
-  onTick() {
+  onTick(ticks = 1) {
     if (!this._pending) return;
-    if (this._pending.duration-- > 0) return;
+    this._pending.duration -= ticks;
+    if (this._pending.duration > 0) return;
     this.game.respawn?.();
     this._pending = null;
   }
@@ -143,6 +145,7 @@ export class DurabilityWarnings extends Module {
   onTick() {
     const held = this.game.getHeldItem?.();
     if (!held || typeof held.durability !== "number" || typeof held.maxDurability !== "number") return;
+    if (held.maxDurability <= 0 || held.durability < 0) return;
     if (held.durability > this.settings.get("threshold").value) return;
     const now = Date.now();
     if (this._lastWarn && now - this._lastWarn < 5000) return;

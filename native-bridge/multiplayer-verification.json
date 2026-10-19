@@ -1,0 +1,59 @@
+{
+  "status": "blocked",
+  "results": [
+    {
+      "name": "private host has real local identity"
+    }
+  ],
+  "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+  "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+  "diagnostics": {
+    "host": {
+      "screen": {
+        "screenName": "EaglerLANPeersScreen",
+        "overlayActive": false
+      },
+      "peers": [
+        {
+          "id": "ca968a7ea8374699",
+          "name": "player-5afb",
+          "addr": "127.0.0.1",
+          "state": "failed",
+          "rttMs": -1,
+          "ageMs": 204267
+        }
+      ],
+      "status": "Automatic LAN discovery: 0 connected, 1 found on this network (loopback)"
+    },
+    "guest": {
+      "screen": {
+        "screenName": "TitleScreen",
+        "overlayActive": false
+      },
+      "peers": [
+        {
+          "id": "389a8ab7fc7fccfb",
+          "name": "player-0cd6",
+          "addr": "127.0.0.1",
+          "state": "failed",
+          "rttMs": -1,
+          "ageMs": 204380
+        }
+      ],
+      "status": "Automatic LAN discovery: 0 connected, 1 found on this network (loopback)"
+    },
+    "probe": {
+      "iceCandidates": [],
+      "connectionStates": [
+        "new",
+        "new"
+      ],
+      "channel": "connecting",
+      "loopbackFlagRetry": "same result"
+    },
+    "interfaces": [
+      "lo"
+    ]
+  },
+  "remaining": "Run two-client gameplay on a host where Chromium gathers WebRTC ICE candidates."
+}

@@ -121,7 +121,7 @@ export class ConfigManager {
       }
       const entry = { id: m.id };
       if (any) entry.settings = settings;
-      if (m.active) entry.active = true;
+      if (m.active || m._restoreOnWorld) entry.active = true;
       if (this.modules.isFavourite(m)) entry.favourite = true;
       // Only persist the module entry if it holds non-default state.
       if (any || entry.active || entry.favourite) out.push(entry);
@@ -177,6 +177,7 @@ export class ConfigManager {
             this.modules._active.add(m);
             this.modules.runGuarded(m, "onEnable", () => m.onEnable());
           } else {
+            if (!m.unsupported) m._restoreOnWorld = true;
             diag.errors.push(`could not enable '${m.id}': ${m.ineligibilityReason()}`);
           }
         }

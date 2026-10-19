@@ -87,7 +87,7 @@ export class HUDManager {
   /** Rebuild nodes for all active HUD modules. Cheap; called on toggle. */
   sync() {
     if (!this.root) return;
-    const activeHud = this.modules.active().filter((m) => m.category === "HUD" && typeof m.hudRender === "function");
+    const activeHud = this.modules.active().filter((m) => typeof m.hudRender === "function");
     const wanted = new Set(activeHud.map((m) => m.id));
     for (const [id, node] of this.nodes) {
       if (node && !wanted.has(id)) {
@@ -188,7 +188,7 @@ export class HUDManager {
     this._lastRefresh = now;
     if (!this.root) return;
     for (const m of this.modules.active()) {
-      if (m.category !== "HUD" || typeof m.hudRender !== "function") continue;
+      if (typeof m.hudRender !== "function") continue;
       const node = this.nodes.get(m.id);
       if (!node) continue;
       try {

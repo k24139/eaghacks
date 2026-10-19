@@ -95,6 +95,12 @@ export class Speed extends Module {
       const len = Math.hypot(vx, vz) || 1;
       vx += (vx / len) * (mult - 1) * 0.1;
       vz += (vz / len) * (mult - 1) * 0.1;
+    } else if (mode === "strafe") {
+      const forward=p.moveForward??0, strafe=p.moveStrafe??0, length=Math.hypot(forward,strafe);
+      if(!length)return;
+      const yaw=(p.yaw??0)*Math.PI/180, speed=Math.hypot(vx,vz)*mult;
+      vx=(-Math.sin(yaw)*forward+Math.cos(yaw)*strafe)/length*speed;
+      vz=(Math.cos(yaw)*forward+Math.sin(yaw)*strafe)/length*speed;
     }
     this.game.setPlayerVelocity?.(vx, v.y, vz);
   }
@@ -304,11 +310,13 @@ export class BunnyHop extends Module {
     g.int("delay", "Jump delay (ticks)", 1, { min: 1, max: 10 });
     g.bool("only-sprinting", "Only while sprinting", true);
   }
+  onEnable() { this._jumpCooldown=0; }
+  onDisable() { this._jumpCooldown=0; }
   onTick() {
-    const p = this.game.getPlayer?.();
-    if (!p) return;
-    if (this.settings.get("only-sprinting").value && !p.sprinting) return;
-    if (this.game.isOnGround?.()) this.game.jump?.();
+    if(this._jumpCooldown>0){this._jumpCooldown--;return;}
+    const p=this.game.getPlayer?.();if(!p)return;
+    if(this.settings.get("only-sprinting").value&&!p.sprinting)return;
+    if(this.game.isOnGround?.()){this.game.jump?.();this._jumpCooldown=this.settings.get("delay").value;}
   }
 }
 

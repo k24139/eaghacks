@@ -53,6 +53,7 @@ export class Module {
 
     this._manager = null;
     this._active = false;
+    this._restoreOnWorld = false;
     this._initialised = false;
     this._subs = new SubscriptionBag();
     this._errorCount = 0;
@@ -135,7 +136,7 @@ export class Module {
 
   /** @returns {boolean} new active state */
   toggle() {
-    return this.setActive(!this._active);
+    return this.setActive(this._restoreOnWorld ? false : !this._active);
   }
 
   enable() {
@@ -152,6 +153,7 @@ export class Module {
    */
   setActive(want) {
     want = !!want;
+    this._restoreOnWorld = false;
     if (want === this._active) return this._active;
     if (want) {
       const reason = this.ineligibilityReason();

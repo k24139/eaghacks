@@ -55,9 +55,7 @@ jobs:
 
       - name: Package source snapshot
         run: |
-          zip -qr Eaglercraft-26.2-u1-Meteor-Source-CI.zip \
-            src tests tools dist harness native-bridge package.json package-lock.json build.mjs \
-            README.md MODULES.md TEST_RESULTS.md INTEGRATION.md .gitignore
+          npm run package:source -- Eaglercraft-26.2-u1-Meteor-Source-CI.zip
 
       - name: Upload integration artifacts
         uses: actions/upload-artifact@v4

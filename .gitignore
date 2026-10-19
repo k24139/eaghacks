@@ -6,3 +6,5 @@ node_modules/
 !/env.example
 input/
 dist/eaghacks-integration.js
+artifacts/
+/Eaglercraft-26.2-u1-Meteor-Native.html*

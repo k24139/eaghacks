@@ -1,248 +1,168 @@
-# Eaglercraft 26.2-u1 — Meteor-style browser client
+# Eaghacks: Eaglercraft 26.2-u1 with Meteor modules
 
-A Meteor Client-inspired module framework and browser integration for the **authoritative Eaglercraft 26.2-u1 standalone HTML**.
+A browser module framework for the matching Eaglercraft 26.2-u1 standalone,
+with 77 preserved modules, settings, ClickGUI, HUD, profiles and persistence.
+Right Shift opens ClickGUI; Escape closes it.
 
-The project now includes the module registry, settings system, ClickGUI, HUD, profiles/configuration, Eaglercraft-specific browser adapter, standalone HTML injector, automated tests, and CI build pipeline.
+The reproducible native build is documented in
+[native-bridge/README.md](native-bridge/README.md). Actual executed results are
+in [TEST_RESULTS.md](TEST_RESULTS.md). [MODULES.md](MODULES.md) uses strict
+status labels and the actual Eaglercraft module factory. Unit tests and the
+synthetic harness do not certify gameplay.
 
-## Current status
+## Framework and browser integration
 
-The original `eaglercraft-26.2-u1.html` was supplied and inspected directly during integration work. A standalone integrated file has been produced outside the repository:
+```sh
+npm ci
+npm test
+npm run build
+npm run serve
+```
 
-`Eaglercraft-26.2-u1-Meteor.html`
+Open `http://127.0.0.1:3000/` for the synthetic UI harness. It uses a mock game
+adapter for development. To integrate the matching supplied standalone:
 
-Latest verified standalone build:
+```sh
+mkdir -p input/deliverable
+npm run build:eagler -- /absolute/path/Eaglercraft-26.2-u1-Meteor.html \
+  input/deliverable/Eaglercraft-26.2-u1-Meteor-browser.html --refresh
+```
 
-- Original HTML: **75,560,623 bytes**
-- Original SHA-256: `cd1caacf8440c0cbac94e35bd4686ed5397076522007330aa873eca23c134114`
-- Integrated HTML: **75,793,980 bytes**
-- Integrated SHA-256: `05b07f5b2449aa2676081dc1ee72e20019cda44dfe81f41e71ccc383aceb4eb6`
-- The injector adds exactly two integration regions. Removing those regions reproduces the supplied original HTML exactly, so the embedded Eaglercraft WASM/EPK payload is not rewritten.
+Use `--refresh` only when the input already contains this integration. The
+injector repairs embedded asset transport and preserves the original six binary
+payloads. Large game HTML files and downloaded build inputs are excluded from
+Git history.
 
-The large game HTML is deliberately not committed to Git history. `tools/inject-eaglercraft.mjs` reproduces it from the authoritative base.
+## Native Java/TeaVM build
 
-### Real-client validation
+```sh
+git clone https://github.com/aerograde/eagle-26.2.git input/upstream-reference
+git -C input/upstream-reference checkout --detach 1be2375ad67cb42a52d5f586a2422e54b57be625
+npm run build:native -- input/upstream-reference \
+  --base-html /absolute/path/Eaglercraft-26.2-u1-Meteor.html \
+  --output input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html \
+  --fast --heap-mib 6144
+```
 
-The integrated 75 MB file was booted in a fresh Chromium session using a DevTools `Page.setDocumentContent` path to work around this environment's policy blocking local URLs.
+Both Java and javac must report version 25. Linux x64 builds can automatically
+install checksum-pinned task-local Temurin Java 25 and Gradle 9.6.1. Other
+platforms must provide a Java 25 `JAVA_HOME`. The native guide records all
+external inputs and memory requirements.
 
-Verified against the **actual Eaglercraft page**, not the synthetic harness:
+The pipeline verifies the pinned source and six original payloads, restores
+19,509 CRC-checked matching resources, compiles the real Java jars, runs the
+TeaVM link, validates native markers in the WASM, replaces the main
+client payload and refreshes Meteor. The five other payloads must stay identical.
+JSON receipts record the resulting WASM and payload hashes. `--heap-directory`
+uses file-backed Java heap allocation and needs free disk space at least equal
+to the heap. The saved native candidate uses `--fast`, with fast dependency
+analysis and SIMPLE optimization. Precise/FULL did not finish in this environment.
+See TEST_RESULTS.md for completed gameplay checks and limitations.
 
-- TeaVM/WASM instantiated.
-- `window.__eaglerGameReady === true`.
-- Actual WebGL2 game canvas created.
-- Eaglercraft loaded all embedded resources and handed off to Minecraft.
-- `window.EaglerHacks` loaded alongside the game.
-- 77 modules registered.
-- Right Shift opened the Meteor-style ClickGUI over the real Eaglercraft page.
-- Nine ClickGUI windows rendered.
-- No uncaught top-level runtime exception occurred during the validated boot.
+## Verification
 
-The environment still could not complete a persistent single-player world startup because the DevTools-loaded page has an opaque origin and Eaglercraft's IndexedDB-backed filesystem falls back to RAM storage. Therefore AutoWalk/AutoClicker are covered by adapter/integration tests but have **not** yet been end-to-end exercised inside a completed real world in this environment.
+With the preview server running:
 
-See [`TEST_RESULTS.md`](./TEST_RESULTS.md) and [`INTEGRATION.md`](./INTEGRATION.md).
+```sh
+npm run test:browser -- http://127.0.0.1:3000/
+node tools/real-client-check.mjs http://127.0.0.1:3000/input/deliverable/Eaglercraft-26.2-u1-Meteor-browser.html
+node tools/real-client-check.mjs http://127.0.0.1:3000/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html --require-native
+NATIVE_ARTIFACT="$PWD/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html" \
+  node tools/native-gameplay-check.mjs http://127.0.0.1:3000/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html
+npm audit
+node tools/gen-docs.mjs > MODULES.md
+npm run package:source
+```
 
----
+Playwright needs Chromium; `CHROMIUM_EXECUTABLE_PATH` selects an existing
+compatible installation. Native gameplay QA creates a private local world and
+uses real in-game commands to prepare entities, food and player state. It does
+not create mock native snapshots. Startup/UI, unit, harness and actual gameplay
+results are reported separately. Gameplay evidence is tied to the actual HTML
+hash and source digest before modules receive a verified status.
 
-## What works on the standalone 26.2-u1 build
+## Runtime behavior
 
-Browser-bound functionality that does not require direct Minecraft object access is integrated:
+The stock browser adapter supplies game input and an independent HUD overlay.
+A bridge compiled into Java additionally publishes real player/world/entity,
+inventory and camera snapshots, and narrow native actions. Capabilities appear
+only when those real snapshots support them. Broad inventory transactions,
+collision/blocks and other missing mechanics remain gated.
 
-- Meteor-style ClickGUI.
-- Right Shift open/close handling.
-- Module search, settings widgets, keybinds and favourites.
-- Persistent profiles when browser storage is available.
-- In-memory configuration fallback when storage access is denied.
-- DOM HUD framework and transparent Canvas2D overlay.
-- FPS, CPS, keystrokes, session timer, active-module list, custom text and performance HUD elements.
-- Custom Crosshair.
-- Pointer-lock integration.
-- Eaglercraft session detection through `window.minecraftServer`.
-- Browser keyboard/mouse input injection using the same event mechanism retained in the 26.2-u1 client.
-- AutoWalk through held `KeyW` injection.
-- AutoClicker through mouse input injection.
-- Automatic held-key release when gameplay loses browser input control.
-- Local/remote guard for automated gameplay modules.
-
-`AutoWalk` and `AutoClicker` are local-test-only by default. Eaglercraft's integrated single-player server identifies itself with `window.minecraftServer === "singleplayer"`. Unknown/remote sessions are blocked unless explicitly opted in through:
+Local/remote identity uses native `Minecraft.isLocalServer()`. The observed
+single-player runtime leaves the old `minecraftServer` browser global null, so
+that field alone cannot identify a local world. Unknown sessions are treated
+conservatively. Local-test-only automation is blocked on remote sessions by
+default. For an explicitly authorized test server, the existing override is:
 
 ```js
 EaglerHacks.allowMultiplayerCombat(true)
 ```
 
-Disable the override with `false`.
+Pass `false` to remove it. `EaglerHacks.diagnostics()` reports readiness, native
+identity, session kind, capabilities and input ownership.
 
-### Capability-gated native-state features
+Saved active modules wait for the required world/capabilities. World loss
+suspends them and clears stale commands; explicit disable cancels restoration.
+Menus and focus loss block new gameplay actions and release owned input.
+Camera settings and owned cleanup remain writable for safe restoration.
 
-The supplied Wasm-GC module expands to **102,444,741 bytes** and exports only 12 symbols: TeaVM glue/tags, `main`, and `teavm.memory`. It does not export browser-callable player, world, entity, inventory, camera, block-query or movement-physics accessors.
+## Private multiplayer and performance QA
 
-Because of that, the project intentionally refuses to pretend that native-state features work. These remain unavailable until a stable game/source-level hook is found:
-
-- real Entity ESP / Tracers / Nametags;
-- KillAura targeting / Aim Assist / TriggerBot targeting;
-- Flight / Speed / Step / NoFall / direct physics changes;
-- real coordinates, player health, velocity and effects;
-- inventory/armor automation;
-- block scanning, Storage ESP and X-Ray;
-- direct FOV/gamma/tick-rate manipulation;
-- packet/network internals.
-
-Those modules remain in the catalogue but capability checks refuse activation when the runtime cannot support them.
-
----
-
-## CI status
-
-Latest integration CI run used the `meteor-client-integration` branch and passed:
-
-```text
-Node tests:        92 / 92
-Chromium harness:  18 / 18
-Modules:           77
-Harness FPS:       ~60 fps with 9 modules enabled
-```
-
-The Chromium harness verifies ClickGUI interaction, settings, search, HUD rendering, module persistence, input routing and render-module behavior against the synthetic test world. It is separate from the real-game boot described above.
-
----
-
-## Build the standalone client
-
-Prerequisites: Node.js and the authoritative `eaglercraft-26.2-u1.html`.
-
-```bash
-npm ci
-npm test
-npm run build
-npm run build:eagler -- /path/to/eaglercraft-26.2-u1.html
-```
-
-The final command produces:
-
-```text
-Eaglercraft-26.2-u1-Meteor.html
-```
-
-`tools/inject-eaglercraft.mjs`:
-
-1. validates markers unique to the expected 26.2-u1 standalone HTML;
-2. installs the Eaglercraft preboot/browser bridge;
-3. bundles `src/integration/bootstrap.js` and the existing framework;
-4. injects the dependency-free integration before `</body>`;
-5. leaves the embedded game payload intact.
-
-To test the framework harness separately:
-
-```bash
-node tools/serve.mjs 3000 .
-npm run test:browser
-```
-
----
-
-## Architecture
-
-```text
-src/
-  core/
-    adapter.js               runtime-neutral GameAdapter contract
-    event-bus.js             priorities, cancellation, subscription bags
-    settings.js              typed settings + groups
-    module.js                lifecycle, capability + remote-session guards
-    module-manager.js        registry, categories, search, favourites, isolation
-    keybind-manager.js       DOM input ownership
-    config-manager.js        profiles, autosave, import/export, recovery
-    stats.js                 FPS/frame/module timing
-    meteor.js                framework bootstrap and tick ownership
-
-  integration/
-    eaglercraft-adapter.js   verified 26.2-u1 browser boundary
-    bootstrap.js             real Eaglercraft integration entry point
-
-  gui/
-    theme.js
-    widgets.js
-    clickgui.js
-    hud.js
-
-  modules/                   77-module catalogue
-  index.js                   public framework API
-
-tests/                       Node/jsdom tests
-tools/
-  inject-eaglercraft.mjs      standalone HTML builder
-  browser-check.mjs           Chromium harness QA
-  serve.mjs                   harness server
-  gen-docs.mjs                module catalogue generator
-harness/index.html            synthetic test world
-.github/workflows/
-  integration-ci.yml          Node + build + Chromium + artifact pipeline
-```
-
-### Integration boundary
-
-Every game touch goes through a `GameAdapter`. Capabilities include `world`, `entities`, `blocks`, `inventory`, `movement`, `flight`, `render`, `hud`, `input`, `network`, `chat`, and `timing`.
-
-The real Eaglercraft adapter currently advertises only capabilities verified at the browser boundary (`input` and `hud`). This is deliberate: advertising `world` merely because the game is running would incorrectly make ESP/movement modules look functional without actual player/entity access.
-
-`window.EaglerHacks.diagnostics()` exposes the current adapter, capabilities, game-ready state, session/server state, input availability and framework diagnostics.
-
----
-
-## ClickGUI controls
-
-| Action | Control |
-| --- | --- |
-| Open / close | `Right Shift` |
-| Toggle a module | left-click its row |
-| Expand settings | right-click its row |
-| Favourite | middle-click its row |
-| Move window | drag its header |
-| Search | Search window |
-| Assign bind | expand module → bind control → press key |
-| Edit HUD | Config → Edit HUD layout |
-
-The GUI releases pointer lock when it opens so it can receive mouse input. Automated held gameplay input is also released when the game loses pointer-lock ownership.
-
----
-
-## Configuration
-
-- Debounced `localStorage` persistence.
-- Save on navigation/visibility changes.
-- Named profiles.
-- Base64 import/export.
-- Corrupt-data quarantine/recovery.
-- If access to `window.localStorage` itself throws (opaque/sandboxed origins), the Eaglercraft bootstrap falls back to an in-memory Storage-like backend rather than failing startup.
-
----
-
-## Known limitations
-
-1. The exact real standalone client has been booted and its ClickGUI verified, but a complete persistent single-player world could not be reached in this execution environment because its DevTools-loaded opaque origin denies the IndexedDB storage Eaglercraft expects.
-2. Direct Minecraft state is compiled behind TeaVM/Wasm-GC and not exported to JavaScript. Native-state modules remain capability-gated.
-3. The 77-module catalogue describes implemented framework code, not 77 features proven against the real game. `MODULES.md` and `TEST_RESULTS.md` distinguish browser/harness coverage from unavailable game hooks.
-4. Eight modules are explicitly marked unsupported where there is no known compatible hook rather than shipping nonfunctional toggles.
-
-## Attribution / licences
-
-The architecture and interface are inspired by [Meteor Client](https://github.com/MeteorDevelopment/meteor-client). This project is an independent browser-side implementation and does not directly run Meteor's Fabric JAR inside Eaglercraft.
-
-### Standalone refresh and real-client checks
-
-To replace this project's known older injection in an existing standalone HTML:
+The LAN test uses two isolated browser peers and a loopback rendezvous service:
 
 ```sh
-node tools/inject-eaglercraft.mjs current-client.html updated-client.html --refresh
+node input/upstream-reference/tools/lan-server.mjs --host 127.0.0.1 --port 3002 --dir "$PWD"
+NATIVE_ARTIFACT="$PWD/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html" \
+NATIVE_LAN_DISCOVERY_SCRIPT="$PWD/input/upstream-reference/target_teavm_wasm_gc/src/web/lan-discovery.js" \
+  node tools/native-lan-check.mjs http://127.0.0.1:3002/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html
 ```
 
-The default still rejects duplicate injection. Refresh requires exactly one known preboot hook and integration script. The packager repairs the known fetch/XHR asset transport mismatch without changing the six embedded game payloads. Tagged Blob URLs serve the main client, and the embedded server worker recognizes the assets tag and uses its own decoder.
+The original standalone shell omits the optional LAN discovery helper. QA loads
+the unchanged helper from the pinned upstream checkout before the game starts.
+It supplies discovery for the private test environment; it does not replace game
+state or alter the standalone artifact. Actual WebRTC traffic carries movement,
+inventory, chat and lifecycle updates. No public game server is involved.
 
-Run the real standalone separately from the synthetic harness:
+`NATIVE_QA_DEBUG=1` opens a browser inspection REPL on a gameplay or LAN failure.
+`NATIVE_QA_REVIEW=1` retains a successful run for further inspection.
+`NATIVE_QA_LOW_RESOURCE=1` selects two-chunk rendering through the actual options
+UI and a 640-by-400 viewport for single-player software-rendering QA.
+
+`tools/sample-client-performance.mjs` exports `measureClientFrames(page)` for
+fresh frame-time, module-cost and native-snapshot samples. Compare original and
+native clients sequentially in the same saved world, with the same viewport,
+graphics settings and warmup, after the compiler has stopped. Chromium JS-heap
+measurements exclude some WebAssembly, worker and graphics memory.
+
+## Source package
+
+`npm run package:source` requires Python 3, rebuilds the bundles, and writes a
+ZIP with fixed timestamps and a source-only file allowlist.
+`Eaglercraft-26.2-u1-Meteor-Source.zip` includes framework source and bundles,
+Java overlay, pinned inputs, build/test tools and documentation. It excludes
+dependencies, downloaded JDKs, caches and temporary game inputs. Reproduction
+requires the original matching standalone and the pinned public source checkout
+listed above. The repository's CI runs the framework suite and browser harness;
+it is separate from the native gameplay validation.
+
+The final native standalone is also a matching resource input when its exact
+client payload hash is listed in `native-bridge/inputs.json`. This allows the
+delivered HTML and source ZIP to be used together for a rebuild. Asset and worker
+hash requirements remain unchanged.
+
+For a matched performance run, put the tested native artifact at `client.html`
+and the refreshed original-runtime artifact at `original.html` under the same
+preview root, then run:
 
 ```sh
-node tools/serve.mjs
-node tools/real-client-check.mjs http://127.0.0.1:3000/updated-client.html
+NATIVE_ARTIFACT="$PWD/client.html" NATIVE_QA_FLAT=1 NATIVE_QA_LOW_RESOURCE=1 \
+  node tools/matched-performance-check.mjs http://127.0.0.1:3000/client.html
 ```
 
-Both browser tools accept `CHROMIUM_EXECUTABLE_PATH` for an installed Chromium binary. Preview binds to `127.0.0.1` by default. Set `HOST` explicitly for remote preview. The server rejects hidden paths and symlink escapes.
-
-The real-client check covers startup and UI. It does not certify world loading, multiplayer or Java bridge behavior. A matching prepared upstream project remains required for `npm run build:native`.
+This compares both real runtimes in the same saved superflat world and browser
+context, using three idle and three movement samples. Native overlays receive
+an additional sample. Results go to `artifacts/matched-performance.json`.
+`NATIVE_EXPECTED_SHA256` makes the native gameplay checker reject a mismatched
+artifact before starting a browser. All local native artifacts must end with a
+complete HTML document.

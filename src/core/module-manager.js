@@ -166,13 +166,13 @@ export class ModuleManager {
   /** Force-disable everything whose capability requirements vanished. */
   revalidateAll({ silent = true } = {}) {
     const changed = [];
-    for (const m of [...this._active]) {
-      if (!m.canEnable()) {
-        const was = this._suspendCallbacks;
-        this._suspendCallbacks = silent;
-        m.disable();
-        this._suspendCallbacks = was;
-        changed.push(m);
+    for (const m of this._byId.values()) {
+      if (m.active && !m.canEnable()) {
+        const was=this._suspendCallbacks; this._suspendCallbacks=silent;
+        m.disable(); m._restoreOnWorld=!m.unsupported; this._suspendCallbacks=was; changed.push(m);
+      } else if (!m.active && m._restoreOnWorld && m.canEnable()) {
+        const was=this._suspendCallbacks; this._suspendCallbacks=silent;
+        m.enable(); this._suspendCallbacks=was; changed.push(m);
       }
     }
     return changed;
@@ -188,7 +188,7 @@ export class ModuleManager {
     const was = this._suspendCallbacks;
     this._suspendCallbacks = silent;
     try {
-      for (const m of [...this._active]) m.disable();
+      for (const m of this._byId.values()) if (m.active || m._restoreOnWorld) m.disable();
     } finally {
       this._suspendCallbacks = was;
     }
@@ -227,6 +227,7 @@ export class ModuleManager {
       if (module.active) {
         // Break the recursion: setActive(false) must not re-enter runGuarded.
         module._active = false;
+        module._restoreOnWorld = false;
         this._active.delete(module);
         try {
           module.onDisable();

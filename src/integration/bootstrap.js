@@ -1,5 +1,6 @@
 /** Eaglercraft-specific entry point for the real standalone HTML. */
-import { bootMeteor, shutdownMeteor, Events, createAllModules } from '../index.js';
+import { bootMeteor, shutdownMeteor, Events } from '../index.js';
+import { createEaglercraftModules } from './eaglercraft-modules.js';
 import { EaglercraftBrowserAdapter } from './eaglercraft-adapter.js';
 
 let runtime = null;
@@ -30,58 +31,6 @@ export function resolveEaglerStorage(win = globalThis.window) {
   }
 }
 
-function createEaglercraftModules() {
-  const modules = createAllModules();
-  for (const id of ['auto-clicker', 'auto-walk', 'sprint']) {
-    const module = modules.find((m) => m.id === id);
-    if (module) {
-      module.requiredCapabilities = ['input'];
-      module.runsInMenus = true;
-    }
-  }
-
-  const sprint = modules.find((m) => m.id === 'sprint');
-  if (sprint) {
-    sprint.onTick = function () {
-      const onlyForward = this.settings.get('only-forward')?.value !== false;
-      const held = this.manager.client?.keybinds?.heldKeys;
-      this.game.setSprinting?.(!onlyForward || !!held?.has('KeyW'));
-    };
-    sprint.onDisable = function () { this.game.setSprinting?.(false); };
-  }
-
-  // Real world reads do not imply every renderer/camera action is writable.
-  for (const [id, capability] of [
-    ['fullbright', 'brightness-control'],
-    ['zoom', 'fov-control'],
-    ['no-hurt-cam', 'hurt-camera-control'],
-  ]) {
-    const module = modules.find((m) => m.id === id);
-    if (module) module.requiredCapabilities = ['world', capability];
-  }
-
-  // Read-only item metadata + verified selected-slot/use-item actions satisfy
-  // these modules without enabling the broad inventory mutation contract.
-  for (const id of ['armor-hud', 'durability-warnings']) {
-    const module = modules.find((m) => m.id === id);
-    if (module) module.requiredCapabilities = ['native-inventory-read'];
-  }
-  const autoEat = modules.find((m) => m.id === 'auto-eat');
-  if (autoEat) autoEat.requiredCapabilities = ['world', 'native-inventory-read', 'native-direct'];
-
-  // Source-built 26.2 clients expose real entity state and direct actions.
-  for (const id of ['kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit']) {
-    const module = modules.find((m) => m.id === id);
-    if (module) module.requiredCapabilities = ['world', 'entities', 'native-direct'];
-  }
-
-  const autoWalk = modules.find((m) => m.id === 'auto-walk');
-  if (autoWalk) {
-    autoWalk.localTestOnly = true;
-    autoWalk.onEnable = () => {};
-  }
-  return modules;
-}
 
 export function startEaglerHacks({ window: win = globalThis.window, document: doc = globalThis.document } = {}) {
   if (runtime) return runtime;

@@ -274,7 +274,7 @@ export class ArmorHud extends HudModule {
   }
   hudRender(game) {
     const inv = game?.getInventory?.();
-    const armor = inv?.armor ?? [];
+    const armor = (inv?.armor ?? []).filter(Boolean);
     if (!armor.length) return "Armor: none";
     return armor
       .filter(Boolean)

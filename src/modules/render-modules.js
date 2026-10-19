@@ -124,9 +124,13 @@ export class CustomCrosshair extends Module {
     g.double("gap", "Centre gap (cross/t-shape)", 2, { min: 0, max: 20 });
   }
   onEnable() {
+    this._originalCrosshairVisible = this.game.getVanillaCrosshairVisible?.() ?? true;
+    this.onTick();
     this._sub = this.subscribe(Events.RenderHud, (ev) => this.draw(ev));
   }
+  onTick() { this.game.setVanillaCrosshairVisible?.(this.settings.get('hide-vanilla').value ? false : this._originalCrosshairVisible); }
   onDisable() {
+    this.game.setVanillaCrosshairVisible?.(this._originalCrosshairVisible);
     this._sub?.dispose();
     this._sub = null;
   }

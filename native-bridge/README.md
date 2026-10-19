@@ -1,78 +1,75 @@
-# Native Eaglercraft 26.2 bridge
+# Native Eaglercraft 26.2-u1 build
 
-The stock standalone `26.2-u1` WebAssembly exports only generic TeaVM glue, `main`, and memory. It does not export `Minecraft.player`, `ClientLevel`, or entity/inventory objects.
+The source overlay targets `aerograde/eagle-26.2` at exactly
+`1be2375ad67cb42a52d5f586a2422e54b57be625`. The source repository includes the
+patched Java sources and TeaVM jars, but omits runtime resources. The matching
+supplied standalone provides those resources. `inputs.json` pins all six
+payload hashes, source revision and the 19,509-file resource digest.
 
-This overlay targets the matching patched 26.2 source tree rather than reverse-engineering obfuscated WASM addresses.
-
-## Matching source
-
-- Repository: `aerograde/eagle-26.2`
-- Inspected commit: `1be2375ad67cb42a52d5f586a2422e54b57be625`
-
-That source contains the exact `globalThis.__eaglerWorldReady` implementation and Eagler performance strings found in the supplied `26.2-u1` WASM.
-
-## Published state
-
-Each real Minecraft client tick atomically publishes `globalThis.__eaghacksNativeState` version 1 with:
-
-- world time and dimension
-- player position, yaw/pitch, health, hunger, on-ground state and velocity
-- a bounded entity snapshot (max 512), including IDs, positions, dimensions, health, player/hostile/passive flags and real line-of-sight
-- current crosshair entity ID
-- camera position plus the live projection × view-rotation matrix for world-to-screen overlays
-- selected hotbar slot
-- hotbar and armor metadata including registry ID, display name, count, remaining/max durability and food nutrition/saturation
-
-Commands are written by the browser adapter to `globalThis.__eaghacksNativeCommands` and consumed on the next client tick. The bridge currently supports rotation, velocity, jump, sprint, sneak, selected-slot changes, direct entity attacks and item use.
-
-## Apply only
-
-For an already prepared 26.2 source project:
-
-```sh
-node native-bridge/apply-native-bridge.mjs /path/to/eagle-26.2
-```
-
-The patcher is idempotent. It copies the common platform stub, TeaVM implementation and game bridge, then inserts one fully-qualified bridge call immediately after `this.clientTickCount++` in `Minecraft.java`.
-
-## Build the complete native client
-
-The public matching-source repository intentionally omits Mojang inputs/resources regenerated from the user's official client JAR. First use the upstream 26.2 patcher to create or reuse a complete build project. Then, from this `eaghacks` repository:
+The final delivered native HTML can also be used as the resource input when its
+exact client payload is registered in `inputs.json` under `rebuiltClients`.
+Only the main client pin has these explicit alternatives; all five other payloads
+must still match the original hashes. An arbitrary modified client is rejected.
 
 ```sh
 npm ci
-npm run build:native -- /path/to/prepared/eagle-26.2
+git clone https://github.com/aerograde/eagle-26.2.git input/upstream-reference
+git -C input/upstream-reference checkout --detach 1be2375ad67cb42a52d5f586a2422e54b57be625
+npm run build:native -- input/upstream-reference \
+  --base-html /absolute/path/Eaglercraft-26.2-u1-Meteor.html \
+  --output input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html \
+  --fast --heap-mib 6144
 ```
 
-`build:native` performs the remaining pipeline in order:
+The build checks both Java and javac 25. On Linux x64 it can download a local
+Temurin 25.0.4.1+1 JDK and Gradle 9.6.1. Their download URLs and SHA-256 pins are
+in `toolchains.mjs`. Other platforms must provide a Java 25 `JAVA_HOME`.
+No global Java settings change. The source revision, all payload lengths/hashes,
+EPK framing and CRCs, and resource tree digest must pass before extraction.
+Symlinks and conflicting resource files are rejected.
 
-1. applies the native bridge idempotently;
-2. runs the upstream `link-web-target-standalone.js client`, which rebuilds the required Gradle JARs and links the TeaVM client WASM;
-3. runs the upstream single-HTML packager while reusing the existing mesh/server outputs;
-4. runs this repository's Meteor injector over the newly built native Eaglercraft HTML.
+The command above applies the Java overlay, builds the actual Gradle jars, links
+with fast dependency analysis and SIMPLE optimization, validates native WASM
+markers, replaces the compressed main client payload, and refreshes the existing
+Meteor integration. The five other embedded payloads must remain byte-identical.
+The output has build and payload JSON receipts. The matching original asset and
+sound EPKs and worker binaries are preserved, avoiding the upstream resource
+repacker that needs additional non-runtime source inputs.
 
-The default final output is:
+Upstream recommends 16 GiB RAM and at least a 10 GiB build budget. The previous
+8 GiB workspace killed ordinary 8 GiB ParallelGC and 7 GiB G1 attempts during
+dependency analysis. `--heap-directory` uses Java's file-backed heap option,
+`-XX:AllocateHeapAt`, so pages can be backed by disk. Reserve disk space at
+least equal to the heap and allow extra build time. It changes build allocation,
+not TeaVM analysis, optimization or the game version. `--fast` explicitly makes
+a fast-analysis/SIMPLE build. The saved native candidate uses this mode.
+Precise/FULL did not complete in this environment. Omit `--fast` to attempt
+the upstream precise/FULL build on a host with sufficient resources.
+See TEST_RESULTS.md for completed runtime checks and limitations.
 
-`Eaglercraft-26.2-u1-Meteor-Native.html`
+For the file-backed build, G1's young generation is capped at ten percent of
+the maximum heap. This reduces paging during dependency analysis while retaining
+the full maximum heap for later compiler phases. `EAGLER_LINK_GC_LOG` optionally
+records actual garbage-collection occupancy and timings.
 
-A custom path can be supplied with `--output file.html`. `--fast` opts into the upstream TeaVM fast-analysis development link; omit it for the full production link.
+Only one linker may run per prepared project. If an abruptly killed process
+leaves `wasm-toolchain/generated/standalone-link-cache/operation.lock`, confirm
+that every linker for that project has exited before removing that exact stale
+lock. Do not remove a live lock or run overlapping builds.
 
-The upstream project documents Java 25 and Node on `PATH`, and notes that the full client link is the slow step.
-
-## Capability policy
-
-The bridge deliberately uses granular capabilities:
-
-- `world`: real player/world snapshot exists.
-- `entities`: real bounded entity snapshot exists.
-- `render`: real camera matrix exists. This enables world-to-screen consumers such as Entity ESP, Tracers and Nametags.
-- `native-direct`: direct native actions such as rotation, velocity, jump, attacks and item use exist.
-- `native-inventory-read`: hotbar/armor metadata exists.
-
-It intentionally does **not** advertise the broad `movement` capability yet, because that contract also promises Step, NoFall, SafeWalk and other hooks not implemented by this bridge.
-
-It also does **not** advertise broad `inventory` mutation support. Armor HUD, Durability Warnings and AutoEat are mapped to the narrower inventory-read/direct-action capabilities, while Inventory Manager and AutoArmor remain gated.
-
-Fullbright, Zoom and NoHurtCam remain behind separate granular write capabilities because camera projection access does not imply gamma/FOV/hurt-camera control.
-
-The original browser-only integration remains the fallback when the native bridge is absent.
+The compiled Java tick announces `__eaghacksNativeBridge` and publishes a bounded
+structured snapshot with real player/world/entities/inventory/camera data.
+The snapshot also includes the registered biome ID, active potion effects,
+GUI/overlay state and bridge timing/sequence diagnostics. Session identity uses
+`Minecraft.isLocalServer()`. Entities include registry type,
+velocity, health/death and line of sight. Player data includes movement input,
+sprint/sneak, hurt/fall, death/use state and inventory metadata. Commands support
+rotation, velocity, jump, sprint/sneak, attack/use, slot, swing, respawn, brightness,
+FOV, hurt-camera and vanilla crosshair control. Multi-target attack queues are
+bounded to 16 distinct entities and are cancelled when KillAura disables. Native
+menu gating discards gameplay commands while preserving release/restore actions.
+Camera state resets on world exit. The adapter must
+advertise narrow capabilities; full inventory transactions and collision/blocks
+are separate missing contracts. Source presence and Java compilation alone do
+not establish browser or gameplay verification. See TEST_RESULTS.md for actual
+executed validation.

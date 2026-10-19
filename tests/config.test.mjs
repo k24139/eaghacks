@@ -156,3 +156,7 @@ test('module keybind/API toggles schedule configuration autosave', async () => {
   client.stop();
   assert.equal(client.config._timer, null);
 });
+
+test('saved active modules wait for a world and explicit disable cancels restoration',async()=>{
+ const{client,adapter}=await bootTestClient();client.config.deserialiseModules([{id:'sprint',active:true}]);const module=client.modules.get('sprint');assert.equal(module.active,false);assert.equal(client.config.serialiseModules().find(m=>m.id==='sprint').active,true);adapter.setWorldLoaded(true);client.modules.revalidateAll();assert.equal(module.active,true);adapter.setWorldLoaded(false);client.modules.revalidateAll();assert.equal(module.active,false);assert.equal(client.config.serialiseModules().find(m=>m.id==='sprint').active,true);module.disable();adapter.setWorldLoaded(true);client.modules.revalidateAll();assert.equal(module.active,false);client.stop();
+});

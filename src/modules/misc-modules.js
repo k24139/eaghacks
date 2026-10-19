@@ -99,6 +99,7 @@ export class Macros extends Module {
     this._stepIndex = 0;
     this._waitUntil = 0;
   }
+  onDisable() { this._running=null;this._stepIndex=0;this._waitUntil=0; }
   runByName(name) {
     const macro = this.macros.find((m) => m.name === name);
     if (!macro) return false;
@@ -156,7 +157,7 @@ export class Macros extends Module {
         break;
       }
       case "chat":
-        this.game.sendChat?.(String(step.message ?? ""));
+        if (this.game.sendChat?.(String(step.message ?? "")) !== true) throw new Error("runtime chat sending is unavailable");
         break;
       case "wait":
         this._waitUntil = performance.now() + (step.delay ?? 250);
@@ -222,7 +223,7 @@ export class SessionStats extends Module {
   constructor() {
     super({ id: "session-stats", name: "Session Statistics", description: "Tracks session time, distance travelled and deaths.", category: "Misc", runsInMenus: true });
     this.stats = { deaths: 0, distance: 0, startedAt: Date.now(), _last: null, kills: 0 };
-    this._subs = [];
+    this._eventSubs = [];
   }
   onInit() {
     const l = this.settings.addGroup("Layout");
@@ -235,21 +236,21 @@ export class SessionStats extends Module {
     d.bool("time", "Show session time", true);
   }
   onEnable() {
-    this._subs.push(
-      this.manager.bus.on(Events.PlayerDeath, () => {
+    this._eventSubs.push(
+      this.subscribe(Events.PlayerDeath, () => {
         this.stats.deaths++;
       }),
-      this.manager.bus.on(Events.PlayerMove, (ev) => {
+      this.subscribe(Events.PlayerMove, (ev) => {
         if (typeof ev.distance === "number") this.stats.distance += ev.distance;
       }),
-      this.manager.bus.on(Events.EntityDamage, (ev) => {
+      this.subscribe(Events.EntityDamage, (ev) => {
         if (ev?.killed && ev.attackerIsSelf) this.stats.kills++;
       }),
     );
   }
   onDisable() {
-    for (const s of this._subs) s.dispose();
-    this._subs = [];
+    for (const s of this._eventSubs) s.dispose();
+    this._eventSubs = [];
   }
   hudRender() {
     const parts = [];
@@ -297,7 +298,7 @@ export class ScreenshotUtil extends Module {
     this.bind.set({ key: "F2", mouse: null, modifiers: {} });
   }
   onEnable() {
-    const canvas = this.game.getCanvas?.();
+    const canvas = this.game.getGameCanvas?.() ?? this.game.getCanvas?.();
     if (!canvas) {
       this.manager.notify("no canvas available for screenshots", "warn");
       this.disable();
@@ -321,6 +322,7 @@ export class AutoGG extends Module {
   constructor() {
     super({ id: "auto-gg", name: "AutoGG", description: "Sends a configurable message when a game ends.", category: "Misc", requiredCapabilities: ["chat"], runsInMenus: true });
     this._sub = null;
+    this._timers = new Set();
   }
   onInit() {
     const g = this.settings.addGroup("AutoGG");
@@ -328,11 +330,18 @@ export class AutoGG extends Module {
     g.int("delay", "Delay (ticks)", 20, { min: 0, max: 200 });
   }
   onEnable() {
-    this._sub = this.manager.bus.on(Events.PlayerDeath, () => {
-      setTimeout(() => this.game.sendChat?.(this.settings.get("message").value), this.settings.get("delay").value * 50);
+    this._sub = this.subscribe(Events.PlayerDeath, () => {
+      const timer = setTimeout(() => {
+        this._timers.delete(timer);
+        if (this.active) this.game.sendChat?.(this.settings.get("message").value);
+      }, this.settings.get("delay").value * 50);
+      this._timers.add(timer);
     });
+    this.subscribe(Events.WorldUnload, () => this._cancelPending());
   }
+  _cancelPending() { for (const timer of this._timers) clearTimeout(timer); this._timers.clear(); }
   onDisable() {
+    this._cancelPending();
     this._sub?.dispose();
     this._sub = null;
   }
@@ -355,7 +364,7 @@ export class DebugConsole extends Module {
   constructor() {
     super({ id: "debug-console", name: "Debug Console", description: "Logs client events to the browser console.", category: "Misc", runsInMenus: true });
     this.lines = [];
-    this._subs = [];
+    this._eventSubs = [];
   }
   onInit() {
     const g = this.settings.addGroup("Debug");
@@ -365,18 +374,21 @@ export class DebugConsole extends Module {
     g.int("max-lines", "Keep this many lines", 200, { min: 20, max: 1000 });
   }
   onEnable() {
-    if (this.settings.get("modules").value) {
-      this._subs.push(this.manager.bus.on(Events.ModuleToggled, (ev) => this.log(`module ${ev.module.id} -> ${ev.active}`)));
-    }
-    if (this.settings.get("events").value) {
-      for (const type of Object.values(Events)) {
-        this._subs.push(this.manager.bus.on(type, (ev) => this.log(`event ${ev?.type ?? type}`)));
-      }
+    this._eventSubs.push(this.subscribe(Events.ModuleToggled, ev => {
+      if (this.settings.get("modules").value) this.log(`module ${ev.module.id} -> ${ev.active}`);
+    }));
+    this._eventSubs.push(this.subscribe(Events.Notification, ev => {
+      if (ev.level === 'error' && this.settings.get("errors").value) this.log(`error ${ev.text}`);
+    }));
+    for (const type of Object.values(Events)) {
+      this._eventSubs.push(this.subscribe(type, ev => {
+        if (this.settings.get("events").value) this.log(`event ${ev?.type ?? type}`);
+      }));
     }
   }
   onDisable() {
-    for (const s of this._subs) s.dispose();
-    this._subs = [];
+    for (const s of this._eventSubs) s.dispose();
+    this._eventSubs = [];
   }
   log(line) {
     const entry = `${new Date().toLocaleTimeString()}  ${line}`;

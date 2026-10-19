@@ -1,12 +1,13 @@
 /** Real standalone smoke test. Run the preview server, then pass its HTML URL. */
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import {writeFile} from 'node:fs/promises';
 
-const url = process.argv[2];
+const args=process.argv.slice(2),url=args.find(a=>!a.startsWith('--')),native=args.includes('--require-native');
 if (!url) throw new Error('Usage: node tools/real-client-check.mjs <standalone-client-url>');
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_EXECUTABLE_PATH || undefined,
-  args: ['--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-swiftshader', '--use-angle=swiftshader'],
+  args: ['--no-sandbox', '--disable-dev-shm-usage', '--ignore-gpu-blocklist', '--in-process-gpu', '--use-gl=angle', '--enable-unsafe-swiftshader', '--use-angle=swiftshader'],
 });
 const results = [];
 const check = (name, value) => { assert.ok(value, name); results.push(name); console.log(`PASS ${name}`); };
@@ -18,9 +19,12 @@ try {
   page.on('console', message => {
     if (message.type() === 'error' && !message.text().includes('/WARN]')) errors.push(message.text());
   });
+  const started=Date.now();
   await page.goto(url, { waitUntil: 'load', timeout: 120000 });
-  await page.waitForFunction(() => window.__eaglerMenuReady === true && window.EaglerHacks, null, { timeout: 120000 });
+  await page.waitForFunction(() => window.__eaglerMenuReady === true && window.__eaglerGameReady === true && window.EaglerHacks, null, { timeout: 120000 });
+  const menuReadyMs=Date.now()-started;
   check('real game reaches menu-ready state', await page.evaluate(() => window.__eaglerGameReady === true));
+  if(native){await page.waitForFunction(()=>window.__eaghacksNativeBridge?.version===1,null,{timeout:15000});check('compiled Java bridge is present',await page.evaluate(()=>window.__eaghacksNativeBridge.upstream==='1be2375ad67cb42a52d5f586a2422e54b57be625'));}
   check('one HUD canvas is mounted', await page.locator('#eaghacks-hud-canvas').count() === 1);
   check('real game canvas exists', await page.locator('#game_frame canvas').count() > 0);
   await page.keyboard.press('ShiftRight');
@@ -39,6 +43,8 @@ try {
   check('no required asset requests failed', failed.length === 0);
   check('no uncaught or error-level game failures', errors.length === 0);
   if (process.env.REAL_CLIENT_SCREENSHOT) await page.screenshot({ path: process.env.REAL_CLIENT_SCREENSHOT });
+  if(process.env.REAL_CLIENT_RESULTS)await writeFile(process.env.REAL_CLIENT_RESULTS,JSON.stringify({url,native,menuReadyMs,results,errors,failed},null,2)+'\n');
+  console.log(`Fresh browser startup to game/menu ready: ${menuReadyMs} ms.`);
   console.log(`${results.length}/${results.length} real-client startup/UI checks passed. Loaded-world and native-module behavior are separate tests.`);
 } finally {
   await browser.close();
