@@ -1,0 +1,12 @@
+{
+  "screenshot": "diagnostics/performance-phase3/stock-selector/stock-world-selection-1.png",
+  "controls": {
+    "done": "Be",
+    "singleplayer": "(4s",
+    "play": "Bn",
+    "createWorld": "Starting Integrated Server...",
+    "heading": "",
+    "worldRow": ""
+  },
+  "screen": "unknown"
+}

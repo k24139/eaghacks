@@ -9,6 +9,7 @@ test('stock profile and title are recognized from rendered control text without 
  assert.equal(classifyStockControls({done:'Done',singleplayer:''}),'profile');
  assert.equal(classifyStockControls({singleplayer:'Singleplayer'}),'title');
  assert.equal(classifyStockControls({play:'Play Selected World'}),'world-list');
+ assert.equal(classifyStockControls({heading:'Select World',worldRow:'Eaghacks Benchmark 2026'}),'world-list-row');
  assert.equal(classifyStockControls({heading:'Create New World'}),'unknown');
  assert.equal(classifyStockControls({createWorld:'Create Hew World'}),'empty-world-selector');
  assert.equal(classifyStockControls({createWorld:'Create New World'}),'empty-world-selector');

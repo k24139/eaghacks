@@ -1,0 +1,34 @@
+{
+  "status": "blocked-before-sampling",
+  "validMatchedComparison": false,
+  "worldExportSha256": "503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784",
+  "freshProfileImportVerified": false,
+  "stockSelectorShowsWorld": true,
+  "nativeSelectorAndWorldSaved": true,
+  "settingsAndPositionMatched": false,
+  "idle": {
+    "stock": null,
+    "native": null,
+    "difference": null
+  },
+  "movement": {
+    "stock": null,
+    "native": null,
+    "difference": null
+  },
+  "memoryDuringGameplay": {
+    "stock": null,
+    "native": null
+  },
+  "frameTimeSpikes": {
+    "stock": null,
+    "native": null
+  },
+  "nativeOverlayOnOff": null,
+  "bridgeOverhead": null,
+  "containerMemoryPeakBytes": 5880815616,
+  "ownedBrowserRssPeakBytes": 4061237248,
+  "oomEvents": 0,
+  "performanceParityClaim": false,
+  "blocker": "Fresh-profile EPK import did not reach the title/import selector in two bounded startup attempts. No performance samples were started."
+}

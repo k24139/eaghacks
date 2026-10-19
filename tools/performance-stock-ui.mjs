@@ -11,6 +11,7 @@ export function classifyStockControls(controls){
  if(normalizeControl(controls.singleplayer)==='singleplayer')return 'title';
  if(normalizeControl(controls.done)==='done')return 'profile';
  if(normalizeControl(controls.play)==='playselectedworld')return 'world-list';
+ if(normalizeControl(controls.heading)==='selectworld'&&normalizeControl(controls.worldRow))return 'world-list-row';
  if(/^create[nh]ewworld$/.test(normalizeControl(controls.createWorld)))return 'empty-world-selector';
  return 'unknown';
 }
@@ -42,7 +43,13 @@ export async function stockToSavedWorldList(page,{directory,log=console.log}={})
  }
  if(view.screen!=='title')throw Error('Stock title controls were not recognized. Inspect saved screenshot; no world was created.');
  await page.mouse.click(640,371,{delay:750});await page.waitForTimeout(1000);
- view=await visualWait('stock-world-selection',['world-list','empty-world-selector'],60000);
+ view=await visualWait('stock-world-selection',['world-list','world-list-row','empty-world-selector'],60000);
+ if(view.screen==='world-list-row'){
+  // The Play button is disabled until a saved row is selected, so choose the
+  // visible first row before classifying the selector by its Play control.
+  await page.mouse.click(640,210,{delay:250});
+  view=await visualWait('stock-world-row-selected',['world-list'],15000);
+ }
  if(view.screen!=='world-list')throw new MissingSavedWorldError('Stock runtime did not show a saved-world list. No Create New World control was clicked. Restore the verified superflat world/profile.');
  return view;
 }

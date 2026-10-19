@@ -1,0 +1,108 @@
+{
+  "phase": 3,
+  "status": "blocked-before-sampling",
+  "startingCommit": "e9e3dc48b5230e57d577c52979f80c821443155e",
+  "artifacts": {
+    "nativeHtmlSha256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+    "stockHtmlSha256": "1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8",
+    "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+    "nativeBuildMode": "fast dependency analysis / SIMPLE development build",
+    "worldExport": {
+      "path": "tests/fixtures/performance/benchmark-world.epk",
+      "bytes": 570090,
+      "sha256": "503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784"
+    },
+    "persistentProfileBackup": {
+      "archive": "eaghacks-phase3-browser-profile.tar.gz",
+      "bytes": 709093,
+      "sha256": "2b2254d55a32f124269a1ebd7610f34bf3e0a0dfb91dd3cc59475f796a8004c3",
+      "scope": "Chromium user-data profile for http://127.0.0.1:3006"
+    }
+  },
+  "environment": {
+    "chromium": "153.0.8010.0",
+    "renderingBackend": "Headless Chromium, ANGLE SwiftShader, WebGL2 software renderer",
+    "containerMemoryLimitBytes": 8589934592,
+    "browserConcurrency": 1,
+    "memoryStopBytes": 6979321856,
+    "measurementViewport": [
+      640,
+      400
+    ],
+    "navigationViewport": [
+      1280,
+      800
+    ],
+    "ownedBrowserProcessesTerminated": true,
+    "oomEvents": 0
+  },
+  "world": {
+    "name": "Eaghacks Benchmark 2026",
+    "seed": "20261019",
+    "type": "Superflat",
+    "structures": false,
+    "bonusChest": false,
+    "gameMode": "Creative",
+    "difficulty": "Peaceful",
+    "positionCommand": "/tp @s 0 150 0 0 20",
+    "observedPosition": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 20
+    },
+    "preparedPlatform": "stone from -8,149,-8 through 8,149,8",
+    "sameOrigin": "http://127.0.0.1:3006",
+    "nativeWorldLoadedAndSaved": true,
+    "stockSelectorShowsSameNamedWorld": true,
+    "freshProfileImportVerified": false,
+    "sameWorldImportRoundTripVerified": false
+  },
+  "settings": {
+    "nativeObserved": {
+      "preset": "Fast",
+      "maxFramerate": "Unlimited",
+      "vsync": false,
+      "renderDistanceChunks": 4,
+      "biomeBlend": "Off (Fastest)",
+      "graphicsApiControl": "Prefer OpenGL"
+    },
+    "stockSettingsMatchVerified": false,
+    "playerPositionMatchVerifiedAcrossClients": false,
+    "warmupDurationMs": null,
+    "measurementDurationMs": null
+  },
+  "diagnostics": {
+    "freshProfileAttemptCount": 2,
+    "freshProfileFailure": "The native client remained on its profile/loading overlay; bounded waits of 30 seconds and 60 seconds did not reach TitleScreen or the import selector.",
+    "stockNavigationInitialFailure": "A populated saved-world row disables Play Selected World until selected; prior OCR classifier treated Select World as unknown.",
+    "stockNavigationRepair": "Recognize Select World plus a nonempty row, click the first row, then verify Play Selected World. Regression test added.",
+    "peakCgroupBytesAcrossRecordedRuns": 5880815616,
+    "peakOwnedBrowserRssBytesAcrossRecordedRuns": 4061237248,
+    "peakRunScope": "Native world creation/configuration; not a benchmark sample.",
+    "freshProfilePeakCgroupBytes": 3998576640,
+    "stockSelectorPeakCgroupBytes": 4935090176,
+    "allChromiumProcessesClosed": true
+  },
+  "measurements": {
+    "idle": null,
+    "movement": null,
+    "memoryDuringGameplay": null,
+    "frameTimeSpikes": null,
+    "nativeBridgeOverhead": null,
+    "nativeOverlayOnOff": null,
+    "stockVsNativePerformanceDifference": null,
+    "reason": "Required fresh-profile EPK import round trip and matched client settings/player position were not verified. No performance samples were started."
+  },
+  "limitations": [
+    "No paired FPS or frame-time samples were collected.",
+    "No gameplay memory measurements were collected.",
+    "No fresh-profile import was verified.",
+    "World time/weather cycling rules were not disabled; the time and clear weather were set during world preparation. Reset time and verify weather before a future sample.",
+    "Game-rule identifiers attempted during world preparation were rejected by this runtime; peaceful difficulty and an entity cleanup command were accepted.",
+    "The stock HTML contains the saved browser integration shell around the original stock runtime payloads; its six payload hashes match the saved pins.",
+    "The native artifact is a fast-analysis/SIMPLE development build, not a production FULL-optimization benchmark."
+  ],
+  "parityClaim": false
+}
