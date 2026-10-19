@@ -1,0 +1,348 @@
+{
+  "status": "blocked",
+  "startingCommit": "791b8d1bd86df0b2bedaff70413a5dbc3097998c",
+  "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+  "artifacts": {
+    "native": {
+      "path": "/tmp/eaghacks-recovery-phase1/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html",
+      "bytes": 80975660,
+      "sha256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+      "mode": "fast-analysis/SIMPLE development build"
+    },
+    "stock": {
+      "path": "/tmp/eaghacks-recovery-phase1/input/performance/stock.html",
+      "bytes": 75802950,
+      "sha256": "1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8",
+      "payloads": {
+        "eag-inline-decoder": {
+          "bytes": 208439,
+          "sha256": "79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f"
+        },
+        "eag-inline-wasm-br": {
+          "bytes": 13895847,
+          "sha256": "c783f63ac18c0a185fbf6fa633372a6f1d3cfa014a4285fb2fb4bd924a638c08"
+        },
+        "eag-inline-mesh-wasm-br": {
+          "bytes": 2245115,
+          "sha256": "ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3"
+        },
+        "eag-inline-server-wasm-br": {
+          "bytes": 7652747,
+          "sha256": "34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105"
+        },
+        "eag-inline-assets": {
+          "bytes": 6616184,
+          "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db"
+        },
+        "eag-inline-sounds": {
+          "bytes": 25921893,
+          "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6"
+        }
+      },
+      "baseline": "Original stock game payloads with the saved browser integration shell; Meteor modules disabled during sampling"
+    }
+  },
+  "environment": {
+    "profile": "/tmp/eaghacks-recovery-phase1/input/performance/profile",
+    "origin": "http://127.0.0.1:3006",
+    "memoryLimitBytes": 6979321856,
+    "renderer": "Headless Chromium / ANGLE SwiftShader",
+    "chromium": "153.0.8010.0"
+  },
+  "plannedSettings": {
+    "navigationViewport": [
+      1280,
+      800
+    ],
+    "sampleViewport": [
+      640,
+      400
+    ],
+    "world": "Existing verified superflat only",
+    "idleDurationMs": 5000,
+    "movementDurationMs": 1000,
+    "samplesPerCondition": 3,
+    "warmupMs": 3000,
+    "positionCommand": "/tp @s 0 150 0 0 20"
+  },
+  "measurements": {
+    "idle": null,
+    "movement": null,
+    "memory": null,
+    "spikes": null,
+    "equivalentOverlays": null,
+    "bridgeSelfTime": null
+  },
+  "parityClaim": false,
+  "failures": [
+    {
+      "name": "Error",
+      "message": "Stock title controls were not recognized. Inspect saved screenshot; no world was created."
+    }
+  ],
+  "memorySamples": [
+    {
+      "at": "2026-10-19T02:27:47.679Z",
+      "cgroupBytes": 2506444800,
+      "browserRSSBytes": 0,
+      "browserPids": []
+    },
+    {
+      "at": "2026-10-19T02:27:48.660Z",
+      "cgroupBytes": 2852716544,
+      "browserRSSBytes": 551591936,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:49.661Z",
+      "cgroupBytes": 2864918528,
+      "browserRSSBytes": 568832000,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:50.662Z",
+      "cgroupBytes": 3169320960,
+      "browserRSSBytes": 873771008,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:51.662Z",
+      "cgroupBytes": 3462631424,
+      "browserRSSBytes": 1166610432,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:52.664Z",
+      "cgroupBytes": 3721551872,
+      "browserRSSBytes": 1423298560,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:53.666Z",
+      "cgroupBytes": 3316670464,
+      "browserRSSBytes": 1018867712,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:54.668Z",
+      "cgroupBytes": 3497984000,
+      "browserRSSBytes": 1199706112,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:55.671Z",
+      "cgroupBytes": 3597361152,
+      "browserRSSBytes": 1303830528,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:56.669Z",
+      "cgroupBytes": 3635965952,
+      "browserRSSBytes": 1336750080,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:57.688Z",
+      "cgroupBytes": 3793428480,
+      "browserRSSBytes": 1495343104,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:58.671Z",
+      "cgroupBytes": 3709190144,
+      "browserRSSBytes": 1423536128,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:27:59.670Z",
+      "cgroupBytes": 3808313344,
+      "browserRSSBytes": 1520357376,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:00.670Z",
+      "cgroupBytes": 3819929600,
+      "browserRSSBytes": 1531572224,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:01.672Z",
+      "cgroupBytes": 3881369600,
+      "browserRSSBytes": 1593315328,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:02.674Z",
+      "cgroupBytes": 3890831360,
+      "browserRSSBytes": 1602400256,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:03.682Z",
+      "cgroupBytes": 3931234304,
+      "browserRSSBytes": 1658703872,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:04.678Z",
+      "cgroupBytes": 4009271296,
+      "browserRSSBytes": 1767006208,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784,
+        5812
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:05.676Z",
+      "cgroupBytes": 4187267072,
+      "browserRSSBytes": 1944653824,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784,
+        5812
+      ]
+    },
+    {
+      "at": "2026-10-19T02:28:06.695Z",
+      "cgroupBytes": 4204044288,
+      "browserRSSBytes": 1953456128,
+      "browserPids": [
+        5750,
+        5752,
+        5753,
+        5778,
+        5784,
+        5812
+      ]
+    }
+  ],
+  "stockBridgeSignals": {
+    "screenState": "undefined",
+    "nativeBridge": "undefined"
+  },
+  "databaseInventory": [
+    {
+      "name": "_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_resourcePacks",
+      "version": 1,
+      "stores": [
+        {
+          "name": "filesystem",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds",
+      "version": 1,
+      "stores": [
+        {
+          "name": "filesystem",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}

@@ -84,3 +84,21 @@ The catalogue remains 77 modules: 18 verified in real gameplay, 22 implemented b
 5. Begin only the next explicitly authorized bounded phase. This phase did not authorize gameplay, multiplayer or performance work.
 
 Remaining work is separate: a production precise/FULL build on a suitable host, desktop physical pointer/focus/audio QA, remaining module coverage, multiplayer on a host where Chromium gathers WebRTC ICE candidates, and a repaired matched performance comparison. Prior multiplayer diagnostics found zero ICE candidates in the loopback-only environment. No multiplayer compatibility or performance parity is claimed.
+
+## Phase 2 handoff: performance comparison blocked
+
+Phase 2 started from `791b8d1bd86df0b2bedaff70413a5dbc3097998c`. Its only objective was a matched stock/native performance comparison. It stopped without paired gameplay samples: the existing superflat world was not preserved in the retained browser profiles or saved artifacts. No new world was generated.
+
+Read [the dedicated Phase 2 report](reports/performance-phase2/PERFORMANCE_REPORT.md), [raw result](reports/performance-phase2/raw.json) and [summary](reports/performance-phase2/summary.json). Missing idle/movement FPS, frame-time, gameplay-memory, spikes, overlays and bridge self-time remain null. Earlier unmatched samples were not reused. No parity is claimed.
+
+Compared artifact identity: native HTML SHA-256 `eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c`; stock HTML SHA-256 `1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8`. The stock artifact has the original six payloads and the saved browser-integration shell. Runtime source digest remains `49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f`. The native build is fast-analysis/SIMPLE, not precise/FULL. Static recovery verification passed again.
+
+Environment: Chromium 153.0.8010.0, headless ANGLE SwiftShader, 8 GiB container, one browser instance at a time. Navigation used 1280x800. Planned paired sampling was 640x400, the same saved superflat world/origin/profile/settings/position, three 5-second idle samples and three 1-second movement samples, with a 3-second idle warm-up. World, graphics and position matching were not achieved, so sampling did not run.
+
+There were two bounded stock preflight attempts. Attempt 1 exposed menu-ready becoming true before resource loading ended. Attempt 2 passed actual profile and title controls, then displayed an empty-world creation/import selector. An OCR N/H variation caused its bounded timeout and was fixed by a focused regression assertion after screenshot inspection. No third browser attempt ran. Diagnostics, read-only database inventory and per-attempt memory samples are preserved. Peak cgroup use was 5.055 GiB and peak browser-tree RSS was 2.537 GiB in attempt 2. Those are startup/menu observations, not gameplay measurements. No OOM event occurred and no task browser remains.
+
+Performance scripts now use actual stock canvas controls instead of native screen globals, bounded visual readiness, saved-world-only preflight, a persistent profile, a 6.5 GiB memory stop, bounded RAF/host evaluation timeouts, raw frame intervals, spike summaries and owned-browser cleanup. The existing native signal-based navigation is kept separate. Paired sampling and matching beyond the empty-world selector remain unverified. No runtime module code or native artifact changed.
+
+Validation: focused performance-driver tests 5/5, full lightweight suite 146/146, browser-bundle build passed, smoke `SMOKE OK`, static native artifact verification passed. No native compilation, multiplayer, module gameplay validation or final release packaging ran.
+
+Exact Phase 3 starting action: check out the integration head containing this Phase 2 report. Restore/import the verified superflat world into `input/performance/profile`, preserving the origin `http://127.0.0.1:3006`, and save a world export/profile backup with hashes. If no export exists, creating a replacement benchmark world needs explicit authorization in that next phase. Confirm the stock saved-world list and matching graphics/player position, then rerun the bounded paired comparison. Do not skip this prerequisite or infer performance parity from the old unmatched observations.

@@ -1,0 +1,1333 @@
+{
+  "status": "blocked",
+  "startingCommit": "791b8d1bd86df0b2bedaff70413a5dbc3097998c",
+  "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+  "artifacts": {
+    "native": {
+      "path": "/tmp/eaghacks-recovery-phase1/input/deliverable/Eaglercraft-26.2-u1-Meteor-Native.html",
+      "bytes": 80975660,
+      "sha256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+      "mode": "fast-analysis/SIMPLE development build"
+    },
+    "stock": {
+      "path": "/tmp/eaghacks-recovery-phase1/input/performance/stock.html",
+      "bytes": 75802950,
+      "sha256": "1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8",
+      "payloads": {
+        "eag-inline-decoder": {
+          "bytes": 208439,
+          "sha256": "79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f"
+        },
+        "eag-inline-wasm-br": {
+          "bytes": 13895847,
+          "sha256": "c783f63ac18c0a185fbf6fa633372a6f1d3cfa014a4285fb2fb4bd924a638c08"
+        },
+        "eag-inline-mesh-wasm-br": {
+          "bytes": 2245115,
+          "sha256": "ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3"
+        },
+        "eag-inline-server-wasm-br": {
+          "bytes": 7652747,
+          "sha256": "34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105"
+        },
+        "eag-inline-assets": {
+          "bytes": 6616184,
+          "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db"
+        },
+        "eag-inline-sounds": {
+          "bytes": 25921893,
+          "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6"
+        }
+      },
+      "baseline": "Original stock game payloads with the saved browser integration shell; Meteor modules disabled during sampling"
+    }
+  },
+  "environment": {
+    "profile": "/tmp/eaghacks-recovery-phase1/input/performance/profile",
+    "origin": "http://127.0.0.1:3006",
+    "memoryLimitBytes": 6979321856,
+    "renderer": "Headless Chromium / ANGLE SwiftShader",
+    "chromium": "153.0.8010.0"
+  },
+  "plannedSettings": {
+    "navigationViewport": [
+      1280,
+      800
+    ],
+    "sampleViewport": [
+      640,
+      400
+    ],
+    "world": "Existing verified superflat only",
+    "idleDurationMs": 5000,
+    "movementDurationMs": 1000,
+    "samplesPerCondition": 3,
+    "warmupMs": 3000,
+    "positionCommand": "/tp @s 0 150 0 0 20"
+  },
+  "measurements": {
+    "idle": null,
+    "movement": null,
+    "memory": null,
+    "spikes": null,
+    "equivalentOverlays": null,
+    "bridgeSelfTime": null
+  },
+  "parityClaim": false,
+  "failures": [
+    {
+      "name": "Error",
+      "message": "Stock controls did not become recognizable before the visual deadline: stock-world-selection"
+    }
+  ],
+  "memorySamples": [
+    {
+      "at": "2026-10-19T02:29:08.109Z",
+      "cgroupBytes": 2508701696,
+      "browserRSSBytes": 0,
+      "browserPids": []
+    },
+    {
+      "at": "2026-10-19T02:29:09.086Z",
+      "cgroupBytes": 2859233280,
+      "browserRSSBytes": 557944832,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:10.087Z",
+      "cgroupBytes": 2885885952,
+      "browserRSSBytes": 598056960,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:11.111Z",
+      "cgroupBytes": 3786969088,
+      "browserRSSBytes": 1511915520,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:12.088Z",
+      "cgroupBytes": 3453353984,
+      "browserRSSBytes": 1156788224,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:13.095Z",
+      "cgroupBytes": 3557220352,
+      "browserRSSBytes": 1262731264,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:14.094Z",
+      "cgroupBytes": 3617120256,
+      "browserRSSBytes": 1322659840,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:15.096Z",
+      "cgroupBytes": 3699802112,
+      "browserRSSBytes": 1419235328,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:16.100Z",
+      "cgroupBytes": 3742072832,
+      "browserRSSBytes": 1436229632,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:17.093Z",
+      "cgroupBytes": 3823751168,
+      "browserRSSBytes": 1520111616,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:18.104Z",
+      "cgroupBytes": 3840446464,
+      "browserRSSBytes": 1536663552,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:19.093Z",
+      "cgroupBytes": 3887267840,
+      "browserRSSBytes": 1596555264,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:20.095Z",
+      "cgroupBytes": 3898671104,
+      "browserRSSBytes": 1608253440,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:21.110Z",
+      "cgroupBytes": 3934986240,
+      "browserRSSBytes": 1646563328,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:22.100Z",
+      "cgroupBytes": 4021129216,
+      "browserRSSBytes": 1778253824,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:23.140Z",
+      "cgroupBytes": 4186677248,
+      "browserRSSBytes": 1925435392,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:24.115Z",
+      "cgroupBytes": 4195852288,
+      "browserRSSBytes": 1947709440,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:25.118Z",
+      "cgroupBytes": 4213813248,
+      "browserRSSBytes": 1966489600,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:26.115Z",
+      "cgroupBytes": 4234657792,
+      "browserRSSBytes": 1987842048,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:27.109Z",
+      "cgroupBytes": 4242489344,
+      "browserRSSBytes": 1982337024,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:28.109Z",
+      "cgroupBytes": 4242804736,
+      "browserRSSBytes": 1998266368,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:29.111Z",
+      "cgroupBytes": 4243861504,
+      "browserRSSBytes": 1999507456,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:30.122Z",
+      "cgroupBytes": 4243795968,
+      "browserRSSBytes": 1995481088,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:31.139Z",
+      "cgroupBytes": 4259835904,
+      "browserRSSBytes": 1982640128,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:32.138Z",
+      "cgroupBytes": 4345266176,
+      "browserRSSBytes": 2118541312,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:33.124Z",
+      "cgroupBytes": 4525924352,
+      "browserRSSBytes": 2285539328,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:34.151Z",
+      "cgroupBytes": 4768210944,
+      "browserRSSBytes": 2479149056,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:35.212Z",
+      "cgroupBytes": 5288005632,
+      "browserRSSBytes": 2564485120,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:36.214Z",
+      "cgroupBytes": 5427773440,
+      "browserRSSBytes": 2634092544,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:37.156Z",
+      "cgroupBytes": 5003300864,
+      "browserRSSBytes": 2590781440,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:38.147Z",
+      "cgroupBytes": 5071622144,
+      "browserRSSBytes": 2724040704,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:39.124Z",
+      "cgroupBytes": 4971991040,
+      "browserRSSBytes": 2622726144,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:40.137Z",
+      "cgroupBytes": 4878626816,
+      "browserRSSBytes": 2527125504,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:41.132Z",
+      "cgroupBytes": 4879273984,
+      "browserRSSBytes": 2527817728,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:42.141Z",
+      "cgroupBytes": 4775567360,
+      "browserRSSBytes": 2527932416,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:43.136Z",
+      "cgroupBytes": 4772925440,
+      "browserRSSBytes": 2523144192,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:44.133Z",
+      "cgroupBytes": 4773916672,
+      "browserRSSBytes": 2523136000,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:45.136Z",
+      "cgroupBytes": 4773015552,
+      "browserRSSBytes": 2523471872,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:46.138Z",
+      "cgroupBytes": 4777988096,
+      "browserRSSBytes": 2527989760,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:47.143Z",
+      "cgroupBytes": 4800782336,
+      "browserRSSBytes": 2532696064,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:48.137Z",
+      "cgroupBytes": 4785156096,
+      "browserRSSBytes": 2531164160,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:49.146Z",
+      "cgroupBytes": 4778016768,
+      "browserRSSBytes": 2526359552,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:50.148Z",
+      "cgroupBytes": 4784390144,
+      "browserRSSBytes": 2530480128,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:51.148Z",
+      "cgroupBytes": 4784234496,
+      "browserRSSBytes": 2530476032,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:52.144Z",
+      "cgroupBytes": 4784054272,
+      "browserRSSBytes": 2530549760,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:53.144Z",
+      "cgroupBytes": 4788088832,
+      "browserRSSBytes": 2534817792,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:54.148Z",
+      "cgroupBytes": 4806713344,
+      "browserRSSBytes": 2537234432,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:55.173Z",
+      "cgroupBytes": 4788441088,
+      "browserRSSBytes": 2531799040,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:56.184Z",
+      "cgroupBytes": 4787654656,
+      "browserRSSBytes": 2531409920,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:57.169Z",
+      "cgroupBytes": 4787400704,
+      "browserRSSBytes": 2531221504,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:58.153Z",
+      "cgroupBytes": 4787470336,
+      "browserRSSBytes": 2531450880,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:29:59.195Z",
+      "cgroupBytes": 4789534720,
+      "browserRSSBytes": 2535833600,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:00.169Z",
+      "cgroupBytes": 4808007680,
+      "browserRSSBytes": 2537910272,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:01.160Z",
+      "cgroupBytes": 4790009856,
+      "browserRSSBytes": 2532962304,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:02.179Z",
+      "cgroupBytes": 4646993920,
+      "browserRSSBytes": 2392842240,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:03.174Z",
+      "cgroupBytes": 4645273600,
+      "browserRSSBytes": 2391453696,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:04.163Z",
+      "cgroupBytes": 4647223296,
+      "browserRSSBytes": 2391252992,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:05.155Z",
+      "cgroupBytes": 4653785088,
+      "browserRSSBytes": 2391445504,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:06.168Z",
+      "cgroupBytes": 4653649920,
+      "browserRSSBytes": 2391621632,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:07.166Z",
+      "cgroupBytes": 4658032640,
+      "browserRSSBytes": 2396024832,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:08.167Z",
+      "cgroupBytes": 4659105792,
+      "browserRSSBytes": 2395971584,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:09.164Z",
+      "cgroupBytes": 4650651648,
+      "browserRSSBytes": 2392498176,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:10.160Z",
+      "cgroupBytes": 4646563840,
+      "browserRSSBytes": 2388287488,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:11.174Z",
+      "cgroupBytes": 4638785536,
+      "browserRSSBytes": 2381426688,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:12.162Z",
+      "cgroupBytes": 4638167040,
+      "browserRSSBytes": 2380689408,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:13.164Z",
+      "cgroupBytes": 4637818880,
+      "browserRSSBytes": 2382422016,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:14.173Z",
+      "cgroupBytes": 4638154752,
+      "browserRSSBytes": 2382815232,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:15.175Z",
+      "cgroupBytes": 4658544640,
+      "browserRSSBytes": 2386644992,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:16.171Z",
+      "cgroupBytes": 4638949376,
+      "browserRSSBytes": 2380283904,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:17.213Z",
+      "cgroupBytes": 4633137152,
+      "browserRSSBytes": 2376626176,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:18.180Z",
+      "cgroupBytes": 4632375296,
+      "browserRSSBytes": 2376929280,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:19.186Z",
+      "cgroupBytes": 4633169920,
+      "browserRSSBytes": 2377707520,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:20.176Z",
+      "cgroupBytes": 4632965120,
+      "browserRSSBytes": 2377199616,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:21.182Z",
+      "cgroupBytes": 4633051136,
+      "browserRSSBytes": 2377629696,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:22.200Z",
+      "cgroupBytes": 4637155328,
+      "browserRSSBytes": 2382061568,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:23.183Z",
+      "cgroupBytes": 4643057664,
+      "browserRSSBytes": 2383695872,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:24.182Z",
+      "cgroupBytes": 4636237824,
+      "browserRSSBytes": 2378067968,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:25.187Z",
+      "cgroupBytes": 4639408128,
+      "browserRSSBytes": 2378633216,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:26.185Z",
+      "cgroupBytes": 4634001408,
+      "browserRSSBytes": 2377781248,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:27.187Z",
+      "cgroupBytes": 4634542080,
+      "browserRSSBytes": 2378838016,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:28.189Z",
+      "cgroupBytes": 4643078144,
+      "browserRSSBytes": 2387009536,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:29.210Z",
+      "cgroupBytes": 4662112256,
+      "browserRSSBytes": 2389409792,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:30.196Z",
+      "cgroupBytes": 4641947648,
+      "browserRSSBytes": 2385408000,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:31.207Z",
+      "cgroupBytes": 4638416896,
+      "browserRSSBytes": 2381307904,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:32.213Z",
+      "cgroupBytes": 4636483584,
+      "browserRSSBytes": 2379493376,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:33.240Z",
+      "cgroupBytes": 4634054656,
+      "browserRSSBytes": 2380189696,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:34.199Z",
+      "cgroupBytes": 4638019584,
+      "browserRSSBytes": 2384609280,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:35.218Z",
+      "cgroupBytes": 4648394752,
+      "browserRSSBytes": 2391138304,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:36.204Z",
+      "cgroupBytes": 4639748096,
+      "browserRSSBytes": 2385006592,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:37.212Z",
+      "cgroupBytes": 4635844608,
+      "browserRSSBytes": 2381443072,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:38.200Z",
+      "cgroupBytes": 4636229632,
+      "browserRSSBytes": 2381500416,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:39.201Z",
+      "cgroupBytes": 4638535680,
+      "browserRSSBytes": 2381746176,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:40.212Z",
+      "cgroupBytes": 4635193344,
+      "browserRSSBytes": 2380480512,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:41.219Z",
+      "cgroupBytes": 4635832320,
+      "browserRSSBytes": 2381279232,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    },
+    {
+      "at": "2026-10-19T02:30:42.217Z",
+      "cgroupBytes": 4640022528,
+      "browserRSSBytes": 2385616896,
+      "browserPids": [
+        5952,
+        5954,
+        5955,
+        5981,
+        5987,
+        6018
+      ]
+    }
+  ],
+  "stockBridgeSignals": {
+    "screenState": "undefined",
+    "nativeBridge": "undefined"
+  },
+  "databaseInventory": [
+    {
+      "name": "_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_resourcePacks",
+      "version": 1,
+      "stores": [
+        {
+          "name": "filesystem",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds",
+      "version": 1,
+      "stores": [
+        {
+          "name": "filesystem",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "reviewedBlocker": {
+    "code": "MISSING_VERIFIED_SAVED_WORLD",
+    "evidence": "../../diagnostics/performance-phase2/empty-world-selector.png",
+    "worldCreated": false,
+    "stockProfileAndTitleNavigation": "Observed and passed in attempt 2",
+    "details": "The stock UI offers Create New World / Import EPK World / Import Vanilla World instead of a saved-world list. No persisted world/export was found in recovery artifacts. The second attempt timed out because OCR read Create New World as Create Hew World; that recognized variation was added after inspecting the screenshot and verified by the focused test. No third browser attempt was made."
+  }
+}

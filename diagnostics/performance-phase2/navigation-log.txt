@@ -1,0 +1,94 @@
+2026-10-19T02:29:08.164Z stock startup
+2026-10-19T02:29:08.809Z browser info [eaghacks] Meteor framework loaded; browser integration active
+2026-10-19T02:29:11.485Z browser log ClientMain: [INFO] eaglercraftx is starting...
+2026-10-19T02:29:11.496Z browser log ClientMain: [INFO] configuration was successful
+2026-10-19T02:29:11.496Z browser log ClientMain: [INFO] registering crash handlers
+2026-10-19T02:29:11.496Z browser log ClientMain: [INFO] initializing eaglercraftx runtime
+2026-10-19T02:29:11.497Z browser log [02:29:11+495][main/INFO][EagRuntime]: Version: EagRuntimeX 1.0
+2026-10-19T02:29:11.498Z browser log [02:29:11+497][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+2026-10-19T02:29:11.498Z browser log [02:29:11+497][main/INFO][BrowserRuntime]: Creating main game canvas
+2026-10-19T02:29:11.509Z browser log [02:29:11+508][main/INFO][BrowserRuntime]: Endianness: this CPU is little endian
+2026-10-19T02:29:11.521Z browser log [02:29:11+520][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/0030bdb3-8951-4292-b211-960e29c1b452#eaghacks-inline-assets.epk
+2026-10-19T02:29:11.587Z browser log [02:29:11+584][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/0030bdb3-8951-4292-b211-960e29c1b452#eaghacks-inline-assets.epk
+2026-10-19T02:29:12.007Z browser log [02:29:12+006][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/92dcf4af-4ee3-4d7e-a4d7-4c4a9bd7407e#eaghacks-inline-sounds.epk
+2026-10-19T02:29:12.075Z browser log [02:29:12+073][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/92dcf4af-4ee3-4d7e-a4d7-4c4a9bd7407e#eaghacks-inline-sounds.epk
+2026-10-19T02:29:12.711Z browser log [02:29:12+709][main/INFO][BrowserRuntime]: Loaded 24288 resources from EPKs
+2026-10-19T02:29:12.711Z browser log [02:29:12+710][main/INFO][BrowserRuntime]: Initializing filesystem...
+2026-10-19T02:29:12.721Z browser log [02:29:12+719][main/INFO][BrowserRuntime]: Game directory filesystem mounted: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+2026-10-19T02:29:12.721Z browser log [02:29:12+720][main/INFO][BrowserRuntime]: Platform initialization complete
+2026-10-19T02:29:12.721Z browser log [02:29:12+721][main/INFO][ClientMain]: eagler: web boot OK
+2026-10-19T02:29:12.722Z browser log eagler: web boot OK (24288 assets)
+2026-10-19T02:29:12.722Z browser log [02:29:12+721][main/INFO][ClientMain]: eagler: 24288 resources loaded from EPK
+2026-10-19T02:29:12.727Z browser log eagler-gzip-selftest: OK (48 bytes compressed, round-trip verified)
+2026-10-19T02:29:12.728Z browser log [MeshWorkerPool] bridge installed (meshWorkers enabled)
+2026-10-19T02:29:12.730Z browser log ClientMain: [INFO] handing off to net.minecraft.client.main.Main
+2026-10-19T02:29:16.282Z browser log [02:29:16][Render thread/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+2026-10-19T02:29:16.287Z browser log [02:29:16][Render thread/INFO][Minecraft]: Setting user: YiggYee1090
+2026-10-19T02:29:16.328Z browser log [02:29:16][Render thread/INFO][Minecraft]: Backend library: LWJGL version 3.4.1 eagler-web-stub
+2026-10-19T02:29:16.335Z browser log [02:29:16+333][main/INFO][BrowserRuntime]: Loading keyboard layout data
+2026-10-19T02:29:16.369Z browser log [02:29:16][Render thread/INFO][Minecraft]: Using graphics device extensions: EXT_color_buffer_float, EXT_texture_filter_anisotropic
+2026-10-19T02:29:16.369Z browser log [02:29:16][Render thread/INFO][Minecraft]: Using graphics backend WebGL2, using drivers: WebGL 2.0 (OpenGL ES 3.0 Chromium)
+2026-10-19T02:29:16.369Z browser log [02:29:16][Render thread/INFO][Minecraft]: Using graphics device: WebKit WebGL (WebKit)
+2026-10-19T02:29:16.526Z browser log [02:29:16][Render thread/INFO][Minecraft]: Reloading ResourceManager: vanilla
+2026-10-19T02:29:16.879Z browser log [02:29:16][Render thread/INFO][Minecraft]: Optional music pack is not installed; background music and music discs are disabled
+2026-10-19T02:29:17.952Z browser log [02:29:17][Render thread/INFO][Minecraft]: Found unifont_pua-17.0.01.hex, loading
+2026-10-19T02:29:17.985Z browser log [02:29:17][Render thread/INFO][Minecraft]: Found unifont_all_no_pua-17.0.01.hex, loading
+2026-10-19T02:29:18.299Z browser log [02:29:18][Render thread/INFO][Minecraft]: Found eagler_server_symbols.hex, loading
+2026-10-19T02:29:21.155Z browser log [02:29:21][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+2026-10-19T02:29:21.160Z browser log [02:29:21][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+2026-10-19T02:29:21.227Z browser log [02:29:21][Render thread/INFO][Minecraft]: OpenAL initialized on device WebAudio
+2026-10-19T02:29:21.228Z browser log [02:29:21][Render thread/INFO][Minecraft]: Sound engine started
+2026-10-19T02:29:21.230Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+2026-10-19T02:29:21.247Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+2026-10-19T02:29:21.318Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+2026-10-19T02:29:21.340Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+2026-10-19T02:29:21.463Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+2026-10-19T02:29:21.470Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+2026-10-19T02:29:21.486Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+2026-10-19T02:29:21.502Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+2026-10-19T02:29:21.611Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+2026-10-19T02:29:21.624Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+2026-10-19T02:29:21.800Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+2026-10-19T02:29:21.820Z browser log [02:29:21][Render thread/INFO][Minecraft]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
+2026-10-19T02:29:22.189Z browser log [02:29:22][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+2026-10-19T02:29:22.636Z browser log [02:29:22][Render thread/INFO][Minecraft]: [STDERR]: eagler-present: fullscreen-quad present pipeline ready
+2026-10-19T02:29:22.642Z browser warning [.WebGL-0x25c405894200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): TexSubImage with unpack buffer copied on CPU due to store, format or offset restrictions
+2026-10-19T02:29:22.642Z browser warning [.WebGL-0x25c405894200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): TexSubImage with unpack buffer copied on CPU due to store, format or offset restrictions
+2026-10-19T02:29:22.642Z browser warning [.WebGL-0x25c405894200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): TexSubImage with unpack buffer copied on CPU due to store, format or offset restrictions
+2026-10-19T02:29:22.642Z browser warning [.WebGL-0x25c405894200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): TexSubImage with unpack buffer copied on CPU due to store, format or offset restrictions (this message will no longer repeat)
+2026-10-19T02:29:24.230Z stock-initial unknown {"done":"Be","singleplayer":"Bad De Galt UC.","play":"Bn","createWorld":"pee ee","heading":"","worldRow":""}
+2026-10-19T02:29:27.083Z browser error [02:29:27][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.menu
+2026-10-19T02:29:27.149Z stock-initial profile {"done":"Done","singleplayer":"a","play":"De","createWorld":"","heading":"Edit Protile","worldRow":". 8 Tiggfee 3955"}
+2026-10-19T02:29:31.631Z stock-after-profile title {"done":"Be","singleplayer":"Singleplayer","play":"Bn","createWorld":"","heading":"","worldRow":".."}
+2026-10-19T02:29:31.675Z browser log [MeshWorkerPool] prewarm: starting 1 mesh worker(s), adaptive ceiling 4
+2026-10-19T02:29:31.676Z browser log [02:29:31+675][main/INFO][SingleplayerServerController26]: serverWorker: prewarming the integrated-server worker for Singleplayer
+2026-10-19T02:29:31.680Z browser log [02:29:31+675][main/INFO][ClientPlatformSingleplayer]: serverWorker mode ENABLED — integrated server will run in a Web Worker
+2026-10-19T02:29:31.694Z browser log [wasm-worker] runtime loaded, instantiating shared module...
+2026-10-19T02:29:31.782Z browser log [wasm-worker] instantiated; entering main([])
+2026-10-19T02:29:31.886Z browser log [wasm-worker] runtime loaded, instantiating shared module...
+2026-10-19T02:29:32.437Z browser log [wasm-worker] instantiated; entering main(["_worker_process_"])
+2026-10-19T02:29:32.441Z browser log [02:29:32+440][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:image-booted
+2026-10-19T02:29:32.450Z browser log [02:29:32+448][main/INFO][ServerWorkerHost]: [ServerWorker] role:server accepted — booting integrated-server worker
+2026-10-19T02:29:32.466Z browser log [02:29:32+461][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls
+2026-10-19T02:29:32.502Z browser log [02:29:32+497][main/INFO][ServerWorkerHost]: [ServerWorker] world filesystem: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+2026-10-19T02:29:32.502Z browser log [02:29:32+501][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/0030bdb3-8951-4292-b211-960e29c1b452#eaghacks-inline-assets.epk
+2026-10-19T02:29:32.595Z browser log [02:29:32+593][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/0030bdb3-8951-4292-b211-960e29c1b452#eaghacks-inline-assets.epk
+2026-10-19T02:29:33.187Z browser log [02:29:33+186][main/INFO][ServerWorkerHost]: [ServerWorker] EPK assets loaded in worker realm: 19509 entries
+2026-10-19T02:29:37.318Z stock-world-selection unknown {"done":"Be","singleplayer":"ee","play":"Bn","createWorld":"Starting Integrated Server...","heading":"","worldRow":""}
+2026-10-19T02:29:38.091Z browser log [MeshWorkerPool] worker 0 booted (parse+registry) bootMs=6406; awaiting table (prewarm)
+2026-10-19T02:29:39.031Z browser log [02:29:39+029][main/INFO][ServerWorkerHost]: [ServerWorker] Bootstrap.bootStrap() complete
+2026-10-19T02:29:39.032Z browser log [02:29:39+031][main/INFO][EaglerIntegratedServerWorker26]: Eagler integrated server worker (26.2) has started
+2026-10-19T02:29:39.034Z browser log [02:29:39+033][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:booted
+2026-10-19T02:29:39.049Z browser log [02:29:39+048][main/INFO][SingleplayerServerController26]: Worker thread reported boot OK
+2026-10-19T02:29:39.085Z browser log [02:29:39+084][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+2026-10-19T02:29:40.094Z stock-world-selection unknown {"done":"Be","singleplayer":"Crs)","play":"Bn","createWorld":"Starting Integrated Server...","heading":"","worldRow":""}
+2026-10-19T02:29:47.710Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:29:54.284Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:00.558Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:08.834Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:15.634Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:23.406Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:29.347Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:35.323Z stock-world-selection unknown {"done":"Cancel","singleplayer":"| Import EPK orld |","play":"Ca","createWorld":"Create Hew World","heading":"","worldRow":"Hhat would you like to do?"}
+2026-10-19T02:30:36.828Z BLOCKED Error Stock controls did not become recognizable before the visual deadline: stock-world-selection
+2026-10-19T02:30:43.318Z saved /tmp/eaghacks-recovery-phase1/reports/performance-phase2/raw.json blocked
