@@ -123,3 +123,12 @@ The closed persistent profile backup is `eaghacks-phase3-browser-profile.tar.gz`
 - Phase 4 gate: clean-profile import and both-client settings/position verification remain incomplete.
 
 Validation for Phase 3: focused performance-driver tests passed (5/5), `npm test` passed (146/146), `npm run build` completed both browser bundles, `node tools/smoke.mjs` returned `SMOKE OK`, and `tools/verify-recovery-artifact.mjs` revalidated the saved native HTML, source digest, six payloads, WASM hash and bridge markers. No native compilation or full gameplay suite was run.
+
+
+## Phase 3 post-publish artifact integrity correction (2026-10-19)
+
+A final remote-tree verification found that the published large binary blobs were truncated during upload. In particular, the remote `tests/fixtures/performance/benchmark-world.epk` blob is 480,240 bytes, while the verified local export was 570,090 bytes (SHA-256 `503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784`). The remote fixture must be treated as invalid and must not be used for Phase 4. The same upload issue affected 31 large binary files; textual report and source files and smaller binaries matched the local staged tree. The correct EPK and screenshot bytes are no longer available in the active checkout.
+
+A browser profile archive with SHA-256 `2b2254d55a32f124269a1ebd7610f34bf3e0a0dfb91dd3cc59475f796a8004c3` was recovered from the persistent artifact backup and its hash verified. It contains the saved world in the browser's IndexedDB. An automatic publication review rejected uploading that browser profile archive to this repository because it contains browser session/storage material and that destination was not explicitly authorized. Do not work around that rejection. The profile archive remains available to the user separately. Before Phase 4, recover the EPK from that profile using the verified client export workflow, verify the EPK SHA-256, then replace the invalid repository fixture and verify the complete Git tree. No performance data was collected; Phase 3 comparison remains blocked and unmatched.
+
+The active checkout was reinitialized at `46cd7cdf44067d039e3fccf555aa88b285648e68` and does not contain the previously staged Phase 3 files. The branch currently points at `299fcc9bad3dcf591f67c483416670dc1a486414`. This correction records the remote-integrity limitation; it does not repair the corrupted blobs. Keep `main` unchanged.
