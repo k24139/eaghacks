@@ -300,7 +300,8 @@ export class ModuleManager {
   }
 
   notify(text, level = "info") {
-    if (this._notify) this._notify(text, level);
+    // The client returns true after delivering and publishing the notice.
+    if (this._notify?.(text, level) === true) return;
     this.bus.emit(Events.Notification, { text, level });
   }
 }

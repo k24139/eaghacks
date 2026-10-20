@@ -1,0 +1,136 @@
+{
+  "htmlBytes": 80978021,
+  "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829",
+  "sourceDigest": "252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4",
+  "historical": {
+    "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+    "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f"
+  },
+  "payloads": [
+    {
+      "id": "eag-inline-decoder",
+      "encodedSHA256": "5151ba3badc239342dffe1c44cc3ad74f08fbf35f289c9df7c2f67a9cadadb27",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-wasm-br",
+      "encodedSHA256": "9bb6d9ba91a75f11ed14e8f40de9ba4106488d998ae0516ff311afd6dc194a62",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-mesh-wasm-br",
+      "encodedSHA256": "293645aaba6e2091136f524bedd45f28a4d9991aa9146c7a31365ba149a7a3f3",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-server-wasm-br",
+      "encodedSHA256": "6a25194313d7f0a8f3309ecfb4bea894132094bca9e6e3b386c90b9ce2e68b25",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-assets",
+      "encodedSHA256": "8a826a7ba42df78dad7dad2bf94aeac54c47bd47dc58cdd4059cea7cb79ed4aa",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-sounds",
+      "encodedSHA256": "6781533af1ff81368e9bcc5ccb0a8c0c23f84911b3a10a5b5ded7b86467d63c9",
+      "unchanged": true
+    }
+  ],
+  "javaChanged": false,
+  "verifiedModules": [
+    "auto-clicker",
+    "trigger-bot",
+    "active-modules-hud",
+    "cps-counter",
+    "custom-text",
+    "direction",
+    "fps-display",
+    "keystrokes",
+    "performance-monitor",
+    "radar",
+    "session-timer",
+    "speed-hud",
+    "debug-console",
+    "friend-manager",
+    "keybind-manager",
+    "module-search",
+    "notifications",
+    "bunny-hop",
+    "anti-afk",
+    "durability-warnings",
+    "chunk-borders",
+    "hitboxes",
+    "screenshot-util"
+  ],
+  "evaluatedModules": [
+    "auto-clicker",
+    "trigger-bot",
+    "active-modules-hud",
+    "cps-counter",
+    "custom-text",
+    "direction",
+    "fps-display",
+    "keystrokes",
+    "performance-monitor",
+    "radar",
+    "session-timer",
+    "speed-hud",
+    "debug-console",
+    "friend-manager",
+    "keybind-manager",
+    "module-search",
+    "notifications",
+    "bunny-hop",
+    "anti-afk",
+    "durability-warnings",
+    "chunk-borders",
+    "hitboxes",
+    "screenshot-util"
+  ],
+  "scope": "Focused gameplay checks for listed settings on final refreshed JS with unchanged compiled native payloads. Historical evidence remains separate.",
+  "rawResults": "checks.jsonl",
+  "partialModules": [
+    "auto-crit",
+    "fullbright",
+    "no-hurt-cam",
+    "macros",
+    "target-hud"
+  ],
+  "repairedModules": [
+    "macros",
+    "notifications",
+    "chunk-borders",
+    "screenshot-util"
+  ],
+  "newlyVerifiedCount": 23,
+  "previouslyUnverifiedImplementedEvaluated": 22,
+  "validation": {
+    "automatedTests": 156,
+    "build": true,
+    "smoke": true
+  },
+  "historicalEvidence": "../../native-bridge/gameplay-verification.json",
+  "checkSummary": {
+    "rawRecords": 190,
+    "finalArtifactRecords": 115,
+    "finalPassingRecords": 111,
+    "retainedFinalFailedRecords": 4,
+    "latestFunctionalChecksPassed": 99,
+    "diagnosticRecordsExcludedFromFunctionalTotal": [
+      "headless pointer lock blocks inventory ownership test"
+    ],
+    "diagnosticResolution": "Foreground headed Chrome acquired real canvas pointer lock; actual food/clicker overlap and cleanup passed. Headless pointer acquisition was not rerun after adding foregrounding."
+  },
+  "runtimeErrors": {
+    "uncaughtPageErrors": 0,
+    "moduleCrashes": 0,
+    "existingWarning": "Unable to play empty soundEvent: minecraft:music.game; no audio validation claim."
+  },
+  "publication": {
+    "method": "local Git CLI commit/push; independent fetch byte comparison; receipt remains ignored at input/phase6/publication-verification.json",
+    "branch": "meteor-client-integration"
+  },
+  "testEnvironment": "Chrome 155.0.8059.80, Apple M4 Metal; headless focused checks and headed captured-input conflict; disposable copy of task profile only."
+}

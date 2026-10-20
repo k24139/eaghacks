@@ -268,12 +268,14 @@ export class MeteorClient {
     const notif = this.modules.get("notifications");
     if (notif && notif.active) {
       notif.handle(text, level);
-      return;
+      this.bus.emit(Events.Notification, { text, level, __handledBy: true });
+      return true;
     }
     // `toasts` may not exist yet: subsystems constructed before the GUI (the
     // config manager) can notify during their own construction.
     this.toasts?.push(text, level);
     this.bus.emit(Events.Notification, { text, level, __handledBy: true });
+    return true;
   }
 
   // -- introspection --------------------------------------------------------

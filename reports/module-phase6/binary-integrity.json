@@ -1,0 +1,173 @@
+[
+  {
+    "path": "diagnostics/module-phase6/active-modules-hud.png",
+    "bytes": 203486,
+    "sha256": "34598f0e3ec2cb489f5f2e5aa4906ba0c2a1344083feee4393b6542531f2dc81",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1869,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/chunk-borders-repaired.png",
+    "bytes": 280973,
+    "sha256": "38735d9c02aefa616e6aacaefa4e9cf96cce9014ccc5a6a35d755e1ddb660d75",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1307,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/chunk-borders.png",
+    "bytes": 187347,
+    "sha256": "e000a12b4cc7cfb80ee02e7b73e61383be824b06f28f9b71aefba456209b09f5",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1879,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/cps-counter.png",
+    "bytes": 204609,
+    "sha256": "e06f01391dba2c13dd9add47b9bd57d6dacffac742525d4483fbbf7add859e3f",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1739,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/custom-text.png",
+    "bytes": 209343,
+    "sha256": "e0d07b3695b45ffa13509aa7d528852a5aae46345d27df12d6b6f5c43ef5c82a",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1969,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/direction.png",
+    "bytes": 191289,
+    "sha256": "a77fa77966d1a0897ad26bfdb873b765d264b340d26f5d8ca975c70ea4f4caee",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1736,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/fps-display.png",
+    "bytes": 190284,
+    "sha256": "83a5c071c7d9d77b2a9cacb62a619b020aba58755c0bdf6aea19a5b6a13293bd",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1548,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/game-canvas-download.png",
+    "bytes": 23103,
+    "sha256": "f4cb2a36a4c1eb472806129556bc53cd5b3885aadf1402e55d13635cc63129b2",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/game-canvas-repaired.png",
+    "bytes": 536411,
+    "sha256": "84c00271e2bdb6aa46fb50dbf338fdcff7779926a3ab015804999e6a85888e45",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 687,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/headed-conflict-cleanup.png",
+    "bytes": 225224,
+    "sha256": "782b850e58150fa8f3db347507c4004f3206318c4dbbb6ab6d59346853f7be9f",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 641,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/hitboxes.png",
+    "bytes": 191072,
+    "sha256": "f655988b4a08a9d741dc621f8d6961a4ef9f205a6d1278980ffeecb864a9bce3",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1311,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/keybind-manager.png",
+    "bytes": 262099,
+    "sha256": "0199d5bc10e91bbe3a66dc50b82350228dae4dd16202231322346cd08d4b2449",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 4374,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/keystrokes.png",
+    "bytes": 186673,
+    "sha256": "94b43216caafad5051eb439491e9daf9d4883275002858a70b1b4abbafa348eb",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1384,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/module-search.png",
+    "bytes": 262355,
+    "sha256": "71e1a11393567cf6b4084d44c6a0a5ce820bc3c02893f8fdc3f55ac9eb07eb9b",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 4425,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/performance-monitor.png",
+    "bytes": 208430,
+    "sha256": "976ecfb9194b327fb40d2744797b44a5500ca9bee79d05b3b2157c19c2c0ae16",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 3115,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/radar.png",
+    "bytes": 176995,
+    "sha256": "349c494c86e48cd2f9bd88dc842bd3b51849cf41affe7d1af4b723b9e4b8254b",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1227,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/session-timer.png",
+    "bytes": 191405,
+    "sha256": "dbbe97178c8b16ace40701df76df03d3ab0c1fa25d50fddfcdc655f57334930a",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1828,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/speed-hud.png",
+    "bytes": 179619,
+    "sha256": "7e24bb5d44cb9c8ffa26447e669e8745f44d73db31b90af5952508f927bfce62",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1596,
+    "validation": "PNG structure/CRC/decompression passed"
+  },
+  {
+    "path": "diagnostics/module-phase6/target-hud.png",
+    "bytes": 187415,
+    "sha256": "5c991a1fdd0ee668a1a3b662e50b02a31d7b54f707b4bd2dc3ce288914d07828",
+    "width": 1280,
+    "height": 800,
+    "distinctColors": 1846,
+    "validation": "PNG structure/CRC/decompression passed"
+  }
+]

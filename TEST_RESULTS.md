@@ -104,3 +104,40 @@ The restored source and HTML were checked against the saved source digest and ar
 The two-client LAN run reached a real local host world and discovered both peers over the private HTTP rendezvous service. It could not open a WebRTC data channel. An independent two-peer browser probe returned zero ICE candidates, connection states `new`, and channel state `connecting`. A retry with Chromium's loopback flag returned the same result. This execution environment exposes only the loopback network interface. Multiplayer gameplay remains unverified and needs a Chromium host that gathers usable ICE candidates. Diagnostics are in `native-bridge/multiplayer-verification.json`.
 
 The LAN checker now foregrounds each target page before input and uses the visually confirmed Direct Connect button position. The gameplay checker rejects an incomplete HTML file before launching Chromium and accepts `NATIVE_EXPECTED_SHA256` for exact artifact validation. A truncated recovered local HTML and reverting workspace files were bypassed by restoring the checksum-matching artifact and source to a private temporary directory.
+
+## Phase 6: native module verification (handoff October 20, 2026)
+
+Start: `dee3df9a338aa990620ea5108a4fe4a56ae0613b`. **156/156 Node tests**, both
+browser bundles built, **SMOKE OK**, five new focused regressions. Chrome
+155.0.8059.80 / Apple M4 Metal used only disposable task profiles and one client
+at a time. No native compilation or performance comparison was repeated.
+
+All 22 previously implemented/unverified modules received focused actual-gameplay
+checks. Repaired Screenshot Utilities also passed: 23 newly verified, 18 historical
+verified, 5 partial, 31 unsupported. The historical 18 remain bound to the original
+artifact; they do not certify the refreshed runtime. All six original partials
+were inspected and their existing subsets exercised. See the
+[full report](reports/module-phase6/PHASE6_REPORT.md) and
+[module matrix](reports/module-phase6/MODULE_MATRIX.md).
+
+The final artifact has 115 preserved check records: 111 pass and four earlier
+failures remain visible. Latest functional outcomes are 99 passing checks plus a
+retained pointer-lock failure diagnostic resolved by foreground headed capture.
+All 190 raw records, including intermediate-runtime observations, remain in
+`reports/module-phase6/checks.jsonl`. Mocked checks are separate. No uncaught page
+errors or module crashes were captured; the existing empty music sound warning
+is retained without an audio certification claim.
+
+Repairs: macro wait default, duplicate notifications, Chunk Borders second axis,
+and same-draw WebGL screenshot capture with cancellation/timeout cleanup. Tests
+cover real HUD updates, attacks on isolated pigs, movement, inventory metadata,
+input/camera/rotation ownership, rapid toggling, GUI/inventory, programmatic focus,
+actual death/respawn, world exit/reentry and saved configuration/reload. OS focus
+and exhaustive settings combinations remain outside this bounded coverage.
+
+Final refreshed HTML: `6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829`.
+Source: `252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4`.
+Original HTML/source hashes and the 64-check evidence remain unchanged; six
+embedded compiled payloads compare byte-for-byte. New PNGs pass structure/CRC and
+content checks. The original black screenshot is failure evidence; the 30 corrupt
+historical PNGs remain invalid and untouched. Profiles/HTML stay local and ignored.

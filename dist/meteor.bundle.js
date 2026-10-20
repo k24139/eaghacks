@@ -945,7 +945,7 @@ var MeteorFramework = (() => {
       return this._errorLog.slice();
     }
     notify(text, level = "info") {
-      if (this._notify) this._notify(text, level);
+      if (this._notify?.(text, level) === true) return;
       this.bus.emit(Events.Notification, { text, level });
     }
   };
@@ -5176,6 +5176,13 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
           const z = baseZ + dz * 16;
           const a = projection.worldToScreen(x, p.y, z);
           const b = projection.worldToScreen(x + 16, p.y, z);
+          const c2 = projection.worldToScreen(x, p.y, z + 16);
+          if (a?.visible && c2?.visible) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(c2.x, c2.y);
+            ctx.stroke();
+          }
           if (a?.visible && b?.visible) {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -5233,6 +5240,56 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       new BiomeInfo(),
       new LightLevelOverlay()
     ];
+  }
+
+  // src/core/screenshot.js
+  function captureGameCanvas(canvas, timeoutMs = 2e3) {
+    let gl;
+    try {
+      gl = canvas.getContext("webgl2");
+    } catch {
+    }
+    if (!gl) return { result: Promise.resolve().then(() => canvas.toDataURL("image/png")), cancel() {
+    } };
+    const original = gl.drawArrays;
+    let timer, rejectCapture, finished = false;
+    function cleanup() {
+      clearTimeout(timer);
+      if (gl.drawArrays === draw) gl.drawArrays = original;
+    }
+    function cancel() {
+      if (finished) return;
+      finished = true;
+      cleanup();
+      rejectCapture(new Error("screenshot cancelled"));
+    }
+    let resolveCapture;
+    function draw(mode, first, count) {
+      const value = original.call(this, mode, first, count);
+      if (!finished && mode === gl.TRIANGLES && first === 0 && count === 3 && gl.getParameter(gl.DRAW_FRAMEBUFFER_BINDING) === null) {
+        finished = true;
+        try {
+          resolveCapture(canvas.toDataURL("image/png"));
+        } catch (err) {
+          rejectCapture(err);
+        } finally {
+          cleanup();
+        }
+      }
+      return value;
+    }
+    const result = new Promise((resolve, reject) => {
+      resolveCapture = resolve;
+      rejectCapture = reject;
+      timer = setTimeout(() => {
+        if (finished) return;
+        finished = true;
+        cleanup();
+        reject(new Error("no completed game frame within screenshot timeout"));
+      }, timeoutMs);
+      gl.drawArrays = draw;
+    });
+    return { result, cancel };
   }
 
   // src/modules/misc-modules.js
@@ -5355,7 +5412,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
         return;
       }
       this._stepIndex++;
-      this._waitUntil = performance.now() + (step.delay ?? 0);
+      this._waitUntil = performance.now() + (step.delay ?? (step.action === "wait" ? 250 : 0));
     }
     _execute(step) {
       switch (step.action) {
@@ -5518,17 +5575,27 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
         this.disable();
         return;
       }
-      try {
-        const url = canvas.toDataURL("image/png");
+      const capture = this._capture = captureGameCanvas(canvas);
+      capture.result.then((url) => {
+        if (!this.active || this._capture !== capture) return;
         const a = document.createElement("a");
         a.href = url;
         a.download = `meteor-${Date.now()}.png`;
         a.click();
         this.manager.notify("screenshot saved", "info");
-      } catch (err) {
-        this.manager.notify(`screenshot failed: ${err.message}`, "error");
-      }
-      this.disable();
+      }).catch((err) => {
+        if (this.active && this._capture === capture) this.manager.notify(`screenshot failed: ${err.message}`, "error");
+      }).finally(() => {
+        if (this._capture === capture) {
+          this._capture = null;
+          this.disable();
+        }
+      });
+    }
+    onDisable() {
+      const capture = this._capture;
+      this._capture = null;
+      capture?.cancel();
     }
   };
   var AutoGG = class extends Module {
@@ -6184,10 +6251,12 @@ ${(/* @__PURE__ */ new Date()).toLocaleTimeString()}`;
       const notif = this.modules.get("notifications");
       if (notif && notif.active) {
         notif.handle(text, level);
-        return;
+        this.bus.emit(Events.Notification, { text, level, __handledBy: true });
+        return true;
       }
       this.toasts?.push(text, level);
       this.bus.emit(Events.Notification, { text, level, __handledBy: true });
+      return true;
     }
     // -- introspection --------------------------------------------------------
     /** Catalogue for the docs/tests: every module with its metadata. */

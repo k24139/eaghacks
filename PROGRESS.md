@@ -256,3 +256,40 @@ the next bounded objective explicitly; longer randomized HUD pairs or physical
 presentation/focus QA would address current limitations. Keep exact artifacts
 and world pinned. Do not begin multiplayer, unrelated modules, native FULL
 compilation or release packaging as part of Phase 5.
+
+## Phase 6: module verification and focused repair (handoff October 20, 2026)
+
+Started at `dee3df9a338aa990620ea5108a4fe4a56ae0613b` in the clean integration
+worktree. Original main checkout/local changes preserved. All 22 implemented
+modules awaiting gameplay checks were evaluated against actual native game state.
+Screenshot Utilities also gained real gameplay verification: **23 newly verified,
+18 historical verified, 5 partial, 31 unsupported**, total 77. Historical labels
+refer to the original artifact and do not certify the refreshed runtime.
+
+Fixed macro default waits, duplicate notifications, the missing Chunk Borders
+axis and black screenshots. Five focused regressions bring the suite to **156/156**;
+both builds and smoke pass. Prioritized movement, rotation, camera and inventory
+conflicts passed; lifecycle checks include real death/respawn, exit/reentry and
+saved configuration/reload. An input-capture blocker was resolved with a foreground
+headed task tab; no native API or Java change was required.
+
+Final refreshed HTML SHA-256:
+`6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829`.
+Final source digest:
+`252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4`.
+All six compiled payloads remain byte-identical. Historical HTML/source references
+`eee3f8e9…` / `49015a0f…` remain preserved with their original evidence.
+
+Read [the Phase 6 report](reports/module-phase6/PHASE6_REPORT.md),
+[77-module matrix](reports/module-phase6/MODULE_MATRIX.md), and
+[structured verification](reports/module-phase6/verification.json). Raw results
+retain failed attempts and separate the intermediate and final artifacts.
+No benchmark world creation, performance rerun, multiplayer, Java/native build
+or release packaging occurred. The 30 corrupt historical PNGs remain invalid.
+
+Publication: normal CLI commit/push on integration; independent verification
+receipt stays ignored under `input/phase6/publication-verification.json`. Phase 7
+starts from that published commit and the exact runtime/matrix evidence. Remaining
+partial modules: Criticals, Fullbright, NoHurtCam, Macros, Target HUD. Missing native
+contracts and possible JavaScript-only follow-ups are enumerated in the matrix.
+Stop after Phase 6; later compilation or multiplayer requires its own phase.

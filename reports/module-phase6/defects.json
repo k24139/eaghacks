@@ -1,0 +1,65 @@
+{
+  "fixed": [
+    {
+      "module": "macros",
+      "before": "Default wait step overwritten with zero delay",
+      "regression": "default wait must not be overwritten",
+      "repair": "Preserve the 250 ms default after step advancement",
+      "gameplay": "macro default wait and macro resumes after wait passed"
+    },
+    {
+      "module": "chunk-borders",
+      "before": "Only X-directed segments drawn",
+      "regression": "must draw Z-directed boundaries",
+      "repair": "Project and draw Z-directed segments as well",
+      "gameplay": "Chunk Borders repaired two-axis grid passed"
+    },
+    {
+      "module": "notifications",
+      "before": "Both client callback and manager event delivered the same notice",
+      "regression": "2 history entries instead of 1",
+      "repair": "Client publishes once and returns a handled sentinel; manager does not republish",
+      "gameplay": "Notification repaired duplicate delivery passed"
+    },
+    {
+      "module": "screenshot-util",
+      "before": "Later-task WebGL read downloaded one-color black image",
+      "repair": "Read immediately after final default-framebuffer WebGL draw, restore hook; cancel on disable/timeout",
+      "gameplay": "Repaired PNG has 687 colors; download, hook cleanup and cancellation passed"
+    }
+  ],
+  "driverDiagnostics": [
+    {
+      "failure": "Row never selected; Play disabled",
+      "resolution": "Wait for selector, single-click row then Play"
+    },
+    {
+      "failure": "Player snapshot during LevelLoadingScreen",
+      "resolution": "Wait for actual gameplay screen/position; rerun CPS after load"
+    },
+    {
+      "failure": "Incorrect expectation of menu enablement for local-only modules",
+      "resolution": "Check explicit safe rejection separately from configuration pending restoration"
+    },
+    {
+      "failure": "ClickGUI retained search focus / focus loss paused game",
+      "resolution": "Blur DOM input and resume observed PauseScreen before commands"
+    },
+    {
+      "failure": "World-exit assertion ran before adapter tick removed capabilities",
+      "resolution": "Wait for previous native state cleared, then assert cleanup"
+    },
+    {
+      "failure": "Food setup assumed fixed effect duration and movement reused hungry state",
+      "resolution": "Restore food before movement; wait for actual hunger and clear effects before eating. A held W after failed attempt caused death in disposable world; released key, respawned and teleported through actual game controls. Session helper now releases keys/disables modules on failure."
+    },
+    {
+      "failure": "Pointer lock returned WrongDocumentError; real and synthetic right-click did not start use",
+      "resolution": "Foreground headed tab and acquire actual game canvas; food/clicker conflict passed. No new native API."
+    },
+    {
+      "failure": "Long inline PTY input exceeded canonical input limit",
+      "resolution": "Invoke short helper commands; no runtime/source effect"
+    }
+  ]
+}

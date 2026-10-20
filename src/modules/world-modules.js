@@ -434,6 +434,13 @@ export class ChunkBorders extends Module {
         const z = baseZ + dz * 16;
         const a = projection.worldToScreen(x, p.y, z);
         const b = projection.worldToScreen(x + 16, p.y, z);
+        const c = projection.worldToScreen(x, p.y, z + 16);
+        if (a?.visible && c?.visible) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(c.x, c.y);
+          ctx.stroke();
+        }
         if (a?.visible && b?.visible) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);

@@ -4,6 +4,7 @@
  */
 import { Module } from "../core/module.js";
 import { Events } from "../core/event-bus.js";
+import { captureGameCanvas } from "../core/screenshot.js";
 
 export class Notifications extends Module {
   constructor() {
@@ -134,7 +135,7 @@ export class Macros extends Module {
       return;
     }
     this._stepIndex++;
-    this._waitUntil = performance.now() + (step.delay ?? 0);
+    this._waitUntil = performance.now() + (step.delay ?? (step.action === "wait" ? 250 : 0));
   }
   _execute(step) {
     switch (step.action) {
@@ -304,17 +305,23 @@ export class ScreenshotUtil extends Module {
       this.disable();
       return;
     }
-    try {
-      const url = canvas.toDataURL("image/png");
+    const capture = this._capture = captureGameCanvas(canvas);
+    capture.result.then(url => {
+      if (!this.active || this._capture !== capture) return;
       const a = document.createElement("a");
       a.href = url;
       a.download = `meteor-${Date.now()}.png`;
       a.click();
       this.manager.notify("screenshot saved", "info");
-    } catch (err) {
-      this.manager.notify(`screenshot failed: ${err.message}`, "error");
-    }
-    this.disable();
+    }).catch(err => {
+      if (this.active && this._capture === capture) this.manager.notify(`screenshot failed: ${err.message}`, "error");
+    }).finally(() => {
+      if (this._capture === capture) { this._capture = null; this.disable(); }
+    });
+  }
+  onDisable() {
+    const capture = this._capture; this._capture = null;
+    capture?.cancel();
   }
 }
 

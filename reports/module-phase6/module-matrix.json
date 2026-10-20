@@ -1,0 +1,5781 @@
+{
+  "sourceDigest": "252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4",
+  "availableCapabilities": [
+    "input",
+    "hud",
+    "world",
+    "entities",
+    "render",
+    "native-direct",
+    "native-inventory-read",
+    "brightness-control",
+    "fov-control",
+    "hurt-camera-control",
+    "native-respawn",
+    "effects",
+    "biome",
+    "crosshair-control",
+    "native-multi-attack"
+  ],
+  "initialCounts": {
+    "historical-verified": 18,
+    "implemented-unverified": 22,
+    "unsupported": 31,
+    "partial": 6
+  },
+  "finalCounts": {
+    "historical-verified": 18,
+    "phase6-verified": 23,
+    "unsupported": 31,
+    "partial": 5
+  },
+  "coverageNote": "Automated file links are literal module ID/name matches, not per-module test totals; shared tests may cover more. Gameplay checks explicitly separate intermediate and final artifacts.",
+  "modules": [
+    {
+      "id": "aim-assist",
+      "name": "Aim Assist",
+      "category": "Combat",
+      "description": "Smoothly moves the aim toward a target. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "strength",
+          "type": "DoubleSetting",
+          "value": 0.4
+        },
+        {
+          "name": "range",
+          "type": "DoubleSetting",
+          "value": 5
+        },
+        {
+          "name": "fov",
+          "type": "DoubleSetting",
+          "value": 45
+        },
+        {
+          "name": "only-attacking",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "mobs",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "release TriggerBot preserves Aim Assist rotation",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last combat owners release rotation and attacks",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "auto-clicker",
+      "name": "AutoClicker",
+      "category": "Combat",
+      "description": "Clicks at a fixed rate. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "input"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "cps",
+          "type": "DoubleSetting",
+          "value": 8
+        },
+        {
+          "name": "left",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "right",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "hold",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "activation-key",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "AutoClicker activation hold gate",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "AutoClicker attacks through actual native target",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "auto-clicker: enable before world",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "auto-clicker: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AutoClicker activation hold gate",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AutoClicker attacks through actual native target",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "headless pointer lock blocks inventory ownership test",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AutoEat input ownership while AutoClicker enabled",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "disable clicker preserves food-use owner",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last inventory owner restores selected slot",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "pointer-lock recovery in foreground headed Chrome",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-totem",
+      "name": "AutoTotem",
+      "category": "Combat",
+      "description": "Offhand totem management. Requires totems and an offhand slot.",
+      "unsupported": true,
+      "unsupportedReason": "offhand slot + totem mechanics are not confirmed available in this runtime",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management.",
+      "limitations": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-weapon",
+      "name": "AutoWeapon",
+      "category": "Combat",
+      "description": "Selects the best weapon for the current target.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "inventory"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "only-when-attacking",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "prefer-sword",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "inventory"
+      ],
+      "existingNativeSubset": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking.",
+      "limitations": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-crit",
+      "name": "Criticals",
+      "category": "Combat",
+      "description": "Jumps before attacking to force critical hits (version-dependent). Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "mode",
+          "type": "EnumSetting",
+          "value": "jump"
+        }
+      ],
+      "initial": "partial",
+      "status": "partial",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Jump subset exists; packet hook absent. Jump does not establish critical-hit damage timing.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "Criticals jump subset changes actual height",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "Criticals jump subset changes actual height",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "kill-aura",
+      "name": "KillAura",
+      "category": "Combat",
+      "description": "Attacks nearby valid targets automatically. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "DoubleSetting",
+          "value": 3.2
+        },
+        {
+          "name": "cps",
+          "type": "IntSetting",
+          "value": 8
+        },
+        {
+          "name": "priority",
+          "type": "EnumSetting",
+          "value": "closest"
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "hostile",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "passive",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "multi",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "visible-only",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "rotate",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "rotate-speed",
+          "type": "DoubleSetting",
+          "value": 0.6
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/config.test.mjs",
+        "tests/gui.test.mjs",
+        "tests/integration.test.mjs",
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "reach-display",
+      "name": "Reach Display",
+      "category": "Combat",
+      "description": "Shows the distance of the last attack.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "combat-events"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 300
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "combat-events"
+      ],
+      "existingNativeSubset": "No attacker/distance combat event stream. Target snapshots do not identify hits.",
+      "limitations": "No attacker/distance combat event stream. Target snapshots do not identify hits.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "trigger-bot",
+      "name": "TriggerBot",
+      "category": "Combat",
+      "description": "Attacks when the crosshair is on a valid target. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 2
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "mobs",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "weapon-only",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/integration.test.mjs",
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "TriggerBot damages actual crosshair target",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "TriggerBot weapon-only rejects stick",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "trigger-bot: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "TriggerBot damages actual crosshair target",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "TriggerBot weapon-only rejects stick",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release TriggerBot preserves Aim Assist rotation",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last combat owners release rotation and attacks",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "velocity",
+      "name": "Velocity",
+      "category": "Combat",
+      "description": "Reduces knockback. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "horizontal",
+          "type": "DoubleSetting",
+          "value": 0
+        },
+        {
+          "name": "vertical",
+          "type": "DoubleSetting",
+          "value": 0
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook.",
+      "limitations": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook.",
+      "automatedCoverage": [
+        "tests/native-bridge.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "active-modules-hud",
+      "name": "Active Modules",
+      "category": "HUD",
+      "description": "Lists every enabled module.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 120
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-hud",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "sort",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-count",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "active-modules-hud: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "armor-hud",
+      "name": "Armor HUD",
+      "category": "HUD",
+      "description": "Shows worn armour and durability (needs inventory access).",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "native-inventory-read"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 280
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "biome-info",
+      "name": "Biome Info",
+      "category": "HUD",
+      "description": "Shows the current biome.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "biome"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 396
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "coordinates",
+      "name": "Coordinates",
+      "category": "HUD",
+      "description": "Shows the player's X/Y/Z position.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 40
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-y",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-nether",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "precision",
+          "type": "IntSetting",
+          "value": 1
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/hud.test.mjs",
+        "tests/native-bridge.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "cps-counter",
+      "name": "CPS Counter",
+      "category": "HUD",
+      "description": "Clicks per second for the left and right mouse buttons.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 22
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-left",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-right",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/hud.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "pass": false,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "cps-counter: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "custom-text",
+      "name": "Custom Text",
+      "category": "HUD",
+      "description": "Displays arbitrary text on the HUD.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 260
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "text",
+          "type": "StringSetting",
+          "value": "Meteor"
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/phase6-regressions.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom text live settings",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom text live settings",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "custom-text: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "custom text live settings",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "page reload restores saved configuration",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "page reload restores saved configuration",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "direction",
+      "name": "Direction",
+      "category": "HUD",
+      "description": "Shows the compass direction the player faces.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 58
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/phase6-regressions.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "direction: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "direction: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "fps-display",
+      "name": "FPS",
+      "category": "HUD",
+      "description": "Shows the current client frame rate.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "label",
+          "type": "StringSetting",
+          "value": "FPS:"
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Framework/browser animation FPS; not game submission or physical display FPS.",
+      "automatedCoverage": [
+        "tests/config.test.mjs",
+        "tests/hud.test.mjs",
+        "tests/integration.test.mjs",
+        "tests/phase5-benchmark.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "fps-display: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "keystrokes",
+      "name": "Keystrokes",
+      "category": "HUD",
+      "description": "Shows WASD/space/mouse input while playing.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 76
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "compact",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keystrokes: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "performance-monitor",
+      "name": "Performance Monitor",
+      "category": "HUD",
+      "description": "FPS, frame time, module update cost and memory.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 340
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-memory",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-modules",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-module-time",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "performance-monitor: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "ping-display",
+      "name": "Ping Display",
+      "category": "HUD",
+      "description": "Shows the connection latency.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "network"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 440
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "network"
+      ],
+      "existingNativeSubset": "No ping/network read contract.",
+      "limitations": "No ping/network read contract.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "potion-hud",
+      "name": "Potion HUD",
+      "category": "HUD",
+      "description": "Shows active status effects (needs effect access).",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "effects"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 320
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "radar",
+      "name": "Radar",
+      "category": "HUD",
+      "description": "Minimap-style radar of nearby entities.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "IntSetting",
+          "value": 48
+        },
+        {
+          "name": "size",
+          "type": "IntSetting",
+          "value": 110
+        },
+        {
+          "name": "rotate",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "mobs",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 400
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 4
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "radar: render from actual world/entities",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "radar: canvas cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "radar: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "radar: render from actual world/entities",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "radar: canvas cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "session-timer",
+      "name": "Session Timer",
+      "category": "HUD",
+      "description": "Time since the client was loaded.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 200
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-clock",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session timer visibly advances",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session timer visibly advances",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "session-timer: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "session timer visibly advances",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "speed-hud",
+      "name": "Speed",
+      "category": "HUD",
+      "description": "Horizontal blocks per second.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 240
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-opacity",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "hud-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "speed-hud: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "target-hud",
+      "name": "Target HUD",
+      "category": "HUD",
+      "description": "Details about the current combat target.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 300
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 120
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "health",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "distance",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "armor",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "health-bar",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "partial",
+      "status": "partial",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Health/distance/bar exist; target armor metadata absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "target-hud: render from actual world/entities",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "target-hud: canvas cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "target-hud: render from actual world/entities",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "target-hud: canvas cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "world-time",
+      "name": "World Time",
+      "category": "HUD",
+      "description": "Shows the in-game time of day.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 380
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "show-day",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "auto-gg",
+      "name": "AutoGG",
+      "category": "Misc",
+      "description": "Sends a configurable message when a game ends.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "chat"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "message",
+          "type": "StringSetting",
+          "value": "gg"
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 20
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "chat"
+      ],
+      "existingNativeSubset": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability.",
+      "limitations": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-reconnect",
+      "name": "AutoReconnect",
+      "category": "Misc",
+      "description": "Reconnects automatically after being disconnected.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "network"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 3
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "network"
+      ],
+      "existingNativeSubset": "No reconnect/server connection contract.",
+      "limitations": "No reconnect/server connection contract.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "chat-timestamps",
+      "name": "Chat Timestamps",
+      "category": "Misc",
+      "description": "Prefixes chat messages with a timestamp; requires a chat-render hook the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "no chat message render/format hook available",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No incoming chat render/format interception.",
+      "limitations": "No incoming chat render/format interception.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "debug-console",
+      "name": "Debug Console",
+      "category": "Misc",
+      "description": "Logs client events to the browser console.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "events",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "modules",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "errors",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "max-lines",
+          "type": "IntSetting",
+          "value": 200
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "notification and debug toggle subscriptions",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "utility subscription cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "debug-console: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "notification and debug toggle subscriptions",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "utility subscription cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "friend-manager",
+      "name": "Friend Manager",
+      "category": "Misc",
+      "description": "Manages a friend list excluded from combat modules.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "add",
+          "type": "StringSetting",
+          "value": ""
+        },
+        {
+          "name": "remove",
+          "type": "StringSetting",
+          "value": ""
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "friend setting integrates with client",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "friend-manager: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "friend setting integrates with client",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "keybind-manager",
+      "name": "Keybind Manager",
+      "category": "Misc",
+      "description": "Opens the ClickGUI where binds are edited.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "keybind-manager: opens actual ClickGUI",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "keybind-manager: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "keybind-manager: opens actual ClickGUI",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "macros",
+      "name": "Macros",
+      "category": "Misc",
+      "description": "Keybound multi-step action sequences.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "partial",
+      "status": "partial",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Module/wait steps work; chat method unavailable; bind steps warn without execution.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs",
+        "tests/phase6-regressions.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "macro default wait",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "macro resumes after wait",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "macros: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "macro default wait",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "macro resumes after wait",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "module-search",
+      "name": "Module Search",
+      "category": "Misc",
+      "description": "Opens the ClickGUI focused on the search box.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "module-search: opens actual ClickGUI",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "module-search: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "module-search: opens actual ClickGUI",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "notifications",
+      "name": "Notifications",
+      "category": "Misc",
+      "description": "Shows toast notifications for module toggles and warnings.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "module-toggles",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "warnings",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "errors",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "history",
+          "type": "IntSetting",
+          "value": 50
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/phase6-regressions.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "notification and debug toggle subscriptions",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "utility subscription cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "notifications: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "notification and debug toggle subscriptions",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "utility subscription cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "Notification repaired duplicate delivery",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "screenshot-util",
+      "name": "Screenshot Utilities",
+      "category": "Misc",
+      "description": "Saves a PNG of the game canvas.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "partial",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "Screenshot completed and hook cleaned up",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "screenshot immediate disable restores actual WebGL",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "server-info",
+      "name": "Server Information",
+      "category": "Misc",
+      "description": "Shows the current server address and player count.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "network"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "address",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "network"
+      ],
+      "existingNativeSubset": "No server address/player-count network contract.",
+      "limitations": "No server address/player-count network contract.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "session-stats",
+      "name": "Session Statistics",
+      "category": "Misc",
+      "description": "Tracks session time, distance travelled and deaths.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "hud-x",
+          "type": "IntSetting",
+          "value": 4
+        },
+        {
+          "name": "hud-y",
+          "type": "IntSetting",
+          "value": 420
+        },
+        {
+          "name": "hud-scale",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "distance",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "deaths",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "time",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "auto-jump",
+      "name": "AutoJump",
+      "category": "Movement",
+      "description": "Jumps automatically when a block is in the way.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "only-forward",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 4
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent.",
+      "limitations": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-walk",
+      "name": "AutoWalk",
+      "category": "Movement",
+      "description": "Walks forward automatically.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "input"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "bunny-hop",
+      "name": "BunnyHop",
+      "category": "Movement",
+      "description": "Automatically jumps while sprinting to maintain momentum.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 1
+        },
+        {
+          "name": "only-sprinting",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "BunnyHop only-sprinting gate",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "BunnyHop uses real jump with Sprint",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "bunny-hop: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "BunnyHop only-sprinting gate",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "BunnyHop uses real jump with Sprint",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "flight",
+      "name": "Flight",
+      "category": "Movement",
+      "description": "Fly with configurable speed. For single-player or authorised test environments only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement",
+        "flight"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "mode",
+          "type": "EnumSetting",
+          "value": "vanilla"
+        },
+        {
+          "name": "speed",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "vertical-speed",
+          "type": "DoubleSetting",
+          "value": 0.8
+        },
+        {
+          "name": "anti-kick",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement",
+        "flight"
+      ],
+      "existingNativeSubset": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent.",
+      "limitations": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "high-jump",
+      "name": "HighJump",
+      "category": "Movement",
+      "description": "Increases jump height.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "height",
+          "type": "DoubleSetting",
+          "value": 1.6
+        },
+        {
+          "name": "all-jumps",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "jump-bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent.",
+      "limitations": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "jesus",
+      "name": "Jesus",
+      "category": "Movement",
+      "description": "Would let the player walk on water; requires a fluid-collision hook the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "no fluid collision/velocity hook available in the compiled runtime",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No fluid collision or fluid movement interception.",
+      "limitations": "No fluid collision or fluid movement interception.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "no-fall",
+      "name": "NoFall",
+      "category": "Movement",
+      "description": "Prevents fall damage.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "fallDistance is readable; no setNoFall or fall-damage override.",
+      "limitations": "fallDistance is readable; no setNoFall or fall-damage override.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "no-slow",
+      "name": "NoSlow",
+      "category": "Movement",
+      "description": "Would remove item-use slowdown; needs a movement-input hook the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "requires intercepting the item-use movement modifier, which is compiled into the WASM runtime",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No item-use movement-modifier interception.",
+      "limitations": "No item-use movement-modifier interception.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "parkour",
+      "name": "Parkour",
+      "category": "Movement",
+      "description": "Jumps automatically at the edge of a block.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "only-forward",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "sneak-edges",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "jump/sneak exist; isBlockAhead with gap query absent.",
+      "limitations": "jump/sneak exist; isBlockAhead with gap query absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "safe-walk",
+      "name": "SafeWalk",
+      "category": "Movement",
+      "description": "Stops movement at block edges (sneak-like behaviour).",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "Sneak exists; no setSafeWalk edge-collision constraint.",
+      "limitations": "Sneak exists; no setSafeWalk edge-collision constraint.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "speed",
+      "name": "Speed",
+      "category": "Movement",
+      "description": "Increases movement speed. For single-player or authorised test environments only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "mode",
+          "type": "EnumSetting",
+          "value": "multiply"
+        },
+        {
+          "name": "multiplier",
+          "type": "DoubleSetting",
+          "value": 1.35
+        },
+        {
+          "name": "only-ground",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "only-sprinting",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/settings.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "spider",
+      "name": "Spider",
+      "category": "Movement",
+      "description": "Would allow wall climbing; requires colliding-block hooks the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "no horizontal collision hook available in the compiled runtime",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No horizontal-collision hook.",
+      "limitations": "No horizontal-collision hook.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "sprint",
+      "name": "Sprint",
+      "category": "Movement",
+      "description": "Keeps the player sprinting when moving forward.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "input"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "only-forward",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "min-hunger",
+          "type": "IntSetting",
+          "value": 6
+        },
+        {
+          "name": "restore",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/config.test.mjs",
+        "tests/eaglercraft-integration.test.mjs",
+        "tests/gui.test.mjs",
+        "tests/modules.test.mjs",
+        "tests/native-bridge.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release BunnyHop preserves Sprint/Speed owners",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last movement owners release actual state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "step",
+      "name": "Step",
+      "category": "Movement",
+      "description": "Increases step height so the player walks up full blocks.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "movement"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "height",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "movement"
+      ],
+      "existingNativeSubset": "No setStepHeight/getStepHeight API.",
+      "limitations": "No setStepHeight/getStepHeight API.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "timer",
+      "name": "Timer",
+      "category": "Movement",
+      "description": "Scales the local game tick rate. Affects simulation, not just visuals — for local testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "timing"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "speed",
+          "type": "DoubleSetting",
+          "value": 1.2
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "timing"
+      ],
+      "existingNativeSubset": "No setTickRate/getTickRateMultiplier API.",
+      "limitations": "No setTickRate/getTickRateMultiplier API.",
+      "automatedCoverage": [
+        "tests/config.test.mjs",
+        "tests/phase5-benchmark.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "anti-afk",
+      "name": "AntiAFK",
+      "category": "Player",
+      "description": "Performs small random movements so the player is not idle.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "interval",
+          "type": "IntSetting",
+          "value": 60
+        },
+        {
+          "name": "jump",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "rotate",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "swing",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "AntiAFK acts on actual player",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "AntiAFK cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "anti-afk: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AntiAFK acts on actual player",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AntiAFK cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-armor",
+      "name": "AutoArmor",
+      "category": "Player",
+      "description": "Equips stronger armour from the inventory.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "inventory"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "durability-check",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 4
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "inventory"
+      ],
+      "existingNativeSubset": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent.",
+      "limitations": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "auto-eat",
+      "name": "AutoEat",
+      "category": "Player",
+      "description": "Eats when hunger is low.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "native-inventory-read",
+        "native-direct"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "threshold",
+          "type": "IntSetting",
+          "value": 16
+        },
+        {
+          "name": "food",
+          "type": "EnumSetting",
+          "value": "auto"
+        },
+        {
+          "name": "restore-slot",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "headless pointer lock blocks inventory ownership test",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "headed captured input starts actual food use",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "AutoEat input ownership while AutoClicker enabled",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "disable clicker preserves food-use owner",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last inventory owner restores selected slot",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "pointer-lock recovery in foreground headed Chrome",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "auto-respawn",
+      "name": "AutoRespawn",
+      "category": "Player",
+      "description": "Respawns automatically after death.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "native-respawn"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 10
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "auto-tool",
+      "name": "AutoTool",
+      "category": "Player",
+      "description": "Selects the best tool for the block being mined.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "inventory",
+        "blocks"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "only-while-mining",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 2
+        },
+        {
+          "name": "restore",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "inventory",
+        "blocks"
+      ],
+      "existingNativeSubset": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent.",
+      "limitations": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "chest-organizer",
+      "name": "Chest Organizer",
+      "category": "Player",
+      "description": "Sorts items into nearby containers.",
+      "unsupported": true,
+      "unsupportedReason": "requires container screen automation not exposed by the runtime",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No container slot/click automation.",
+      "limitations": "No container slot/click automation.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "durability-warnings",
+      "name": "Durability Warnings",
+      "category": "Player",
+      "description": "Warns when a held item is nearly broken.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "native-inventory-read"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "threshold",
+          "type": "IntSetting",
+          "value": 20
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "durability warning uses real damaged inventory",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "durability-warnings: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "durability warning uses real damaged inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "fast-place",
+      "name": "FastPlace",
+      "category": "Player",
+      "description": "Removes the item-use cooldown. Single-player / authorised testing only.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "inventory"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "delay",
+          "type": "IntSetting",
+          "value": 0
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "inventory"
+      ],
+      "existingNativeSubset": "useItem exists; no setRightClickDelay/getRightClickDelay hook.",
+      "limitations": "useItem exists; no setRightClickDelay/getRightClickDelay hook.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "inventory-manager",
+      "name": "Inventory Manager",
+      "category": "Player",
+      "description": "Sorts and de-duplicates inventory contents.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "inventory"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "sort",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "drop-duplicates",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "interval",
+          "type": "IntSetting",
+          "value": 40
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "inventory"
+      ],
+      "existingNativeSubset": "Reads exist; sort/drop/slot-click mutation contract absent.",
+      "limitations": "Reads exist; sort/drop/slot-click mutation contract absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "chunk-borders",
+      "name": "Chunk Borders",
+      "category": "Render",
+      "description": "Draws 16x16 chunk boundaries.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "render"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 120,
+            "g": 180,
+            "b": 255,
+            "a": 90
+          }
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Local 5x5 grid; segments with offscreen endpoints are omitted.",
+      "automatedCoverage": [
+        "tests/phase6-regressions.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "chunk-borders: render from actual world/entities",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "chunk-borders: canvas cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "chunk-borders: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "chunk-borders: render from actual world/entities",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "chunk-borders: canvas cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "Chunk Borders repaired two-axis grid",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "page reload restores saved configuration",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "page reload restores saved configuration",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "custom-crosshair",
+      "name": "Custom Crosshair",
+      "category": "Render",
+      "description": "Draws a configurable crosshair over the game.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "shape",
+          "type": "EnumSetting",
+          "value": "cross"
+        },
+        {
+          "name": "size",
+          "type": "DoubleSetting",
+          "value": 10
+        },
+        {
+          "name": "thickness",
+          "type": "DoubleSetting",
+          "value": 1.5
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 210
+          }
+        },
+        {
+          "name": "hide-vanilla",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "gap",
+          "type": "DoubleSetting",
+          "value": 2
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "entity-esp",
+      "name": "Entity ESP",
+      "category": "Render",
+      "description": "Draws boxes around selected entities.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "render",
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "IntSetting",
+          "value": 64
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "hostile",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "passive",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "invisible",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 80,
+            "b": 80,
+            "a": 200
+          }
+        },
+        {
+          "name": "player-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 80,
+            "g": 200,
+            "b": 255,
+            "a": 200
+          }
+        },
+        {
+          "name": "alpha",
+          "type": "DoubleSetting",
+          "value": 0.8
+        },
+        {
+          "name": "boxes",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "filled",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "line-width",
+          "type": "DoubleSetting",
+          "value": 1.5
+        },
+        {
+          "name": "health-bar",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/integration.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "freecam",
+      "name": "Freecam",
+      "category": "Render",
+      "description": "Detaches the camera from the player.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "render",
+        "camera-detach"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "speed",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "freeze-player",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "camera-detach"
+      ],
+      "existingNativeSubset": "Projection exists; camera detachment/update/restore API absent.",
+      "limitations": "Projection exists; camera detachment/update/restore API absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "fullbright",
+      "name": "Fullbright",
+      "category": "Render",
+      "description": "Raises world brightness. Restores the original value on disable.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "brightness-control"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "level",
+          "type": "DoubleSetting",
+          "value": 1
+        },
+        {
+          "name": "night-vision",
+          "type": "BoolSetting",
+          "value": false
+        }
+      ],
+      "initial": "partial",
+      "status": "partial",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Night-vision effect mutation absent; gamma subset works.",
+      "automatedCoverage": [
+        "tests/gui.test.mjs",
+        "tests/modules.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "Partial camera controls actual supported subsets",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "Partial camera controls cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release gamma preserves zoom and hurt camera",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last camera owners restore all actual options",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "hitboxes",
+      "name": "Hitboxes",
+      "category": "Render",
+      "description": "Draws entity hitboxes.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "render"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 160
+          }
+        },
+        {
+          "name": "expand",
+          "type": "DoubleSetting",
+          "value": 0
+        }
+      ],
+      "initial": "implemented-unverified",
+      "status": "phase6-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Projected screen rectangles; not physical hitbox expansion.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "hitboxes: render from actual world/entities",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "hitboxes: canvas cleanup",
+          "pass": true,
+          "runtime": "intermediate-macro-fix",
+          "artifactSHA256": "abbad3dadde2059eda51e026b2f03e723cf74d3f4c69ccfb69e0f41bcd6aabac"
+        },
+        {
+          "name": "hitboxes: enable before world",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "hitboxes: render from actual world/entities",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "hitboxes: canvas cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "rapid enable/disable leaves no listeners or input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": false,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules survive ClickGUI open",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "tested modules gate against actual inventory",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "programmatic focus loss clears owned input",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "real death/respawn with tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world exit clears native world/render state",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "world reentry restores pending tested modules",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": null
+    },
+    {
+      "id": "nametags",
+      "name": "Nametags",
+      "category": "Render",
+      "description": "Custom labels above entities.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "render",
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "IntSetting",
+          "value": 64
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "hostile",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "passive",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "invisible",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 80,
+            "b": 80,
+            "a": 200
+          }
+        },
+        {
+          "name": "player-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 80,
+            "g": 200,
+            "b": 255,
+            "a": 200
+          }
+        },
+        {
+          "name": "alpha",
+          "type": "DoubleSetting",
+          "value": 0.8
+        },
+        {
+          "name": "distance",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "health",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "background",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "scale",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "no-hurt-cam",
+      "name": "NoHurtCam",
+      "category": "Render",
+      "description": "Removes the camera tilt when damaged.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "hurt-camera-control"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "tilt",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "partial",
+      "status": "partial",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Damage/death suppression exists; independent directional tilt absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [
+        {
+          "name": "Partial camera controls actual supported subsets",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "Partial camera controls cleanup",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "release gamma preserves zoom and hurt camera",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last camera owners restore all actual options",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "storage-esp",
+      "name": "Storage ESP",
+      "category": "Render",
+      "description": "Highlights nearby storage containers.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "blocks",
+        "render"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "IntSetting",
+          "value": 32
+        },
+        {
+          "name": "chests",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "furnaces",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "dispensers",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "shulkers",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 240,
+            "g": 200,
+            "b": 70,
+            "a": 180
+          }
+        },
+        {
+          "name": "alpha",
+          "type": "DoubleSetting",
+          "value": 0.75
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "blocks"
+      ],
+      "existingNativeSubset": "No block/container enumeration.",
+      "limitations": "No block/container enumeration.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "tracers",
+      "name": "Tracers",
+      "category": "Render",
+      "description": "Draws lines pointing at selected entities.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "entities",
+        "render",
+        "hud"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "range",
+          "type": "IntSetting",
+          "value": 64
+        },
+        {
+          "name": "players",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "hostile",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "passive",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "invisible",
+          "type": "BoolSetting",
+          "value": false
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 80,
+            "b": 80,
+            "a": 200
+          }
+        },
+        {
+          "name": "player-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 80,
+            "g": 200,
+            "b": 255,
+            "a": 200
+          }
+        },
+        {
+          "name": "alpha",
+          "type": "DoubleSetting",
+          "value": 0.8
+        },
+        {
+          "name": "origin",
+          "type": "EnumSetting",
+          "value": "crosshair"
+        },
+        {
+          "name": "line-width",
+          "type": "DoubleSetting",
+          "value": 1.2
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "xray",
+      "name": "X-Ray",
+      "category": "Render",
+      "description": "Would expose ores through walls; requires a block-visibility hook the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "no supported block-face visibility hook in the Eaglercraft renderer",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "ores",
+          "type": "StringSetting",
+          "value": "diamond_ore,gold_ore,iron_ore,emerald_ore,ancient_debris"
+        },
+        {
+          "name": "opacity",
+          "type": "DoubleSetting",
+          "value": 0.15
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No renderer face-visibility override.",
+      "limitations": "No renderer face-visibility override.",
+      "automatedCoverage": [
+        "tests/gui.test.mjs"
+      ],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "category": "Render",
+      "description": "Hold the bind to zoom in. Restores the original FOV on release.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "fov-control"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "factor",
+          "type": "DoubleSetting",
+          "value": 4
+        },
+        {
+          "name": "smooth",
+          "type": "BoolSetting",
+          "value": true
+        }
+      ],
+      "initial": "historical-verified",
+      "status": "historical-verified",
+      "missingCapabilities": [],
+      "existingNativeSubset": null,
+      "limitations": "Only tested settings/lifecycle in linked evidence; not exhaustive.",
+      "automatedCoverage": [
+        "tests/config.test.mjs"
+      ],
+      "gameplayChecks": [
+        {
+          "name": "release gamma preserves zoom and hurt camera",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        },
+        {
+          "name": "last camera owners restore all actual options",
+          "pass": true,
+          "runtime": "final",
+          "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829"
+        }
+      ],
+      "historicalEvidence": {
+        "path": "native-bridge/gameplay-verification.json",
+        "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+        "artifactSHA256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+      }
+    },
+    {
+      "id": "block-search",
+      "name": "Block Search",
+      "category": "World",
+      "description": "Highlights blocks matching a list.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "blocks",
+        "render"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "blocks",
+          "type": "StringSetting",
+          "value": "diamond_ore,emerald_ore,ancient_debris"
+        },
+        {
+          "name": "radius",
+          "type": "IntSetting",
+          "value": 32
+        },
+        {
+          "name": "refresh",
+          "type": "IntSetting",
+          "value": 40
+        },
+        {
+          "name": "color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 90,
+            "g": 220,
+            "b": 130,
+            "a": 180
+          }
+        },
+        {
+          "name": "alpha",
+          "type": "DoubleSetting",
+          "value": 0.8
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "blocks"
+      ],
+      "existingNativeSubset": "No block enumeration/lookup.",
+      "limitations": "No block enumeration/lookup.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "light-level",
+      "name": "Light Level Overlay",
+      "category": "World",
+      "description": "Light-level numbers on blocks; needs a block-light accessor the runtime does not expose.",
+      "unsupported": true,
+      "unsupportedReason": "no per-block light lookup available",
+      "requiredCapabilities": [],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [],
+      "existingNativeSubset": "No per-block light lookup.",
+      "limitations": "No per-block light lookup.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    },
+    {
+      "id": "waypoints",
+      "name": "Waypoints",
+      "category": "World",
+      "description": "Save and render named positions.",
+      "unsupported": false,
+      "unsupportedReason": "",
+      "requiredCapabilities": [
+        "world",
+        "render",
+        "world-identity"
+      ],
+      "settings": [
+        {
+          "name": "bind",
+          "type": "KeybindSetting",
+          "value": null
+        },
+        {
+          "name": "show-labels",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "show-distance",
+          "type": "BoolSetting",
+          "value": true
+        },
+        {
+          "name": "max-distance",
+          "type": "IntSetting",
+          "value": 0
+        },
+        {
+          "name": "default-color",
+          "type": "ColorSetting",
+          "value": {
+            "r": 255,
+            "g": 200,
+            "b": 60,
+            "a": 220
+          }
+        },
+        {
+          "name": "scale",
+          "type": "DoubleSetting",
+          "value": 1
+        }
+      ],
+      "initial": "unsupported",
+      "status": "unsupported",
+      "missingCapabilities": [
+        "world-identity"
+      ],
+      "existingNativeSubset": "Position/dimension exist; stable world-save/server identity absent.",
+      "limitations": "Position/dimension exist; stable world-save/server identity absent.",
+      "automatedCoverage": [],
+      "gameplayChecks": [],
+      "historicalEvidence": null
+    }
+  ]
+}

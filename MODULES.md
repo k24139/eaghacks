@@ -3,49 +3,51 @@
 
 Statuses refer to the native overlay contract. Framework fixtures do not establish gameplay verification.
 
+Phase 6 evidence and per-module capabilities, limitations, settings and automated coverage: [validation matrix](reports/module-phase6/MODULE_MATRIX.md). Historical labels apply only to the original hash-bound runtime; they do not certify the refreshed Phase 6 HTML.
+
 | Module | Category | Status | Settings | Notes |
 | --- | --- | --- | --- | --- |
-| Aim Assist | Combat | Verified in real gameplay | `strength`, `range`, `fov`, `only-attacking`, `players`, `mobs` | Requires world, entities, native-direct |
-| AutoClicker | Combat | Implemented but not gameplay-tested | `cps`, `left`, `right`, `hold`, `activation-key` | Requires input |
+| Aim Assist | Combat | Verified in real gameplay (historical artifact) | `strength`, `range`, `fov`, `only-attacking`, `players`, `mobs` | Historical runtime; requires world, entities, native-direct |
+| AutoClicker | Combat | Verified in real gameplay | `cps`, `left`, `right`, `hold`, `activation-key` | Phase 6; requires input |
 | AutoTotem | Combat | Unsupported | — | offhand slot + totem mechanics are not confirmed available in this runtime |
 | AutoWeapon | Combat | Unsupported | `only-when-attacking`, `prefer-sword` | Current bridge lacks inventory |
 | Criticals | Combat | Partially implemented | `mode` | Jump mode only; packet mode is not supplied |
-| KillAura | Combat | Verified in real gameplay | `range`, `cps`, `priority`, `players`, `hostile`, `passive`, `multi`, `visible-only`, `rotate`, `rotate-speed` | Requires world, entities, native-direct |
+| KillAura | Combat | Verified in real gameplay (historical artifact) | `range`, `cps`, `priority`, `players`, `hostile`, `passive`, `multi`, `visible-only`, `rotate`, `rotate-speed` | Historical runtime; requires world, entities, native-direct |
 | Reach Display | Combat | Unsupported | `hud-x`, `hud-y`, `hud-scale` | Current bridge lacks combat-events |
-| TriggerBot | Combat | Implemented but not gameplay-tested | `delay`, `players`, `mobs`, `weapon-only` | Requires world, entities, native-direct |
+| TriggerBot | Combat | Verified in real gameplay | `delay`, `players`, `mobs`, `weapon-only` | Phase 6; requires world, entities, native-direct |
 | Velocity | Combat | Unsupported | `horizontal`, `vertical` | Current bridge lacks movement |
-| Active Modules | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-hud`, `sort`, `show-count` | Requires client UI |
-| Armor HUD | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Requires native-inventory-read |
-| Biome Info | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale` | Requires world, biome |
-| Coordinates | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-y`, `show-nether`, `precision` | Requires world |
-| CPS Counter | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-left`, `show-right` | Requires client UI |
-| Custom Text | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `text` | Requires client UI |
-| Direction | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Requires world |
-| FPS | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `label` | Requires client UI |
-| Keystrokes | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `compact` | Requires client UI |
-| Performance Monitor | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-memory`, `show-modules`, `show-module-time` | Requires client UI |
+| Active Modules | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-hud`, `sort`, `show-count` | Phase 6; requires client UI |
+| Armor HUD | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Historical runtime; requires native-inventory-read |
+| Biome Info | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale` | Historical runtime; requires world, biome |
+| Coordinates | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-y`, `show-nether`, `precision` | Historical runtime; requires world |
+| CPS Counter | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-left`, `show-right` | Phase 6; requires client UI |
+| Custom Text | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `text` | Phase 6; requires client UI |
+| Direction | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Phase 6; requires world |
+| FPS | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `label` | Phase 6; requires client UI |
+| Keystrokes | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `compact` | Phase 6; requires client UI |
+| Performance Monitor | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-memory`, `show-modules`, `show-module-time` | Phase 6; requires client UI |
 | Ping Display | HUD | Unsupported | `hud-x`, `hud-y`, `hud-scale` | Current bridge lacks network |
-| Potion HUD | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Requires effects |
-| Radar | HUD | Implemented but not gameplay-tested | `range`, `size`, `rotate`, `players`, `mobs`, `hud-x`, `hud-y` | Requires world, entities, hud |
-| Session Timer | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-clock` | Requires client UI |
-| Speed | HUD | Implemented but not gameplay-tested | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Requires world |
+| Potion HUD | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Historical runtime; requires effects |
+| Radar | HUD | Verified in real gameplay | `range`, `size`, `rotate`, `players`, `mobs`, `hud-x`, `hud-y` | Phase 6; requires world, entities, hud |
+| Session Timer | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-clock` | Phase 6; requires client UI |
+| Speed | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Phase 6; requires world |
 | Target HUD | HUD | Partially implemented | `hud-x`, `hud-y`, `hud-scale`, `health`, `distance`, `armor`, `health-bar` | Health/distance rendering exists; target armor metadata is absent |
-| World Time | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `show-day` | Requires world |
+| World Time | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `show-day` | Historical runtime; requires world |
 | AutoGG | Misc | Unsupported | `message`, `delay` | Current bridge lacks chat |
 | AutoReconnect | Misc | Unsupported | `delay` | Current bridge lacks network |
 | Chat Timestamps | Misc | Unsupported | — | no chat message render/format hook available |
-| Debug Console | Misc | Implemented but not gameplay-tested | `events`, `modules`, `errors`, `max-lines` | Requires client UI |
-| Friend Manager | Misc | Implemented but not gameplay-tested | `add`, `remove` | Requires client UI |
-| Keybind Manager | Misc | Implemented but not gameplay-tested | — | Requires client UI |
+| Debug Console | Misc | Verified in real gameplay | `events`, `modules`, `errors`, `max-lines` | Phase 6; requires client UI |
+| Friend Manager | Misc | Verified in real gameplay | `add`, `remove` | Phase 6; requires client UI |
+| Keybind Manager | Misc | Verified in real gameplay | — | Phase 6; requires client UI |
 | Macros | Misc | Partially implemented | — | Module and wait steps work; chat and arbitrary bind steps need additional hooks |
-| Module Search | Misc | Implemented but not gameplay-tested | — | Requires client UI |
-| Notifications | Misc | Implemented but not gameplay-tested | `module-toggles`, `warnings`, `errors`, `history` | Requires client UI |
-| Screenshot Utilities | Misc | Partially implemented | — | Uses the actual game canvas; WebGL screenshot timing still requires gameplay validation |
+| Module Search | Misc | Verified in real gameplay | — | Phase 6; requires client UI |
+| Notifications | Misc | Verified in real gameplay | `module-toggles`, `warnings`, `errors`, `history` | Phase 6; requires client UI |
+| Screenshot Utilities | Misc | Verified in real gameplay | — | Phase 6; requires hud |
 | Server Information | Misc | Unsupported | `address`, `players` | Current bridge lacks network |
-| Session Statistics | Misc | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `distance`, `deaths`, `time` | Requires client UI |
+| Session Statistics | Misc | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `distance`, `deaths`, `time` | Historical runtime; requires client UI |
 | AutoJump | Movement | Unsupported | `only-forward`, `delay` | Current bridge lacks movement |
-| AutoWalk | Movement | Verified in real gameplay | — | Requires input |
-| BunnyHop | Movement | Implemented but not gameplay-tested | `delay`, `only-sprinting` | Requires world, native-direct |
+| AutoWalk | Movement | Verified in real gameplay (historical artifact) | — | Historical runtime; requires input |
+| BunnyHop | Movement | Verified in real gameplay | `delay`, `only-sprinting` | Phase 6; requires world, native-direct |
 | Flight | Movement | Unsupported | `mode`, `speed`, `vertical-speed`, `anti-kick` | Current bridge lacks movement, flight |
 | HighJump | Movement | Unsupported | `height`, `all-jumps`, `jump-bind` | Current bridge lacks movement |
 | Jesus | Movement | Unsupported | — | no fluid collision/velocity hook available in the compiled runtime |
@@ -53,32 +55,32 @@ Statuses refer to the native overlay contract. Framework fixtures do not establi
 | NoSlow | Movement | Unsupported | — | requires intercepting the item-use movement modifier, which is compiled into the WASM runtime |
 | Parkour | Movement | Unsupported | `only-forward`, `sneak-edges` | Current bridge lacks movement |
 | SafeWalk | Movement | Unsupported | — | Current bridge lacks movement |
-| Speed | Movement | Verified in real gameplay | `mode`, `multiplier`, `only-ground`, `only-sprinting` | Requires world, native-direct |
+| Speed | Movement | Verified in real gameplay (historical artifact) | `mode`, `multiplier`, `only-ground`, `only-sprinting` | Historical runtime; requires world, native-direct |
 | Spider | Movement | Unsupported | — | no horizontal collision hook available in the compiled runtime |
-| Sprint | Movement | Verified in real gameplay | `only-forward`, `min-hunger`, `restore` | Requires input |
+| Sprint | Movement | Verified in real gameplay (historical artifact) | `only-forward`, `min-hunger`, `restore` | Historical runtime; requires input |
 | Step | Movement | Unsupported | `height` | Current bridge lacks movement |
 | Timer | Movement | Unsupported | `speed` | Current bridge lacks timing |
-| AntiAFK | Player | Implemented but not gameplay-tested | `interval`, `jump`, `rotate`, `swing` | Requires world, native-direct |
+| AntiAFK | Player | Verified in real gameplay | `interval`, `jump`, `rotate`, `swing` | Phase 6; requires world, native-direct |
 | AutoArmor | Player | Unsupported | `durability-check`, `delay` | Current bridge lacks inventory |
-| AutoEat | Player | Verified in real gameplay | `threshold`, `food`, `restore-slot` | Requires world, native-inventory-read, native-direct |
-| AutoRespawn | Player | Verified in real gameplay | `delay` | Requires native-respawn |
+| AutoEat | Player | Verified in real gameplay (historical artifact) | `threshold`, `food`, `restore-slot` | Historical runtime; requires world, native-inventory-read, native-direct |
+| AutoRespawn | Player | Verified in real gameplay (historical artifact) | `delay` | Historical runtime; requires native-respawn |
 | AutoTool | Player | Unsupported | `only-while-mining`, `delay`, `restore` | Current bridge lacks inventory, blocks |
 | Chest Organizer | Player | Unsupported | — | requires container screen automation not exposed by the runtime |
-| Durability Warnings | Player | Implemented but not gameplay-tested | `threshold` | Requires native-inventory-read |
+| Durability Warnings | Player | Verified in real gameplay | `threshold` | Phase 6; requires native-inventory-read |
 | FastPlace | Player | Unsupported | `delay` | Current bridge lacks inventory |
 | Inventory Manager | Player | Unsupported | `sort`, `drop-duplicates`, `interval` | Current bridge lacks inventory |
-| Chunk Borders | Render | Implemented but not gameplay-tested | `color` | Requires world, render |
-| Custom Crosshair | Render | Verified in real gameplay | `shape`, `size`, `thickness`, `color`, `hide-vanilla`, `gap` | Requires hud |
-| Entity ESP | Render | Verified in real gameplay | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `boxes`, `filled`, `line-width`, `health-bar` | Requires world, entities, render, hud |
+| Chunk Borders | Render | Verified in real gameplay | `color` | Phase 6; requires world, render |
+| Custom Crosshair | Render | Verified in real gameplay (historical artifact) | `shape`, `size`, `thickness`, `color`, `hide-vanilla`, `gap` | Historical runtime; requires hud |
+| Entity ESP | Render | Verified in real gameplay (historical artifact) | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `boxes`, `filled`, `line-width`, `health-bar` | Historical runtime; requires world, entities, render, hud |
 | Freecam | Render | Unsupported | `speed`, `freeze-player` | Current bridge lacks camera-detach |
 | Fullbright | Render | Partially implemented | `level`, `night-vision` | Brightness control is implemented; optional night-vision effect is not exposed |
-| Hitboxes | Render | Implemented but not gameplay-tested | `color`, `expand` | Requires world, entities, render |
-| Nametags | Render | Verified in real gameplay | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `distance`, `health`, `background`, `scale` | Requires world, entities, render, hud |
+| Hitboxes | Render | Verified in real gameplay | `color`, `expand` | Phase 6; requires world, entities, render |
+| Nametags | Render | Verified in real gameplay (historical artifact) | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `distance`, `health`, `background`, `scale` | Historical runtime; requires world, entities, render, hud |
 | NoHurtCam | Render | Partially implemented | `tilt` | Damage/death camera suppression exists; directional tilt is not an independent control |
 | Storage ESP | Render | Unsupported | `range`, `chests`, `furnaces`, `dispensers`, `shulkers`, `color`, `alpha` | Current bridge lacks blocks |
-| Tracers | Render | Verified in real gameplay | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `origin`, `line-width` | Requires world, entities, render, hud |
+| Tracers | Render | Verified in real gameplay (historical artifact) | `range`, `players`, `hostile`, `passive`, `invisible`, `color`, `player-color`, `alpha`, `origin`, `line-width` | Historical runtime; requires world, entities, render, hud |
 | X-Ray | Render | Unsupported | `ores`, `opacity` | no supported block-face visibility hook in the Eaglercraft renderer |
-| Zoom | Render | Verified in real gameplay | `factor`, `smooth` | Requires world, fov-control |
+| Zoom | Render | Verified in real gameplay (historical artifact) | `factor`, `smooth` | Historical runtime; requires world, fov-control |
 | Block Search | World | Unsupported | `blocks`, `radius`, `refresh`, `color`, `alpha` | Current bridge lacks blocks |
 | Light Level Overlay | World | Unsupported | — | no per-block light lookup available |
 | Waypoints | World | Unsupported | `show-labels`, `show-distance`, `max-distance`, `default-color`, `scale` | Current bridge lacks world-identity |
