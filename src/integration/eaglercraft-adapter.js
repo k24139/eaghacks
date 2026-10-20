@@ -215,7 +215,12 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     const state=this.win?.__eaghacksScreenState;
     return this.win?.__eaghacksScreenHookSeen===true&&state ? state.screenName===null : true;
   }
-  isRemote() { const kind = this._nativeState()?.session?.kind; if (kind === 'local') return false; if (kind === 'remote') return true; return this.win?.minecraftServer!=='singleplayer'; }
+  isRemote() {
+    const state = this._nativeState();
+    // Native identity takes precedence, including missing/unknown metadata.
+    if (state) return state.session?.kind !== 'local';
+    return this.win?.minecraftServer !== 'singleplayer';
+  }
   _clientGuiOpen() { return !!this.doc?.getElementById?.('meteor-clickgui')?.classList?.contains?.('mt-open'); }
   _gameplayInputAllowed() {
     if (!this._focused || !this.inWorld()||this._clientGuiOpen()) return false;
