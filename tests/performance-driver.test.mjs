@@ -40,3 +40,12 @@ test('sampler times out and cancels RAF when the page stops producing frames',as
  await assert.rejects(measureClientFrames(page,5,{timeoutMs:20}),/Animation-frame sample timeout/);
  assert.equal(cancelled,true);
 });
+test('RAF sampler ignores the partial first callback interval',async()=>{
+ let timestamp=5,clock=0;
+ const page={evaluate(fn,arg){return vm.runInNewContext('('+fn.toString()+')(arg)',{
+  arg,window:{EaglerHacks:{client:{stats:{_moduleTickAccum:0,_samples:0,_moduleRenderAccum:0}}}},
+  performance:{now:()=>clock},innerWidth:640,innerHeight:400,setTimeout,clearTimeout,
+  requestAnimationFrame:cb=>{const current=timestamp;timestamp+=10;return setImmediate(()=>{clock=current;cb(current)})},cancelAnimationFrame:clearImmediate,
+ });}};
+ const r=await measureClientFrames(page,25,{timeoutMs:1000});assert.deepEqual([...r.frameTimesMs],[10,10,10]);assert.equal(r.elapsedMs,30);assert.equal(r.fps,100);
+});

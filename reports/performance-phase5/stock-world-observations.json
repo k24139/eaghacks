@@ -1,0 +1,15 @@
+[
+  "log [01:27:51][Render thread/INFO][Minecraft]: [System] [CHAT] The difficulty did not change; it is already set to Peaceful",
+  "log [01:27:52][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Gamerule advance_time is now set to: false]",
+  "log [01:27:52][Render thread/INFO][Minecraft]: [System] [CHAT] Gamerule advance_time is now set to: false",
+  "log [01:27:53][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Set minecraft:overworld to 6000 tick(s)]",
+  "log [01:27:53][Render thread/INFO][Minecraft]: [System] [CHAT] Set minecraft:overworld to 6000 tick(s)",
+  "log [01:27:56][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Gamerule advance_weather is now set to: false]",
+  "log [01:27:56][Render thread/INFO][Minecraft]: [System] [CHAT] Gamerule advance_weather is now set to: false",
+  "log [01:28:50][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+  "log [01:28:53][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]",
+  "log [01:29:00][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+  "log [01:29:02][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]",
+  "log [01:29:09][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+  "log [01:29:12][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+]

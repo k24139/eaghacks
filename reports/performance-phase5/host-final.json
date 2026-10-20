@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-19",
+  "timezone": "America/Chicago",
+  "physicalMemoryBytes": 17179869184,
+  "memoryPressureQuery": "System-wide memory free percentage: 53%",
+  "severityQuery": "kern.memorystatus_vm_pressure_level: 1",
+  "scope": "After all benchmark contexts closed. Does not establish severity throughout sampling.",
+  "rawMetricNote": "Legacy pressureLevel fields in memory.jsonl contain the raw vm.memory_pressure indicator, not kern.memorystatus_vm_pressure_level severity. Raw indicator values included 0, 62 and 245. Keep these observations; do not relabel them as continuously normal pressure.",
+  "cleanup": "Process listing contained no Chrome process using an input/phase5 task profile; only the inspection command and its rg process matched. Unrelated Chrome was not terminated."
+}

@@ -1,0 +1,278 @@
+{
+  "exploratory": {
+    "native": [
+      {
+        "index": 0,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:23:40][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:23:42][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 1,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          5.029285049241209
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.529285049241209
+        ],
+        "observations": [
+          "log [01:23:49][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:23:52][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 5.029285049241209d]"
+        ]
+      },
+      {
+        "index": 2,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:23:59][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:24:01][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      }
+    ],
+    "stock": [
+      {
+        "index": 0,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:28:50][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:28:53][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 1,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:29:00][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:29:02][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 2,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:29:09][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:29:12][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      }
+    ]
+  },
+  "timed": {
+    "native": [
+      {
+        "index": 0,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:31:18][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:31:21][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 1,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:31:28][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:31:30][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 2,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:31:38][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:31:40][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      }
+    ],
+    "stock": [
+      {
+        "index": 0,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:33:29][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:33:31][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 1,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:33:39][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:33:41][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      },
+      {
+        "index": 2,
+        "before": [
+          0.5,
+          150.0,
+          0.5
+        ],
+        "after": [
+          0.5,
+          150.0,
+          4.8134259902859675
+        ],
+        "displacement": [
+          0.0,
+          0.0,
+          4.3134259902859675
+        ],
+        "observations": [
+          "log [01:33:48][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 0.5d]",
+          "log [01:33:50][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYeeg3Ph131 has the following entity data: [0.5d, 150.0d, 4.8134259902859675d]"
+        ]
+      }
+    ]
+  }
+}

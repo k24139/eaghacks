@@ -1,0 +1,9 @@
+{
+  "npm test": {"passed":151,"failed":0},
+  "npm run build":"both browser bundles passed; no game/Java/TeaVM compilation",
+  "node tools/smoke.mjs":"SMOKE OK",
+  "focused tests":{"command":"node --test tests/performance-driver.test.mjs tests/phase5-benchmark.test.mjs","passed":8,"failed":0},
+  "static native artifact verification":"passed at start; source digest and artifact hashes unchanged",
+  "full gameplay suite":"not run",
+  "multiplayer":"not run"
+}

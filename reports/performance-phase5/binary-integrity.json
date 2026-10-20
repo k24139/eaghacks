@@ -1,0 +1,337 @@
+{
+  "newPngCount": 55,
+  "newPngs": [
+    {
+      "path": "diagnostics/performance-phase5/native-final.png",
+      "bytes": 79220,
+      "sha256": "6cfe1e427a738c4533921ed83433b10c84c99e3a09b458a068292c9dbeb55340",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-0-after.png",
+      "bytes": 79213,
+      "sha256": "f5316730b20007bc54f16fc6e35047a769fb2f252f1423a240d7ad0efc1bffa0",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-0-before.png",
+      "bytes": 80408,
+      "sha256": "6b3588359ff1f439aba838dcb1ddf81ca0b0ba20d53a137fc99df130462c07d8",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-1-after.png",
+      "bytes": 79223,
+      "sha256": "d261be714c57a0ce4b6c2bd968d09aec27af2ec7aaf6a9df59c618f43a7cad1f",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-1-before.png",
+      "bytes": 80408,
+      "sha256": "cbc4b25c00b72f379e72e0979a184a6473515209f65775f7310c6a0dff0479f3",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-2-after.png",
+      "bytes": 79219,
+      "sha256": "41ee8279cec51a2cdc5883a033389510a5349bbd967c020224c8cdf73832e1ea",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-off-return-2-before.png",
+      "bytes": 80404,
+      "sha256": "4e20be59660987792c36eec9db12c966d2e55243ad1618b3dec042d9c0a6dd5e",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-0-after.png",
+      "bytes": 92306,
+      "sha256": "42b12590c98db0c73d8c896030617b2daf36f539be3834286facf1c4b412f207",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-0-before.png",
+      "bytes": 93278,
+      "sha256": "3a2d282c08bede54cec72aa6c62c405a558f7ba1d3eb205ee5b54aa508d3efc3",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-1-after.png",
+      "bytes": 92136,
+      "sha256": "96709402cecba689d6869907c7c09d3a793dc31898ee86d805289e0075ff21e3",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-1-before.png",
+      "bytes": 93502,
+      "sha256": "3f881a9fcf8b46e11955081577bfe573d3b53e29ebc68a5ad57cb4b25e6f017b",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-2-after.png",
+      "bytes": 92197,
+      "sha256": "31053ec89085aa1ade2a5d59a41fb537344b4d93c221ce3b84e72832f2bf5043",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-hud-on-2-before.png",
+      "bytes": 93270,
+      "sha256": "40a375ce7bb2b25656c035e600d69b53d4b651ed0381bfba9f0d1e35d1b49804",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-0-after.png",
+      "bytes": 79419,
+      "sha256": "96d492ad2409d24ff58b3dbfee020f98cedb021e074d679de710155cab6f324c",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-0-before.png",
+      "bytes": 80605,
+      "sha256": "1e209c8b6b5fcf0df7e098a57ca729ec6f6102ea27b4e23ec8ce498b5f9be314",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-1-after.png",
+      "bytes": 79412,
+      "sha256": "10c5f15275aa741576dbadc0c8883817b0d9b2fde72f7374b91e3eb4ce409e89",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-1-before.png",
+      "bytes": 80605,
+      "sha256": "e5f015199a7442225c950897a5c5a50e270460d20b517693aff0f12d497a130a",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-2-after.png",
+      "bytes": 79409,
+      "sha256": "1ba6c131d99968025ac90126a52c4e0eadf68c2b9be996fdbd6aeb3ff53846bb",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-idle-2-before.png",
+      "bytes": 80611,
+      "sha256": "2bc87193d8b8e5147e7ca213e19c6f595bb0117e2f1fcb3737c58827ed91dee6",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-0-after.png",
+      "bytes": 55835,
+      "sha256": "11cc5c19560bbeba00264464f763722e2ce7d27384e6c729690a2ee48fda3eb2",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-0-before.png",
+      "bytes": 81725,
+      "sha256": "4fe83e79dd6e5af07cbbb094831f070cc3206268d53aa4dc22d8b67665e59428",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-1-after.png",
+      "bytes": 53822,
+      "sha256": "730e625e6686041bba84061809f679092970ea7ed385876c997ece6badc7297f",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-1-before.png",
+      "bytes": 83427,
+      "sha256": "0f3a37b38d7fe80de0e6420fe72b569731e72d5ae7b9dd1383d09bb47a4a18a6",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-2-after.png",
+      "bytes": 55630,
+      "sha256": "7389f59cc25ff95624528fe1cffb58727905bed39514c122fd266d8f85c50ecb",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-2-before.png",
+      "bytes": 83131,
+      "sha256": "51d6703f9f046a5baf9cfce364f5361bfe4b651dd787f6eac7653671e542c4be",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-0-after.png",
+      "bytes": 55828,
+      "sha256": "17e884597b1b9c8db148914c5a1591f0eeefa4e2937049a8cca13eda2e5ce32b",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-0-before.png",
+      "bytes": 82535,
+      "sha256": "4723e741b6fb3fd6dff600ade1275baab6b88a0c27269b4931442e9347d98e71",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-1-after.png",
+      "bytes": 55823,
+      "sha256": "ba944456cdffe30770f718d4177a90c949829de5c9c1459ed0c35918c1306f9a",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-1-before.png",
+      "bytes": 83459,
+      "sha256": "79614dbd1adaafe9ead5629d9536bec9477f54080a3e8b29debe422af9d21914",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-2-after.png",
+      "bytes": 55620,
+      "sha256": "2c4e9072360484de7143a11957bc37b44469a9630d93e0b87c6797afa781707c",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-movement-timed-2-before.png",
+      "bytes": 83437,
+      "sha256": "f69d4197c5dd7b30de552b0402c6dc21815a7a2f511a322da750951fefe394ed",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-timed-final.png",
+      "bytes": 51866,
+      "sha256": "a14a783eaed499117aec64fbadff1ec57f083b70ad9b150f570ce71ce6b19126",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/native-video.png",
+      "bytes": 157165,
+      "sha256": "dcce9de6617f0accd7b84430497eab917c88f5f5b6aa2d2b4fbb532b504de954",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-final.png",
+      "bytes": 84154,
+      "sha256": "9e7b6dc0e0fea0a015155a357766c77beb7ccbe2a9c2ca26d5fa074e8f774c34",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-0-after.png",
+      "bytes": 79412,
+      "sha256": "8601daa53bd937f32ae8f52286e955307f1c6d8b02a1fc6a03b79da4c71d62f1",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-0-before.png",
+      "bytes": 80613,
+      "sha256": "a7e63d81b4f12e4ef8bf550ef8d098d71b83f83f2ae10483cb567427e8a15c29",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-1-after.png",
+      "bytes": 79420,
+      "sha256": "ea710503c819893808271adca0b5645b1840511bc072d432173cd01b35cde8fb",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-1-before.png",
+      "bytes": 80608,
+      "sha256": "786e6987a5b1bd5e50e2dcf74f063af8829453c1632b352044dc5b1eb1cb3286",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-2-after.png",
+      "bytes": 79412,
+      "sha256": "6d58e00a35e59d2acd93b416875604bd088ab20734ff175b3da7897226b65b84",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-idle-2-before.png",
+      "bytes": 80608,
+      "sha256": "7e66c649d5bd3e809840c97c2700208a97734b9406a290a966b4b438ac2e8ff3",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-0-after.png",
+      "bytes": 55834,
+      "sha256": "0b3f6259b6575cacc11c286dac53ebfd63cf70ab2c33484bb7c3ac93661c4ec2",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-0-before.png",
+      "bytes": 81730,
+      "sha256": "8a4566f88bd21892f3a2574983f969edfad0f4e6664c3a6e7ff8d70215d88de6",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-1-after.png",
+      "bytes": 55821,
+      "sha256": "f6e8c387900769d5b325b6a3b4e829c6901d3802967ad666561d1cd2e6d53f23",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-1-before.png",
+      "bytes": 83442,
+      "sha256": "6b86dfa4fb6cb66b6a14767c351c1b65990d9958e33ec8dcb3f541c11a5cf48b",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-2-after.png",
+      "bytes": 55614,
+      "sha256": "7e74346b1d997166eae9917316839e05d71c50a9b649b9065226f9c629aa5150",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-2-before.png",
+      "bytes": 83432,
+      "sha256": "05b8c5851a6c468f80f2c3f2ad9374070186c4d4ef13c370f72af4db13193cf3",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-0-after.png",
+      "bytes": 55833,
+      "sha256": "e27e71b7d1cda183267408f6e0f60a8dcf3dda4132a69f9d3208c40713006347",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-0-before.png",
+      "bytes": 81726,
+      "sha256": "3d2a5f97d738166b6ab7d3939ca41fd7091f90a4570a7c2e8af610324d5659da",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-1-after.png",
+      "bytes": 55819,
+      "sha256": "2b71ce61cd8979939d437d1b8b68fe9f596f7c2d7ee1bbcaa3d1c76882235c70",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-1-before.png",
+      "bytes": 83444,
+      "sha256": "c908c9cde1a0fd400dec220b47e5a689a87c45cac03f12dbad90cd53a98775d6",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-2-after.png",
+      "bytes": 55626,
+      "sha256": "9f99203fd1ecc065ccea2268edcfd728494fe4ba09a007fc10dad940d60b70d8",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-movement-timed-2-before.png",
+      "bytes": 83441,
+      "sha256": "cc38bf18a03fb72944d3fbe1ce75c7dd976eacc546958d5e36e124f4a30e8681",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-position-debug.png",
+      "bytes": 85817,
+      "sha256": "2f229bc0f16f9c83b3bee95b39e512a0b03c72e94995db392749002e06ee16ce",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-timed-position-debug.png",
+      "bytes": 70790,
+      "sha256": "d697b34c4642f4d9bcff10afbbd23928ab5ca91fa1d42df7b4689c19574237ab",
+      "validation": "PNG structure and all chunk CRCs valid"
+    },
+    {
+      "path": "diagnostics/performance-phase5/stock-timed-time.png",
+      "bytes": 53729,
+      "sha256": "b2e3eaa7f89b4527d5309a94b6987ef4f3f7708c4f653df19aa2b8f44e429252",
+      "validation": "PNG structure and all chunk CRCs valid"
+    }
+  ],
+  "originalEpk": "expected size and SHA-256 passed",
+  "preservedPhase4AndHistoricalFiles": "no diff from starting commit in recovery/evidence/fixture/source paths; no historical image certified"
+}

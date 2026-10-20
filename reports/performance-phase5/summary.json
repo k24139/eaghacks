@@ -1,0 +1,339 @@
+{
+  "exploratoryMovement": {
+    "native": {
+      "frames": 2941,
+      "elapsedMs": 3005.300000000745,
+      "fps": 978.6044654441389,
+      "meanFrameMs": 1.0218633117989613,
+      "p50FrameMs": 0.8000000007450581,
+      "p95FrameMs": 1.799999998882413,
+      "maxFrameMs": 38.69999999925494,
+      "spikesOver50ms": 0,
+      "spikesOver100ms": 0,
+      "meanSampleFps": 978.6645053862753,
+      "medianSampleFps": 968.5785536159601,
+      "minSampleFps": 906.7331670822942,
+      "maxSampleFps": 1060.6817954605717,
+      "sampleFpsStdDev": 77.46831521482244,
+      "frameTimeStdDevMs": 1.0824280684274281,
+      "instantaneousFpsMin": 25.83979328215122,
+      "instantaneousFpsMax": 2000
+    },
+    "stock": {
+      "frames": 1660,
+      "elapsedMs": 3004.5999999996275,
+      "fps": 552.4861878453725,
+      "meanFrameMs": 1.8099999999997756,
+      "p50FrameMs": 0.599999999627471,
+      "p95FrameMs": 5.200000001117587,
+      "maxFrameMs": 6.100000001490116,
+      "spikesOver50ms": 0,
+      "spikesOver100ms": 0,
+      "meanSampleFps": 552.484954919776,
+      "medianSampleFps": 548.3549351944168,
+      "minSampleFps": 543.8912217560539,
+      "maxSampleFps": 565.2087078088571,
+      "sampleFpsStdDev": 11.24284661915102,
+      "frameTimeStdDevMs": 1.9940323618776752,
+      "instantaneousFpsMin": 163.93442618946207,
+      "instantaneousFpsMax": 3333.3333457509675
+    }
+  },
+  "status": "matched-local-hardware-rendered-submission-benchmark",
+  "sampleCount": 24,
+  "metrics": {
+    "native": {
+      "idle": {
+        "frames": 11767,
+        "elapsedMs": 15005.999999998137,
+        "fps": 784.1530054645782,
+        "meanFrameMs": 1.2752613240416535,
+        "p50FrameMs": 0.7000000011175871,
+        "p95FrameMs": 5.200000001117587,
+        "maxFrameMs": 8.100000001490116,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 784.1522992774259,
+        "medianSampleFps": 769.5692172314255,
+        "minSampleFps": 767.4627760567603,
+        "maxSampleFps": 815.424904544092,
+        "sampleFpsStdDev": 27.1033421136419,
+        "frameTimeStdDevMs": 1.329343685223136,
+        "instantaneousFpsMin": 123.45679010074507,
+        "instantaneousFpsMax": 2499.9999976716936
+      },
+      "movement": {
+        "frames": 3144,
+        "elapsedMs": 3015.900000002235,
+        "fps": 1042.4748831186944,
+        "meanFrameMs": 0.9592557251915507,
+        "p50FrameMs": 0.7999999988824129,
+        "p95FrameMs": 1.6000000014901161,
+        "maxFrameMs": 17.40000000037253,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 1042.3972863117533,
+        "medianSampleFps": 1057.3988382404134,
+        "minSampleFps": 997.9002099775153,
+        "maxSampleFps": 1071.892810717331,
+        "sampleFpsStdDev": 39.211110176347496,
+        "frameTimeStdDevMs": 0.8215278268061147,
+        "instantaneousFpsMin": 57.47126436658565,
+        "instantaneousFpsMax": 2000
+      },
+      "hud-on": {
+        "frames": 12711,
+        "elapsedMs": 15005.70000000298,
+        "fps": 847.078110317911,
+        "meanFrameMs": 1.1805286759501992,
+        "p50FrameMs": 0.7000000011175871,
+        "p95FrameMs": 5.200000001117587,
+        "maxFrameMs": 26,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 847.0895724378082,
+        "medianSampleFps": 864.6789449475141,
+        "minSampleFps": 799.3125911714735,
+        "maxSampleFps": 877.2771811944367,
+        "sampleFpsStdDev": 41.852823600398615,
+        "frameTimeStdDevMs": 1.333749173423522,
+        "instantaneousFpsMin": 38.46153846153846,
+        "instantaneousFpsMax": 2500.0000093132257
+      },
+      "hud-off-return": {
+        "frames": 11800,
+        "elapsedMs": 15002.800000000745,
+        "fps": 786.5198496280303,
+        "meanFrameMs": 1.2714237288136225,
+        "p50FrameMs": 0.7000000011175871,
+        "p95FrameMs": 5.200000001117587,
+        "maxFrameMs": 25.300000000745058,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 786.5221693453979,
+        "medianSampleFps": 787.116638010199,
+        "minSampleFps": 750.6498700259948,
+        "maxSampleFps": 821.8,
+        "sampleFpsStdDev": 35.57878993971731,
+        "frameTimeStdDevMs": 1.3940170001558134,
+        "instantaneousFpsMin": 39.52569169844075,
+        "instantaneousFpsMax": 2500.0000093132257
+      }
+    },
+    "stock": {
+      "idle": {
+        "frames": 7993,
+        "elapsedMs": 15005.39999999851,
+        "fps": 532.674903701387,
+        "meanFrameMs": 1.8773176529461415,
+        "p50FrameMs": 0.6999999992549419,
+        "p95FrameMs": 5.299999998882413,
+        "maxFrameMs": 12,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 532.6756910656582,
+        "medianSampleFps": 531.3362396512814,
+        "minSampleFps": 530.1122966870873,
+        "maxSampleFps": 536.5785368586056,
+        "sampleFpsStdDev": 3.434918202453448,
+        "frameTimeStdDevMs": 1.9935520258488761,
+        "instantaneousFpsMin": 83.33333333333333,
+        "instantaneousFpsMax": 5000.0000186264515
+      },
+      "movement": {
+        "frames": 1636,
+        "elapsedMs": 3003.0000000018626,
+        "fps": 544.7885447882069,
+        "meanFrameMs": 1.835574572128278,
+        "p50FrameMs": 0.599999999627471,
+        "p95FrameMs": 5.200000001117587,
+        "maxFrameMs": 15.699999999254942,
+        "spikesOver50ms": 0,
+        "spikesOver100ms": 0,
+        "meanSampleFps": 544.791516353674,
+        "medianSampleFps": 541.3503795439423,
+        "minSampleFps": 533.3599680377587,
+        "maxSampleFps": 559.6642014793209,
+        "sampleFpsStdDev": 13.485519683887537,
+        "frameTimeStdDevMs": 2.0639781596183338,
+        "instantaneousFpsMin": 63.69426751894624,
+        "instantaneousFpsMax": 3333.3333457509675
+      }
+    }
+  },
+  "comparisons": {
+    "idle": {
+      "fpsNativeVsStockPercent": 47.210427976942505,
+      "p95NativeVsStockPercent": -1.8867924110549494
+    },
+    "movement": {
+      "fpsNativeVsStockPercent": 91.35403875350741,
+      "p95NativeVsStockPercent": -69.2307692087261
+    }
+  },
+  "hud": {
+    "overlays": [
+      "fps-display",
+      "coordinates",
+      "direction",
+      "speed-hud",
+      "armor-hud",
+      "session-timer"
+    ],
+    "offBracketing": {
+      "frames": 23567,
+      "elapsedMs": 30008.799999998882,
+      "fps": 785.3363013516328,
+      "meanFrameMs": 1.2733398396061817,
+      "p50FrameMs": 0.7000000011175871,
+      "p95FrameMs": 5.200000001117587,
+      "maxFrameMs": 25.300000000745058,
+      "spikesOver50ms": 0,
+      "spikesOver100ms": 0,
+      "meanSampleFps": 785.337234311412,
+      "medianSampleFps": 778.3429276208122,
+      "minSampleFps": 750.6498700259948,
+      "maxSampleFps": 821.8,
+      "sampleFpsStdDev": 28.3171584761462,
+      "frameTimeStdDevMs": 1.362110865591463,
+      "instantaneousFpsMin": 39.52569169844075,
+      "instantaneousFpsMax": 2500.0000093132257
+    },
+    "on": {
+      "frames": 12711,
+      "elapsedMs": 15005.70000000298,
+      "fps": 847.078110317911,
+      "meanFrameMs": 1.1805286759501992,
+      "p50FrameMs": 0.7000000011175871,
+      "p95FrameMs": 5.200000001117587,
+      "maxFrameMs": 26,
+      "spikesOver50ms": 0,
+      "spikesOver100ms": 0,
+      "meanSampleFps": 847.0895724378082,
+      "medianSampleFps": 864.6789449475141,
+      "minSampleFps": 799.3125911714735,
+      "maxSampleFps": 877.2771811944367,
+      "sampleFpsStdDev": 41.852823600398615,
+      "frameTimeStdDevMs": 1.333749173423522,
+      "instantaneousFpsMin": 38.46153846153846,
+      "instantaneousFpsMax": 2500.0000093132257
+    },
+    "fpsChangePercent": 7.861830512611623,
+    "meanFrameChangeMs": -0.09281116365598252,
+    "interpretation": "Observational difference in the same binary; short sequential blocks and run variation do not establish an isolated causal cost."
+  },
+  "memory": {
+    "native": {
+      "observations": 6,
+      "browserTreeRssBytes": {
+        "mean": 2417609386.6666665,
+        "median": 2375712768,
+        "min": 1848279040,
+        "max": 3087679488
+      },
+      "browserRssBytes": {
+        "mean": 224029354.66666666,
+        "median": 212189184,
+        "min": 201768960,
+        "max": 263110656
+      },
+      "rendererRssBytes": {
+        "mean": 1793269760,
+        "median": 1765097472,
+        "min": 1279082496,
+        "max": 2390114304
+      },
+      "jsHeapBytes": {
+        "mean": 529156364.6666667,
+        "median": 531127446,
+        "min": 465040820,
+        "max": 581665836
+      },
+      "embedderHeapBytes": {
+        "mean": 77508657.33333333,
+        "median": 75739876,
+        "min": 16640424,
+        "max": 146433096
+      },
+      "wasmLinearMemoryBytes": [
+        null,
+        6946816
+      ],
+      "hostFreePercent": {
+        "mean": 44.333333333333336,
+        "median": 44,
+        "min": 41,
+        "max": 49
+      },
+      "rawPressureIndicators": [
+        "vm.memory_pressure: 0",
+        "vm.memory_pressure: 62",
+        "vm.memory_pressure: 245"
+      ]
+    },
+    "stock": {
+      "observations": 6,
+      "browserTreeRssBytes": {
+        "mean": 2552553472,
+        "median": 2677145600,
+        "min": 1960951808,
+        "max": 2805219328
+      },
+      "browserRssBytes": {
+        "mean": 230045013.33333334,
+        "median": 235282432,
+        "min": 207437824,
+        "max": 249872384
+      },
+      "rendererRssBytes": {
+        "mean": 1902441813.3333333,
+        "median": 2011512832,
+        "min": 1350713344,
+        "max": 2142060544
+      },
+      "jsHeapBytes": {
+        "mean": 464871196,
+        "median": 462882840,
+        "min": 432665316,
+        "max": 507240580
+      },
+      "embedderHeapBytes": {
+        "mean": 70534397.33333333,
+        "median": 71635612,
+        "min": 13217992,
+        "max": 125484856
+      },
+      "wasmLinearMemoryBytes": [
+        4980736
+      ],
+      "hostFreePercent": {
+        "mean": 44.333333333333336,
+        "median": 44,
+        "min": 40,
+        "max": 50
+      },
+      "rawPressureIndicators": [
+        "vm.memory_pressure: 0"
+      ]
+    }
+  },
+  "browserRaf": {
+    "native": {
+      "fps": 60.00289438822665,
+      "frames": 1078,
+      "p95FrameMs": 16.70000000001164
+    },
+    "stock": {
+      "fps": 60.00200563807159,
+      "frames": 1077,
+      "p95FrameMs": 16.79999999998836
+    }
+  },
+  "parityClaim": false,
+  "metric": "Game CPU-side fullscreen WebGL submissions per second, not physical display presentations or GPU completion timestamps",
+  "limitations": [
+    "One machine; three samples per condition; sequential native then stock; compilation modes differ; no isolated bridge attribution",
+    "Headless Chrome uses Apple GPU via ANGLE Metal; browser RAF cadence is separately reported",
+    "RSS may double-count shared pages; JS/WasmGC attribution is incomplete; linear WASM memory excludes GC objects and workers"
+  ]
+}

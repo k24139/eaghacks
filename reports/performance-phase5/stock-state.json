@@ -1,0 +1,12 @@
+{
+  "native": null,
+  "screen": null,
+  "visibility": "visible",
+  "focused": true,
+  "viewport": {
+    "width": 640,
+    "height": 400,
+    "dpr": 1
+  },
+  "modules": []
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-19",
+  "timezone": "America/Chicago",
+  "originalCheckout": {
+    "branch": "main",
+    "head": "1ccda035bc03a3fac460fc3fe484c383a65a2d59",
+    "status": "README.md modified; .github/, .gitignore, source ZIP, INTEGRATION.md, MODULES.md, PROGRESS.md, TEST_RESULTS.md, build.mjs, diagnostics/, dist/, harness/, native-bridge/, package-lock.json, package.json, reports/, src/, tests/, tools/ untracked. Preserved."
+  },
+  "worktree": {
+    "branch": "meteor-client-integration",
+    "head": "2ee6224e9fccb03ca901f85fcf96cddf06dd7dc4",
+    "initialStatus": "clean",
+    "remoteVerifiedBeforeEditing": "2ee6224e9fccb03ca901f85fcf96cddf06dd7dc4"
+  },
+  "artifacts": {
+    "epk": {
+      "bytes": 570090,
+      "sha256": "503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784"
+    },
+    "native": {
+      "bytes": 80975660,
+      "sha256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c",
+      "build": "fast-analysis/SIMPLE development"
+    },
+    "stock": {
+      "bytes": 75802950,
+      "sha256": "1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8"
+    },
+    "sourceDigest": "49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f",
+    "nativeStaticVerification": "passed; six payloads, WASM and bridge markers"
+  },
+  "preflight": [
+    {
+      "attempt": "headed navigation",
+      "samplesCollected": false,
+      "limitation": "Resizing CSS viewport left game backing canvas 1280x800. Later clicks did not change VideoSettingsScreen. Screenshot preserved before closing. No benchmark data."
+    },
+    {
+      "attempt": "first headless navigation",
+      "samplesCollected": false,
+      "limitation": "Assumed returning profile opens title; bounded 90s title wait timed out. Screenshot showed profile screen; actual Done then title controls used."
+    }
+  ],
+  "physicalDisplays": [
+    {
+      "resolution": [
+        2160,
+        3840
+      ],
+      "logical": [
+        1080,
+        1920
+      ],
+      "refreshHz": 120,
+      "rotation": 90,
+      "main": true
+    },
+    {
+      "resolution": [
+        3840,
+        2160
+      ],
+      "logical": [
+        1920,
+        1080
+      ],
+      "refreshHz": 120
+    }
+  ],
+  "host": {
+    "model": "MacBook Air Mac16,12",
+    "chip": "Apple M4",
+    "ramBytes": 17179869184,
+    "gpuCores": 8
+  },
+  "scope": "Local benchmark only. No Java/Gradle, terrain regeneration, Phase 4 recovery, multiplayer or full gameplay suite."
+}

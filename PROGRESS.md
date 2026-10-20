@@ -198,3 +198,61 @@ See `reports/recovery-phase4/RECOVERY_REPORT.md`, `world-identity.json`,
 The EPK and new screenshot binaries are published using local Git push and
 checked by an independent fetch; publication receipts are retained locally in
 `input/phase4/`. The archived profile and its IndexedDB were not uploaded.
+
+## Phase 5: local matched hardware-rendered benchmark
+
+October 19, 2026, America/Chicago. Started from clean integration worktree and
+verified remote `2ee6224e9fccb03ca901f85fcf96cddf06dd7dc4`. Original main checkout
+and its local changes were preserved. No Java/TeaVM compilation, new world,
+Phase 4 recovery, full gameplay suite, multiplayer or release packaging ran.
+
+The original 570,090-byte EPK and both client HTML hashes passed. Source digest
+remains `49015a0f3899a8281b1479bf57e7fe7782524180c316d812efb1cad0f4a0722f`.
+Independent new task profiles imported the same verified fixture; complete game
+options matched byte-for-byte. Both used Chrome 155.0.8059.80, Apple M4 ANGLE
+Metal acceleration, actual 640×400 game backing canvas and viewport, Fast/four
+chunks, unlimited FPS, VSync off, Creative/Peaceful, frozen time 6000 and clear
+weather. Viewpoint reset to `(0.5,150,0.5)`, yaw 0, pitch 20 before each sample.
+
+Three 5-second idle samples: stock average/median sample FPS 532.67/531.34,
+native 784.15/769.57; pooled p95 intervals 5.30/5.20 ms. Three final 1-second
+movement samples: stock 544.79/541.35, native 1042.47/1057.40; p95 5.20/1.60 ms.
+Every final movement sample displaced exactly 4.3134259902859675 blocks in +Z;
+recorded host key holds were 1000.9–1002.8 ms. Earlier movement attempts remain
+as six exploratory raw records, excluded from the primary comparison.
+
+These FPS values count CPU-side game fullscreen WebGL frame submissions, not
+GPU completion or physical monitor presentations. Separate browser rAF cadence
+was about 60 Hz in both. Higher native throughput compares different compilation
+characteristics and must not be labeled isolated bridge overhead or parity.
+
+Six native HUDs (FPS, Coordinates, Direction, Speed, Armor, Session Timer) were
+measured in the same binary. HUD-on averaged 847.08 FPS, 7.86% higher than six
+bracketing off samples, with unchanged 5.20-ms p95 and overlapping ranges. This
+does not establish a performance benefit or a positive HUD cost; short sequential
+blocks remain affected by scheduling/GC/run noise.
+
+Mean observed browser-tree RSS: stock 2434.30 MiB, native 2305.61 MiB; CDP
+V8/JS heap: stock 443.34 MiB, native 504.64 MiB. Exported client linear WASM:
+stock 4.75 MiB, native 6.625 MiB, excluding WasmGC/workers/GPU memory. RSS may
+double-count shared pages. Host raw memory-pressure indicator varied; continuous
+severity was not captured. Resource and memory findings are observational.
+
+See `reports/performance-phase5/PERFORMANCE_REPORT.md`, `summary.json`,
+`samples.jsonl`, `memory.jsonl`, movement verification, device/options records,
+binary integrity manifest and `REPRODUCING.md`. There are 24 preserved raw sample
+records (18 primary/HUD and six exploratory). All task browsers were closed.
+The 30 damaged historical screenshots remain unchanged and were not evidence.
+
+Validation: npm test 151/151, focused tests 8/8, both browser bundles built,
+SMOKE OK, native static artifact verification, new PNG CRC/hash audit and Git
+whitespace checks. Publication uses standard Git CLI without force push; an
+independent fetch verifies the published files and commit, with a local receipt
+at `input/phase5/publication-verification.json`. Main remains unchanged.
+
+**Phase 6 starting point:** use the published integration commit containing this
+handoff. Read the report, raw data and reproduction instructions first. Select
+the next bounded objective explicitly; longer randomized HUD pairs or physical
+presentation/focus QA would address current limitations. Keep exact artifacts
+and world pinned. Do not begin multiplayer, unrelated modules, native FULL
+compilation or release packaging as part of Phase 5.
