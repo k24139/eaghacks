@@ -542,3 +542,12 @@ unreported. Browser/server cleanup was not confirmed. Automated results and
 known-good artifact identities are unchanged; no native build or Phase 12 work
 ran. The documentation follow-up is committed/published with its own independent
 verification receipt in ignored input/phase11 storage.
+
+
+## Phase 12 — Native prerequisites and capability reliability
+
+Started from `6284074f4cbddbfd429afa008b858c4dc9b81a56`. One bounded source check found no new authorized candidate; complete pinned source/build files and patched TeaVM 0.13.1 dependency closure remain missing. No native compilation or Java changes. Official checksum-verified Temurin 25.0.4.1+1 macOS ARM64 and Gradle 9.6.1 are installed in ignored project-local storage and version commands pass.
+
+Fixed reproduced integration defects: aggregate native-direct no longer accepts a partial movement/combat feature set; velocity/rotation and swing reject unadvertised native actions. Added two regression tests covering enable refusal, capability-loss suspension/restoration and command refusal. No module support expansion.
+
+164 unit tests, build, smoke and 20 browser harness checks pass. An isolated JavaScript-refreshed candidate passed 12 actual-client startup/UI checks with unchanged WASM and six unchanged native payloads. Preserved Phase 11 HTML is byte-identical. No new loaded-world/audio/physical/LAN results are claimed; the 35 physical passes remain historical and seven LAN checks remain deferred. No FULL optimization, performance benchmark or release packaging. Details, hashes, reproduction and remaining prerequisites: `reports/native-phase12/PHASE12_REPORT.md`. Publication uses a normal push and independent all-file verification receipt in ignored `input/phase12/`. Stop after Phase 12.

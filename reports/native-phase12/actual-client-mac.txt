@@ -1,0 +1,14 @@
+PASS real game reaches menu-ready state
+PASS compiled Java bridge is present
+PASS one HUD canvas is mounted
+PASS real game canvas exists
+PASS Right Shift opens real-client ClickGUI
+PASS all nine GUI windows exist
+PASS real-client search accepts movement letters and spaces
+PASS FPS HUD module toggles in real client
+PASS Escape closes real-client ClickGUI
+PASS HUD viewport follows resize
+PASS no required asset requests failed
+PASS no uncaught or error-level game failures
+Fresh browser startup to game/menu ready: 9748 ms.
+12/12 real-client startup/UI checks passed. Loaded-world and native-module behavior are separate tests.

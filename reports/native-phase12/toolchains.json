@@ -1,0 +1,31 @@
+{
+  "jdk": {
+    "sha256": "61979887f7506a24a57439ff99adb8b3a7fc89977d9cfe3b8984f58a981b7b9d",
+    "archive": "jdk25.tar.gz",
+    "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.4.1%2B1/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.4.1_1.tar.gz",
+    "platform": "macOS ARM64",
+    "version": "25.0.4.1+1",
+    "home": "input/phase12/toolchains/jdk-25.0.4.1+1/Contents/Home",
+    "checksumURL": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.4.1%2B1/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.4.1_1.tar.gz.sha256.txt"
+  },
+  "gradle": {
+    "sha256": "9c0f7faeeb306cb14e4279a3e084ca6b596894089a0638e68a07c945a32c9e14",
+    "archive": "gradle.zip",
+    "url": "https://services.gradle.org/distributions/gradle-9.6.1-bin.zip",
+    "version": "9.6.1",
+    "checksumURL": "https://services.gradle.org/distributions/gradle-9.6.1-bin.zip.sha256"
+  },
+  "java": {
+    "exit": 0,
+    "output": "openjdk version \"25.0.4.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS, mixed mode, sharing)\n"
+  },
+  "javac": {
+    "exit": 0,
+    "output": "javac 25.0.4.1\n"
+  },
+  "gradleVersion": {
+    "exit": 0,
+    "output": "\nWelcome to Gradle 9.6.1!\n\nHere are the highlights of this release:\n - Improved Configuration Cache hit rates\n - Additional CLI rendering options\n - Important project hierarchy lookup deprecations\n\nFor more details see https://docs.gradle.org/9.6.1/release-notes.html\n\n\n------------------------------------------------------------\nGradle 9.6.1\n------------------------------------------------------------\n\nBuild time:    2026-06-26 14:25:50 UTC\nRevision:      309d128bd9fe8c0b71311878fc660b9cbaa07c51\n\nKotlin:        2.3.21\nGroovy:        4.0.32\nAnt:           Apache Ant(TM) version 1.10.17 compiled on April 6 2026\nLauncher JVM:  25.0.4.1 (Eclipse Adoptium 25.0.4.1+1-LTS)\nDaemon JVM:    <integration-worktree>/input/phase12/toolchains/jdk-25.0.4.1+1/Contents/Home (no Daemon JVM specified, using current Java home)\nOS:            Mac OS X 26.4 aarch64\n\n"
+  },
+  "scope": "Archive checksums verified before extraction; java, javac and Gradle version commands passed on macOS ARM64. No project compilation or Gradle dependency resolution."
+}

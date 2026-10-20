@@ -3,6 +3,8 @@
 
 Statuses refer to the native overlay contract. Framework fixtures do not establish gameplay verification.
 
+Phase 12: `native-direct` is an aggregate contract requiring both native `directMovement` and `combat` feature flags. Partial snapshots cannot arm modules using that contract; capability loss suspends them and verified restoration can resume them. Velocity/rotation and swing also check their corresponding feature flags. Module counts and gameplay support claims are unchanged.
+
 Phase 6 evidence and per-module capabilities, limitations, settings and automated coverage: [validation matrix](reports/module-phase6/MODULE_MATRIX.md). Historical labels apply only to the original hash-bound runtime; they do not certify the refreshed Phase 6 HTML.
 
 | Module | Category | Status | Settings | Notes |

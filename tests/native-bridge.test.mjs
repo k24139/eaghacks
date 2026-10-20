@@ -183,3 +183,50 @@ test('rapid GUI reopening retains pause ownership without sending a premature re
 test('an absent engine pause cannot leave a pending GUI resume for a later user menu',()=>{
  const{win,adapter,ui,keys}=guiControlFixture();adapter.setPointerLock(false);ui.open=false;adapter.onGuiClosed();win.__eaghacksNativeState.bridge.sequence=5;adapter.update();win.__eaghacksScreenState.screenName='PauseScreen';win.__eaghacksNativeState.session.paused=true;adapter.update();assert.deepEqual(keys,[]);
 });
+
+test('partial native feature advertisements cannot arm modules needing the direct action contract', async () => {
+  const { ModuleManager } = await import('../src/core/module-manager.js');
+  const { createEaglercraftModules } = await import('../src/integration/eaglercraft-modules.js');
+  for (const missing of ['directMovement', 'combat']) {
+    const { win, adapter } = setup();
+    installState(win);
+    win.__eaghacksNativeState.session = { kind: 'local', paused: false };
+    win.__eaghacksNativeState.features[missing] = false;
+    adapter.update();
+    assert.equal(adapter.hasCapability('native-direct'), false, `missing ${missing}`);
+    const manager = new ModuleManager({ game: adapter });
+    manager.registerAll(createEaglercraftModules());
+    for (const id of ['speed', 'bunny-hop', 'anti-afk', 'kill-aura', 'aim-assist', 'trigger-bot', 'auto-crit', 'auto-eat']) {
+      assert.equal(manager.get(id).enable(), false, `${id}: missing ${missing}`);
+    }
+    win.__eaghacksNativeState.features[missing] = true;
+    adapter.update();
+    assert.equal(adapter.hasCapability('native-direct'), true);
+    assert.equal(manager.get('speed').canEnable(), true);
+    manager.get('speed').enable();
+    win.__eaghacksNativeState.features[missing] = false;
+    adapter.update();
+    manager.revalidateAll();
+    assert.equal(manager.get('speed').active, false, 'capability loss suspends active modules');
+    win.__eaghacksNativeState.features[missing] = true;
+    adapter.update();
+    manager.revalidateAll();
+    assert.equal(manager.get('speed').active, true, 'verified capability restoration resumes modules');
+    manager.disableAll();
+  }
+});
+
+test('native velocity, rotation and swing reject unadvertised actions without queueing commands', () => {
+  const { win, adapter } = setup();
+  installState(win);
+  win.__eaghacksNativeState.features.directMovement = false;
+  adapter.update();
+  assert.equal(adapter.setPlayerVelocity(1, 0, 0), false);
+  assert.equal(adapter.setRotation(90, 0), false);
+  assert.equal(win.__eaghacksNativeCommands, undefined);
+  win.__eaghacksNativeState.features.directMovement = true;
+  win.__eaghacksNativeState.features.combat = false;
+  adapter.update();
+  assert.equal(adapter.swingHand(), false);
+  assert.equal(win.__eaghacksNativeCommands, undefined);
+});

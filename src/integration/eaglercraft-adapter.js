@@ -96,7 +96,8 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     if (Array.isArray(state?.entities)) wanted.add('entities');
     if (state?.features?.render === true && state?.camera && Array.isArray(state.camera.m) && state.camera.m.length === 16) wanted.add('render');
     if (state?.features?.inventoryRead === true && state?.inventory && Array.isArray(state.inventory.hotbar) && Array.isArray(state.inventory.armor)) wanted.add('native-inventory-read');
-    if (state?.features?.directMovement === true || state?.features?.combat === true) wanted.add('native-direct');
+    // Modules using this aggregate contract need both kinds of direct action.
+    if (state?.features?.directMovement === true && state?.features?.combat === true) wanted.add('native-direct');
     if (state?.features?.flight === true) wanted.add('flight');
     if (state?.features?.chat === true) wanted.add('chat');
     if (state?.features?.network === true) wanted.add('network');
@@ -200,9 +201,9 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
   isOnGround() { return this._nativeState()?.player?.onGround===true; }
   getPlayerVelocity() { const v=this._nativeState()?.player?.velocity; return v&&[v.x,v.y,v.z].every(Number.isFinite)?{x:v.x,y:v.y,z:v.z}:null; }
-  setPlayerVelocity(x,y,z) { return [x,y,z].every(Number.isFinite)?this._queueNative('velocity',{x,y,z}):false; }
+  setPlayerVelocity(x,y,z) { return this._nativeState()?.features?.directMovement === true && [x,y,z].every(Number.isFinite)?this._queueNative('velocity',{x,y,z}):false; }
   setRotation(yaw,pitch,speed=1) {
-    if (![yaw,pitch].every(Number.isFinite)) return false;
+    if (this._nativeState()?.features?.directMovement !== true || ![yaw,pitch].every(Number.isFinite)) return false;
     const current=this._nativeState()?.player, strength=Number.isFinite(speed)?Math.max(0,Math.min(1,speed)):1;
     if (current&&strength<1) { const wrap=a=>((a+540)%360)-180; yaw=(current.yaw??0)+wrap(yaw-(current.yaw??0))*strength; pitch=(current.pitch??0)+(pitch-(current.pitch??0))*strength; }
     return this._queueNative('rotation',{yaw,pitch:Math.max(-90,Math.min(90,pitch))});
@@ -267,7 +268,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   setHurtCam(enabled) { return this.hasCapability('hurt-camera-control') ? this._queueNative('noHurtCamera',!enabled) : false; }
   getVanillaCrosshairVisible() { return !this._nativeState()?.options?.hideCrosshair; }
   setVanillaCrosshairVisible(visible) { return this.hasCapability('crosshair-control') ? this._queueNative('hideCrosshair',!visible) : false; }
-  swingHand() { return this.hasCapability('native-direct') ? this._queueNative('swing',true) : false; }
+  swingHand() { return this._nativeState()?.features?.combat === true ? this._queueNative('swing',true) : false; }
   respawn() { return this.hasCapability('native-respawn') ? this._queueNative('respawn',true) : false; }
   onGuiClosed() {
     if (!this._guiOwnsPause) return;

@@ -1,0 +1,10 @@
+✔ partial native feature advertisements cannot arm modules needing the direct action contract (7.020667ms)
+✔ native velocity, rotation and swing reject unadvertised actions without queueing commands (0.138334ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40.895833

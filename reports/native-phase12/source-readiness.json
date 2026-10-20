@@ -1,0 +1,13 @@
+{
+  "pinnedRevision": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+  "attempt": "One bounded web-search pass for the exact revision and identified upstream; no newly accessible, clearly authorized source candidate identified. Search results contained only third-party descriptive indexes, which were not treated as authorized source archives.",
+  "previousAccessRestriction": "Phase 9 recorded HTTP 451 / DMCA; blocked repository access was not retried or bypassed.",
+  "recoveredCoreFiles": 0,
+  "patchedTeaVMRecovered": false,
+  "completeSourceAvailable": false,
+  "missingSourceManifest": "reports/native-phase11/SOURCE_READINESS.md",
+  "missingDependencyManifest": "reports/native-phase11/dependency-targets.json",
+  "missing": "Complete pinned source/build tree, Eagler-patched TeaVM 0.13.1 jars plus overrides, transitive dependency closure and verified compiler/resource configuration; external symbol mappings for diagnosis.",
+  "nativeCompilation": false,
+  "stoppingCondition": "Source recovery stopped after bounded attempt; no filesystem/archive re-scan, unrelated source substitution or decompilation."
+}

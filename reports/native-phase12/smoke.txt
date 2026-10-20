@@ -1,0 +1,12 @@
+modules: 77 active: 0 listeners: 1
+categories: Combat, Movement, Render, Player, World, Misc, HUD, Config
+hud nodes: 1
+coords ineligible: null
+coords active after world load: true
+coords text: XYZ: 0.0, 64.0, 0.0
+gui open: true windows: 9
+gui closed: false
+exported modules: 2
+import ok: true errors: 0
+corrupt recovery: true modules payload was not an array
+SMOKE OK

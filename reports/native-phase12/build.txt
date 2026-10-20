@@ -1,0 +1,14 @@
+
+> eaglercraft-meteor-framework@0.1.0 build
+> node build.mjs
+
+
+  dist/meteor.bundle.js  225.3kb
+
+⚡ Done in 12ms
+built dist/meteor.bundle.js (225.3 KiB from 22 modules)
+
+  dist/eaghacks-integration.js  251.9kb
+
+⚡ Done in 5ms
+built dist/eaghacks-integration.js (251.9 KiB from 25 modules)

@@ -1,0 +1,50 @@
+✖ partial native feature advertisements cannot arm modules needing the direct action contract (5.782708ms)
+✖ native velocity, rotation and swing reject unadvertised actions without queueing commands (0.152708ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42.574041
+
+✖ failing tests:
+
+test at tests/native-bridge.test.mjs:187:1
+✖ partial native feature advertisements cannot arm modules needing the direct action contract (5.782708ms)
+  AssertionError [ERR_ASSERTION]: missing directMovement
+
+  true !== false
+
+      at TestContext.<anonymous> (file://<integration-worktree>/tests/native-bridge.test.mjs:195:12)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-bridge.test.mjs:208:1
+✖ native velocity, rotation and swing reject unadvertised actions without queueing commands (0.152708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file://<integration-worktree>/tests/native-bridge.test.mjs:213:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
