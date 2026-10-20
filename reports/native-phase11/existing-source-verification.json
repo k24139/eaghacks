@@ -1,0 +1,59 @@
+[
+  {
+    "localPath": "input/phase7/EaglerLANPeersScreen.java",
+    "pinnedPath": "game/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/gui/EaglerLANPeersScreen.java",
+    "gitBlobSHA1": "7d101e33ce041ddab297da0118cc3e81e81bee82",
+    "sha256": "55c0061c8397a14b86c971b427f3d1fa2d672eb0b643dafee0e0c24c4e00548d",
+    "bytes": 6736,
+    "alreadyAvailableBeforePhase10": true,
+    "verifiedAgainPhase11": true
+  },
+  {
+    "localPath": "input/phase7/PlatformInput.java",
+    "pinnedPath": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformInput.java",
+    "gitBlobSHA1": "9942dc52da14b2e05219b11e0de61569d64f29bc",
+    "sha256": "778ba43784befeb939d190c6b89a92ff96c0ba297f5444049f382480b79a2b7b",
+    "bytes": 87747,
+    "alreadyAvailableBeforePhase10": true,
+    "verifiedAgainPhase11": true
+  },
+  {
+    "localPath": "input/phase7/lan-discovery.js",
+    "pinnedPath": "target_teavm_wasm_gc/src/web/lan-discovery.js",
+    "gitBlobSHA1": "168450d1824810bcdf13e448fb2eccd4a1966d28",
+    "sha256": "d3ecbfb74ba556078c7f15197b6d2fde59a6abcc0b9dc61286461359c359ddd3",
+    "bytes": 35933,
+    "alreadyAvailableBeforePhase10": true,
+    "verifiedAgainPhase11": true
+  },
+  {
+    "localPath": "input/phase7/lan-server.mjs",
+    "pinnedPath": "tools/lan-server.mjs",
+    "gitBlobSHA1": "582bac0ffc766b1aa989348d29e5d2f84f37098b",
+    "sha256": "062374ab97df89b01bc53f515929648cc7bd21d4688675815295d83d3a89e3a0",
+    "bytes": 22819,
+    "alreadyAvailableBeforePhase10": true,
+    "verifiedAgainPhase11": true
+  },
+  {
+    "localPath": "native-bridge/upstream/game/src/main/java/net/lax1dude/eaglercraft/v1_8/mods/meteor/EaglerHacksNativeBridge.java",
+    "sha256": "0ca000b5bb0292d62d913e920182f98d9b5871480d968ba408748c2bb56b4d06",
+    "bytes": 10783,
+    "verifiedAgainPhase11": true,
+    "newCoreSource": false
+  },
+  {
+    "localPath": "native-bridge/upstream/platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java",
+    "sha256": "8df00b77aa83b39c0e1af2f32412601d7e53e533ff06fd59d1d07fb2079d91ad",
+    "bytes": 12018,
+    "verifiedAgainPhase11": true,
+    "newCoreSource": false
+  },
+  {
+    "localPath": "native-bridge/upstream/platform/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java",
+    "sha256": "848e7fbf7155a91ea5053eb8f1b23be9887a195a12a18f33cb719a948fbc475d",
+    "bytes": 3363,
+    "verifiedAgainPhase11": true,
+    "newCoreSource": false
+  }
+]

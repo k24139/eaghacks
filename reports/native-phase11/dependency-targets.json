@@ -1,0 +1,311 @@
+{
+  "pinnedRevision": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+  "provenance": "Existing input/phase7/upstream-tree.json; metadata only, not recovered file bytes",
+  "targets": [
+    {
+      "path": "build.gradle.kts",
+      "sha": "98d491a0870a96ee07138ba62cc952766ce2d6da",
+      "size": 1123
+    },
+    {
+      "path": "game/build.gradle.kts",
+      "sha": "df6e822ded8fed5fd6533c32f935b599093cb5fa",
+      "size": 4414
+    },
+    {
+      "path": "gradle.properties",
+      "sha": "33fff1aa631d1296173f4f9bc10f26b3f7af24d6",
+      "size": 383
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha": "7f93135c49b765f8051ef9d0a6055ff8e46073d8",
+      "size": 63721
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha": "a351597e62aad7a1ce484a9329906a75ff4a5601",
+      "size": 252
+    },
+    {
+      "path": "platform-lwjgl/build.gradle.kts",
+      "sha": "3cd505a3fea82bb7b08e37fea9339bf31af424b5",
+      "size": 1207
+    },
+    {
+      "path": "platform-teavm/build.gradle.kts",
+      "sha": "d5c0e6d39fda837f9af03c37ab5acc31df51bfe5",
+      "size": 3038
+    },
+    {
+      "path": "platform/build.gradle.kts",
+      "sha": "cb243aabd8cc95d7fe91c323d49c9dae1aa93667",
+      "size": 692
+    },
+    {
+      "path": "settings.gradle.kts",
+      "sha": "cf6883d495f5cdc3718c1e649ea9ba8b3c0244fc",
+      "size": 425
+    },
+    {
+      "path": "target_lwjgl_desktop/build.gradle.kts",
+      "sha": "48707541922dcc82d58c93e66b9fe7951333d34b",
+      "size": 3097
+    },
+    {
+      "path": "target_teavm/build.gradle.kts",
+      "sha": "ad780f33494ba180ee1a62019dc16230428d4aaa",
+      "size": 4422
+    },
+    {
+      "path": "target_teavm_spike/build.gradle.kts",
+      "sha": "094a9120c2c96e765072c4ea7303e632ac51a9a1",
+      "size": 4748
+    },
+    {
+      "path": "target_teavm_wasm_gc/build.gradle.kts",
+      "sha": "ae50bbfe6840ff6361b7e00b2230c00522a4c4fe",
+      "size": 13437
+    },
+    {
+      "path": "target_teavm_wasm_gc_mesh/build.gradle.kts",
+      "sha": "ee88cf58ed9051f6190c8b7153a0b4e7c4354331",
+      "size": 7815
+    },
+    {
+      "path": "target_teavm_wasm_gc_server/build.gradle.kts",
+      "sha": "ee170127189f9a0df6fa422e54a0a9eaaafdb0b2",
+      "size": 8784
+    },
+    {
+      "path": "teavm-compat/build.gradle.kts",
+      "sha": "c5d9dca37108ac602af350809bbc0b241c42931c",
+      "size": 1119
+    },
+    {
+      "path": "wasm-toolchain/StandaloneTeaVMLinker.java",
+      "sha": "b71f6548c8f7c3fc98d4c7ae1c1a7e12f86bb1b2",
+      "size": 4193
+    },
+    {
+      "path": "wasm-toolchain/build-server-fastutil-slice.js",
+      "sha": "25e5be5ef86a0b032a07bb036ab47e1691111c1a",
+      "size": 7440
+    },
+    {
+      "path": "wasm-toolchain/build-single-html.js",
+      "sha": "a575997691bfe2820778779cb17c0e4e38beba19",
+      "size": 30385
+    },
+    {
+      "path": "wasm-toolchain/content-verified-brotli.js",
+      "sha": "cad861953e0748a5292dee0b058964f859f834e7",
+      "size": 2396
+    },
+    {
+      "path": "wasm-toolchain/deploy_wasm_web.sh",
+      "sha": "b9394b2c5852cf0e74ec480f21353292de5a4e26",
+      "size": 6986
+    },
+    {
+      "path": "wasm-toolchain/export-music-resource-pack.js",
+      "sha": "160af31de6778687e5aa573200e54fc0981447cf",
+      "size": 6070
+    },
+    {
+      "path": "wasm-toolchain/field-overlay-link.js",
+      "sha": "9670e4ad3fe715e23fa675fc2ab362a325a2681d",
+      "size": 3110
+    },
+    {
+      "path": "wasm-toolchain/generate-iwa-csp-runtime.mjs",
+      "sha": "aa6a94263a59aa08e82db2396c8d1ffd96b98aff",
+      "size": 14498
+    },
+    {
+      "path": "wasm-toolchain/link-server-standalone.js",
+      "sha": "1fa1a32bd26ed700e9d66431840a1a361de115a3",
+      "size": 12070
+    },
+    {
+      "path": "wasm-toolchain/link-web-target-standalone.js",
+      "sha": "0f6ca40ff326fef8ef7f6a0f7d9f3fb0dff8bbf7",
+      "size": 12380
+    },
+    {
+      "path": "wasm-toolchain/precompress-web.js",
+      "sha": "0028a97f43736664bd1816b1df3fa024e49f4d1a",
+      "size": 4613
+    },
+    {
+      "path": "wasm-toolchain/precompress-web.sh",
+      "sha": "cf5e5adab3a374b49eb98987137541fd228cf448",
+      "size": 193
+    },
+    {
+      "path": "wasm-toolchain/run-memory-capped.js",
+      "sha": "14e31914785d3de2b2f47df8470a926538168756",
+      "size": 6462
+    },
+    {
+      "path": "wasm-toolchain/standalone-classpaths.js",
+      "sha": "d0727cb411d25dac048e8098dfcca1bf255bb01e",
+      "size": 1249
+    },
+    {
+      "path": "wasm-toolchain/standalone-link-cache.js",
+      "sha": "9919ec1b9b38cd9ec90713cd9aadc4c9e4ec41a3",
+      "size": 10921
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/CompactIntHashSet.java",
+      "sha": "49854df78f45614dd88057a1950170e75e635ac8",
+      "size": 13700
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/PatchDependencyAnalyzer.java",
+      "sha": "8e0c2e58c2fdd3110f4f4b3b193c5dd2f5e208b5",
+      "size": 4969
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/build-patched-core.sh",
+      "sha": "08d823d3231c32ec54363da4b11c913e28742cca",
+      "size": 11374
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/classlib-override.jar",
+      "sha": "607907641a071e1f5834b977599a5ecc7e1b15f1",
+      "size": 18473
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/fiber-override.jar",
+      "sha": "c065e22d1554b1da4540864cadd308a1581cc716",
+      "size": 8603
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-classlib/TByteBufferImpl.java",
+      "sha": "12ceeb31f5a300215e5f2e7f12b9c7054f39c9d5",
+      "size": 20691
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-classlib/TJSBufferHelper.java",
+      "sha": "41ee902d08c3b5be83d911e1dcf8076340fef358",
+      "size": 5367
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-classlib/TSimpleStreamImpl.java",
+      "sha": "01bbe3cf4157c510dcee9ddc3c56665313f6415b",
+      "size": 11753
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-classlib/TURI.java",
+      "sha": "b5bf3a08596ab84cd4d7fbf53a8d2c446469c5a5",
+      "size": 47730
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-classlib/TZipFile.java",
+      "sha": "e0e3a3971027ac672499b14efe228fb6b8aca79e",
+      "size": 12212
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src-jso/JSClassProcessor.java",
+      "sha": "626bea9f646136c410bac943b353c1aecdfae5d4",
+      "size": 74621
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/ActiveDataOffsetEncodingRepair.java",
+      "sha": "ac4799bd839bf3215c2a6b3f1fcb7166420fd5ad",
+      "size": 7166
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/BaseWasmGenerationVisitor.java",
+      "sha": "efdb14bcc632f6aa108b2b16e38ff77a772dd04c",
+      "size": 67719
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/CoroutineTransformation.java",
+      "sha": "4f4c3797f2ae46c533b47dc032346b6ebf2f9bd4",
+      "size": 7737
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/Fiber.java",
+      "sha": "92a260d51909f2951fe9639a60cfe652190b34dc",
+      "size": 16507
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/SuperArrayFilter.java",
+      "sha": "eb57fc58972c40e6e85e0824dc4acc389313c0c4",
+      "size": 2410
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/SuperClassFilter.java",
+      "sha": "6642401363bd3506c49c62447c30b73eec2131d1",
+      "size": 3107
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCBranchTypeRepair.java",
+      "sha": "137d657846df436cbb4d0725a1968a0300b7bbd2",
+      "size": 22979
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCClassGenerator.java",
+      "sha": "1de6aff3d5fe4f712c5cb2f924bb2d11ac5f25f5",
+      "size": 107055
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCGenerationVisitor.java",
+      "sha": "854c0e4cc1abc84e95aff5419ad38af22fa68a04",
+      "size": 49824
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCInitFunctionSplitter.java",
+      "sha": "ef127e795c6623ad48be63581fce55f22be885e4",
+      "size": 5492
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCMethodGenerator.java",
+      "sha": "b29302915c033af0fed4b244274b631f39985047",
+      "size": 34951
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCTarget.java",
+      "sha": "49d391032be257e62b216431b24fc4c747074942",
+      "size": 26222
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCVariableCategoryProvider.java",
+      "sha": "2655b8cc21e872868a974fef40c98c18adf8db9c",
+      "size": 5756
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmGCVirtualTableBuilder.java",
+      "sha": "3395253c834d3fc59895f78a4ccb1923de384592",
+      "size": 21103
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/src/WasmTypeInference.java",
+      "sha": "558e2b28789716c06003d84591b959a7843f0684",
+      "size": 15019
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/teavm-core-0.13.1-eagler.jar",
+      "sha": "d3e958081a02b8d1d3482007cb7fab82126f752c",
+      "size": 2957256
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/teavm-jso-impl-0.13.1-eagler.jar",
+      "sha": "08d34f9d19c241e9260494ff06cd3e60bbaf9ddd",
+      "size": 195343
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/test/ActiveDataOffsetEncodingRepairTest.java",
+      "sha": "93147006d362b33090e38d232f0016fc417b8d70",
+      "size": 11891
+    },
+    {
+      "path": "wasm-toolchain/teavm-eagler-patch/uri-classlib-override.jar",
+      "sha": "e6d81527e08fc48adadd04ec6da96540a1d5196a",
+      "size": 10473
+    }
+  ]
+}

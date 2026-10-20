@@ -1,0 +1,397 @@
+{
+  "recordedAt": "2026-10-20T22:45:28.629230+00:00",
+  "timezone": "America/Chicago",
+  "browserInstalled": "Google Chrome 155.0.8059.80",
+  "browserUsedForPhysicalQA": null,
+  "macOS": "26.4 (25E246)",
+  "device": "Apple M4 MacBook Air, 16 GB unified memory (user environment); arm64 observed",
+  "mouse": null,
+  "audioHardware": null,
+  "operator": null,
+  "artifactSHA256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+  "physicalChecksPerformed": 0,
+  "humanListeningChecksPerformed": 0,
+  "setupObservations": [
+    "User available; initial helper launch failed with MODULE_NOT_FOUND because terminal was in original checkout; explicit cd correction supplied. This is a setup error, not a physical client failure."
+  ],
+  "checks": [
+    {
+      "id": "mouse-01",
+      "group": "mouse",
+      "check": "Smooth continuous physical camera rotation",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-02",
+      "group": "mouse",
+      "check": "Look up/down",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-03",
+      "group": "mouse",
+      "check": "Repeated full turns",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-04",
+      "group": "mouse",
+      "check": "No unexpected camera snapping",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-05",
+      "group": "mouse",
+      "check": "No unexpected cursor recentering",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-06",
+      "group": "mouse",
+      "check": "Escape releases pointer lock",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-07",
+      "group": "mouse",
+      "check": "Click gameplay reacquires pointer lock",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "mouse-08",
+      "group": "mouse",
+      "check": "Pointer lock after switching away and returning",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-01",
+      "group": "keyboard-interface",
+      "check": "W movement",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-02",
+      "group": "keyboard-interface",
+      "check": "A movement",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-03",
+      "group": "keyboard-interface",
+      "check": "S movement",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-04",
+      "group": "keyboard-interface",
+      "check": "D movement",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-05",
+      "group": "keyboard-interface",
+      "check": "Jump",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-06",
+      "group": "keyboard-interface",
+      "check": "Sprint",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-07",
+      "group": "keyboard-interface",
+      "check": "Sneak",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-08",
+      "group": "keyboard-interface",
+      "check": "Inventory opens",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-09",
+      "group": "keyboard-interface",
+      "check": "Inventory closes",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-10",
+      "group": "keyboard-interface",
+      "check": "Chat typing",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-11",
+      "group": "keyboard-interface",
+      "check": "ClickGUI opens",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-12",
+      "group": "keyboard-interface",
+      "check": "ClickGUI closes",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-13",
+      "group": "keyboard-interface",
+      "check": "ClickGUI search",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-14",
+      "group": "keyboard-interface",
+      "check": "ClickGUI scrolling",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-15",
+      "group": "keyboard-interface",
+      "check": "ClickGUI module toggles",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-16",
+      "group": "keyboard-interface",
+      "check": "ClickGUI settings",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-17",
+      "group": "keyboard-interface",
+      "check": "No stuck movement after leaving/returning",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "keyboard-interface-18",
+      "group": "keyboard-interface",
+      "check": "No stuck mouse buttons after leaving/returning",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-01",
+      "group": "audio",
+      "check": "Menu click sounds",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-02",
+      "group": "audio",
+      "check": "Block placement sounds",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-03",
+      "group": "audio",
+      "check": "Block breaking sounds",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-04",
+      "group": "audio",
+      "check": "Entity/ambient sounds where available",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-05",
+      "group": "audio",
+      "check": "Volume adjustment",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-06",
+      "group": "audio",
+      "check": "Mute",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-07",
+      "group": "audio",
+      "check": "Unmute",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-08",
+      "group": "audio",
+      "check": "Sound restoration after tab switch",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "audio-09",
+      "group": "audio",
+      "check": "Sound restoration after window refocus",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-01",
+      "group": "private-multiplayer",
+      "check": "Host creates disposable LAN session",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-02",
+      "group": "private-multiplayer",
+      "check": "Guest accepts while host stays on invitation screen",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-03",
+      "group": "private-multiplayer",
+      "check": "Physical Escape navigation after acceptance",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-04",
+      "group": "private-multiplayer",
+      "check": "Physical Back navigation after acceptance",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-05",
+      "group": "private-multiplayer",
+      "check": "Return to responsive host gameplay",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-06",
+      "group": "private-multiplayer",
+      "check": "Guest movement visible to host",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    },
+    {
+      "id": "private-multiplayer-07",
+      "group": "private-multiplayer",
+      "check": "Cleanup after disconnect",
+      "status": "PENDING",
+      "operator": null,
+      "performedAt": null,
+      "observations": "No user-reported physical result received."
+    }
+  ]
+}

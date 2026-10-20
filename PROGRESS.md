@@ -495,3 +495,39 @@ blob IDs, and separately authorize any instrumented native build. Plan one narro
 capability with ABI/gating/bounds/lifecycle and actual-client regressions only
 after reliability tracing. No native hooks, Java build, FULL optimization,
 matched benchmark, unsupported-module implementation or packaging ran. Stop here.
+
+## Phase 11 — native readiness and physical QA baseline
+
+October 20, 2026, America/Chicago. Started from clean meteor-client-integration
+70365651d50eca8f0ac538e7f453aabb66420a61, also confirmed by fresh remote fetch.
+See reports/native-phase11/PHASE11_REPORT.md and verification.json.
+
+Known-good HTML/source/WASM and all six payload identities were verified; 19,509
+resource CRCs and the exact resource tree passed. No runtime implementation or
+native payload changed. Validation: 162/162 unit tests, both JavaScript bundles,
+20/20 task Chrome harness checks and smoke all passed with exit 0. Historical
+reports and harness screenshot bytes are preserved; damaged historical PNGs
+remain invalid. Agent-owned harness Chrome/server were closed.
+
+No new core source was recovered and no repeated broad source search ran.
+The saved pinned tree identifies patched TeaVM 0.13.1 jars and build-file blob
+IDs, documented as metadata rather than recovered bytes. Complete pinned source,
+patched jars/transitive dependencies and mapping are missing. Java/JDK and
+Gradle are unavailable; historical Java 25.0.4.1+1 Linux x64 download pin cannot
+establish macOS ARM readiness. The isolated fast-analysis/SIMPLE build plan is
+provisional; compiler settings, verified toolchains and memory/disk feasibility
+remain blockers. No download, install, Java build, WASM replacement, standalone
+regeneration, FULL optimization, benchmark or release packaging occurred.
+
+Manual QA has an executable reopening procedure and individual PENDING statuses.
+User reported availability and an initial wrong-directory helper launch error;
+explicit worktree correction was supplied. Physical input/listening success is
+not inferred from automation. Future diagnostics are designed with independent
+loop/publication/command/LAN/worker/continuation markers and bounded non-consuming
+buffers; no instrumentation was implemented and the lobby fault is unresolved.
+
+Publication uses an ordinary push and separate fresh fetch; the ignored Phase 11
+receipt/final response record actual commit/tree/all-file verification. Main and
+the original checkout are preserved. Next obtain lawful exact source/dependencies,
+resolve Mac toolchains, finish user physical QA and seek separate compilation
+authorization. Stop after Phase 11; do not begin modules or Phase 12 here.

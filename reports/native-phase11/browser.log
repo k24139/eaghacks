@@ -1,0 +1,22 @@
+PASS  harness boots with no uncaught page errors
+PASS  no console errors on load
+PASS  module catalogue is populated — 77 modules
+PASS  world canvas is rendering
+PASS  Right Shift opens the ClickGUI — {"open":true,"windows":9,"visible":"block"}
+PASS  category windows are laid out — 9 windows
+PASS  ClickGUI is actually visible (display != none) — block
+PASS  left-clicking a module row enables it — {"active":true,"onClass":true}
+PASS  enabled module row is highlighted
+PASS  right-click expands module settings
+PASS  settings widgets are rendered — 5 controls
+PASS  search filters modules — Tracers
+PASS  GUI accepts movement letters and spaces in search
+PASS  GUI panels scroll with the mouse wheel
+PASS  HUD element renders real text — XYZ: 0.0, 64.0, 0.0
+PASS  HUD element has non-zero size — 183.03125x20
+PASS  Tracers actually change rendered pixels — 73000 pixels differ
+PASS  module states survive a reload — {"esp":true,"coords":true,"tracers":true}
+PASS  gameplay keys are not intercepted when the GUI is closed
+PASS  frame rate with 9 modules enabled stays playable — 60.5 fps
+
+20/20 browser checks passed.
