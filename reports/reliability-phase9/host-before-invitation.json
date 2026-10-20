@@ -1,0 +1,220 @@
+{
+  "label": "host-before-invitation",
+  "before": {
+    "at": 143640.19999999925,
+    "screen": {
+      "screenName": "PauseScreen",
+      "overlayActive": false
+    },
+    "tick": 52461,
+    "sequence": 360,
+    "nextSequence": 360,
+    "session": {
+      "kind": "local",
+      "paused": true
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": false,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": false,
+    "hidden": false,
+    "pointer": false,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "blur",
+          "at": 127316.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 2439.199999999255,
+          "duration": 749
+        },
+        {
+          "start": 3686.89999999851,
+          "duration": 260
+        },
+        {
+          "start": 3953.199999999255,
+          "duration": 378
+        },
+        {
+          "start": 4405.89999999851,
+          "duration": 2071
+        },
+        {
+          "start": 6598.79999999702,
+          "duration": 2905
+        },
+        {
+          "start": 9518.199999999255,
+          "duration": 1108
+        },
+        {
+          "start": 121743.79999999702,
+          "duration": 941
+        },
+        {
+          "start": 122685.79999999702,
+          "duration": 785
+        },
+        {
+          "start": 125412,
+          "duration": 53
+        },
+        {
+          "start": 125649.59999999776,
+          "duration": 265
+        },
+        {
+          "start": 127857,
+          "duration": 130
+        }
+      ],
+      "frames": 2100
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-2021fdc650\",\"name\":\"player-08ea\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":4,\"ageMs\":15783}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": []
+  },
+  "after": {
+    "at": 145144,
+    "screen": {
+      "screenName": "PauseScreen",
+      "overlayActive": false
+    },
+    "tick": 52461,
+    "sequence": 390,
+    "nextSequence": 390,
+    "session": {
+      "kind": "local",
+      "paused": true
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": false,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": false,
+    "hidden": false,
+    "pointer": false,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "blur",
+          "at": 127316.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 2439.199999999255,
+          "duration": 749
+        },
+        {
+          "start": 3686.89999999851,
+          "duration": 260
+        },
+        {
+          "start": 3953.199999999255,
+          "duration": 378
+        },
+        {
+          "start": 4405.89999999851,
+          "duration": 2071
+        },
+        {
+          "start": 6598.79999999702,
+          "duration": 2905
+        },
+        {
+          "start": 9518.199999999255,
+          "duration": 1108
+        },
+        {
+          "start": 121743.79999999702,
+          "duration": 941
+        },
+        {
+          "start": 122685.79999999702,
+          "duration": 785
+        },
+        {
+          "start": 125412,
+          "duration": 53
+        },
+        {
+          "start": 125649.59999999776,
+          "duration": 265
+        },
+        {
+          "start": 127857,
+          "duration": 130
+        }
+      ],
+      "frames": 2281
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-2021fdc650\",\"name\":\"player-08ea\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":4,\"ageMs\":17287}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": []
+  },
+  "delta": {
+    "frames": 181,
+    "sequence": 30,
+    "worldTime": 0
+  }
+}

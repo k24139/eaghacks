@@ -1,0 +1,85 @@
+{
+  "before": {
+    "x": 0.5,
+    "y": 150,
+    "z": 0.5,
+    "yaw": 0,
+    "pitch": 0,
+    "health": 20,
+    "maxHealth": 20,
+    "hunger": 20,
+    "onGround": true,
+    "name": "YeelerYigg97Ph60",
+    "velocity": {
+      "x": 0,
+      "y": -0.0784000015258789,
+      "z": 0
+    },
+    "effects": [],
+    "sprinting": false,
+    "sneaking": false,
+    "hurtTime": 0,
+    "fallDistance": 0,
+    "moveForward": 0,
+    "moveStrafe": 0,
+    "dead": false,
+    "usingItem": false
+  },
+  "after": {
+    "x": 0.5,
+    "y": 150,
+    "z": 1.9787007958533671,
+    "yaw": 0,
+    "pitch": 0,
+    "health": 20,
+    "maxHealth": 20,
+    "hunger": 20,
+    "onGround": true,
+    "name": "YeelerYigg97Ph60",
+    "velocity": {
+      "x": 0,
+      "y": -0.0784000015258789,
+      "z": -0.07109350472293396
+    },
+    "effects": [],
+    "sprinting": false,
+    "sneaking": false,
+    "hurtTime": 0,
+    "fallDistance": 0,
+    "moveForward": 0,
+    "moveStrafe": 0,
+    "dead": false,
+    "usingItem": false
+  },
+  "seen": {
+    "id": 29,
+    "name": "YeelerYigg97Ph60",
+    "x": 0.5,
+    "y": 150,
+    "z": 2.0423887067043895,
+    "width": 0.6000000238418579,
+    "height": 1.7999999523162842,
+    "health": 20,
+    "maxHealth": 20,
+    "isPlayer": true,
+    "hostile": false,
+    "passive": false,
+    "invisible": false,
+    "visible": true,
+    "isSelf": false,
+    "type": "minecraft:player",
+    "velocity": {
+      "x": 0,
+      "y": -0.0783739241897089,
+      "z": -0.07133335292606084
+    },
+    "dead": false
+  },
+  "identity": "local",
+  "policy": {
+    "remote": true,
+    "enabled": false,
+    "active": false,
+    "errors": []
+  }
+}

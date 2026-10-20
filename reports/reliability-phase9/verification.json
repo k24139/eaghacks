@@ -1,0 +1,69 @@
+{
+  "startingCommit": "e60ec2ae87622b6032f8756f9ece57fe803b1a53",
+  "status": "Phase9 complete bounded investigation; historical stall unresolved and not reproduced in two current Path B attempts",
+  "runtimeChanged": false,
+  "nativeChanged": false,
+  "nativeRebuilt": false,
+  "hostLobby": {
+    "fixed": false,
+    "confirmedRootCause": null,
+    "phase9PathBAttempts": 2,
+    "phase9StallsReproduced": 0,
+    "historicalFailurePreserved": "../reliability-phase8/lobby-frame-progress.json",
+    "workaroundRetested": true,
+    "diagnosis": "ROOT_CAUSE.md"
+  },
+  "automated": {
+    "unitPassed": 162,
+    "unitFailed": 0,
+    "focusedPhase8LifecyclePassed": 4,
+    "focusedIsSubsetOfUnitSuite": true,
+    "browserPassed": 20,
+    "browserTotal": 20,
+    "headedDesktopPassed": 18,
+    "headedDesktopTotal": 18,
+    "normalRestorations": 2,
+    "forcedLossRestorations": 1,
+    "disableDuringReconnect": true,
+    "gameplayPositionExchange": true,
+    "hostLocalGuestRemote": true,
+    "remoteCombatBlocked": true,
+    "hostExitGuestCleanup": true,
+    "shutdownZeroOwnedListenersInputModules": true,
+    "build": "passed",
+    "smoke": "SMOKE OK",
+    "newPhase9Evidence": "Path A and two Path B flows; observer signals and driver precondition correction; checks.jsonl",
+    "rawPassingObservations": 50,
+    "rawObservations": 50,
+    "failedDriverAttemptsRetained": "driver-diagnostics.txt; driver-commands.txt"
+  },
+  "manual": {
+    "artifactSHA256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+    "physicalMouse": "pending user operation and report",
+    "humanAudio": "pending user listening and report",
+    "physicalTestsPerformed": 0,
+    "humanListeningTestsPerformed": 0,
+    "checklist": "MANUAL_CHECKLIST.md"
+  },
+  "memory": {
+    "samples": 48,
+    "minFreePercentage": 37,
+    "maxFreePercentage": 49,
+    "largestSampledOwnedBrowserRssBytes": 4587765760,
+    "guardThresholdFreePercentage": 15,
+    "guardTriggered": false,
+    "note": "RSS may double-count shared pages; sampled values, not continuous peak"
+  },
+  "provenance": "runtime.json",
+  "publicationReceipt": "input/phase9/publication-verification.json (ignored; populated after push)",
+  "historicalScreenshotsExcluded": 30,
+  "historicalReportsUnchanged": true,
+  "cleanup": {
+    "taskChromeMainProcesses": 0,
+    "serverSIGTERMSent": [
+      "19677"
+    ],
+    "unrelatedBrowsersTerminated": false,
+    "finalMemoryPressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 61%\n"
+  }
+}

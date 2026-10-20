@@ -1,0 +1,561 @@
+info [eaghacks] Meteor framework loaded; browser integration active
+info [eaghacks] Meteor framework loaded; browser integration active
+log ClientMain: [INFO] eaglercraftx is starting...
+log [09:36:40+541][main/INFO][LANDiscovery]: Automatic LAN discovery: module not loaded on this page (manual join codes only)
+log [09:36:40+542][main/INFO][AutoConnect]: Auto-connect: module not loaded on this page (manual join codes only)
+log ClientMain: [INFO] configuration was successful
+log ClientMain: [INFO] registering crash handlers
+log ClientMain: [INFO] initializing eaglercraftx runtime
+log [09:36:40+547][main/INFO][EagRuntime]: Version: EagRuntimeX 1.0
+log [09:36:40+548][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+log [09:36:40+548][main/INFO][BrowserRuntime]: Creating main game canvas
+log [09:36:40+560][main/INFO][BrowserRuntime]: Endianness: this CPU is little endian
+log [09:36:40+573][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/bf0f4f6c-56ac-4bae-ae18-6e2896ee52b7#eaghacks-inline-assets.epk
+log [09:36:40+592][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/bf0f4f6c-56ac-4bae-ae18-6e2896ee52b7#eaghacks-inline-assets.epk
+log [09:36:40+828][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/9afc35c4-aad6-44b5-9269-b8f3c6d004f7#eaghacks-inline-sounds.epk
+log [09:36:40+858][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/9afc35c4-aad6-44b5-9269-b8f3c6d004f7#eaghacks-inline-sounds.epk
+log [09:36:41+214][main/INFO][BrowserRuntime]: Loaded 24288 resources from EPKs
+log [09:36:41+216][main/INFO][BrowserRuntime]: Initializing filesystem...
+log [09:36:41+236][main/INFO][BrowserRuntime]: Game directory filesystem mounted: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+log [09:36:41+236][main/INFO][BrowserRuntime]: Platform initialization complete
+log [09:36:41+237][main/INFO][ClientMain]: eagler: web boot OK
+log [09:36:41+237][main/INFO][ClientMain]: eagler: 24288 resources loaded from EPK
+log eagler: web boot OK (24288 assets)
+log eagler-gzip-selftest: OK (48 bytes compressed, round-trip verified)
+log [MeshWorkerPool] bridge installed (meshWorkers enabled)
+log ClientMain: [INFO] handing off to net.minecraft.client.main.Main
+log [21:36:43][Render thread/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+log [21:36:43][Render thread/INFO][Minecraft]: Setting user: YeelerYeeg3Ph131
+log [21:36:43][Render thread/INFO][Minecraft]: Backend library: LWJGL version 3.4.1 eagler-web-stub
+log [09:36:43+436][main/INFO][BrowserRuntime]: Loading keyboard layout data
+log [21:36:43][Render thread/INFO][Minecraft]: Using graphics backend WebGL2, using drivers: WebGL 2.0 (OpenGL ES 3.0 Chromium)
+log [21:36:43][Render thread/INFO][Minecraft]: Using graphics device: WebKit WebGL (WebKit)
+log [21:36:43][Render thread/INFO][Minecraft]: Using graphics device extensions: EXT_color_buffer_float, EXT_texture_filter_anisotropic
+log [21:36:43][Render thread/INFO][Minecraft]: Reloading ResourceManager: vanilla
+log [21:36:43][Render thread/INFO][Minecraft]: Optional music pack is not installed; background music and music discs are disabled
+log [21:36:44][Render thread/INFO][Minecraft]: Found unifont_pua-17.0.01.hex, loading
+log [21:36:44][Render thread/INFO][Minecraft]: Found unifont_all_no_pua-17.0.01.hex, loading
+log [21:36:44][Render thread/INFO][Minecraft]: Found eagler_server_symbols.hex, loading
+log LAN: info: discovery service online: scope loopback, room lan
+info [eaghacks] Meteor framework loaded; browser integration active
+log ClientMain: [INFO] eaglercraftx is starting...
+log [09:36:50+064][main/INFO][LANDiscovery]: Automatic LAN discovery: 0 connected, 0 found on this network (loopback)
+log [09:36:50+066][main/INFO][AutoConnect]: Auto-connect: module not loaded on this page (manual join codes only)
+log ClientMain: [INFO] configuration was successful
+log ClientMain: [INFO] registering crash handlers
+log ClientMain: [INFO] initializing eaglercraftx runtime
+log [09:36:50+071][main/INFO][EagRuntime]: Version: EagRuntimeX 1.0
+log [09:36:50+071][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+log [09:36:50+071][main/INFO][BrowserRuntime]: Creating main game canvas
+log [09:36:50+082][main/INFO][BrowserRuntime]: Endianness: this CPU is little endian
+log [09:36:50+094][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/e717012a-af5a-479d-b631-a30366290936#eaghacks-inline-assets.epk
+log [09:36:50+114][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/e717012a-af5a-479d-b631-a30366290936#eaghacks-inline-assets.epk
+log [09:36:50+354][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/8d75acd9-6e7b-40ab-83ef-bd93e091df63#eaghacks-inline-sounds.epk
+log [09:36:50+382][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/8d75acd9-6e7b-40ab-83ef-bd93e091df63#eaghacks-inline-sounds.epk
+log [09:36:50+740][main/INFO][BrowserRuntime]: Loaded 24288 resources from EPKs
+log [09:36:50+740][main/INFO][BrowserRuntime]: Initializing filesystem...
+log [09:36:50+748][main/INFO][BrowserRuntime]: Game directory filesystem mounted: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+log [09:36:50+748][main/INFO][BrowserRuntime]: Platform initialization complete
+log [09:36:50+749][main/INFO][ClientMain]: eagler: web boot OK
+log [09:36:50+749][main/INFO][ClientMain]: eagler: 24288 resources loaded from EPK
+log eagler: web boot OK (24288 assets)
+log eagler-gzip-selftest: OK (48 bytes compressed, round-trip verified)
+log [MeshWorkerPool] bridge installed (meshWorkers enabled)
+log ClientMain: [INFO] handing off to net.minecraft.client.main.Main
+log [21:36:52][Render thread/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+log [21:36:52][Render thread/INFO][Minecraft]: Setting user: YeelerYeeg3Ph131
+log [21:36:52][Render thread/INFO][Minecraft]: Backend library: LWJGL version 3.4.1 eagler-web-stub
+error [21:36:52][Render thread/WARN][Minecraft]: Detected unexpected shutdown during last game startup: resetting fullscreen mode
+error [21:36:52][Render thread/WARN][Minecraft]: Detected unexpected shutdown during last game startup: forcing preferred graphics API to OpenGL
+log [09:36:52+935][main/INFO][BrowserRuntime]: Loading keyboard layout data
+log [21:36:52][Render thread/INFO][Minecraft]: Using graphics backend WebGL2, using drivers: WebGL 2.0 (OpenGL ES 3.0 Chromium)
+log [21:36:52][Render thread/INFO][Minecraft]: Using graphics device: WebKit WebGL (WebKit)
+log [21:36:52][Render thread/INFO][Minecraft]: Using graphics device extensions: EXT_color_buffer_float, EXT_texture_filter_anisotropic
+log [21:36:53][Render thread/INFO][Minecraft]: Reloading ResourceManager: vanilla
+log [21:36:53][Render thread/INFO][Minecraft]: Optional music pack is not installed; background music and music discs are disabled
+log [21:36:54][Render thread/INFO][Minecraft]: Found unifont_pua-17.0.01.hex, loading
+log [21:36:54][Render thread/INFO][Minecraft]: Found unifont_all_no_pua-17.0.01.hex, loading
+log [21:36:54][Render thread/INFO][Minecraft]: Found eagler_server_symbols.hex, loading
+log [21:36:56][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+log [21:36:56][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+log [21:36:56][Render thread/INFO][Minecraft]: OpenAL initialized on device WebAudio
+log [21:36:56][Render thread/INFO][Minecraft]: Sound engine started
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
+log [21:36:56][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+log [21:36:57][Render thread/INFO][Minecraft]: [STDERR]: eagler-present: fullscreen-quad present pipeline ready
+log [MeshWorkerPool] prewarm: starting 1 mesh worker(s), adaptive ceiling 4
+log [09:36:59+612][main/INFO][SingleplayerServerController26]: serverWorker: prewarming the integrated-server worker for Singleplayer
+log [09:36:59+612][main/INFO][ClientPlatformSingleplayer]: serverWorker mode ENABLED — integrated server will run in a Web Worker
+log [wasm-worker] runtime loaded, instantiating shared module...
+log [wasm-worker] instantiated; entering main([])
+log [wasm-worker] runtime loaded, instantiating shared module...
+log [wasm-worker] instantiated; entering main(["_worker_process_"])
+log [09:36:59+825][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:image-booted
+log [09:36:59+828][main/INFO][ServerWorkerHost]: [ServerWorker] role:server accepted — booting integrated-server worker
+log [09:36:59+833][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls
+log [09:36:59+849][main/INFO][ServerWorkerHost]: [ServerWorker] world filesystem: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+log [09:36:59+850][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/e717012a-af5a-479d-b631-a30366290936#eaghacks-inline-assets.epk
+log [09:36:59+881][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/e717012a-af5a-479d-b631-a30366290936#eaghacks-inline-assets.epk
+log [09:37:00+137][main/INFO][ServerWorkerHost]: [ServerWorker] EPK assets loaded in worker realm: 19509 entries
+log [MeshWorkerPool] worker 0 booted (parse+registry) bootMs=1796; awaiting table (prewarm)
+error [21:37:01][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.menu
+log [09:37:01+872][main/INFO][ServerWorkerHost]: [ServerWorker] Bootstrap.bootStrap() complete
+log [09:37:01+872][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:booted
+log [09:37:01+872][main/INFO][EaglerIntegratedServerWorker26]: Eagler integrated server worker (26.2) has started
+log [09:37:01+878][main/INFO][SingleplayerServerController26]: Worker thread reported boot OK
+log [09:37:01+913][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+log [21:38:48][Render thread/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)
+log [21:38:49][Render thread/INFO][Minecraft]: Loaded 1585 recipes
+log [21:38:49][Render thread/INFO][Minecraft]: Loaded 1688 advancements
+log [21:38:49][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] pre-connect reset without a world: retaining prewarmed isolates
+log [09:38:49+961][main/INFO][EaglerIntegratedServerWorker26]: Worker received StartServer for world 'Eaghacks Benchmark 2026' (owner 'YeelerYeeg3Ph131', view 2, simulation 2)
+log [09:38:49+962][main/INFO][EaglerIntegratedServerWorker26]: Worker is spinning up the integrated server core
+log [09:38:49+962][main/INFO][WorkerWorldLoader]: Building world 'Eaghacks Benchmark 2026' in the integrated-server worker realm
+log [09:38:49+966][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls
+log [21:38:50][IntegratedServerWorker/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)
+log [21:38:51][IntegratedServerWorker/INFO][Minecraft]: Loaded 1585 recipes
+log [21:38:51][IntegratedServerWorker/INFO][Minecraft]: Loaded 1688 advancements
+log [21:38:51][IntegratedServerWorker/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+log [09:38:51+238][main/INFO][WorkerWorldLoader]: World 'Eaghacks Benchmark 2026' data loaded; spinning integrated server core
+log [21:38:51][Server thread/INFO][Minecraft]: Starting integrated minecraft server version 26.2
+log [09:38:51+266][main/INFO][SingleplayerServerController26]: Worker accepted the launch request
+log [21:38:51][Server thread/INFO][Minecraft]: Loading 0 persistent chunks...
+log [21:38:51][Server thread/INFO][Minecraft]: Preparing spawn area: 16%
+log [21:38:51][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:38:51][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:38:51][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:38:51][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (world): All chunks are saved
+log [21:38:51][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+log [21:38:51][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+log [21:38:51][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage: All dimensions are saved
+log [21:38:51][IntegratedServerWorker/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.
+log [09:38:51+376][main/INFO][WorkerPacketBridge]: Created server-side worker packet bridge (EmbeddedChannel, forced-memory)
+log [09:38:51+376][main/INFO][EaglerIntegratedServerWorker26]: Integrated server core is ready (worker packet bridge bound)
+log [09:38:51+394][main/INFO][SingleplayerServerController26]: Integrated server ready, local channel: ~!worker-bridge
+log [21:38:51][Render thread/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.
+log [09:38:51+428][main/INFO][WorkerPacketBridge]: Created client-side worker packet bridge (EmbeddedChannel, forced-memory)
+log [21:38:51][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:38:51][Server thread/INFO][Minecraft]: Using sparse stored chunk loading for [0, 0] through minecraft:initialize_light
+log [21:38:51][Server thread/INFO][Minecraft]: Loading 9 chunks for player spawn...
+log [21:38:51][Server thread/INFO][Minecraft]: Preparing spawn area: 100%
+log [21:38:51][Server thread/INFO][Minecraft]: Time elapsed: 524 ms
+log [21:38:51][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131[embedded] logged in with entity id 3 at (0.5, 150.0, 0.5)
+log [21:38:51][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131 joined the game
+log [21:38:51][Server thread/INFO][Minecraft]: Web initial chunk send: 9 ready, 0 remaining
+log [21:38:52][Render thread/INFO][Minecraft]: [MeshWorkerPool] base model table (delta mode): 32465 bytes for 32366 states in 0.90 ms — broadcasting
+log [MeshWorkerPool] table available (32465 bytes): sent to 1 prewarmed worker(s); 0 still booting
+log [MeshWorkerPool] worker 0 ready (1/4) epoch=0 bootMs=1796; mesh-worker:table-ready:32465|reg=32366 verified=0 hashMiss=0
+log [21:38:52][Render thread/INFO][Minecraft]: Services public key unavailable; remote chat sessions will remain unsigned for this connection
+log [21:38:52][Render thread/INFO][Minecraft]: Loaded 103 advancements
+log LAN: info: peer 69201e8d (player-cc0f) is on this network
+log LAN: info: peer 69201e8d (player-cc0f) connected
+log [21:38:55][Server thread/INFO][Minecraft]: Changing view distance to 3, from 2
+log [21:38:55][Server thread/INFO][Minecraft]: Changing simulation distance to 3, from 2
+log [21:38:55][Server thread/INFO][Minecraft]: Saving and pausing game...
+log [21:38:55][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:38:55][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:38:55][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:38:55][Server thread/INFO][Minecraft]: Changing view distance to 4, from 3
+log [21:38:55][Server thread/INFO][Minecraft]: Changing simulation distance to 4, from 3
+error [21:39:05][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.creative
+log [21:39:17][Server thread/INFO][Minecraft]: Saving and pausing game...
+log [21:39:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:39:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:39:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:39:22][IntegratedServerWorker/INFO][Minecraft]: Published integrated server through browser LAN relay
+log [09:39:22+653][main/INFO][EaglerIntegratedServerWorker26]: Browser LAN relay publish policy enabled (mode 1, commands false)
+log [09:39:23+467][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:39:30+451][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:39:30+451][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000001
+log [21:39:30][Server thread/INFO][Minecraft]: Using sparse stored spawn chunk [0, 0] in minecraft:overworld
+log [21:39:30][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 29 at (0.5, 150.0, 0.5)
+log [21:39:30][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:39:30][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:39:33+799][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:39:33+821][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000001 joined (no relay involved)
+log [21:39:33][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [09:39:55+972][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000001 left
+log [09:39:55+974][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000001
+log [21:39:56][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:39:56][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:39:56][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log [09:40:04+424][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:40:12+892][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:40:12+892][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000002
+log [21:40:13][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:40:13][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 30 at (0.5, 150.0, 1.6520661492301079)
+log [21:40:13][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:40:13][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:40:16+291][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:40:16+310][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000002 joined (no relay involved)
+log [21:40:16][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [09:40:29+685][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000002 left
+log [09:40:29+687][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000002
+log [21:40:29][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:40:29][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:40:29][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log [09:40:41+575][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:40:49+981][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:40:49+981][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000003
+log [21:40:50][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:40:50][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 31 at (0.5, 150.0, 1.6520661492301079)
+log [21:40:50][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:40:50][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:40:53+408][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:40:53+431][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000003 joined (no relay involved)
+log [21:40:53][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [09:41:00+462][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000003 left
+log [09:41:00+472][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000003
+log [21:41:00][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:41:00][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:41:00][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log [09:41:04+816][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:41:13+246][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:41:13+246][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000004
+log [21:41:13][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:41:13][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 32 at (0.5, 150.0, 1.6520661492301079)
+log [21:41:13][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:41:13][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:41:16+651][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:41:16+668][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000004 joined (no relay involved)
+log [21:41:16][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [09:41:24+400][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000004 left
+log [09:41:24+404][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000004
+log [21:41:24][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:41:24][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:41:24][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log [09:41:28+706][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:41:37+137][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:41:37+138][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000005
+log [21:41:37][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:41:37][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 33 at (0.5, 150.0, 1.6520661492301079)
+log [21:41:37][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:41:37][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:41:40+542][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:41:40+564][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000005 joined (no relay involved)
+log [21:41:40][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [21:41:41][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:41][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:43][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:43][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:44][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:44][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:46][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:46][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:47][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:47][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:48][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:48][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:50][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Applied effect Saturation to YeelerYeeg3Ph131]
+log [21:41:50][Render thread/INFO][Minecraft]: [System] [CHAT] Applied effect Saturation to YeelerYeeg3Ph131
+log [21:41:51][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:51][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:53][Server thread/INFO][Minecraft]: [Not Secure] <YeelerYeeg3Ph131> Phase8 automated chat input
+log [21:41:53][Render thread/INFO][Minecraft]: [CHAT] <YeelerYeeg3Ph131> Phase8 automated chat input
+log [21:41:53][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:53][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [21:41:56][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000]
+log [21:41:56][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeelerYeeg3Ph131 to 0.500000, 150.000000, 0.500000
+log [09:42:19+988][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000005 left
+log [09:42:19+989][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000005
+log [21:42:20][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:42:20][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:42:20][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log [09:42:24+316][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:42:31+341][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:42:31+341][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000006
+log [21:42:31][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:42:31][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 34 at (0.5, 150.0, 1.6910937180962573)
+log [21:42:31][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:42:31][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:42:34+726][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:42:34+747][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000006 joined (no relay involved)
+log [21:42:34][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+log [09:43:19+311][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000006 left
+log [09:43:19+325][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000006
+log [21:43:19][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:43:19][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:43:19][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 left the game
+log LAN: info: discovery service online: scope loopback, room lan
+log LAN: info: peer 69201e8d (player-cc0f) is on this network
+info [eaghacks] Meteor framework loaded; browser integration active
+log ClientMain: [INFO] eaglercraftx is starting...
+log [09:43:23+473][main/INFO][LANDiscovery]: Automatic LAN discovery: 0 connected, 1 found on this network (loopback)
+log [09:43:23+475][main/INFO][AutoConnect]: Auto-connect: module not loaded on this page (manual join codes only)
+log ClientMain: [INFO] configuration was successful
+log ClientMain: [INFO] registering crash handlers
+log ClientMain: [INFO] initializing eaglercraftx runtime
+log [09:43:23+480][main/INFO][EagRuntime]: Version: EagRuntimeX 1.0
+log [09:43:23+481][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+log [09:43:23+481][main/INFO][BrowserRuntime]: Creating main game canvas
+log LAN: info: peer 69201e8d (player-cc0f) connected
+log [09:43:23+494][main/INFO][BrowserRuntime]: Endianness: this CPU is little endian
+log [09:43:23+507][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/8156bd67-0243-491b-8893-8b21891b74c2#eaghacks-inline-assets.epk
+log [09:43:23+527][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/8156bd67-0243-491b-8893-8b21891b74c2#eaghacks-inline-assets.epk
+log [09:43:23+782][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/4773e1f9-6993-48ea-b2ad-7d2177d55109#eaghacks-inline-sounds.epk
+log [09:43:23+813][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/4773e1f9-6993-48ea-b2ad-7d2177d55109#eaghacks-inline-sounds.epk
+log [09:43:24+212][main/INFO][BrowserRuntime]: Loaded 24288 resources from EPKs
+log [09:43:24+212][main/INFO][BrowserRuntime]: Initializing filesystem...
+log [09:43:24+221][main/INFO][BrowserRuntime]: Game directory filesystem mounted: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+log [09:43:24+221][main/INFO][BrowserRuntime]: Platform initialization complete
+log [09:43:24+222][main/INFO][ClientMain]: eagler: web boot OK
+log [09:43:24+222][main/INFO][ClientMain]: eagler: 24288 resources loaded from EPK
+log eagler: web boot OK (24288 assets)
+log eagler-gzip-selftest: OK (48 bytes compressed, round-trip verified)
+log [MeshWorkerPool] bridge installed (meshWorkers enabled)
+log ClientMain: [INFO] handing off to net.minecraft.client.main.Main
+log [21:43:26][Render thread/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+log [21:43:26][Render thread/INFO][Minecraft]: Setting user: YeelerYeeg3Ph131
+log [21:43:26][Render thread/INFO][Minecraft]: Backend library: LWJGL version 3.4.1 eagler-web-stub
+log [09:43:26+690][main/INFO][BrowserRuntime]: Loading keyboard layout data
+log [21:43:26][Render thread/INFO][Minecraft]: Using graphics backend WebGL2, using drivers: WebGL 2.0 (OpenGL ES 3.0 Chromium)
+log [21:43:26][Render thread/INFO][Minecraft]: Using graphics device: WebKit WebGL (WebKit)
+log [21:43:26][Render thread/INFO][Minecraft]: Using graphics device extensions: EXT_color_buffer_float, EXT_texture_filter_anisotropic
+log [21:43:26][Render thread/INFO][Minecraft]: Reloading ResourceManager: vanilla
+log [21:43:27][Render thread/INFO][Minecraft]: Optional music pack is not installed; background music and music discs are disabled
+log [21:43:27][Render thread/INFO][Minecraft]: Found unifont_pua-17.0.01.hex, loading
+log [21:43:27][Render thread/INFO][Minecraft]: Found unifont_all_no_pua-17.0.01.hex, loading
+log [21:43:28][Render thread/INFO][Minecraft]: Found eagler_server_symbols.hex, loading
+log [21:43:30][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+log [21:43:30][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)
+log [21:43:30][Render thread/INFO][Minecraft]: OpenAL initialized on device WebAudio
+log [21:43:30][Render thread/INFO][Minecraft]: Sound engine started
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
+log [21:43:30][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+log [21:43:31][Render thread/INFO][Minecraft]: [STDERR]: eagler-present: fullscreen-quad present pipeline ready
+log [MeshWorkerPool] prewarm: starting 1 mesh worker(s), adaptive ceiling 4
+log [09:43:33+726][main/INFO][SingleplayerServerController26]: serverWorker: prewarming the integrated-server worker for Singleplayer
+log [09:43:33+726][main/INFO][ClientPlatformSingleplayer]: serverWorker mode ENABLED — integrated server will run in a Web Worker
+log [wasm-worker] runtime loaded, instantiating shared module...
+log [wasm-worker] instantiated; entering main([])
+log [wasm-worker] runtime loaded, instantiating shared module...
+log [wasm-worker] instantiated; entering main(["_worker_process_"])
+log [09:43:33+960][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:image-booted
+log [09:43:33+963][main/INFO][ServerWorkerHost]: [ServerWorker] role:server accepted — booting integrated-server worker
+log [09:43:33+968][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls
+log [09:43:33+987][main/INFO][ServerWorkerHost]: [ServerWorker] world filesystem: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds
+log [09:43:33+988][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/8156bd67-0243-491b-8893-8b21891b74c2#eaghacks-inline-assets.epk
+log [09:43:34+024][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/8156bd67-0243-491b-8893-8b21891b74c2#eaghacks-inline-assets.epk
+log [09:43:34+312][main/INFO][ServerWorkerHost]: [ServerWorker] EPK assets loaded in worker realm: 19509 entries
+error [21:43:35][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.menu
+log [MeshWorkerPool] worker 0 booted (parse+registry) bootMs=2029; awaiting table (prewarm)
+log [09:43:36+267][main/INFO][ServerWorkerHost]: [ServerWorker] Bootstrap.bootStrap() complete
+log [09:43:36+267][main/INFO][ClientPlatformSingleplayer]: Integrated server worker: server-worker:booted
+log [09:43:36+268][main/INFO][EaglerIntegratedServerWorker26]: Eagler integrated server worker (26.2) has started
+log [09:43:36+272][main/INFO][SingleplayerServerController26]: Worker thread reported boot OK
+log [09:43:36+292][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead
+log [21:43:39][Render thread/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)
+log [21:43:40][Render thread/INFO][Minecraft]: Loaded 1585 recipes
+log [21:43:40][Render thread/INFO][Minecraft]: Loaded 1688 advancements
+log [21:43:40][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] pre-connect reset without a world: retaining prewarmed isolates
+log [09:43:40+998][main/INFO][EaglerIntegratedServerWorker26]: Worker received StartServer for world 'Eaghacks Benchmark 2026' (owner 'YeelerYeeg3Ph131', view 2, simulation 2)
+log [09:43:40+999][main/INFO][EaglerIntegratedServerWorker26]: Worker is spinning up the integrated server core
+log [09:43:40+999][main/INFO][WorkerWorldLoader]: Building world 'Eaghacks Benchmark 2026' in the integrated-server worker realm
+log [09:43:41+002][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls
+log [21:43:41][IntegratedServerWorker/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)
+log [21:43:42][IntegratedServerWorker/INFO][Minecraft]: Loaded 1585 recipes
+log [21:43:42][IntegratedServerWorker/INFO][Minecraft]: Loaded 1688 advancements
+log [21:43:42][IntegratedServerWorker/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+log [09:43:42+426][main/INFO][WorkerWorldLoader]: World 'Eaghacks Benchmark 2026' data loaded; spinning integrated server core
+log [21:43:42][Server thread/INFO][Minecraft]: Starting integrated minecraft server version 26.2
+log [09:43:42+469][main/INFO][SingleplayerServerController26]: Worker accepted the launch request
+log [21:43:42][Server thread/INFO][Minecraft]: Loading 0 persistent chunks...
+log [21:43:42][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:43:42][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:43:42][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:43:42][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (world): All chunks are saved
+log [21:43:42][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+log [21:43:42][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+log [21:43:42][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage: All dimensions are saved
+log [21:43:42][IntegratedServerWorker/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.
+log [09:43:42+567][main/INFO][WorkerPacketBridge]: Created server-side worker packet bridge (EmbeddedChannel, forced-memory)
+log [09:43:42+567][main/INFO][EaglerIntegratedServerWorker26]: Integrated server core is ready (worker packet bridge bound)
+log [09:43:42+578][main/INFO][SingleplayerServerController26]: Integrated server ready, local channel: ~!worker-bridge
+log [21:43:42][Render thread/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.
+log [09:43:42+615][main/INFO][WorkerPacketBridge]: Created client-side worker packet bridge (EmbeddedChannel, forced-memory)
+log [21:43:42][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:43:42][Server thread/INFO][Minecraft]: Using sparse stored chunk loading for [0, 0] through minecraft:initialize_light
+log [21:43:42][Server thread/INFO][Minecraft]: Loading 9 chunks for player spawn...
+log [21:43:42][Server thread/INFO][Minecraft]: Preparing spawn area: 16%
+log [21:43:43][Server thread/INFO][Minecraft]: Preparing spawn area: 26%
+log [21:43:43][Server thread/INFO][Minecraft]: Time elapsed: 575 ms
+log [21:43:43][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131[embedded] logged in with entity id 3 at (0.5, 150.0, 0.5)
+log [21:43:43][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131 joined the game
+log [21:43:43][Server thread/INFO][Minecraft]: Web initial chunk send: 9 ready, 0 remaining
+log [21:43:43][Render thread/INFO][Minecraft]: [MeshWorkerPool] base model table (delta mode): 32465 bytes for 32366 states in 1.30 ms — broadcasting
+log [MeshWorkerPool] table available (32465 bytes): sent to 1 prewarmed worker(s); 0 still booting
+log [MeshWorkerPool] worker 0 ready (1/4) epoch=0 bootMs=2029; mesh-worker:table-ready:32465|reg=32366 verified=0 hashMiss=0
+log [21:43:43][Render thread/INFO][Minecraft]: Services public key unavailable; remote chat sessions will remain unsigned for this connection
+log [21:43:43][Render thread/INFO][Minecraft]: Loaded 103 advancements
+log [21:43:46][Server thread/INFO][Minecraft]: Changing view distance to 3, from 2
+log [21:43:46][Server thread/INFO][Minecraft]: Changing simulation distance to 3, from 2
+log [21:43:46][Server thread/INFO][Minecraft]: Saving and pausing game...
+log [21:43:46][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:43:46][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:43:46][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:43:47][Server thread/INFO][Minecraft]: Changing view distance to 4, from 3
+log [21:43:47][Server thread/INFO][Minecraft]: Changing simulation distance to 4, from 3
+log [21:43:51][IntegratedServerWorker/INFO][Minecraft]: Published integrated server through browser LAN relay
+log [09:43:51+342][main/INFO][EaglerIntegratedServerWorker26]: Browser LAN relay publish policy enabled (mode 1, commands false)
+log [09:43:52+120][main/INFO][LANInvites]: Invite sent to player-cc0f
+log [09:43:59+084][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)
+log [09:43:59+084][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000001
+log [21:43:59][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld
+log [21:43:59][Server thread/INFO][Minecraft]: YeelerYigg97Ph60[embedded] logged in with entity id 29 at (0.5, 150.0, 1.7179719755794918)
+log [21:43:59][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 joined the game
+log [21:43:59][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining
+log [09:44:02+499][main/INFO][LANInvites]: player-cc0f accepted the invite, completing the direct connection
+log [09:44:02+522][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000001 joined (no relay involved)
+log [21:44:02][Render thread/INFO][Minecraft]: [System] [CHAT] YeelerYigg97Ph60 joined the game
+error [21:44:08][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.creative
+error [09:44:49+263][main/ERROR][SingleplayerServerController26]: Active LAN host shutdown requested; tracing the caller
+error [09:44:49+263][main/ERROR][SingleplayerServerController26]: Exception Thrown: java.lang.Throwable: LAN host shutdown caller
+error [09:44:49+264][main/ERROR][SingleplayerServerController26]:     at Error
+error [09:44:49+264][main/ERROR][SingleplayerServerController26]:     at decorateException (http://127.0.0.1:3006/input/phase8/native-fixed.html:1297:2938)
+error [09:44:49+265][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[355]:0xdbc1c4
+error [09:44:49+265][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[7174]:0x1045403
+error [09:44:49+265][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[21342]:0x153de80
+error [09:44:49+265][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43533]:0x1c2cf22
+error [09:44:49+265][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43538]:0x1c2dd77
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[325607]:0x39bac2e
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43523]:0x1c2c3c3
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43432]:0x1c20640
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[186940]:0x2cc5c93
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[186941]:0x2cc5cca
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[5349]:0xfa4cfc
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[226517]:0x30e2d1f
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[2003]:0xe9baee
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[226500]:0x30e2bed
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[3237]:0xf035ba
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[226512]:0x30e2cbf
+error [09:44:49+266][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[884]:0xdf37e4
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[21647]:0x1561ea2
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[113346]:0x2559a44
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[113156]:0x2551ce4
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[113347]:0x2559a9e
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[316451]:0x37d864a
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43423]:0x1c1fa81
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[20821]:0x15102a7
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43424]:0x1c1fb00
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[13029]:0x125a051
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[49922]:0x1d5dbcb
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43412]:0x1c1eaf8
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43413]:0x1c1f72c
+error [09:44:49+267][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[43408]:0x1c1da43
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[71494]:0x214b153
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[70427]:0x20fd7e4
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[69295]:0x20c237d
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[71008]:0x2126f05
+error [09:44:49+268][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[66711]:0x20339fe
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[59746]:0x1f2915d
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[42779]:0x1bd2f71
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[42780]:0x1bd2f82
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[40052]:0x1b6a0b9
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[18778]:0x145476b
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[135164]:0x27bb322
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[135163]:0x27bb30e
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[329192]:0x3a7597c
+error [09:44:49+269][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[210922]:0x2f4862d
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[210923]:0x2f4865b
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[42516]:0x1bcd554
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[42515]:0x1bcd3d2
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at wasm://wasm/16609b76:wasm-function[37672]:0x1b34d60
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at PlatformRuntime$5.eval [as handleEvent] (eval at defineMethod (http://127.0.0.1:3006/input/phase8/native-fixed.html:2:6384), <anonymous>:5:16)
+error [09:44:49+270][main/ERROR][SingleplayerServerController26]:     at MessagePort.r (http://127.0.0.1:3006/input/phase8/native-fixed.html:1297:7372)
+error T: LAN host shutdown caller
+    at decorateException (http://127.0.0.1:3006/input/phase8/native-fixed.html:1297:2938)
+    at wasm://wasm/16609b76:wasm-function[355]:0xdbc1c4
+    at wasm://wasm/16609b76:wasm-function[7174]:0x1045403
+    at wasm://wasm/16609b76:wasm-function[21342]:0x153de80
+    at wasm://wasm/16609b76:wasm-function[43533]:0x1c2cf22
+    at wasm://wasm/16609b76:wasm-function[43538]:0x1c2dd77
+    at wasm://wasm/16609b76:wasm-function[43523]:0x1c2c3c3
+    at wasm://wasm/16609b76:wasm-function[43432]:0x1c20640
+    at wasm://wasm/16609b76:wasm-function[325607]:0x39bac2e
+    at wasm://wasm/16609b76:wasm-function[186940]:0x2cc5c93
+    at wasm://wasm/16609b76:wasm-function[186941]:0x2cc5cca
+    at wasm://wasm/16609b76:wasm-function[5349]:0xfa4cfc
+    at wasm://wasm/16609b76:wasm-function[226517]:0x30e2d1f
+    at wasm://wasm/16609b76:wasm-function[3237]:0xf035ba
+    at wasm://wasm/16609b76:wasm-function[226512]:0x30e2cbf
+    at wasm://wasm/16609b76:wasm-function[2003]:0xe9baee
+    at wasm://wasm/16609b76:wasm-function[226500]:0x30e2bed
+    at wasm://wasm/16609b76:wasm-function[884]:0xdf37e4
+    at wasm://wasm/16609b76:wasm-function[113156]:0x2551ce4
+    at wasm://wasm/16609b76:wasm-function[21647]:0x1561ea2
+    at wasm://wasm/16609b76:wasm-function[316451]:0x37d864a
+    at wasm://wasm/16609b76:wasm-function[113346]:0x2559a44
+    at wasm://wasm/16609b76:wasm-function[113347]:0x2559a9e
+    at wasm://wasm/16609b76:wasm-function[20821]:0x15102a7
+    at wasm://wasm/16609b76:wasm-function[43423]:0x1c1fa81
+    at wasm://wasm/16609b76:wasm-function[43424]:0x1c1fb00
+    at wasm://wasm/16609b76:wasm-function[13029]:0x125a051
+    at wasm://wasm/16609b76:wasm-function[43408]:0x1c1da43
+    at wasm://wasm/16609b76:wasm-function[49922]:0x1d5dbcb
+    at wasm://wasm/16609b76:wasm-function[43412]:0x1c1eaf8
+    at wasm://wasm/16609b76:wasm-function[43413]:0x1c1f72c
+    at wasm://wasm/16609b76:wasm-function[71494]:0x214b153
+    at wasm://wasm/16609b76:wasm-function[71008]:0x2126f05
+    at wasm://wasm/16609b76:wasm-function[70427]:0x20fd7e4
+    at wasm://wasm/16609b76:wasm-function[69295]:0x20c237d
+    at wasm://wasm/16609b76:wasm-function[66711]:0x20339fe
+    at wasm://wasm/16609b76:wasm-function[59746]:0x1f2915d
+    at wasm://wasm/16609b76:wasm-function[42779]:0x1bd2f71
+    at wasm://wasm/16609b76:wasm-function[42780]:0x1bd2f82
+    at wasm://wasm/16609b76:wasm-function[18778]:0x145476b
+    at wasm://wasm/16609b76:wasm-function[40052]:0x1b6a0b9
+    at wasm://wasm/16609b76:wasm-function[135163]:0x27bb30e
+    at wasm://wasm/16609b76:wasm-function[135164]:0x27bb322
+    at wasm://wasm/16609b76:wasm-function[329192]:0x3a7597c
+    at wasm://wasm/16609b76:wasm-function[210922]:0x2f4862d
+    at wasm://wasm/16609b76:wasm-function[210923]:0x2f4865b
+    at wasm://wasm/16609b76:wasm-function[42516]:0x1bcd554
+    at wasm://wasm/16609b76:wasm-function[42515]:0x1bcd3d2
+    at wasm://wasm/16609b76:wasm-function[37672]:0x1b34d60
+    at PlatformRuntime$5.eval [as handleEvent] (eval at defineMethod (http://127.0.0.1:3006/input/phase8/native-fixed.html:2:6384), <anonymous>:5:16)
+    at MessagePort.r (http://127.0.0.1:3006/input/phase8/native-fixed.html:1297:7372)
+log [21:44:49][IntegratedServerWorker/INFO][Minecraft]: Unpublishing integrated server (was on port 0)
+log [09:44:49+294][main/INFO][EaglerIntegratedServerWorker26]: Browser LAN relay unpublished
+log [09:44:49+295][main/INFO][EaglerIntegratedServerWorker26]: Worker received stop request
+log [21:44:49][Server thread/INFO][Minecraft]: Stopping server
+log [21:44:49][Server thread/INFO][Minecraft]: Saving players
+log [21:44:49][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131 lost connection: Server closed
+log [21:44:49][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131 left the game
+log [21:44:49][Server thread/INFO][Minecraft]: Stopping singleplayer server as player logged out
+log [21:44:49][Server thread/INFO][Minecraft]: Saving worlds
+log [21:44:49][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 lost connection: Disconnected
+log [21:44:49][Server thread/INFO][Minecraft]: YeelerYigg97Ph60 left the game
+log [21:44:50][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld
+log [21:44:50][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether
+log [21:44:50][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end
+log [21:44:50][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (world): All chunks are saved
+log [21:44:50][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+log [21:44:50][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage: All dimensions are saved
+log [21:44:50][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+log [09:44:50+639][main/INFO][EaglerIntegratedServerWorker26]: Integrated server core has stopped
+log [09:44:50+647][main/INFO][SingleplayerServerController26]: Worker reported the server has stopped
+log [09:44:50+648][main/INFO][SingleplayerServerController26]: Retired stopped integrated-server worker and released its Wasm heap
+log [21:44:50][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] final disconnect: releasing world workers
+log [MeshWorkerPool] world release: terminated all mesh workers and cleared retained tables/jobs

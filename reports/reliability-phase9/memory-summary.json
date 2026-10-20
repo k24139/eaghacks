@@ -1,0 +1,9 @@
+{
+  "samples": 48,
+  "minFreePercentage": 37,
+  "maxFreePercentage": 49,
+  "largestSampledOwnedBrowserRssBytes": 4587765760,
+  "guardThresholdFreePercentage": 15,
+  "guardTriggered": false,
+  "note": "RSS may double-count shared pages; sampled values, not continuous peak"
+}

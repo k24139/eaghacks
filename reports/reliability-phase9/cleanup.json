@@ -1,0 +1,8 @@
+{
+  "taskChromeMainProcesses": 0,
+  "serverSIGTERMSent": [
+    "19677"
+  ],
+  "unrelatedBrowsersTerminated": false,
+  "finalMemoryPressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 61%\n"
+}

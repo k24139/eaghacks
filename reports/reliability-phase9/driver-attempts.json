@@ -1,0 +1,47 @@
+{
+  "failedAttempts": [
+    {
+      "action": "start local rendezvous inside sandbox",
+      "observed": "listen EPERM 127.0.0.1:3006",
+      "correction": "authorized outside sandbox launch succeeded"
+    },
+    {
+      "action": "read raw pinned upstream source",
+      "observed": "sandbox DNS failed; outside sandbox HTTP404",
+      "correction": "connected GitHub returned HTTP451 dmca repository block; bounded investigation continued with verified local sources"
+    },
+    {
+      "action": "use GitHub CLI",
+      "observed": "gh command not found",
+      "correction": "used connected GitHub fetch_file"
+    },
+    {
+      "action": "initial non-PTY browser session",
+      "observed": "stdin is closed for this session",
+      "correction": "finally closed task browser; restarted as PTY"
+    },
+    {
+      "action": "inherited enterSaved helper",
+      "observed": "TimeoutError page.waitForFunction Timeout 90000ms exceeded; SelectWorldScreen",
+      "correction": "settled row selection before Play; corrected Phase9 enterSaved helper"
+    },
+    {
+      "action": "first inline baseline verifier",
+      "observed": "SyntaxError Unexpected token closing parenthesis",
+      "correction": "corrected verifier confirmed HTML/source/payloads/WASM; reusable phase9-verify-runtime.mjs passed"
+    },
+    {
+      "action": "guest disconnect after host desktop focus changes",
+      "observed": "TimeoutError page.waitForFunction Timeout 10000ms exceeded",
+      "cause": "guest already paused; unconditional Escape resumed it",
+      "correction": "check PauseScreen before Escape; all-disabled clean disconnect subsequently passed"
+    },
+    {
+      "action": "queued host Back/Escape after failed guest setup",
+      "observed": "host gameplay progressed, but guest acceptance had not been attempted",
+      "correction": "retained pre-path-b-driver-probe.json/png; excluded from B evidence"
+    }
+  ],
+  "allFailuresRetainedAsDriverDiagnostics": true,
+  "assertionFailures": 0
+}

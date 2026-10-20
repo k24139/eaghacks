@@ -387,3 +387,61 @@ under ignored `input/phase8/publication-verification.json` record the final
 containing commit. Phase 9 starts with physical confirmation and diagnosis of the
 bounded native lobby stall; do not infer native development/release authorization
 from this handoff. Stop after Phase 8.
+
+## Phase 9: bounded host-lobby investigation (October 20, 2026)
+
+Started at `e60ec2ae87622b6032f8756f9ece57fe803b1a53` in the clean integration
+worktree. Original main checkout and unrelated changes preserved. Read
+[the Phase 9 report](reports/reliability-phase9/PHASE9_REPORT.md),
+[root-cause findings and limits](reports/reliability-phase9/ROOT_CAUSE.md), and
+[structured verification](reports/reliability-phase9/verification.json).
+
+The historical lobby stall remains unresolved, with no runtime/native fix. Two
+bounded post-acceptance Path B attempts (including a fresh host reload) instead
+advanced bridge sequence and left the peers screen using ordinary Back/Escape.
+Path A and the pre-acceptance return-to-gameplay workaround were verified again.
+The reported native tick is world game time; a pause control kept it fixed while
+bridge sequence advanced, so use sequence plus screen/input/RTC observations.
+Full pinned native loop/LAN/TeaVM sources could not be fetched: GitHub returned
+HTTP 451 repository-blocked; preserved local screen/input and bridge sources were
+inspected. No speculative Java patch or rebuild ran.
+
+Two normal reconnects and one forced-loss reconnect automatically restored
+Coordinates/Radar/Zoom without enable calls during restoration. Disable while
+disconnected, remote combat policy, actual guest-to-host position exchange,
+FOV/input cleanup, host exit and observer-free double shutdown passed. A driver
+error blindly pressing Escape on an already-paused guest was repaired; failed
+attempts and excluded pre-acceptance probe remain documented.
+
+Validation: 162 unit tests; focused lifecycle 4/4 (subset); 20/20 browser checks;
+18/18 headed desktop checks; build and smoke passed. Raw actual-client assertions
+50/50, not unique features. Fourteen new PNGs pass CRC/stream checks. All hashed
+Phase 6/7/8 reports and historical harness artifact bytes preserved; 30 corrupted
+historical screenshots still excluded. Forty-eight memory samples: 37–49% free,
+largest sampled owned RSS sum 4,587,765,760 bytes; all task browsers/server closed.
+Physical continuous mouse/recenter and human listening remain pending user results.
+
+Exact Phase 8 artifact remains 80,978,184 bytes, SHA-256
+`9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0`;
+source digest `d2cc8f7711a9b7a8c218232066c0d3c67135c5b4e644f3b0d098c028ac2aa7a0`.
+All six payloads and compiled WASM unchanged; HTML/profile/storage stay ignored.
+No native build, FULL optimization, module expansion, matched benchmark or release
+packaging. Publication uses ordinary local Git push and independent full-tree
+byte verification; final containing SHA/receipt follow publication.
+
+Phase 10 starts from the published Phase 9 commit: reverify unchanged artifact,
+obtain physical QA with the manual checklist, then separately authorize further
+bounded lobby work if desired. Complete lawful pinned source and symbols are
+needed before attributing a native cause or considering instrumented compilation.
+Keep current successful B flows as controls and the workaround available. Stop
+after Phase 9; no next-phase implementation is started by this handoff.
+
+### Phase 9 publication safety correction
+
+The later explicit publication request triggered a complete 70-file review.
+Session invitation strings and transport identifiers were found in local
+evidence and sanitized before publication; the original d85a48d commit remains
+local only. The sanitized publication has a new identity directly after the
+published Phase 8 baseline, with no d85a48d ancestor. See
+[publication review](reports/reliability-phase9/PUBLICATION_REVIEW.md).
+Runtime/test results and all 14 screenshot byte hashes are unchanged.

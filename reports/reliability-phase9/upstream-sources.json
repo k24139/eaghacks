@@ -1,0 +1,17 @@
+{
+  "revision": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+  "verifiedLocalFiles": [
+    {
+      "file": "input/phase7/EaglerLANPeersScreen.java",
+      "upstreamPath": "game/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/gui/EaglerLANPeersScreen.java",
+      "gitBlobSHA1": "7d101e33ce041ddab297da0118cc3e81e81bee82",
+      "sha256": "55c0061c8397a14b86c971b427f3d1fa2d672eb0b643dafee0e0c24c4e00548d"
+    },
+    {
+      "file": "input/phase7/PlatformInput.java",
+      "upstreamPath": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformInput.java",
+      "gitBlobSHA1": "9942dc52da14b2e05219b11e0de61569d64f29bc",
+      "sha256": "778ba43784befeb939d190c6b89a92ff96c0ba297f5444049f382480b79a2b7b"
+    }
+  ]
+}

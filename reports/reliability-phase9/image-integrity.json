@@ -1,0 +1,114 @@
+[
+  {
+    "file": "diagnostics/reliability-phase9/lan-host.png",
+    "bytes": 240204,
+    "sha256": "1c625987d0b78f7f5d2651c1c09c643d87cd380aae3d219ad01717790976d740",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/world-select.png",
+    "bytes": 170664,
+    "sha256": "87ccd7fee4c867d1c4dbef66dbe01614b16643c518aeeb7a43b1b27718000efb",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/desktop.png",
+    "bytes": 134754,
+    "sha256": "657d2c0754fa12e8f269d77754e3fb1c6cdaa49539fc771b7687f874bdd97da0",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/forced-loss-reconnect.png",
+    "bytes": 24090,
+    "sha256": "63961d52a32767174a220f8c5b343eb449bd2c9477d27eef10dc4dd81f3e4300",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/path-b2-after-acceptance.png",
+    "bytes": 182279,
+    "sha256": "18ea4b14abd0cc5546903d1ec7f92b688a2b194094b171bd6f37e5880054a8b5",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/pre-path-b-driver-probe.png",
+    "bytes": 136111,
+    "sha256": "a3369de0185ff988c4baa08a35d4fb16af76b9bbcdd4e6c4d63b204e12bab581",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/lan-guest.png",
+    "bytes": 230082,
+    "sha256": "9655c8768f9419fe3ac34b5efa5ebe31dcb8dac5a2d78c8855660725a6e36d61",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/harness-clickgui.png",
+    "bytes": 163301,
+    "sha256": "ed03e746910b075e42c2df18fdc085ccff03e370b941d8451a5129cd6f590c45",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/harness-running.png",
+    "bytes": 67329,
+    "sha256": "413f4fe9fc555ae53842a50828b4adcd734a828de836c7c5feeb8fb844a3427e",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/normal-reconnect-2.png",
+    "bytes": 24089,
+    "sha256": "b322d73a2272e3c6ff1edd9ae48790e119f7de846d80c0c4a3a0c18da8cb5aaa",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/path-b1-back-escape.png",
+    "bytes": 172099,
+    "sha256": "74d7af21d96877d4dccef52a5c0352537afb722366d680e7258ea755365575f8",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/path-b1-after-acceptance.png",
+    "bytes": 150981,
+    "sha256": "ce3922a8e934d97e2b022de1051896c57ea16db61c03d86995aec9a1e146519a",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/normal-reconnect-1.png",
+    "bytes": 25635,
+    "sha256": "c4e9ed21f2e02b5eb7a471a34cbb025d667ad24acb04e5f27ebf3af27df4d9f1",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  },
+  {
+    "file": "diagnostics/reliability-phase9/path-b2-navigation.png",
+    "bytes": 180395,
+    "sha256": "7c01746424ef047869005e1a4a1002439e952e46b557fad2ca2aaff8bdaec666",
+    "width": 1280,
+    "height": 800,
+    "crcAndStreamLength": true
+  }
+]

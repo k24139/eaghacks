@@ -1,0 +1,726 @@
+{
+  "originalLocalCommit": "d85a48d793b51921bf1058d44aaa12ce87f4fd76",
+  "originalRetainedLocally": true,
+  "publicationParent": "e60ec2ae87622b6032f8756f9ece57fe803b1a53",
+  "changedFilesReviewed": 70,
+  "screenshotsVisuallyReviewed": 14,
+  "sensitiveFieldsFound": true,
+  "rawInvitationsPublished": false,
+  "rawTransportIdentifiersPublished": false,
+  "browserProfilesStorageHTMLIncluded": false,
+  "screenshotBytesChanged": false,
+  "reviewScope": "All 70 Phase9 changed files; historical already-published files are unchanged",
+  "files": [
+    {
+      "path": "PROGRESS.md",
+      "originalSHA256": "0ede155782db1d54b1416cd06f79a3ac0c7dd46e70cd9e490ca976b5813221fc",
+      "bytesReviewed": 36554,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "83cb18bc0ee6948f66476a9bafbf86d3d7ff12777e285d12e293ce2117b31b5c",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/desktop.png",
+      "originalSHA256": "657d2c0754fa12e8f269d77754e3fb1c6cdaa49539fc771b7687f874bdd97da0",
+      "bytesReviewed": 134754,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "657d2c0754fa12e8f269d77754e3fb1c6cdaa49539fc771b7687f874bdd97da0"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/forced-loss-reconnect.png",
+      "originalSHA256": "63961d52a32767174a220f8c5b343eb449bd2c9477d27eef10dc4dd81f3e4300",
+      "bytesReviewed": 24090,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "63961d52a32767174a220f8c5b343eb449bd2c9477d27eef10dc4dd81f3e4300"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/harness-clickgui.png",
+      "originalSHA256": "ed03e746910b075e42c2df18fdc085ccff03e370b941d8451a5129cd6f590c45",
+      "bytesReviewed": 163301,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "ed03e746910b075e42c2df18fdc085ccff03e370b941d8451a5129cd6f590c45"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/harness-running.png",
+      "originalSHA256": "413f4fe9fc555ae53842a50828b4adcd734a828de836c7c5feeb8fb844a3427e",
+      "bytesReviewed": 67329,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "413f4fe9fc555ae53842a50828b4adcd734a828de836c7c5feeb8fb844a3427e"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/lan-guest.png",
+      "originalSHA256": "9655c8768f9419fe3ac34b5efa5ebe31dcb8dac5a2d78c8855660725a6e36d61",
+      "bytesReviewed": 230082,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "9655c8768f9419fe3ac34b5efa5ebe31dcb8dac5a2d78c8855660725a6e36d61"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/lan-host.png",
+      "originalSHA256": "1c625987d0b78f7f5d2651c1c09c643d87cd380aae3d219ad01717790976d740",
+      "bytesReviewed": 240204,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "1c625987d0b78f7f5d2651c1c09c643d87cd380aae3d219ad01717790976d740"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/normal-reconnect-1.png",
+      "originalSHA256": "c4e9ed21f2e02b5eb7a471a34cbb025d667ad24acb04e5f27ebf3af27df4d9f1",
+      "bytesReviewed": 25635,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "c4e9ed21f2e02b5eb7a471a34cbb025d667ad24acb04e5f27ebf3af27df4d9f1"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/normal-reconnect-2.png",
+      "originalSHA256": "b322d73a2272e3c6ff1edd9ae48790e119f7de846d80c0c4a3a0c18da8cb5aaa",
+      "bytesReviewed": 24089,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "b322d73a2272e3c6ff1edd9ae48790e119f7de846d80c0c4a3a0c18da8cb5aaa"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/path-b1-after-acceptance.png",
+      "originalSHA256": "ce3922a8e934d97e2b022de1051896c57ea16db61c03d86995aec9a1e146519a",
+      "bytesReviewed": 150981,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "ce3922a8e934d97e2b022de1051896c57ea16db61c03d86995aec9a1e146519a"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/path-b1-back-escape.png",
+      "originalSHA256": "74d7af21d96877d4dccef52a5c0352537afb722366d680e7258ea755365575f8",
+      "bytesReviewed": 172099,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "74d7af21d96877d4dccef52a5c0352537afb722366d680e7258ea755365575f8"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/path-b2-after-acceptance.png",
+      "originalSHA256": "18ea4b14abd0cc5546903d1ec7f92b688a2b194094b171bd6f37e5880054a8b5",
+      "bytesReviewed": 182279,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "18ea4b14abd0cc5546903d1ec7f92b688a2b194094b171bd6f37e5880054a8b5"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/path-b2-navigation.png",
+      "originalSHA256": "7c01746424ef047869005e1a4a1002439e952e46b557fad2ca2aaff8bdaec666",
+      "bytesReviewed": 180395,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "7c01746424ef047869005e1a4a1002439e952e46b557fad2ca2aaff8bdaec666"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/pre-path-b-driver-probe.png",
+      "originalSHA256": "a3369de0185ff988c4baa08a35d4fb16af76b9bbcdd4e6c4d63b204e12bab581",
+      "bytesReviewed": 136111,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "a3369de0185ff988c4baa08a35d4fb16af76b9bbcdd4e6c4d63b204e12bab581"
+    },
+    {
+      "path": "diagnostics/reliability-phase9/world-select.png",
+      "originalSHA256": "87ccd7fee4c867d1c4dbef66dbe01614b16643c518aeeb7a43b1b27718000efb",
+      "bytesReviewed": 170664,
+      "kind": "PNG",
+      "redactions": {},
+      "review": "Visually inspected: task game/harness UI only; no invite codes, credentials, personal files or private browser UI",
+      "publishedSHA256": "87ccd7fee4c867d1c4dbef66dbe01614b16643c518aeeb7a43b1b27718000efb"
+    },
+    {
+      "path": "reports/reliability-phase9/MANUAL_CHECKLIST.md",
+      "originalSHA256": "dd826e32a78f7eb5f685d956672bc3ea3bc9238556b18968b260d6305d517150",
+      "bytesReviewed": 2242,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "dd826e32a78f7eb5f685d956672bc3ea3bc9238556b18968b260d6305d517150",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/PHASE9_REPORT.md",
+      "originalSHA256": "91e1163c71aff581485b5a3da9f9a38d07f54a79eb84d1491d62e1d9884122f3",
+      "bytesReviewed": 12534,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "d9c8bddc1d227c23bb1d2247cfae353dc46cc0dadaa9adf206747518031a4825",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/ROOT_CAUSE.md",
+      "originalSHA256": "809a9fdd378fd2b7190cec5b9dd9bc543e42009ce47d1591f2708be3d4234316",
+      "bytesReviewed": 6824,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "809a9fdd378fd2b7190cec5b9dd9bc543e42009ce47d1591f2708be3d4234316",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/browser.txt",
+      "originalSHA256": "7584abfa747ebf7cf76fe2b19878d78d73efa551c2f81b5f3b13f0ff2532be7f",
+      "bytesReviewed": 1143,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "7584abfa747ebf7cf76fe2b19878d78d73efa551c2f81b5f3b13f0ff2532be7f",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/build.txt",
+      "originalSHA256": "22f2167b0ef0b6726dfaec98ef40b84b73f083dee0adb933ece63350211cd1b9",
+      "bytesReviewed": 291,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "22f2167b0ef0b6726dfaec98ef40b84b73f083dee0adb933ece63350211cd1b9",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/checks.jsonl",
+      "originalSHA256": "0fa5933c257ee3d1a4dc2d41fcc7b3312b45323a141cb81aefb1e8bc71f6de74",
+      "bytesReviewed": 83985,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 18,
+        "certificate": 35,
+        "candidatePair": 17,
+        "discoverySessionIdentifier": 18
+      },
+      "publishedSHA256": "56294544863c32e283fc5c85a6f225150c8ee6df78c5e2582eefa42f8c1a6420",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/cleanup.json",
+      "originalSHA256": "425c6f287b1d23a860bb64305767083294f64fc4f464ff424459a5af46ca2645",
+      "bytesReviewed": 258,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "425c6f287b1d23a860bb64305767083294f64fc4f464ff424459a5af46ca2645",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/driver-attempts.json",
+      "originalSHA256": "69558d2d32bcbe3a2fa9668cd3f8d03812eac53115a3318900addf7b1c089b7a",
+      "bytesReviewed": 1993,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "69558d2d32bcbe3a2fa9668cd3f8d03812eac53115a3318900addf7b1c089b7a",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/driver-commands.txt",
+      "originalSHA256": "d9fb1ee71f3081c13528af70c4c8d8403c2ea772f0ff5e4bcef2bfc9e74413ac",
+      "bytesReviewed": 9044,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "d9fb1ee71f3081c13528af70c4c8d8403c2ea772f0ff5e4bcef2bfc9e74413ac",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/driver-diagnostics.txt",
+      "originalSHA256": "9df7f366fa6aa9d10498e3e168623c091bec9b93209933e3fb9fb7024dd597c4",
+      "bytesReviewed": 1700,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "9df7f366fa6aa9d10498e3e168623c091bec9b93209933e3fb9fb7024dd597c4",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/environment.json",
+      "originalSHA256": "c772e38e55dfcf57610689c058f63876e7ea0dbfff66907d530a1c9c0015296f",
+      "bytesReviewed": 652,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "c772e38e55dfcf57610689c058f63876e7ea0dbfff66907d530a1c9c0015296f",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/focused-lifecycle.txt",
+      "originalSHA256": "d9326408aeb43e77d8b39f9507ea9e301df8b98c7a1782421d31025e64471813",
+      "bytesReviewed": 483,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "d9326408aeb43e77d8b39f9507ea9e301df8b98c7a1782421d31025e64471813",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/host-before-invitation.json",
+      "originalSHA256": "b2d09c64ef782b720991b7acb26515ace906dc41de17083d68c407a16295ebdf",
+      "bytesReviewed": 5307,
+      "kind": "text",
+      "redactions": {
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "3e870b54082c76b181f6d7fc0ce1e2717cb0d22b87f7485123cf96b7f1a4a4eb",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/host-console.txt",
+      "originalSHA256": "ee0f9f53075a82828c75cdeb4b78582ade61633903c063f7719cbd925b418589",
+      "bytesReviewed": 58564,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "ee0f9f53075a82828c75cdeb4b78582ade61633903c063f7719cbd925b418589",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/image-integrity.json",
+      "originalSHA256": "1d8a9c46e9df9e656baac4a6e14563fa7ce19bbad11f64fe77fc685bb6cf2eb6",
+      "bytesReviewed": 3479,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "1d8a9c46e9df9e656baac4a6e14563fa7ce19bbad11f64fe77fc685bb6cf2eb6",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/initial-state.json",
+      "originalSHA256": "ecf7b689d17b98bb03192c1f905af3541e41b36b3c9432a60b60ab8c991e7f47",
+      "bytesReviewed": 11043,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "ecf7b689d17b98bb03192c1f905af3541e41b36b3c9432a60b60ab8c991e7f47",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/lan-console.json",
+      "originalSHA256": "506bae38e9308cafbfb25fb10efb7025de077305a65882aa204baa29074ae8a4",
+      "bytesReviewed": 185778,
+      "kind": "text",
+      "redactions": {
+        "directInvitation": 14
+      },
+      "publishedSHA256": "e96b4b03fdf94bbcb5971f40b5d2ce0dd6b036cfe17271813b5cb7648ffb7f08",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/lan-guest-state.json",
+      "originalSHA256": "b0a79cca6e8378aed6cf85ca256849ece22ad6c66fcd8a3665fcef34c7b59e7e",
+      "bytesReviewed": 573,
+      "kind": "text",
+      "redactions": {
+        "discoverySessionIdentifier": 2
+      },
+      "publishedSHA256": "2fd6a53e78f14c0dd34af20d3731c36352842249ee0bd67afdaad5ff0942aa08",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/lan-host-state.json",
+      "originalSHA256": "361fee5763f644f9aca335b6a95506b4f46d10dfd929c466274d24dc8132e20d",
+      "bytesReviewed": 566,
+      "kind": "text",
+      "redactions": {
+        "discoverySessionIdentifier": 2
+      },
+      "publishedSHA256": "88d186a2848bd50db289787e69c70b59a3d5358af38a158304864f979a586265",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/memory-summary.json",
+      "originalSHA256": "8751534e1706c0c932e150a4430349883bb5dc678c257356bee78ab2921fd1da",
+      "bytesReviewed": 275,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "8751534e1706c0c932e150a4430349883bb5dc678c257356bee78ab2921fd1da",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/memory.jsonl",
+      "originalSHA256": "49769fa5461c47bb7443828df25ff776942d0d3ade81f7a9962400997d8739e0",
+      "bytesReviewed": 152664,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "49769fa5461c47bb7443828df25ff776942d0d3ade81f7a9962400997d8739e0",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/page-errors.txt",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytesReviewed": 0,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-a-before-acceptance.json",
+      "originalSHA256": "4209e9a2b611365cb4fa9d0e2aa76b5315384a47bf4d27d0aec34ac0f65431d5",
+      "bytesReviewed": 77144,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 2,
+        "certificate": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "b7205558992eb876292eb95eea809cf21b631332e18392ba35ca199456fd52ed",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-a-gameplay.json",
+      "originalSHA256": "24e72fb4972c98b7d395064618268968c13a064fdaa685ad6e20293929a8d7e6",
+      "bytesReviewed": 1627,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "24e72fb4972c98b7d395064618268968c13a064fdaa685ad6e20293929a8d7e6",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-a-host-progress.json",
+      "originalSHA256": "2533f97ec90a7e565c66dfdfbbbb6998b0afbdf500caa178ba03be220813c842",
+      "bytesReviewed": 24010,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "bc473e415c3d0dd93139ab58740bb200f8c9b59842622c41c89e25ba813a3598",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-after-acceptance.json",
+      "originalSHA256": "7cc7a75faefe73d63a2f216f36fd0b6e71011cd1f3b95d09b7c917c1613eaed9",
+      "bytesReviewed": 383538,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 2,
+        "certificate": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "939e098f6379ffbb7b1ccd575aa39a5ea6f5161cd91bacd67d3859ad395339da",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-back-escape.json",
+      "originalSHA256": "99756a495b7ed8b5edb96c91a0ff60521efeab0fa2c4dcc25bfe6e9a7a4cb5f4",
+      "bytesReviewed": 389717,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "ceb07479b4fe7ada1026c5d6234c87f1f3cfb012f65bd66b067080cbba0c5512",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-before-acceptance.json",
+      "originalSHA256": "fcde4285af116c7ecee4dc9a7cf5a3f90759bba144ab65c143b9f667cf584416",
+      "bytesReviewed": 383156,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 2,
+        "certificate": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "adb745f86560251175cbd3af699aba97e7dee7af8bb66a3310099577f587d459",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-connected-before-input.json",
+      "originalSHA256": "8c3da3068ce634300e92af3e60c7058d342b04e68babb5da0e9bf04df5ad8824",
+      "bytesReviewed": 386478,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "5dfb40ee44c06d282466f65375c45aa0ba35fbdfcc51d4d8139fe082a7805223",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-cpu.json",
+      "originalSHA256": "cdec9720b1512e391a5f2b7a4999d42795c7fd7f7f28ec0e1c5536de6686b59b",
+      "bytesReviewed": 369269,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "cdec9720b1512e391a5f2b7a4999d42795c7fd7f7f28ec0e1c5536de6686b59b",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b1-host-resumed.json",
+      "originalSHA256": "3e095e33d09a6e68e0521a423db16f6120be0efb82cf2f8a35e84024a2d77c93",
+      "bytesReviewed": 394160,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "579e5eb5f639daabf871978236a10631249481c2c2c0b676dfe144b12d42ef8b",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-after-acceptance.json",
+      "originalSHA256": "336cdf5efbcd57ee58f6457564e5650edaa6fe7f1ab77756dddfaa737eb95ecc",
+      "bytesReviewed": 17242,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "8ee22672839ab136266815df009a4f1caf3550693b406f6b9f9c0ea01382f35d",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-back.json",
+      "originalSHA256": "7e0bf1287a6247bd79d1f5394143ec2aa487576109b3d80c07997029561e9c88",
+      "bytesReviewed": 22280,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 6,
+        "certificate": 10,
+        "candidatePair": 4,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "f774b94d311752fad5041ec233862466ea1878e27f574a7c5cd6f1cf09a4963b",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-before-acceptance.json",
+      "originalSHA256": "6873cfa8dd8698c3f0b15a1e6d27ec74bd1a9af176a6d4a9fc8335f3ff0c92b6",
+      "bytesReviewed": 17205,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "9bd7869b98f61d9083b73dace0b7831baf2b9dcb688c0ef54f88f682076f352b",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-connected-before-input.json",
+      "originalSHA256": "f1d74fe1d7e5e1c03f2a2480df39d6fcc74b731ff09d7f557b3d413b837c65cb",
+      "bytesReviewed": 20194,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 6,
+        "certificate": 10,
+        "candidatePair": 4,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "76e6b9fa6ea86d2d37c44b2ba745d81cd5dc18975b6a97ecdf8c0d0fbbda9d37",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-escape.json",
+      "originalSHA256": "85b46997dd142ad638bdbdcc2263feb7dec3ffdbae43b579ea40f8e7579840f4",
+      "bytesReviewed": 23081,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 6,
+        "certificate": 10,
+        "candidatePair": 4,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "9b3be548898572b592ed9ed46cd20c8902a0faabcb23d64aac8a5cc2f2fa39c5",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/path-b2-lobby-cpu.json",
+      "originalSHA256": "34f1e05682fce4a73e4f87f10f1335ae3b1f49aaf0f2a8c8177fa858b96b0731",
+      "bytesReviewed": 388557,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "34f1e05682fce4a73e4f87f10f1335ae3b1f49aaf0f2a8c8177fa858b96b0731",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/physical-results.json",
+      "originalSHA256": "e7fd0fa00241d84634824aa188a6a32268251ad826d20b8bce1f960a76e6168a",
+      "bytesReviewed": 306,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "e7fd0fa00241d84634824aa188a6a32268251ad826d20b8bce1f960a76e6168a",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/pre-path-b-driver-probe.json",
+      "originalSHA256": "837e1435e832404b9d62f031e292529aeee667cc92f215cc788cf4fb3d662428",
+      "bytesReviewed": 376026,
+      "kind": "text",
+      "redactions": {
+        "iceUsername": 4,
+        "certificate": 6,
+        "candidatePair": 2,
+        "discoverySessionIdentifier": 4
+      },
+      "publishedSHA256": "76dbac7a7c00ed50c5b228dcfd3bfa3155db7fc2741a9c761b4073152ef21cd9",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/requests-failed.txt",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytesReviewed": 0,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/runtime.json",
+      "originalSHA256": "7db4fcc5206ae08857a2ceb9fb256e83d519a8b28e13fe2eb6cff257a7dd5278",
+      "bytesReviewed": 2351,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "7db4fcc5206ae08857a2ceb9fb256e83d519a8b28e13fe2eb6cff257a7dd5278",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/smoke.txt",
+      "originalSHA256": "712e3e6395277dc6535dacc89376a81c6ef52afd2c4985b48ff7f17f34b96acb",
+      "bytesReviewed": 368,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "712e3e6395277dc6535dacc89376a81c6ef52afd2c4985b48ff7f17f34b96acb",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/source-access.json",
+      "originalSHA256": "4603c3733fdde26ef4d707af9ea178649d2a14b54f60acb4601bf762c29299ad",
+      "bytesReviewed": 600,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "4603c3733fdde26ef4d707af9ea178649d2a14b54f60acb4601bf762c29299ad",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/tests.txt",
+      "originalSHA256": "337423308d1f47778249977fe001adaef2dd450a33224572e5d03e08de942a76",
+      "bytesReviewed": 23284,
+      "kind": "text",
+      "redactions": {
+        "localWorkspacePrefix": 55
+      },
+      "publishedSHA256": "b9f19ca9e27505ee4bf7cd6fc5fa6db6f0f06456fd77c62b264f372958e37bc4",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/upstream-sources.json",
+      "originalSHA256": "88eeb7d452a27c00849b89114dc0868ac07c1dd05c68525c07f722a09549245c",
+      "bytesReviewed": 737,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "88eeb7d452a27c00849b89114dc0868ac07c1dd05c68525c07f722a09549245c",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "reports/reliability-phase9/verification.json",
+      "originalSHA256": "68f188671bfeafda205795b876430eac0cc9c1b05491b439519886bfde2df603",
+      "bytesReviewed": 2557,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "68f188671bfeafda205795b876430eac0cc9c1b05491b439519886bfde2df603",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-actions.mjs",
+      "originalSHA256": "d2ada1308c78ada63a364d501ad93e392bda185dd4d179e2c473440eacdd4e26",
+      "bytesReviewed": 3060,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "d2ada1308c78ada63a364d501ad93e392bda185dd4d179e2c473440eacdd4e26",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-checks.mjs",
+      "originalSHA256": "845f81498143bc54c5fc547a3bc868f02e405562ab25f814cf21ce097a16d242",
+      "bytesReviewed": 9339,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "845f81498143bc54c5fc547a3bc868f02e405562ab25f814cf21ce097a16d242",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-cleanup.mjs",
+      "originalSHA256": "7d2db4c6d5510b31423d4bd9ba764fe3d45a6f093d1453532370a13582972178",
+      "bytesReviewed": 1313,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "7d2db4c6d5510b31423d4bd9ba764fe3d45a6f093d1453532370a13582972178",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-lan.mjs",
+      "originalSHA256": "9f31947b0a213422f0a873ed70ba60a33c219f35fedd84a0e2288b04d521adb7",
+      "bytesReviewed": 6903,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "9f31947b0a213422f0a873ed70ba60a33c219f35fedd84a0e2288b04d521adb7",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-lifecycle.mjs",
+      "originalSHA256": "d3369071093489cf12261b3de21c099a7c4472c7ef0753e64123e3ff056f79fd",
+      "bytesReviewed": 4670,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "d3369071093489cf12261b3de21c099a7c4472c7ef0753e64123e3ff056f79fd",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-observe.mjs",
+      "originalSHA256": "37661c8c77b1aa49ce7b5279cc5399b9c3b268dd24c331daab4599512b4386ea",
+      "bytesReviewed": 3079,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "37661c8c77b1aa49ce7b5279cc5399b9c3b268dd24c331daab4599512b4386ea",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-session.mjs",
+      "originalSHA256": "590ace18b89fa917b5c93b1d5126413bd18c05d44247ac7f771e578f36d651d7",
+      "bytesReviewed": 2748,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "590ace18b89fa917b5c93b1d5126413bd18c05d44247ac7f771e578f36d651d7",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-verify-publication.py",
+      "originalSHA256": "9d09a521ef28bb67f52b9b80727d0eafec51396a35151f84c33e0530eba8f611",
+      "bytesReviewed": 2391,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "9d09a521ef28bb67f52b9b80727d0eafec51396a35151f84c33e0530eba8f611",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    },
+    {
+      "path": "tools/phase9-verify-runtime.mjs",
+      "originalSHA256": "1129ea8c3f0405ea4a1eb313c6aafa691be86c7dcded3d1beacee0d6f2fa696a",
+      "bytesReviewed": 1421,
+      "kind": "text",
+      "redactions": {},
+      "publishedSHA256": "1129ea8c3f0405ea4a1eb313c6aafa691be86c7dcded3d1beacee0d6f2fa696a",
+      "review": "Read/parsed full text; task QA data and code; transport/session identifiers redacted where present; preserved state, timing, counts, outcomes and failure diagnostics"
+    }
+  ],
+  "additionalPublicationFiles": [
+    "reports/reliability-phase9/PUBLICATION_REVIEW.md",
+    "reports/reliability-phase9/PUBLICATION_REVIEW.json"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "pinnedRevision": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+  "rawSource": "HTTP 404",
+  "githubConnector": "HTTP 451 repository access blocked; reason dmca",
+  "localAvailable": [
+    "input/phase7/EaglerLANPeersScreen.java",
+    "input/phase7/PlatformInput.java",
+    "native-bridge/upstream/",
+    "native-bridge/apply-native-bridge.mjs"
+  ],
+  "missing": [
+    "Minecraft.java complete loop",
+    "SingleplayerServerController26.java",
+    "PlatformRuntime.java TeaVM scheduling",
+    "PlatformWebRTC.java"
+  ],
+  "nativeRebuild": false,
+  "localVerifiedSources": "upstream-sources.json"
+}

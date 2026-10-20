@@ -1,0 +1,3420 @@
+{
+  "label": "path-a-before-acceptance",
+  "before": {
+    "at": 284508.59999999776,
+    "screen": {
+      "screenName": null,
+      "overlayActive": false
+    },
+    "tick": 55033,
+    "sequence": 2822,
+    "nextSequence": 2822,
+    "session": {
+      "kind": "local",
+      "paused": false
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.34664864214227464,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": true,
+    "hidden": false,
+    "pointer": true,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "blur",
+          "at": 127316.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 150936,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 150944.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 150975.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 151071.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 151334.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 151339.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 151438.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 151451.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 151453.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 151858.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 152174.5,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 152177.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 152580,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 156295.19999999925,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 156327.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 156728.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 157050.59999999776,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 157053.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 157455.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 157773.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 157893.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158175.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 158280,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158540.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 158642.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158899.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 158904.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 159009.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 159280.19999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 159288.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 189440.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 195277.5,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 195288.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 195300.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 195397.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 195660.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 195669.79999999702,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 195765.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 195783.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 195786.09999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 196188.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 196501.5,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 196504.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 196909.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 197263.3999999985,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 197285.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 197687.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 198006.59999999776,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 198010.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 198412.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 198726.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 198841.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199120.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 199276.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199533.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 199637.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199894.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 199900.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 200002.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 201796.79999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 201802.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 223291.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 232404.59999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 232430,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 232444.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 232537.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 232798.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 232802.09999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 232903.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 232906.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 232907.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 233310,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 233626.29999999702,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 233629.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 234048.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 234413.79999999702,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 234435.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 234840.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 235158.5,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 235161.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 235564.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 235877.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 235995.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236271,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 236376.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236633.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 236735.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236994.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 237003.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 237104,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 238904.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 238912.29999999702,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 253927.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 255631.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 255650.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 255659.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 255759.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 256042.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 256046,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 256144.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 256148.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 256148.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 256562.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 256884.19999999925,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 256888.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 257289.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 257654.19999999925,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 257675.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 258080.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 258399.79999999702,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 258403.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 258808.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259121.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259232.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259526.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259630.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259889.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259993.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 260250.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 260254.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 260359.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 262159.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 262164.59999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 277877.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 279579.799999997,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 279585.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 279594.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 279694.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 279956.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 279961.299999997,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 280061.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 280065.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 280070.799999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 280475.299999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 280792.09999999776,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 280796.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 281201.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 281554.299999997,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 281575.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 281977.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 282293.299999997,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 282296.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 282699.799999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283011.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283126,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283409.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283513.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283771.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283875.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 284132.799999997,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 284136.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 284244.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 2439.199999999255,
+          "duration": 749
+        },
+        {
+          "start": 3686.89999999851,
+          "duration": 260
+        },
+        {
+          "start": 3953.199999999255,
+          "duration": 378
+        },
+        {
+          "start": 4405.89999999851,
+          "duration": 2071
+        },
+        {
+          "start": 6598.79999999702,
+          "duration": 2905
+        },
+        {
+          "start": 9518.199999999255,
+          "duration": 1108
+        },
+        {
+          "start": 121743.79999999702,
+          "duration": 941
+        },
+        {
+          "start": 122685.79999999702,
+          "duration": 785
+        },
+        {
+          "start": 125412,
+          "duration": 53
+        },
+        {
+          "start": 125649.59999999776,
+          "duration": 265
+        },
+        {
+          "start": 127857,
+          "duration": 130
+        },
+        {
+          "start": 199210.3999999985,
+          "duration": 65
+        },
+        {
+          "start": 229510.79999999702,
+          "duration": 114
+        }
+      ],
+      "frames": 18592
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-2021fdc650\",\"name\":\"player-08ea\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":3,\"ageMs\":156651}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": [
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": [
+          {
+            "id": "D6",
+            "timestamp": 1792532490918.559,
+            "type": "data-channel",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "label": "lan",
+            "messagesReceived": 0,
+            "messagesSent": 0,
+            "protocol": "",
+            "state": "connecting"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532490918.559,
+            "type": "transport",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "dtlsRole": "unknown",
+            "dtlsState": "new",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlling",
+            "iceState": "new",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 0,
+            "packetsSent": 0,
+            "selectedCandidatePairChanges": 0
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "at": 286021.799999997,
+    "screen": {
+      "screenName": null,
+      "overlayActive": false
+    },
+    "tick": 55064,
+    "sequence": 2853,
+    "nextSequence": 2853,
+    "session": {
+      "kind": "local",
+      "paused": false
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.34664864214227464,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": true,
+    "hidden": false,
+    "pointer": true,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "blur",
+          "at": 127316.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 150936,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 150944.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 150975.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 151071.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 151334.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 151339.69999999925,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 151438.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 151451.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 151453.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 151858.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 152174.5,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 152177.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 152580,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 156295.19999999925,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 156327.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 156728.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 157050.59999999776,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 157053.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 157455.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 157773.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 157893.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158175.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 158280,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158540.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 158642.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 158899.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 158904.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 159009.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 159280.19999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 159288.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 189440.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 195277.5,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 195288.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 195300.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 195397.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 195660.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 195669.79999999702,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 195765.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 195783.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 195786.09999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 196188.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 196501.5,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 196504.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 196909.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 197263.3999999985,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 197285.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 197687.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 198006.59999999776,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 198010.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 198412.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 198726.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 198841.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199120.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 199276.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199533.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 199637.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 199894.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 199900.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 200002.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 201796.79999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 201802.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 223291.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 232404.59999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 232430,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 232444.29999999702,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 232537.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 232798.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 232802.09999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 232903.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 232906.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 232907.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 233310,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 233626.29999999702,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 233629.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 234048.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 234413.79999999702,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 234435.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 234840.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 235158.5,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 235161.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 235564.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 235877.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 235995.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236271,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 236376.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236633.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 236735.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 236994.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 237003.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 237104,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 238904.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 238912.29999999702,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 253927.79999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 255631.3999999985,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 255650.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 255659.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 255759.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 256042.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 256046,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 256144.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 256148.19999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 256148.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 256562.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 256884.19999999925,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 256888.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 257289.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 257654.19999999925,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 257675.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 258080.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 258399.79999999702,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 258403.29999999702,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 258808.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259121.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259232.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259526.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259630.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 259889.29999999702,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 259993.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 260250.69999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 260254.8999999985,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 260359.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "blur",
+          "at": 262159.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 262164.59999999776,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 277877.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 0,
+          "y": 396,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "focus",
+          "at": 279579.799999997,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 279585.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 279594.09999999776,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 279694.5,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 279956.09999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 279961.299999997,
+          "trusted": true,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 280061.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 280065.3999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 280070.799999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 280475.299999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 280792.09999999776,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 280796.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 281201.69999999925,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 281554.299999997,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 281575.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 281977.8999999985,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 282293.299999997,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 282296.59999999776,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 282699.799999997,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283011.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283126,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283409.3999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283513.19999999925,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 283771.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 283875.59999999776,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keydown",
+          "at": 284132.799999997,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "pointerlockchange",
+          "at": 284136.69999999925,
+          "trusted": true,
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 284244.8999999985,
+          "trusted": true,
+          "key": "Escape",
+          "locked": true,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 2439.199999999255,
+          "duration": 749
+        },
+        {
+          "start": 3686.89999999851,
+          "duration": 260
+        },
+        {
+          "start": 3953.199999999255,
+          "duration": 378
+        },
+        {
+          "start": 4405.89999999851,
+          "duration": 2071
+        },
+        {
+          "start": 6598.79999999702,
+          "duration": 2905
+        },
+        {
+          "start": 9518.199999999255,
+          "duration": 1108
+        },
+        {
+          "start": 121743.79999999702,
+          "duration": 941
+        },
+        {
+          "start": 122685.79999999702,
+          "duration": 785
+        },
+        {
+          "start": 125412,
+          "duration": 53
+        },
+        {
+          "start": 125649.59999999776,
+          "duration": 265
+        },
+        {
+          "start": 127857,
+          "duration": 130
+        },
+        {
+          "start": 199210.3999999985,
+          "duration": 65
+        },
+        {
+          "start": 229510.79999999702,
+          "duration": 114
+        }
+      ],
+      "frames": 18773
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-2021fdc650\",\"name\":\"player-08ea\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":3,\"ageMs\":158164}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": [
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "closed",
+        "ice": "closed",
+        "stats": []
+      },
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": [
+          {
+            "id": "D6",
+            "timestamp": 1792532492431.798,
+            "type": "data-channel",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "label": "lan",
+            "messagesReceived": 0,
+            "messagesSent": 0,
+            "protocol": "",
+            "state": "connecting"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532492431.798,
+            "type": "transport",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "dtlsRole": "unknown",
+            "dtlsState": "new",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlling",
+            "iceState": "new",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 0,
+            "packetsSent": 0,
+            "selectedCandidatePairChanges": 0
+          }
+        ]
+      }
+    ]
+  },
+  "delta": {
+    "frames": 181,
+    "sequence": 31,
+    "worldTime": 31
+  }
+}

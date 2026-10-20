@@ -1,0 +1,688 @@
+{
+  "label": "path-b2-after-acceptance",
+  "before": {
+    "at": 34240.5,
+    "screen": {
+      "screenName": "EaglerLANPeersScreen",
+      "overlayActive": false
+    },
+    "tick": 52609,
+    "sequence": 165,
+    "nextSequence": 165,
+    "session": {
+      "kind": "local",
+      "paused": true
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": true,
+    "hidden": false,
+    "pointer": false,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "keydown",
+          "at": 25559.300000000745,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 25664.400000002235,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 25676.70000000298,
+          "trusted": true,
+          "dx": 400,
+          "dy": -258,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 25679.60000000149,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 26083,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 26395.400000002235,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 26401.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 26801.70000000298,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 30519.10000000149,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 30519.800000000745,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 30921.800000000745,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 31236.5,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 31245,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 31649.60000000149,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 1384.5,
+          "duration": 1148
+        },
+        {
+          "start": 2636.7000000029802,
+          "duration": 275
+        },
+        {
+          "start": 2918.7000000029802,
+          "duration": 420
+        },
+        {
+          "start": 3416.300000000745,
+          "duration": 2326
+        },
+        {
+          "start": 5846.60000000149,
+          "duration": 58
+        },
+        {
+          "start": 5906.70000000298,
+          "duration": 3121
+        },
+        {
+          "start": 9045,
+          "duration": 1219
+        },
+        {
+          "start": 18101.10000000149,
+          "duration": 1098
+        },
+        {
+          "start": 19202,
+          "duration": 874
+        },
+        {
+          "start": 22191.5,
+          "duration": 60
+        },
+        {
+          "start": 22419.60000000149,
+          "duration": 313
+        }
+      ],
+      "frames": 1038
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-b8a95ed1c9\",\"name\":\"player-b14b\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":5,\"ageMs\":34171}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": [
+      {
+        "connection": "connected",
+        "ice": "connected",
+        "stats": [
+          {
+            "id": "D9",
+            "timestamp": 1792532635114.47,
+            "type": "data-channel",
+            "bytesReceived": 647,
+            "bytesSent": 910,
+            "dataChannelIdentifier": 1,
+            "label": "eagler-lan",
+            "messagesReceived": 16,
+            "messagesSent": 17,
+            "protocol": "",
+            "state": "open"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532635114.47,
+            "type": "transport",
+            "bytesReceived": 4252,
+            "bytesSent": 4690,
+            "dtlsCipher": "TLS_AES_128_GCM_SHA256",
+            "dtlsRole": "client",
+            "dtlsState": "connected",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlled",
+            "iceState": "connected",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 35,
+            "packetsSent": 35,
+            "remoteCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "selectedCandidatePairChanges": 1,
+            "selectedCandidatePairId": "[REDACTED_CANDIDATE_PAIR]",
+            "srtpCipher": "SRTP_AES128_CM_HMAC_SHA1_80",
+            "tlsVersion": "FEFC"
+          }
+        ]
+      },
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": []
+      },
+      {
+        "connection": "connecting",
+        "ice": "checking",
+        "stats": [
+          {
+            "id": "D10",
+            "timestamp": 1792532635114.515,
+            "type": "data-channel",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "label": "lan",
+            "messagesReceived": 0,
+            "messagesSent": 0,
+            "protocol": "",
+            "state": "connecting"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532635114.515,
+            "type": "transport",
+            "bytesReceived": 5852,
+            "bytesSent": 0,
+            "dtlsRole": "server",
+            "dtlsState": "new",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlling",
+            "iceState": "checking",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 8,
+            "packetsSent": 0,
+            "selectedCandidatePairChanges": 0
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "at": 35750.400000002235,
+    "screen": {
+      "screenName": "EaglerLANPeersScreen",
+      "overlayActive": false
+    },
+    "tick": 52639,
+    "sequence": 195,
+    "nextSequence": 195,
+    "session": {
+      "kind": "local",
+      "paused": true
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 20,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeelerYeeg3Ph131",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "focus": true,
+    "hidden": false,
+    "pointer": false,
+    "gui": false,
+    "capture": false,
+    "observation": {
+      "events": [
+        {
+          "type": "keydown",
+          "at": 25559.300000000745,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "keyup",
+          "at": 25664.400000002235,
+          "trusted": true,
+          "key": "Escape",
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 25676.70000000298,
+          "trusted": true,
+          "dx": 400,
+          "dy": -258,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 25679.60000000149,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 26083,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 800,
+          "y": 417,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 26395.400000002235,
+          "trusted": true,
+          "dx": -160,
+          "dy": -107,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 26401.5,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 26801.70000000298,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 640,
+          "y": 310,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 30519.10000000149,
+          "trusted": true,
+          "dx": 234,
+          "dy": 396,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 30519.800000000745,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 30921.800000000745,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 874,
+          "y": 706,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousemove",
+          "at": 31236.5,
+          "trusted": true,
+          "dx": 72,
+          "dy": -439,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mousedown",
+          "at": 31245,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        },
+        {
+          "type": "mouseup",
+          "at": 31649.60000000149,
+          "trusted": true,
+          "dx": 0,
+          "dy": 0,
+          "x": 946,
+          "y": 267,
+          "locked": false,
+          "yaw": 0,
+          "pitch": 20
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 1384.5,
+          "duration": 1148
+        },
+        {
+          "start": 2636.7000000029802,
+          "duration": 275
+        },
+        {
+          "start": 2918.7000000029802,
+          "duration": 420
+        },
+        {
+          "start": 3416.300000000745,
+          "duration": 2326
+        },
+        {
+          "start": 5846.60000000149,
+          "duration": 58
+        },
+        {
+          "start": 5906.70000000298,
+          "duration": 3121
+        },
+        {
+          "start": 9045,
+          "duration": 1219
+        },
+        {
+          "start": 18101.10000000149,
+          "duration": 1098
+        },
+        {
+          "start": 19202,
+          "duration": 874
+        },
+        {
+          "start": 22191.5,
+          "duration": 60
+        },
+        {
+          "start": 22419.60000000149,
+          "duration": 313
+        }
+      ],
+      "frames": 1220
+    },
+    "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"peer-b8a95ed1c9\",\"name\":\"player-b14b\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"peer-b153bd48e0\",\"name\":\"player-cc0f\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":5,\"ageMs\":35681}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}",
+    "rtc": [
+      {
+        "connection": "connected",
+        "ice": "connected",
+        "stats": [
+          {
+            "id": "D9",
+            "timestamp": 1792532636624.38,
+            "type": "data-channel",
+            "bytesReceived": 647,
+            "bytesSent": 910,
+            "dataChannelIdentifier": 1,
+            "label": "eagler-lan",
+            "messagesReceived": 16,
+            "messagesSent": 17,
+            "protocol": "",
+            "state": "open"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532636624.38,
+            "type": "transport",
+            "bytesReceived": 4252,
+            "bytesSent": 4690,
+            "dtlsCipher": "TLS_AES_128_GCM_SHA256",
+            "dtlsRole": "client",
+            "dtlsState": "connected",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlled",
+            "iceState": "connected",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 35,
+            "packetsSent": 35,
+            "remoteCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "selectedCandidatePairChanges": 1,
+            "selectedCandidatePairId": "[REDACTED_CANDIDATE_PAIR]",
+            "srtpCipher": "SRTP_AES128_CM_HMAC_SHA1_80",
+            "tlsVersion": "FEFC"
+          }
+        ]
+      },
+      {
+        "connection": "new",
+        "ice": "new",
+        "stats": []
+      },
+      {
+        "connection": "connecting",
+        "ice": "checking",
+        "stats": [
+          {
+            "id": "D10",
+            "timestamp": 1792532636624.421,
+            "type": "data-channel",
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "label": "lan",
+            "messagesReceived": 0,
+            "messagesSent": 0,
+            "protocol": "",
+            "state": "connecting"
+          },
+          {
+            "id": "T01",
+            "timestamp": 1792532636624.421,
+            "type": "transport",
+            "bytesReceived": 8778,
+            "bytesSent": 0,
+            "dtlsRole": "server",
+            "dtlsState": "new",
+            "iceLocalUsernameFragment": "[REDACTED_ICE_USERNAME]",
+            "iceRole": "controlling",
+            "iceState": "checking",
+            "localCertificateId": "[REDACTED_CERTIFICATE_IDENTIFIER]",
+            "packetsReceived": 12,
+            "packetsSent": 0,
+            "selectedCandidatePairChanges": 0
+          }
+        ]
+      }
+    ]
+  },
+  "delta": {
+    "frames": 182,
+    "sequence": 30,
+    "worldTime": 30
+  }
+}

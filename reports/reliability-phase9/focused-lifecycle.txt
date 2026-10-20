@@ -1,0 +1,12 @@
+✔ two remote reconnects restore intent and settings with fresh data and stable listeners (61.906916ms)
+✔ explicit disable while disconnected cancels persisted restoration (10.508292ms)
+✔ persisted local combat intent cannot activate after a remote reconnect (7.757834ms)
+✔ unknown native identity cannot inherit a stale legacy singleplayer identity (0.1585ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 368.822417
