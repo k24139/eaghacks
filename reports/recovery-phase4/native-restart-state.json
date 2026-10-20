@@ -1,0 +1,37 @@
+{
+  "player": {
+    "x": 0.5,
+    "y": 150,
+    "z": 0.5,
+    "yaw": 0,
+    "pitch": 20,
+    "health": 20,
+    "maxHealth": 20,
+    "hunger": 20,
+    "onGround": true,
+    "name": "Phase4Bench",
+    "velocity": {
+      "x": 0,
+      "y": -0.0784000015258789,
+      "z": 0
+    },
+    "effects": [],
+    "sprinting": false,
+    "sneaking": false,
+    "hurtTime": 0,
+    "fallDistance": 0,
+    "moveForward": 0,
+    "moveStrafe": 0,
+    "dead": false,
+    "usingItem": false
+  },
+  "world": {
+    "time": 6623,
+    "dimension": "minecraft:overworld",
+    "biome": "minecraft:plains"
+  },
+  "session": {
+    "kind": "local",
+    "paused": false
+  }
+}

@@ -1,0 +1,332 @@
+[
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/blocked-screen.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 194325,
+        "sha256": "4f5a79ec6df0f6069b1b7900287d83bad954455e154918a4215524d0663bdaea",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-after-profile-0.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 253695,
+        "sha256": "14d149fbbd44731455f25758ad80f639ea9b3f4679e045f020f9890c55594415",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-2.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 239900,
+        "sha256": "a64e46ed62d55d51b73e6746f472f13df94fb385de84fb9db9ae6e6c7b2f3f92",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-3.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 232068,
+        "sha256": "bd67ce6eda1b182c44e48f37e4a262762f521d50446e113de247be5c6dbb04de",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-4.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 204501,
+        "sha256": "677c0404311e39298fb949a3e173e53d6572a2582ea96fc5175621f05fd8ee66",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-5.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 199899,
+        "sha256": "b9e92cd177d6224f760f98b7d81d863591a2e4c23cc5a7f23e19cdcfb0eef470",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-6.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 197988,
+        "sha256": "b61ce8bf2da55b74b51bda125964e93c84ef18d782d5212294efce1815665ea0",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-7.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 195678,
+        "sha256": "214a7af6ed386f9ab6ada080e2ea613b4b8f19c0d890ad639ed8a93f189911ef",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-8.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 198680,
+        "sha256": "88464fdd6659575c99a5c05734ddf094b61d33970f936335e88abc72a0c9e799",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase2/attempt-2/stock-world-selection-9.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 198162,
+        "sha256": "5bdeaf6fd301173faac1af1a0fd555851eddf4615543860db1a7fd57d8db4188",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/backup-screen.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 210678,
+        "sha256": "a6928d31c27721246ad2bdd620eef1f86971b13eb93c8d5fd5c1a41fb2b0f0f2",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/create-game-settings.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 194612,
+        "sha256": "1cfbe7b6d7776e6ec2cb7dc31ddb089ea2f96bff22db2747c67908eeff06d9f6",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/create-world-settings.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 188259,
+        "sha256": "ce35fbb580954cd5b176a1a528d1e744d5f1437aa9678d9b17bcfd114555ae2f",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/current.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 169521,
+        "sha256": "95627e8346a404bcdbc827631667943cbd0825989b91b26a6010a84211b295b6",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/native-video-middle.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 168927,
+        "sha256": "93ef93ee0ec4f9fed340bb191320dfda13b408339b6ecfc7a9aa30d11bc4d2d8",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/native-video-top.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 171218,
+        "sha256": "7eb7f10f2fdb108b7b8f9fe540f8c4272358a8258faaeb26dd808b7f27a79be9",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/native-world-selector.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 185820,
+        "sha256": "ef650c7f718c055630c2843cfc7096671dc6e46569f25b53be55f915a71a6083",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-saved-world-selector-2.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 165158,
+        "sha256": "7b6b4af1009983aa8959a228701aee04c4d50377c680595186a006718a1856c7",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector-2/stock-after-profile-0.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 255528,
+        "sha256": "6c20750706691d5bd365741cd146e54ba7a4621b4f5c34e6d41582dfa8f59a74",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector-2/stock-world-row-selected-0.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 186186,
+        "sha256": "e62960f7cbbc84cc7b77e757e7d04b06304bd745476e29edf60d61f1fae7c5c7",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector-2/stock-world-selection-2.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 218520,
+        "sha256": "bfb08253ec0dc13ccdf4a152c419b4f2a68ccb1efe61388e49cb02817594325b",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-after-profile-0.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 253545,
+        "sha256": "4ae4d32a98f762805012b64cb6c8fc2f766b8a91714de71e09c1fbbacfad4150",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-2.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 218535,
+        "sha256": "a3ee5ab646788d1242ccbbff12f214869ac0b7926b69b1c4d1bafd45a0d02f5b",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-3.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 208152,
+        "sha256": "b70c5e378a1a6d19cebf2f81c043773bb51e0bdfbe7a6972b521cf4e22792798",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-4.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 182814,
+        "sha256": "18ddb809a158f9e3a203ce1ea80fa121467fd8faaa2df5b80400e91c3eb72987",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-5.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 175046,
+        "sha256": "618e14f78e5731d0fdb847ee7bc05b83f35249482723b8976e8506976945bdcd",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-6.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 173916,
+        "sha256": "1c053efd68a3211c9413aa0a423e95511cfde17eea04157cd4408871ac3b5944",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-7.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 172980,
+        "sha256": "93c7ea3f36ebe5a2c23ee4c2af27347105bd5c1b684e4812fe2cd605ecba7a77",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-8.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 174225,
+        "sha256": "63fa26230b51da6753e10565e12b8ff660023332e1dee955386836a1cd38c188",
+        "pngSignatureValid": false
+      }
+    ]
+  },
+  {
+    "path": "diagnostics/performance-phase3/stock-selector/stock-world-selection-9.png",
+    "versions": [
+      {
+        "commit": "299fcc9bad3dcf591f67c483416670dc1a486414",
+        "bytes": 174291,
+        "sha256": "cfced3477b9826e57bebcbcea6c9d00cfa07bdd2179324531aea9a0c129cd629",
+        "pngSignatureValid": false
+      }
+    ]
+  }
+]

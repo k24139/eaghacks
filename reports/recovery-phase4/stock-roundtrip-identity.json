@@ -1,0 +1,67 @@
+{
+  "bytes": 576649,
+  "sha256": "026bfb4c9fe4c10148d57644379b817e98d2d5c0b55b120fca5cf69d04ddae38",
+  "files": 1267,
+  "overworldChunks": 1225,
+  "name": "Eaghacks Benchmark 2026",
+  "seed": "20261019",
+  "generator": "minecraft:flat",
+  "gameMode": "creative",
+  "difficulty": "peaceful",
+  "structures": false,
+  "bonusChest": false,
+  "commands": true,
+  "platform": {
+    "min": [
+      -8,
+      149,
+      -8
+    ],
+    "max": [
+      8,
+      149,
+      8
+    ],
+    "stoneBlocks": 289
+  },
+  "superflatLayers": [
+    [
+      -64,
+      "minecraft:bedrock"
+    ],
+    [
+      -63,
+      "minecraft:dirt"
+    ],
+    [
+      -62,
+      "minecraft:dirt"
+    ],
+    [
+      -61,
+      "minecraft:grass_block"
+    ],
+    [
+      -60,
+      "minecraft:air"
+    ]
+  ],
+  "player": {
+    "position": [
+      0.5,
+      150,
+      0.5
+    ],
+    "rotation": [
+      0,
+      20
+    ]
+  },
+  "worldUUID": [
+    1313754064,
+    421607657,
+    -1662064746,
+    -317999574
+  ],
+  "worldGenerationSHA256": "737a514fd7255fe80ef72acc350c313387b4ada7c51f28a0d1a8bd448823ad5a"
+}

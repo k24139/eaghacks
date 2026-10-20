@@ -1,0 +1,1651 @@
+{
+  "original": {
+    "bytes": 570090,
+    "sha256": "503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784"
+  },
+  "nativePristineExport": {
+    "bytes": 570090,
+    "sha256": "018588934c1b5df3e60468bf958578c38c096852918d2f5ebd156175508af87e",
+    "files": 1256,
+    "allFileContentsIdentical": true,
+    "headerByteDifferences": [
+      106,
+      107,
+      117,
+      120,
+      121,
+      124,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "afterGameplayExport": {
+    "bytes": 573791,
+    "sha256": "b7bb72d400c012367e9324a801b2278b1cb535c5139702c57168299aede25f24",
+    "files": 1261,
+    "added": [
+      "minecraft_overworld/entities/1cfddc1cfde0",
+      "minecraft_overworld/entities/1cfdde1cfde0",
+      "minecraft_overworld/entities/1cfde21cfddf",
+      "minecraft_overworld/entities/1cfde31cfdde",
+      "minecraft_overworld/entities/1cfde31cfddf"
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "name": "data/minecraft/weather.dat",
+        "fields": [
+          "data"
+        ]
+      },
+      {
+        "name": "data/minecraft/world_clocks.dat",
+        "fields": [
+          "data"
+        ]
+      },
+      {
+        "name": "level.dat",
+        "fields": [
+          "Data"
+        ]
+      },
+      {
+        "name": "level.dat_old",
+        "fields": [
+          "Data"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfddb",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde5",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdd91cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfddb",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde5",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdda1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfddc",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde4",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddb1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddc1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddd1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfddf",
+        "fields": [
+          "sections",
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfdde1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfddf1cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde01cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde11cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfddf",
+        "fields": [
+          "sections",
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde21cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde31cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde41cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfddb",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfddc",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfddd",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfdde",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfddf",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde0",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde1",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde2",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde3",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde4",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde5",
+        "fields": [
+          "InhabitedTime",
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde51cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfddb",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde5",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde61cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfdd9",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfdda",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfddb",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfddc",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfddd",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfdde",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfddf",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde0",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde1",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde2",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde3",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde4",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde5",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde6",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/chunk/1cfde71cfde7",
+        "fields": [
+          "LastUpdate"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/data/minecraft/raids.dat",
+        "fields": [
+          "data"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfddc1cfddf",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfddc1cfde1",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfddd1cfdde",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfddd1cfde1",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfddd1cfde2",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_overworld/entities/1cfde51cfde1",
+        "fields": [
+          "Entities"
+        ]
+      },
+      {
+        "name": "minecraft_the_end/data/minecraft/raids.dat",
+        "fields": [
+          "data"
+        ]
+      },
+      {
+        "name": "minecraft_the_nether/data/minecraft/raids.dat",
+        "fields": [
+          "data"
+        ]
+      },
+      {
+        "name": "players/data/394af3c2-1b54-3de8-8999-956836b4cbd4.dat",
+        "fields": [
+          "foodSaturationLevel",
+          "warden_spawn_tracker",
+          "XpSeed"
+        ]
+      },
+      {
+        "name": "players/data/394af3c2-1b54-3de8-8999-956836b4cbd4.dat_old",
+        "fields": [
+          "foodSaturationLevel",
+          "warden_spawn_tracker",
+          "XpSeed"
+        ]
+      },
+      {
+        "name": "players/stats/394af3c2-1b54-3de8-8999-956836b4cbd4.json",
+        "fields": []
+      }
+    ],
+    "chunkChangedFields": [
+      "LastUpdate",
+      "InhabitedTime",
+      "sections"
+    ],
+    "identity": {
+      "bytes": 573791,
+      "sha256": "b7bb72d400c012367e9324a801b2278b1cb535c5139702c57168299aede25f24",
+      "files": 1261,
+      "overworldChunks": 1225,
+      "name": "Eaghacks Benchmark 2026",
+      "seed": "20261019",
+      "generator": "minecraft:flat",
+      "gameMode": "creative",
+      "difficulty": "peaceful",
+      "structures": false,
+      "bonusChest": false,
+      "commands": true,
+      "platform": {
+        "min": [
+          -8,
+          149,
+          -8
+        ],
+        "max": [
+          8,
+          149,
+          8
+        ],
+        "stoneBlocks": 289
+      },
+      "superflatLayers": [
+        [
+          -64,
+          "minecraft:bedrock"
+        ],
+        [
+          -63,
+          "minecraft:dirt"
+        ],
+        [
+          -62,
+          "minecraft:dirt"
+        ],
+        [
+          -61,
+          "minecraft:grass_block"
+        ],
+        [
+          -60,
+          "minecraft:air"
+        ]
+      ],
+      "player": {
+        "position": [
+          0.5,
+          150,
+          0.5
+        ],
+        "rotation": [
+          0,
+          20
+        ]
+      },
+      "worldUUID": [
+        961213378,
+        458505704,
+        -1986423448,
+        917818324
+      ],
+      "worldGenerationSHA256": "737a514fd7255fe80ef72acc350c313387b4ada7c51f28a0d1a8bd448823ad5a"
+    },
+    "changedSectionFieldCounts": {
+      "SkyLight": 2,
+      "Y": 2
+    }
+  }
+}

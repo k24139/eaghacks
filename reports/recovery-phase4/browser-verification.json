@@ -1,0 +1,99 @@
+{
+  "origin": "http://127.0.0.1:3006",
+  "browser": "Google Chrome 155.0.8059.80",
+  "platform": "macOS 26.4 / arm64 / Apple M4 / 16 GB",
+  "automation": "Local Playwright, headless Chrome, viewport 1280x800; one browser at a time",
+  "epkBytes": 570090,
+  "epkSHA256": "503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784",
+  "native": {
+    "freshProfile": true,
+    "importPassed": true,
+    "gameplayLoaded": true,
+    "fullBrowserRestartPersistence": true,
+    "position": [
+      0.5,
+      150,
+      0.5
+    ],
+    "yaw": 0,
+    "pitch": 20,
+    "evidence": [
+      "native-import-state.json",
+      "native-restart-state.json"
+    ]
+  },
+  "stock": {
+    "freshProfile": true,
+    "importPassed": true,
+    "gameplayLoaded": true,
+    "fullBrowserRestartPersistence": true,
+    "nativeBridge": "undefined",
+    "positionVisuallyConfirmed": [
+      0.5,
+      150,
+      0.5
+    ],
+    "roundtripStaticIdentityPassed": true,
+    "evidence": [
+      "stock-import-state.json",
+      "stock-restart-state.json",
+      "stock-roundtrip-identity.json"
+    ]
+  },
+  "uncaughtPageErrorsObserved": [],
+  "limitations": [
+    "Historical 30 corrupted PNGs unrecovered",
+    "Headless automated verification; no desktop manual input/audio QA",
+    "No performance, multiplayer or native compilation work"
+  ],
+  "screenshots": [
+    {
+      "path": "diagnostics/recovery-phase4/restored-world.png",
+      "bytes": 192408,
+      "sha256": "e5c8d4d18fcb9d6ef84446fad180821556dc6cb777040927955d59be6b4e5753",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/fresh-empty-selector.png",
+      "bytes": 216767,
+      "sha256": "276f4a82138332db31212a0fd7790e013f5dcd61845f401cb1547fbfd30647f2",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/fresh-import-completed.png",
+      "bytes": 189928,
+      "sha256": "5183c920b349988bfa2db3a82aea7e6e5f4445957a7d87399ab46777d69101cc",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/fresh-native-world.png",
+      "bytes": 215197,
+      "sha256": "f3615eba32851db2183c50297ee0b40d980725d4e0ad2cc566f712d68fc52edd",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/native-restart-world.png",
+      "bytes": 208256,
+      "sha256": "d1b5d4b83f4856f92a4e1f1c89c45d859dc9f54e2baf4a13895ad74c95bb4a93",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/stock-imported-selector.png",
+      "bytes": 186252,
+      "sha256": "3fedeafb082b3a82a8893bbd5c20fb81dbd078554631ad9878524b85f604f6f7",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/stock-world-debug.png",
+      "bytes": 191962,
+      "sha256": "42a6938927bbd95772d4ea2aa6ac2ecd0e01f1c39b0c22b9dd6e8376ffa4c205",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    },
+    {
+      "path": "diagnostics/recovery-phase4/stock-restart-world.png",
+      "bytes": 211421,
+      "sha256": "becc46b3c316ac23c56eb33b259f2fe13f4d2a8181441bf2b24df506ba133f7a",
+      "provenance": "New local Phase 4 screenshot; not recovered historical evidence"
+    }
+  ]
+}

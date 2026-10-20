@@ -132,3 +132,69 @@ A final remote-tree verification found that the published large binary blobs wer
 A browser profile archive with SHA-256 `2b2254d55a32f124269a1ebd7610f34bf3e0a0dfb91dd3cc59475f796a8004c3` was recovered from the persistent artifact backup and its hash verified. It contains the saved world in the browser's IndexedDB. An automatic publication review rejected uploading that browser profile archive to this repository because it contains browser session/storage material and that destination was not explicitly authorized. Do not work around that rejection. The profile archive remains available to the user separately. Before Phase 4, recover the EPK from that profile using the verified client export workflow, verify the EPK SHA-256, then replace the invalid repository fixture and verify the complete Git tree. No performance data was collected; Phase 3 comparison remains blocked and unmatched.
 
 The active checkout was reinitialized at `46cd7cdf44067d039e3fccf555aa88b285648e68` and does not contain the previously staged Phase 3 files. The branch currently points at `299fcc9bad3dcf591f67c483416670dc1a486414`. This correction records the remote-integrity limitation; it does not repair the corrupted blobs. Keep `main` unchanged.
+
+
+## Phase 4: local world recovery completed (October 19, 2026)
+
+Started from `2854912b1cfbd25f5938b49a9887498d243d1574` on
+`meteor-client-integration` in an isolated worktree. The original `main` checkout
+and all its pre-existing local changes were preserved; no reset or force push.
+
+The four user-recovered inputs in `/Users/aaron/Documents/eaghacks-recovery/`
+passed full SHA-256 verification, including native HTML, stock HTML (provided as
+`Eaglercraft-26.2-u1-Meteor.html`), receipt, and profile archive. The native static
+verifier also passed all six payload pins, WASM, markers, and source digest.
+Original inputs were not changed. Profiles and IndexedDB data remain local.
+
+Local Chrome 155.0.8059.80 on macOS 26.4 / Apple M4 / 16 GB loaded the archived
+world at `http://127.0.0.1:3006`. The observed player was at `(0.5,150,0.5)`,
+yaw 0, pitch 20, on the stone platform. Export through the actual native backup
+menu after gameplay produced 573,791 bytes, hash
+`b7bb72d400c012367e9324a801b2278b1cb535c5139702c57168299aede25f24`.
+This export includes normal saved-session changes and is not the original bytes.
+
+A second untouched working copy of the archive exported 570,090 bytes and
+1,256 files, hash
+`018588934c1b5df3e60468bf958578c38c096852918d2f5ebd156175508af87e`.
+All exported file contents match the original recovered fixture; only ten bytes
+of exporter date/timestamp metadata differ. The corrupted repository blob still
+retained its original 179-byte header after its decoded tool-output prefix.
+Combining that header with the untouched native export reproduced **exactly**
+570,090 bytes, SHA-256
+`503a38bc3200d84c5335c710044ab772a7b7f636aa59b01c4de84c7b46cc0784`.
+`tools/recover-epk-header.mjs` reproduces this operation and refuses to write
+unless the full expected hash and all EPK file CRCs match. Only this validated
+original-hash reconstruction replaces `tests/fixtures/performance/benchmark-world.epk`.
+
+Independent clean native and stock profiles imported copies of that exact EPK.
+Both loaded gameplay, showed the platform, and retained the world across full
+Chrome shutdown/restart. Native snapshots and stock debug screenshots confirm
+position. A stock re-export also passes the static world identity checks.
+NBT validation confirms seed 20261019, flat generation, Creative/Peaceful,
+commands on, structures/bonus chest off, expected ground layers, saved view,
+and all 289 stone platform blocks from (-8,149,-8) to (8,149,8).
+
+The previous fresh-profile failure is superseded by these successful tests.
+Navigation waits for the actual profile screen with the resource overlay gone,
+sets the username, then clicks Done. Empty profiles show the import selector
+(`EaglerCreateWorldSelectionScreen`), not the populated-world selector. Complete
+the import-name Continue step, select the resulting row, then click Play.
+
+Historical screenshot recovery remains incomplete: 30 PNG blobs contain decoded
+truncated tool output and fail PNG validation. Removing the warning prefix does
+not restore missing data. The provided directory and source ZIP contain no
+original screenshots; local history only has the damaged versions. Those files
+remain unchanged and explicitly INVALID in the before/after binary audits.
+New screenshots under `diagnostics/recovery-phase4/` are new evidence only.
+
+Validation: `npm test` 148/148; `npm run build` both bundles passed;
+`node tools/smoke.mjs` SMOKE OK; focused recovery tests 2/2; native static
+artifact verification passed; native and stock clean-profile import/gameplay/
+restart checks passed. No performance benchmark, multiplayer test, native
+recompilation, or module-coverage upgrade was performed.
+
+See `reports/recovery-phase4/RECOVERY_REPORT.md`, `world-identity.json`,
+`export-comparison.json`, `browser-verification.json`, and binary audit manifests.
+The EPK and new screenshot binaries are published using local Git push and
+checked by an independent fetch; publication receipts are retained locally in
+`input/phase4/`. The archived profile and its IndexedDB were not uploaded.

@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "Eaglercraft-26.2-u1-Meteor-Native.html",
+    "bytes": 80975660,
+    "sha256": "eee3f8e9d93dc74d828655500f4d917ec8328ae5dde63e50c707dda67b11314c"
+  },
+  {
+    "filename": "Eaglercraft-26.2-u1-Meteor.html",
+    "bytes": 75802950,
+    "sha256": "1338d67feae9818b8e9873b58a3225d1f4fdce29f147711666ccf133d99a13a8"
+  },
+  {
+    "filename": "eaghacks-phase3-browser-profile.tar.gz",
+    "bytes": 709093,
+    "sha256": "2b2254d55a32f124269a1ebd7610f34bf3e0a0dfb91dd3cc59475f796a8004c3"
+  },
+  {
+    "filename": "native-build-receipt.json",
+    "bytes": 1860,
+    "sha256": "11c62c6c0f3575b73238ffb5a923e7ccca2013584c52fbe90e8cfeb70bca1c28"
+  }
+]
