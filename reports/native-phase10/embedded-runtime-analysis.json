@@ -1,0 +1,22 @@
+{
+  "artifactSHA256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+  "embeddedRuntimeVariants": [
+    {
+      "localPath": "input/phase10/embedded-teavm-0.js",
+      "bytes": 13984,
+      "sha256": "1e80092312d7bfe6efa74f8bb372d5521bc0549dcfbf384f25a145261a80d124",
+      "matchesPriorLoaderLiteral": true,
+      "timerOffer": true,
+      "timerKill": true,
+      "javaSource": false,
+      "redistributionAuthorized": false
+    }
+  ],
+  "sourceJavaRecovered": false,
+  "notes": [
+    "Runtime recovered as a literal from exact verified standalone, not fetched externally",
+    "Timer offer schedules callback at max(0,deadline-Date.now()); kill clears timeout",
+    "This JS timer glue does not recover PlatformRuntime Java or identify a lost native continuation",
+    "Recovered code is ignored and excluded from publication"
+  ]
+}

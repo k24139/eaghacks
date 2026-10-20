@@ -1,0 +1,6 @@
+{
+  "phase10TaskChromeMainProcesses": 0,
+  "loopbackServerSIGTERMSent": true,
+  "unrelatedChromeTerminated": false,
+  "finalMemoryPressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 65%\n"
+}

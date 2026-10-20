@@ -1,0 +1,12 @@
+{
+  "startingCommit": "e60ec2ae87622b6032f8756f9ece57fe803b1a53",
+  "publishedCommit": "0969e356b6e9f7e3e31d5670a9ae399c976651cf",
+  "fetchedCommit": "0969e356b6e9f7e3e31d5670a9ae399c976651cf",
+  "tree": "d871897b24fc338b5ef98ed5523316eee0ce1f54",
+  "fetchedTree": "d871897b24fc338b5ef98ed5523316eee0ce1f54",
+  "branch": "meteor-client-integration",
+  "verifiedFiles": 573,
+  "allPublishedBytesMatch": true,
+  "originalMainAndStatusUnchanged": true,
+  "cleanIntegrationWorktree": true
+}

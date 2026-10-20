@@ -1,0 +1,99 @@
+{
+  "scope": "All Phase10 report/validation files and PROGRESS.md delta; full file bytes reviewed, structured files parsed",
+  "sourceArtifactsRedistributed": false,
+  "browserStorageProfilesHTMLIncluded": false,
+  "credentialsInvitationsCookiesFound": false,
+  "personalFilenameInventoryPublished": false,
+  "files": [
+    {
+      "path": "reports/native-phase10/LOBBY_FINDINGS.md",
+      "bytes": 8542,
+      "sha256": "1d62b243901f6b90d0fd5db2bc413abe236e017d8a58b2a50d8a0cb827fdf2ff"
+    },
+    {
+      "path": "reports/native-phase10/PHASE10_REPORT.md",
+      "bytes": 14630,
+      "sha256": "ac690702962abf34bf72598a9bb6d824e9173325ef451b874ab1537392a45738"
+    },
+    {
+      "path": "reports/native-phase10/bridge-publication-control.json",
+      "bytes": 877,
+      "sha256": "c029d9d2df9b1f5bce1f422950129b72511b1ccad65f4b202cb1366ce08a888d"
+    },
+    {
+      "path": "reports/native-phase10/browser.txt",
+      "bytes": 1143,
+      "sha256": "0372a5068cd5fe61076817b88e76cef4804f8b5ed2c8a063b4e0094d1954276d"
+    },
+    {
+      "path": "reports/native-phase10/build.txt",
+      "bytes": 291,
+      "sha256": "67d15ba2a40fad46cee1bcae30d1a12ec7f1b35eae71651ab157e8a0f93b341b"
+    },
+    {
+      "path": "reports/native-phase10/cleanup.json",
+      "bytes": 258,
+      "sha256": "7a1a3a00d5f4aaf566fc0f8b3320e4993816abc31818171ca9fe97bddd6fe131"
+    },
+    {
+      "path": "reports/native-phase10/client-cleanup.json",
+      "bytes": 104,
+      "sha256": "77198ff770a4c24fc91581ac7e69388e1408131e3980a54eea53b89f55aabde2"
+    },
+    {
+      "path": "reports/native-phase10/embedded-runtime-analysis.json",
+      "bytes": 857,
+      "sha256": "98ac29eac4d3633c42990c8cb466ffa17e99fd84f7a5bee34c008675eb224014"
+    },
+    {
+      "path": "reports/native-phase10/initial-state.json",
+      "bytes": 17067,
+      "sha256": "1bbdb731276c763ed204319c96be0a58e6824b169bdf279dca609323d3159da3"
+    },
+    {
+      "path": "reports/native-phase10/manual-preparation.json",
+      "bytes": 934,
+      "sha256": "62ff149f5be4a77beca5f67cebe47f55b133b4e7ef9865ed24d18989001535bd"
+    },
+    {
+      "path": "reports/native-phase10/phase9-publication.json",
+      "bytes": 487,
+      "sha256": "bbdcbd57746a44be9bed74b7abc142bc460a2204df0c47eb3ad56b879c7d237b"
+    },
+    {
+      "path": "reports/native-phase10/runtime.json",
+      "bytes": 2351,
+      "sha256": "7db4fcc5206ae08857a2ceb9fb256e83d519a8b28e13fe2eb6cff257a7dd5278"
+    },
+    {
+      "path": "reports/native-phase10/smoke.txt",
+      "bytes": 368,
+      "sha256": "712e3e6395277dc6535dacc89376a81c6ef52afd2c4985b48ff7f17f34b96acb"
+    },
+    {
+      "path": "reports/native-phase10/source-provenance.json",
+      "bytes": 2553,
+      "sha256": "f8e8c15595eb275fe6288ef6e93c65ced390dc8278302a29e8bb88e47dcb95eb"
+    },
+    {
+      "path": "reports/native-phase10/source-search.json",
+      "bytes": 6906,
+      "sha256": "6b8d297fe9b773d678e069713d36401daf43c9b0a2630f8a87f316de881ba856"
+    },
+    {
+      "path": "reports/native-phase10/tests.txt",
+      "bytes": 21246,
+      "sha256": "7bbf62b6f0c2370b1d0c5a761ae2c05e899df03b7fb6c761dc039b5251dce130"
+    },
+    {
+      "path": "reports/native-phase10/verification.json",
+      "bytes": 2448,
+      "sha256": "6f7f1d97efd0933e35b4411f53647f81f85056e3c2447de534f8fc9a594c67df"
+    },
+    {
+      "path": "reports/native-phase10/wasm-metadata.json",
+      "bytes": 1548,
+      "sha256": "6ee3905b51a354add8c9cb085e207af414bc25d9257984d09e1a34a295371720"
+    }
+  ]
+}

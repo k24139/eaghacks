@@ -445,3 +445,53 @@ local only. The sanitized publication has a new identity directly after the
 published Phase 8 baseline, with no d85a48d ancestor. See
 [publication review](reports/reliability-phase9/PUBLICATION_REVIEW.md).
 Runtime/test results and all 14 screenshot byte hashes are unchanged.
+
+## Phase 10: native-source recovery and publication diagnostics
+
+Started at independently verified sanitized Phase 9 publication
+`0969e356b6e9f7e3e31d5670a9ae399c976651cf`. Phase 9's original d85a48d stays local
+only; private invitations/transport identifiers were sanitized in a new direct
+child of Phase 8 before publication. Fresh fetch matched tree and all 573 files.
+Read [Phase 10 report](reports/native-phase10/PHASE10_REPORT.md),
+[source provenance](reports/native-phase10/source-provenance.json),
+[search scope and missing blob IDs](reports/native-phase10/source-search.json), and
+[lobby findings](reports/native-phase10/LOBBY_FINDINGS.md).
+
+No missing core native source was recovered. Two identical CRC-valid local source
+ZIPs (309,537 bytes, SHA-256 0517476a238c1e3fc30fed66a6699635baed5176b6d5f2d46c163743c6e31e66)
+contain only three Java bridge overlays; recovered ignored copies exactly match
+current files. These are distinct from the historical checkpoint archive.
+Four existing pinned screen/input/discovery/server sources were reverified.
+Twelve local Git repositories lacked the ten expected native source blobs.
+Downloads/Desktop remain unreadable under macOS permissions; Gradle/Maven caches
+and historical Linux build directories are absent. No blocked source was fetched
+or access control bypassed; recovered code is not newly redistributed.
+
+The investigation separates bridge beginFrame started sequence, pending state and
+endFrame completed sequence. Snapshot session.paused means menu/overlay presence,
+not proven server pause. Discovery subscriber exceptions may be caught silently;
+no pageerror is insufficient to exclude them. The event queue's poll API drains
+it and must not be used just for observation. Exact HTML timer glue was recovered
+locally and hashed; no Java mapping/debug section was found in the unchanged WASM.
+A healthy single-client control advanced started/completed/world by 30 and browser
+frames by 180. Historical Phase 8 started/pending state was not captured, so its
+stall remains unresolved and no exact Java method/fix is established.
+
+Exact HTML/source/WASM/six payloads are unchanged. Validation: 162 unit tests,
+20/20 browser harness, build and smoke passed; native world exit/double shutdown
+left zero owned state/listeners/errors. No runtime implementation changed, so
+prior multiplayer regressions remain historical and were not unnecessarily
+repeated. All initially hashed Phase 6–9 report bytes remain unchanged; corrupt
+historical PNGs remain invalid/unused. Dedicated manual session was prepared and
+closed; mouse/recenter/physical lobby/audio listening remain pending (user
+unavailable). Memory samples 58% free during preparation and 65% at cleanup.
+No task Chrome/server remains; no unrelated Chrome terminated.
+
+Phase 10 publishes only docs, safe validation logs and structured observations.
+Full receipt/final containing SHA follow the normal push and independent fetch.
+The precise blocker is missing lawful pinned Minecraft/server/TeaVM/WebRTC and
+LAN callback source plus symbols. Next obtain those sources, verify expected
+blob IDs, and separately authorize any instrumented native build. Plan one narrow
+capability with ABI/gating/bounds/lifecycle and actual-client regressions only
+after reliability tracing. No native hooks, Java build, FULL optimization,
+matched benchmark, unsupported-module implementation or packaging ran. Stop here.

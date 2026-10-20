@@ -1,0 +1,89 @@
+{
+  "wasmBytes": 93857501,
+  "wasmSHA256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d",
+  "sections": [
+    {
+      "id": 1,
+      "size": 11007041,
+      "offset": 13
+    },
+    {
+      "id": 2,
+      "size": 2814,
+      "offset": 11007057
+    },
+    {
+      "id": 3,
+      "size": 855976,
+      "offset": 11009875
+    },
+    {
+      "id": 5,
+      "size": 5,
+      "offset": 11865853
+    },
+    {
+      "id": 13,
+      "size": 5,
+      "offset": 11865860
+    },
+    {
+      "id": 6,
+      "size": 1830851,
+      "offset": 11865869
+    },
+    {
+      "id": 7,
+      "size": 294,
+      "offset": 13696723
+    },
+    {
+      "id": 8,
+      "size": 3,
+      "offset": 13697019
+    },
+    {
+      "id": 9,
+      "size": 654920,
+      "offset": 13697026
+    },
+    {
+      "id": 10,
+      "size": 74683781,
+      "offset": 14351951
+    },
+    {
+      "id": 11,
+      "size": 4821681,
+      "offset": 89035737
+    },
+    {
+      "id": 0,
+      "size": 63,
+      "offset": 93857420,
+      "name": "teavm.memoryRequirements"
+    },
+    {
+      "id": 0,
+      "size": 16,
+      "offset": 93857485,
+      "name": "teavm.imports"
+    }
+  ],
+  "customSections": [
+    {
+      "id": 0,
+      "size": 63,
+      "offset": 93857420,
+      "name": "teavm.memoryRequirements"
+    },
+    {
+      "id": 0,
+      "size": 16,
+      "offset": 93857485,
+      "name": "teavm.imports"
+    }
+  ],
+  "sourceMappingPresent": false,
+  "note": "Static section framing only; no compilation or execution, no decompilation, no native payload replacement"
+}

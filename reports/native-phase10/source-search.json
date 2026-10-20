@@ -1,0 +1,187 @@
+{
+  "pinnedRevision": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+  "scopes": [
+    {
+      "root": "~/Documents",
+      "exists": true,
+      "filesVisited": 4119,
+      "directoriesVisited": 518,
+      "errors": [],
+      "status": "searched accessible entries with exclusions"
+    },
+    {
+      "root": "~/Downloads",
+      "exists": true,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [
+        "[Errno 1] Operation not permitted: '~/Downloads'"
+      ],
+      "status": "access denied; not searched"
+    },
+    {
+      "root": "~/Desktop",
+      "exists": true,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [
+        "[Errno 1] Operation not permitted: '~/Desktop'"
+      ],
+      "status": "access denied; not searched"
+    },
+    {
+      "root": "~/.gradle",
+      "exists": false,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [],
+      "status": "unavailable"
+    },
+    {
+      "root": "~/.m2",
+      "exists": false,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [],
+      "status": "unavailable"
+    },
+    {
+      "root": "~/Library/Caches",
+      "exists": true,
+      "filesVisited": 1404,
+      "directoriesVisited": 393,
+      "errors": [],
+      "status": "searched accessible entries with exclusions"
+    },
+    {
+      "root": "/private/tmp",
+      "exists": true,
+      "filesVisited": 14,
+      "directoriesVisited": 13,
+      "errors": [],
+      "status": "searched accessible entries with exclusions"
+    },
+    {
+      "root": "/workspace/scratch/673e9e5e458a",
+      "exists": false,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [],
+      "status": "unavailable"
+    },
+    {
+      "root": "/tmp/eaghacks-complete-UDdGE8",
+      "exists": false,
+      "filesVisited": 0,
+      "directoriesVisited": 0,
+      "errors": [],
+      "status": "unavailable"
+    }
+  ],
+  "excluded": "Browser profiles/storage, browser caches, node_modules, unrelated archive contents; .git contents inspected separately by exact object IDs",
+  "accessibleFileEntriesVisited": 5537,
+  "candidateSourceArchivesInspected": [
+    {
+      "path": "<original-checkout>/Eaglercraft-26.2-u1-Meteor-Source.zip",
+      "bytes": 309537,
+      "entries": 83,
+      "targetEntries": [],
+      "javaSources": 3,
+      "sourceMapEntries": [],
+      "crcFirstBadEntry": null,
+      "bridgeEntries": [
+        "native-bridge/upstream/game/src/main/java/net/lax1dude/eaglercraft/v1_8/mods/meteor/EaglerHacksNativeBridge.java",
+        "native-bridge/upstream/platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java",
+        "native-bridge/upstream/platform/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java"
+      ],
+      "sha256": "0517476a238c1e3fc30fed66a6699635baed5176b6d5f2d46c163743c6e31e66"
+    },
+    {
+      "path": "<integration-worktree>/Eaglercraft-26.2-u1-Meteor-Source.zip",
+      "bytes": 309537,
+      "entries": 83,
+      "targetEntries": [],
+      "javaSources": 3,
+      "sourceMapEntries": [],
+      "crcFirstBadEntry": null,
+      "bridgeEntries": [
+        "native-bridge/upstream/game/src/main/java/net/lax1dude/eaglercraft/v1_8/mods/meteor/EaglerHacksNativeBridge.java",
+        "native-bridge/upstream/platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java",
+        "native-bridge/upstream/platform/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformMeteorBridge.java"
+      ],
+      "sha256": "0517476a238c1e3fc30fed66a6699635baed5176b6d5f2d46c163743c6e31e66"
+    }
+  ],
+  "gitRepositoriesChecked": 12,
+  "gitRepositoryCheckErrors": 0,
+  "pinnedBlobsRequestedPerRepository": 10,
+  "pinnedBlobsRecovered": 0,
+  "missingPinnedSources": [
+    {
+      "path": "game/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/SingleplayerServerController26.java",
+      "gitBlobSHA1": "8045c2edd604ef0b7adad99d9612b98b2a6a2842",
+      "bytes": 32798
+    },
+    {
+      "path": "game/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/lan/LANInvites.java",
+      "gitBlobSHA1": "f22b01dd8e15edd341f83940652376b26e5c00c3",
+      "bytes": 22653
+    },
+    {
+      "path": "game/src/main/java/net/minecraft/client/Minecraft.java",
+      "gitBlobSHA1": "0aefd147e34a8991d147b06e80b03e4e005cfe99",
+      "bytes": 150527
+    },
+    {
+      "path": "platform-lwjgl/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformRuntime.java",
+      "gitBlobSHA1": "0b6dfa2347c9b76e56c96b4ed605517a8e55c764",
+      "bytes": 23763
+    },
+    {
+      "path": "platform-lwjgl/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/internal/ClientPlatformSingleplayer.java",
+      "gitBlobSHA1": "a20bf552b4c888a76da20193c0656ce36ab3e714",
+      "bytes": 4864
+    },
+    {
+      "path": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformRuntime.java",
+      "gitBlobSHA1": "59e94a49cd4becf8ebeb1326d935e2e4bd6385a7",
+      "bytes": 34697
+    },
+    {
+      "path": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformWebRTC.java",
+      "gitBlobSHA1": "d0475401f39e604fae83671242706285daeae9ba",
+      "bytes": 72512
+    },
+    {
+      "path": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/internal/ClientPlatformSingleplayer.java",
+      "gitBlobSHA1": "0a5f0a354db8cdd5e42ba49a9a9c2427118c51ab",
+      "bytes": 43734
+    },
+    {
+      "path": "platform/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformRuntime.java",
+      "gitBlobSHA1": "7241ae57107dab8c7453b3f60f4c96348e0247d6",
+      "bytes": 4996
+    },
+    {
+      "path": "platform/src/main/java/net/lax1dude/eaglercraft/v1_8/sp/internal/ClientPlatformSingleplayer.java",
+      "gitBlobSHA1": "4e6a77c8d7bd8743570062e7f32f576f3e9730bf",
+      "bytes": 4186
+    }
+  ],
+  "otherUnreadableLocations": "Several protected OS cache directories; excluded personal/browser storage was not accessed",
+  "historicalBuildDirectory": "/tmp/eaghacks-complete-UDdGE8/upstream from saved receipt is absent; /workspace/scratch/673e9e5e458a is absent",
+  "completePinnedCheckoutRecovered": false,
+  "blockedRepositoryAccessRetried": false,
+  "notes": [
+    "Downloads/Desktop macOS permissions remained denied outside sandbox; no bypass attempted",
+    "Original/integration source ZIP copies identical; 83 entries, only 3 Java overlay files, no requested target source or source maps",
+    "Gradle/Maven cache roots absent; no compiler invocation/download performed",
+    "Unrelated repository names and personal filenames omitted from published summary"
+  ],
+  "historicalRecoveryCheckpoint": {
+    "bytes": 303717,
+    "sha256": "0ea9b5fc3dfc4983485724583cc66745bc4ffb973f2a635f76967003ce6fcc31",
+    "availableInSearchedLocations": false,
+    "note": "The local 309537-byte 0517476a archive is distinct; do not claim it is that historical checkpoint."
+  }
+}

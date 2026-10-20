@@ -1,0 +1,43 @@
+{
+  "method": "headed Chrome automation; supporting observation only",
+  "before": {
+    "at": 28534.699999999255,
+    "screen": {
+      "screenName": null,
+      "overlayActive": false
+    },
+    "session": {
+      "kind": "local",
+      "paused": false
+    },
+    "worldTime": 53850,
+    "completedSequence": 155,
+    "startedSequence": 155,
+    "pendingSequence": null,
+    "frames": 567,
+    "yaw": 0,
+    "pitch": 20,
+    "pointerLock": false,
+    "focused": true
+  },
+  "after": {
+    "at": 30039.699999999255,
+    "screen": {
+      "screenName": null,
+      "overlayActive": false
+    },
+    "session": {
+      "kind": "local",
+      "paused": false
+    },
+    "worldTime": 53880,
+    "completedSequence": 185,
+    "startedSequence": 185,
+    "pendingSequence": null,
+    "frames": 747,
+    "yaw": 0,
+    "pitch": 20,
+    "pointerLock": false,
+    "focused": true
+  }
+}
