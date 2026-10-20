@@ -1,0 +1,2479 @@
+{
+  "verifiedAt": "2026-10-20T23:30:28.531Z",
+  "artifactSHA256": "727837b1ebcdbe7a1948e7cdfb2e29d6aef6c1fd079b90617c54170d47a1d7c5",
+  "sourceDigest": "502dc9bc49677bf3bae70aacc12397dea269f1de481f6a616a877e072c775ef0",
+  "automated": {
+    "unit": {
+      "passed": 165,
+      "total": 165
+    },
+    "build": true,
+    "browser": {
+      "passed": 20,
+      "total": 20
+    },
+    "smoke": true
+  },
+  "actualClient": {
+    "phase12": {
+      "artifactSHA256": "4513fb5bb769f8538bd792734ad07f59b71fdcb50433584bd7865b24ca194dff",
+      "sourceDigest": "6be34674d1cb85a6aca665021aa9db39d8a152cb664768516fe7476013adb5db",
+      "checks": [
+        "compiled Java bridge announces itself",
+        "actual single-player world publishes native state",
+        "compiled production bridge exposes snapshot diagnostics and bounded multi-attack",
+        "native session identifies single-player",
+        "actual survival inventory opens",
+        "actual game canvas captures the mouse",
+        "trusted mouse movement reaches the actual captured game canvas",
+        "captured mouse changes actual native camera yaw",
+        "real movement changes native coordinates",
+        "real entities expose type, velocity and health",
+        "native inventory contains the actual bread",
+        "native main inventory has 36 slots",
+        "native camera contains a finite projection",
+        "native biome identifies the actual loaded region",
+        "native effects are an actual typed collection",
+        "real damage updates native health and hurt state",
+        "native slot command changes actual selection",
+        "native rotation changes real yaw and pitch",
+        "native jump changes real height",
+        "KillAura damages a real private-world mob",
+        "two actual healthy private-world mobs prepare batch test",
+        "compiled bounded batch damages two actual mobs",
+        "Aim Assist rotates toward an actual mob",
+        "KillAura owns actual rotation when Aim Assist is also enabled",
+        "Sprint changes actual sprint state while moving",
+        "Sprint releases state when disabled",
+        "Speed and Sprint combine in actual movement",
+        "combined movement disables without sustained velocity or sprint",
+        "programmatic blur releases keys in the actual native world",
+        "focus regain and module disable leave no sustained movement",
+        "Zoom changes actual FOV and camera projection",
+        "Zoom restores native FOV",
+        "Fullbright changes real gamma option",
+        "Fullbright restores real gamma option",
+        "NoHurtCam enables compiled camera hook",
+        "NoHurtCam restores the compiled hook",
+        "real hunger effect prepares food test",
+        "AutoEat starts real food use",
+        "AutoEat increases actual hunger",
+        "AutoEat releases use and restores actual slot",
+        "entity-esp draws actual entity overlay pixels",
+        "tracers draws actual entity overlay pixels",
+        "nametags draws actual entity overlay pixels",
+        "Coordinates HUD displays actual player position",
+        "World Time HUD reads actual native clock",
+        "Armor HUD displays actual equipped armor metadata",
+        "Biome Info displays the real native biome",
+        "Potion HUD displays an actual active effect",
+        "Custom Crosshair suppresses the real vanilla crosshair through its compiled hook",
+        "Custom Crosshair restores the real vanilla crosshair",
+        "ClickGUI opens inside actual native world",
+        "ClickGUI close restores actual game control without an extra pause menu",
+        "real death emits native lifecycle event",
+        "AutoRespawn returns actual player to world",
+        "Session Statistics records real movement and death",
+        "camera modules restore actual options in game menus",
+        "compiled Java menu gate blocks stale actions while framework ticker is stopped",
+        "world exit clears real native snapshot and stale commands",
+        "world exit retains pending user module intent",
+        "saved world reopens and eligible modules resume from real data",
+        "camera state restores after leaving and rejoining a world",
+        "configuration survives a real native-client page reload",
+        "saved native HUD waits for a real world after reload",
+        "no uncaught page errors",
+        "no module crashes"
+      ],
+      "count": 65
+    },
+    "rc": {
+      "checks": [
+        "compiled Java bridge announces itself",
+        "actual single-player world publishes native state",
+        "compiled production bridge exposes snapshot diagnostics and bounded multi-attack",
+        "native session identifies single-player",
+        "actual survival inventory opens",
+        "actual game canvas captures the mouse",
+        "trusted mouse movement reaches the actual captured game canvas",
+        "captured mouse changes actual native camera yaw",
+        "real movement changes native coordinates",
+        "real entities expose type, velocity and health",
+        "native inventory contains the actual bread",
+        "native main inventory has 36 slots",
+        "native camera contains a finite projection",
+        "native biome identifies the actual loaded region",
+        "native effects are an actual typed collection",
+        "real damage updates native health and hurt state",
+        "native slot command changes actual selection",
+        "native rotation changes real yaw and pitch",
+        "native jump changes real height",
+        "KillAura damages a real private-world mob",
+        "two actual healthy private-world mobs prepare batch test",
+        "compiled bounded batch damages two actual mobs",
+        "Aim Assist rotates toward an actual mob",
+        "KillAura owns actual rotation when Aim Assist is also enabled",
+        "Sprint changes actual sprint state while moving",
+        "Sprint releases state when disabled",
+        "Speed and Sprint combine in actual movement",
+        "combined movement disables without sustained velocity or sprint",
+        "programmatic blur releases keys in the actual native world",
+        "focus regain and module disable leave no sustained movement",
+        "Zoom changes actual FOV and camera projection",
+        "Zoom restores native FOV",
+        "Fullbright changes real gamma option",
+        "Fullbright restores real gamma option",
+        "NoHurtCam enables compiled camera hook",
+        "NoHurtCam restores the compiled hook",
+        "real hunger effect prepares food test 9",
+        "AutoEat starts real food use",
+        "AutoEat increases actual hunger",
+        "AutoEat releases use and restores actual slot",
+        "entity-esp draws actual entity overlay pixels",
+        "tracers draws actual entity overlay pixels",
+        "nametags draws actual entity overlay pixels",
+        "Coordinates HUD displays actual player position",
+        "World Time HUD reads actual native clock",
+        "Armor HUD displays actual equipped armor metadata",
+        "Biome Info displays the real native biome",
+        "Potion HUD displays an actual active effect",
+        "Custom Crosshair suppresses the real vanilla crosshair through its compiled hook",
+        "Custom Crosshair restores the real vanilla crosshair",
+        "ClickGUI opens inside actual native world",
+        "ClickGUI close restores actual game control without an extra pause menu",
+        "WebAudio graph produces nonzero samples in gameplay",
+        "simulated right mouse places a real block confirmed by server condition",
+        "simulated left mouse breaks the placed block confirmed by server condition",
+        "active-modules-hud renders in world at configured position",
+        "cps-counter renders in world at configured position",
+        "custom-text renders in world at configured position",
+        "direction renders in world at configured position",
+        "fps-display renders in world at configured position",
+        "keystrokes renders in world at configured position",
+        "performance-monitor renders in world at configured position",
+        "session-timer renders in world at configured position",
+        "speed-hud renders in world at configured position",
+        "module search filters actual-client results",
+        "category refresh releases removed settings listeners in actual client",
+        "real death emits native lifecycle event",
+        "AutoRespawn returns actual player to world",
+        "Session Statistics records real movement and death",
+        "camera modules restore actual options in game menus",
+        "compiled Java menu gate blocks stale actions while framework ticker is stopped",
+        "world exit clears real native snapshot and stale commands",
+        "world exit retains pending user module intent",
+        "saved world reopens and eligible modules resume from real data",
+        "camera state restores after leaving and rejoining a world",
+        "configuration survives a real native-client page reload",
+        "saved native HUD waits for a real world after reload",
+        "no uncaught page errors",
+        "no module crashes"
+      ],
+      "count": 79,
+      "scope": "Unique passed checks across the hash-identical base gameplay prefix and focused continuation; not a single uninterrupted sweep",
+      "passesByRun": {
+        "basePassedPrefix": 66,
+        "continuation": 17
+      },
+      "audioSignals": [
+        {
+          "metrics": {
+            "startedAt": 50469.10000000149,
+            "starts": 2,
+            "peak": 0.4888494908809662,
+            "squares": 142.25582875987757,
+            "count": 188416,
+            "endedAt": 51432.60000000149,
+            "rms": 0.027477432219491105
+          },
+          "contexts": [
+            {
+              "state": "running",
+              "gain": 1,
+              "mime": "audio/webm;codecs=opus",
+              "bytes": 15752
+            }
+          ]
+        }
+      ],
+      "moduleChecks": [
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "module": "active-modules-hud",
+          "pass": true,
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "module": "active-modules-hud",
+          "pass": true,
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "custom text live settings",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "direction: disable removes node",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "module": "fps-display",
+          "pass": true,
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "module": "fps-display",
+          "pass": true,
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "module": "performance-monitor",
+          "pass": true,
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "module": "performance-monitor",
+          "pass": true,
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "session timer visibly advances",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "radar: render from actual world/entities",
+          "module": "radar",
+          "pass": true,
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "radar: canvas cleanup",
+          "module": "radar",
+          "pass": true,
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "hitboxes: render from actual world/entities",
+          "module": "hitboxes",
+          "pass": true,
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "hitboxes: canvas cleanup",
+          "module": "hitboxes",
+          "pass": true,
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "chunk-borders: render from actual world/entities",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "chunk-borders: canvas cleanup",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          },
+          "cleanup": true
+        },
+        {
+          "name": "target-hud: render from actual world/entities",
+          "module": "target-hud",
+          "pass": true,
+          "testedSettings": {
+            "target-hud": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "target-hud: canvas cleanup",
+          "module": "target-hud",
+          "pass": true,
+          "testedSettings": {
+            "target-hud": {}
+          },
+          "cleanup": true
+        },
+        {
+          "name": "notification and debug toggle subscriptions",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "utility subscription cleanup",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "friend setting integrates with client",
+          "module": "friend-manager",
+          "pass": true,
+          "testedSettings": {
+            "friend-manager": {
+              "add": "Phase6Friend"
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "module-search: opens actual ClickGUI",
+          "module": "module-search",
+          "pass": true,
+          "testedSettings": {
+            "module-search": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "keybind-manager: opens actual ClickGUI",
+          "module": "keybind-manager",
+          "pass": true,
+          "testedSettings": {
+            "keybind-manager": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "macro default wait",
+          "module": "macros",
+          "pass": true,
+          "testedSettings": {
+            "macros": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "macro resumes after wait",
+          "module": "macros",
+          "pass": true,
+          "testedSettings": {
+            "macros": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "BunnyHop only-sprinting gate",
+          "module": "bunny-hop",
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "BunnyHop uses real jump with Sprint",
+          "module": "bunny-hop",
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "module": [
+            "bunny-hop",
+            "sprint"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "sprint": {}
+          },
+          "cleanup": true
+        },
+        {
+          "name": "AntiAFK acts on actual player",
+          "module": "anti-afk",
+          "pass": true,
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "AntiAFK cleanup",
+          "module": "anti-afk",
+          "pass": true,
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          },
+          "cleanup": true
+        },
+        {
+          "name": "TriggerBot damages actual crosshair target",
+          "module": "trigger-bot",
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "TriggerBot weapon-only rejects stick",
+          "module": "trigger-bot",
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "AutoClicker activation hold gate",
+          "module": "auto-clicker",
+          "pass": true,
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "AutoClicker attacks through actual native target",
+          "module": "auto-clicker",
+          "pass": true,
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "module": [
+            "trigger-bot",
+            "auto-clicker"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": false
+            },
+            "auto-clicker": {
+              "cps": 4,
+              "hold": false,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "Criticals jump subset changes actual height",
+          "module": "auto-crit",
+          "pass": true,
+          "testedSettings": {
+            "auto-crit": {
+              "mode": "jump"
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "durability warning uses real damaged inventory",
+          "module": "durability-warnings",
+          "pass": true,
+          "testedSettings": {
+            "durability-warnings": {
+              "threshold": 20
+            }
+          },
+          "cleanup": null
+        },
+        {
+          "name": "Chunk Borders repaired two-axis grid",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "Notification repaired duplicate delivery",
+          "module": "notifications",
+          "pass": true,
+          "testedSettings": {
+            "notifications": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "Screenshot completed and hook cleaned up",
+          "module": "screenshot-util",
+          "pass": true,
+          "testedSettings": {
+            "screenshot-util": {}
+          },
+          "cleanup": true
+        },
+        {
+          "name": "Partial camera controls actual supported subsets",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          },
+          "cleanup": null
+        },
+        {
+          "name": "Partial camera controls cleanup",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          },
+          "cleanup": true
+        }
+      ],
+      "moduleCheckCount": 56,
+      "screenshotValidation": {
+        "path": "input/phase13/module-checks/game-canvas-repaired.png",
+        "bytes": 512255,
+        "sha256": "9c7f952d7aac9776e2641d8dedf68ab714fa5f06bdf75ed3b7761c718c87f99b",
+        "width": 1280,
+        "height": 800,
+        "distinctColors": 783,
+        "validation": "PNG structure/CRC/decompression passed"
+      },
+      "standaloneFileURL": true,
+      "restarts": [
+        "FPS enabled survives Chrome process restart",
+        "world HUD intent waits for player identity after restart",
+        "explicit module disable persists across second Chrome restart",
+        "HUD precision persists across process restart",
+        "invalid stored settings safely recover during actual client boot",
+        "shutdown removes listeners, UI, native commands and synthetic inputs",
+        "no required runtime requests failed",
+        "no uncaught JavaScript errors across restarts"
+      ],
+      "limitations": [
+        {
+          "test": "physical focus transition",
+          "reason": "The base run used the programmatic blur fallback to exercise release; physical desktop focus QA remains pending."
+        }
+      ]
+    }
+  },
+  "modules": {
+    "registered": 77,
+    "counts": {
+      "gameplay-observed": 41,
+      "unsupported": 31,
+      "partial": 5
+    },
+    "fullyAcceptanceVerified": 0,
+    "note": "Gameplay-observed records real intended behavior under listed settings. It is not an exhaustive per-setting/world-exit acceptance certification; no module is promoted to fully acceptance verified solely from a shared lifecycle check.",
+    "rows": [
+      {
+        "id": "aim-assist",
+        "name": "Aim Assist",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "strength",
+          "range",
+          "fov",
+          "only-attacking",
+          "players",
+          "mobs"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "auto-clicker",
+        "name": "AutoClicker",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "input"
+        ],
+        "settings": [
+          "bind",
+          "cps",
+          "left",
+          "right",
+          "hold",
+          "activation-key"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "AutoClicker activation hold gate",
+          "AutoClicker attacks through actual native target",
+          "combat modules gated by real inventory screen"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-totem",
+        "name": "AutoTotem",
+        "category": "Combat",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-weapon",
+        "name": "AutoWeapon",
+        "category": "Combat",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "settings": [
+          "bind",
+          "only-when-attacking",
+          "prefer-sword"
+        ],
+        "limitation": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-crit",
+        "name": "Criticals",
+        "category": "Combat",
+        "status": "partial",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "mode"
+        ],
+        "limitation": "Jump subset exists; packet hook absent. Jump does not establish critical-hit damage timing.",
+        "currentChecks": [
+          "Criticals jump subset changes actual height"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "kill-aura",
+        "name": "KillAura",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "cps",
+          "priority",
+          "players",
+          "hostile",
+          "passive",
+          "multi",
+          "visible-only",
+          "rotate",
+          "rotate-speed"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "reach-display",
+        "name": "Reach Display",
+        "category": "Combat",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "combat-events"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale"
+        ],
+        "limitation": "No attacker/distance combat event stream. Target snapshots do not identify hits.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "trigger-bot",
+        "name": "TriggerBot",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "delay",
+          "players",
+          "mobs",
+          "weapon-only"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "TriggerBot damages actual crosshair target",
+          "TriggerBot weapon-only rejects stick",
+          "combat modules gated by real inventory screen"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "velocity",
+        "name": "Velocity",
+        "category": "Combat",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "settings": [
+          "bind",
+          "horizontal",
+          "vertical"
+        ],
+        "limitation": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "active-modules-hud",
+        "name": "Active Modules",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "show-hud",
+          "sort",
+          "show-count"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "active-modules-hud: actual visible HUD at configured position",
+          "active-modules-hud: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "armor-hud",
+        "name": "Armor HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "native-inventory-read"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "biome-info",
+        "name": "Biome Info",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "biome"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "coordinates",
+        "name": "Coordinates",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "show-y",
+          "show-nether",
+          "precision"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "cps-counter",
+        "name": "CPS Counter",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "show-left",
+          "show-right"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "cps-counter: actual visible HUD at configured position",
+          "CPS observes actual browser click",
+          "cps-counter: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "custom-text",
+        "name": "Custom Text",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "text"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "custom-text: actual visible HUD at configured position",
+          "custom text live settings",
+          "custom-text: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "direction",
+        "name": "Direction",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "direction: actual visible HUD at configured position",
+          "direction tracks actual yaw",
+          "direction: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "fps-display",
+        "name": "FPS",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "label"
+        ],
+        "limitation": "Browser/framework frame rate, not physical display or game submission rate.",
+        "currentChecks": [
+          "fps-display: actual visible HUD at configured position",
+          "fps-display: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "keystrokes",
+        "name": "Keystrokes",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "compact"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "keystrokes: actual visible HUD at configured position",
+          "keystrokes: actual held movement",
+          "keystrokes: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "performance-monitor",
+        "name": "Performance Monitor",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "show-memory",
+          "show-modules",
+          "show-module-time"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "performance-monitor: actual visible HUD at configured position",
+          "performance-monitor: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "ping-display",
+        "name": "Ping Display",
+        "category": "HUD",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "network"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale"
+        ],
+        "limitation": "No ping/network read contract.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "potion-hud",
+        "name": "Potion HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "effects"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "radar",
+        "name": "Radar",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "size",
+          "rotate",
+          "players",
+          "mobs",
+          "hud-x",
+          "hud-y"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "radar: render from actual world/entities",
+          "radar: canvas cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "session-timer",
+        "name": "Session Timer",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background",
+          "show-clock"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "session-timer: actual visible HUD at configured position",
+          "session timer visibly advances",
+          "session-timer: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "speed-hud",
+        "name": "Speed",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "hud-opacity",
+          "hud-color",
+          "background"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "speed-hud: actual visible HUD at configured position",
+          "speed-hud: actual held movement",
+          "speed-hud: disable removes node"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "target-hud",
+        "name": "Target HUD",
+        "category": "HUD",
+        "status": "partial",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "health",
+          "distance",
+          "armor",
+          "health-bar"
+        ],
+        "limitation": "Health/distance/bar exist; target armor metadata absent.",
+        "currentChecks": [
+          "target-hud: render from actual world/entities",
+          "target-hud: canvas cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "world-time",
+        "name": "World Time",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world"
+        ],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "show-day"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "auto-gg",
+        "name": "AutoGG",
+        "category": "Misc",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "chat"
+        ],
+        "settings": [
+          "bind",
+          "message",
+          "delay"
+        ],
+        "limitation": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-reconnect",
+        "name": "AutoReconnect",
+        "category": "Misc",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "network"
+        ],
+        "settings": [
+          "bind",
+          "delay"
+        ],
+        "limitation": "No reconnect/server connection contract.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "chat-timestamps",
+        "name": "Chat Timestamps",
+        "category": "Misc",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No incoming chat render/format interception.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "debug-console",
+        "name": "Debug Console",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "events",
+          "modules",
+          "errors",
+          "max-lines"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "notification and debug toggle subscriptions",
+          "utility subscription cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "friend-manager",
+        "name": "Friend Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "add",
+          "remove"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "friend setting integrates with client"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "keybind-manager",
+        "name": "Keybind Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "keybind-manager: opens actual ClickGUI"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "macros",
+        "name": "Macros",
+        "category": "Misc",
+        "status": "partial",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Module/wait steps work; chat method unavailable; bind steps warn without execution.",
+        "currentChecks": [
+          "macro default wait",
+          "macro resumes after wait"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "module-search",
+        "name": "Module Search",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "module-search: opens actual ClickGUI"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "notifications",
+        "name": "Notifications",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "module-toggles",
+          "warnings",
+          "errors",
+          "history"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "notification and debug toggle subscriptions",
+          "utility subscription cleanup",
+          "Notification repaired duplicate delivery"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "screenshot-util",
+        "name": "Screenshot Utilities",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "hud"
+        ],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "Screenshot completed and hook cleaned up"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "server-info",
+        "name": "Server Information",
+        "category": "Misc",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "network"
+        ],
+        "settings": [
+          "bind",
+          "address",
+          "players"
+        ],
+        "limitation": "No server address/player-count network contract.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "session-stats",
+        "name": "Session Statistics",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "hud-x",
+          "hud-y",
+          "hud-scale",
+          "distance",
+          "deaths",
+          "time"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "auto-jump",
+        "name": "AutoJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "world",
+          "movement"
+        ],
+        "settings": [
+          "bind",
+          "only-forward",
+          "delay"
+        ],
+        "limitation": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-walk",
+        "name": "AutoWalk",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "input"
+        ],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "bunny-hop",
+        "name": "BunnyHop",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "delay",
+          "only-sprinting"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "BunnyHop only-sprinting gate",
+          "BunnyHop uses real jump with Sprint",
+          "BunnyHop/Sprint cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "flight",
+        "name": "Flight",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement",
+          "flight"
+        ],
+        "settings": [
+          "bind",
+          "mode",
+          "speed",
+          "vertical-speed",
+          "anti-kick"
+        ],
+        "limitation": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "high-jump",
+        "name": "HighJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "settings": [
+          "bind",
+          "height",
+          "all-jumps",
+          "jump-bind"
+        ],
+        "limitation": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "jesus",
+        "name": "Jesus",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No fluid collision or fluid movement interception.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "no-fall",
+        "name": "NoFall",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "fallDistance is readable; no setNoFall or fall-damage override.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "no-slow",
+        "name": "NoSlow",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No item-use movement-modifier interception.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "parkour",
+        "name": "Parkour",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "world",
+          "movement"
+        ],
+        "settings": [
+          "bind",
+          "only-forward",
+          "sneak-edges"
+        ],
+        "limitation": "jump/sneak exist; isBlockAhead with gap query absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "safe-walk",
+        "name": "SafeWalk",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "Sneak exists; no setSafeWalk edge-collision constraint.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "speed",
+        "name": "Speed",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "mode",
+          "multiplier",
+          "only-ground",
+          "only-sprinting"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "spider",
+        "name": "Spider",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No horizontal-collision hook.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "sprint",
+        "name": "Sprint",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "input"
+        ],
+        "settings": [
+          "bind",
+          "only-forward",
+          "min-hunger",
+          "restore"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "BunnyHop/Sprint cleanup"
+        ],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "step",
+        "name": "Step",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "settings": [
+          "bind",
+          "height"
+        ],
+        "limitation": "No setStepHeight/getStepHeight API.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "timer",
+        "name": "Timer",
+        "category": "Movement",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "timing"
+        ],
+        "settings": [
+          "bind",
+          "speed"
+        ],
+        "limitation": "No setTickRate/getTickRateMultiplier API.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "anti-afk",
+        "name": "AntiAFK",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "interval",
+          "jump",
+          "rotate",
+          "swing"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "AntiAFK acts on actual player",
+          "AntiAFK cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-armor",
+        "name": "AutoArmor",
+        "category": "Player",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "settings": [
+          "bind",
+          "durability-check",
+          "delay"
+        ],
+        "limitation": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "auto-eat",
+        "name": "AutoEat",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "native-inventory-read",
+          "native-direct"
+        ],
+        "settings": [
+          "bind",
+          "threshold",
+          "food",
+          "restore-slot"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "auto-respawn",
+        "name": "AutoRespawn",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "native-respawn"
+        ],
+        "settings": [
+          "bind",
+          "delay"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "auto-tool",
+        "name": "AutoTool",
+        "category": "Player",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "inventory",
+          "blocks"
+        ],
+        "settings": [
+          "bind",
+          "only-while-mining",
+          "delay",
+          "restore"
+        ],
+        "limitation": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "chest-organizer",
+        "name": "Chest Organizer",
+        "category": "Player",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No container slot/click automation.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "durability-warnings",
+        "name": "Durability Warnings",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "native-inventory-read"
+        ],
+        "settings": [
+          "bind",
+          "threshold"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [
+          "durability warning uses real damaged inventory"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "fast-place",
+        "name": "FastPlace",
+        "category": "Player",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "settings": [
+          "bind",
+          "delay"
+        ],
+        "limitation": "useItem exists; no setRightClickDelay/getRightClickDelay hook.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "inventory-manager",
+        "name": "Inventory Manager",
+        "category": "Player",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "settings": [
+          "bind",
+          "sort",
+          "drop-duplicates",
+          "interval"
+        ],
+        "limitation": "Reads exist; sort/drop/slot-click mutation contract absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "chunk-borders",
+        "name": "Chunk Borders",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "render"
+        ],
+        "settings": [
+          "bind",
+          "color"
+        ],
+        "limitation": "Local projected grid, not native renderer geometry.",
+        "currentChecks": [
+          "chunk-borders: render from actual world/entities",
+          "chunk-borders: canvas cleanup",
+          "Chunk Borders repaired two-axis grid"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "custom-crosshair",
+        "name": "Custom Crosshair",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "shape",
+          "size",
+          "thickness",
+          "color",
+          "hide-vanilla",
+          "gap"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "entity-esp",
+        "name": "Entity ESP",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "players",
+          "hostile",
+          "passive",
+          "invisible",
+          "color",
+          "player-color",
+          "alpha",
+          "boxes",
+          "filled",
+          "line-width",
+          "health-bar"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "freecam",
+        "name": "Freecam",
+        "category": "Render",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "render",
+          "camera-detach"
+        ],
+        "settings": [
+          "bind",
+          "speed",
+          "freeze-player"
+        ],
+        "limitation": "Projection exists; camera detachment/update/restore API absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "fullbright",
+        "name": "Fullbright",
+        "category": "Render",
+        "status": "partial",
+        "requiredCapabilities": [
+          "world",
+          "brightness-control"
+        ],
+        "settings": [
+          "bind",
+          "level",
+          "night-vision"
+        ],
+        "limitation": "Night-vision effect mutation absent; gamma subset works.",
+        "currentChecks": [
+          "Partial camera controls actual supported subsets",
+          "Partial camera controls cleanup"
+        ],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "hitboxes",
+        "name": "Hitboxes",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render"
+        ],
+        "settings": [
+          "bind",
+          "color",
+          "expand"
+        ],
+        "limitation": "Screen overlay only, not expanded collision.",
+        "currentChecks": [
+          "hitboxes: render from actual world/entities",
+          "hitboxes: canvas cleanup"
+        ],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "nametags",
+        "name": "Nametags",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "players",
+          "hostile",
+          "passive",
+          "invisible",
+          "color",
+          "player-color",
+          "alpha",
+          "distance",
+          "health",
+          "background",
+          "scale"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "no-hurt-cam",
+        "name": "NoHurtCam",
+        "category": "Render",
+        "status": "partial",
+        "requiredCapabilities": [
+          "world",
+          "hurt-camera-control"
+        ],
+        "settings": [
+          "bind",
+          "tilt"
+        ],
+        "limitation": "Damage/death suppression exists; independent directional tilt absent.",
+        "currentChecks": [
+          "Partial camera controls actual supported subsets",
+          "Partial camera controls cleanup"
+        ],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "storage-esp",
+        "name": "Storage ESP",
+        "category": "Render",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "world",
+          "blocks",
+          "render"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "chests",
+          "furnaces",
+          "dispensers",
+          "shulkers",
+          "color",
+          "alpha"
+        ],
+        "limitation": "No block/container enumeration.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "tracers",
+        "name": "Tracers",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "settings": [
+          "bind",
+          "range",
+          "players",
+          "hostile",
+          "passive",
+          "invisible",
+          "color",
+          "player-color",
+          "alpha",
+          "origin",
+          "line-width"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "xray",
+        "name": "X-Ray",
+        "category": "Render",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind",
+          "ores",
+          "opacity"
+        ],
+        "limitation": "No renderer face-visibility override.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "zoom",
+        "name": "Zoom",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "requiredCapabilities": [
+          "world",
+          "fov-control"
+        ],
+        "settings": [
+          "bind",
+          "factor",
+          "smooth"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentChecks": [],
+        "nativeSuiteObserved": true
+      },
+      {
+        "id": "block-search",
+        "name": "Block Search",
+        "category": "World",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "world",
+          "blocks",
+          "render"
+        ],
+        "settings": [
+          "bind",
+          "blocks",
+          "radius",
+          "refresh",
+          "color",
+          "alpha"
+        ],
+        "limitation": "No block enumeration/lookup.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "light-level",
+        "name": "Light Level Overlay",
+        "category": "World",
+        "status": "unsupported",
+        "requiredCapabilities": [],
+        "settings": [
+          "bind"
+        ],
+        "limitation": "No per-block light lookup.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      },
+      {
+        "id": "waypoints",
+        "name": "Waypoints",
+        "category": "World",
+        "status": "unsupported",
+        "requiredCapabilities": [
+          "world",
+          "render",
+          "world-identity"
+        ],
+        "settings": [
+          "bind",
+          "show-labels",
+          "show-distance",
+          "max-distance",
+          "default-color",
+          "scale"
+        ],
+        "limitation": "Position/dimension exist; stable world-save/server identity absent.",
+        "currentChecks": [],
+        "nativeSuiteObserved": false
+      }
+    ]
+  },
+  "historicalPhysicalQA": {
+    "passed": 35,
+    "artifact": "Phase 11, older artifact; not rerun or transferred to RC"
+  },
+  "deferred": {
+    "manualLAN": 7,
+    "releaseManual": [
+      "physical mouse and desktop focus transitions",
+      "human audio listening",
+      "all settings and world-exit cleanup per module",
+      "intermittent host lobby workaround: return host to gameplay before accepting guest"
+    ]
+  },
+  "attempts": [
+    {
+      "scope": "file URL fresh profile",
+      "outcome": "test fixture failed: platform requested before origin chunks loaded; no client exception"
+    },
+    {
+      "scope": "file URL fresh retry",
+      "outcome": "test fixture failed: preliminary left click destroyed placement support; WebAudio signal present but event-start assertion failed"
+    },
+    {
+      "scope": "saved disposable world combat retries",
+      "outcome": "failed fixture: placement support remained inside pig spawn, causing suffocation and occlusion; confirmed by live inspection and cleared"
+    },
+    {
+      "scope": "corrected base run",
+      "outcome": "base gameplay passed; extra breaking assertion timed out at original camera angle"
+    },
+    {
+      "scope": "focused continuation with explicit block targeting",
+      "outcome": "passed; remaining module checks resumed after removing support-block contamination"
+    }
+  ]
+}

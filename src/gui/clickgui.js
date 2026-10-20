@@ -182,6 +182,7 @@ export class ClickGUI {
 
   _renderCategory(cat, state) {
     const body = state.bodyEl;
+    this._disposeSettings(body);
     body.textContent = "";
     const list = this.modules.byCategory(cat.id);
     state.countEl.textContent = String(list.length);
@@ -255,8 +256,19 @@ export class ClickGUI {
     return container;
   }
 
+  _disposeSettings(root) {
+    if (!root) return;
+    for (const node of [root, ...root.querySelectorAll("*")]) {
+      for (const dispose of node._settingDisposers ?? []) dispose();
+      delete node._settingDisposers;
+    }
+  }
+
   _buildSettings(mod, wrap, refresh) {
+    this._disposeSettings(wrap);
+    wrap._settingDisposers = [];
     const ctx = {
+      onDispose: (dispose) => wrap._settingDisposers.push(dispose),
       theme: this.theme,
       keybinds: this.keybinds,
       tooltips: this.tooltips,
@@ -318,6 +330,7 @@ export class ClickGUI {
     const run = () => {
       const q = this._searchInput.value;
       this.searchQuery = q;
+      this._disposeSettings(results);
       results.textContent = "";
       if (!q.trim()) {
         results.appendChild(el("div", { style: { color: "var(--mt-text-muted)", padding: "4px" } }, ["type to filter…"]));
@@ -575,6 +588,7 @@ export class ClickGUI {
   }
 
   dispose() {
+    this._disposeSettings(this.root);
     window.removeEventListener("mousemove", this._onMove);
     window.removeEventListener("mouseup", this._onUp);
     window.removeEventListener("resize", this._onResize);

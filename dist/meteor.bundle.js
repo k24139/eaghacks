@@ -290,6 +290,11 @@ var MeteorFramework = (() => {
       if (typeof fn === "function") this._listeners.push(fn);
       return this;
     }
+    offChanged(fn) {
+      const index = this._listeners.indexOf(fn);
+      if (index >= 0) this._listeners.splice(index, 1);
+      return this;
+    }
     /** Conditional display, e.g. only show `range` when `players-only` is on. */
     visibleWhen(fn) {
       this.visibility = fn;
@@ -2208,6 +2213,10 @@ var MeteorFramework = (() => {
     if (setting instanceof KeybindSetting) return keybindWidget(setting, ctx);
     return null;
   }
+  function observe(setting, ctx, listener) {
+    setting.onChanged(listener);
+    ctx?.onDispose?.(() => setting.offChanged(listener));
+  }
   function row(label, control, setting, ctx) {
     const r = el("div", { class: "mt-setting" }, [el("label", { text: label, title: setting.description || label }), control]);
     attachTooltip(r, setting, ctx);
@@ -2230,7 +2239,7 @@ var MeteorFramework = (() => {
     const update = () => {
       box.classList.toggle("mt-checked", !!setting.value);
     };
-    setting.onChanged(update);
+    observe(setting, ctx, update);
     const toggle = () => {
       setting.set(!setting.value);
       update();
@@ -2274,7 +2283,7 @@ var MeteorFramework = (() => {
     }
     children.push(num);
     const control = el("div", { style: { display: "flex", alignItems: "center", gap: "6px", flex: 1 } }, children);
-    setting.onChanged((v) => {
+    observe(setting, ctx, (v) => {
       num.textContent = formatNumber(v, isInt);
       const input = control.querySelector("input");
       if (input && input.type === "range" && Number(input.value) !== v) input.value = String(v);
@@ -2295,7 +2304,7 @@ var MeteorFramework = (() => {
     });
     input.addEventListener("keydown", (e) => e.stopPropagation());
     input.addEventListener("mousedown", (e) => e.stopPropagation());
-    setting.onChanged((v) => {
+    observe(setting, ctx, (v) => {
       if (input !== document.activeElement) input.value = v ?? "";
     });
     return row(displayName(setting), input, setting, ctx);
@@ -2313,7 +2322,7 @@ var MeteorFramework = (() => {
     });
     select.addEventListener("mousedown", (e) => e.stopPropagation());
     select.addEventListener("click", (e) => e.stopPropagation());
-    setting.onChanged((v) => {
+    observe(setting, ctx, (v) => {
       if (select.value !== v) select.value = v;
     });
     return row(displayName(setting), select, setting, ctx);
@@ -2324,7 +2333,7 @@ var MeteorFramework = (() => {
       swatch.style.background = setting.toHex(true);
     };
     paint();
-    setting.onChanged(paint);
+    observe(setting, ctx, paint);
     swatch.addEventListener("click", (e) => {
       e.stopPropagation();
       openColorEditor(swatch, setting, ctx, paint);
@@ -2420,7 +2429,7 @@ var MeteorFramework = (() => {
         ctx?.onChange?.(setting);
       });
     });
-    setting.onChanged(paint);
+    observe(setting, ctx, paint);
     const clear = el("span", { class: "mt-fav", text: "\u2A2F", title: "clear bind", style: { cursor: "pointer", color: "var(--mt-text-muted)" } });
     clear.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -2605,6 +2614,7 @@ var MeteorFramework = (() => {
     }
     _renderCategory(cat, state) {
       const body = state.bodyEl;
+      this._disposeSettings(body);
       body.textContent = "";
       const list = this.modules.byCategory(cat.id);
       state.countEl.textContent = String(list.length);
@@ -2673,8 +2683,18 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       });
       return container;
     }
+    _disposeSettings(root) {
+      if (!root) return;
+      for (const node of [root, ...root.querySelectorAll("*")]) {
+        for (const dispose of node._settingDisposers ?? []) dispose();
+        delete node._settingDisposers;
+      }
+    }
     _buildSettings(mod, wrap, refresh) {
+      this._disposeSettings(wrap);
+      wrap._settingDisposers = [];
       const ctx = {
+        onDispose: (dispose) => wrap._settingDisposers.push(dispose),
         theme: this.theme,
         keybinds: this.keybinds,
         tooltips: this.tooltips,
@@ -2733,6 +2753,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       const run = () => {
         const q = this._searchInput.value;
         this.searchQuery = q;
+        this._disposeSettings(results);
         results.textContent = "";
         if (!q.trim()) {
           results.appendChild(el("div", { style: { color: "var(--mt-text-muted)", padding: "4px" } }, ["type to filter\u2026"]));
@@ -2969,6 +2990,7 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       }
     }
     dispose() {
+      this._disposeSettings(this.root);
       window.removeEventListener("mousemove", this._onMove);
       window.removeEventListener("mouseup", this._onUp);
       window.removeEventListener("resize", this._onResize);

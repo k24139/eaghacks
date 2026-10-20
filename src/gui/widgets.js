@@ -31,6 +31,11 @@ export function createSettingWidget(setting, ctx) {
   return null;
 }
 
+function observe(setting, ctx, listener) {
+  setting.onChanged(listener);
+  ctx?.onDispose?.(() => setting.offChanged(listener));
+}
+
 function row(label, control, setting, ctx) {
   const r = el("div", { class: "mt-setting" }, [el("label", { text: label, title: setting.description || label }), control]);
   attachTooltip(r, setting, ctx);
@@ -56,7 +61,7 @@ function boolWidget(setting, ctx) {
   const update = () => {
     box.classList.toggle("mt-checked", !!setting.value);
   };
-  setting.onChanged(update);
+  observe(setting, ctx, update);
   const toggle = () => {
     setting.set(!setting.value);
     update();
@@ -101,7 +106,7 @@ function numberWidget(setting, ctx, isInt) {
   }
   children.push(num);
   const control = el("div", { style: { display: "flex", alignItems: "center", gap: "6px", flex: 1 } }, children);
-  setting.onChanged((v) => {
+  observe(setting, ctx, (v) => {
     num.textContent = formatNumber(v, isInt);
     const input = control.querySelector("input");
     if (input && input.type === "range" && Number(input.value) !== v) input.value = String(v);
@@ -124,7 +129,7 @@ function stringWidget(setting, ctx) {
   // Typing must not reach the game / global keybinds.
   input.addEventListener("keydown", (e) => e.stopPropagation());
   input.addEventListener("mousedown", (e) => e.stopPropagation());
-  setting.onChanged((v) => {
+  observe(setting, ctx, (v) => {
     if (input !== document.activeElement) input.value = v ?? "";
   });
   return row(displayName(setting), input, setting, ctx);
@@ -143,7 +148,7 @@ function enumWidget(setting, ctx) {
   });
   select.addEventListener("mousedown", (e) => e.stopPropagation());
   select.addEventListener("click", (e) => e.stopPropagation());
-  setting.onChanged((v) => {
+  observe(setting, ctx, (v) => {
     if (select.value !== v) select.value = v;
   });
   return row(displayName(setting), select, setting, ctx);
@@ -155,7 +160,7 @@ function colorWidget(setting, ctx) {
     swatch.style.background = setting.toHex(true);
   };
   paint();
-  setting.onChanged(paint);
+  observe(setting, ctx, paint);
   swatch.addEventListener("click", (e) => {
     e.stopPropagation();
     openColorEditor(swatch, setting, ctx, paint);
@@ -256,7 +261,7 @@ function keybindWidget(setting, ctx) {
       ctx?.onChange?.(setting);
     });
   });
-  setting.onChanged(paint);
+  observe(setting, ctx, paint);
   const clear = el("span", { class: "mt-fav", text: "⨯", title: "clear bind", style: { cursor: "pointer", color: "var(--mt-text-muted)" } });
   clear.addEventListener("click", (e) => {
     e.stopPropagation();

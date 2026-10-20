@@ -551,3 +551,14 @@ Started from `6284074f4cbddbfd429afa008b858c4dc9b81a56`. One bounded source chec
 Fixed reproduced integration defects: aggregate native-direct no longer accepts a partial movement/combat feature set; velocity/rotation and swing reject unadvertised native actions. Added two regression tests covering enable refusal, capability-loss suspension/restoration and command refusal. No module support expansion.
 
 164 unit tests, build, smoke and 20 browser harness checks pass. An isolated JavaScript-refreshed candidate passed 12 actual-client startup/UI checks with unchanged WASM and six unchanged native payloads. Preserved Phase 11 HTML is byte-identical. No new loaded-world/audio/physical/LAN results are claimed; the 35 physical passes remain historical and seven LAN checks remain deferred. No FULL optimization, performance benchmark or release packaging. Details, hashes, reproduction and remaining prerequisites: `reports/native-phase12/PHASE12_REPORT.md`. Publication uses a normal push and independent all-file verification receipt in ignored `input/phase12/`. Stop after Phase 12.
+
+
+## Phase 13 — Playable standalone JavaScript candidate
+
+The immutable Phase 12 candidate passed 65 actual loaded-world checks. Fixed ClickGUI settings callbacks retained across panel reset/refresh/disposal, with a regression reproduced against the starting commit. Unit tests 165/165, browser harness 20/20, build and smoke pass.
+
+Generated ignored `input/phase13/Eaglercraft-26.2-u1-Eaghacks-RC.html`; verified all six native payloads and decoded WASM byte-identical to the Phase 11 baseline. Direct disk testing passed 79 unique actual-client checks across hash-identical checkpoints, 56 focused module checks and eight process-restart/recovery/shutdown checks. Real blocks were placed/broken through simulated mouse input and server conditions; WebAudio produced nonzero samples. Setup failures and checkpoint scope are disclosed in the report rather than counted as successful sweeps.
+
+77 modules: 41 with current gameplay observations, five partial, 31 unsupported by the current adapter contract. No exhaustive per-module acceptance count or full 77-module functionality is claimed. The 35 physical passes remain historical to Phase 11; seven manual LAN checks remain deferred. Release-specific physical input/audio and full per-module settings/world-exit acceptance are pending; preserve the host-return-before-guest-acceptance workaround.
+
+See `reports/release-phase13/PHASE13_REPORT.md`, `MODULE_STATUS.md`, `verification.json` and `release-manifest.json`. Publish only reviewed source/tests/sanitized reports/metadata and browser JS. Independently verify the remote commit, tree, objects, all tracked bytes, original checkout and main using `tools/phase13-publication.py`; post-commit receipt stays ignored. No native compilation, new native source research or next phase. Stop after Phase 13.

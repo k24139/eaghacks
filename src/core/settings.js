@@ -72,6 +72,12 @@ export class Setting {
     return this;
   }
 
+  offChanged(fn) {
+    const index = this._listeners.indexOf(fn);
+    if (index >= 0) this._listeners.splice(index, 1);
+    return this;
+  }
+
   /** Conditional display, e.g. only show `range` when `players-only` is on. */
   visibleWhen(fn) {
     this.visibility = fn;
