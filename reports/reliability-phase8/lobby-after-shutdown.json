@@ -1,0 +1,14 @@
+{
+  "screen": {
+    "screenName": "EaglerLANPeersScreen",
+    "overlayActive": false
+  },
+  "events": [
+    {
+      "type": "keydown",
+      "prevented": false,
+      "target": "BODY"
+    }
+  ],
+  "tick": 39040
+}

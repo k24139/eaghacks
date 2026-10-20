@@ -1,0 +1,23 @@
+{
+  "before": {
+    "tick": 39040,
+    "bridge": {
+      "sequence": 1557,
+      "snapshotMs": 0.19999999925494194
+    },
+    "hidden": false
+  },
+  "after": {
+    "tick": 39040,
+    "bridge": {
+      "sequence": 1557,
+      "snapshotMs": 0.19999999925494194
+    },
+    "frames": 72,
+    "hidden": false,
+    "screen": {
+      "screenName": "EaglerLANPeersScreen",
+      "overlayActive": false
+    }
+  }
+}

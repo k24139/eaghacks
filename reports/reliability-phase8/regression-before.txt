@@ -1,0 +1,35 @@
+✔ two remote reconnects restore intent and settings with fresh data and stable listeners (77.58075ms)
+✔ explicit disable while disconnected cancels persisted restoration (11.670209ms)
+✔ persisted local combat intent cannot activate after a remote reconnect (10.941875ms)
+✖ unknown native identity cannot inherit a stale legacy singleplayer identity (0.552208ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 485.288625
+
+✖ failing tests:
+
+test at tests/phase8-lifecycle.test.mjs:35:1
+✖ unknown native identity cannot inherit a stale legacy singleplayer identity (0.552208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///Users/aaron/Documents/repos/eaghacks/input/phase4-worktree/tests/phase8-lifecycle.test.mjs:38:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

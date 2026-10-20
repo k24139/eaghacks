@@ -344,3 +344,46 @@ published commit and exact runtime, then complete `MANUAL_CHECKLIST.md`, reprodu
 the host lobby navigation limitation and assert reconnect restoration without
 explicitly re-enabling modules. Do not infer authorization for native hook work,
 FULL compilation or production release. Phase 7 stops at this handoff.
+
+## Phase 8: desktop and multiplayer reliability (October 20, 2026)
+
+Started at `f57ffc361d3e873677b8253dba3fbea1dadfac4a` in the existing integration
+worktree. Original main/status and every initially hashed Phase 6/7 report remain
+unchanged. Runtime source commit: `e34a8ab6b6fd9bb314a25aa9395c1f2259778ebe`.
+
+Fixed native unknown/missing session identity inheriting stale legacy
+`singleplayer`. Native snapshots now require explicit local identity. A failing
+regression and controlled old-client metadata fault reproduce the defect;
+focused tests and the repaired actual client pass. Ready remote configuration
+restoration cannot enable KillAura while multiplayer combat opt-in is false.
+
+Actual Coordinates/Radar/Zoom intent restored automatically, without enable calls,
+after **two consecutive normal remote reconnects and a forced-loss reconnect**.
+Current player/entity references, settings, FOV and listener baselines passed.
+Disabling Radar while disconnected canceled its restoration; host world exit,
+module disable and observer-free shutdown cleanup passed. Host lobby failure
+reproduced even after Meteor shutdown, with browser animation advancing and the
+native bridge stationary. Root cause/physical post-acceptance navigation remain
+unresolved. The tested driver selects the guest by peer ID and returns the host
+to gameplay before guest acceptance, then retains guest foreground.
+
+Final HTML: **80,978,184 bytes**, SHA-256
+`9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0`.
+Source digest: `d2cc8f7711a9b7a8c218232066c0d3c67135c5b4e644f3b0d098c028ac2aa7a0`.
+All six native payloads unchanged. Tests **162/162**, new lifecycle/safety checks
+**4/4**, browser harness **20/20**, final headed desktop **18/18**, build and smoke
+pass. Four final-artifact recordings decode to nonzero audio; one invalid-placement
+interval is silent/header-only. Thirteen new PNGs validate; historical corrupt
+images remain unused. Raw evidence retains 53 observations (48 pass, 5 failed
+probes), an old-guest artifact-binding correction and driver limitations.
+
+Physical mouse, OS recenter, human listening and physical lobby navigation remain
+awaiting user verification in the new checklist. No Java build/patch, FULL link,
+matched performance comparison, public server or release packaging ran. Dedicated
+browsers and the loopback server are closed. Read
+[the Phase 8 report](reports/reliability-phase8/PHASE8_REPORT.md) and structured
+verification. Normal Git CLI publication and an independent fetched-byte receipt
+under ignored `input/phase8/publication-verification.json` record the final
+containing commit. Phase 9 starts with physical confirmation and diagnosis of the
+bounded native lobby stall; do not infer native development/release authorization
+from this handoff. Stop after Phase 8.

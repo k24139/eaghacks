@@ -1,0 +1,109 @@
+{
+  "screen": {
+    "screenName": "EaglerLANPeersScreen",
+    "overlayActive": false
+  },
+  "events": [
+    {
+      "type": "keydown",
+      "key": "Escape",
+      "trusted": true,
+      "prevented": false,
+      "target": "BODY",
+      "at": 272595.3999999985
+    },
+    {
+      "type": "keyup",
+      "key": "Escape",
+      "trusted": true,
+      "prevented": false,
+      "target": "BODY",
+      "at": 272797
+    },
+    {
+      "type": "mousedown",
+      "x": 874,
+      "y": 718,
+      "trusted": true,
+      "prevented": false,
+      "target": "CANVAS",
+      "at": 283060.5
+    },
+    {
+      "type": "mouseup",
+      "x": 874,
+      "y": 718,
+      "trusted": true,
+      "prevented": false,
+      "target": "CANVAS",
+      "at": 283812.3999999985
+    },
+    {
+      "type": "click",
+      "x": 874,
+      "y": 718,
+      "trusted": true,
+      "prevented": false,
+      "target": "CANVAS",
+      "at": 283812.5
+    }
+  ],
+  "diag": {
+    "runtime": "eaglercraft-26.2-u1-browser",
+    "nativeInstalled": true,
+    "nativeUpstream": "1be2375ad67cb42a52d5f586a2422e54b57be625",
+    "session": {
+      "kind": "local",
+      "paused": true
+    },
+    "shellLoaded": true,
+    "gameReady": true,
+    "menuReady": true,
+    "terrainReady": true,
+    "worldReady": true,
+    "screenHookSeen": true,
+    "screenName": "EaglerLANPeersScreen",
+    "inWorld": false,
+    "gameplayInputAllowed": false,
+    "server": null,
+    "remote": false,
+    "wasmInstantiated": true,
+    "wasmExports": [
+      "teavm.stringToJs",
+      "teavm.exceptionMessage",
+      "teavm.reportGarbageCollectedValue",
+      "teavm.js.wrapException",
+      "teavm.js.extractException",
+      "teavm.js.throwException",
+      "teavm.jso.createWrapper",
+      "teavm.getJsException",
+      "teavm.setJsException",
+      "teavm.javaException",
+      "main",
+      "teavm.memory"
+    ],
+    "gameCanvasPresent": true,
+    "capabilities": [
+      "input",
+      "hud",
+      "world",
+      "entities",
+      "native-inventory-read",
+      "native-direct",
+      "brightness-control",
+      "fov-control",
+      "hurt-camera-control",
+      "native-respawn",
+      "effects",
+      "biome",
+      "crosshair-control",
+      "native-multi-attack",
+      "render"
+    ],
+    "nativeBridge": true,
+    "nativeBridgeVersion": 1,
+    "nativeTick": 39040,
+    "worldAccess": "native bridge active",
+    "syntheticHeldKeys": []
+  }
+}

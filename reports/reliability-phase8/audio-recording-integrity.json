@@ -1,0 +1,56 @@
+[
+  {
+    "name": "focus-restored-0.webm",
+    "bytes": 5126,
+    "sha256": "8e34112bd40e7a6f9e89987bf0f2609e00b8e0a07f5aab076d96daf4461edbfc",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.3,
+      "peak": 0.30517154932022095,
+      "rms": 0.027877991556037342
+    }
+  },
+  {
+    "name": "left-button-break-0.webm",
+    "bytes": 9956,
+    "sha256": "b489a2e8e856ed34dd44f1f3fdffe05057081bd805447bd5f2fe096ae0d41a90",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.6,
+      "peak": 0.313125342130661,
+      "rms": 0.019452439174843638
+    }
+  },
+  {
+    "name": "menu-click-0.webm",
+    "bytes": 5126,
+    "sha256": "9797e8766f8f0e276ff5bda5a1dcca6c84ba613bbb7bff336428f8151f9dbe38",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.3,
+      "peak": 0.24754247069358826,
+      "rms": 0.01454807427698077
+    }
+  },
+  {
+    "name": "right-button-place-0.webm",
+    "bytes": 110,
+    "sha256": "34625a59ca017ae414573bcb4a21464514f695d9806955fa676098939005795c",
+    "validation": "MediaRecorder header only: no audio frames during silent interval"
+  },
+  {
+    "name": "right-button-valid-place-0.webm",
+    "bytes": 9956,
+    "sha256": "de4bfc32d5467ed4b942e75e5ae6a6ac9d097f413e23b124bec28ae544f1cbcb",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.6,
+      "peak": 0.3653319478034973,
+      "rms": 0.01845680112613782
+    }
+  }
+]

@@ -1,0 +1,302 @@
+{
+  "state": {
+    "screen": {
+      "screenName": null,
+      "overlayActive": false
+    },
+    "session": {
+      "kind": "remote",
+      "paused": false
+    },
+    "tick": 44425,
+    "world": {
+      "time": 6000,
+      "dimension": "minecraft:overworld",
+      "biome": "minecraft:plains"
+    },
+    "player": {
+      "x": 0.5,
+      "y": 150,
+      "z": 0.5,
+      "yaw": 0,
+      "pitch": 0,
+      "health": 20,
+      "maxHealth": 20,
+      "hunger": 20,
+      "onGround": true,
+      "name": "YeelerYeeish3726",
+      "velocity": {
+        "x": 0,
+        "y": -0.0784000015258789,
+        "z": 0
+      },
+      "effects": [],
+      "sprinting": false,
+      "sneaking": false,
+      "hurtTime": 0,
+      "fallDistance": 0,
+      "moveForward": 0,
+      "moveStrafe": 0,
+      "dead": false,
+      "usingItem": false
+    },
+    "commands": {
+      "fov": 14.08747615814209
+    },
+    "fov": 14.134578704833984,
+    "remote": true,
+    "focused": true,
+    "pointerLock": true,
+    "gui": false,
+    "capture": false,
+    "owned": [],
+    "using": false,
+    "held": [],
+    "listeners": 4,
+    "errors": [],
+    "events": [
+      "world-unload",
+      "world-load",
+      "world-unload",
+      "world-load"
+    ],
+    "modules": [
+      {
+        "id": "coordinates",
+        "active": true,
+        "pending": false,
+        "settings": {
+          "bind": null,
+          "hud-x": 4,
+          "hud-y": 40,
+          "hud-scale": 1,
+          "hud-opacity": 1,
+          "hud-color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "background": true,
+          "show-y": true,
+          "show-nether": false,
+          "precision": 2
+        }
+      },
+      {
+        "id": "radar",
+        "active": true,
+        "pending": false,
+        "settings": {
+          "bind": null,
+          "range": 64,
+          "size": 110,
+          "rotate": true,
+          "players": true,
+          "mobs": true,
+          "hud-x": 400,
+          "hud-y": 4
+        }
+      },
+      {
+        "id": "zoom",
+        "active": true,
+        "pending": false,
+        "settings": {
+          "bind": {
+            "key": "KeyC",
+            "mouse": null,
+            "modifiers": {}
+          },
+          "factor": 5,
+          "smooth": true
+        }
+      }
+    ],
+    "coordinates": "XYZ: 0.50, 150.00, 0.50",
+    "radar": [
+      {
+        "id": 4,
+        "name": "YeelerYeeg3Ph131",
+        "type": "minecraft:player",
+        "dx": 0,
+        "dz": 0
+      },
+      {
+        "id": 8,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": -2.6842449450319936,
+        "dz": 45.322484453413466
+      },
+      {
+        "id": 2,
+        "name": "Pig",
+        "type": "minecraft:pig",
+        "dx": 0,
+        "dz": 2
+      },
+      {
+        "id": 6,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": 7.710249281728663,
+        "dz": -26.768113750657704
+      },
+      {
+        "id": 7,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": -24.00898799709492,
+        "dz": 35.29792769373753
+      },
+      {
+        "id": 5,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": -9.026944745617689,
+        "dz": -25.009193415394474
+      },
+      {
+        "id": 11,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": -13.729913683206645,
+        "dz": -33.77915426878833
+      },
+      {
+        "id": 9,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": 21.70177479082756,
+        "dz": 57.66123170918341
+      },
+      {
+        "id": 12,
+        "name": "Sheep",
+        "type": "minecraft:sheep",
+        "dx": -26.777772647392037,
+        "dz": -50.72744261311823
+      },
+      {
+        "id": 10,
+        "name": "Horse",
+        "type": "minecraft:horse",
+        "dx": -44.61859541167274,
+        "dz": -38.371490570994645
+      }
+    ],
+    "refs": {
+      "newState": true,
+      "newPlayer": true,
+      "coordinatesCurrent": true,
+      "radarCurrent": true,
+      "adapterCurrent": true
+    }
+  },
+  "rtc": [
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "connected",
+      "ice": "connected",
+      "channels": [
+        {
+          "id": "D11",
+          "timestamp": 1792510294317.437,
+          "type": "data-channel",
+          "bytesReceived": 3183,
+          "bytesSent": 2983,
+          "dataChannelIdentifier": 1,
+          "label": "eagler-lan",
+          "messagesReceived": 63,
+          "messagesSent": 63,
+          "protocol": "",
+          "state": "open"
+        }
+      ]
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "new",
+      "ice": "new",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "closed",
+      "ice": "closed",
+      "channels": []
+    },
+    {
+      "state": "new",
+      "ice": "new",
+      "channels": []
+    },
+    {
+      "state": "new",
+      "ice": "new",
+      "channels": []
+    },
+    {
+      "state": "connected",
+      "ice": "connected",
+      "channels": [
+        {
+          "id": "D14",
+          "timestamp": 1792510294317.467,
+          "type": "data-channel",
+          "bytesReceived": 1021454,
+          "bytesSent": 369,
+          "dataChannelIdentifier": 1,
+          "label": "lan",
+          "messagesReceived": 32,
+          "messagesSent": 39,
+          "protocol": "",
+          "state": "open"
+        }
+      ]
+    }
+  ]
+}

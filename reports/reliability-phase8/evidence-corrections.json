@@ -1,0 +1,15 @@
+{
+  "initialRemoteSetup": {
+    "observation": "initial remote module effects",
+    "actualGuestHTML": "Phase 7 df14bf44e1de2ea58671fa4250234dea737fcc47b18e1f718c4d4149932bd5ea",
+    "loggedArtifactWas": "Phase 8 9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+    "disposition": "excluded from final-runtime certification; discovered by inspecting guest URL; explicitly reload guest fixed HTML before final lifecycle runs"
+  },
+  "unknownIdentityBefore": {
+    "method": "controlled metadata fault in actual Phase 7 host; temporarily unknown native kind and stale legacy singleplayer restored immediately",
+    "actualRemote": false,
+    "expectedRemote": true,
+    "driverLog": "input/phase8/session-commands.log",
+    "writeFailure": "old imported record helper referenced nonexistent desktop-phase8 path; reproduction also retained in regression-before.txt"
+  }
+}

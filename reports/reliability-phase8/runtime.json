@@ -1,0 +1,46 @@
+{
+  "htmlBytes": 80978184,
+  "artifactSHA256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+  "sourceDigest": "d2cc8f7711a9b7a8c218232066c0d3c67135c5b4e644f3b0d098c028ac2aa7a0",
+  "phase6": {
+    "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829",
+    "sourceDigest": "252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4"
+  },
+  "payloads": [
+    {
+      "id": "eag-inline-decoder",
+      "encodedSHA256": "5151ba3badc239342dffe1c44cc3ad74f08fbf35f289c9df7c2f67a9cadadb27",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-wasm-br",
+      "encodedSHA256": "9bb6d9ba91a75f11ed14e8f40de9ba4106488d998ae0516ff311afd6dc194a62",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-mesh-wasm-br",
+      "encodedSHA256": "293645aaba6e2091136f524bedd45f28a4d9991aa9146c7a31365ba149a7a3f3",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-server-wasm-br",
+      "encodedSHA256": "6a25194313d7f0a8f3309ecfb4bea894132094bca9e6e3b386c90b9ce2e68b25",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-assets",
+      "encodedSHA256": "8a826a7ba42df78dad7dad2bf94aeac54c47bd47dc58cdd4059cea7cb79ed4aa",
+      "unchanged": true
+    },
+    {
+      "id": "eag-inline-sounds",
+      "encodedSHA256": "6781533af1ff81368e9bcc5ccb0a8c0c23f84911b3a10a5b5ded7b86467d63c9",
+      "unchanged": true
+    }
+  ],
+  "javaChanged": false,
+  "nativeMode": "fast-analysis/SIMPLE",
+  "runtimeSourceCommit": "e34a8ab6b6fd9bb314a25aa9395c1f2259778ebe",
+  "startingCommit": "f57ffc361d3e873677b8253dba3fbea1dadfac4a",
+  "localArtifact": "input/phase8/native-fixed.html"
+}

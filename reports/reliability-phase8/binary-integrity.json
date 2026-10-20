@@ -1,0 +1,106 @@
+[
+  {
+    "path": "diagnostics/reliability-phase8/automatic-reconnect-1.png",
+    "bytes": 25130,
+    "sha256": "2af400360915f7666ac8065af53ec7328efdbccfc6cefd6c7ca00c3d0595db6a",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/automatic-reconnect-2.png",
+    "bytes": 25130,
+    "sha256": "2af400360915f7666ac8065af53ec7328efdbccfc6cefd6c7ca00c3d0595db6a",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/desktop.png",
+    "bytes": 157310,
+    "sha256": "a1c4147b90e9e8b2f2fb50eb680b3bf76cba0f452be445e524a42762a431d854",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/forced-loss-reconnect.png",
+    "bytes": 25131,
+    "sha256": "75bfe9b32e307aae6dec100ce163cf1838821f070f54da207b2bc032e08dfb63",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/harness-clickgui.png",
+    "bytes": 163102,
+    "sha256": "2d8afa344bfb8fdb578c489c94adc9af03a9111f206c6ccfa937b586afdee1f6",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/harness-running.png",
+    "bytes": 67329,
+    "sha256": "413f4fe9fc555ae53842a50828b4adcd734a828de836c7c5feeb8fb844a3427e",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/initial-guest.png",
+    "bytes": 40551,
+    "sha256": "4cab5471a454b138f19d1c0842a9b6bf53de25565cada8ebec21319dddc7c8ff",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/lan-guest.png",
+    "bytes": 240580,
+    "sha256": "716e63cf44af7297da97f492add395abdb40251cc7ef08b758fe73c0c6bc3db5",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/lan-host.png",
+    "bytes": 241359,
+    "sha256": "85ffdb0497acbe8967cbf64db6516591989f90e20446833c5bffa6373d4190d4",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/lobby-escape.png",
+    "bytes": 161392,
+    "sha256": "e5635c9a4fd304229b0c9223f9e47248cb2e1783ead02b94f360f5bd897a587f",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/lobby-second.png",
+    "bytes": 156693,
+    "sha256": "1928699f11ce50aa00c566daa41c7c8c2d1025d75da5d93be217e767639087b2",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/loss.png",
+    "bytes": 225028,
+    "sha256": "9a3e3ce044522aa55fc2540bec1414a43b5ae9367a32cf63db5f3ccbfcf709b0",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/reliability-phase8/world-select.png",
+    "bytes": 173054,
+    "sha256": "5c9b145fa48622727c04c723d61eaabc54b8385729f003e5f413070c04b8283f",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "runtimeDefects": [
+    {
+      "id": "unknown-native-identity-inherits-stale-local",
+      "cause": "Present native snapshot with missing/unknown session kind fell through to stale legacy singleplayer",
+      "reproduction": "Controlled old-client metadata fault plus regression-before.txt; not a naturally observed remote attack",
+      "fix": "Require explicit native kind local; preserve legacy fallback only without a native snapshot",
+      "test": "tests/phase8-lifecycle.test.mjs",
+      "actualFixedCheck": "final remote config and unknown identity safety",
+      "nativeChanged": false
+    }
+  ],
+  "hostLobby": {
+    "status": "exact limitation reproduced; root cause unresolved",
+    "scope": "Old artifact post-acceptance peers menu; trusted events delivered; no GUI/capture owner; after Meteor shutdown; browser rAF active and native snapshot stationary",
+    "evidence": [
+      "lobby-reproduction.json",
+      "lobby-after-shutdown.json",
+      "lobby-frame-progress.json"
+    ],
+    "workaround": "Ordinary native navigation returns host to gameplay before guest accepts; keep guest foreground during world readiness",
+    "fixedDriverIssues": [
+      "Choose open guest peer by actual discovery ID instead of row zero",
+      "Do not switch focus back to host while asserting the guest startup state"
+    ],
+    "nativePatchPrepared": false,
+    "reasonNoNativePatch": "A Java screen-navigation cause was not established; physical behavior not available"
+  },
+  "failedRecords": [
+    {
+      "index": 18,
+      "name": "disconnect before explicit radar disable",
+      "actual": "Physical key tracker briefly contained AltLeft; native state/commands and owned input were already clear",
+      "followup": "disconnect stable cleanup after transient Alt passed without a runtime change",
+      "origin": "undetermined; no physical test claimed"
+    },
+    {
+      "index": 24,
+      "name": "guest shutdown after host exit",
+      "actual": "Two external QA lifecycle observers remained; owned input/capture/modules/errors cleared",
+      "followup": "Helper now retains disposable subscriptions; independent actual shutdown without external observers passed with zero total listeners",
+      "classification": "Incorrect QA total-listener expectation"
+    },
+    {
+      "index": 44,
+      "name": "left-click attacks actual entity",
+      "actual": "Pig health unchanged during insufficiently gated probe",
+      "followup": "Gated clear-line-of-sight, current-target, captured attack reduced actual health",
+      "classification": "Initial probe did not establish a runtime defect"
+    },
+    {
+      "index": 48,
+      "name": "left-click with stable capture and attack cooldown",
+      "actual": "No pointer lock or entity target at observation",
+      "followup": "Native pause/resume/capture and explicit lock diagnostic; gated target attack passed",
+      "classification": "Invalid test preconditions"
+    },
+    {
+      "index": 49,
+      "name": "right button use emits actual game audio",
+      "actual": "Still holding a stick; silent interval",
+      "followup": "Verified stone selected, grounded player and capture; placement and breaking produced decoded nonzero PCM",
+      "classification": "Invalid held item for placement"
+    }
+  ],
+  "driverDiagnostics": [
+    "Saved-world selection needed settled list selection before Play",
+    "Initial helper edits reused cached imports with old paths; logs retain failures",
+    "One old guest URL was found; initial raw record binding corrected explicitly and excluded from final certification",
+    "A shutdown diagnostic read the global after shutdown removed it; separate saved-reference shutdown check passed",
+    "One overlong PTY line was cleared before submission; short helper calls used",
+    "Initial menu-gated policy observation was followed by a ready-world remote-policy assertion"
+  ],
+  "physicalChecks": "Awaiting user verification; MANUAL_CHECKLIST.md",
+  "recenter": "No physical recenter result; Phase 7 synthetic failure is preserved; no native mouse change"
+}
