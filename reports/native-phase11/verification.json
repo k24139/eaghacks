@@ -94,7 +94,28 @@
   },
   "historicalReportFilesChecked": 203,
   "historicalReportChanges": [],
-  "physicalResults": "See manual-results.json; only individual user reports can change PENDING",
+  "physicalResults": {
+    "basis": "User aggregate self-report; LAN explicitly excluded",
+    "passed": 35,
+    "failed": 0,
+    "pending": 7,
+    "groups": {
+      "mouse": {
+        "PASS": 8
+      },
+      "keyboard-interface": {
+        "PASS": 18
+      },
+      "audio": {
+        "PASS": 9
+      },
+      "private-multiplayer": {
+        "PENDING": 7
+      }
+    },
+    "hardwareAndExactTimeUnreported": true,
+    "cleanupConfirmed": null
+  },
   "memorySamples": {
     "beforeHarnessFreePercent": 62,
     "afterHarnessFreePercent": 59,
@@ -112,5 +133,6 @@
     "onlyDocumentationManifestsAndLightweightLogs": true,
     "credentialsInvitationDataProfilesStorageArchivesHTMLAndBinariesExcluded": true,
     "personalAbsolutePathRemoved": true
-  }
+  },
+  "manualResultsUpdatedAt": "2026-10-20T22:50:22.809346+00:00"
 }

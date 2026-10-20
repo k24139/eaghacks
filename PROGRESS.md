@@ -531,3 +531,14 @@ receipt/final response record actual commit/tree/all-file verification. Main and
 the original checkout are preserved. Next obtain lawful exact source/dependencies,
 resolve Mac toolchains, finish user physical QA and seek separate compilation
 authorization. Stop after Phase 11; do not begin modules or Phase 12 here.
+
+### Phase 11 physical QA follow-up
+
+User reports: "Everything works. I did not test the lan, since that is not a priority right now". Recorded 35 non-LAN checks as PASS (8 mouse, 18 keyboard/interface,
+9 audio) from this aggregate self-report, without invented measurements. All
+7 LAN checks remain PENDING and deferred by user preference. Operator is the
+user; exact test time, actual browser version and mouse/audio hardware remain
+unreported. Browser/server cleanup was not confirmed. Automated results and
+known-good artifact identities are unchanged; no native build or Phase 12 work
+ran. The documentation follow-up is committed/published with its own independent
+verification receipt in ignored input/phase11 storage.

@@ -1,6 +1,6 @@
 # Phase 11 physical QA baseline
 
-Physical results remain PENDING until individually reported by the user. Automated Chrome results cannot fill this checklist. Installed browser: Google Chrome 155.0.8059.80; macOS 26.4 (25E246), arm64; user describes Apple M4 MacBook Air with 16 GB. Mouse, audio hardware, actual browser used, operator and physical test time remain unreported. See manual-results.json for every individual status and observation.
+User reports that everything works except LAN, which was not tested and is not a current priority. Record 35 non-LAN checks as PASS based on that aggregate user report, with seven LAN checks PENDING. No individual measurements were supplied. Automated Chrome results do not establish these physical results. Installed browser: Google Chrome 155.0.8059.80; macOS 26.4 (25E246), arm64; user describes Apple M4 MacBook Air with 16 GB. Operator: user (self-reported). Mouse, audio hardware, actual browser used and exact physical test time remain unreported. Browser/server cleanup was not confirmed. See manual-results.json for every individual status and observation.
 
 The user reported a setup error: the helper was launched from the original checkout and was not found. An explicit working-directory correction was supplied; this does not establish any client input/audio failure.
 
@@ -50,41 +50,41 @@ This reuses the Phase 9 local server and dedicated Phase 10 task profile, never 
 
 Each individual check and current status:
 
-- `mouse-01` **PENDING** — Smooth continuous physical camera rotation
-- `mouse-02` **PENDING** — Look up/down
-- `mouse-03` **PENDING** — Repeated full turns
-- `mouse-04` **PENDING** — No unexpected camera snapping
-- `mouse-05` **PENDING** — No unexpected cursor recentering
-- `mouse-06` **PENDING** — Escape releases pointer lock
-- `mouse-07` **PENDING** — Click gameplay reacquires pointer lock
-- `mouse-08` **PENDING** — Pointer lock after switching away and returning
-- `keyboard-interface-01` **PENDING** — W movement
-- `keyboard-interface-02` **PENDING** — A movement
-- `keyboard-interface-03` **PENDING** — S movement
-- `keyboard-interface-04` **PENDING** — D movement
-- `keyboard-interface-05` **PENDING** — Jump
-- `keyboard-interface-06` **PENDING** — Sprint
-- `keyboard-interface-07` **PENDING** — Sneak
-- `keyboard-interface-08` **PENDING** — Inventory opens
-- `keyboard-interface-09` **PENDING** — Inventory closes
-- `keyboard-interface-10` **PENDING** — Chat typing
-- `keyboard-interface-11` **PENDING** — ClickGUI opens
-- `keyboard-interface-12` **PENDING** — ClickGUI closes
-- `keyboard-interface-13` **PENDING** — ClickGUI search
-- `keyboard-interface-14` **PENDING** — ClickGUI scrolling
-- `keyboard-interface-15` **PENDING** — ClickGUI module toggles
-- `keyboard-interface-16` **PENDING** — ClickGUI settings
-- `keyboard-interface-17` **PENDING** — No stuck movement after leaving/returning
-- `keyboard-interface-18` **PENDING** — No stuck mouse buttons after leaving/returning
-- `audio-01` **PENDING** — Menu click sounds
-- `audio-02` **PENDING** — Block placement sounds
-- `audio-03` **PENDING** — Block breaking sounds
-- `audio-04` **PENDING** — Entity/ambient sounds where available
-- `audio-05` **PENDING** — Volume adjustment
-- `audio-06` **PENDING** — Mute
-- `audio-07` **PENDING** — Unmute
-- `audio-08` **PENDING** — Sound restoration after tab switch
-- `audio-09` **PENDING** — Sound restoration after window refocus
+- `mouse-01` **PASS** — Smooth continuous physical camera rotation
+- `mouse-02` **PASS** — Look up/down
+- `mouse-03` **PASS** — Repeated full turns
+- `mouse-04` **PASS** — No unexpected camera snapping
+- `mouse-05` **PASS** — No unexpected cursor recentering
+- `mouse-06` **PASS** — Escape releases pointer lock
+- `mouse-07` **PASS** — Click gameplay reacquires pointer lock
+- `mouse-08` **PASS** — Pointer lock after switching away and returning
+- `keyboard-interface-01` **PASS** — W movement
+- `keyboard-interface-02` **PASS** — A movement
+- `keyboard-interface-03` **PASS** — S movement
+- `keyboard-interface-04` **PASS** — D movement
+- `keyboard-interface-05` **PASS** — Jump
+- `keyboard-interface-06` **PASS** — Sprint
+- `keyboard-interface-07` **PASS** — Sneak
+- `keyboard-interface-08` **PASS** — Inventory opens
+- `keyboard-interface-09` **PASS** — Inventory closes
+- `keyboard-interface-10` **PASS** — Chat typing
+- `keyboard-interface-11` **PASS** — ClickGUI opens
+- `keyboard-interface-12` **PASS** — ClickGUI closes
+- `keyboard-interface-13` **PASS** — ClickGUI search
+- `keyboard-interface-14` **PASS** — ClickGUI scrolling
+- `keyboard-interface-15` **PASS** — ClickGUI module toggles
+- `keyboard-interface-16` **PASS** — ClickGUI settings
+- `keyboard-interface-17` **PASS** — No stuck movement after leaving/returning
+- `keyboard-interface-18` **PASS** — No stuck mouse buttons after leaving/returning
+- `audio-01` **PASS** — Menu click sounds
+- `audio-02` **PASS** — Block placement sounds
+- `audio-03` **PASS** — Block breaking sounds
+- `audio-04` **PASS** — Entity/ambient sounds where available
+- `audio-05` **PASS** — Volume adjustment
+- `audio-06` **PASS** — Mute
+- `audio-07` **PASS** — Unmute
+- `audio-08` **PASS** — Sound restoration after tab switch
+- `audio-09` **PASS** — Sound restoration after window refocus
 - `private-multiplayer-01` **PENDING** — Host creates disposable LAN session
 - `private-multiplayer-02` **PENDING** — Guest accepts while host stays on invitation screen
 - `private-multiplayer-03` **PENDING** — Physical Escape navigation after acceptance
@@ -96,3 +96,5 @@ Each individual check and current status:
 ## Cleanup
 
 Save/exit only the disposable world. In Terminal 2 enter `await context.close();`, then Control-D. Stop the task server with Control-C in Terminal 1. Confirm both exited; preserve personal Chrome sessions and all benchmark worlds. The helper's raw logs may include private LAN data: leave them ignored. No unattended server should remain after testing.
+
+User follow-up (October 20, 2026, America/Chicago): "Everything works. I did not test the lan, since that is not a priority right now". PASS entries reflect this aggregate self-report; LAN was explicitly excluded.

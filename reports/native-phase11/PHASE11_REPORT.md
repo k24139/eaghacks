@@ -1,6 +1,6 @@
 # Eaghacks Phase 11 — native build readiness and physical QA baseline
 
-October 20, 2026, America/Chicago. **Readiness/evidence work is complete; native build readiness is blocked and physical QA remains pending.** No native compilation, source-level feature change, replacement WASM, standalone rebuild, FULL optimization, benchmark or release packaging ran. Stop after Phase 11.
+October 20, 2026, America/Chicago. **Readiness/evidence work is complete; native build readiness is blocked and 35 non-LAN physical checks are user-reported PASS; seven LAN checks remain pending by user choice.** No native compilation, source-level feature change, replacement WASM, standalone rebuild, FULL optimization, benchmark or release packaging ran. Stop after Phase 11.
 
 ## Repository baseline and preservation
 
@@ -34,9 +34,9 @@ Node v24.20.0 and npm 11.19.0 work with existing local dependencies. macOS repor
 
 ## Physical QA
 
-MANUAL_QA.md provides exact working-directory, hash, server, dedicated-profile and cleanup commands, individual procedures and the known-good LAN workaround. manual-results.json records each mouse, keyboard/interface, listening and private multiplayer action separately as PENDING until user evidence exists; operator, hardware and time are not invented.
+MANUAL_QA.md provides exact working-directory, hash, server, dedicated-profile and cleanup commands, individual procedures and the known-good LAN workaround. manual-results.json records 8 mouse, 18 keyboard/interface and 9 audio checks as PASS from the user’s aggregate report, and all 7 private multiplayer checks as PENDING. The operator is the user; exact test time, actual browser version and mouse/audio hardware remain unreported.
 
-The user reported availability, then a MODULE_NOT_FOUND setup error from the original checkout. Explicit commands to change both terminals to the integration worktree were provided. This is a launch-directory error, not a physical client failure. No user-reported physical success or listening result has been received in this report. Automated harness results cannot substitute for those results. A user-operated manual server must be closed by the operator after testing; no unrelated listener/browser is terminated by the agent.
+The user reported availability, then a MODULE_NOT_FOUND setup error from the original checkout. Explicit commands to change both terminals to the integration worktree were provided. This is a launch-directory error, not a physical client failure. In a later follow-up the user reported: "Everything works. I did not test the lan, since that is not a priority right now". This covers the supplied non-LAN checklist as an aggregate self-report; no per-check measurements were provided. LAN is deferred, not failed. Browser/server shutdown was not confirmed. Automated harness results cannot substitute for those results. A user-operated manual server must be closed by the operator after testing; no unrelated listener/browser is terminated by the agent.
 
 ## Host-lobby diagnostics
 
@@ -65,7 +65,9 @@ Proposed Phase 12 objectives, requiring fresh authorization:
 
 1. Obtain a lawful complete source/dependency package at `1be2375ad67cb42a52d5f586a2422e54b57be625`, verify the manifest identities and retain matching symbol/source maps if available. User must supply/select genuinely new authorized material.
 2. Resolve and verify the macOS ARM Java 25 toolchain, Gradle distribution, patched TeaVM jars/transitive closure, exact compiler settings and memory/disk budget. No ready-to-build claim until prerequisites are present.
-3. Complete remaining physical checks with individual user reports, including a second participant for private LAN if available. Record device/browser/operator/time and retain failure steps.
+3. Retain the user-reported non-LAN passes. Collect the missing hardware/browser/time metadata when available; leave private LAN deferred until the user prioritizes it and a second participant is available. Retain any future failure steps.
 4. Only after explicit native compilation authorization, create an isolated fast-analysis/SIMPLE diagnostic candidate implementing the reviewed bounded markers; assign new identities and perform the scoped hash-bound regressions. Identify a confirmed interruption boundary before proposing a lobby fix.
 
 No missing-module implementation is authorized by this handoff. Keep the unchanged client available for rollback. Phase 12 has not begun.
+
+The physical QA follow-up is a documentation-only update to initial Phase 11 publication `668c5f346f3a502d1dca0b813177eb536ec8cabb`; existing automated results were not rerun or relabeled. Its own containing publication is verified separately in the ignored receipt.
