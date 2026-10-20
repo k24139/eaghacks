@@ -1,0 +1,276 @@
+{
+  "eag-inline-assets": {
+    "count": 19509,
+    "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db",
+    "samplePaths": [
+      "assets/.mcassetsroot",
+      "assets/eagler/capes/01.minecon_2011.png",
+      "assets/eagler/capes/02.minecon_2012.png",
+      "assets/eagler/capes/03.minecon_2013.png",
+      "assets/eagler/capes/04.minecon_2015.png"
+    ],
+    "musicFileCount": 73,
+    "audioPaths": [
+      {
+        "name": "assets/minecraft/sounds.json",
+        "bytes": 626160
+      },
+      {
+        "name": "data/minecraft/tags/block/triggers_ambient_desert_dry_vegetation_block_sounds.json",
+        "bytes": 97
+      },
+      {
+        "name": "data/minecraft/tags/block/triggers_ambient_desert_sand_block_sounds.json",
+        "bytes": 68
+      },
+      {
+        "name": "data/minecraft/tags/block/triggers_ambient_dried_ghast_block_sounds.json",
+        "bytes": 74
+      }
+    ],
+    "events": {
+      "block.stone.break": {
+        "sounds": [
+          "dig/stone1",
+          "dig/stone2",
+          "dig/stone3",
+          "dig/stone4"
+        ],
+        "subtitle": "subtitles.block.generic.break"
+      },
+      "entity.pig.ambient": {
+        "sounds": [
+          "mob/pig/say1",
+          "mob/pig/say2",
+          "mob/pig/say3"
+        ],
+        "subtitle": "subtitles.entity.pig.ambient"
+      },
+      "music.game": {
+        "sounds": [
+          {
+            "name": "music/game/a_familiar_room",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/below_and_above",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/broken_clocks",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/clark",
+            "stream": true
+          },
+          {
+            "name": "music/game/comforting_memories",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/danny",
+            "stream": true
+          },
+          {
+            "name": "music/game/dry_hands",
+            "stream": true
+          },
+          {
+            "name": "music/game/ebb",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/featherfall",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/fireflies",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/floating_dream",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/haggstrom",
+            "stream": true
+          },
+          {
+            "name": "music/game/home",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/key",
+            "stream": true
+          },
+          {
+            "name": "music/game/komorebi",
+            "stream": true,
+            "volume": 0.8
+          },
+          {
+            "name": "music/game/left_to_bloom",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/lilypad",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/living_mice",
+            "stream": true
+          },
+          {
+            "name": "music/game/memories",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/mice_on_venus",
+            "stream": true
+          },
+          {
+            "name": "music/game/minecraft",
+            "stream": true
+          },
+          {
+            "name": "music/game/nightly",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/one_more_day",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/os_piano",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/oxygene",
+            "stream": true
+          },
+          {
+            "name": "music/game/puzzlebox",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/shores",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/subwoofer_lullaby",
+            "stream": true
+          },
+          {
+            "name": "music/game/sweden",
+            "stream": true
+          },
+          {
+            "name": "music/game/watcher",
+            "stream": true,
+            "volume": 0.4
+          },
+          {
+            "name": "music/game/wet_hands",
+            "stream": true
+          },
+          {
+            "name": "music/game/yakusoku",
+            "stream": true,
+            "volume": 0.8
+          }
+        ]
+      },
+      "music.menu": {
+        "sounds": [
+          {
+            "name": "music/game/ebb",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/home",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/memories",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/nightly",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/game/shores",
+            "stream": true,
+            "volume": 0.4,
+            "weight": 2
+          },
+          {
+            "name": "music/menu/beginning_2",
+            "stream": true
+          },
+          {
+            "name": "music/menu/floating_trees",
+            "stream": true
+          },
+          {
+            "name": "music/menu/moog_city_2",
+            "stream": true
+          },
+          {
+            "name": "music/menu/mutation",
+            "stream": true
+          }
+        ]
+      },
+      "ui.button.click": {
+        "sounds": [
+          "random/click_stereo"
+        ]
+      }
+    }
+  },
+  "eag-inline-sounds": {
+    "count": 4779,
+    "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6",
+    "samplePaths": [
+      "assets/minecraft/sounds/ambient/cave/cave1.ogg",
+      "assets/minecraft/sounds/ambient/cave/cave10.ogg",
+      "assets/minecraft/sounds/ambient/cave/cave11.ogg",
+      "assets/minecraft/sounds/ambient/cave/cave12.ogg",
+      "assets/minecraft/sounds/ambient/cave/cave13.ogg"
+    ],
+    "musicFileCount": 0,
+    "audioPaths": []
+  }
+}

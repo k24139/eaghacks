@@ -1,0 +1,31 @@
+✖ keybind disposal clears held keys and cancels pending capture exactly once (26.170542ms)
+✔ blur cancels capture once and releases keyboard state before focus returns (4.338209ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 382.635209
+
+✖ failing tests:
+
+test at tests/phase7-input.test.mjs:7:1
+✖ keybind disposal clears held keys and cancels pending capture exactly once (26.170542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/aaron/Documents/repos/eaghacks/input/phase4-worktree/tests/phase7-input.test.mjs:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

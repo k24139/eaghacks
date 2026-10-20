@@ -1,0 +1,1272 @@
+[
+  {
+    "who": "guest",
+    "text": "LAN: info: discovery service online: scope loopback, room lan",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "LAN: info: peer 5d937ff6 (player-aa71) is on this network",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "LAN: info: peer 1798373e (player-08c5) is on this network",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "LAN: info: peer 1798373e (player-08c5) connected",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "LAN: info: peer 5d937ff6 (player-aa71) connected",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[eaghacks] Meteor framework loaded; browser integration active",
+    "type": "info"
+  },
+  {
+    "who": "guest",
+    "text": "ClientMain: [INFO] eaglercraftx is starting...",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+315][main/INFO][LANDiscovery]: Automatic LAN discovery: 1 connected, 1 found on this network (loopback)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+317][main/INFO][AutoConnect]: Auto-connect: module not loaded on this page (manual join codes only)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "ClientMain: [INFO] configuration was successful",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "ClientMain: [INFO] registering crash handlers",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "ClientMain: [INFO] initializing eaglercraftx runtime",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+321][main/INFO][EagRuntime]: Version: EagRuntimeX 1.0",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+322][main/INFO][TeaVMBlobURLManager]: Note: Blob urls have been disabled, client will use data: urls instead",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+322][main/INFO][BrowserRuntime]: Creating main game canvas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+335][main/INFO][BrowserRuntime]: Endianness: this CPU is little endian",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+348][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/cd5a44a0-1e3e-461c-996d-f17fd5b4ee33#eaghacks-inline-assets.epk",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+366][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/cd5a44a0-1e3e-461c-996d-f17fd5b4ee33#eaghacks-inline-assets.epk",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+615][main/INFO][BrowserRuntime]: Downloading: blob:http://127.0.0.1:3006/c804cd70-c96a-4c6b-9dc5-50e50792ad7e#eaghacks-inline-sounds.epk",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:26+645][main/INFO][BrowserRuntime]: Decompressing: blob:http://127.0.0.1:3006/c804cd70-c96a-4c6b-9dc5-50e50792ad7e#eaghacks-inline-sounds.epk",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+009][main/INFO][BrowserRuntime]: Loaded 24288 resources from EPKs",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+009][main/INFO][BrowserRuntime]: Initializing filesystem...",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+032][main/INFO][BrowserRuntime]: Game directory filesystem mounted: indexeddb:_net_lax1dude_eaglercraft_v1_8_internal_PlatformFilesystem_1_8_8_worlds",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+032][main/INFO][BrowserRuntime]: Platform initialization complete",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+033][main/INFO][ClientMain]: eagler: web boot OK",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:27+033][main/INFO][ClientMain]: eagler: 24288 resources loaded from EPK",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "eagler: web boot OK (24288 assets)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "eagler-gzip-selftest: OK (48 bytes compressed, round-trip verified)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] bridge installed (meshWorkers enabled)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "ClientMain: [INFO] handing off to net.minecraft.client.main.Main",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Setting user: YeegEagler2585",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Backend library: LWJGL version 3.4.1 eagler-web-stub",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29+444][main/INFO][BrowserRuntime]: Loading keyboard layout data",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Using graphics backend WebGL2, using drivers: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Using graphics device: WebKit WebGL (WebKit)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Using graphics device extensions: EXT_color_buffer_float, EXT_texture_filter_anisotropic",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Reloading ResourceManager: vanilla",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:29][Render thread/INFO][Minecraft]: Optional music pack is not installed; background music and music discs are disabled",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:30][Render thread/INFO][Minecraft]: Found unifont_pua-17.0.01.hex, loading",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:30][Render thread/INFO][Minecraft]: Found unifont_all_no_pua-17.0.01.hex, loading",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:31][Render thread/INFO][Minecraft]: Found eagler_server_symbols.hex, loading",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:35][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:35][Render thread/INFO][Minecraft]: [STDERR]: eagler-webgl2: TEXEL_BUFFER uniform 'CloudFaces' is unsupported on WebGL2 (TODO 3.3b: clouds rewrite)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: OpenAL initialized on device WebAudio",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Sound engine started",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:36][Render thread/INFO][Minecraft]: [STDERR]: eagler-present: fullscreen-quad present pipeline ready",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:44:41][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.menu",
+    "type": "error"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:14][Render thread/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:15][Render thread/INFO][Minecraft]: Loaded 1585 recipes",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16][Render thread/INFO][Minecraft]: Loaded 1688 advancements",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] pre-connect reset without a world: retaining prewarmed isolates",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16+071][main/INFO][EaglerIntegratedServerWorker26]: Worker received StartServer for world 'Eaghacks Benchmark 2026' (owner 'YeelerYeeg3Ph131', view 2, simulation 2)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16+072][main/INFO][EaglerIntegratedServerWorker26]: Worker is spinning up the integrated server core",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16+072][main/INFO][WorkerWorldLoader]: Building world 'Eaghacks Benchmark 2026' in the integrated-server worker realm",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16+082][main/WARN][TeaVMBlobURLManager]: Warning: Same-origin fetch support detected as false, client will use data: urls instead of blob: urls",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:16][IntegratedServerWorker/INFO][NormalNoise]: [rustnoise] native noise kernel enabled (parity maxErr=0.0)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][IntegratedServerWorker/INFO][Minecraft]: Loaded 1585 recipes",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][IntegratedServerWorker/INFO][Minecraft]: Loaded 1688 advancements",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][IntegratedServerWorker/INFO][com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+482][main/INFO][WorkerWorldLoader]: World 'Eaghacks Benchmark 2026' data loaded; spinning integrated server core",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Starting integrated minecraft server version 26.2",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+509][main/INFO][SingleplayerServerController26]: Worker accepted the launch request",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Loading 0 persistent chunks...",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Preparing spawn area: 16%",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (world): All chunks are saved",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: ThreadedAnvilChunkStorage: All dimensions are saved",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][IntegratedServerWorker/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+623][main/INFO][WorkerPacketBridge]: Created server-side worker packet bridge (EmbeddedChannel, forced-memory)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+623][main/INFO][EaglerIntegratedServerWorker26]: Integrated server core is ready (worker packet bridge bound)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+641][main/INFO][SingleplayerServerController26]: Integrated server ready, local channel: ~!worker-bridge",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Render thread/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17+677][main/INFO][WorkerPacketBridge]: Created client-side worker packet bridge (EmbeddedChannel, forced-memory)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Using sparse stored chunk loading for [0, 0] through minecraft:initialize_light",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:17][Server thread/INFO][Minecraft]: Loading 9 chunks for player spawn...",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Server thread/INFO][Minecraft]: Time elapsed: 480 ms",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131[embedded] logged in with entity id 2 at (0.5, 150.0, 1.3537811318967652)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Server thread/INFO][Minecraft]: YeelerYeeg3Ph131 joined the game",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Server thread/INFO][Minecraft]: Web initial chunk send: 9 ready, 0 remaining",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Render thread/INFO][Minecraft]: [MeshWorkerPool] base model table (delta mode): 32465 bytes for 32366 states in 1.10 ms — broadcasting",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[MeshWorkerPool] table available (32465 bytes): sent to 1 prewarmed worker(s); 0 still booting",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[MeshWorkerPool] worker 0 ready (1/4) epoch=0 bootMs=1731; mesh-worker:table-ready:32465|reg=32366 verified=0 hashMiss=0",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Render thread/INFO][Minecraft]: Services public key unavailable; remote chat sessions will remain unsigned for this connection",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:18][Render thread/INFO][Minecraft]: Loaded 103 advancements",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:21][Server thread/INFO][Minecraft]: Changing view distance to 3, from 2",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:21][Server thread/INFO][Minecraft]: Changing simulation distance to 3, from 2",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:22][Server thread/INFO][Minecraft]: Changing view distance to 4, from 3",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:22][Server thread/INFO][Minecraft]: Changing simulation distance to 4, from 3",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:25][Server thread/INFO][Minecraft]: Saving and pausing game...",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:25][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:overworld",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:25][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_nether",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:25][Server thread/INFO][Minecraft]: Saving chunks for level 'ServerLevel[Eaghacks Benchmark 2026]'/minecraft:the_end",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:29][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.creative",
+    "type": "error"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:29][IntegratedServerWorker/INFO][Minecraft]: Published integrated server through browser LAN relay",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:29+964][main/INFO][EaglerIntegratedServerWorker26]: Browser LAN relay publish policy enabled (mode 1, commands false)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:30+794][main/INFO][LANInvites]: Invite sent to player-08c5",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:30+810][main/INFO][LANInvites]: Invite received from player-aa71 - waiting for the player to accept or decline",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:36][Render thread/INFO][Minecraft]: Failed to parse URL eagler-direct:EGCQ28ERHRqZxhsV3l3UjJFd3oxY1cyNHFiWXh5dUVkM0MDPu1XetF7L6ybT7ju8AGRnOFEqMCcC4q1XL0JFEXIkgACBPyBKjZkYWZhZWZlLWE3OTMtNDU3OS1hZWY0LTVhNDlmOTYyMzk4MC5sb2NhbAAC_IEESyogkwAABAAAAAAB",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "java.lang.IllegalArgumentException: Unparseable port number: eagler-direct:EGCQ28ERHRqZxhsV3l3UjJFd3oxY1cyNHFiWXh5dUVkM0MDPu1XetF7L6ybT7ju8AGRnOFEqMCcC4q1XL0JFEXIkgACBPyBKjZkYWZhZWZlLWE3OTMtNDU3OS1hZWY0LTVhNDlmOTYyMzk4MC5sb2NhbAAC_IEESyogkwAABAAAAAAB",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:14401978)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:17060867)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15803954)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15212560)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:14359984)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15812661)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:19758560)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:16231558)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:60961524)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:48672601)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:48672656)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:42234884)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:42236187)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:30775748)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29506585)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32757211)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29486279)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29488940)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34910547)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34762501)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34592740)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34349949)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:33765886)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32674141)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29175665)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29175682)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:21317483)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:28745913)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:41661198)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:41661218)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32655414)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29158304)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:28531140)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:36][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] pre-connect reset without a world: retaining prewarmed isolates",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] prewarm: starting 1 mesh worker(s), adaptive ceiling 4",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:36+186][main/INFO][SingleplayerServerController26]: Remote multiplayer handoff released LAN and integrated-server state",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[wasm-worker] runtime loaded, instantiating shared module...",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:36][Render thread/INFO][Minecraft]: Connecting to server.invalid, 25565",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:36][Server Connector #1/INFO][io.netty.util.internal.PlatformDependent]: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system instability.",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[wasm-worker] instantiated; entering main([])",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36+284][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36+284][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000001",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36][Server thread/INFO][Minecraft]: Using sparse stored spawn chunk [0, 0] in minecraft:overworld",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36][Server thread/INFO][Minecraft]: YeeishYeeish6184[embedded] logged in with entity id 28 at (0.5, 150.0, 0.5)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36][Server thread/INFO][Minecraft]: YeeishYeeish6184 joined the game",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:36][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:37][Render thread/INFO][Minecraft]: Services public key unavailable; remote chat sessions will remain unsigned for this connection",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:37][Render thread/INFO][Minecraft]: [MeshWorkerPool] base model table (delta mode): 32465 bytes for 32366 states in 1.70 ms — broadcasting",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] table available (32465 bytes): sent to 0 prewarmed worker(s); 1 still booting",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:45:37][Render thread/INFO][Minecraft]: Loaded 2 advancements",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] worker 0 booted (parse+registry) bootMs=1860; sending table",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] worker 0 ready (1/4) epoch=0 bootMs=1860; mesh-worker:table-ready:32465|reg=32366 verified=0 hashMiss=0",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:39+593][main/INFO][LANInvites]: player-08c5 accepted the invite, completing the direct connection",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:39+622][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000001 joined (no relay involved)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:45:39][Render thread/INFO][Minecraft]: [System] [CHAT] YeeishYeeish6184 joined the game",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:46:02][Render thread/WARN][Minecraft]: Unable to play empty soundEvent: minecraft:music.creative",
+    "type": "error"
+  },
+  {
+    "who": "host",
+    "text": "[12:47:20][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeeishYeeish6184 to 0.500000, 150.000000, 1.500000]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:47:20][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeeishYeeish6184 to 0.500000, 150.000000, 1.500000",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:47:20][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Gave 2 [Bread] to YeeishYeeish6184]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:47:20][Render thread/INFO][Minecraft]: [System] [CHAT] Gave 2 [Bread] to YeeishYeeish6184",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:00][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Teleported YeeishYeeish6184 to 0.500000, 150.000000, 1.500000]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:00][Render thread/INFO][Minecraft]: [System] [CHAT] Teleported YeeishYeeish6184 to 0.500000, 150.000000, 1.500000",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:00][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Gave 2 [Bread] to YeeishYeeish6184]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:00][Render thread/INFO][Minecraft]: [System] [CHAT] Gave 2 [Bread] to YeeishYeeish6184",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:03][Server thread/INFO][Minecraft]: [YeelerYeeg3Ph131: Summoned new Pig]",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:03][Render thread/INFO][Minecraft]: [System] [CHAT] Summoned new Pig",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:03][Server thread/INFO][Minecraft]: [Not Secure] <YeeishYeeish6184> Phase7 private chat",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:03][Render thread/INFO][Minecraft]: [Not Secure] [CHAT] <YeeishYeeish6184> Phase7 private chat",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:48:03][Render thread/INFO][Minecraft]: [Not Secure] [CHAT] <YeeishYeeish6184> Phase7 private chat",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:39+064][main/INFO][ClientPlatformSingleplayer]: Direct connect guest direct0000000001 left",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:39+072][main/INFO][EaglerIntegratedServerWorker26]: Closed relay LAN peer direct0000000001",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:48:39][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] final disconnect: releasing world workers",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] world release: terminated all mesh workers and cleared retained tables/jobs",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:39][Server thread/INFO][Minecraft]: YeeishYeeish6184 lost connection: Disconnected",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:39][Server thread/INFO][Minecraft]: YeeishYeeish6184 left the game",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:39][Render thread/INFO][Minecraft]: [System] [CHAT] YeeishYeeish6184 left the game",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:48:42+492][main/INFO][LANInvites]: Invite sent to player-08c5",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:48:42+501][main/INFO][LANInvites]: Invite received from player-aa71 - waiting for the player to accept or decline",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:04+807][main/INFO][LANInvites]: Invite sent to player-08c5",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:04+809][main/INFO][LANInvites]: Invite received from player-aa71 - waiting for the player to accept or decline",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: Failed to parse URL eagler-direct:EGCQ28EQkpvYhhvNXhNOFBBRGU1aUV0N1ZhUWdwTWl0RlEkVHtgX02XO9zhj40FlYk88qTvElrqlpibc9DXRM8q2QACBMSvKjZkYWZhZWZlLWE3OTMtNDU3OS1hZWY0LTVhNDlmOTYyMzk4MC5sb2NhbAACxK8ESyogkwAABAAAAAAB",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "java.lang.IllegalArgumentException: Unparseable port number: eagler-direct:EGCQ28EQkpvYhhvNXhNOFBBRGU1aUV0N1ZhUWdwTWl0RlEkVHtgX02XO9zhj40FlYk88qTvElrqlpibc9DXRM8q2QACBMSvKjZkYWZhZWZlLWE3OTMtNDU3OS1hZWY0LTVhNDlmOTYyMzk4MC5sb2NhbAACxK8ESyogkwAABAAAAAAB",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:14401978)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:17060867)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15803954)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15212560)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:14359984)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:15812661)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:19758560)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:16231558)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:60961524)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:48672601)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:48672656)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:42234884)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:42236187)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:30775748)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29506585)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32757211)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29486279)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29488940)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34910547)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34762501)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34592740)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:34349949)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:33765886)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32674141)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29175665)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29175682)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:21317483)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:28745913)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:41661198)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:41661218)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:32655414)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:29158304)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "\tat java.lang.Throwable$FakeClass.fakeMethod(Throwable.java:28531140)",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] pre-connect reset without a world: retaining prewarmed isolates",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] prewarm: starting 1 mesh worker(s), adaptive ceiling 4",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10+135][main/INFO][SingleplayerServerController26]: Remote multiplayer handoff released LAN and integrated-server state",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[wasm-worker] runtime loaded, instantiating shared module...",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: Connecting to server.invalid, 25565",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[wasm-worker] instantiated; entering main([])",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10+172][main/INFO][WorkerPacketBridge]: Created remote LAN worker packet bridge (normal TCP serialization, trusted LAN policy)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10+172][main/INFO][EaglerIntegratedServerWorker26]: Opened relay LAN peer direct0000000002",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10][Server thread/INFO][Minecraft]: Using sparse stored player chunk [0, 0] in minecraft:overworld",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10][Server thread/INFO][Minecraft]: YeeishYeeish6184[embedded] logged in with entity id 32 at (0.5, 150.0, 3.717882083462409)",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10][Server thread/INFO][Minecraft]: YeeishYeeish6184 joined the game",
+    "type": "log"
+  },
+  {
+    "who": "host",
+    "text": "[12:50:10][Server thread/INFO][Minecraft]: Web initial chunk send: 117 ready, 105 remaining",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: Services public key unavailable; remote chat sessions will remain unsigned for this connection",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: [MeshWorkerPool] base model table (delta mode): 32465 bytes for 32366 states in 0.50 ms — broadcasting",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] table available (32465 bytes): sent to 0 prewarmed worker(s); 1 still booting",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:50:10][Render thread/INFO][Minecraft]: Loaded 2 advancements",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] worker 0 booted (parse+registry) bootMs=1025; sending table",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] worker 0 ready (1/4) epoch=0 bootMs=1025; mesh-worker:table-ready:32465|reg=32366 verified=0 hashMiss=0",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:51:40][Render thread/INFO][Minecraft]: [MeshWorkerLifecycle] final disconnect: releasing world workers",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[MeshWorkerPool] world release: terminated all mesh workers and cleared retained tables/jobs",
+    "type": "log"
+  },
+  {
+    "who": "guest",
+    "text": "[12:51:40][Render thread/WARN][Minecraft]: Client disconnected with reason: Direct connect link lost: Direct connect data channel disconnected (code 1006)",
+    "type": "error"
+  }
+]

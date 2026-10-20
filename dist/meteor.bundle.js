@@ -997,7 +997,9 @@ var MeteorFramework = (() => {
       return this;
     }
     dispose() {
+      if (this._disposed) return;
       this._disposed = true;
+      this._handleBlur();
       if (!this._attached || !this._target) return;
       const t = this._target;
       t.removeEventListener("keydown", this._onKeyDown, true);

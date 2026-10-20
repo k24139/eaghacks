@@ -1,0 +1,7 @@
+{
+  "screen": {
+    "screenName": "DisconnectedScreen",
+    "overlayActive": false
+  },
+  "lan": "{\"version\":1,\"state\":\"online\",\"status\":\"Automatic LAN discovery: 1 connected, 1 found on this network (loopback)\",\"service\":\"/eagler-lan/v1\",\"scope\":\"loopback\",\"self\":{\"id\":\"1798373ebc705b16\",\"name\":\"player-08c5\",\"room\":\"lan\",\"scope\":\"loopback\"},\"peers\":[{\"id\":\"5d937ff6f2144239\",\"name\":\"player-aa71\",\"addr\":\"127.0.0.1\",\"state\":\"open\",\"rttMs\":1,\"ageMs\":436973}],\"openPeers\":1,\"peerCount\":1,\"lastError\":null}"
+}

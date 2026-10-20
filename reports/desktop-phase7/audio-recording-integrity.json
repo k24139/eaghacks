@@ -1,0 +1,122 @@
+[
+  {
+    "name": "block-break-0.webm",
+    "bytes": 110,
+    "sha256": "34625a59ca017ae414573bcb4a21464514f695d9806955fa676098939005795c",
+    "validation": "MediaRecorder header only: no audio frames during silent interval"
+  },
+  {
+    "name": "block-break-targeted-0.webm",
+    "bytes": 9956,
+    "sha256": "5a5a25f57705f42163f60566ed704bdb3eb65dc428da142b225ef988040c9600",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.6,
+      "peak": 0.39299577474594116,
+      "rms": 0.020304611126600803
+    }
+  },
+  {
+    "name": "block-place-0.webm",
+    "bytes": 9956,
+    "sha256": "6615bc3ea7dc7b433ee641c7268f6e5b872a6557c581740e8c0973a28addb9b9",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.6,
+      "peak": 0.017162898555397987,
+      "rms": 0.0015720165632687217
+    }
+  },
+  {
+    "name": "block-place-targeted-0.webm",
+    "bytes": 13820,
+    "sha256": "4a6e9a4e16b7fbef5329d9ba711ce9a86272eabd8786841cfd2198471b43406c",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.84,
+      "peak": 0.42486321926116943,
+      "rms": 0.025783227879407504
+    }
+  },
+  {
+    "name": "entity-sound-0.webm",
+    "bytes": 10291,
+    "sha256": "8047701607683c19681612b32597380c45b6eab0efcce3180acb735da209a5d6",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.66,
+      "peak": 0.09552213549613953,
+      "rms": 0.008207504276214616
+    }
+  },
+  {
+    "name": "focus-restored-0.webm",
+    "bytes": 18650,
+    "sha256": "83704c6e20b5fd67515987beb60e57c5df4cd2d1e4be9c17849622935950603a",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 1.14,
+      "peak": 0.1327320784330368,
+      "rms": 0.010968491230815822
+    }
+  },
+  {
+    "name": "inventory-0.webm",
+    "bytes": 1262,
+    "sha256": "3ebcb9cd1497310ad5e1cc0c9bf542436599cfaa845b7e2abf7570dc02dbda27",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.06,
+      "peak": 0.003308085957542062,
+      "rms": 0.0005382438149337731
+    }
+  },
+  {
+    "name": "menu-audio-0.webm",
+    "bytes": 5126,
+    "sha256": "897578c057a8fc17e601ab20fd4da2ee664f8b68fb45a2aa9a62cdf10691f59d",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.3,
+      "peak": 0.24750907719135284,
+      "rms": 0.01454964373168605
+    }
+  },
+  {
+    "name": "volume-muted-0.webm",
+    "bytes": 110,
+    "sha256": "34625a59ca017ae414573bcb4a21464514f695d9806955fa676098939005795c",
+    "validation": "MediaRecorder header only: no audio frames during silent interval"
+  },
+  {
+    "name": "volume-restored-0.webm",
+    "bytes": 6092,
+    "sha256": "53d4acd8f27c486a51875f43a05f80721039947118eefb5e4641a07988357ec5",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.36,
+      "peak": 0.2559259235858917,
+      "rms": 0.025753807511503288
+    }
+  },
+  {
+    "name": "world-reentry-0.webm",
+    "bytes": 10922,
+    "sha256": "82b143e0c3bd884d612c42bdec32b17f774c54ef81fe185b3cc4a71af17e6114",
+    "decoded": {
+      "channels": 2,
+      "sampleRate": 48000,
+      "duration": 0.66,
+      "peak": 0.13415156304836273,
+      "rms": 0.01462894105651647
+    }
+  }
+]

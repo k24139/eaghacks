@@ -25,7 +25,7 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const consoleErrors = [];
 const pageErrors = [];
 page.on("console", (m) => {
-  if (m.type() === "error") consoleErrors.push(m.text());
+  if (m.type() === "error") consoleErrors.push(`${m.text()} (${m.location().url || "unknown URL"})`);
 });
 page.on("pageerror", (e) => pageErrors.push(String(e)));
 

@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "startedAt": 34654.800000000745,
+    "starts": 1,
+    "peak": 0.24723279476165771,
+    "squares": 12.321552006035938,
+    "count": 256000,
+    "endedAt": 35939.300000000745,
+    "rms": 0.006937655405364112
+  },
+  "results": [
+    {
+      "state": "running",
+      "gain": 1,
+      "mime": "audio/webm;codecs=opus",
+      "bytes": 5126
+    }
+  ]
+}

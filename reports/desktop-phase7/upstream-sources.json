@@ -1,0 +1,44 @@
+[
+  {
+    "file": "lan-discovery.js",
+    "path": "target_teavm_wasm_gc/src/web/lan-discovery.js",
+    "gitBlobSHA1": "168450d1824810bcdf13e448fb2eccd4a1966d28",
+    "sha256": "d3ecbfb74ba556078c7f15197b6d2fde59a6abcc0b9dc61286461359c359ddd3",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  },
+  {
+    "file": "lan-server.mjs",
+    "path": "tools/lan-server.mjs",
+    "gitBlobSHA1": "582bac0ffc766b1aa989348d29e5d2f84f37098b",
+    "sha256": "062374ab97df89b01bc53f515929648cc7bd21d4688675815295d83d3a89e3a0",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  },
+  {
+    "file": "SoundEngine.java",
+    "path": "game/src/main/java/net/minecraft/client/sounds/SoundEngine.java",
+    "gitBlobSHA1": "499e00382eeaa39d6357414b03cca7c43c69e32c",
+    "sha256": "7fc5bf9bd65067e463b291dbff6a2a30d686f59703596bb4394b492bb883985d",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  },
+  {
+    "file": "SoundManager.java",
+    "path": "game/src/main/java/net/minecraft/client/sounds/SoundManager.java",
+    "gitBlobSHA1": "604642738800e7a99f7f1ffe2016543b29d8d437",
+    "sha256": "330973b4d43e958a6925720d52d409e0060b4fdd4fbccf43aea7ba7598903b0f",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  },
+  {
+    "file": "WebAudioAL.java",
+    "path": "platform-teavm/src/main/java/org/lwjgl/openal/WebAudioAL.java",
+    "gitBlobSHA1": "d539c96f410870deff01d1d9763cb4b668aad343",
+    "sha256": "5a17a2d363ea4c44a624b3cc634ad83789ec0e948392e45d77fe4c915b1fc486",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  },
+  {
+    "file": "PlatformInput.java",
+    "path": "platform-teavm/src/main/java/net/lax1dude/eaglercraft/v1_8/internal/PlatformInput.java",
+    "gitBlobSHA1": "9942dc52da14b2e05219b11e0de61569d64f29bc",
+    "sha256": "778ba43784befeb939d190c6b89a92ff96c0ba297f5444049f382480b79a2b7b",
+    "upstream": "1be2375ad67cb42a52d5f586a2422e54b57be625"
+  }
+]

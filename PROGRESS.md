@@ -293,3 +293,54 @@ starts from that published commit and the exact runtime/matrix evidence. Remaini
 partial modules: Criticals, Fullbright, NoHurtCam, Macros, Target HUD. Missing native
 contracts and possible JavaScript-only follow-ups are enumerated in the matrix.
 Stop after Phase 6; later compilation or multiplayer requires its own phase.
+
+## Phase 7: desktop, audio and private multiplayer (October 20, 2026)
+
+Started at `8ff1737b4f0147a96d3ced6cd9388ed7d0910447` in the clean integration
+worktree. Original main checkout and its unrelated changes preserved. Phase 6
+HTML/source hashes and all six payloads matched before testing. No Java/TeaVM
+build, FULL optimization, matched benchmark or release packaging ran.
+
+Fixed keybind disposal retaining held keys and an uncanceled capture callback.
+The regression and actual client failed before the repair and pass afterward:
+shutdown twice clears keys/capture, cancels once and leaves no listeners/input.
+A harness-only implicit favicon 404 was also repaired; console diagnostics now
+include source URLs. Tests **158/158**, focused regressions **2/2**, build and smoke
+pass; final browser harness **20/20**. Prior failed probes are preserved.
+
+Final repaired standalone: **80,978,153 bytes**, HTML SHA-256
+`df14bf44e1de2ea58671fa4250234dea737fcc47b18e1f718c4d4149932bd5ea`;
+source digest `86b8b96670de55cb277e6e281d0a5d2b7bc4d421d20b17f39b9ca1fdc1a02623`.
+All six embedded payloads remain byte-identical. Native stays fast-analysis/SIMPLE.
+
+Headed Chrome automation passed 18/18 final desktop checks, actual attack,
+blur/minimize release, GUI ownership, local world exit/reentry and shutdown.
+WebAudio recordings establish nonzero graph output for menu/gameplay sounds and
+audio after focus/world restoration; they do not certify speakers or human
+listening. Missing optional music explains the empty music event warning.
+
+WebRTC passed in isolated headed profiles, with actual ICE/open bidirectional
+channels. Two real private loopback game clients exchanged positions, entities,
+inventory and chat; supported HUD/Radar/Zoom worked and remote combat stayed
+blocked. Clean disconnect and forced gameplay-channel loss released state/input.
+A second real gameplay connection exchanged data. The combined reconnect intent
+restoration assertion did not finish because host lobby navigation resisted
+Back/Escape automation. Physical lobby controls, automatic module restoration
+after remote reconnect, physical mouse recenter and human listening remain
+unverified. A synthetic zero-delta recenter probe failed; do not label it passed.
+
+[Phase 7 report](reports/desktop-phase7/PHASE7_REPORT.md), raw checks, recordings,
+console logs, screenshot/audio integrity and manual checklist preserve the exact
+evidence. There are 77 raw actual-client records (67 pass, 10 failed probes retained),
+41 bound to the final artifact. One QA-startup predicate ReferenceError was captured
+and corrected in the driver; zero total page errors is not claimed. No module
+crashes were observed. Sixteen new PNGs validate; 30 damaged historical PNGs remain
+INVALID and untouched. Both task game browsers and loopback QA servers are closed.
+
+Publication uses normal local Git CLI on integration, no force push/main changes.
+An independent fetched-tree/byte receipt remains ignored under
+`input/phase7/publication-verification.json`. **Phase 8 first action:** use this
+published commit and exact runtime, then complete `MANUAL_CHECKLIST.md`, reproduce
+the host lobby navigation limitation and assert reconnect restoration without
+explicitly re-enabling modules. Do not infer authorization for native hook work,
+FULL compilation or production release. Phase 7 stops at this handoff.

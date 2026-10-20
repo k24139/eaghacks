@@ -141,3 +141,38 @@ Original HTML/source hashes and the 64-check evidence remain unchanged; six
 embedded compiled payloads compare byte-for-byte. New PNGs pass structure/CRC and
 content checks. The original black screenshot is failure evidence; the 30 corrupt
 historical PNGs remain invalid and untouched. Profiles/HTML stay local and ignored.
+
+## Phase 7 desktop/audio/private LAN — October 20, 2026
+
+Starting commit `8ff1737b4f0147a96d3ced6cd9388ed7d0910447`.
+See [the full Phase 7 report](reports/desktop-phase7/PHASE7_REPORT.md),
+[structured summary](reports/desktop-phase7/verification.json), and
+[manual follow-up](reports/desktop-phase7/MANUAL_CHECKLIST.md).
+
+- `npm test`: **158 passed, zero failed**; two focused input lifecycle regressions.
+- Build: both bundles pass; smoke: **SMOKE OK**; final browser harness: **20/20**.
+- Actual headed repaired client: **18/18 desktop helper checks**, actual pig attack,
+  real blur/minimize release, GUI typing ownership, local exit/reentry, shutdown
+  cancellation exactly once. Physical hardware actions were not performed.
+- Audio: nine decoded nonzero WebAudio graph recordings, two explicitly silent
+  intervals; no speaker/headphone listening claim. Optional music absent by design.
+- WebRTC: ICE candidates, connected isolated profiles and open bidirectional data
+  channels. Actual private game channel traffic is distinct from discovery traffic.
+- Multiplayer: both players, position/entity/inventory/chat exchange, remote policy,
+  representative HUD/entity/camera modules, clean disconnect and forced-loss cleanup.
+  A second gameplay connection exchanged data. Combined reconnect restoration
+  remains unasserted because host lobby Back/Escape automation did not complete.
+- Raw actual-client checks: **77 (67 passing observations, 10 retained failures)**;
+  **41** records bind the new artifact. One captured page error came from a QA
+  startup predicate; no observed module crashes. Do not claim all probes passed.
+- New PNG validation **16/16**. The **30 historical damaged PNGs remain INVALID**.
+
+Repaired HTML **80,978,153 bytes**, SHA-256
+`df14bf44e1de2ea58671fa4250234dea737fcc47b18e1f718c4d4149932bd5ea`;
+source digest `86b8b96670de55cb277e6e281d0a5d2b7bc4d421d20b17f39b9ca1fdc1a02623`.
+Six game payloads unchanged. No native compilation, performance rerun or release.
+
+Remaining limits: physical mouse/capture/recenter, human listening, literal hidden
+visibility and outside-canvas paths, host lobby controls, automatic remote reconnect
+intent restoration. A failed synthetic recenter probe is retained. Phase 6 module
+verification labels remain bound to their own preserved artifacts.

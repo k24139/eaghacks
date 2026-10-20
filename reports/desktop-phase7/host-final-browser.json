@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-20T12:58:55.070Z",
+  "profile": "input/phase7/desktop-profile",
+  "processes": [
+    {
+      "pid": 12665,
+      "ppid": 12663,
+      "rssBytes": 256016384,
+      "command": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "type": "browser"
+    },
+    {
+      "pid": 12671,
+      "ppid": 12665,
+      "rssBytes": 182091776,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper (GPU).app/Contents/MacOS/Google Chrome Helper (GPU)",
+      "type": "GPU"
+    },
+    {
+      "pid": 12672,
+      "ppid": 12665,
+      "rssBytes": 85016576,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper",
+      "type": "network.mojom.NetworkService"
+    },
+    {
+      "pid": 12673,
+      "ppid": 12665,
+      "rssBytes": 61800448,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper",
+      "type": "storage.mojom.StorageService"
+    },
+    {
+      "pid": 12675,
+      "ppid": 12665,
+      "rssBytes": 125698048,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)",
+      "type": "renderer"
+    },
+    {
+      "pid": 12677,
+      "ppid": 12665,
+      "rssBytes": 2460581888,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)",
+      "type": "renderer"
+    },
+    {
+      "pid": 12689,
+      "ppid": 12665,
+      "rssBytes": 74366976,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper",
+      "type": "audio.mojom.AudioService"
+    },
+    {
+      "pid": 13940,
+      "ppid": 12665,
+      "rssBytes": 98926592,
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.80/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)",
+      "type": "renderer"
+    }
+  ],
+  "browserTreeRssBytes": 3344498688,
+  "browserRssBytes": 256016384,
+  "heap": {
+    "usedSize": 545381336,
+    "totalSize": 612909056,
+    "embedderHeapUsedSize": 107419752,
+    "backingStorageSize": 9516302
+  },
+  "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 59%\n",
+  "pressureLevel": "vm.memory_pressure: 0\n",
+  "vmStat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                3689.\nPages active:                            301939.\nPages inactive:                          300418.\nPages speculative:                          137.\nPages throttled:                              0.\nPages wired down:                        164800.\nPages purgeable:                           5902.\n\"Translation faults\":                  87113835.\nPages copy-on-write:                    2180032.\nPages zero filled:                     70055623.\nPages reactivated:                     15123037.\nPages purged:                           3323212.\nFile-backed pages:                       129059.\nAnonymous pages:                         473435.\nPages stored in compressor:              564938.\nPages occupied by compressor:            238086.\nDecompressions:                        13130445.\nCompressions:                          17808496.\nPageins:                                2708261.\nPageouts:                                 32401.\nSwapins:                                  17474.\nSwapouts:                                102772.\n",
+  "wasmLinearMemories": [
+    {
+      "name": "teavm.memory",
+      "bytes": 6946816
+    }
+  ],
+  "wasmMemoryBytes": 6946816
+}

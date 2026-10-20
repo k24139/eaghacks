@@ -1,0 +1,130 @@
+[
+  {
+    "path": "diagnostics/desktop-phase7/audio-gameplay.png",
+    "bytes": 113286,
+    "sha256": "e9f6b57a27d68287d66d011aa51fa54d1038b8e4a9ce6e4de16c38cdeb877e94",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/blocks-confirmed.png",
+    "bytes": 183615,
+    "sha256": "4a0b368ec29969c05608c14d58b1f3dce6168d48e67c3683d06b00759b575fed",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/camera-retry-timeout.png",
+    "bytes": 138398,
+    "sha256": "381c7abb26133a59d4265f9a36c72daf39d443c0c7acb6295b35db25933c7d2d",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/desktop.png",
+    "bytes": 155530,
+    "sha256": "ef681e4a7bd32626c17760ea24c5b492647c0373c3ea6fa801e8586ecf72a15a",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/forced-disconnect.png",
+    "bytes": 256320,
+    "sha256": "653d272cbf24c47f11a49f6054c8fe965620ae7344afb424700842124390ecfe",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/game-start.png",
+    "bytes": 284648,
+    "sha256": "76ec52b6812151d3de57e67eb0d60715d02229667824e5b62267f4f38f0f735d",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/harness-clickgui-open.png",
+    "bytes": 163095,
+    "sha256": "8eac0d99730ac831ba1197400de97b4585ea4c8d7f37c2d39b599a1617dcc088",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/harness-harness-running.png",
+    "bytes": 67329,
+    "sha256": "413f4fe9fc555ae53842a50828b4adcd734a828de836c7c5feeb8fb844a3427e",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/host-lobby-input-limitation.png",
+    "bytes": 155499,
+    "sha256": "2b29ac21ade15ea1e00c6fd01e66e959c3af0938f6a84d7bfc013932b0eb8487",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/lan-guest.png",
+    "bytes": 256864,
+    "sha256": "f77392531e1ea4087ac02d2044e60dd179dad88bf9720ca32c34f5c163ec9be2",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/lan-host-startup.png",
+    "bytes": 189890,
+    "sha256": "4b38104af511cda7b409acedd2d012e2b6d7f49d1b93831e06eb2b55481db0f8",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/lan-host.png",
+    "bytes": 155499,
+    "sha256": "2b29ac21ade15ea1e00c6fd01e66e959c3af0938f6a84d7bfc013932b0eb8487",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/lan-world-selected.png",
+    "bytes": 183169,
+    "sha256": "d150955c536a7d097a2437e2faf39d694687e5dd20271fd3bc54f3eb688ad5bd",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/targeted-block-failure.png",
+    "bytes": 309915,
+    "sha256": "831acf5b85610511f9d8721a92055a88be9817b9f977487f4d833c495abdf0c7",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/volume-1090.png",
+    "bytes": 155549,
+    "sha256": "559fee7f9adc43fcf9aaeb38dda69b11bb6cb9f96d8a266d595255f4251780b4",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  },
+  {
+    "path": "diagnostics/desktop-phase7/volume-180.png",
+    "bytes": 148788,
+    "sha256": "46d9ca893472e3469d77973206fa49400fd94cd7bbdac8c8d1d6af458e537628",
+    "width": 1280,
+    "height": 800,
+    "validation": "PNG structure, CRC and decompressed stream size passed"
+  }
+]

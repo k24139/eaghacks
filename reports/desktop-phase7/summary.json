@@ -1,0 +1,13 @@
+{
+  "rawChecks": 77,
+  "rawPassing": 67,
+  "rawFailingRetained": 10,
+  "finalRuntimeChecks": 41,
+  "physicalManualTests": 0,
+  "humanListeningTests": 0,
+  "memoryObservations": 45,
+  "twoClientFreePercentageMin": 38,
+  "twoClientFreePercentageMax": 52,
+  "observedOwnedBrowserTreeRssPeakBytes": 4139220992,
+  "note": "RSS sums may double-count shared pages; sampled, not a continuous peak. Free percentage is the macOS memory_pressure metric."
+}

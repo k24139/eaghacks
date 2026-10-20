@@ -1,0 +1,119 @@
+{
+  "status": "evaluated with documented limitations; verified repair ready for publication",
+  "startingCommit": "8ff1737b4f0147a96d3ced6cd9388ed7d0910447",
+  "runtime": {
+    "htmlBytes": 80978153,
+    "artifactSHA256": "df14bf44e1de2ea58671fa4250234dea737fcc47b18e1f718c4d4149932bd5ea",
+    "sourceDigest": "86b8b96670de55cb277e6e281d0a5d2b7bc4d421d20b17f39b9ca1fdc1a02623",
+    "phase6": {
+      "artifactSHA256": "6403b3eefb970f302a9dfa07b892eb1827629d96a09dd38c852e326ac2265829",
+      "sourceDigest": "252d2ca8b9bdde95958474e6c08894a422bb02a7452a8f03b548833d86ee9fa4"
+    },
+    "payloads": [
+      {
+        "id": "eag-inline-decoder",
+        "encodedSHA256": "5151ba3badc239342dffe1c44cc3ad74f08fbf35f289c9df7c2f67a9cadadb27",
+        "unchanged": true
+      },
+      {
+        "id": "eag-inline-wasm-br",
+        "encodedSHA256": "9bb6d9ba91a75f11ed14e8f40de9ba4106488d998ae0516ff311afd6dc194a62",
+        "unchanged": true
+      },
+      {
+        "id": "eag-inline-mesh-wasm-br",
+        "encodedSHA256": "293645aaba6e2091136f524bedd45f28a4d9991aa9146c7a31365ba149a7a3f3",
+        "unchanged": true
+      },
+      {
+        "id": "eag-inline-server-wasm-br",
+        "encodedSHA256": "6a25194313d7f0a8f3309ecfb4bea894132094bca9e6e3b386c90b9ce2e68b25",
+        "unchanged": true
+      },
+      {
+        "id": "eag-inline-assets",
+        "encodedSHA256": "8a826a7ba42df78dad7dad2bf94aeac54c47bd47dc58cdd4059cea7cb79ed4aa",
+        "unchanged": true
+      },
+      {
+        "id": "eag-inline-sounds",
+        "encodedSHA256": "6781533af1ff81368e9bcc5ccb0a8c0c23f84911b3a10a5b5ded7b86467d63c9",
+        "unchanged": true
+      }
+    ],
+    "javaChanged": false,
+    "nativeMode": "fast-analysis/SIMPLE"
+  },
+  "summary": {
+    "rawChecks": 77,
+    "rawPassing": 67,
+    "rawFailingRetained": 10,
+    "finalRuntimeChecks": 41,
+    "physicalManualTests": 0,
+    "humanListeningTests": 0,
+    "memoryObservations": 45,
+    "twoClientFreePercentageMin": 38,
+    "twoClientFreePercentageMax": 52,
+    "observedOwnedBrowserTreeRssPeakBytes": 4139220992,
+    "note": "RSS sums may double-count shared pages; sampled, not a continuous peak. Free percentage is the macOS memory_pressure metric."
+  },
+  "checks": {
+    "desktop": {
+      "method": "headed Chrome automation",
+      "finalHelperPassed": 18,
+      "finalHelperTotal": 18,
+      "evidence": "checks.jsonl"
+    },
+    "physicalHardware": {
+      "status": "not performed",
+      "checklist": "MANUAL_CHECKLIST.md"
+    },
+    "pointerLock": {
+      "status": "automated acquisition/release/reacquisition passed; physical recenter unverified"
+    },
+    "focusCleanup": {
+      "status": "real blur/minimize release and restoration passed; visibility remained visible"
+    },
+    "audio": {
+      "status": "game graph output recorded and decoded; no human listening",
+      "evidence": "audio-recording-integrity.json"
+    },
+    "webRTC": {
+      "status": "passed isolated profiles, ICE, open channels and bidirectional messages",
+      "evidence": "webrtc.json"
+    },
+    "multiplayer": {
+      "status": "private actual gameplay and disconnect/loss passed; second gameplay connection observed",
+      "evidence": [
+        "checks.jsonl",
+        "lan-console.json"
+      ]
+    },
+    "reconnectRestoration": {
+      "status": "combined assertion incomplete; not passed",
+      "limitation": "host lobby navigation under automation; physical follow-up required"
+    },
+    "moduleCleanup": {
+      "status": "confirmed disposal defect repaired and verified before/after; loss clears input/state"
+    },
+    "recenterProbe": {
+      "status": "failed synthetic zero-delta control; physical behavior unverified"
+    }
+  },
+  "automated": {
+    "nodePassed": 158,
+    "nodeFailed": 0,
+    "focusedPassed": 2,
+    "browserHarnessPassed": 20,
+    "browserHarnessTotal": 20,
+    "build": "passed",
+    "smoke": "SMOKE OK"
+  },
+  "preservation": {
+    "originalHeadUnchanged": true,
+    "originalStatusUnchanged": true,
+    "phase6EvidenceUnchanged": true,
+    "historicalDamagedPngsStillInvalid": 30
+  },
+  "nextPhase": "Physical checklist first; reproduce host lobby Back/Escape and assert pending module restoration after remote reconnect. No native build or release implied."
+}

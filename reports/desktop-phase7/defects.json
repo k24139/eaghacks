@@ -1,0 +1,33 @@
+{
+  "runtimeDefects": [
+    {
+      "id": "keybind-dispose-retains-state",
+      "reproducedInActualClient": true,
+      "cause": "dispose removed listeners without clearing heldKeys or canceling capture",
+      "fix": "idempotent dispose invokes existing blur cleanup before detaching",
+      "regression": "tests/phase7-input.test.mjs",
+      "nativeChanged": false
+    },
+    {
+      "id": "harness-implicit-favicon-404",
+      "cause": "Harness lacked a favicon declaration; Chrome requested missing /favicon.ico",
+      "fix": "Explicit empty data favicon; console errors now include source URLs",
+      "scope": "Harness only; no game payload changes"
+    }
+  ],
+  "diagnosticCorrections": [
+    "Initial horizontal mouse probe had no observed yaw delta. A stepped retry captured delivered movementX events and actual yaw change; physical hardware and recenter behavior remain uncertified.",
+    "Initial tab/minimize checks expected hidden while Playwright emulated focus. Disabling focus emulation produced actual blur and verified release; visibility stayed visible.",
+    "Initial block audio attempts targeted the player support block and later ran while falling. Repaired only the disposable platform and gated on actual onGround/Y before successful checks.",
+    "Master mute initially asserted masterGain=0. The game suppresses source playback at zero configured volume, leaving graph masterGain=1. Captured peak=0 and zero source starts validate silence; restore produced nonzero samples.",
+    "Long PTY command hit the macOS canonical input buffer; cleared the unsubmitted line and used short calls to helper files.",
+    "Interactive ESM cached an earlier helper version; used a versioned helper import after adding exports.",
+    "LAN peers menu remains open after guest connects; driver must navigate host menus back to gameplay rather than wait for automatic closure.",
+    "A disconnected guest returns to JoinMultiplayerScreen. Native invitations are handled from TitleScreen; navigate Back before sending the reconnect invite.",
+    "Initial guest username field edit did not persist. Tests bind to the actual generated native player name rather than claiming the requested name was applied.",
+    "A reconnect reached a real remote world and a second open gameplay channel, but the combined assertion stopped while trying to close the host lobby with Escape. The peers screen requires its Back button; forced channel-loss cleanup passed on that second connection.",
+    "An early startup wait used an undeclared global and emitted one captured page ReferenceError; predicates now use optional window properties.",
+    "Final desktop helper passes 18/18 on the repaired runtime; synthetic zero-delta recenter still fails and is explicitly unverified.",
+    "Initial process cleanup search matched its own shell command; executable-prefix filtering confirmed zero remaining task Chrome main processes."
+  ]
+}
