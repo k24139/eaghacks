@@ -142,8 +142,8 @@ test('compiled native client requires a live player even when boot signals remai
  const{win,adapter}=setup();win.__eaghacksNativeBridge={version:1};assert.equal(adapter.inWorld(),false);installState(win);adapter.update();assert.equal(adapter.inWorld(),true);delete win.__eaghacksNativeState;adapter.update();assert.equal(adapter.inWorld(),false);
 });
 
-test('native pause state is authoritative even when the legacy screen hook is absent',()=>{
- const{win,adapter}=setup();installState(win);delete win.__eaghacksScreenState;win.__eaghacksScreenHookSeen=false;win.__eaghacksNativeState.session={kind:'local',paused:false};adapter.update();assert.equal(adapter.inWorld(),true);win.__eaghacksNativeState.session.paused=true;assert.equal(adapter.inWorld(),false);assert.equal(adapter.jump(),false);
+test('native pause gates input without unloading the world when the screen hook is absent',()=>{
+ const{win,adapter}=setup();installState(win);delete win.__eaghacksScreenState;win.__eaghacksScreenHookSeen=false;win.__eaghacksNativeState.session={kind:'local',paused:false};adapter.update();assert.equal(adapter.inWorld(),true);win.__eaghacksNativeState.session.paused=true;assert.equal(adapter.inWorld(),true);assert.equal(adapter.jump(),false);
 });
 
 test('effect, biome and crosshair capabilities track their native contract and restore in menus',()=>{

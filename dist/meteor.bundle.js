@@ -1231,7 +1231,7 @@ var MeteorFramework = (() => {
         const settings = {};
         let any = false;
         for (const s of m.settings.all()) {
-          const v = s.serialise();
+          const v = s === m.bind ? s.value : s.serialise();
           if (v !== void 0) {
             settings[s.name] = v;
             any = true;
@@ -2524,6 +2524,7 @@ var MeteorFramework = (() => {
       if (!this.root) this.mount();
       this._open = true;
       this.root.classList.add("mt-open");
+      for (const row2 of this.root.querySelectorAll(".mt-row")) row2._refreshModule?.();
       this._applyLayout();
       this._open_ = true;
       this.keybinds.guiOpen = true;
@@ -2641,6 +2642,7 @@ var MeteorFramework = (() => {
         rowEl.title = reason ? `${mod.description}
 \u26A0 ${reason}` : mod.description;
       };
+      rowEl._refreshModule = refresh;
       refresh();
       rowEl.addEventListener(
         "mouseenter",
@@ -2922,13 +2924,11 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
         if (saved) {
           state.x = saved.x;
           state.y = saved.y;
-          if (state.expanded !== saved.expanded) {
-            state.expanded = saved.expanded;
-            state.bodyEl.style.display = saved.expanded ? "block" : "none";
-            const col = state.headerEl.querySelector(".mt-collapse");
-            if (col) col.textContent = saved.expanded ? "\u25BE" : "\u25B8";
-          }
+          state.expanded = saved.expanded;
         }
+        state.bodyEl.style.display = state.expanded ? "block" : "none";
+        const col = state.headerEl.querySelector(".mt-collapse");
+        if (col) col.textContent = state.expanded ? "\u25BE" : "\u25B8";
         this._positionWindow(state);
       }
       this._clampWindows();

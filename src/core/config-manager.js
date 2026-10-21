@@ -111,9 +111,9 @@ export class ConfigManager {
       const settings = {};
       let any = false;
       for (const s of m.settings.all()) {
-        // `bind` is stored explicitly below so the GUI can show it even when it
-        // equals the default.
-        const v = s.serialise();
+        // Presets assigned during module initialization can differ from the
+        // schema default. Persist cleared binds explicitly to override them.
+        const v = s === m.bind ? s.value : s.serialise();
         if (v !== undefined) {
           settings[s.name] = v;
           any = true;

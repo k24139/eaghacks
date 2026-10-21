@@ -133,8 +133,7 @@ try{
  stage='world-transitions';await page.screenshot({path:'input/phase13/rc-native-live-world.png'});
  await moduleState('zoom',true);await moduleState('fullbright',true);await wait(()=>window.__eaghacksNativeState.options.fov<30&&window.__eaghacksNativeState.options.brightness===1);
  await page.keyboard.press('Escape');await wait(()=>window.__eaghacksNativeState.session.paused===true);
- await wait(v=>window.__eaghacksNativeState.options.fov===70&&window.__eaghacksNativeState.options.brightness===v,brightness);
- check('camera modules restore actual options in game menus',true);
+ check('camera modules retain intent in a paused loaded world',await page.evaluate(()=>EaglerHacks.adapter.inWorld()&&EaglerHacks.client.modules.get('zoom').active&&EaglerHacks.client.modules.get('fullbright').active));
  const menuBefore=await snapshot();await page.evaluate(()=>{window.EaglerHacks.client.ticker.stop();window.__eaghacksNativeCommands={jump:true,sprinting:true,selectSlot:7,rotation:{yaw:140,pitch:40},velocity:{x:1,y:1,z:1}};});
  try{await wait(sequence=>window.__eaghacksNativeState.bridge.sequence>sequence+1,menuBefore.bridge.sequence,30000);const after=await snapshot();check('compiled Java menu gate blocks stale actions while framework ticker is stopped',after.inventory.selectedSlot===menuBefore.inventory.selectedSlot&&after.player.yaw===menuBefore.player.yaw&&Math.abs(after.player.y-menuBefore.player.y)<.01&&!after.player.sprinting);}
  finally{await page.evaluate(()=>{delete window.__eaghacksNativeCommands;window.EaglerHacks.client.ticker.start();});}

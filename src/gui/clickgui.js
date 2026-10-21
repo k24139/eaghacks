@@ -77,6 +77,7 @@ export class ClickGUI {
     if (!this.root) this.mount();
     this._open = true;
     this.root.classList.add("mt-open");
+    for (const row of this.root.querySelectorAll(".mt-row")) row._refreshModule?.();
     this._applyLayout();
     this._open_ = true;
     this.keybinds.guiOpen = true;
@@ -212,6 +213,7 @@ export class ClickGUI {
       const reason = mod.ineligibilityReason();
       rowEl.title = reason ? `${mod.description}\n⚠ ${reason}` : mod.description;
     };
+    rowEl._refreshModule = refresh;
     refresh();
 
     rowEl.addEventListener("mouseenter", (e) =>
@@ -512,13 +514,12 @@ export class ClickGUI {
       if (saved) {
         state.x = saved.x;
         state.y = saved.y;
-        if (state.expanded !== saved.expanded) {
-          state.expanded = saved.expanded;
-          state.bodyEl.style.display = saved.expanded ? "block" : "none";
-          const col = state.headerEl.querySelector(".mt-collapse");
-          if (col) col.textContent = saved.expanded ? "▾" : "▸";
-        }
+        state.expanded = saved.expanded;
       }
+      // loadLayout also restores the model before first open; always sync DOM.
+      state.bodyEl.style.display = state.expanded ? "block" : "none";
+      const col = state.headerEl.querySelector(".mt-collapse");
+      if (col) col.textContent = state.expanded ? "▾" : "▸";
       this._positionWindow(state);
     }
     this._clampWindows();

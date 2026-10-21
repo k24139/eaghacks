@@ -1,0 +1,1402 @@
+{
+  "verifiedAt": "2026-10-21T03:05:42.756Z",
+  "startingCommit": "804480bc5598cf4139ea95b3202c8ba3a30b939d",
+  "rc2": {
+    "artifact": "input/phase13/Eaglercraft-26.2-u1-Eaghacks-RC2.html",
+    "html": {
+      "bytes": 80979395,
+      "sha256": "16d3707a4050dfe63b139367aa7654bf291a45d71badafd30d5a6d5c7777b3d3"
+    },
+    "sourceDigest": "d96fd80e27d3db49e6316706ef0acbe4f6e429ee457615f86879c849e6d7c702",
+    "integration": {
+      "bytes": 258767,
+      "sha256": "a9a0f030b1e55885c339fa48cf89dc4841573f15ebf94603f2d4fc4eef2c3889"
+    },
+    "wasm": {
+      "bytes": 93857501,
+      "sha256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d"
+    },
+    "nativePayloadsUnchanged": true
+  },
+  "originalReproduction": {
+    "artifactSHA256": "727837b1ebcdbe7a1948e7cdfb2e29d6aef6c1fd079b90617c54170d47a1d7c5",
+    "states": [
+      {
+        "label": "before",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": false,
+        "screenHookSeen": true,
+        "screenName": null,
+        "inWorld": true,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": true,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": false,
+            "reason": null
+          }
+        ],
+        "commandNames": []
+      },
+      {
+        "label": "gui-open",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": true,
+        "screenHookSeen": true,
+        "screenName": "PauseScreen",
+        "inWorld": false,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": false,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": false,
+            "reason": "requires a loaded world"
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": false,
+            "reason": "requires a loaded world"
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": false,
+            "reason": "requires a loaded world"
+          }
+        ],
+        "commandNames": []
+      },
+      {
+        "label": "gui-closed",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": false,
+        "screenHookSeen": true,
+        "screenName": null,
+        "inWorld": true,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": true,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": false,
+            "reason": null
+          }
+        ],
+        "commandNames": []
+      }
+    ],
+    "toggles": [
+      {
+        "name": "kill-aura GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": true,
+            "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only.\n⚠ requires a loaded world"
+          },
+          "active": false
+        }
+      },
+      {
+        "name": "bunny-hop GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": true,
+            "title": "Automatically jumps while sprinting to maintain momentum.\n⚠ requires a loaded world"
+          },
+          "active": false
+        }
+      },
+      {
+        "name": "entity-esp GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": true,
+            "title": "Draws boxes around selected entities.\n⚠ requires a loaded world"
+          },
+          "active": false
+        }
+      }
+    ]
+  },
+  "automated": {
+    "unit": {
+      "passed": 170,
+      "total": 170,
+      "addedRegressions": 5
+    },
+    "browser": {
+      "passed": 20,
+      "total": 20
+    },
+    "build": true,
+    "smoke": true
+  },
+  "actualClient": {
+    "method": "Installed Chrome, standalone file URL, task profile/disposable saved world; category controls and real Playwright row clicks",
+    "checks": [
+      {
+        "name": "normal keyboard movement works before opening GUI",
+        "pass": true
+      },
+      {
+        "name": "kill-aura GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": false,
+            "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+          },
+          "active": true
+        }
+      },
+      {
+        "name": "kill-aura is available and active through actual GUI",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": false,
+            "title": "Automatically jumps while sprinting to maintain momentum."
+          },
+          "active": true
+        }
+      },
+      {
+        "name": "bunny-hop is available and active through actual GUI",
+        "pass": true
+      },
+      {
+        "name": "entity-esp GUI toggle",
+        "pass": true,
+        "detail": {
+          "displayed": {
+            "unavailable": false,
+            "title": "Draws boxes around selected entities."
+          },
+          "active": true
+        }
+      },
+      {
+        "name": "entity-esp is available and active through actual GUI",
+        "pass": true
+      },
+      {
+        "name": "kill-aura remains enabled after closing GUI",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop remains enabled after closing GUI",
+        "pass": true
+      },
+      {
+        "name": "entity-esp remains enabled after closing GUI",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Automatically jumps while sprinting to maintain momentum."
+        }
+      },
+      {
+        "name": "bunny-hop: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Draws boxes around selected entities."
+        }
+      },
+      {
+        "name": "entity-esp: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "KillAura GUI activation queues no combat or movement while paused",
+        "pass": true
+      },
+      {
+        "name": "KillAura passive filter prevents damage to real pig",
+        "pass": true
+      },
+      {
+        "name": "KillAura enabled through GUI damages eligible real mob after close",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "KillAura disable stops damage and clears queued attacks",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "KillAura range rejects real target five blocks away",
+        "pass": true
+      },
+      {
+        "name": "KillAura attacks when actual player enters configured range",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Automatically jumps while sprinting to maintain momentum."
+        }
+      },
+      {
+        "name": "bunny-hop: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "BunnyHop sprint-only restriction keeps non-sprinting player grounded",
+        "pass": true
+      },
+      {
+        "name": "sprint: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Keeps the player sprinting when moving forward."
+        }
+      },
+      {
+        "name": "sprint: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "BunnyHop enabled through GUI jumps while sprinting in real gameplay",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Automatically jumps while sprinting to maintain momentum."
+        }
+      },
+      {
+        "name": "bunny-hop: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "sprint: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Keeps the player sprinting when moving forward."
+        }
+      },
+      {
+        "name": "sprint: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "BunnyHop disable stops automatic jumping",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Draws boxes around selected entities."
+        }
+      },
+      {
+        "name": "entity-esp: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "ESP passive filter renders real pig and excludes hostile",
+        "pass": true
+      },
+      {
+        "name": "ESP hostile filter renders real zombie and excludes passive",
+        "pass": true
+      },
+      {
+        "name": "ESP player filter never includes the actual local self entity",
+        "pass": true
+      },
+      {
+        "name": "ESP rendered indicators track a real entity teleport",
+        "pass": true,
+        "detail": {
+          "before": [
+            542.4891226766129,
+            417.8346107792117,
+            195.0217546467743,
+            217.9429135374133
+          ],
+          "after": [
+            109.10743420308705,
+            417.8346107792117,
+            290.20854295994263,
+            217.9429135374133
+          ],
+          "nativeX": 2.5
+        }
+      },
+      {
+        "name": "entity-esp: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Draws boxes around selected entities."
+        }
+      },
+      {
+        "name": "entity-esp: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "ESP disable clears overlay pixels",
+        "pass": true
+      },
+      {
+        "name": "preserve the exact 41 observed module cohort",
+        "pass": true
+      },
+      {
+        "name": "aim-assist: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "aim-assist: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "aim-assist: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "auto-clicker: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "auto-clicker: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "auto-clicker: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "trigger-bot: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "trigger-bot: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "trigger-bot: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "active-modules-hud: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "active-modules-hud: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "active-modules-hud: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "armor-hud: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "armor-hud: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "armor-hud: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "biome-info: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "biome-info: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "biome-info: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "coordinates: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "coordinates: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "coordinates: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "cps-counter: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "cps-counter: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "cps-counter: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "custom-text: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "custom-text: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "custom-text: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "direction: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "direction: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "direction: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "fps-display: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "fps-display: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "fps-display: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "keystrokes: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "keystrokes: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "keystrokes: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "performance-monitor: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "performance-monitor: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "performance-monitor: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "potion-hud: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "potion-hud: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "potion-hud: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "radar: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "radar: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "radar: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "session-timer: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "session-timer: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "session-timer: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "speed-hud: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "speed-hud: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "speed-hud: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "world-time: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "world-time: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "world-time: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "debug-console: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "debug-console: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "debug-console: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "friend-manager: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "friend-manager: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "friend-manager: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "keybind-manager: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "keybind-manager: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "keybind-manager: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "module-search: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "module-search: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "module-search: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "notifications: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "notifications: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "notifications: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "screenshot-util: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "screenshot-util: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "screenshot-util: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "session-stats: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "session-stats: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "session-stats: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "auto-walk: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "auto-walk: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "auto-walk: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "speed: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "speed: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "speed: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "sprint: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "sprint: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "sprint: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "anti-afk: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "anti-afk: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "anti-afk: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "auto-eat: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "auto-eat: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "auto-eat: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "auto-respawn: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "auto-respawn: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "auto-respawn: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "durability-warnings: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "durability-warnings: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "durability-warnings: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "chunk-borders: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "chunk-borders: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "chunk-borders: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "custom-crosshair: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "custom-crosshair: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "custom-crosshair: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "hitboxes: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "hitboxes: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "hitboxes: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "nametags: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "nametags: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "nametags: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "tracers: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "tracers: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "tracers: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "zoom: 41-module displayed availability",
+        "pass": true
+      },
+      {
+        "name": "zoom: 41-module real GUI enable",
+        "pass": true
+      },
+      {
+        "name": "zoom: 41-module real GUI disable",
+        "pass": true
+      },
+      {
+        "name": "kill-aura: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Attacks nearby valid targets automatically. Single-player / authorised testing only."
+        }
+      },
+      {
+        "name": "kill-aura: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Automatically jumps while sprinting to maintain momentum."
+        }
+      },
+      {
+        "name": "bunny-hop: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "entity-esp: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Draws boxes around selected entities."
+        }
+      },
+      {
+        "name": "entity-esp: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "coordinates: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Shows the player's X/Y/Z position."
+        }
+      },
+      {
+        "name": "coordinates: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "auto-walk: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Walks forward automatically."
+        }
+      },
+      {
+        "name": "auto-walk: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "native pause releases synthetic movement while preserving loaded-world availability",
+        "pass": true
+      },
+      {
+        "name": "world exit clears native combat, rendering and owned input",
+        "pass": true
+      },
+      {
+        "name": "kill-aura unavailable in real GUI outside world",
+        "pass": true
+      },
+      {
+        "name": "bunny-hop unavailable in real GUI outside world",
+        "pass": true
+      },
+      {
+        "name": "entity-esp unavailable in real GUI outside world",
+        "pass": true
+      },
+      {
+        "name": "real world reentry restores eligible module intent",
+        "pass": true
+      },
+      {
+        "name": "auto-walk: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Walks forward automatically."
+        }
+      },
+      {
+        "name": "auto-walk: actual category click disables",
+        "pass": true
+      },
+      {
+        "name": "fps-display: displayed availability inside loaded world with GUI open",
+        "pass": true,
+        "detail": {
+          "unavailable": false,
+          "title": "Shows the current client frame rate."
+        }
+      },
+      {
+        "name": "fps-display: actual category click enables",
+        "pass": true
+      },
+      {
+        "name": "no module errors after GUI and lifecycle regression",
+        "pass": true
+      },
+      {
+        "name": "no unexpected JavaScript errors",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "no required runtime request failures",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "passed": 197,
+    "states": [
+      {
+        "label": "before",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": false,
+        "screenHookSeen": true,
+        "screenName": null,
+        "inWorld": true,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": true,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": false,
+            "reason": null
+          }
+        ],
+        "commandNames": []
+      },
+      {
+        "label": "gui-open",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": true,
+        "screenHookSeen": true,
+        "screenName": "PauseScreen",
+        "inWorld": true,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": false,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": false,
+            "reason": null
+          }
+        ],
+        "commandNames": []
+      },
+      {
+        "label": "gui-closed",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": true,
+        "worldPresent": true,
+        "paused": false,
+        "screenHookSeen": true,
+        "screenName": null,
+        "inWorld": true,
+        "capabilities": [
+          "input",
+          "hud",
+          "world",
+          "entities",
+          "render",
+          "native-inventory-read",
+          "native-direct",
+          "brightness-control",
+          "fov-control",
+          "hurt-camera-control",
+          "native-respawn",
+          "effects",
+          "biome",
+          "crosshair-control",
+          "native-multi-attack"
+        ],
+        "inputAllowed": true,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": true,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "bunny-hop",
+            "active": true,
+            "pending": false,
+            "reason": null
+          },
+          {
+            "id": "entity-esp",
+            "active": true,
+            "pending": false,
+            "reason": null
+          }
+        ],
+        "commandNames": []
+      },
+      {
+        "label": "outside-world",
+        "gameReady": true,
+        "worldReady": true,
+        "playerPresent": false,
+        "worldPresent": false,
+        "screenHookSeen": true,
+        "screenName": "TitleScreen",
+        "inWorld": false,
+        "capabilities": [
+          "input",
+          "hud"
+        ],
+        "inputAllowed": false,
+        "modules": [
+          {
+            "id": "kill-aura",
+            "active": false,
+            "pending": true,
+            "reason": "runtime is missing: world, entities, native-direct"
+          },
+          {
+            "id": "bunny-hop",
+            "active": false,
+            "pending": true,
+            "reason": "runtime is missing: world, native-direct"
+          },
+          {
+            "id": "entity-esp",
+            "active": false,
+            "pending": true,
+            "reason": "runtime is missing: world, entities, render"
+          }
+        ],
+        "commandNames": []
+      }
+    ],
+    "unexpectedJavaScriptErrors": [],
+    "failedRequiredRequests": [],
+    "cohort": [
+      "aim-assist",
+      "auto-clicker",
+      "kill-aura",
+      "trigger-bot",
+      "active-modules-hud",
+      "armor-hud",
+      "biome-info",
+      "coordinates",
+      "cps-counter",
+      "custom-text",
+      "direction",
+      "fps-display",
+      "keystrokes",
+      "performance-monitor",
+      "potion-hud",
+      "radar",
+      "session-timer",
+      "speed-hud",
+      "world-time",
+      "debug-console",
+      "friend-manager",
+      "keybind-manager",
+      "module-search",
+      "notifications",
+      "screenshot-util",
+      "session-stats",
+      "auto-walk",
+      "bunny-hop",
+      "speed",
+      "sprint",
+      "anti-afk",
+      "auto-eat",
+      "auto-respawn",
+      "durability-warnings",
+      "chunk-borders",
+      "custom-crosshair",
+      "entity-esp",
+      "hitboxes",
+      "nametags",
+      "tracers",
+      "zoom"
+    ],
+    "oneShotActions": [
+      "module-search",
+      "keybind-manager",
+      "screenshot-util"
+    ],
+    "restartChecks": [
+      "all 41 module setting sets survive an actual Chrome process restart",
+      "FPS enabled survives Chrome process restart",
+      "world HUD intent waits for player identity after restart",
+      "priority module intent restores only after an actual saved world loads after restart",
+      "priority GUI rows remain available after Chrome restart and world reentry",
+      "explicit module disable persists across second Chrome restart",
+      "HUD precision persists across process restart",
+      "invalid stored settings safely recover during actual client boot",
+      "shutdown removes listeners, UI, native commands and synthetic inputs",
+      "no required runtime requests failed",
+      "no uncaught JavaScript errors across restarts"
+    ],
+    "restartPassed": 11,
+    "settingSetsVerifiedAcrossRestart": 41
+  },
+  "moduleStatus": {
+    "gameplayObserved": 41,
+    "partial": 5,
+    "unsupported": 31,
+    "statusChanges": 0
+  },
+  "limitations": [
+    "Single-player only: ESP local-self exclusion and real passive/hostile filtering observed; no positive second-player filter claim.",
+    "Browser automation does not certify physical mouse or human audio listening.",
+    "Seven manual LAN checks remain deferred; no historical lobby investigation.",
+    "Existing five partial and 31 unsupported contracts remain; no exhaustive renewed per-setting behavior certification of all modules."
+  ],
+  "scope": "Phase 13.1 availability repair, no Phase 14 or native compilation"
+}

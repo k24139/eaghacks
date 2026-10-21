@@ -1,0 +1,59 @@
+{
+  "verifiedAt": "2026-10-21T03:00:28.218Z",
+  "kind": "JavaScript integration release candidate; existing compiled native payloads",
+  "artifact": "input/phase13/Eaglercraft-26.2-u1-Eaghacks-RC2.html",
+  "html": {
+    "bytes": 80979395,
+    "sha256": "16d3707a4050dfe63b139367aa7654bf291a45d71badafd30d5a6d5c7777b3d3"
+  },
+  "sourceDigest": "d96fd80e27d3db49e6316706ef0acbe4f6e429ee457615f86879c849e6d7c702",
+  "wasm": {
+    "bytes": 93857501,
+    "sha256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d"
+  },
+  "payloads": {
+    "eag-inline-decoder": {
+      "bytes": 208439,
+      "sha256": "79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f",
+      "byteIdentical": true
+    },
+    "eag-inline-wasm-br": {
+      "bytes": 17763621,
+      "sha256": "817d8dc367ee32beb863b23c4716fdc9b4acdfc7547594735fadfbcbf9874176",
+      "byteIdentical": true
+    },
+    "eag-inline-mesh-wasm-br": {
+      "bytes": 2245115,
+      "sha256": "ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3",
+      "byteIdentical": true
+    },
+    "eag-inline-server-wasm-br": {
+      "bytes": 7652747,
+      "sha256": "34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105",
+      "byteIdentical": true
+    },
+    "eag-inline-assets": {
+      "bytes": 6616184,
+      "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db",
+      "byteIdentical": true
+    },
+    "eag-inline-sounds": {
+      "bytes": 25921893,
+      "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6",
+      "byteIdentical": true
+    }
+  },
+  "integration": {
+    "bytes": 258767,
+    "sha256": "a9a0f030b1e55885c339fa48cf89dc4841573f15ebf94603f2d4fc4eef2c3889"
+  },
+  "injectionTool": {
+    "path": "tools/inject-eaglercraft.mjs",
+    "sha256": "411476e36b5b9a03afb706456f88a2e2a5d7dacf0a25206893ddda9d85b80007",
+    "baseCommit": "804480bc5598cf4139ea95b3202c8ba3a30b939d"
+  },
+  "historicalBaseline": {
+    "sha256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+    "unchanged": true
+  }
+}

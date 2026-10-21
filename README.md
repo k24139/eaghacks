@@ -10,6 +10,8 @@ in [TEST_RESULTS.md](TEST_RESULTS.md). [MODULES.md](MODULES.md) uses strict
 status labels and the actual Eaglercraft module factory. Unit tests and the
 synthetic harness do not certify gameplay.
 
+The [Phase 13.1 repair](reports/release-phase13/PHASE13_1_REPORT.md) fixes modules appearing unavailable inside ClickGUI and records RC2 gameplay/restart validation.
+
 Phase 13 JavaScript release-candidate evidence, unchanged native payload identities and pending manual checks are recorded in [the Phase 13 report](reports/release-phase13/PHASE13_REPORT.md). The standalone HTML remains local and excluded from Git.
 
 ## Framework and browser integration

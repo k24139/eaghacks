@@ -210,11 +210,13 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   }
 
   inWorld() {
-    if (this.win?.__eaghacksNativeBridge?.version === 1 && !this._nativeState()?.player) return false;
-    if (this.win?.__eaglerGameReady!==true||this.win?.__eaglerWorldReady!==true) return false;
-    if (this._nativeState()?.session?.paused === true) return false;
-    const state=this.win?.__eaghacksScreenState;
-    return this.win?.__eaghacksScreenHookSeen===true&&state ? state.screenName===null : true;
+    if (this.win?.__eaglerGameReady !== true || this.win?.__eaglerWorldReady !== true) return false;
+    const native = this._nativeState();
+    // A paused native session still has a world. Screen/pause ownership gates
+    // actions in _gameplayInputAllowed(), not module availability.
+    if (native || this.win?.__eaghacksNativeBridge?.version === 1) return !!(native?.player && native?.world);
+    const state = this.win?.__eaghacksScreenState;
+    return this.win?.__eaghacksScreenHookSeen === true && state ? state.screenName === null : true;
   }
   isRemote() {
     const state = this._nativeState();
