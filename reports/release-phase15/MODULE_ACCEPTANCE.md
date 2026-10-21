@@ -1,0 +1,89 @@
+# Phase 15 module acceptance
+
+77 modules: **0 fully accepted, 41 gameplay-observed, 5 partial, 31 unsupported, 0 newly failed**. No GUI-only promotion.
+
+Risk-based coverage reuses unchanged Phase 14 evidence and adds a complete RC4 native suite, 41-module GUI/restart checks, modified/mouse AutoClicker holds, corrected fresh-Escape pause ownership, five-combat-module ownership, alternate Zoom settings and alternate HUD layout. Exact named checks/settings are in verification.json. Human visual/input/feel acceptance is pending; partial native contracts are not promoted.
+
+| Module | Category | Status | RC4 coverage beyond shared GUI/restart | Remaining acceptance / limitation |
+| --- | --- | --- | --- | --- |
+| Aim Assist | Combat | gameplay-observed | Native suite; Actual unload/reentry; five combat modules preserve sole aura attempt ownership; secondary combat disable preserves aura delivery; all combat owners disabled leaves no new attempts or queued commands | Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable. |
+| AutoClicker | Combat | gameplay-observed | Actual unload/reentry; AutoClicker activation hold gate; AutoClicker attacks through actual native target; combat modules gated by real inventory screen; AutoClicker modified hold rejects unmodified browser key on actual pig; AutoClicker Ctrl hold delivers actual native damage; AutoClicker mouse hold damages actual pig and release stops delivery; five combat modules preserve sole aura attempt ownership; secondary combat disable preserves aura delivery; all combat owners disabled leaves no new attempts or queued commands | Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable. |
+| AutoTotem | Combat | unsupported | Reuse scoped Phase 14 evidence | No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management. |
+| AutoWeapon | Combat | unsupported | Reuse scoped Phase 14 evidence | Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking. |
+| Criticals | Combat | partial | Criticals jump subset changes actual height; five combat modules preserve sole aura attempt ownership; secondary combat disable preserves aura delivery; all combat owners disabled leaves no new attempts or queued commands | Jump subset and falling-aware KillAura damage verified in a controlled dry/unmounted fixture. Packet hook, charge, fluid/climb/passenger state absent; no universal critical guarantee. |
+| KillAura | Combat | gameplay-observed | Native suite; Actual unload/reentry; five combat modules preserve sole aura attempt ownership; secondary combat disable preserves aura delivery; all combat owners disabled leaves no new attempts or queued commands | Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable. |
+| Reach Display | Combat | unsupported | Reuse scoped Phase 14 evidence | No attacker/distance combat event stream. Target snapshots do not identify hits. |
+| TriggerBot | Combat | gameplay-observed | Actual unload/reentry; TriggerBot damages actual crosshair target; TriggerBot weapon-only rejects stick; combat modules gated by real inventory screen; five combat modules preserve sole aura attempt ownership; secondary combat disable preserves aura delivery; all combat owners disabled leaves no new attempts or queued commands | Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable. |
+| Velocity | Combat | unsupported | Reuse scoped Phase 14 evidence | setPlayerVelocity exists; no incoming knockback multiplier/interception hook. |
+| Active Modules | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; active-modules-hud: actual visible HUD at configured position; active-modules-hud: disable removes node; active-modules-hud: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Armor HUD | HUD | gameplay-observed | Native suite; Alternate HUD layout; Actual unload/reentry; armor-hud: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Biome Info | HUD | gameplay-observed | Native suite; Actual unload/reentry | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Coordinates | HUD | gameplay-observed | Native suite; Alternate HUD layout; Actual unload/reentry; coordinates: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| CPS Counter | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; cps-counter: actual visible HUD at configured position; CPS observes actual browser click; cps-counter: disable removes node; cps-counter: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Custom Text | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; custom-text: actual visible HUD at configured position; custom text live settings; custom-text: disable removes node; custom-text: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Direction | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; direction: actual visible HUD at configured position; direction tracks actual yaw; direction: disable removes node; direction: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| FPS | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; fps-display: actual visible HUD at configured position; fps-display: disable removes node; fps-display: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Keystrokes | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; keystrokes: actual visible HUD at configured position; keystrokes: actual held movement; keystrokes: disable removes node; keystrokes: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Performance Monitor | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; performance-monitor: actual visible HUD at configured position; performance-monitor: disable removes node; performance-monitor: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Ping Display | HUD | unsupported | Reuse scoped Phase 14 evidence | No ping/network read contract. |
+| Potion HUD | HUD | gameplay-observed | Native suite; Alternate HUD layout; Actual unload/reentry; potion-hud: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Radar | HUD | gameplay-observed | Actual unload/reentry; radar: render from actual world/entities; radar: canvas cleanup | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Session Timer | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; session-timer: actual visible HUD at configured position; session timer visibly advances; session-timer: disable removes node; session-timer: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Speed | HUD | gameplay-observed | Alternate HUD layout; Actual unload/reentry; speed-hud: actual visible HUD at configured position; speed-hud: actual held movement; speed-hud: disable removes node; speed-hud: alternate HUD layout in loaded world | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| Target HUD | HUD | partial | target-hud: render from actual world/entities; target-hud: canvas cleanup | Live health/distance/bar supported; bar scale/line offset fixed; dead targets excluded. Armor metadata absent and UI option read-only with explanation. |
+| World Time | HUD | gameplay-observed | Native suite; Actual unload/reentry | Human readability, scale/opacity/color and clipping during camera motion and resize. |
+| AutoGG | Misc | unsupported | Reuse scoped Phase 14 evidence | No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability. |
+| AutoReconnect | Misc | unsupported | Reuse scoped Phase 14 evidence | No reconnect/server connection contract. |
+| Chat Timestamps | Misc | unsupported | Reuse scoped Phase 14 evidence | No incoming chat render/format interception. |
+| Debug Console | Misc | gameplay-observed | Actual unload/reentry; notification and debug toggle subscriptions; utility subscription cleanup | Human keybind/settings workflow and desktop input transitions. |
+| Friend Manager | Misc | gameplay-observed | Actual unload/reentry; friend setting integrates with client | Human keybind/settings workflow and desktop input transitions. |
+| Keybind Manager | Misc | gameplay-observed | keybind-manager: opens actual ClickGUI | Human keybind/settings workflow and desktop input transitions. |
+| Macros | Misc | partial | macro default wait; macro resumes after wait | Real modifier-aware macro keybinds and registered client module bind steps work. Native chat and arbitrary game key injection remain unavailable; native chat steps fail explicitly. |
+| Module Search | Misc | gameplay-observed | module-search: opens actual ClickGUI | Human keybind/settings workflow and desktop input transitions. |
+| Notifications | Misc | gameplay-observed | Actual unload/reentry; notification and debug toggle subscriptions; utility subscription cleanup; Notification repaired duplicate delivery | Human keybind/settings workflow and desktop input transitions. |
+| Screenshot Utilities | Misc | gameplay-observed | Screenshot completed and hook cleaned up | Human keybind/settings workflow and desktop input transitions. |
+| Server Information | Misc | unsupported | Reuse scoped Phase 14 evidence | No server address/player-count network contract. |
+| Session Statistics | Misc | gameplay-observed | Native suite; Actual unload/reentry | Human keybind/settings workflow and desktop input transitions. |
+| AutoJump | Movement | unsupported | Reuse scoped Phase 14 evidence | jump/onGround/forward reads exist; isBlockAhead collision lookup absent. |
+| AutoWalk | Movement | gameplay-observed | Native suite; Actual unload/reentry | Physical movement/stop feel with inventory, GUI and desktop focus changes. |
+| BunnyHop | Movement | gameplay-observed | Actual unload/reentry; BunnyHop only-sprinting gate; BunnyHop uses real jump with Sprint; BunnyHop/Sprint cleanup | Physical movement/stop feel with inventory, GUI and desktop focus changes. |
+| Flight | Movement | unsupported | Reuse scoped Phase 14 evidence | Direct velocity exists; setFlying/player flight flags and flight speed controls absent. |
+| HighJump | Movement | unsupported | Reuse scoped Phase 14 evidence | Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent. |
+| Jesus | Movement | unsupported | Reuse scoped Phase 14 evidence | No fluid collision or fluid movement interception. |
+| NoFall | Movement | unsupported | Reuse scoped Phase 14 evidence | fallDistance is readable; no setNoFall or fall-damage override. |
+| NoSlow | Movement | unsupported | Reuse scoped Phase 14 evidence | No item-use movement-modifier interception. |
+| Parkour | Movement | unsupported | Reuse scoped Phase 14 evidence | jump/sneak exist; isBlockAhead with gap query absent. |
+| SafeWalk | Movement | unsupported | Reuse scoped Phase 14 evidence | Sneak exists; no setSafeWalk edge-collision constraint. |
+| Speed | Movement | gameplay-observed | Native suite; Actual unload/reentry | Physical movement/stop feel with inventory, GUI and desktop focus changes. |
+| Spider | Movement | unsupported | Reuse scoped Phase 14 evidence | No horizontal-collision hook. |
+| Sprint | Movement | gameplay-observed | Native suite; Actual unload/reentry; BunnyHop/Sprint cleanup | Physical movement/stop feel with inventory, GUI and desktop focus changes. |
+| Step | Movement | unsupported | Reuse scoped Phase 14 evidence | No setStepHeight/getStepHeight API. |
+| Timer | Movement | unsupported | Reuse scoped Phase 14 evidence | No setTickRate/getTickRateMultiplier API. |
+| AntiAFK | Player | gameplay-observed | Actual unload/reentry; AntiAFK acts on actual player; AntiAFK cleanup | Human inventory/death/respawn and save/reentry workflow. |
+| AutoArmor | Player | unsupported | Reuse scoped Phase 14 evidence | Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent. |
+| AutoEat | Player | gameplay-observed | Native suite; Actual unload/reentry | Human inventory/death/respawn and save/reentry workflow. |
+| AutoRespawn | Player | gameplay-observed | Native suite; Actual unload/reentry | Human inventory/death/respawn and save/reentry workflow. |
+| AutoTool | Player | unsupported | Reuse scoped Phase 14 evidence | Inventory/slot reads and selection exist; block type and findBestTool ranking absent. |
+| Chest Organizer | Player | unsupported | Reuse scoped Phase 14 evidence | No container slot/click automation. |
+| Durability Warnings | Player | gameplay-observed | Actual unload/reentry; durability warning uses real damaged inventory | Human inventory/death/respawn and save/reentry workflow. |
+| FastPlace | Player | unsupported | Reuse scoped Phase 14 evidence | useItem exists; no setRightClickDelay/getRightClickDelay hook. |
+| Inventory Manager | Player | unsupported | Reuse scoped Phase 14 evidence | Reads exist; sort/drop/slot-click mutation contract absent. |
+| Chunk Borders | Render | gameplay-observed | Actual unload/reentry; chunk-borders: render from actual world/entities; chunk-borders: canvas cleanup; Chunk Borders repaired two-axis grid | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| Custom Crosshair | Render | gameplay-observed | Native suite; Actual unload/reentry | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| Entity ESP | Render | gameplay-observed | Native suite; Actual unload/reentry; ESP detects genuine guest excludes self and draws overlay; ESP player setting excludes genuine guest; ESP tracks genuine second player movement; ESP range excludes genuine distant guest; ESP genuine player overlay cleans up on disable | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| Freecam | Render | unsupported | Reuse scoped Phase 14 evidence | Projection exists; camera detachment/update/restore API absent. |
+| Fullbright | Render | partial | Native suite; Partial camera controls actual supported subsets; Partial camera controls cleanup | Night-vision effect mutation absent; gamma subset works. |
+| Hitboxes | Render | gameplay-observed | Actual unload/reentry; hitboxes: render from actual world/entities; hitboxes: canvas cleanup | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| Nametags | Render | gameplay-observed | Native suite; Actual unload/reentry | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| NoHurtCam | Render | partial | Native suite; Partial camera controls actual supported subsets; Partial camera controls cleanup | Damage/death suppression exists; independent directional tilt absent. |
+| Storage ESP | Render | unsupported | Reuse scoped Phase 14 evidence | No block/container enumeration. |
+| Tracers | Render | gameplay-observed | Native suite; Actual unload/reentry | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| X-Ray | Render | unsupported | Reuse scoped Phase 14 evidence | No renderer face-visibility override. |
+| Zoom | Render | gameplay-observed | Native suite; Actual unload/reentry; Zoom factor live update and restore with smooth=false; Zoom factor live update and restore with smooth=true | Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence. |
+| Block Search | World | unsupported | Reuse scoped Phase 14 evidence | No block enumeration/lookup. |
+| Light Level Overlay | World | unsupported | Reuse scoped Phase 14 evidence | No per-block light lookup. |
+| Waypoints | World | unsupported | Reuse scoped Phase 14 evidence | Position/dimension exist; stable world-save/server identity absent. |
+
+The 41 observed modules each receive actual GUI availability/enable/disable and setting-set restart comparison. These are shared lifecycle evidence, separate from functional checks. Native world transitions, camera restoration, shutdown cleanup, corrupt settings recovery and synthetic input release are covered by named assertions. Not every possible setting/transition combination is required or claimed. The independent auditor should assess the supported behavior scopes alongside the concise human checklist in RELEASE_READINESS.md.
+
+Other-player ESP: verified genuine-player detection/self exclusion, player filter, rendered tracking, range and disable cleanup. LAN: partial; bounded automated attempt stopped. Seven physical LAN items retain human-pending status even where automated counterparts pass. The exact per-module native limitations remain in ../release-phase14/MODULE_ACCEPTANCE.md and the row metadata.

@@ -21,6 +21,13 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     this._nativeActive = false; this._nativeCapabilities = new Set();
     this._previousNative = null; this._events = []; this._pendingSlotRestore = null;
     this._guiOwnsPause = false; this._guiResumeUntil = 0; this._guiResumeSequence = 0;
+    // A fresh user Escape owns the resulting native menu. Do not let a
+    // delayed pointer-unlock pause restoration dismiss that menu.
+    this._userKeyDown = event => {
+      if (event.isTrusted && !event.defaultPrevented && event.code === 'Escape' && !this._clientGuiOpen()) {
+        this._guiOwnsPause = false; this._guiResumeUntil = 0;
+      }
+    };
     this._physicalButtons = new Set();
     this._mouseDown = event => { if(event.isTrusted)this._physicalButtons.add(event.button); };
     this._mouseUp = event => { if(event.isTrusted)this._physicalButtons.delete(event.button); };
@@ -39,6 +46,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
     const ctx = canvas.getContext?.('2d');
     if (!ctx) { canvas.remove(); return this; }
     this.win?.addEventListener?.('blur', this._blur); this.win?.addEventListener?.('focus', this._focus);
+    this.win?.addEventListener?.('keydown',this._userKeyDown,true);
     this.win?.addEventListener?.('mousedown',this._mouseDown,true);this.win?.addEventListener?.('mouseup',this._mouseUp,true);
     this.overlay = canvas; this.ctx = ctx; this._mounted = true; this.capabilities.add('hud'); this._resize();
     return this;
@@ -306,6 +314,7 @@ export class EaglercraftBrowserAdapter extends GameAdapter {
   dispose() {
     this._guiOwnsPause = false; this._guiResumeUntil = 0;
     this.releaseOwnedInput(); this.win?.removeEventListener?.('blur',this._blur); this.win?.removeEventListener?.('focus',this._focus);
+    this.win?.removeEventListener?.('keydown',this._userKeyDown,true);
     this.win?.removeEventListener?.('mousedown',this._mouseDown,true);this.win?.removeEventListener?.('mouseup',this._mouseUp,true);this._physicalButtons.clear();
     this._previousNative=null; this._events=[]; this._pendingSlotRestore=null;
     for(const code of [...this._syntheticHeld])this._setSyntheticKey(code,false);

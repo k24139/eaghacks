@@ -1,0 +1,95 @@
+{
+  "verifiedAt": "2026-10-21T21:44:00.857Z",
+  "kind": "JavaScript integration release candidate; existing compiled native payloads",
+  "artifact": "input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+  "html": {
+    "bytes": 80986742,
+    "sha256": "5d404a9f73c65acd1c4e453582301f507d6a7b307ebaa7a199284aea0c6c1b9d"
+  },
+  "sourceDigest": "b6a500c829de31a645c4d9218a05219e4028f3039cabd000344e5a925b70b042",
+  "wasm": {
+    "bytes": 93857501,
+    "sha256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d"
+  },
+  "payloads": {
+    "eag-inline-decoder": {
+      "bytes": 208439,
+      "sha256": "79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f",
+      "byteIdentical": true
+    },
+    "eag-inline-wasm-br": {
+      "bytes": 17763621,
+      "sha256": "817d8dc367ee32beb863b23c4716fdc9b4acdfc7547594735fadfbcbf9874176",
+      "byteIdentical": true
+    },
+    "eag-inline-mesh-wasm-br": {
+      "bytes": 2245115,
+      "sha256": "ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3",
+      "byteIdentical": true
+    },
+    "eag-inline-server-wasm-br": {
+      "bytes": 7652747,
+      "sha256": "34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105",
+      "byteIdentical": true
+    },
+    "eag-inline-assets": {
+      "bytes": 6616184,
+      "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db",
+      "byteIdentical": true
+    },
+    "eag-inline-sounds": {
+      "bytes": 25921893,
+      "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6",
+      "byteIdentical": true
+    }
+  },
+  "integration": {
+    "bytes": 265970,
+    "sha256": "889ba2bd7a3407fda37196b00b91f5f76c667c67c0caa25441a536607846f6e2"
+  },
+  "injectionTool": {
+    "path": "tools/inject-eaglercraft.mjs",
+    "sha256": "411476e36b5b9a03afb706456f88a2e2a5d7dacf0a25206893ddda9d85b80007",
+    "baseCommit": "e3c1455c3a119cd0e8f47676e6dd38279374bc8e"
+  },
+  "historicalBaseline": {
+    "sha256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+    "unchanged": true
+  },
+  "candidateStatus": "pending acceptance; independent final QA required",
+  "verificationTools": {
+    "tools/phase15-manifest.mjs": "0f2292a947670533eff61198c3cee80b908d5281064fc4778f93bbd00567ab08",
+    "tools/phase15-full-check.mjs": "4f66fbc34e62e3c0075f53dbaffc921378540faeecf13b08a4d19e91e0c72d11",
+    "tools/phase15-acceptance.mjs": "a593e78495674eebb36db42a0d1997e689c00e37bf9e54457f2b90725cdda241",
+    "tools/phase15-transition-checks.mjs": "fb274907fe948bbe824699d5754444201d0769cb7231fbe357b627c862ae1d47",
+    "tools/phase15-transition-check.mjs": "84006ec26e06711c50c1acffe6078d4c1d18de0bd08cce9e47e83c30b641a4e2",
+    "tools/phase15-gui-checks.mjs": "8956a7fa5655dbefc3e2b8c0b8a44c865483280f5d11d99b311cec801530c4dd",
+    "tools/phase15-lan-check.mjs": "2309e4999d1bba2ded5a98f2491d0aff19a9e4675c22b00acf7f380385c31abb",
+    "tools/phase15-report.mjs": "2c2e9b5256f8bdc41876b092fea44cf312df26f25dc7c4f061b6465c442ffc1a",
+    "tools/phase15-publication.py": "45028fd6fc7cb94230e53fb0fc2f87724b17e5f4645dc476f71728f37d574a1a",
+    "tools/browser-check.mjs": "50c2243335c6e63b19b1052d91b3b816c89fa4b88bdf65ec451842689b07753b",
+    "tools/smoke.mjs": "ff039b4f52fc72b93181f9d51538f3a87c99f9bcc8223e1486b63ada11381877",
+    "tools/phase13-manifest.mjs": "4387218edbe361dd6c5eebb15ba915531d4cf1de171f0bc43af991bed6a89423",
+    "tools/phase5-benchmark.mjs": "6eaace115a463873b76a10bfc9295e84f8d078a07154decbc0c457e133d39f8b",
+    "tools/phase5-present-sampler.mjs": "5d38b7364595fdbb7fa4d78c498e2a453f214e0d6eb46d1e7a7e493026cb90cd",
+    "tools/sample-client-performance.mjs": "af95213636920a1be145e79953e9ef0689ad870241cc564b1025fd6b1be4ae4e",
+    "tools/performance-host-guard.mjs": "b7629bec1d0ecd477fd93f482335b84bb0e9feab2d40947f761129aec0e6a3e2",
+    "tools/dom-env.mjs": "28e5dc9e0e990aee77e8e972b9f1574d9e32c53ebc6d1ffd744b756c426a0338",
+    "tools/serve.mjs": "9a661645759f785ee64d2d98efcbb9ac197ecc76dd9445278118875cb0aea45e",
+    "tools/phase7-audio-probe.js": "2b8e6d51ab4aac0b4504ca803ee10f667ec75f84dc9879cdc9fb7ee94e0a938f",
+    "tools/phase13-gameplay-check.mjs": "1f69bcbe3c657407f4d0f9f95b29d3ede92c8fd3f5403a25419295cfdd5ea666",
+    "tools/phase13-extra-checks.mjs": "874f06f79fa41d9661ce4cb914ec8c17de2c3f5f6d415cd929510077d79a0d37",
+    "tools/phase13-module-checks.mjs": "1817b263b67aa797843ab60dd668d631f8e54bd1bdd28ff825b616fdcf6e518c",
+    "tools/phase13_1-gameplay-check.mjs": "d75804c698e504f3a4a4c06513d4533e6b95c53c4be09dbe50e24b206c7f58c5",
+    "tools/phase13_1-module-checks.mjs": "be0dae67fccee84905aef416bfc954e79967389eefa3443d3b2e10b4e5b46e24",
+    "tools/phase13_1-restart-check.mjs": "bd4eb0d7404c7857f440642f06e07c8ea7347bf618f66a55f343c23801edabad"
+  },
+  "regressionTests": {
+    "tests/phase15-input.test.mjs": "374367d2d413d49ef95c667c5c183b126929ce483b87ff454b3fa253b0300d06",
+    "tests/native-bridge.test.mjs": "23af4fb5648062440e04bd581d7b598e6638034d7562bde5ab829b9aaab4084e"
+  },
+  "localTestInfrastructure": {
+    "input/phase7/lan-server.mjs": "062374ab97df89b01bc53f515929648cc7bd21d4688675815295d83d3a89e3a0",
+    "input/phase7/lan-discovery.js": "d3ecbfb74ba556078c7f15197b6d2fde59a6abcc0b9dc61286461359c359ddd3"
+  }
+}

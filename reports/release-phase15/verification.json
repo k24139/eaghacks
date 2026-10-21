@@ -1,0 +1,4274 @@
+{
+  "verifiedAt": "2026-10-21T21:44:00.981Z",
+  "candidateStatus": "pending acceptance; ready for independent QA, not final release certification",
+  "startingCommit": "e3c1455c3a119cd0e8f47676e6dd38279374bc8e",
+  "artifactSHA256": "5d404a9f73c65acd1c4e453582301f507d6a7b307ebaa7a199284aea0c6c1b9d",
+  "embeddedJavaScriptSHA256": "889ba2bd7a3407fda37196b00b91f5f76c667c67c0caa25441a536607846f6e2",
+  "sourceDigest": "b6a500c829de31a645c4d9218a05219e4028f3039cabd000344e5a925b70b042",
+  "changes": [
+    "A fresh trusted Escape cancels delayed ClickGUI pause restoration so the user menu stays open.",
+    "AutoClicker activation hold matches Ctrl/Alt/Shift including extra-modifier rejection.",
+    "Mouse activation binds receive held-button state, cleared on mouseup including while GUI is open, blur and disposal."
+  ],
+  "regressions": {
+    "failingBefore": 3,
+    "passingAfter": 3,
+    "tests": [
+      "tests/phase15-input.test.mjs",
+      "tests/native-bridge.test.mjs"
+    ],
+    "listenerOwnershipRegression": true
+  },
+  "automated": {
+    "unit": {
+      "passed": 193,
+      "total": 193
+    },
+    "browser": {
+      "passed": 20,
+      "total": 20
+    },
+    "build": true,
+    "smoke": true
+  },
+  "actualClient": {
+    "fullGameplay": {
+      "passed": 100,
+      "checks": [
+        "compiled Java bridge announces itself",
+        "actual single-player world publishes native state",
+        "compiled production bridge exposes snapshot diagnostics and bounded multi-attack",
+        "native session identifies single-player",
+        "actual survival inventory opens",
+        "actual game canvas captures the mouse",
+        "trusted mouse movement reaches the actual captured game canvas",
+        "captured mouse changes actual native camera yaw",
+        "real movement changes native coordinates",
+        "real entities expose type, velocity and health",
+        "native inventory contains the actual bread",
+        "native main inventory has 36 slots",
+        "native camera contains a finite projection",
+        "native biome identifies the actual loaded region",
+        "native effects are an actual typed collection",
+        "real damage updates native health and hurt state",
+        "native slot command changes actual selection",
+        "native rotation changes real yaw and pitch",
+        "native jump changes real height",
+        "KillAura damages a real private-world mob",
+        "two actual healthy private-world mobs prepare batch test",
+        "compiled bounded batch damages two actual mobs",
+        "Aim Assist rotates toward an actual mob",
+        "KillAura owns actual rotation when Aim Assist is also enabled",
+        "Sprint changes actual sprint state while moving",
+        "Sprint releases state when disabled",
+        "Speed and Sprint combine in actual movement",
+        "combined movement disables without sustained velocity or sprint",
+        "programmatic blur releases keys in the actual native world",
+        "focus regain and module disable leave no sustained movement",
+        "Zoom changes actual FOV and camera projection",
+        "Zoom restores native FOV",
+        "Fullbright changes real gamma option",
+        "Fullbright restores real gamma option",
+        "NoHurtCam enables compiled camera hook",
+        "NoHurtCam restores the compiled hook",
+        "real hunger effect prepares food test",
+        "AutoEat starts real food use",
+        "AutoEat increases actual hunger",
+        "AutoEat releases use and restores actual slot",
+        "entity-esp draws actual entity overlay pixels",
+        "tracers draws actual entity overlay pixels",
+        "nametags draws actual entity overlay pixels",
+        "Coordinates HUD displays actual player position",
+        "World Time HUD reads actual native clock",
+        "Armor HUD displays actual equipped armor metadata",
+        "Biome Info displays the real native biome",
+        "Potion HUD displays an actual active effect",
+        "Custom Crosshair suppresses the real vanilla crosshair through its compiled hook",
+        "Custom Crosshair restores the real vanilla crosshair",
+        "ClickGUI opens inside actual native world",
+        "ClickGUI close restores actual game control without an extra pause menu",
+        "WebAudio graph produces nonzero samples in gameplay",
+        "simulated right mouse places a real block confirmed by server condition",
+        "simulated left mouse breaks the placed block confirmed by server condition",
+        "active-modules-hud renders in world at configured position",
+        "cps-counter renders in world at configured position",
+        "custom-text renders in world at configured position",
+        "direction renders in world at configured position",
+        "fps-display renders in world at configured position",
+        "keystrokes renders in world at configured position",
+        "performance-monitor renders in world at configured position",
+        "session-timer renders in world at configured position",
+        "speed-hud renders in world at configured position",
+        "module search filters actual-client results",
+        "category refresh releases removed settings listeners in actual client",
+        "AutoClicker modified hold rejects unmodified browser key on actual pig",
+        "AutoClicker Ctrl hold delivers actual native damage",
+        "AutoClicker mouse hold damages actual pig and release stops delivery",
+        "five combat modules preserve sole aura attempt ownership",
+        "secondary combat disable preserves aura delivery",
+        "all combat owners disabled leaves no new attempts or queued commands",
+        "Zoom factor live update and restore with smooth=false",
+        "Zoom factor live update and restore with smooth=true",
+        "active-modules-hud: alternate HUD layout in loaded world",
+        "armor-hud: alternate HUD layout in loaded world",
+        "coordinates: alternate HUD layout in loaded world",
+        "cps-counter: alternate HUD layout in loaded world",
+        "custom-text: alternate HUD layout in loaded world",
+        "direction: alternate HUD layout in loaded world",
+        "fps-display: alternate HUD layout in loaded world",
+        "keystrokes: alternate HUD layout in loaded world",
+        "performance-monitor: alternate HUD layout in loaded world",
+        "potion-hud: alternate HUD layout in loaded world",
+        "session-timer: alternate HUD layout in loaded world",
+        "speed-hud: alternate HUD layout in loaded world",
+        "41 observed modules repeated toggles release listeners input and GUI focus",
+        "real death emits native lifecycle event",
+        "AutoRespawn returns actual player to world",
+        "Session Statistics records real movement and death",
+        "camera modules retain intent in a paused loaded world",
+        "compiled Java menu gate blocks stale actions while framework ticker is stopped",
+        "world exit clears real native snapshot and stale commands",
+        "world exit retains pending user module intent",
+        "saved world reopens and eligible modules resume from real data",
+        "camera state restores after leaving and rejoining a world",
+        "configuration survives a real native-client page reload",
+        "saved native HUD waits for a real world after reload",
+        "no uncaught page errors",
+        "no module crashes"
+      ],
+      "scope": "Complete final-candidate gameplay run; no historical exploratory recovery/damage-model investigation rerun."
+    },
+    "focusedModules": {
+      "passed": 56,
+      "checks": [
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "module": "active-modules-hud",
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "module": "active-modules-hud",
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "module": "cps-counter",
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "module": "cps-counter",
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "module": "cps-counter",
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "module": "custom-text",
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "custom text live settings",
+          "module": "custom-text",
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          }
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "module": "custom-text",
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          }
+        },
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "module": "direction",
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "module": "direction",
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "direction: disable removes node",
+          "module": "direction",
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "module": "fps-display",
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "module": "fps-display",
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "module": "keystrokes",
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "module": "keystrokes",
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "module": "keystrokes",
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "module": "performance-monitor",
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "module": "performance-monitor",
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "module": "session-timer",
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session timer visibly advances",
+          "module": "session-timer",
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "module": "session-timer",
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "module": "speed-hud",
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "module": "speed-hud",
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "module": "speed-hud",
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "radar: render from actual world/entities",
+          "module": "radar",
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          }
+        },
+        {
+          "name": "radar: canvas cleanup",
+          "module": "radar",
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          }
+        },
+        {
+          "name": "hitboxes: render from actual world/entities",
+          "module": "hitboxes",
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          }
+        },
+        {
+          "name": "hitboxes: canvas cleanup",
+          "module": "hitboxes",
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          }
+        },
+        {
+          "name": "chunk-borders: render from actual world/entities",
+          "module": "chunk-borders",
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "chunk-borders: canvas cleanup",
+          "module": "chunk-borders",
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "target-hud: render from actual world/entities",
+          "module": "target-hud",
+          "testedSettings": {
+            "target-hud": {}
+          }
+        },
+        {
+          "name": "target-hud: canvas cleanup",
+          "module": "target-hud",
+          "testedSettings": {
+            "target-hud": {}
+          }
+        },
+        {
+          "name": "notification and debug toggle subscriptions",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          }
+        },
+        {
+          "name": "utility subscription cleanup",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          }
+        },
+        {
+          "name": "friend setting integrates with client",
+          "module": "friend-manager",
+          "testedSettings": {
+            "friend-manager": {
+              "add": "Phase6Friend"
+            }
+          }
+        },
+        {
+          "name": "module-search: opens actual ClickGUI",
+          "module": "module-search",
+          "testedSettings": {
+            "module-search": {}
+          }
+        },
+        {
+          "name": "keybind-manager: opens actual ClickGUI",
+          "module": "keybind-manager",
+          "testedSettings": {
+            "keybind-manager": {}
+          }
+        },
+        {
+          "name": "macro default wait",
+          "module": "macros",
+          "testedSettings": {
+            "macros": {}
+          }
+        },
+        {
+          "name": "macro resumes after wait",
+          "module": "macros",
+          "testedSettings": {
+            "macros": {}
+          }
+        },
+        {
+          "name": "BunnyHop only-sprinting gate",
+          "module": "bunny-hop",
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          }
+        },
+        {
+          "name": "BunnyHop uses real jump with Sprint",
+          "module": "bunny-hop",
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          }
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "module": [
+            "bunny-hop",
+            "sprint"
+          ],
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "sprint": {}
+          }
+        },
+        {
+          "name": "AntiAFK acts on actual player",
+          "module": "anti-afk",
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          }
+        },
+        {
+          "name": "AntiAFK cleanup",
+          "module": "anti-afk",
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          }
+        },
+        {
+          "name": "TriggerBot damages actual crosshair target",
+          "module": "trigger-bot",
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          }
+        },
+        {
+          "name": "TriggerBot weapon-only rejects stick",
+          "module": "trigger-bot",
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          }
+        },
+        {
+          "name": "AutoClicker activation hold gate",
+          "module": "auto-clicker",
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "AutoClicker attacks through actual native target",
+          "module": "auto-clicker",
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "module": [
+            "trigger-bot",
+            "auto-clicker"
+          ],
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": false
+            },
+            "auto-clicker": {
+              "cps": 4,
+              "hold": false,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "Criticals jump subset changes actual height",
+          "module": "auto-crit",
+          "testedSettings": {
+            "auto-crit": {
+              "mode": "jump"
+            }
+          }
+        },
+        {
+          "name": "durability warning uses real damaged inventory",
+          "module": "durability-warnings",
+          "testedSettings": {
+            "durability-warnings": {
+              "threshold": 20
+            }
+          }
+        },
+        {
+          "name": "Chunk Borders repaired two-axis grid",
+          "module": "chunk-borders",
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "Notification repaired duplicate delivery",
+          "module": "notifications",
+          "testedSettings": {
+            "notifications": {}
+          }
+        },
+        {
+          "name": "Screenshot completed and hook cleaned up",
+          "module": "screenshot-util",
+          "testedSettings": {
+            "screenshot-util": {}
+          }
+        },
+        {
+          "name": "Partial camera controls actual supported subsets",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          }
+        },
+        {
+          "name": "Partial camera controls cleanup",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          }
+        }
+      ]
+    },
+    "cohortTransitions": {
+      "passed": 119,
+      "checks": [
+        {
+          "name": "aim-assist: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "biome-info: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "coordinates: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "custom-text: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "direction: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "fps-display: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "radar: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "session-timer: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "world-time: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "debug-console: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "notifications: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "session-stats: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "speed: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "sprint: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "nametags: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "tracers: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "zoom: armed for actual world transition",
+          "pass": true
+        },
+        {
+          "name": "fresh user pause after GUI close survives pending restoration",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "biome-info: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "coordinates: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "custom-text: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "direction: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "fps-display: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "radar: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "session-timer: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "world-time: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "debug-console: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "notifications: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "session-stats: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "speed: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "nametags: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "tracers: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "zoom: actual world exit preserves eligible intent",
+          "pass": true
+        },
+        {
+          "name": "cohort world exit clears all owned movement and native commands",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "biome-info: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "coordinates: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "custom-text: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "direction: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "fps-display: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "radar: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "session-timer: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "world-time: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "debug-console: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "notifications: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "session-stats: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "speed: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "nametags: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "tracers: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "zoom: actual saved-world reentry retains or restores activity",
+          "pass": true
+        },
+        {
+          "name": "cohort final disable leaves no module errors input or attack commands",
+          "pass": true
+        },
+        {
+          "name": "no unexpected JavaScript errors",
+          "pass": true
+        },
+        {
+          "name": "no required runtime request failures",
+          "pass": true
+        }
+      ]
+    },
+    "guiLifecycle": {
+      "passed": 198,
+      "checks": [
+        {
+          "name": "normal keyboard movement works before opening GUI",
+          "pass": true
+        },
+        {
+          "name": "kill-aura GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "kill-aura is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "entity-esp GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "entity-esp is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "GUI combat fixture starts grounded on loaded origin platform",
+          "pass": true
+        },
+        {
+          "name": "kill-aura remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "entity-esp remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "KillAura GUI activation queues no combat or movement while paused",
+          "pass": true
+        },
+        {
+          "name": "KillAura passive filter prevents damage to real pig",
+          "pass": true
+        },
+        {
+          "name": "KillAura enabled through GUI damages eligible real mob after close",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "KillAura disable stops damage and clears queued attacks",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "KillAura range rejects real target five blocks away",
+          "pass": true
+        },
+        {
+          "name": "KillAura attacks when actual player enters configured range",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop sprint-only restriction keeps non-sprinting player grounded",
+          "pass": true
+        },
+        {
+          "name": "sprint: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop enabled through GUI jumps while sprinting in real gameplay",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "sprint: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop disable stops automatic jumping",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "ESP passive filter renders real pig and excludes hostile",
+          "pass": true
+        },
+        {
+          "name": "ESP hostile filter renders real zombie and excludes passive",
+          "pass": true
+        },
+        {
+          "name": "ESP player filter never includes the actual local self entity",
+          "pass": true
+        },
+        {
+          "name": "ESP rendered indicators track a real entity teleport",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "ESP disable clears overlay pixels",
+          "pass": true
+        },
+        {
+          "name": "preserve the exact 41 observed module cohort",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "coordinates: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "coordinates: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "native pause releases synthetic movement while preserving loaded-world availability",
+          "pass": true
+        },
+        {
+          "name": "world exit clears native combat, rendering and owned input",
+          "pass": true
+        },
+        {
+          "name": "kill-aura unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "entity-esp unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "real world reentry restores eligible module intent",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "fps-display: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "fps-display: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "no module errors after GUI and lifecycle regression",
+          "pass": true
+        },
+        {
+          "name": "no unexpected JavaScript errors",
+          "pass": true
+        },
+        {
+          "name": "no required runtime request failures",
+          "pass": true
+        }
+      ]
+    },
+    "restart": {
+      "passed": 13,
+      "checks": [
+        "all 41 module setting sets survive an actual Chrome process restart",
+        "FPS enabled survives Chrome process restart",
+        "world HUD intent waits for player identity after restart",
+        "priority module intent restores only after an actual saved world loads after restart",
+        "priority GUI rows remain available after Chrome restart and world reentry",
+        "nondefault new KillAura timing settings persist across Chrome process restart",
+        "macro modifier bind and client-bind step persist across Chrome process restart",
+        "explicit module disable persists across second Chrome restart",
+        "HUD precision persists across process restart",
+        "invalid stored settings safely recover during actual client boot",
+        "shutdown removes listeners, UI, native commands and synthetic inputs",
+        "no required runtime requests failed",
+        "no uncaught JavaScript errors across restarts"
+      ]
+    },
+    "inputLimitations": [
+      {
+        "test": "physical browser focus transition",
+        "reason": "Headless Chromium keeps both tabs focused. The blur listener is exercised with a programmatic FocusEvent, and actual native movement release is checked. Desktop focus switching remains manual QA."
+      }
+    ]
+  },
+  "modules": {
+    "registered": 77,
+    "fullyAccepted": 0,
+    "counts": {
+      "gameplay-observed": 41,
+      "partial": 5,
+      "unsupported": 31,
+      "failed": 0
+    },
+    "rows": [
+      {
+        "id": "aim-assist",
+        "name": "Aim Assist",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "five combat modules preserve sole aura attempt ownership",
+          "secondary combat disable preserves aura delivery",
+          "all combat owners disabled leaves no new attempts or queued commands"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable."
+      },
+      {
+        "id": "auto-clicker",
+        "name": "AutoClicker",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": false,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "AutoClicker modified hold rejects unmodified browser key on actual pig",
+          "AutoClicker Ctrl hold delivers actual native damage",
+          "AutoClicker mouse hold damages actual pig and release stops delivery",
+          "five combat modules preserve sole aura attempt ownership",
+          "secondary combat disable preserves aura delivery",
+          "all combat owners disabled leaves no new attempts or queued commands"
+        ],
+        "currentChecks": [
+          {
+            "name": "AutoClicker activation hold gate",
+            "testedSettings": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          },
+          {
+            "name": "AutoClicker attacks through actual native target",
+            "testedSettings": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          },
+          {
+            "name": "combat modules gated by real inventory screen",
+            "testedSettings": {
+              "cps": 4,
+              "hold": false,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable."
+      },
+      {
+        "id": "auto-totem",
+        "name": "AutoTotem",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management."
+      },
+      {
+        "id": "auto-weapon",
+        "name": "AutoWeapon",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking."
+      },
+      {
+        "id": "auto-crit",
+        "name": "Criticals",
+        "category": "Combat",
+        "status": "partial",
+        "fullyAccepted": false,
+        "limitation": "Jump subset and falling-aware KillAura damage verified in a controlled dry/unmounted fixture. Packet hook, charge, fluid/climb/passenger state absent; no universal critical guarantee.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "five combat modules preserve sole aura attempt ownership",
+          "secondary combat disable preserves aura delivery",
+          "all combat owners disabled leaves no new attempts or queued commands"
+        ],
+        "currentChecks": [
+          {
+            "name": "Criticals jump subset changes actual height",
+            "testedSettings": {
+              "mode": "jump"
+            },
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Jump subset and falling-aware KillAura damage verified in a controlled dry/unmounted fixture. Packet hook, charge, fluid/climb/passenger state absent; no universal critical guarantee."
+      },
+      {
+        "id": "kill-aura",
+        "name": "KillAura",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Modern recovery verified by damage; native charge is not published. Interval attempts and bounded falling preference, not guaranteed readiness/criticals. Actual other-player targeting remains unverified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "five combat modules preserve sole aura attempt ownership",
+          "secondary combat disable preserves aura delivery",
+          "all combat owners disabled leaves no new attempts or queued commands"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable."
+      },
+      {
+        "id": "reach-display",
+        "name": "Reach Display",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No attacker/distance combat event stream. Target snapshots do not identify hits.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No attacker/distance combat event stream. Target snapshots do not identify hits."
+      },
+      {
+        "id": "trigger-bot",
+        "name": "TriggerBot",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "five combat modules preserve sole aura attempt ownership",
+          "secondary combat disable preserves aura delivery",
+          "all combat owners disabled leaves no new attempts or queued commands"
+        ],
+        "currentChecks": [
+          {
+            "name": "TriggerBot damages actual crosshair target",
+            "testedSettings": {
+              "delay": 20,
+              "weapon-only": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "TriggerBot weapon-only rejects stick",
+            "testedSettings": {
+              "delay": 20,
+              "weapon-only": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "combat modules gated by real inventory screen",
+            "testedSettings": {
+              "delay": 20,
+              "weapon-only": false
+            },
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical combat/aim feel and real other-player combat filtering; native charge remains unavailable."
+      },
+      {
+        "id": "velocity",
+        "name": "Velocity",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook."
+      },
+      {
+        "id": "active-modules-hud",
+        "name": "Active Modules",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "active-modules-hud: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "active-modules-hud: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "active-modules-hud: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "armor-hud",
+        "name": "Armor HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "armor-hud: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "biome-info",
+        "name": "Biome Info",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "coordinates",
+        "name": "Coordinates",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "coordinates: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "cps-counter",
+        "name": "CPS Counter",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "cps-counter: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "cps-counter: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "CPS observes actual browser click",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "cps-counter: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "custom-text",
+        "name": "Custom Text",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "custom-text: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "custom-text: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "custom text live settings",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            },
+            "cleanup": false
+          },
+          {
+            "name": "custom-text: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "direction",
+        "name": "Direction",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "direction: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "direction: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "direction tracks actual yaw",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "direction: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "fps-display",
+        "name": "FPS",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Browser/framework frame rate, not physical display or game submission rate.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "fps-display: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "fps-display: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "fps-display: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "keystrokes",
+        "name": "Keystrokes",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "keystrokes: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "keystrokes: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "keystrokes: actual held movement",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "keystrokes: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "performance-monitor",
+        "name": "Performance Monitor",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "performance-monitor: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "performance-monitor: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "performance-monitor: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "ping-display",
+        "name": "Ping Display",
+        "category": "HUD",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No ping/network read contract.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No ping/network read contract."
+      },
+      {
+        "id": "potion-hud",
+        "name": "Potion HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "potion-hud: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "radar",
+        "name": "Radar",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "radar: render from actual world/entities",
+            "testedSettings": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            },
+            "cleanup": false
+          },
+          {
+            "name": "radar: canvas cleanup",
+            "testedSettings": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "session-timer",
+        "name": "Session Timer",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "session-timer: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "session-timer: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "session timer visibly advances",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "session-timer: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "speed-hud",
+        "name": "Speed",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "speed-hud: alternate HUD layout in loaded world"
+        ],
+        "currentChecks": [
+          {
+            "name": "speed-hud: actual visible HUD at configured position",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "speed-hud: actual held movement",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "speed-hud: disable removes node",
+            "testedSettings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": true,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "target-hud",
+        "name": "Target HUD",
+        "category": "HUD",
+        "status": "partial",
+        "fullyAccepted": false,
+        "limitation": "Live health/distance/bar supported; bar scale/line offset fixed; dead targets excluded. Armor metadata absent and UI option read-only with explanation.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "target-hud: render from actual world/entities",
+            "testedSettings": {},
+            "cleanup": false
+          },
+          {
+            "name": "target-hud: canvas cleanup",
+            "testedSettings": {},
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Live health/distance/bar supported; bar scale/line offset fixed; dead targets excluded. Armor metadata absent and UI option read-only with explanation."
+      },
+      {
+        "id": "world-time",
+        "name": "World Time",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human readability, scale/opacity/color and clipping during camera motion and resize."
+      },
+      {
+        "id": "auto-gg",
+        "name": "AutoGG",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability."
+      },
+      {
+        "id": "auto-reconnect",
+        "name": "AutoReconnect",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No reconnect/server connection contract.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No reconnect/server connection contract."
+      },
+      {
+        "id": "chat-timestamps",
+        "name": "Chat Timestamps",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No incoming chat render/format interception.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No incoming chat render/format interception."
+      },
+      {
+        "id": "debug-console",
+        "name": "Debug Console",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "notification and debug toggle subscriptions",
+            "testedSettings": {
+              "events": false
+            },
+            "cleanup": false
+          },
+          {
+            "name": "utility subscription cleanup",
+            "testedSettings": {
+              "events": false
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "friend-manager",
+        "name": "Friend Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "friend setting integrates with client",
+            "testedSettings": {
+              "add": "Phase6Friend"
+            },
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "keybind-manager",
+        "name": "Keybind Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "keybind-manager: opens actual ClickGUI",
+            "testedSettings": {},
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "macros",
+        "name": "Macros",
+        "category": "Misc",
+        "status": "partial",
+        "fullyAccepted": false,
+        "limitation": "Real modifier-aware macro keybinds and registered client module bind steps work. Native chat and arbitrary game key injection remain unavailable; native chat steps fail explicitly.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "macro default wait",
+            "testedSettings": {},
+            "cleanup": false
+          },
+          {
+            "name": "macro resumes after wait",
+            "testedSettings": {},
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Real modifier-aware macro keybinds and registered client module bind steps work. Native chat and arbitrary game key injection remain unavailable; native chat steps fail explicitly."
+      },
+      {
+        "id": "module-search",
+        "name": "Module Search",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "module-search: opens actual ClickGUI",
+            "testedSettings": {},
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "notifications",
+        "name": "Notifications",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "notification and debug toggle subscriptions",
+            "testedSettings": {},
+            "cleanup": false
+          },
+          {
+            "name": "utility subscription cleanup",
+            "testedSettings": {},
+            "cleanup": true
+          },
+          {
+            "name": "Notification repaired duplicate delivery",
+            "testedSettings": {},
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "screenshot-util",
+        "name": "Screenshot Utilities",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "Screenshot completed and hook cleaned up",
+            "testedSettings": {},
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "server-info",
+        "name": "Server Information",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No server address/player-count network contract.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No server address/player-count network contract."
+      },
+      {
+        "id": "session-stats",
+        "name": "Session Statistics",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human keybind/settings workflow and desktop input transitions."
+      },
+      {
+        "id": "auto-jump",
+        "name": "AutoJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent."
+      },
+      {
+        "id": "auto-walk",
+        "name": "AutoWalk",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical movement/stop feel with inventory, GUI and desktop focus changes."
+      },
+      {
+        "id": "bunny-hop",
+        "name": "BunnyHop",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "BunnyHop only-sprinting gate",
+            "testedSettings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "BunnyHop uses real jump with Sprint",
+            "testedSettings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "BunnyHop/Sprint cleanup",
+            "testedSettings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical movement/stop feel with inventory, GUI and desktop focus changes."
+      },
+      {
+        "id": "flight",
+        "name": "Flight",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent."
+      },
+      {
+        "id": "high-jump",
+        "name": "HighJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent."
+      },
+      {
+        "id": "jesus",
+        "name": "Jesus",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No fluid collision or fluid movement interception.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No fluid collision or fluid movement interception."
+      },
+      {
+        "id": "no-fall",
+        "name": "NoFall",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "fallDistance is readable; no setNoFall or fall-damage override.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "fallDistance is readable; no setNoFall or fall-damage override."
+      },
+      {
+        "id": "no-slow",
+        "name": "NoSlow",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No item-use movement-modifier interception.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No item-use movement-modifier interception."
+      },
+      {
+        "id": "parkour",
+        "name": "Parkour",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "jump/sneak exist; isBlockAhead with gap query absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "jump/sneak exist; isBlockAhead with gap query absent."
+      },
+      {
+        "id": "safe-walk",
+        "name": "SafeWalk",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Sneak exists; no setSafeWalk edge-collision constraint.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Sneak exists; no setSafeWalk edge-collision constraint."
+      },
+      {
+        "id": "speed",
+        "name": "Speed",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical movement/stop feel with inventory, GUI and desktop focus changes."
+      },
+      {
+        "id": "spider",
+        "name": "Spider",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No horizontal-collision hook.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No horizontal-collision hook."
+      },
+      {
+        "id": "sprint",
+        "name": "Sprint",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "BunnyHop/Sprint cleanup",
+            "testedSettings": {},
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Physical movement/stop feel with inventory, GUI and desktop focus changes."
+      },
+      {
+        "id": "step",
+        "name": "Step",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No setStepHeight/getStepHeight API.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No setStepHeight/getStepHeight API."
+      },
+      {
+        "id": "timer",
+        "name": "Timer",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No setTickRate/getTickRateMultiplier API.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No setTickRate/getTickRateMultiplier API."
+      },
+      {
+        "id": "anti-afk",
+        "name": "AntiAFK",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "AntiAFK acts on actual player",
+            "testedSettings": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "AntiAFK cleanup",
+            "testedSettings": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human inventory/death/respawn and save/reentry workflow."
+      },
+      {
+        "id": "auto-armor",
+        "name": "AutoArmor",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent."
+      },
+      {
+        "id": "auto-eat",
+        "name": "AutoEat",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human inventory/death/respawn and save/reentry workflow."
+      },
+      {
+        "id": "auto-respawn",
+        "name": "AutoRespawn",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human inventory/death/respawn and save/reentry workflow."
+      },
+      {
+        "id": "auto-tool",
+        "name": "AutoTool",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent."
+      },
+      {
+        "id": "chest-organizer",
+        "name": "Chest Organizer",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No container slot/click automation.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No container slot/click automation."
+      },
+      {
+        "id": "durability-warnings",
+        "name": "Durability Warnings",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "durability warning uses real damaged inventory",
+            "testedSettings": {
+              "threshold": 20
+            },
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human inventory/death/respawn and save/reentry workflow."
+      },
+      {
+        "id": "fast-place",
+        "name": "FastPlace",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "useItem exists; no setRightClickDelay/getRightClickDelay hook.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "useItem exists; no setRightClickDelay/getRightClickDelay hook."
+      },
+      {
+        "id": "inventory-manager",
+        "name": "Inventory Manager",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Reads exist; sort/drop/slot-click mutation contract absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Reads exist; sort/drop/slot-click mutation contract absent."
+      },
+      {
+        "id": "chunk-borders",
+        "name": "Chunk Borders",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Local projected grid, not native renderer geometry.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "chunk-borders: render from actual world/entities",
+            "testedSettings": {},
+            "cleanup": false
+          },
+          {
+            "name": "chunk-borders: canvas cleanup",
+            "testedSettings": {},
+            "cleanup": true
+          },
+          {
+            "name": "Chunk Borders repaired two-axis grid",
+            "testedSettings": {},
+            "cleanup": false
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "custom-crosshair",
+        "name": "Custom Crosshair",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "entity-esp",
+        "name": "Entity ESP",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "ESP detects genuine guest excludes self and draws overlay",
+          "ESP player setting excludes genuine guest",
+          "ESP tracks genuine second player movement",
+          "ESP range excludes genuine distant guest",
+          "ESP genuine player overlay cleans up on disable"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "freecam",
+        "name": "Freecam",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Projection exists; camera detachment/update/restore API absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Projection exists; camera detachment/update/restore API absent."
+      },
+      {
+        "id": "fullbright",
+        "name": "Fullbright",
+        "category": "Render",
+        "status": "partial",
+        "fullyAccepted": false,
+        "limitation": "Night-vision effect mutation absent; gamma subset works.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "Partial camera controls actual supported subsets",
+            "testedSettings": {
+              "level": 1
+            },
+            "cleanup": false
+          },
+          {
+            "name": "Partial camera controls cleanup",
+            "testedSettings": {
+              "level": 1
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Night-vision effect mutation absent; gamma subset works."
+      },
+      {
+        "id": "hitboxes",
+        "name": "Hitboxes",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Screen overlay only, not expanded collision.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "hitboxes: render from actual world/entities",
+            "testedSettings": {
+              "expand": 0.2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "hitboxes: canvas cleanup",
+            "testedSettings": {
+              "expand": 0.2
+            },
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "nametags",
+        "name": "Nametags",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "no-hurt-cam",
+        "name": "NoHurtCam",
+        "category": "Render",
+        "status": "partial",
+        "fullyAccepted": false,
+        "limitation": "Damage/death suppression exists; independent directional tilt absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [
+          {
+            "name": "Partial camera controls actual supported subsets",
+            "testedSettings": {},
+            "cleanup": false
+          },
+          {
+            "name": "Partial camera controls cleanup",
+            "testedSettings": {},
+            "cleanup": true
+          }
+        ],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Damage/death suppression exists; independent directional tilt absent."
+      },
+      {
+        "id": "storage-esp",
+        "name": "Storage ESP",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No block/container enumeration.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No block/container enumeration."
+      },
+      {
+        "id": "tracers",
+        "name": "Tracers",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "xray",
+        "name": "X-Ray",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No renderer face-visibility override.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No renderer face-visibility override."
+      },
+      {
+        "id": "zoom",
+        "name": "Zoom",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [
+          "Zoom factor live update and restore with smooth=false",
+          "Zoom factor live update and restore with smooth=true"
+        ],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": true,
+        "actualWorldTransition": true,
+        "alternateHUDLayout": false,
+        "guiAndRestart": true,
+        "remainingAcceptance": "Human visual appearance/projection while moving and resizing; player scope as recorded in LAN evidence."
+      },
+      {
+        "id": "block-search",
+        "name": "Block Search",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No block enumeration/lookup.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No block enumeration/lookup."
+      },
+      {
+        "id": "light-level",
+        "name": "Light Level Overlay",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "No per-block light lookup.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "No per-block light lookup."
+      },
+      {
+        "id": "waypoints",
+        "name": "Waypoints",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "limitation": "Position/dimension exist; stable world-save/server identity absent.",
+        "reusedEvidence": {
+          "report": "../release-phase14/verification.json",
+          "moduleImplementationUnchanged": true,
+          "note": "Shared keybind mouse tracking and native GUI pause ownership changed; its unit and final-candidate GUI/input coverage is fresh. Historical gameplay evidence remains scoped to its named checks."
+        },
+        "additionalActualChecks": [],
+        "currentChecks": [],
+        "actualCandidateSuiteObserved": false,
+        "actualWorldTransition": false,
+        "alternateHUDLayout": false,
+        "guiAndRestart": false,
+        "remainingAcceptance": "Position/dimension exist; stable world-save/server identity absent."
+      }
+    ],
+    "note": "Risk-based automation extends observed scope. Human criteria remain pending; shared GUI/persistence checks do not promote modules. Partial and unsupported contracts retained."
+  },
+  "lan": {
+    "status": "partial; bounded automated attempt stopped",
+    "stage": "reconnect",
+    "checks": [
+      "private host has real local identity",
+      "host Back navigation after bounded acceptance probe",
+      "host Escape navigation after bounded acceptance probe",
+      "host returns to responsive gameplay after Back and Escape",
+      "guest connects with proven remote identity",
+      "host receives the actual guest player entity",
+      "server inventory update reaches native guest snapshot",
+      "native selection changes the real remote player slot",
+      "remote movement propagates to the actual host entity",
+      "ESP detects genuine guest excludes self and draws overlay",
+      "ESP player setting excludes genuine guest",
+      "ESP tracks genuine second player movement",
+      "ESP range excludes genuine distant guest",
+      "ESP genuine player overlay cleans up on disable",
+      "guest chat reaches the actual host",
+      "remote combat automation remains blocked by default",
+      "disconnect clears native data and commands",
+      "host removes the disconnected player"
+    ],
+    "lobby": [
+      {
+        "before": {
+          "screen": "EaglerLANPeersScreen",
+          "tick": 838,
+          "sequence": 878
+        },
+        "after": {
+          "screen": "EaglerLANPeersScreen",
+          "tick": 1106,
+          "sequence": 1075
+        },
+        "guestRemote": true
+      }
+    ],
+    "limitation": "No positive acceptance is claimed beyond listed completed assertions. Physical LAN checks remain pending.",
+    "priorAttempts": [
+      {
+        "attempt": 1,
+        "stage": "connect",
+        "completedAssertions": [
+          "private host has real local identity",
+          "host Back navigation after bounded acceptance probe",
+          "host Escape navigation after bounded acceptance probe",
+          "host returns to responsive gameplay after Back and Escape",
+          "guest connects with proven remote identity"
+        ],
+        "lobby": [
+          {
+            "before": {
+              "screen": "EaglerLANPeersScreen",
+              "tick": 891,
+              "sequence": 932
+            },
+            "after": {
+              "screen": "EaglerLANPeersScreen",
+              "tick": 1159,
+              "sequence": 1129
+            },
+            "guestRemote": true
+          }
+        ],
+        "scope": "Incomplete bounded attempt; not counted as a completed final LAN suite."
+      },
+      {
+        "attempt": 2,
+        "stage": "connect",
+        "completedAssertions": [
+          "private host has real local identity"
+        ],
+        "lobby": [],
+        "scope": "Incomplete bounded attempt; not counted as a completed final LAN suite."
+      }
+    ],
+    "uniqueCompletedAssertionsAcrossAttempts": [
+      "private host has real local identity",
+      "host Back navigation after bounded acceptance probe",
+      "host Escape navigation after bounded acceptance probe",
+      "host returns to responsive gameplay after Back and Escape",
+      "guest connects with proven remote identity",
+      "host receives the actual guest player entity",
+      "server inventory update reaches native guest snapshot",
+      "native selection changes the real remote player slot",
+      "remote movement propagates to the actual host entity",
+      "ESP detects genuine guest excludes self and draws overlay",
+      "ESP player setting excludes genuine guest",
+      "ESP tracks genuine second player movement",
+      "ESP range excludes genuine distant guest",
+      "ESP genuine player overlay cleans up on disable",
+      "guest chat reaches the actual host",
+      "remote combat automation remains blocked by default",
+      "disconnect clears native data and commands",
+      "host removes the disconnected player"
+    ]
+  },
+  "otherPlayerESP": {
+    "status": "verified genuine-player detection/self exclusion, player filter, rendered tracking, range and disable cleanup"
+  },
+  "humanQA": {
+    "status": "pending user execution and results",
+    "checklist": "RELEASE_READINESS.md",
+    "newHumanPasses": 0,
+    "deferredPhysicalLANChecks": 7
+  },
+  "nativePreservation": {
+    "allSixPayloadsByteIdentical": true,
+    "wasmSHA256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d",
+    "historicalArtifacts": "verified separately by publication checker"
+  },
+  "setupCorrections": [
+    "Installed Chrome requires execution outside the filesystem sandbox.",
+    "The second bounded LAN fixture selected a fixed peer row and timed out awaiting an invitation. The final attempt uses the established Phase 9 native guest-ID/open-peer row selection, without changing transport infrastructure. Earlier incomplete attempts remain local and are not counted as a completed LAN pass.",
+    "The first bounded LAN session connected successfully, but its assertion assumed a requested profile name and nearby guest spawn. The corrected driver reads the genuine native guest identity and teleports that player into the controlled fixture before entity/ESP checks; no synthetic snapshot is used.",
+    "The legacy GUI preamble used a 350 ms held-forward movement assertion on an unprepared saved-world spawn; did not establish displacement at the unprepared saved spawn. The dedicated transition runner omits that unrelated terrain-dependent assertion; controlled movement already passes the full suite.",
+    "A test-only diagnostic referenced the intentionally removed native-state global after successful world exit; changed it to window.__eaghacksNativeState and reran the transition component. No product change or gameplay suite repetition was required.",
+    "The initial GUI continuation timed out at an origin-range fixture. Reopening that disposable save showed the player at y=48 below the y=150 platform. Phase 15 GUI preparation now waits for origin chunks, teleports back onto the platform and asserts grounded y=150 before the reused suite. This invalid continuation is excluded. A later cohort transition exposed a genuine delayed GUI resume race dismissing a fresh user pause; the source fix has a failing-before regression and final-byte native verification. Preliminary candidate evidence is archived locally and excluded from final RC4 counts."
+  ],
+  "targetedReview": {
+    "scope": [
+      "changed input ownership and modifiers",
+      "combat ownership and command cleanup",
+      "listener/GUI focus lifecycle",
+      "invalid stored settings recovery",
+      "native capability explanations",
+      "tracked output and dependencies"
+    ],
+    "externalDependenciesAdded": false,
+    "nativeCodeChanged": false,
+    "performance": "No performance concern observed. Changes affect held-input gating; no simulation/render algorithm changed. No performance comparison or optimization certification claimed."
+  },
+  "remaining": [
+    "Human physical keyboard/mouse/pointer-lock/combat/visual/audio/save acceptance",
+    "Seven physical LAN checks; repeated invitation/reconnect reliability remains outside verified scope after the bounded timeout",
+    "Independent whole-project final quality audit"
+  ],
+  "reproduction": [
+    "npm test",
+    "npm run build",
+    "node tools/smoke.mjs",
+    "node tools/serve.mjs 3015",
+    "CHROMIUM_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" node tools/browser-check.mjs http://127.0.0.1:3015/",
+    "node tools/inject-eaglercraft.mjs --refresh input/phase14/Eaglercraft-26.2-u1-Eaghacks-RC3.html input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+    "node tools/phase15-manifest.mjs",
+    "NATIVE_ARTIFACT=input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html node tools/phase15-full-check.mjs file:///absolute/path/to/input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+    "node input/phase7/lan-server.mjs --dir . --host 127.0.0.1 --port 3016 --quiet",
+    "NATIVE_ARTIFACT=input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html NATIVE_LAN_DISCOVERY_SCRIPT=input/phase7/lan-discovery.js node tools/phase15-lan-check.mjs http://127.0.0.1:3016/input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+    "node tools/phase15-transition-check.mjs input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+    "node tools/phase15-report.mjs"
+  ],
+  "reproductionNotes": "Use fresh task profiles for a fresh full run. Existing evidence is hash-bound. Native LAN discovery/server helpers are preserved local upstream test infrastructure, not new product dependencies. Keep raw diagnostics local."
+}

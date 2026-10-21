@@ -177,6 +177,7 @@ export class KeybindManager {
       cb(keybindFromMouseEvent(e, e.button));
       return;
     }
+    this.heldKeys.add(`Mouse${e.button}`);
     this.onMouseButton?.(e.button, true, e);
     if (this.guiOpen) {
       // GUI widgets manage their own handlers; do not forward to the game.
@@ -189,6 +190,7 @@ export class KeybindManager {
   }
 
   _handleMouseUp(e) {
+    this.heldKeys.delete(`Mouse${e.button}`);
     this.onMouseButton?.(e.button, false, e);
     if (this.guiOpen) return;
     this.bus?.emit("mouse-input", { event: e, button: e.button, down: false });

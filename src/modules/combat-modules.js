@@ -282,7 +282,10 @@ export class AutoClicker extends CombatModule {
     if (this.settings.get("hold").value) {
       const kb = this.settings.get("activation-key").value;
       const held = this.manager.client?.keybinds?.heldKeys;
-      if (!kb || !held || !(held.has(kb.key) || held.has(`Mouse${kb.mouse}`))) { this.onEnable(); return; }
+      const modifiers = { ctrl: ["ControlLeft", "ControlRight"], alt: ["AltLeft", "AltRight"], shift: ["ShiftLeft", "ShiftRight"] };
+      const matches = kb && held && (held.has(kb.key) || held.has(`Mouse${kb.mouse}`)) &&
+        Object.entries(modifiers).every(([name, codes]) => !!kb.modifiers?.[name] === codes.some(code => held.has(code)));
+      if (!matches) { this.onEnable(); return; }
     }
     // 20 ticks per second in the game loop.
     const perTick = cps / 20 * Math.min(1, Math.max(0, dt));

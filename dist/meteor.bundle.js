@@ -1093,6 +1093,7 @@ var MeteorFramework = (() => {
         cb(keybindFromMouseEvent(e, e.button));
         return;
       }
+      this.heldKeys.add(`Mouse${e.button}`);
       this.onMouseButton?.(e.button, true, e);
       if (this.guiOpen) {
         return;
@@ -1103,6 +1104,7 @@ var MeteorFramework = (() => {
       this.modules?.onKeybindPressed(kb);
     }
     _handleMouseUp(e) {
+      this.heldKeys.delete(`Mouse${e.button}`);
       this.onMouseButton?.(e.button, false, e);
       if (this.guiOpen) return;
       this.bus?.emit("mouse-input", { event: e, button: e.button, down: false });
@@ -3724,7 +3726,9 @@ currently unavailable: ${mod.ineligibilityReason()}` : ""}`
       if (this.settings.get("hold").value) {
         const kb = this.settings.get("activation-key").value;
         const held = this.manager.client?.keybinds?.heldKeys;
-        if (!kb || !held || !(held.has(kb.key) || held.has(`Mouse${kb.mouse}`))) {
+        const modifiers = { ctrl: ["ControlLeft", "ControlRight"], alt: ["AltLeft", "AltRight"], shift: ["ShiftLeft", "ShiftRight"] };
+        const matches = kb && held && (held.has(kb.key) || held.has(`Mouse${kb.mouse}`)) && Object.entries(modifiers).every(([name, codes]) => !!kb.modifiers?.[name] === codes.some((code) => held.has(code)));
+        if (!matches) {
           this.onEnable();
           return;
         }

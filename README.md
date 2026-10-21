@@ -16,6 +16,8 @@ Phase 13 JavaScript release-candidate evidence, unchanged native payload identit
 
 The [Phase 14 experimental RC3 report](reports/release-phase14/PHASE14_REPORT.md) records the combat scheduler, real modern weapon-recovery measurements, falling-aware timing, macro bind repairs and explicit unavailable options. Counts remain 41 gameplay-observed, five partial and 31 unsupported, with no exhaustive acceptance promotion. RC3 stays in ignored `input/phase14/`; [human acceptance](reports/release-phase14/PHYSICAL_QA.md) and actual other-player ESP checks remain pending.
 
+The [Phase 15 RC4 report](reports/release-phase15/PHASE15_REPORT.md) extends risk-based native acceptance and repairs AutoClicker modifier/mouse activation holds and delayed GUI restoration consuming a fresh Escape menu. RC4 stays local in ignored `input/phase15/`. It is **pending acceptance**, with [human and independent final QA requirements](reports/release-phase15/RELEASE_READINESS.md) kept separate from automation. No final-release certification or public standalone HTML release is claimed.
+
 ## Framework and browser integration
 
 ```sh

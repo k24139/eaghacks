@@ -230,3 +230,16 @@ test('native velocity, rotation and swing reject unadvertised actions without qu
   assert.equal(adapter.swingHand(), false);
   assert.equal(win.__eaghacksNativeCommands, undefined);
 });
+
+test('a new trusted Escape cancels delayed GUI restoration before opening the user pause menu',()=>{
+ const {win,adapter,ui,keys}=guiControlFixture();adapter.setPointerLock(false);ui.open=false;adapter.onGuiClosed();
+ // The native pause caused by releasing pointer lock has not arrived yet.
+ adapter._userKeyDown?.({isTrusted:true,code:'Escape',defaultPrevented:false});
+ win.__eaghacksScreenState.screenName='PauseScreen';win.__eaghacksNativeState.session.paused=true;adapter.update();
+ assert.deepEqual(keys,[],'restoration must not dismiss the new user menu');
+ // Synthetic restoration events and the consumed GUI-close key retain ownership.
+ for(const event of [{isTrusted:false,code:'Escape'},{isTrusted:true,code:'Escape',defaultPrevented:true}]){
+  const f=guiControlFixture();f.adapter.setPointerLock(false);f.ui.open=false;f.adapter.onGuiClosed();f.adapter._userKeyDown?.(event);
+  f.win.__eaghacksScreenState.screenName='PauseScreen';f.win.__eaghacksNativeState.session.paused=true;f.adapter.update();assert.deepEqual(f.keys,['Escape']);
+ }
+});
