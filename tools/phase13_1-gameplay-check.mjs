@@ -6,7 +6,7 @@ import {resolve,relative,isAbsolute} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 const before=process.argv.includes('--before'),artifact=process.argv[2];assert.ok(artifact);
-const root='input/phase13_1';await mkdir(root,{recursive:true});
+const root=process.env.QA_ROOT||'input/phase13_1';await mkdir(root,{recursive:true});
 const profile=resolve(process.env.QA_PROFILE||`${root}/profile`),rel=relative(resolve(root),profile);assert.ok(rel&&!rel.startsWith('..')&&!isAbsolute(rel));
 const hash=createHash('sha256').update(await readFile(artifact)).digest('hex');
 const context=await chromium.launchPersistentContext(profile,{executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,viewport:{width:1280,height:800},args:['--no-first-run','--no-default-browser-check','--disable-background-networking','--enable-precise-memory-info']});
@@ -39,7 +39,7 @@ try{
   const active=await page.evaluate(id=>EaglerHacks.client.modules.get(id).active,id);console.log('TOGGLE',id,JSON.stringify({displayed,active}));results.push({name:`${id} GUI toggle`,pass:before?!active:active,detail:{displayed,active}});if(!before)check(`${id} is available and active through actual GUI`,!displayed.unavailable&&active);await panel.locator('.mt-collapse').click();
  }
  await page.keyboard.press('Escape');await wait(()=>!EaglerHacks.client.clickgui.open);await page.waitForTimeout(600);await capture('gui-closed');
- if(!before){await (await import('./phase13_1-module-checks.mjs')).verify({page,check,wait,rowFor,capture});}
+ if(!before){await (await import(process.env.QA_MODULE_CHECKS||'./phase13_1-module-checks.mjs')).verify({page,check,wait,rowFor,capture});}
  check('no unexpected JavaScript errors',errors.length===0,errors);check('no required runtime request failures',failed.length===0,failed);
 }finally{
  await writeFile(`${root}/${before?'before':'after'}-results.json`,JSON.stringify({artifactSHA256:hash,results,states,errors,failed},null,2)+'\n');await context.close();

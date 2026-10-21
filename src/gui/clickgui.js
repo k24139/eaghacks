@@ -91,6 +91,10 @@ export class ClickGUI {
   close() {
     if (!this.root) return false;
     this._open = false;
+    // Hiding the overlay does not reliably blur its text fields. Release focus
+    // before returning control so a hidden search box cannot swallow game keys.
+    const focused = this.root.ownerDocument?.activeElement;
+    if (focused && this.root.contains(focused)) focused.blur?.();
     this.root.classList.remove("mt-open");
     this.tooltips?.hide?.();
     this.keybinds.guiOpen = false;

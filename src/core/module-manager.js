@@ -270,7 +270,10 @@ export class ModuleManager {
   /** Handle a keybind press. @returns {boolean} handled */
   onKeybindPressed(keybind) {
     const m = this.matchBind(keybind);
-    if (!m) return false;
+    if (!m) {
+      const macros = this.get("macros");
+      return macros?.active ? macros.onBindPressed(keybind) : false;
+    }
     if (!m.canEnable() && !m.active) {
       this.notify(`${m.name}: ${m.ineligibilityReason()}`, "warn");
       return true;

@@ -1,0 +1,77 @@
+{
+  "verifiedAt": "2026-10-21T20:47:26.474Z",
+  "kind": "JavaScript integration release candidate; existing compiled native payloads",
+  "artifact": "input/phase14/Eaglercraft-26.2-u1-Eaghacks-RC3.html",
+  "html": {
+    "bytes": 80985902,
+    "sha256": "54b88a50d23b58955360d945178fe7776e0e1c545a3a4112d8ca5e05e8aaad6e"
+  },
+  "sourceDigest": "844737019ae0e1efb5ca63c5a0cdc6573c256fbce94d9fb45a43e7d62ee0f508",
+  "wasm": {
+    "bytes": 93857501,
+    "sha256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d"
+  },
+  "payloads": {
+    "eag-inline-decoder": {
+      "bytes": 208439,
+      "sha256": "79b29cb1790560f0a0f32b4a31d935e2782875e4a367fde23c81d986b327ec3f",
+      "byteIdentical": true
+    },
+    "eag-inline-wasm-br": {
+      "bytes": 17763621,
+      "sha256": "817d8dc367ee32beb863b23c4716fdc9b4acdfc7547594735fadfbcbf9874176",
+      "byteIdentical": true
+    },
+    "eag-inline-mesh-wasm-br": {
+      "bytes": 2245115,
+      "sha256": "ba89f4086078b1f89b9f6d56c91fbafa27e41dadeed14799a1aab2ec59911db3",
+      "byteIdentical": true
+    },
+    "eag-inline-server-wasm-br": {
+      "bytes": 7652747,
+      "sha256": "34d9ab71ab08544ec03c3f19a6ecb25ff66cf060686dc59786bb4b351ca1e105",
+      "byteIdentical": true
+    },
+    "eag-inline-assets": {
+      "bytes": 6616184,
+      "sha256": "a784f86ea64b60d63046202a4cf75a14833d021768d95b29947053f0d6a996db",
+      "byteIdentical": true
+    },
+    "eag-inline-sounds": {
+      "bytes": 25921893,
+      "sha256": "94bc8bfcf4132c52c6d5f61f3f92e50532a6fad1f5bc901ee25a462db8ba4fc6",
+      "byteIdentical": true
+    }
+  },
+  "integration": {
+    "bytes": 265202,
+    "sha256": "dc3bb76a70d1cdade914c133e1738f97b31795656592674c484db8ad14580d75"
+  },
+  "injectionTool": {
+    "path": "tools/inject-eaglercraft.mjs",
+    "sha256": "411476e36b5b9a03afb706456f88a2e2a5d7dacf0a25206893ddda9d85b80007",
+    "baseCommit": "0287de1bcf7ebb1a086f5df986c7742b2403afd9"
+  },
+  "historicalBaseline": {
+    "sha256": "9989669a3b71bcd38b6f2ff15ac24debfe644f638194a8225923f564bb6339b0",
+    "unchanged": true
+  },
+  "candidateStatus": "experimental; not final-release ready",
+  "verificationTools": {
+    "tools/phase14-manifest.mjs": "81292395f1fd44fcde1c50cd85a16b30d92ebe2a6bc49615d7098c0b693a3698",
+    "tools/phase14-gameplay-check.mjs": "f0b2db8d4876482327749eabad726fdb4820349f2599dce4f0575a4219dd40e6",
+    "tools/phase14-mechanics-checks.mjs": "72bdcd72f66032dc7649fdd79029fdffd327dc47e224bf3e9da8f6b0c1285847",
+    "tools/phase14-acceptance.mjs": "7455a49adb0fa073e2749a8181857fa967fdde0aa79078e5b235d14c2014c7a1",
+    "tools/phase14-full-check.mjs": "6b8110d7ca09f5be606277307a60cc5d2808f4e5234c2ddaee485a829265e4dd",
+    "tools/phase14-falling-check.mjs": "59597417ebf6ca1848bd03c64ad98c98d3a09cfa61ee01192c287c207a271458",
+    "tools/phase14-restart-check.mjs": "e9312b4e4e1f0a0e0bbff165126a13fdc4e9af94bd4fe361c22bcf6dce8306b8",
+    "tools/phase14-report.mjs": "a8f26f464ffebc058cfbce6eb1e54a6bdb12655a931b7869be2ba6c7a5ca4bca",
+    "tools/phase14-publication.py": "b3f92264d3785da30207abb55bd75ae8d26c452419aadc4136ee08bb867bea2e",
+    "tools/phase13-gameplay-check.mjs": "1f69bcbe3c657407f4d0f9f95b29d3ede92c8fd3f5403a25419295cfdd5ea666",
+    "tools/phase13-extra-checks.mjs": "874f06f79fa41d9661ce4cb914ec8c17de2c3f5f6d415cd929510077d79a0d37",
+    "tools/phase13-module-checks.mjs": "1817b263b67aa797843ab60dd668d631f8e54bd1bdd28ff825b616fdcf6e518c",
+    "tools/phase13_1-gameplay-check.mjs": "d75804c698e504f3a4a4c06513d4533e6b95c53c4be09dbe50e24b206c7f58c5",
+    "tools/phase13_1-module-checks.mjs": "be0dae67fccee84905aef416bfc954e79967389eefa3443d3b2e10b4e5b46e24",
+    "tools/phase13_1-restart-check.mjs": "bd4eb0d7404c7857f440642f06e07c8ea7347bf618f66a55f343c23801edabad"
+  }
+}

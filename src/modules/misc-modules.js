@@ -4,6 +4,7 @@
  */
 import { Module } from "../core/module.js";
 import { Events } from "../core/event-bus.js";
+import { KeybindSetting } from "../core/settings.js";
 import { captureGameCanvas } from "../core/screenshot.js";
 
 export class Notifications extends Module {
@@ -100,10 +101,14 @@ export class Macros extends Module {
     this._stepIndex = 0;
     this._waitUntil = 0;
   }
+  statusLines() {
+    return [...super.statusLines(), { label: "Steps", value: "toggle / enable / disable / wait / registered client bind. Native chat and game key injection are unavailable." }];
+  }
+  onEnable() { this.subscribe(Events.WorldUnload, () => this.onDisable()); }
   onDisable() { this._running=null;this._stepIndex=0;this._waitUntil=0; }
   runByName(name) {
     const macro = this.macros.find((m) => m.name === name);
-    if (!macro) return false;
+    if (!this.active || !macro) return false;
     this._running = macro;
     this._stepIndex = 0;
     this._waitUntil = 0;
@@ -111,7 +116,7 @@ export class Macros extends Module {
   }
   /** Called by the bootstrap's keybind router. */
   onBindPressed(keybind) {
-    const macro = this.macros.find((m) => m.bind && m.bind.key === keybind.key && m.bind.mouse === keybind.mouse);
+    const macro = this.macros.find((m) => m.bind && m.bind.key === keybind.key && (m.bind.mouse ?? null) === (keybind.mouse ?? null) && ["ctrl", "alt", "shift"].every(k => !!m.bind.modifiers?.[k] === !!keybind.modifiers?.[k]));
     if (!macro) return false;
     // Never run while the player is typing or the GUI owns input.
     const kb = this.manager.client?.keybinds;
@@ -121,6 +126,8 @@ export class Macros extends Module {
   }
   onTick() {
     if (!this._running) return;
+    const kb = this.manager.client?.keybinds;
+    if (kb?.typing || kb?.guiOpen || this.game.isTyping?.()) { this.onDisable(); return; }
     if (performance.now() < this._waitUntil) return;
     const step = this._running.steps[this._stepIndex];
     if (!step) {
@@ -130,10 +137,11 @@ export class Macros extends Module {
     try {
       this._execute(step);
     } catch (err) {
-      this.manager.notify(`macro '${this._running.name}' step failed: ${err.message}`, "error");
+      this.manager.notify(`macro '${this._running?.name ?? 'cancelled'}' step failed: ${err.message}`, "error");
       this._running = null;
       return;
     }
+    if (!this._running) return;
     this._stepIndex++;
     this._waitUntil = performance.now() + (step.delay ?? (step.action === "wait" ? 250 : 0));
   }
@@ -163,9 +171,14 @@ export class Macros extends Module {
       case "wait":
         this._waitUntil = performance.now() + (step.delay ?? 250);
         break;
-      case "bind":
-        this.manager.notify(`macro bind step (${step.key}) is not supported without game key injection`, "warn");
+      case "bind": {
+        // Execute a registered client module bind, never a synthetic game key.
+        const bind = new KeybindSetting("macro-step", "", step.bind ?? step.key).value;
+        const module = this.manager.matchBind(bind);
+        if (!module) throw new Error("bind step requires a registered client module keybind; native game key injection is unavailable");
+        this.manager.onKeybindPressed(bind);
         break;
+      }
       default:
         throw new Error(`unknown action '${step.action}'`);
     }

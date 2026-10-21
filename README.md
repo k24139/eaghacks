@@ -14,6 +14,8 @@ The [Phase 13.1 repair](reports/release-phase13/PHASE13_1_REPORT.md) fixes modul
 
 Phase 13 JavaScript release-candidate evidence, unchanged native payload identities and pending manual checks are recorded in [the Phase 13 report](reports/release-phase13/PHASE13_REPORT.md). The standalone HTML remains local and excluded from Git.
 
+The [Phase 14 experimental RC3 report](reports/release-phase14/PHASE14_REPORT.md) records the combat scheduler, real modern weapon-recovery measurements, falling-aware timing, macro bind repairs and explicit unavailable options. Counts remain 41 gameplay-observed, five partial and 31 unsupported, with no exhaustive acceptance promotion. RC3 stays in ignored `input/phase14/`; [human acceptance](reports/release-phase14/PHYSICAL_QA.md) and actual other-player ESP checks remain pending.
+
 ## Framework and browser integration
 
 ```sh

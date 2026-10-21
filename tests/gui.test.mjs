@@ -185,3 +185,20 @@ test('repeated shutdown preserves enabled module state', async () => {
   client.stop();
   assert.deepEqual([...storage.map.entries()], saved);
 });
+
+test('unavailable native options are read-only with a visible reason and no setting listeners', async () => {
+  const {createEaglercraftModules}=await import('../src/integration/eaglercraft-modules.js');
+  const {createSettingWidget}=await import('../src/gui/widgets.js');
+  const modules=createEaglercraftModules();
+  for(const [id,name] of [['target-hud','armor'],['fullbright','night-vision'],['no-hurt-cam','tilt']]){
+    const module=modules.find(m=>m.id===id);module.init();const setting=module.settings.get(name),before=setting.value;
+    const widget=createSettingWidget(setting,{});assert.equal(widget.getAttribute('aria-disabled'),'true');assert.match(widget.textContent,/Unavailable:/);assert.equal(setting._listeners.length,0);
+    click(dom.window,widget);assert.equal(setting.value,before);
+  }
+});
+
+test('closing ClickGUI releases focused search input before returning gameplay keys',async()=>{
+ const {client,doc}=await bootTestClient();client.clickgui.show();const input=doc.activeElement;assert.equal(input.getAttribute('aria-label'),'Search modules');
+ client.clickgui.close();assert.equal(client.clickgui.root.contains(doc.activeElement),false);assert.notEqual(doc.activeElement,input);
+ client.stop();
+});

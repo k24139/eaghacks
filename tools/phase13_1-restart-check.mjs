@@ -1,10 +1,14 @@
 /** A real Chrome process restart against the same standalone URL and task profile. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
-import {writeFile} from 'node:fs/promises';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 import {resolve,relative,isAbsolute} from 'node:path';
-const [url,profile='input/phase13_1/profile']=process.argv.slice(2);assert.ok(url);
-const rel=relative(resolve('input/phase13_1'),resolve(profile));assert.ok(rel&&!rel.startsWith('..')&&!isAbsolute(rel),'Use a dedicated child of input/phase13_1');
+const root=process.env.QA_ROOT||'input/phase13_1';
+const [url,profile=`${root}/profile`]=process.argv.slice(2);assert.ok(url);
+const rel=relative(resolve(root),resolve(profile));assert.ok(rel&&!rel.startsWith('..')&&!isAbsolute(rel),'Use a dedicated child of input/phase13_1');
+const artifactSHA256=createHash('sha256').update(await readFile(fileURLToPath(url))).digest('hex');
 const results=[],errors=[],failed=[];
 const check=(name,value)=>{assert.ok(value,name);results.push(name);console.log('PASS',name)};
 const launch=async()=>{
@@ -15,9 +19,9 @@ const launch=async()=>{
 let context,page;
 try{
  ({context,page}=await launch());
- const expected=JSON.parse(await (await import('node:fs/promises')).readFile('input/phase13_1/expected-settings.json','utf8'));
+ const expected=JSON.parse(await (await import('node:fs/promises')).readFile(`${root}/expected-settings.json`,'utf8'));
  const differences=await page.evaluate(expected=>expected.flatMap(({id,settings})=>Object.entries(settings).flatMap(([name,value])=>{const actual=EaglerHacks.client.modules.get(id).settings.get(name).value;return JSON.stringify(actual)===JSON.stringify(value)?[]:[{id,name,expected:value,actual}]})),expected);
- await writeFile('input/phase13_1/setting-differences.json',JSON.stringify(differences,null,2)+'\n');if(differences.length)console.log('SETTING DIFFERENCES',JSON.stringify(differences));
+ await writeFile(`${root}/setting-differences.json`,JSON.stringify(differences,null,2)+'\n');if(differences.length)console.log('SETTING DIFFERENCES',JSON.stringify(differences));
  check('all 41 module setting sets survive an actual Chrome process restart',differences.length===0);
  check('FPS enabled survives Chrome process restart',await page.evaluate(()=>EaglerHacks.client.modules.get('fps-display').active));
  check('world HUD intent waits for player identity after restart',await page.evaluate(()=>{const m=EaglerHacks.client.modules.get('coordinates');return !m.active&&m._restoreOnWorld&&!EaglerHacks.adapter.getPlayer()}));
@@ -33,8 +37,14 @@ try{
  check('priority GUI rows remain available after Chrome restart and world reentry',await page.evaluate(()=>['KillAura','BunnyHop','Entity ESP'].every(name=>{const n=[...document.querySelectorAll('.mt-window[data-category] .mt-row')].find(n=>n.querySelector('.mt-name')?.textContent===name);return n&&!n.classList.contains('mt-unsupported')&&!n.title.includes('requires a loaded world')})));
  await page.keyboard.press('Escape');await page.waitForFunction(()=>!EaglerHacks.client.clickgui.open&&__eaghacksScreenState.screenName===null);await page.keyboard.press('Escape');await page.waitForFunction(()=>__eaghacksScreenState.screenName==='PauseScreen');await page.mouse.click(640,489,{delay:250});await page.waitForFunction(()=>!window.__eaghacksNativeState,null,{timeout:60000});
  await page.evaluate(()=>{const c=EaglerHacks.client;c.modules.get('fps-display').disable();c.modules.get('coordinates').settings.get('precision').set(2);c.config.save(true)});
+ if(process.env.QA_COMBAT_PERSISTENCE==='1')await page.evaluate(()=>{const c=EaglerHacks.client,m=c.modules.get('kill-aura');for(const[k,v]of Object.entries({'cps-variation':.5,'switch-delay':200,'attack-mode':'prefer-falling','critical-wait':400}))m.settings.get(k).set(v);c.modules.get('macros').addMacro('phase14-persist',{key:'KeyM',mouse:null,modifiers:{ctrl:true}},[{action:'bind',key:'KeyP'}]);c.config.save(true)});
  await context.close();context=null;
  ({context,page}=await launch());
+ if(process.env.QA_COMBAT_PERSISTENCE==='1'){
+  check('nondefault new KillAura timing settings persist across Chrome process restart',await page.evaluate(()=>Object.entries({'cps-variation':.5,'switch-delay':200,'attack-mode':'prefer-falling','critical-wait':400}).every(([k,v])=>EaglerHacks.client.modules.get('kill-aura').settings.get(k).value===v)));
+  check('macro modifier bind and client-bind step persist across Chrome process restart',await page.evaluate(()=>{const m=EaglerHacks.client.modules.get('macros').macros.find(m=>m.name==='phase14-persist');return m?.bind?.modifiers?.ctrl===true&&m.steps[0].action==='bind'&&m.steps[0].key==='KeyP'}));
+ }
+
  check('explicit module disable persists across second Chrome restart',await page.evaluate(()=>!EaglerHacks.client.modules.get('fps-display').active));
  check('HUD precision persists across process restart',await page.evaluate(()=>EaglerHacks.client.modules.get('coordinates').settings.get('precision').value===2));
  await context.addInitScript(()=>{const key='meteor.eagler.default.config',d=JSON.parse(localStorage.getItem(key));d.modules.push({id:'zoom',settings:{factor:{invalid:true}}});localStorage.setItem(key,JSON.stringify(d))});
@@ -43,5 +53,5 @@ try{
  await page.evaluate(()=>{const c=EaglerHacks.client;window.__shutdownRefs={c,a:EaglerHacks.adapter};EaglerHacks.shutdown()});
  check('shutdown removes listeners, UI, native commands and synthetic inputs',await page.evaluate(()=>{const {c,a}=__shutdownRefs;return c.bus.totalListeners()===0&&!document.getElementById('meteor-clickgui')&&!document.getElementById('eaghacks-hud-canvas')&&!window.__eaghacksNativeCommands&&a.diagnostics().syntheticHeldKeys.length===0&&!window.EaglerHacks}));
  check('no required runtime requests failed',failed.length===0);check('no uncaught JavaScript errors across restarts',errors.length===0);
- await writeFile('input/phase13_1/restart-results.json',JSON.stringify({results,errors,failed,method:'Standalone file URL, actual Chrome processes, dedicated task profile'},null,2)+'\n');
+ await writeFile(`${root}/restart-results.json`,JSON.stringify({artifactSHA256,results,errors,failed,method:'Standalone file URL, actual Chrome processes, dedicated task profile'},null,2)+'\n');
 }finally{await context?.close()}

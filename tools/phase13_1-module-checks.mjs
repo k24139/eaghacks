@@ -80,7 +80,7 @@ export async function verify({page,check,wait,capture}){
  await toggle('auto-walk',false);await close();
  await settings('coordinates',{precision:2});await settings('entity-esp',{range:48});await settings('bunny-hop',{delay:3});
  await toggle('fps-display',true);await close();await page.keyboard.press('Escape');await wait(()=>__eaghacksScreenState.screenName==='PauseScreen');await page.mouse.click(640,489,{delay:300});await wait(()=>!window.__eaghacksNativeState,null,60000);
- const expected=await page.evaluate(ids=>{const c=EaglerHacks.client;c.config.save(true);return ids.map(id=>{const m=c.modules.get(id);return {id,settings:Object.fromEntries(m.settings.all().map(s=>[s.name,s.value]))}})},observed.map(m=>m.id));await writeFile('input/phase13_1/expected-settings.json',JSON.stringify(expected,null,2)+'\n');
+ const expected=await page.evaluate(ids=>{const c=EaglerHacks.client;c.config.save(true);return ids.map(id=>{const m=c.modules.get(id);return {id,settings:Object.fromEntries(m.settings.all().map(s=>[s.name,s.value]))}})},observed.map(m=>m.id));await writeFile(`${process.env.QA_ROOT||'input/phase13_1'}/expected-settings.json`,JSON.stringify(expected,null,2)+'\n');
  check('no module errors after GUI and lifecycle regression',await page.evaluate(()=>EaglerHacks.client.modules.errors().length===0));
  async function commandWithClosed(text){await close();await command(text)}
 }

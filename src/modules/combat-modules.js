@@ -26,12 +26,16 @@ export class KillAura extends CombatModule {
       description: `Attacks nearby valid targets automatically. ${LOCAL_NOTE}`,
       requiredCapabilities: ["world", "entities", "movement"],
     });
-    this._cooldownTicks = 0;
+    this._resetCombat();
   }
   onInit() {
     const t = this.settings.addGroup("Targeting");
     t.double("range", "Attack range (blocks)", 3.2, { min: 2, max: 6 });
-    t.int("cps", "Attacks per second", 8, { min: 1, max: 20 });
+    t.double("cps", "Attack attempts per second (not native charge)", 2, { min: 0.5, max: 20 });
+    t.double("cps-variation", "Random CPS variation (+/-)", 0, { min: 0, max: 5 });
+    t.int("switch-delay", "Target switch delay (ms)", 150, { min: 0, max: 1000 });
+    t.enum("attack-mode", "Attack timing", "interval", ["interval", "prefer-falling"]);
+    t.int("critical-wait", "Maximum wait for falling (ms; no critical guarantee)", 250, { min: 0, max: 500 });
     t.enum("priority", "Target priority", "closest", ["closest", "lowest-health", "highest-health", "angle"]);
     t.bool("players", "Target players", true);
     t.bool("hostile", "Target hostile mobs", true);
@@ -42,25 +46,71 @@ export class KillAura extends CombatModule {
     r.bool("rotate", "Face the target before attacking", true);
     r.double("rotate-speed", "Rotation speed", 0.6, { min: 0.05, max: 1 });
   }
-  onEnable() { this._cooldownTicks=0; }
-  onDisable() { this._cooldownTicks=0;this.game.cancelAttacks?.(); }
+  _resetCombat() {
+    this._nextAttack = 0;
+    this._targetId = null;
+    this._switchReady = 0;
+    this._criticalDeadline = null;
+    this._lastRotation = null;
+  }
+  onEnable() { this._resetCombat(); }
+  onDisable() { this._resetCombat(); this.game.cancelAttacks?.(); }
+  _interval() {
+    const cps = this.settings.get("cps").value;
+    const variation = this.settings.get("cps-variation").value;
+    return 1000 / Math.max(0.5, Math.min(20, cps + (Math.random() * 2 - 1) * variation));
+  }
   onTick() {
+    const now = performance.now();
+    const p = this.game.getPlayer?.();
     if (!this._allowedHere()) return;
-    if (this._cooldownTicks > 0) {
-      this._cooldownTicks--;
+    if (this.game._gameplayInputAllowed?.() === false || !p || p.dead || p.usingItem) {
+      this._resetCombat();
+      this._nextAttack = now + this._interval();
+      this.game.cancelAttacks?.();
       return;
     }
     const targets = this._targets();
-    if (targets.length === 0) return;
-    const cps = this.settings.get("cps").value;
-    const interval = Math.max(1, Math.round(20 / cps));
-    const multi = this.settings.get("multi").value;
-    const attackList = multi ? targets : [targets[0]];
-    for (const t of attackList) {
-      if (this.settings.get("rotate").value) this._face(t.entity);
-      this.game.attack(t.entity);
+    if (!targets.length) {
+      this._targetId = null;
+      this._criticalDeadline = null;
+      this._lastRotation = null;
+      return;
     }
-    this._cooldownTicks = interval;
+    const primary = targets[0].entity;
+    const id = primary.id ?? primary;
+    if (id !== this._targetId) {
+      // First acquisition may attack immediately; subsequent switches wait.
+      this._switchReady = this._targetId === null ? now : now + this.settings.get("switch-delay").value;
+      this._targetId = id;
+      this._criticalDeadline = null;
+    }
+    if (this.settings.get("rotate").value) {
+      const elapsed = this._lastRotation === null ? 50 : Math.max(0, Math.min(100, now - this._lastRotation));
+      this._face(primary, 1 - Math.pow(1 - this.settings.get("rotate-speed").value, elapsed / 50));
+      this._lastRotation = now;
+    }
+    if (now < this._nextAttack || now < this._switchReady) return;
+    if (this.settings.get("attack-mode").value === "prefer-falling") {
+      this._criticalDeadline ??= now + this.settings.get("critical-wait").value;
+      if (!fallingOpportunity(p) && now < this._criticalDeadline) return;
+    }
+    const attackList = this.settings.get("multi").value ? targets.slice(0, 16) : [targets[0]];
+    let delivered = false;
+    for (const t of attackList) if (this.game.attack(t.entity) !== false) delivered = true;
+    if (delivered) {
+      const interval = this._interval();
+      // Preserve fractional deadlines under normal jitter, discard missed slots
+      // after a stall. Never emit catch-up bursts in one callback.
+      this._nextAttack = this._criticalDeadline === null && this._nextAttack > 0 && now - this._nextAttack < interval
+        ? this._nextAttack + interval : now + interval;
+      this._criticalDeadline = null;
+    }
+  }
+  statusLines() {
+    return [...super.statusLines(),
+      { label: "Timing", value: "Native attack charge is unavailable. CPS schedules attempts; weapon recovery still applies." },
+      { label: "Criticals", value: "Falling is a hint; water, climbing and passenger state are unavailable. No critical guarantee." }];
   }
   _allowedHere() {
     // multiplayer guard (see class comment)
@@ -74,11 +124,11 @@ export class KillAura extends CombatModule {
   }
   _targets() {
     const p = this.game.getPlayer?.();
-    if (!p) return [];
+    if (!p || ![p.x, p.y, p.z].every(Number.isFinite)) return [];
     const range = this.settings.get("range").value;
     const out = [];
     for (const e of this.game.getEntities?.() ?? []) {
-      if (!e || e.isSelf || e.dead || (typeof e.health === "number" && e.health <= 0)) continue;
+      if (!e || e.isSelf || e.dead || ![e.x, e.y, e.z].every(Number.isFinite) || (typeof e.health === "number" && (!Number.isFinite(e.health) || e.health <= 0))) continue;
       if (e.isPlayer && !this.settings.get("players").value) continue;
       if (!e.isPlayer && e.hostile && !this.settings.get("hostile").value) continue;
       if (!e.isPlayer && !e.hostile && !this.settings.get("passive").value) continue;
@@ -97,7 +147,7 @@ export class KillAura extends CombatModule {
     });
     return out;
   }
-  _face(entity) {
+  _face(entity, strength = this.settings.get("rotate-speed").value) {
     const p = this.game.getPlayer?.();
     if (!p) return;
     const dx = entity.x - p.x;
@@ -105,7 +155,7 @@ export class KillAura extends CombatModule {
     const dz = entity.z - p.z;
     const yaw = (Math.atan2(-dx, dz) * 180) / Math.PI;
     const pitch = (-Math.atan2(dy, Math.hypot(dx, dz)) * 180) / Math.PI;
-    this.game.setRotation?.(yaw, pitch, this.settings.get("rotate-speed").value);
+    this.game.setRotation?.(yaw, pitch, strength);
   }
 }
 
@@ -128,6 +178,7 @@ export class AimAssist extends CombatModule {
     g.bool("mobs", "Aim at mobs", true);
   }
   onTick() {
+    if (this.game._gameplayInputAllowed?.() === false) return;
     const aura = this.manager.get("kill-aura");
     if (aura?.active && aura.settings.get("rotate").value && aura._targets().length) return;
     if (this.settings.get("only-attacking").value && !this.game.isAttacking?.()) return;
@@ -156,6 +207,15 @@ export class AimAssist extends CombatModule {
   }
 }
 
+// A scheduling hint only: water/climbing/passenger and attack charge are not
+// published by this bridge, so this cannot certify native critical eligibility.
+export function fallingOpportunity(player) {
+  return player?.onGround === false && player.fallDistance > 0 &&
+    Number.isFinite(player.velocity?.y) && player.velocity.y < 0 &&
+    !player.sprinting && !player.usingItem && !player.dead &&
+    !player.effects?.some(e => /blindness/.test(e.name));
+}
+
 function angleDelta(a, b) {
   let d = ((a - b) % 360 + 540) % 360 - 180;
   return d;
@@ -178,17 +238,18 @@ export class TriggerBot extends CombatModule {
     g.bool("mobs", "Trigger on mobs", true);
     g.bool("weapon-only", "Only when holding a weapon", true);
   }
-  onTick() {
+  onEnable() { this._delay = 0; }
+  onDisable() { this._delay = 0; if (!this.manager.get("kill-aura")?.active) this.game.cancelAttacks?.(); }
+  onTick(dt = 1) {
+    if (this.game._gameplayInputAllowed?.() === false || this.manager.get("kill-aura")?.active) { this._delay = 0; return; }
+    this._delay = Math.max(0, this._delay - dt);
     const target = this.game.getCrosshairTargetEntity?.();
     if (!target || target.isSelf || target.dead || (typeof target.health === "number" && target.health <= 0) || target.visible === false) return;
     if (this.manager.client?.isFriend?.(target.name)) return;
     if (target.isPlayer && !this.settings.get("players").value) return;
     if (!target.isPlayer && !this.settings.get("mobs").value) return;
     if (this.settings.get("weapon-only").value && !this.game.heldItemIsWeapon?.()) return;
-    if (this._delay > 0) {
-      this._delay--;
-      return;
-    }
+    if (this._delay > 0) return;
     this.game.attack(target);
     this._delay = this.settings.get("delay").value;
   }
@@ -207,31 +268,34 @@ export class AutoClicker extends CombatModule {
   }
   onInit() {
     const g = this.settings.addGroup("Clicker");
-    g.double("cps", "Clicks per second", 8, { min: 1, max: 25 });
+    g.double("cps", "Clicks per second", 8, { min: 1, max: 20 });
     g.bool("left", "Auto left-click", true);
     g.bool("right", "Auto right-click", false);
     g.bool("hold", "Only while the activation key is held", false);
     g.keybind("activation-key", "Hold to activate", null);
   }
-  onTick() {
+  onEnable() { this._leftAccum = 0; this._rightAccum = 0; }
+  onDisable() { this.onEnable(); if (!this.manager.get("kill-aura")?.active && !this.manager.get("trigger-bot")?.active) this.game.cancelAttacks?.(); }
+  onTick(dt = 1) {
+    if (this.game._gameplayInputAllowed?.() === false) { this.onEnable(); return; }
     const cps = this.settings.get("cps").value;
     if (this.settings.get("hold").value) {
       const kb = this.settings.get("activation-key").value;
       const held = this.manager.client?.keybinds?.heldKeys;
-      if (!kb || !held || !(held.has(kb.key) || held.has(`Mouse${kb.mouse}`))) return;
+      if (!kb || !held || !(held.has(kb.key) || held.has(`Mouse${kb.mouse}`))) { this.onEnable(); return; }
     }
     // 20 ticks per second in the game loop.
-    const perTick = cps / 20;
-    if (this.settings.get("left").value) {
+    const perTick = cps / 20 * Math.min(1, Math.max(0, dt));
+    if (this.settings.get("left").value && !this.manager.get("kill-aura")?.active && !this.manager.get("trigger-bot")?.active) {
       this._leftAccum += perTick;
-      while (this._leftAccum >= 1) {
+      if (this._leftAccum >= 1) {
         this._leftAccum -= 1;
         this.game.attack?.(this.game.getCrosshairTargetEntity?.() ?? null);
       }
     }
     if (this.settings.get("right").value) {
       this._rightAccum += perTick;
-      while (this._rightAccum >= 1) {
+      if (this._rightAccum >= 1) {
         this._rightAccum -= 1;
         this.game.useItem?.();
       }
@@ -241,7 +305,7 @@ export class AutoClicker extends CombatModule {
 
 export class AutoCrit extends CombatModule {
   constructor() {
-    super({ id: "auto-crit", name: "Criticals", description: `Jumps before attacking to force critical hits (version-dependent). ${LOCAL_NOTE}`, requiredCapabilities: ["movement"] });
+    super({ id: "auto-crit", name: "Criticals", description: `Jumps near a valid target; does not guarantee critical damage. ${LOCAL_NOTE}`, requiredCapabilities: ["movement"] });
   }
   onInit() {
     const g = this.settings.addGroup("Criticals");
@@ -253,7 +317,9 @@ export class AutoCrit extends CombatModule {
   onTick() {
     const p = this.game.getPlayer?.();
     if (!p) return;
-    if (this.game.getCrosshairTargetEntity?.() && this.game.isOnGround?.()) {
+    const aura = this.manager.get("kill-aura");
+    const target = aura?.active ? aura._targets()[0]?.entity : this.game.getCrosshairTargetEntity?.();
+    if (target && !target.isSelf && !target.dead && target.health > 0 && target.visible !== false && !this.manager.client?.isFriend?.(target.name) && this.game._gameplayInputAllowed?.() !== false && this.game.isOnGround?.()) {
       this.game.jump?.();
     }
   }
@@ -367,12 +433,12 @@ export class TargetHUD extends Module {
   }
   _target() {
     const cross = this.game.getCrosshairTargetEntity?.();
-    if (cross) return cross;
+    if (cross && !cross.dead && cross.health > 0) return cross;
     const p = this.game.getPlayer?.();
     if (!p) return null;
     let best = null;
     for (const e of this.game.getEntities?.() ?? []) {
-      if (!e || e.isSelf) continue;
+      if (!e || e.isSelf || e.dead || !Number.isFinite(e.health) || e.health <= 0) continue;
       const d = Math.hypot(e.x - p.x, e.y - p.y, e.z - p.z);
       if (d <= 6 && (!best || d < best.d)) best = { e, d };
     }
@@ -390,13 +456,15 @@ export class TargetHUD extends Module {
     const t = this._target();
     if (!t || typeof t.health !== "number") return;
     const x = this.settings.get("hud-x").value;
-    const y = this.settings.get("hud-y").value + 46;
-    const w = 100;
+    const scale = this.settings.get("hud-scale").value;
+    const lines = this.hudRender().split("\n").length;
+    const y = this.settings.get("hud-y").value + (lines * 14 + 4) * scale;
+    const w = 100 * scale;
     const frac = Math.max(0, Math.min(1, t.health / (t.maxHealth ?? 20)));
     ctx.fillStyle = "rgba(0,0,0,0.6)";
-    ctx.fillRect(x, y, w, 6);
+    ctx.fillRect(x, y, w, 6 * scale);
     ctx.fillStyle = frac > 0.5 ? "#5bbf7a" : frac > 0.25 ? "#e0a458" : "#d64545";
-    ctx.fillRect(x, y, w * frac, 6);
+    ctx.fillRect(x, y, w * frac, 6 * scale);
   }
 }
 

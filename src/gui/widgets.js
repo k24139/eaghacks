@@ -21,6 +21,13 @@ import {
  * @returns {HTMLElement|null}
  */
 export function createSettingWidget(setting, ctx) {
+  if (setting.unavailableReason) {
+    const control = el("span", { text: `Unavailable: ${setting.unavailableReason}` });
+    const widget = row(displayName(setting), control, setting, ctx);
+    widget.setAttribute("aria-disabled", "true");
+    widget.title = setting.unavailableReason;
+    return widget;
+  }
   if (setting instanceof BoolSetting) return boolWidget(setting, ctx);
   if (setting instanceof IntSetting) return numberWidget(setting, ctx, true);
   if (setting instanceof DoubleSetting) return numberWidget(setting, ctx, false);

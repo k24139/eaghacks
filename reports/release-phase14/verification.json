@@ -1,0 +1,3744 @@
+{
+  "verifiedAt": "2026-10-21T20:47:36.413Z",
+  "candidateStatus": "experimental; not final-release ready",
+  "artifactSHA256": "54b88a50d23b58955360d945178fe7776e0e1c545a3a4112d8ca5e05e8aaad6e",
+  "sourceDigest": "844737019ae0e1efb5ca63c5a0cdc6573c256fbce94d9fb45a43e7d62ee0f508",
+  "automated": {
+    "unit": {
+      "passed": 189,
+      "total": 189
+    },
+    "browser": {
+      "passed": 20,
+      "total": 20
+    },
+    "build": true,
+    "smoke": true
+  },
+  "actualClient": {
+    "guiCombatLifecycle": {
+      "checks": [
+        {
+          "name": "normal keyboard movement works before opening GUI",
+          "pass": true
+        },
+        {
+          "name": "kill-aura GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "kill-aura is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "entity-esp GUI toggle",
+          "pass": true
+        },
+        {
+          "name": "entity-esp is available and active through actual GUI",
+          "pass": true
+        },
+        {
+          "name": "combat damage probe recorded from native entities",
+          "pass": true
+        },
+        {
+          "name": "native modern weapon recovery reduces early second-hit damage",
+          "pass": true
+        },
+        {
+          "name": "KillAura delivers real hostile damage at configured 2 CPS",
+          "pass": true
+        },
+        {
+          "name": "KillAura attempts follow 500 ms deadlines with bounded tick jitter",
+          "pass": true
+        },
+        {
+          "name": "KillAura disable clears pending native attacks immediately",
+          "pass": true
+        },
+        {
+          "name": "KillAura disable stops new attempts and further damage after in-flight native delivery",
+          "pass": true
+        },
+        {
+          "name": "hostile filter excludes actual zombie",
+          "pass": true
+        },
+        {
+          "name": "range excludes actual hostile five blocks away",
+          "pass": true
+        },
+        {
+          "name": "GUI blocks native attack delivery and pending commands",
+          "pass": true
+        },
+        {
+          "name": "GUI close resumes damage without a queued burst",
+          "pass": true
+        },
+        {
+          "name": "naturally falling native hit delivers greater actual damage than grounded hit",
+          "pass": true
+        },
+        {
+          "name": "macro modifiers reject unmodified real browser key",
+          "pass": true
+        },
+        {
+          "name": "macro keyboard route executes registered client bind",
+          "pass": true
+        },
+        {
+          "name": "loaded-world sampling has stable listener ownership",
+          "pass": true
+        },
+        {
+          "name": "kill-aura remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "entity-esp remains enabled after closing GUI",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "KillAura GUI activation queues no combat or movement while paused",
+          "pass": true
+        },
+        {
+          "name": "KillAura passive filter prevents damage to real pig",
+          "pass": true
+        },
+        {
+          "name": "KillAura enabled through GUI damages eligible real mob after close",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "KillAura disable stops damage and clears queued attacks",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "KillAura range rejects real target five blocks away",
+          "pass": true
+        },
+        {
+          "name": "KillAura attacks when actual player enters configured range",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop sprint-only restriction keeps non-sprinting player grounded",
+          "pass": true
+        },
+        {
+          "name": "sprint: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop enabled through GUI jumps while sprinting in real gameplay",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "sprint: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "sprint: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "BunnyHop disable stops automatic jumping",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "ESP passive filter renders real pig and excludes hostile",
+          "pass": true
+        },
+        {
+          "name": "ESP hostile filter renders real zombie and excludes passive",
+          "pass": true
+        },
+        {
+          "name": "ESP player filter never includes the actual local self entity",
+          "pass": true
+        },
+        {
+          "name": "ESP rendered indicators track a real entity teleport",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "ESP disable clears overlay pixels",
+          "pass": true
+        },
+        {
+          "name": "preserve the exact 41 observed module cohort",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "aim-assist: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-clicker: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "trigger-bot: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "active-modules-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "armor-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "biome-info: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "coordinates: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "cps-counter: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "custom-text: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "direction: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "fps-display: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "keystrokes: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "performance-monitor: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "potion-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "radar: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "session-timer: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "speed-hud: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "world-time: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "debug-console: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "friend-manager: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "keybind-manager: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "module-search: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "notifications: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "screenshot-util: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "session-stats: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "speed: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "sprint: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "anti-afk: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-eat: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "auto-respawn: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "durability-warnings: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "chunk-borders: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "custom-crosshair: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "hitboxes: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "nametags: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "tracers: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module displayed availability",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module real GUI enable",
+          "pass": true
+        },
+        {
+          "name": "zoom: 41-module real GUI disable",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "kill-aura: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "entity-esp: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "coordinates: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "coordinates: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "native pause releases synthetic movement while preserving loaded-world availability",
+          "pass": true
+        },
+        {
+          "name": "world exit clears native combat, rendering and owned input",
+          "pass": true
+        },
+        {
+          "name": "kill-aura unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "bunny-hop unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "entity-esp unavailable in real GUI outside world",
+          "pass": true
+        },
+        {
+          "name": "real world reentry restores eligible module intent",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "auto-walk: actual category click disables",
+          "pass": true
+        },
+        {
+          "name": "fps-display: displayed availability inside loaded world with GUI open",
+          "pass": true
+        },
+        {
+          "name": "fps-display: actual category click enables",
+          "pass": true
+        },
+        {
+          "name": "no module errors after GUI and lifecycle regression",
+          "pass": true
+        },
+        {
+          "name": "no unexpected JavaScript errors",
+          "pass": true
+        },
+        {
+          "name": "no required runtime request failures",
+          "pass": true
+        }
+      ],
+      "passed": 211
+    },
+    "fullGameplay": {
+      "checks": [
+        "compiled Java bridge announces itself",
+        "actual single-player world publishes native state",
+        "compiled production bridge exposes snapshot diagnostics and bounded multi-attack",
+        "native session identifies single-player",
+        "actual survival inventory opens",
+        "actual game canvas captures the mouse",
+        "trusted mouse movement reaches the actual captured game canvas",
+        "captured mouse changes actual native camera yaw",
+        "real movement changes native coordinates",
+        "real entities expose type, velocity and health",
+        "native inventory contains the actual bread",
+        "native main inventory has 36 slots",
+        "native camera contains a finite projection",
+        "native biome identifies the actual loaded region",
+        "native effects are an actual typed collection",
+        "real damage updates native health and hurt state",
+        "native slot command changes actual selection",
+        "native rotation changes real yaw and pitch",
+        "native jump changes real height",
+        "KillAura damages a real private-world mob",
+        "two actual healthy private-world mobs prepare batch test",
+        "compiled bounded batch damages two actual mobs",
+        "Aim Assist rotates toward an actual mob",
+        "KillAura owns actual rotation when Aim Assist is also enabled",
+        "Sprint changes actual sprint state while moving",
+        "Sprint releases state when disabled",
+        "Speed and Sprint combine in actual movement",
+        "combined movement disables without sustained velocity or sprint",
+        "programmatic blur releases keys in the actual native world",
+        "focus regain and module disable leave no sustained movement",
+        "Zoom changes actual FOV and camera projection",
+        "Zoom restores native FOV",
+        "Fullbright changes real gamma option",
+        "Fullbright restores real gamma option",
+        "NoHurtCam enables compiled camera hook",
+        "NoHurtCam restores the compiled hook",
+        "real hunger effect prepares food test 0",
+        "AutoEat starts real food use",
+        "AutoEat increases actual hunger",
+        "AutoEat releases use and restores actual slot",
+        "entity-esp draws actual entity overlay pixels",
+        "tracers draws actual entity overlay pixels",
+        "nametags draws actual entity overlay pixels",
+        "Coordinates HUD displays actual player position",
+        "World Time HUD reads actual native clock",
+        "Armor HUD displays actual equipped armor metadata",
+        "Biome Info displays the real native biome",
+        "Potion HUD displays an actual active effect",
+        "Custom Crosshair suppresses the real vanilla crosshair through its compiled hook",
+        "Custom Crosshair restores the real vanilla crosshair",
+        "ClickGUI opens inside actual native world",
+        "ClickGUI close restores actual game control without an extra pause menu",
+        "WebAudio graph produces nonzero samples in gameplay",
+        "simulated right mouse places a real block confirmed by server condition",
+        "simulated left mouse breaks the placed block confirmed by server condition",
+        "active-modules-hud renders in world at configured position",
+        "cps-counter renders in world at configured position",
+        "custom-text renders in world at configured position",
+        "direction renders in world at configured position",
+        "fps-display renders in world at configured position",
+        "keystrokes renders in world at configured position",
+        "performance-monitor renders in world at configured position",
+        "session-timer renders in world at configured position",
+        "speed-hud renders in world at configured position",
+        "module search filters actual-client results",
+        "category refresh releases removed settings listeners in actual client",
+        "KillAura with Criticals waits for observed falling before first real attack",
+        "falling-aware KillAura delivers critical-sized sword damage in controlled fixture",
+        "all 41 observed modules survive three toggle cycles without listener or input leaks",
+        "closing actual ClickGUI releases hidden search focus for gameplay keys",
+        "real death emits native lifecycle event",
+        "AutoRespawn returns actual player to world",
+        "Session Statistics records real movement and death",
+        "camera modules retain intent in a paused loaded world",
+        "compiled Java menu gate blocks stale actions while framework ticker is stopped",
+        "world exit clears real native snapshot and stale commands",
+        "world exit retains pending user module intent",
+        "saved world reopens and eligible modules resume from real data",
+        "camera state restores after leaving and rejoining a world",
+        "configuration survives a real native-client page reload",
+        "saved native HUD waits for a real world after reload",
+        "no uncaught page errors",
+        "no module crashes"
+      ],
+      "passed": 83,
+      "scope": "Unique passed assertions from hash-identical prefixes and a completed focused continuation; not a single uninterrupted sweep",
+      "basePrefixPassed": 70,
+      "continuationPassed": 21
+    },
+    "focusedModules": {
+      "checks": [
+        {
+          "name": "active-modules-hud: actual visible HUD at configured position",
+          "module": "active-modules-hud",
+          "pass": true,
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "active-modules-hud: disable removes node",
+          "module": "active-modules-hud",
+          "pass": true,
+          "testedSettings": {
+            "active-modules-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "cps-counter: actual visible HUD at configured position",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "CPS observes actual browser click",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "cps-counter: disable removes node",
+          "module": "cps-counter",
+          "pass": true,
+          "testedSettings": {
+            "cps-counter": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "custom-text: actual visible HUD at configured position",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "custom text live settings",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          }
+        },
+        {
+          "name": "custom-text: disable removes node",
+          "module": "custom-text",
+          "pass": true,
+          "testedSettings": {
+            "custom-text": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            }
+          }
+        },
+        {
+          "name": "direction: actual visible HUD at configured position",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "direction tracks actual yaw",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "direction: disable removes node",
+          "module": "direction",
+          "pass": true,
+          "testedSettings": {
+            "direction": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "fps-display: actual visible HUD at configured position",
+          "module": "fps-display",
+          "pass": true,
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "fps-display: disable removes node",
+          "module": "fps-display",
+          "pass": true,
+          "testedSettings": {
+            "fps-display": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: actual visible HUD at configured position",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: actual held movement",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "keystrokes: disable removes node",
+          "module": "keystrokes",
+          "pass": true,
+          "testedSettings": {
+            "keystrokes": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "performance-monitor: actual visible HUD at configured position",
+          "module": "performance-monitor",
+          "pass": true,
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "performance-monitor: disable removes node",
+          "module": "performance-monitor",
+          "pass": true,
+          "testedSettings": {
+            "performance-monitor": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session-timer: actual visible HUD at configured position",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session timer visibly advances",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "session-timer: disable removes node",
+          "module": "session-timer",
+          "pass": true,
+          "testedSettings": {
+            "session-timer": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: actual visible HUD at configured position",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: actual held movement",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "speed-hud: disable removes node",
+          "module": "speed-hud",
+          "pass": true,
+          "testedSettings": {
+            "speed-hud": {
+              "hud-x": 12,
+              "hud-y": 30
+            }
+          }
+        },
+        {
+          "name": "radar: render from actual world/entities",
+          "module": "radar",
+          "pass": true,
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          }
+        },
+        {
+          "name": "radar: canvas cleanup",
+          "module": "radar",
+          "pass": true,
+          "testedSettings": {
+            "radar": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            }
+          }
+        },
+        {
+          "name": "hitboxes: render from actual world/entities",
+          "module": "hitboxes",
+          "pass": true,
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          }
+        },
+        {
+          "name": "hitboxes: canvas cleanup",
+          "module": "hitboxes",
+          "pass": true,
+          "testedSettings": {
+            "hitboxes": {
+              "expand": 0.2
+            }
+          }
+        },
+        {
+          "name": "chunk-borders: render from actual world/entities",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "chunk-borders: canvas cleanup",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "target-hud: render from actual world/entities",
+          "module": "target-hud",
+          "pass": true,
+          "testedSettings": {
+            "target-hud": {}
+          }
+        },
+        {
+          "name": "target-hud: canvas cleanup",
+          "module": "target-hud",
+          "pass": true,
+          "testedSettings": {
+            "target-hud": {}
+          }
+        },
+        {
+          "name": "notification and debug toggle subscriptions",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          }
+        },
+        {
+          "name": "utility subscription cleanup",
+          "module": [
+            "notifications",
+            "debug-console"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "notifications": {},
+            "debug-console": {
+              "events": false
+            }
+          }
+        },
+        {
+          "name": "friend setting integrates with client",
+          "module": "friend-manager",
+          "pass": true,
+          "testedSettings": {
+            "friend-manager": {
+              "add": "Phase6Friend"
+            }
+          }
+        },
+        {
+          "name": "module-search: opens actual ClickGUI",
+          "module": "module-search",
+          "pass": true,
+          "testedSettings": {
+            "module-search": {}
+          }
+        },
+        {
+          "name": "keybind-manager: opens actual ClickGUI",
+          "module": "keybind-manager",
+          "pass": true,
+          "testedSettings": {
+            "keybind-manager": {}
+          }
+        },
+        {
+          "name": "macro default wait",
+          "module": "macros",
+          "pass": true,
+          "testedSettings": {
+            "macros": {}
+          }
+        },
+        {
+          "name": "macro resumes after wait",
+          "module": "macros",
+          "pass": true,
+          "testedSettings": {
+            "macros": {}
+          }
+        },
+        {
+          "name": "BunnyHop only-sprinting gate",
+          "module": "bunny-hop",
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          }
+        },
+        {
+          "name": "BunnyHop uses real jump with Sprint",
+          "module": "bunny-hop",
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            }
+          }
+        },
+        {
+          "name": "BunnyHop/Sprint cleanup",
+          "module": [
+            "bunny-hop",
+            "sprint"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "bunny-hop": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "sprint": {}
+          }
+        },
+        {
+          "name": "AntiAFK acts on actual player",
+          "module": "anti-afk",
+          "pass": true,
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          }
+        },
+        {
+          "name": "AntiAFK cleanup",
+          "module": "anti-afk",
+          "pass": true,
+          "testedSettings": {
+            "anti-afk": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            }
+          }
+        },
+        {
+          "name": "TriggerBot damages actual crosshair target",
+          "module": "trigger-bot",
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          }
+        },
+        {
+          "name": "TriggerBot weapon-only rejects stick",
+          "module": "trigger-bot",
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": true
+            }
+          }
+        },
+        {
+          "name": "AutoClicker activation hold gate",
+          "module": "auto-clicker",
+          "pass": true,
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "AutoClicker attacks through actual native target",
+          "module": "auto-clicker",
+          "pass": true,
+          "testedSettings": {
+            "auto-clicker": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "combat modules gated by real inventory screen",
+          "module": [
+            "trigger-bot",
+            "auto-clicker"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "trigger-bot": {
+              "delay": 20,
+              "weapon-only": false
+            },
+            "auto-clicker": {
+              "cps": 4,
+              "hold": false,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "Criticals jump subset changes actual height",
+          "module": "auto-crit",
+          "pass": true,
+          "testedSettings": {
+            "auto-crit": {
+              "mode": "jump"
+            }
+          }
+        },
+        {
+          "name": "durability warning uses real damaged inventory",
+          "module": "durability-warnings",
+          "pass": true,
+          "testedSettings": {
+            "durability-warnings": {
+              "threshold": 20
+            }
+          }
+        },
+        {
+          "name": "Chunk Borders repaired two-axis grid",
+          "module": "chunk-borders",
+          "pass": true,
+          "testedSettings": {
+            "chunk-borders": {}
+          }
+        },
+        {
+          "name": "Notification repaired duplicate delivery",
+          "module": "notifications",
+          "pass": true,
+          "testedSettings": {
+            "notifications": {}
+          }
+        },
+        {
+          "name": "Screenshot completed and hook cleaned up",
+          "module": "screenshot-util",
+          "pass": true,
+          "testedSettings": {
+            "screenshot-util": {}
+          }
+        },
+        {
+          "name": "Partial camera controls actual supported subsets",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          }
+        },
+        {
+          "name": "Partial camera controls cleanup",
+          "module": [
+            "fullbright",
+            "no-hurt-cam"
+          ],
+          "pass": true,
+          "testedSettings": {
+            "fullbright": {
+              "level": 1
+            },
+            "no-hurt-cam": {}
+          }
+        }
+      ],
+      "passed": 56
+    },
+    "restart": {
+      "checks": [
+        "all 41 module setting sets survive an actual Chrome process restart",
+        "FPS enabled survives Chrome process restart",
+        "world HUD intent waits for player identity after restart",
+        "priority module intent restores only after an actual saved world loads after restart",
+        "priority GUI rows remain available after Chrome restart and world reentry",
+        "nondefault new KillAura timing settings persist across Chrome process restart",
+        "macro modifier bind and client-bind step persist across Chrome process restart",
+        "explicit module disable persists across second Chrome restart",
+        "HUD precision persists across process restart",
+        "invalid stored settings safely recover during actual client boot",
+        "shutdown removes listeners, UI, native commands and synthetic inputs",
+        "no required runtime requests failed",
+        "no uncaught JavaScript errors across restarts"
+      ],
+      "passed": 13
+    },
+    "inputLimitations": []
+  },
+  "combat": {
+    "mechanics": "Modern weapon recovery verified by controlled damage comparison. No native attack-charge snapshot is exposed.",
+    "probe": [
+      {
+        "delayMs": 250,
+        "healthBefore": 20,
+        "healthAfterFirst": 11.144000053405762,
+        "healthAfterSecond": 11.144000053405762,
+        "weapon": "minecraft:iron_axe"
+      },
+      {
+        "delayMs": 650,
+        "healthBefore": 20,
+        "healthAfterFirst": 11.144000053405762,
+        "healthAfterSecond": 6.7581095695495605,
+        "weapon": "minecraft:iron_axe"
+      },
+      {
+        "delayMs": 1600,
+        "healthBefore": 20,
+        "healthAfterFirst": 11.144000053405762,
+        "healthAfterSecond": 2.2880001068115234,
+        "weapon": "minecraft:iron_axe"
+      }
+    ],
+    "attemptGapsMs": [
+      499.59999999962747,
+      500.09999999962747,
+      549.9000000003725,
+      450.09999999962747,
+      549.1000000005588
+    ],
+    "fallingComparison": [
+      {
+        "falling": false,
+        "health": 14.095999717712402,
+        "ground": true,
+        "fallDistance": 0,
+        "verticalVelocity": -0.0784000015258789
+      },
+      {
+        "falling": true,
+        "health": 11.144000053405762,
+        "ground": false,
+        "fallDistance": 0.0754440650343895,
+        "verticalVelocity": -0.15233518685055708
+      }
+    ],
+    "fallingAura": {
+      "health": 11.144000053405762,
+      "attempts": [
+        {
+          "type": "minecraft:zombie",
+          "ground": false,
+          "fall": 0.0754440650343895,
+          "vy": -0.15233518685055708,
+          "at": 52229.90000000037
+        }
+      ]
+    },
+    "limitations": [
+      "No native attack readiness field",
+      "No fluid/climb/passenger critical state",
+      "No guaranteed packet criticals",
+      "Positive other-player targeting/ESP acceptance pending"
+    ]
+  },
+  "performance": {
+    "durationSeconds": 15,
+    "scope": "one loaded world, combat modules off; descriptive sample, no performance comparison",
+    "heapBytes": [
+      471750353,
+      494848538,
+      486742264,
+      479136414,
+      471009789,
+      492469535,
+      482577956,
+      472749698,
+      491629473,
+      481221485,
+      500342226,
+      489954593,
+      479509544,
+      498353147,
+      488483260
+    ],
+    "moduleTickMs": [
+      0.05693612767647424,
+      0.057312252899087056,
+      0.05738747547428012,
+      0.057606589083393764,
+      0.05758157383334142,
+      0.057747148228773824,
+      0.05781544250411572,
+      0.0578358208381835,
+      0.05767097960952704,
+      0.05769230763303396,
+      0.05780399267936967,
+      0.05768884885922181,
+      0.05793226375402268,
+      0.05803886920011309,
+      0.05789934348730733
+    ],
+    "listeners": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "claim": "Descriptive single-client sample; no optimization or broad performance certification claimed"
+  },
+  "modules": {
+    "registered": 77,
+    "fullyAccepted": 0,
+    "counts": {
+      "gameplay-observed": 41,
+      "partial": 5,
+      "unsupported": 31,
+      "failed": 0
+    },
+    "note": "No exhaustive acceptance promotion. Functional checks are separate from GUI/lifecycle/persistence coverage.",
+    "rows": [
+      {
+        "id": "aim-assist",
+        "name": "Aim Assist",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "aim-assist: 41-module displayed availability",
+          "aim-assist: 41-module real GUI enable",
+          "aim-assist: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-clicker",
+        "name": "AutoClicker",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "input"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "AutoClicker activation hold gate",
+            "settings": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          },
+          {
+            "name": "AutoClicker attacks through actual native target",
+            "settings": {
+              "cps": 4,
+              "hold": true,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          },
+          {
+            "name": "combat modules gated by real inventory screen",
+            "settings": {
+              "cps": 4,
+              "hold": false,
+              "activation-key": {
+                "key": "KeyV",
+                "mouse": null,
+                "modifiers": {}
+              }
+            },
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "auto-clicker: 41-module displayed availability",
+          "auto-clicker: 41-module real GUI enable",
+          "auto-clicker: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-totem",
+        "name": "AutoTotem",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No offhand inventory mutation/totem contract. Generic main/offhand useItem command does not implement slot management.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-weapon",
+        "name": "AutoWeapon",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "limitation": "Read-only hotbar and selectSlot already exist. findBestWeapon/ranking is absent (no attack-damage/enchantment metadata); broad inventory gate remains. Possible focused JS follow-up, not a required Java build for simple ID ranking.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-crit",
+        "name": "Criticals",
+        "category": "Combat",
+        "status": "partial",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "limitation": "Jump subset and falling-aware KillAura damage verified in a controlled dry/unmounted fixture. Packet hook, charge, fluid/climb/passenger state absent; no universal critical guarantee.",
+        "currentFunctionalChecks": [
+          {
+            "name": "Criticals jump subset changes actual height",
+            "settings": {
+              "mode": "jump"
+            },
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance.",
+        "additionalActualChecks": [
+          "naturally falling native hit delivers greater actual damage than grounded hit",
+          "KillAura with Criticals waits for observed falling before first real attack",
+          "falling-aware KillAura delivers critical-sized sword damage in controlled fixture"
+        ]
+      },
+      {
+        "id": "kill-aura",
+        "name": "KillAura",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "limitation": "Modern recovery verified by damage; native charge is not published. Interval attempts and bounded falling preference, not guaranteed readiness/criticals. Actual other-player targeting remains unverified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "kill-aura GUI toggle",
+          "kill-aura is available and active through actual GUI",
+          "kill-aura remains enabled after closing GUI",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click disables",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click enables",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click disables",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click enables",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click disables",
+          "kill-aura: 41-module displayed availability",
+          "kill-aura: 41-module real GUI enable",
+          "kill-aura: 41-module real GUI disable",
+          "kill-aura: displayed availability inside loaded world with GUI open",
+          "kill-aura: actual category click enables",
+          "kill-aura unavailable in real GUI outside world"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance.",
+        "additionalActualChecks": [
+          "KillAura delivers real hostile damage at configured 2 CPS",
+          "KillAura attempts follow 500 ms deadlines with bounded tick jitter",
+          "KillAura disable clears pending native attacks immediately",
+          "KillAura disable stops new attempts and further damage after in-flight native delivery",
+          "hostile filter excludes actual zombie",
+          "range excludes actual hostile five blocks away",
+          "GUI blocks native attack delivery and pending commands",
+          "GUI close resumes damage without a queued burst",
+          "KillAura GUI activation queues no combat or movement while paused",
+          "KillAura passive filter prevents damage to real pig",
+          "KillAura enabled through GUI damages eligible real mob after close",
+          "KillAura disable stops damage and clears queued attacks",
+          "KillAura range rejects real target five blocks away",
+          "KillAura attacks when actual player enters configured range",
+          "ESP hostile filter renders real zombie and excludes passive",
+          "KillAura with Criticals waits for observed falling before first real attack",
+          "falling-aware KillAura delivers critical-sized sword damage in controlled fixture",
+          "nondefault new KillAura timing settings persist across Chrome process restart"
+        ]
+      },
+      {
+        "id": "reach-display",
+        "name": "Reach Display",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "combat-events"
+        ],
+        "limitation": "No attacker/distance combat event stream. Target snapshots do not identify hits.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "trigger-bot",
+        "name": "TriggerBot",
+        "category": "Combat",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "TriggerBot damages actual crosshair target",
+            "settings": {
+              "delay": 20,
+              "weapon-only": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "TriggerBot weapon-only rejects stick",
+            "settings": {
+              "delay": 20,
+              "weapon-only": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "combat modules gated by real inventory screen",
+            "settings": {
+              "delay": 20,
+              "weapon-only": false
+            },
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "trigger-bot: 41-module displayed availability",
+          "trigger-bot: 41-module real GUI enable",
+          "trigger-bot: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "velocity",
+        "name": "Velocity",
+        "category": "Combat",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "limitation": "setPlayerVelocity exists; no incoming knockback multiplier/interception hook.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "active-modules-hud",
+        "name": "Active Modules",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "active-modules-hud: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "active-modules-hud: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "active-modules-hud: 41-module displayed availability",
+          "active-modules-hud: 41-module real GUI enable",
+          "active-modules-hud: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "armor-hud",
+        "name": "Armor HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "native-inventory-read"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "armor-hud: 41-module displayed availability",
+          "armor-hud: 41-module real GUI enable",
+          "armor-hud: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "biome-info",
+        "name": "Biome Info",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "biome"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "biome-info: 41-module displayed availability",
+          "biome-info: 41-module real GUI enable",
+          "biome-info: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "coordinates",
+        "name": "Coordinates",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "coordinates: 41-module displayed availability",
+          "coordinates: 41-module real GUI enable",
+          "coordinates: 41-module real GUI disable",
+          "coordinates: displayed availability inside loaded world with GUI open",
+          "coordinates: actual category click enables"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "cps-counter",
+        "name": "CPS Counter",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "cps-counter: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "CPS observes actual browser click",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "cps-counter: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "cps-counter: 41-module displayed availability",
+          "cps-counter: 41-module real GUI enable",
+          "cps-counter: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "custom-text",
+        "name": "Custom Text",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "custom-text: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "custom text live settings",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            },
+            "cleanup": false
+          },
+          {
+            "name": "custom-text: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30,
+              "text": "Phase 6 native"
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "custom-text: 41-module displayed availability",
+          "custom-text: 41-module real GUI enable",
+          "custom-text: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "direction",
+        "name": "Direction",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "direction: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "direction tracks actual yaw",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "direction: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "direction: 41-module displayed availability",
+          "direction: 41-module real GUI enable",
+          "direction: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "fps-display",
+        "name": "FPS",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Browser/framework frame rate, not physical display or game submission rate.",
+        "currentFunctionalChecks": [
+          {
+            "name": "fps-display: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "fps-display: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "fps-display: 41-module displayed availability",
+          "fps-display: 41-module real GUI enable",
+          "fps-display: 41-module real GUI disable",
+          "fps-display: displayed availability inside loaded world with GUI open",
+          "fps-display: actual category click enables"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "keystrokes",
+        "name": "Keystrokes",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "keystrokes: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "keystrokes: actual held movement",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "keystrokes: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "keystrokes: 41-module displayed availability",
+          "keystrokes: 41-module real GUI enable",
+          "keystrokes: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "performance-monitor",
+        "name": "Performance Monitor",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "performance-monitor: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "performance-monitor: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "performance-monitor: 41-module displayed availability",
+          "performance-monitor: 41-module real GUI enable",
+          "performance-monitor: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "ping-display",
+        "name": "Ping Display",
+        "category": "HUD",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "network"
+        ],
+        "limitation": "No ping/network read contract.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "potion-hud",
+        "name": "Potion HUD",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "effects"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "potion-hud: 41-module displayed availability",
+          "potion-hud: 41-module real GUI enable",
+          "potion-hud: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "radar",
+        "name": "Radar",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "radar: render from actual world/entities",
+            "settings": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            },
+            "cleanup": false
+          },
+          {
+            "name": "radar: canvas cleanup",
+            "settings": {
+              "hud-x": 400,
+              "hud-y": 4,
+              "range": 48,
+              "size": 110
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "radar: 41-module displayed availability",
+          "radar: 41-module real GUI enable",
+          "radar: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "session-timer",
+        "name": "Session Timer",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "session-timer: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "session timer visibly advances",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "session-timer: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "session-timer: 41-module displayed availability",
+          "session-timer: 41-module real GUI enable",
+          "session-timer: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "speed-hud",
+        "name": "Speed",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "speed-hud: actual visible HUD at configured position",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "speed-hud: actual held movement",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": false
+          },
+          {
+            "name": "speed-hud: disable removes node",
+            "settings": {
+              "hud-x": 12,
+              "hud-y": 30
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "speed-hud: 41-module displayed availability",
+          "speed-hud: 41-module real GUI enable",
+          "speed-hud: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "target-hud",
+        "name": "Target HUD",
+        "category": "HUD",
+        "status": "partial",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "hud"
+        ],
+        "limitation": "Live health/distance/bar supported; bar scale/line offset fixed; dead targets excluded. Armor metadata absent and UI option read-only with explanation.",
+        "currentFunctionalChecks": [
+          {
+            "name": "target-hud: render from actual world/entities",
+            "settings": {},
+            "cleanup": false
+          },
+          {
+            "name": "target-hud: canvas cleanup",
+            "settings": {},
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance.",
+        "unitRegressionScope": [
+          "dead/nonliving targets excluded",
+          "bar scales with HUD scale"
+        ]
+      },
+      {
+        "id": "world-time",
+        "name": "World Time",
+        "category": "HUD",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "world-time: 41-module displayed availability",
+          "world-time: 41-module real GUI enable",
+          "world-time: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-gg",
+        "name": "AutoGG",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "chat"
+        ],
+        "limitation": "No sendChat bridge method; keyboard command entry by a test driver is not a native chat capability.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-reconnect",
+        "name": "AutoReconnect",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "network"
+        ],
+        "limitation": "No reconnect/server connection contract.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "chat-timestamps",
+        "name": "Chat Timestamps",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No incoming chat render/format interception.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "debug-console",
+        "name": "Debug Console",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "notification and debug toggle subscriptions",
+            "settings": {
+              "events": false
+            },
+            "cleanup": false
+          },
+          {
+            "name": "utility subscription cleanup",
+            "settings": {
+              "events": false
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "debug-console: 41-module displayed availability",
+          "debug-console: 41-module real GUI enable",
+          "debug-console: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "friend-manager",
+        "name": "Friend Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "friend setting integrates with client",
+            "settings": {
+              "add": "Phase6Friend"
+            },
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "friend-manager: 41-module displayed availability",
+          "friend-manager: 41-module real GUI enable",
+          "friend-manager: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "keybind-manager",
+        "name": "Keybind Manager",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "keybind-manager: opens actual ClickGUI",
+            "settings": {},
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "keybind-manager: 41-module displayed availability",
+          "keybind-manager: 41-module real GUI enable",
+          "keybind-manager: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "macros",
+        "name": "Macros",
+        "category": "Misc",
+        "status": "partial",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Real modifier-aware macro keybinds and registered client module bind steps work. Native chat and arbitrary game key injection remain unavailable; native chat steps fail explicitly.",
+        "currentFunctionalChecks": [
+          {
+            "name": "macro default wait",
+            "settings": {},
+            "cleanup": false
+          },
+          {
+            "name": "macro resumes after wait",
+            "settings": {},
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance.",
+        "additionalActualChecks": [
+          "macro modifiers reject unmodified real browser key",
+          "macro keyboard route executes registered client bind",
+          "macro modifier bind and client-bind step persist across Chrome process restart"
+        ]
+      },
+      {
+        "id": "module-search",
+        "name": "Module Search",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "module-search: opens actual ClickGUI",
+            "settings": {},
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "module-search: 41-module displayed availability",
+          "module-search: 41-module real GUI enable",
+          "module-search: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "notifications",
+        "name": "Notifications",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "notification and debug toggle subscriptions",
+            "settings": {},
+            "cleanup": false
+          },
+          {
+            "name": "utility subscription cleanup",
+            "settings": {},
+            "cleanup": true
+          },
+          {
+            "name": "Notification repaired duplicate delivery",
+            "settings": {},
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "notifications: 41-module displayed availability",
+          "notifications: 41-module real GUI enable",
+          "notifications: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "screenshot-util",
+        "name": "Screenshot Utilities",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "Screenshot completed and hook cleaned up",
+            "settings": {},
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "screenshot-util: 41-module displayed availability",
+          "screenshot-util: 41-module real GUI enable",
+          "screenshot-util: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "server-info",
+        "name": "Server Information",
+        "category": "Misc",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "network"
+        ],
+        "limitation": "No server address/player-count network contract.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "session-stats",
+        "name": "Session Statistics",
+        "category": "Misc",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "session-stats: 41-module displayed availability",
+          "session-stats: 41-module real GUI enable",
+          "session-stats: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-jump",
+        "name": "AutoJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "movement"
+        ],
+        "limitation": "jump/onGround/forward reads exist; isBlockAhead collision lookup absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-walk",
+        "name": "AutoWalk",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "input"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "auto-walk: 41-module displayed availability",
+          "auto-walk: 41-module real GUI enable",
+          "auto-walk: 41-module real GUI disable",
+          "auto-walk: displayed availability inside loaded world with GUI open",
+          "auto-walk: actual category click enables",
+          "auto-walk: displayed availability inside loaded world with GUI open",
+          "auto-walk: actual category click disables"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "bunny-hop",
+        "name": "BunnyHop",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "BunnyHop only-sprinting gate",
+            "settings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "BunnyHop uses real jump with Sprint",
+            "settings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "BunnyHop/Sprint cleanup",
+            "settings": {
+              "only-sprinting": true,
+              "delay": 2
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "bunny-hop GUI toggle",
+          "bunny-hop is available and active through actual GUI",
+          "bunny-hop remains enabled after closing GUI",
+          "bunny-hop: displayed availability inside loaded world with GUI open",
+          "bunny-hop: actual category click disables",
+          "bunny-hop: displayed availability inside loaded world with GUI open",
+          "bunny-hop: actual category click enables",
+          "bunny-hop: displayed availability inside loaded world with GUI open",
+          "bunny-hop: actual category click disables",
+          "bunny-hop: 41-module displayed availability",
+          "bunny-hop: 41-module real GUI enable",
+          "bunny-hop: 41-module real GUI disable",
+          "bunny-hop: displayed availability inside loaded world with GUI open",
+          "bunny-hop: actual category click enables",
+          "bunny-hop unavailable in real GUI outside world"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "flight",
+        "name": "Flight",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement",
+          "flight"
+        ],
+        "limitation": "Direct velocity exists; setFlying/player flight flags and flight speed controls absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "high-jump",
+        "name": "HighJump",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "limitation": "Direct velocity/jump exist; setJumpHeight/getJumpHeight contract absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "jesus",
+        "name": "Jesus",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No fluid collision or fluid movement interception.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "no-fall",
+        "name": "NoFall",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "limitation": "fallDistance is readable; no setNoFall or fall-damage override.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "no-slow",
+        "name": "NoSlow",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No item-use movement-modifier interception.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "parkour",
+        "name": "Parkour",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "movement"
+        ],
+        "limitation": "jump/sneak exist; isBlockAhead with gap query absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "safe-walk",
+        "name": "SafeWalk",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "limitation": "Sneak exists; no setSafeWalk edge-collision constraint.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "speed",
+        "name": "Speed",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "speed: 41-module displayed availability",
+          "speed: 41-module real GUI enable",
+          "speed: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "spider",
+        "name": "Spider",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No horizontal-collision hook.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "sprint",
+        "name": "Sprint",
+        "category": "Movement",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "input"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "BunnyHop/Sprint cleanup",
+            "settings": {},
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "sprint: displayed availability inside loaded world with GUI open",
+          "sprint: actual category click enables",
+          "sprint: displayed availability inside loaded world with GUI open",
+          "sprint: actual category click disables",
+          "sprint: 41-module displayed availability",
+          "sprint: 41-module real GUI enable",
+          "sprint: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "step",
+        "name": "Step",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "movement"
+        ],
+        "limitation": "No setStepHeight/getStepHeight API.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "timer",
+        "name": "Timer",
+        "category": "Movement",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "timing"
+        ],
+        "limitation": "No setTickRate/getTickRateMultiplier API.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "anti-afk",
+        "name": "AntiAFK",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "AntiAFK acts on actual player",
+            "settings": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            },
+            "cleanup": false
+          },
+          {
+            "name": "AntiAFK cleanup",
+            "settings": {
+              "interval": 10,
+              "jump": true,
+              "rotate": true,
+              "swing": true
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "anti-afk: 41-module displayed availability",
+          "anti-afk: 41-module real GUI enable",
+          "anti-afk: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-armor",
+        "name": "AutoArmor",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "limitation": "Armor/main inventory reads exist; equipBestArmor/inventory click or equip command absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-eat",
+        "name": "AutoEat",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "native-inventory-read",
+          "native-direct"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "auto-eat: 41-module displayed availability",
+          "auto-eat: 41-module real GUI enable",
+          "auto-eat: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-respawn",
+        "name": "AutoRespawn",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "native-respawn"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "auto-respawn: 41-module displayed availability",
+          "auto-respawn: 41-module real GUI enable",
+          "auto-respawn: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "auto-tool",
+        "name": "AutoTool",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "inventory",
+          "blocks"
+        ],
+        "limitation": "Inventory/slot reads and selection exist; block type and findBestTool ranking absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "chest-organizer",
+        "name": "Chest Organizer",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No container slot/click automation.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "durability-warnings",
+        "name": "Durability Warnings",
+        "category": "Player",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "native-inventory-read"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [
+          {
+            "name": "durability warning uses real damaged inventory",
+            "settings": {
+              "threshold": 20
+            },
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "durability-warnings: 41-module displayed availability",
+          "durability-warnings: 41-module real GUI enable",
+          "durability-warnings: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "fast-place",
+        "name": "FastPlace",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "limitation": "useItem exists; no setRightClickDelay/getRightClickDelay hook.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "inventory-manager",
+        "name": "Inventory Manager",
+        "category": "Player",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "inventory"
+        ],
+        "limitation": "Reads exist; sort/drop/slot-click mutation contract absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "chunk-borders",
+        "name": "Chunk Borders",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "render"
+        ],
+        "limitation": "Local projected grid, not native renderer geometry.",
+        "currentFunctionalChecks": [
+          {
+            "name": "chunk-borders: render from actual world/entities",
+            "settings": {},
+            "cleanup": false
+          },
+          {
+            "name": "chunk-borders: canvas cleanup",
+            "settings": {},
+            "cleanup": true
+          },
+          {
+            "name": "Chunk Borders repaired two-axis grid",
+            "settings": {},
+            "cleanup": false
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "chunk-borders: 41-module displayed availability",
+          "chunk-borders: 41-module real GUI enable",
+          "chunk-borders: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "custom-crosshair",
+        "name": "Custom Crosshair",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "custom-crosshair: 41-module displayed availability",
+          "custom-crosshair: 41-module real GUI enable",
+          "custom-crosshair: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "entity-esp",
+        "name": "Entity ESP",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "entity-esp GUI toggle",
+          "entity-esp is available and active through actual GUI",
+          "entity-esp remains enabled after closing GUI",
+          "entity-esp: displayed availability inside loaded world with GUI open",
+          "entity-esp: actual category click disables",
+          "entity-esp: displayed availability inside loaded world with GUI open",
+          "entity-esp: actual category click enables",
+          "entity-esp: displayed availability inside loaded world with GUI open",
+          "entity-esp: actual category click disables",
+          "entity-esp: 41-module displayed availability",
+          "entity-esp: 41-module real GUI enable",
+          "entity-esp: 41-module real GUI disable",
+          "entity-esp: displayed availability inside loaded world with GUI open",
+          "entity-esp: actual category click enables",
+          "entity-esp unavailable in real GUI outside world"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "freecam",
+        "name": "Freecam",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "render",
+          "camera-detach"
+        ],
+        "limitation": "Projection exists; camera detachment/update/restore API absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "fullbright",
+        "name": "Fullbright",
+        "category": "Render",
+        "status": "partial",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "brightness-control"
+        ],
+        "limitation": "Night-vision effect mutation absent; gamma subset works.",
+        "currentFunctionalChecks": [
+          {
+            "name": "Partial camera controls actual supported subsets",
+            "settings": {
+              "level": 1
+            },
+            "cleanup": false
+          },
+          {
+            "name": "Partial camera controls cleanup",
+            "settings": {
+              "level": 1
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "hitboxes",
+        "name": "Hitboxes",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render"
+        ],
+        "limitation": "Screen overlay only, not expanded collision.",
+        "currentFunctionalChecks": [
+          {
+            "name": "hitboxes: render from actual world/entities",
+            "settings": {
+              "expand": 0.2
+            },
+            "cleanup": false
+          },
+          {
+            "name": "hitboxes: canvas cleanup",
+            "settings": {
+              "expand": 0.2
+            },
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [
+          "hitboxes: 41-module displayed availability",
+          "hitboxes: 41-module real GUI enable",
+          "hitboxes: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "nametags",
+        "name": "Nametags",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "nametags: 41-module displayed availability",
+          "nametags: 41-module real GUI enable",
+          "nametags: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "no-hurt-cam",
+        "name": "NoHurtCam",
+        "category": "Render",
+        "status": "partial",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "hurt-camera-control"
+        ],
+        "limitation": "Damage/death suppression exists; independent directional tilt absent.",
+        "currentFunctionalChecks": [
+          {
+            "name": "Partial camera controls actual supported subsets",
+            "settings": {},
+            "cleanup": false
+          },
+          {
+            "name": "Partial camera controls cleanup",
+            "settings": {},
+            "cleanup": true
+          }
+        ],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "storage-esp",
+        "name": "Storage ESP",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "blocks",
+          "render"
+        ],
+        "limitation": "No block/container enumeration.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "tracers",
+        "name": "Tracers",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "entities",
+          "render",
+          "hud"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "tracers: 41-module displayed availability",
+          "tracers: 41-module real GUI enable",
+          "tracers: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "xray",
+        "name": "X-Ray",
+        "category": "Render",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No renderer face-visibility override.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "zoom",
+        "name": "Zoom",
+        "category": "Render",
+        "status": "gameplay-observed",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "fov-control"
+        ],
+        "limitation": "Only the explicitly recorded behavior/settings scope is certified.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": true,
+        "currentGUI": [
+          "zoom: 41-module displayed availability",
+          "zoom: 41-module real GUI enable",
+          "zoom: 41-module real GUI disable"
+        ],
+        "settingsPersistedAcrossProcessRestart": true,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "block-search",
+        "name": "Block Search",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "blocks",
+          "render"
+        ],
+        "limitation": "No block enumeration/lookup.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "light-level",
+        "name": "Light Level Overlay",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [],
+        "limitation": "No per-block light lookup.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      },
+      {
+        "id": "waypoints",
+        "name": "Waypoints",
+        "category": "World",
+        "status": "unsupported",
+        "fullyAccepted": false,
+        "requiredCapabilities": [
+          "world",
+          "render",
+          "world-identity"
+        ],
+        "limitation": "Position/dimension exist; stable world-save/server identity absent.",
+        "currentFunctionalChecks": [],
+        "currentNativeSuiteObserved": false,
+        "currentGUI": [],
+        "settingsPersistedAcrossProcessRestart": false,
+        "scope": "Only the named checks. Shared lifecycle/persistence and GUI enable are not exhaustive per-setting functional acceptance."
+      }
+    ]
+  },
+  "physicalQA": {
+    "status": "pending human execution",
+    "checklist": "PHYSICAL_QA.md",
+    "newHumanChecks": 0,
+    "deferredLANChecks": 7
+  },
+  "setupCorrections": [
+    "After synchronous programmatic GUI stress, native canvas recapture is performed after native pause restoration before issuing chat commands, matching the established actual-client test protocol. Physical pointer-lock feel remains pending.",
+    "The food fixture left hunger below the Sprint threshold, so a later held-forward movement check walked off the platform. Native saturation/health effects now isolate the movement fixture; acceptance resumes from the existing supported checkpoint and keeps passed-prefix evidence separate.",
+    "Saved-world food setup initially stopped at hunger 16, outside the module threshold. The test now applies bounded repeated native hunger effects and verifies the precondition; no player snapshot is fabricated.",
+    "Earlier probe fixture fell before the origin platform was loaded; repeat waits for chunks and verifies platform position. Invalid probes are not accepted evidence.",
+    "Initial disable assertion sampled before an already-committed native hit published health. Final checks separate immediate queue clearing from settled damage and verify no new attempts.",
+    "A test-only unqualified reference to the intentionally deleted command queue was corrected to window.__eaghacksNativeCommands; no client change was required.",
+    "Repeated-toggle native testing found a hidden ClickGUI search field retaining focus; fixed close() focus release and added a failing-before/passing-after regression. Final artifact was refreshed and rechecked.",
+    "Intermediate candidate run was stopped after review found secondary-module queue cancellation; final candidate rechecked after the fix."
+  ],
+  "remainingBlockers": [
+    "Release-specific human physical input/pointer-lock/audio/combat QA",
+    "Exhaustive per-setting and per-module world transition/interaction coverage",
+    "Actual other-player ESP and combat filters",
+    "Seven deferred LAN checks; existing intermittent lobby limitation remains",
+    "Independent whole-project release audit"
+  ]
+}

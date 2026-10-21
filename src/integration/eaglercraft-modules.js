@@ -61,6 +61,17 @@ export function createEaglercraftModules() {
     autoWalk.localTestOnly = true;
     autoWalk.onEnable = () => {};
   }
+  // Retain the saved options while making absent native contracts explicit.
+  for (const [id, setting, reason] of [
+    ['fullbright', 'night-vision', 'native effect mutation is not exposed; brightness still works'],
+    ['no-hurt-cam', 'tilt', 'independent directional tilt is not exposed; whole hurt camera suppression still works'],
+    ['target-hud', 'armor', 'target armor metadata is not published'],
+  ]) {
+    const module = modules.find(m => m.id === id);
+    // Settings initialise on registration, so apply metadata after onInit.
+    const init = module.onInit;
+    module.onInit = function () { init.call(this); this.settings.get(setting).unavailableReason = reason; };
+  }
   return modules;
 }
 

@@ -98,7 +98,7 @@ test("profiles can be created, switched and deleted", async () => {
   client.config.switchProfile("pvp");
 
   // Profile 'pvp' starts clean, so the value returns to default.
-  assert.equal(client.modules.get("kill-aura").settings.get("cps").value, 8);
+  assert.equal(client.modules.get("kill-aura").settings.get("cps").value, 2);
   assert.equal(client.config.deleteProfile("pvp"), true);
   assert.equal(client.config.deleteProfile("default"), false, "default cannot be deleted");
 });
@@ -125,7 +125,7 @@ test("resetAll clears module state and favourites", async () => {
   ka.settings.get("cps").set(19);
   client.modules.setFavourite(ka, true);
   client.config.resetAll();
-  assert.equal(ka.settings.get("cps").value, 8);
+  assert.equal(ka.settings.get("cps").value, 2);
   assert.equal(client.modules.isFavourite(ka), false);
 });
 

@@ -2,16 +2,16 @@
 import {appendFile,mkdir,writeFile,readFile} from 'node:fs/promises';
 import {command as typeCommand} from './phase5-benchmark.mjs';
 export async function command(page,text){await page.evaluate(()=>document.activeElement?.blur?.());await typeCommand(page,text);}
-const root='input/phase13/module-checks';
+const root=`${process.env.QA_ROOT||'input/phase13'}/module-checks`;
 const configs=new Map();
 export async function record(name,module,expected,actual,pass,extra={}){
- await mkdir(root,{recursive:true});const runtime=JSON.parse(await readFile('reports/release-phase13/release-manifest.json','utf8')); const testedSettings=Object.fromEntries([module].flat().map(id=>[id,configs.get(id)??{}]));const r={artifactSHA256:runtime.html.sha256,sourceDigest:runtime.sourceDigest,runtime:'final',testedSettings,at:new Date().toISOString(),name,module,expected,actual,pass,...extra};
+ await mkdir(root,{recursive:true});const runtime=JSON.parse(await readFile(process.env.QA_MANIFEST||'reports/release-phase13/release-manifest.json','utf8')); const testedSettings=Object.fromEntries([module].flat().map(id=>[id,configs.get(id)??{}]));const r={artifactSHA256:runtime.html.sha256,sourceDigest:runtime.sourceDigest,runtime:'final',testedSettings,at:new Date().toISOString(),name,module,expected,actual,pass,...extra};
  await appendFile(`${root}/checks.jsonl`,JSON.stringify(r)+'\n');console.log('CHECK',pass?'PASS':'FAIL',name);if(!pass)throw Error('Module check failed: '+name);return r;
 }
 export async function snap(page){return page.evaluate(()=>({state:window.__eaghacksNativeState,screen:window.__eaghacksScreenState,errors:EaglerHacks.client.modules.errors(),active:EaglerHacks.client.modules.active().map(m=>m.id),input:EaglerHacks.adapter.diagnostics()}));}
 export async function toggle(page,id,on,settings={}){configs.set(id,{...configs.get(id),...settings});return page.evaluate(({id,on,settings})=>{const m=EaglerHacks.client.modules.get(id);for(const[k,v]of Object.entries(settings))m.settings.get(k).set(v);on?m.enable():m.disable();return {active:m.active,reason:m.ineligibilityReason(),pending:m._restoreOnWorld};},{id,on,settings});}
 export async function wait(page,fn,arg=null,timeout=10000){await page.waitForFunction(fn,arg,{timeout});}
-export async function capture(page,name){await mkdir('input/phase13/module-checks',{recursive:true});await page.screenshot({path:`input/phase13/module-checks/${name}.png`,timeout:7000});}
+export async function capture(page,name){await mkdir(root,{recursive:true});await page.screenshot({path:`${root}/${name}.png`,timeout:7000});}
 export async function hud(page){
  const ids=['active-modules-hud','cps-counter','custom-text','direction','fps-display','keystrokes','performance-monitor','session-timer','speed-hud'];
  for(const id of ids){
@@ -49,6 +49,7 @@ export async function utilities(page){
  const delay=await page.evaluate(()=>({delay:__phase6Wait,advanced:__phase6Advanced}));await record('macro default wait','macros','wait about 250ms; does not advance immediately',delay,delay.delay>200&&!delay.advanced);await page.waitForTimeout(400);const enabled=await page.evaluate(()=>EaglerHacks.client.modules.get('custom-text').active);await record('macro resumes after wait','macros','target module enabled',enabled,enabled);await toggle(page,'macros',false);await toggle(page,'custom-text',false);
 }
 export async function movement(page){
+ if(process.env.QA_RESTORE_MOVEMENT_CONDITION==='1'){for(const text of ['/effect clear @s','/effect give @s minecraft:saturation 1 5 true','/effect give @s minecraft:instant_health 1 5 true'])await command(page,text);await wait(page,()=>__eaghacksNativeState.player.hunger>=6&&__eaghacksNativeState.player.health>0);}
  await command(page,'/gamemode survival');await command(page,'/tp @s 0 150 0 0 20');
  await toggle(page,'bunny-hop',true,{'only-sprinting':true,delay:2});await page.waitForTimeout(500);
  let p=await page.evaluate(()=>__eaghacksNativeState.player);await record('BunnyHop only-sprinting gate','bunny-hop','on ground without sprint',p,p.onGround);
@@ -82,7 +83,7 @@ export async function finalRepairs(page){
  await capture(page,'chunk-borders-repaired');await record('Chunk Borders repaired two-axis grid','chunk-borders','real projection draws repaired grid',points,points.lines.length>2);await toggle(page,'chunk-borders',false);
  await toggle(page,'notifications',true);await page.evaluate(()=>{window.__phase6NotificationCount=0;window.__phase6Sub=EaglerHacks.client.bus.on('notification',e=>{if(e.text==='Phase6 once')window.__phase6NotificationCount++});EaglerHacks.client.modules.notify('Phase6 once','warn')});
  const notices=await page.evaluate(()=>({rows:EaglerHacks.client.modules.get('notifications').log.filter(x=>x.text==='Phase6 once'),events:__phase6NotificationCount}));await record('Notification repaired duplicate delivery','notifications','one history row and one event',notices,notices.rows.length===1&&notices.events===1);await page.evaluate(()=>__phase6Sub.dispose());await toggle(page,'notifications',false);
- const d=page.waitForEvent('download',{timeout:10000});await toggle(page,'screenshot-util',true);const download=await d;await download.saveAs('input/phase13/module-checks/game-canvas-repaired.png');
+ const d=page.waitForEvent('download',{timeout:10000});await toggle(page,'screenshot-util',true);const download=await d;await download.saveAs(`${root}/game-canvas-repaired.png`);
  const image=await page.evaluate(async()=>{const c=EaglerHacks.adapter.getGameCanvas(),gl=c.getContext('webgl2');return {width:c.width,height:c.height,active:EaglerHacks.client.modules.get('screenshot-util').active,drawRestored:!gl.drawArrays.toString().includes('resolveCapture')}});await record('Screenshot completed and hook cleaned up','screenshot-util','download and disabled module; original WebGL draw restored',image,!image.active&&image.drawRestored,{cleanup:!image.active&&image.drawRestored});
  await toggle(page,'fullbright',true,{level:1});await wait(page,()=>__eaghacksNativeState.options.brightness===1);await toggle(page,'no-hurt-cam',true);await wait(page,()=>__eaghacksNativeState.options.noHurtCamera);
  const options=await page.evaluate(()=>__eaghacksNativeState.options);await record('Partial camera controls actual supported subsets',['fullbright','no-hurt-cam'],'brightness=1 and hurt suppression',options,options.brightness===1&&options.noHurtCamera);

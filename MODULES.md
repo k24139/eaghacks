@@ -3,6 +3,8 @@
 
 Statuses refer to the native overlay contract. Framework fixtures do not establish gameplay verification.
 
+Phase 14 current acceptance and exact limitations: [all 77 modules](reports/release-phase14/MODULE_ACCEPTANCE.md), [combat behavior](reports/release-phase14/COMBAT_VERIFICATION.md). RC3 is experimental: 0 fully accepted, 41 gameplay-observed, five partial, 31 unsupported. Named functional checks are separate from GUI/lifecycle/persistence tests. Actual other-player ESP remains pending.
+
 Phase 13.1 corrects ClickGUI availability for loaded paused worlds and verifies real GUI toggles for the same 41-module cohort. Counts remain 41 gameplay-observed, five partial, 31 unsupported. See [availability repair and RC2 evidence](reports/release-phase13/PHASE13_1_REPORT.md).
 
 Phase 13 current-artifact evidence and all 77 module dispositions: [release module status](reports/release-phase13/MODULE_STATUS.md). Those scoped results supersede the historical labels below; registration and shared lifecycle tests do not establish exhaustive per-module acceptance.
@@ -17,8 +19,8 @@ Phase 6 evidence and per-module capabilities, limitations, settings and automate
 | AutoClicker | Combat | Verified in real gameplay | `cps`, `left`, `right`, `hold`, `activation-key` | Phase 6; requires input |
 | AutoTotem | Combat | Unsupported | — | offhand slot + totem mechanics are not confirmed available in this runtime |
 | AutoWeapon | Combat | Unsupported | `only-when-attacking`, `prefer-sword` | Current bridge lacks inventory |
-| Criticals | Combat | Partially implemented | `mode` | Jump mode only; packet mode is not supplied |
-| KillAura | Combat | Verified in real gameplay (historical artifact) | `range`, `cps`, `priority`, `players`, `hostile`, `passive`, `multi`, `visible-only`, `rotate`, `rotate-speed` | Historical runtime; requires world, entities, native-direct |
+| Criticals | Combat | Partially implemented | `mode` | Filtered jump subset; actual falling damage observed in controlled fixture; packet hook and universal critical eligibility unavailable |
+| KillAura | Combat | Gameplay-observed; not fully accepted | `range`, `cps`, `cps-variation`, `switch-delay`, `attack-mode`, `critical-wait`, `priority`, `players`, `hostile`, `passive`, `multi`, `visible-only`, `rotate`, `rotate-speed` | Phase 14 monotonic attempt timing; native recovery applies, charge not exposed; falling preference has no critical guarantee |
 | Reach Display | Combat | Unsupported | `hud-x`, `hud-y`, `hud-scale` | Current bridge lacks combat-events |
 | TriggerBot | Combat | Verified in real gameplay | `delay`, `players`, `mobs`, `weapon-only` | Phase 6; requires world, entities, native-direct |
 | Velocity | Combat | Unsupported | `horizontal`, `vertical` | Current bridge lacks movement |
@@ -37,7 +39,7 @@ Phase 6 evidence and per-module capabilities, limitations, settings and automate
 | Radar | HUD | Verified in real gameplay | `range`, `size`, `rotate`, `players`, `mobs`, `hud-x`, `hud-y` | Phase 6; requires world, entities, hud |
 | Session Timer | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background`, `show-clock` | Phase 6; requires client UI |
 | Speed | HUD | Verified in real gameplay | `hud-x`, `hud-y`, `hud-scale`, `hud-opacity`, `hud-color`, `background` | Phase 6; requires world |
-| Target HUD | HUD | Partially implemented | `hud-x`, `hud-y`, `hud-scale`, `health`, `distance`, `armor`, `health-bar` | Health/distance rendering exists; target armor metadata is absent |
+| Target HUD | HUD | Partially implemented | `hud-x`, `hud-y`, `hud-scale`, `health`, `distance`, `armor`, `health-bar` | Health/distance/bar rendered; dead target filtering and bar scaling repaired; armor option visibly unavailable |
 | World Time | HUD | Verified in real gameplay (historical artifact) | `hud-x`, `hud-y`, `hud-scale`, `show-day` | Historical runtime; requires world |
 | AutoGG | Misc | Unsupported | `message`, `delay` | Current bridge lacks chat |
 | AutoReconnect | Misc | Unsupported | `delay` | Current bridge lacks network |
@@ -45,7 +47,7 @@ Phase 6 evidence and per-module capabilities, limitations, settings and automate
 | Debug Console | Misc | Verified in real gameplay | `events`, `modules`, `errors`, `max-lines` | Phase 6; requires client UI |
 | Friend Manager | Misc | Verified in real gameplay | `add`, `remove` | Phase 6; requires client UI |
 | Keybind Manager | Misc | Verified in real gameplay | — | Phase 6; requires client UI |
-| Macros | Misc | Partially implemented | — | Module and wait steps work; chat and arbitrary bind steps need additional hooks |
+| Macros | Misc | Partially implemented | — | Module/wait/registered client bind steps and modifier-aware macro keys work; native chat and arbitrary game key injection unavailable |
 | Module Search | Misc | Verified in real gameplay | — | Phase 6; requires client UI |
 | Notifications | Misc | Verified in real gameplay | `module-toggles`, `warnings`, `errors`, `history` | Phase 6; requires client UI |
 | Screenshot Utilities | Misc | Verified in real gameplay | — | Phase 6; requires hud |
