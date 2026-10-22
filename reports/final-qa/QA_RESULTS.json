@@ -1,0 +1,83 @@
+{
+  "auditDate": "2026-10-21",
+  "commit": "5799d3f415fbfe082497011924c76d7d93bff7d7",
+  "artifactPath": "input/phase15/Eaglercraft-26.2-u1-Eaghacks-RC4.html",
+  "artifactSha256": "5d404a9f73c65acd1c4e453582301f507d6a7b307ebaa7a199284aea0c6c1b9d",
+  "embeddedIntegrationSha256": "889ba2bd7a3407fda37196b00b91f5f76c667c67c0caa25441a536607846f6e2",
+  "sourceDigest": "b6a500c829de31a645c4d9218a05219e4028f3039cabd000344e5a925b70b042",
+  "wasmSha256": "aaf01b02e7bab4183431102bd42c4f4045e2633c707d81451b050921019e002d",
+  "environment": {
+    "node": "v24.20.0",
+    "npm": "11.19.0",
+    "os": "Darwin 25.4.0",
+    "browser": "Installed Google Chrome on macOS"
+  },
+  "checksRun": {
+    "gitHeadVerified": true,
+    "artifactHashVerified": true,
+    "embeddedIntegrationVerified": true,
+    "unitTestsPhase15": {
+      "passed": true,
+      "tests": 28,
+      "failures": 0,
+      "files": [
+        "tests/phase15-input.test.mjs",
+        "tests/native-bridge.test.mjs"
+      ]
+    },
+    "build": true,
+    "smoke": true,
+    "browserExecutedByAuditor": false
+  },
+  "reportedAutomationFromVerification": {
+    "unitPassed": 193,
+    "unitTotal": 193,
+    "browserPassed": 20,
+    "browserTotal": 20,
+    "actualClientFullGameplayPassed": 100,
+    "actualClientFocusedModulesPassed": 56,
+    "guiLifecycleChecks": 198,
+    "transitionAssertions": 119,
+    "processRestartChecks": 13
+  },
+  "moduleAcceptanceSummary": {
+    "total": 77,
+    "fullyAccepted": 0,
+    "gameplayObserved": 41,
+    "partial": 5,
+    "unsupported": 31,
+    "newlyFailed": 0
+  },
+  "changesVerified": [
+    {
+      "file": "src/integration/eaglercraft-adapter.js",
+      "description": "Fresh Escape cancels delayed GUI pause restoration",
+      "verified": true
+    },
+    {
+      "file": "src/core/keybind-manager.js",
+      "description": "Mouse hold tracking added to heldKeys",
+      "verified": true
+    },
+    {
+      "file": "src/modules/combat-modules.js",
+      "description": "AutoClicker modifier validation",
+      "verified": true
+    }
+  ],
+  "findings": [],
+  "humanGatesPending": [
+    "Keyboard and mouse physical input",
+    "Pointer lock and ClickGUI",
+    "Combat and movement feel",
+    "ESP/HUD appearance",
+    "Audio listening",
+    "Save/reentry/restart",
+    "Seven physical LAN checks"
+  ],
+  "verdict": "CONDITIONAL \u2014 PENDING HUMAN ACCEPTANCE",
+  "safeToShipSinglePlayer": false,
+  "notes": "Artifact integrity confirmed; three Phase15 fixes verified; no blocker defects found in delta review. Human QA and LAN remain pending.",
+  "auditScope": "Targeted Phase 15 source review and selected tests; not a comprehensive independent runtime audit",
+  "nativePayloadEvidence": "Reviewed existing manifest; no independent native payload extraction by auditor"
+}
